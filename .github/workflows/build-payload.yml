@@ -25,7 +25,7 @@ jobs:
       - uses: actions/checkout@v5
         with:
           repository: aurora-silicon/aurora-installer
-          ref: d7b4e11d4072e7b433b31c948f57f4acd17362bd
+          ref: f0d217364539e3cebff975689bcde2cf8d6045e7
           path: producer
       - name: Authenticate the completed image build
         env:
@@ -110,8 +110,8 @@ jobs:
               'asahi_installer_tag':lock['upstream_installer']['tag'],'asahi_installer_revision':lock['upstream_installer']['commit'],
               'asahi_installer_data_revision':lock['upstream_metadata']['commit'],
               'downstream_revision':subprocess.check_output(['git','-C','producer','rev-parse','HEAD'],text=True).strip(),
-              'device_identifiers':models,'installer':{'minimum_version':'2.1.0','latest_version':'2.1.0',
-                'download_url':'https://github.com/aurora-silicon/aurora-installer/releases/download/native-dev-20261018/Aurora-Installer-2.1.0-Developer.zip'}}
+              'device_identifiers':models,'installer':{'minimum_version':'2.1.1','latest_version':'2.1.1',
+                'download_url':'https://github.com/aurora-silicon/aurora-installer/releases/download/native-dev-20261018.2/Aurora-Installer-2.1.1-Developer.zip'}}
           Path('catalog-inputs.json').write_text(json.dumps(inputs,indent=2)+'\n')
           PY
           tag="payload-$PROFILE-$IMAGE_RUN"

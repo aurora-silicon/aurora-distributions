@@ -6,4 +6,4 @@ Catalogs use an independent Ed25519 key. Only its raw public key is committed un
 
 Development builds and device qualification are separate. `site/installer/profile-builds.json` records assembly evidence, including incomplete profiles. Private device calibration and Neo policy inputs are never uploaded here.
 
-The native installer includes all nine profiles. Its developer download is paused while the package helper binding is corrected. [Release procedures](docs/RELEASING.md) cover signed delivery and publication; [validation evidence](docs/VALIDATION.md) records tested behavior and remaining hardware qualification.
+The [developer installer 2.1.1](https://github.com/aurora-silicon/aurora-installer/releases/tag/native-dev-20261018.2) includes all nine profiles and exact app/helper code-hash binding. [Release procedures](docs/RELEASING.md) cover signed delivery and publication; [validation evidence](docs/VALIDATION.md) records tested behavior and remaining hardware qualification.

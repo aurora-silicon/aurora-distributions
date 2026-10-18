@@ -1,0 +1,28 @@
+{
+  "schema": 1,
+  "version": "2.1.1",
+  "build": "2610181928",
+  "native_revision": "f0d217364539e3cebff975689bcde2cf8d6045e7",
+  "workflow_run": "39158743064",
+  "signing": "ad-hoc",
+  "notarized": false,
+  "helper_authentication": "identifier-and-exact-cdhash",
+  "app_cdhash": "c03435929e1535a43dbafbfeabe0cf007c773935",
+  "helper_cdhash": "8e3fd7a165a905e2085f38ad43896f5e34c51856",
+  "assets": {
+    "zip": {
+      "url": "https://github.com/aurora-silicon/aurora-installer/releases/download/native-dev-20261018.2/Aurora-Installer-2.1.1-Developer.zip",
+      "bytes": 24819430,
+      "sha256": "3ff25f69c743f210839b9ad2ed3d74db22e252f9e149ed2324af943e52eb6082",
+      "compatibility_paths": [
+        "installer/installer/2.1.0/Aurora-MX-Mac-Installer-2.1.0.zip"
+      ]
+    },
+    "pkg": {
+      "url": "https://github.com/aurora-silicon/aurora-installer/releases/download/native-dev-20261018.2/Aurora-Installer-2.1.1-Developer.pkg",
+      "bytes": 24802746,
+      "sha256": "11fb40eab96f844f20374612ee6bfc38f9236f470b3aa9190ab817b21b21eaea",
+      "compatibility_paths": []
+    }
+  }
+}
