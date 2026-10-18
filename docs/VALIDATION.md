@@ -10,6 +10,16 @@ Image assembly, Linux VM checks and physical Mac qualification are separate reco
 
 These records establish source integration and developer packaging. Physical installation, native Recovery, radio behavior and hardware update/reboot qualification remain pending. Public catalogs continue to exclude Neo; private research candidates do not change that admission policy.
 
+## Fedora peripheral activation and signed updates
+
+The current Fedora images use source `6ecb59793886d9999f12280b7feac51f19216397`: [minimal CI 39168254404](https://github.com/aurora-silicon/fedora-aurora/actions/runs/39168254404), [KDE CI 39168255909](https://github.com/aurora-silicon/fedora-aurora/actions/runs/39168255909) and [GNOME CI 39168257419](https://github.com/aurora-silicon/fedora-aurora/actions/runs/39168257419). All three image builds and their signed payload publications passed. Their Edge catalogs bind the verified image provenance, engine and payload asset digests. Public model coverage remains 34 models, excluding Neo and J614s.
+
+These images include `aurora-firmware-44-3`, whose RPM systemd scriptlets apply the peripheral service preset on fresh installation. Image assembly now rejects a disabled, masked or static peripheral service. Installed-system tests checked fresh-install activation and preservation of enabled, disabled and masked administrator choices across signed 44-2/44-3 transactions. Existing 44-2 developer installations need `sudo systemctl preset --now aurora-peripherals.service` to apply the new default explicitly.
+
+An encrypted KDE AArch64 KVM installation from the preceding image was updated with the signed 44-3 RPM and its initrd regenerated. A cold boot using that exact regenerated initrd passed owner passphrase unlock, login and sudo, persistent hostname and mount checks, retirement of both bootstrap keys, retention of only LUKS slot 1, active NetworkManager and peripheral services, DNS resolution, and a package reinstall from the live HTTPS signed repository. Unsigned RPM installation was rejected. The live reinstall exercised the same package version; the earlier lifecycle tests exercised version changes. The [testing-20261018.6 RPM snapshot](https://github.com/aurora-silicon/fedora-aurora/releases/tag/testing-20261018.6) and live repository metadata were checked against the published asset digests and pinned signing key.
+
+Fresh factory encryption and owner setup on the rebuilt KDE image remain under validation. These VM checks boot the shipped kernel and initrd directly and do not qualify the EFI boot chain, a graphical desktop, device firmware or physical Mac behavior.
+
 ## Final NixOS minimal image
 
 [Captured verification evidence](https://github.com/aurora-silicon/nixos-aurora/releases/tag/vm-verification-20261018.1) covers the final minimal image from [image CI 39139388776](https://github.com/aurora-silicon/nixos-aurora/actions/runs/39139388776), source `8af4b5448d7e04933d136f713514b6dc662889d6`. This was a developer-run native AArch64 KVM test using the shipped kernel and initrd.
