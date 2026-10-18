@@ -39,3 +39,5 @@ Developer app builds are ad hoc signed and are not notarized. The developer pack
 Retain source revisions, package manifests, signatures, images, test logs and rollback artifacts. Check free space and estimate download plus extraction plus copy peaks before local artifact operations; retain at least 8 GiB reported free on the development host. Completed superseded data may move off-host only after a lossless byte verification and with exact restore commands. The emergency reserve is not build space.
 
 Before promoting hardware support, complete the installation, owner setup, encryption/unlock, updates and reboot checks on that device. An owner-deferred Recovery step remains pending in the evidence, even when build and VM checks have passed.
+
+See [validation evidence](VALIDATION.md) for the final NixOS minimal image's encrypted boot, installed-configuration rebuild and rebuilt-generation boot checks. These developer-run VM results do not promote hardware support or establish a source-version upgrade result.
