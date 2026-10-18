@@ -4,75 +4,83 @@
     {
       "profile": "fedora-minimal",
       "assembly": "passed",
-      "run": "https://github.com/aurora-silicon/fedora-aurora/actions/runs/39129550787",
-      "source": "9c3968af3d8ebfd8937404b5dc52c94ab1ee591f",
+      "run": "https://github.com/aurora-silicon/fedora-aurora/actions/runs/39137928604",
+      "source": "c1f047445f2e165107d5d7f595236c5c98168082",
       "physical_installation": "pending",
       "delivery": "signed",
-      "release": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-39129550787"
+      "release": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-39137928604"
     },
     {
       "profile": "fedora-kde",
       "assembly": "passed",
-      "run": "https://github.com/aurora-silicon/fedora-aurora/actions/runs/39129552471",
-      "source": "9c3968af3d8ebfd8937404b5dc52c94ab1ee591f",
+      "run": "https://github.com/aurora-silicon/fedora-aurora/actions/runs/39137930613",
+      "source": "c1f047445f2e165107d5d7f595236c5c98168082",
       "physical_installation": "pending",
       "delivery": "signed",
-      "release": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-kde-39129552471"
+      "release": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-kde-39137930613"
     },
     {
       "profile": "fedora-gnome",
       "assembly": "passed",
-      "run": "https://github.com/aurora-silicon/fedora-aurora/actions/runs/39129553941",
-      "source": "9c3968af3d8ebfd8937404b5dc52c94ab1ee591f",
+      "run": "https://github.com/aurora-silicon/fedora-aurora/actions/runs/39137932632",
+      "source": "c1f047445f2e165107d5d7f595236c5c98168082",
       "physical_installation": "pending",
       "delivery": "signed",
-      "release": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-39129553941"
+      "release": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-39137932632"
     },
     {
       "profile": "arch-kde",
-      "assembly": "pending",
-      "physical_installation": "pending"
+      "assembly": "passed",
+      "physical_installation": "pending",
+      "delivery": "signed",
+      "run": "https://github.com/aurora-silicon/alarm-aurora/actions/runs/39139333233",
+      "source": "1fc91261824c0ca7aedb86324037335ee3356cc2",
+      "release": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39139333233"
     },
     {
       "profile": "arch-gnome",
-      "assembly": "pending",
-      "physical_installation": "pending"
+      "assembly": "passed",
+      "physical_installation": "pending",
+      "delivery": "signed",
+      "run": "https://github.com/aurora-silicon/alarm-aurora/actions/runs/39139336416",
+      "source": "1fc91261824c0ca7aedb86324037335ee3356cc2",
+      "release": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-39139336416"
     },
     {
       "profile": "arch-minimal",
       "assembly": "passed",
       "physical_installation": "pending",
       "delivery": "signed",
-      "run": "https://github.com/aurora-silicon/alarm-aurora/actions/runs/39136011980",
-      "source": "34ed67bb04fac7f0dd630c4be0463de15b257b3d",
-      "release": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-39136011980"
+      "run": "https://github.com/aurora-silicon/alarm-aurora/actions/runs/39139330289",
+      "source": "1fc91261824c0ca7aedb86324037335ee3356cc2",
+      "release": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-39139330289"
     },
     {
       "profile": "nixos-kde",
       "assembly": "passed",
       "physical_installation": "pending",
       "delivery": "signed",
-      "run": "https://github.com/aurora-silicon/nixos-aurora/actions/runs/39134190657",
-      "source": "5f3566f4201d3c1934afbddacd0c243154346436",
-      "release": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-39134190657"
+      "run": "https://github.com/aurora-silicon/nixos-aurora/actions/runs/39139390817",
+      "source": "8af4b5448d7e04933d136f713514b6dc662889d6",
+      "release": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-39139390817"
     },
     {
       "profile": "nixos-gnome",
       "assembly": "passed",
       "physical_installation": "pending",
       "delivery": "signed",
-      "run": "https://github.com/aurora-silicon/nixos-aurora/actions/runs/39134192664",
-      "source": "5f3566f4201d3c1934afbddacd0c243154346436",
-      "release": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39134192664"
+      "run": "https://github.com/aurora-silicon/nixos-aurora/actions/runs/39139393423",
+      "source": "8af4b5448d7e04933d136f713514b6dc662889d6",
+      "release": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39139393423"
     },
     {
       "profile": "nixos-minimal",
       "assembly": "passed",
       "physical_installation": "pending",
       "delivery": "signed",
-      "run": "https://github.com/aurora-silicon/nixos-aurora/actions/runs/39134048819",
-      "source": "0a5400ae83d72b1c3d47428c12807e27c041836b",
-      "release": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39134048819"
+      "run": "https://github.com/aurora-silicon/nixos-aurora/actions/runs/39139388776",
+      "source": "8af4b5448d7e04933d136f713514b6dc662889d6",
+      "release": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39139388776"
     }
   ]
 }
