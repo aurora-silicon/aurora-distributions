@@ -1,0 +1,47 @@
+name: Adopt a verified distribution delivery set
+on:
+  workflow_dispatch:
+    inputs:
+      deliveries:
+        description: JSON array of repository and tag objects
+        required: true
+permissions:
+  contents: write
+  actions: write
+concurrency:
+  group: distribution-profile-adoption
+  cancel-in-progress: false
+defaults:
+  run:
+    shell: bash
+jobs:
+  adopt:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v5
+      - name: Verify the complete selected delivery set
+        env:
+          DELIVERIES: ${{ inputs.deliveries }}
+        run: |
+          python3 - <<'PY'
+          import json,os,subprocess
+          items=json.loads(os.environ['DELIVERIES'])
+          assert isinstance(items,list) and 1 <= len(items) <= 9
+          for item in items:
+              assert isinstance(item,dict) and set(item)=={'repository','tag'}
+              subprocess.run(['python3','scripts/adopt-delivery.py','--repository',item['repository'],'--tag',item['tag']],check=True)
+          PY
+          bash scripts/verify-catalogs
+      - name: Record the authenticated resource tree
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add site
+          if ! git diff --cached --quiet; then
+            git commit -m 'Adopt verified distribution delivery set' --trailer 'Assisted-by: LLM'
+            git push
+          fi
+      - name: Publish the verified profile tree
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run pages.yml --repo "$GITHUB_REPOSITORY"

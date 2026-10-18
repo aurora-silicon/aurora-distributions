@@ -11,6 +11,7 @@ on:
         required: true
 permissions:
   contents: write
+  actions: write
 concurrency:
   group: distribution-profile-adoption
   cancel-in-progress: false
@@ -38,3 +39,7 @@ jobs:
             git commit -m 'Adopt verified distribution profile delivery' --trailer 'Assisted-by: LLM'
             git push
           fi
+      - name: Publish the verified profile tree
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run pages.yml --repo "$GITHUB_REPOSITORY"
