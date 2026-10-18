@@ -1,0 +1,40 @@
+name: Adopt a signed installer profile
+on:
+  workflow_dispatch:
+    inputs:
+      repository:
+        type: choice
+        options: [aurora-silicon/fedora-aurora, aurora-silicon/alarm-aurora, aurora-silicon/nixos-aurora]
+        required: true
+      release-tag:
+        description: Immutable payload profile release tag
+        required: true
+permissions:
+  contents: write
+concurrency:
+  group: distribution-profile-adoption
+  cancel-in-progress: false
+defaults:
+  run:
+    shell: bash
+jobs:
+  adopt:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v5
+      - name: Verify and adopt the profile
+        env:
+          REPOSITORY: ${{ inputs.repository }}
+          RELEASE_TAG: ${{ inputs.release-tag }}
+        run: |
+          python3 scripts/adopt-delivery.py --repository "$REPOSITORY" --tag "$RELEASE_TAG"
+          bash scripts/verify-catalogs
+      - name: Record the authenticated resource tree
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add site
+          if ! git diff --cached --quiet; then
+            git commit -m 'Adopt verified distribution profile delivery' --trailer 'Assisted-by: LLM'
+            git push
+          fi
