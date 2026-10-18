@@ -1,0 +1,155 @@
+name: Assemble and sign a distribution delivery
+on:
+  workflow_call:
+    inputs:
+      profile:
+        type: string
+        required: true
+      image-run:
+        type: string
+        required: true
+    secrets:
+      catalog-signing-key:
+        required: true
+permissions:
+  contents: write
+  actions: read
+defaults:
+  run:
+    shell: bash
+jobs:
+  payload:
+    runs-on: ubuntu-24.04-arm
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          repository: aurora-silicon/aurora-installer
+          ref: d7b4e11d4072e7b433b31c948f57f4acd17362bd
+          path: producer
+      - name: Authenticate the completed image build
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PROFILE: ${{ inputs.profile }}
+          IMAGE_RUN: ${{ inputs.image-run }}
+        run: |
+          [[ $PROFILE =~ ^(fedora|arch|nixos)-(kde|gnome|minimal)$ && $IMAGE_RUN =~ ^[0-9]+$ ]]
+          case "$GITHUB_REPOSITORY:$PROFILE" in
+            aurora-silicon/fedora-aurora:fedora-*|aurora-silicon/alarm-aurora:arch-*|aurora-silicon/nixos-aurora:nixos-*) ;;
+            *) exit 2;;
+          esac
+          gh api "repos/$GITHUB_REPOSITORY/actions/runs/$IMAGE_RUN" > image-build.json
+          jq -e --arg repo "$GITHUB_REPOSITORY" '.conclusion == "success" and .head_branch == "main" and .head_repository.full_name == $repo and .path == ".github/workflows/images.yml"' image-build.json
+          gh run download "$IMAGE_RUN" --repo "$GITHUB_REPOSITORY" --name "$PROFILE-candidate" --dir downloaded
+          sudo apt-get update
+          sudo apt-get install -y zstd
+          python3 - <<'PY'
+          import hashlib,os
+          from pathlib import Path
+          profile=os.environ['PROFILE'];root=Path('downloaded/out')
+          archive=root/(profile+'-filesystems.tar.zst')
+          expected=(root/(archive.name+'.sha256')).read_text().split()[0]
+          with archive.open('rb') as stream: assert hashlib.file_digest(stream,'sha256').hexdigest()==expected
+          PY
+          mkdir filesystems
+          zstd -dc "downloaded/out/$PROFILE-filesystems.tar.zst" | python3 -c 'import sys,tarfile; tarfile.open(fileobj=sys.stdin.buffer,mode="r|").extractall("filesystems",filter="data")'
+          python3 - <<'PY'
+          import json,os
+          assert json.load(open('filesystems/image.json'))['installation_profile']==os.environ['PROFILE']
+          PY
+      - name: Verify the signed native runtime inputs
+        run: |
+          base=https://github.com/aurora-silicon/aurora-installer/releases/download/native-runtime-v0.9.2-aurora.2
+          mkdir runtime
+          curl -fLsS --retry 3 "$base/runtime-manifest.json" -o runtime/runtime-manifest.json
+          curl -fLsS --retry 3 "$base/runtime-manifest.json.sig" -o runtime/runtime-manifest.json.sig
+          python3 - <<'PY'
+          from pathlib import Path
+          key=Path('producer/macOS/Release/trust-root.ed25519.pub').read_bytes();assert len(key)==32
+          Path('runtime/public.der').write_bytes(bytes.fromhex('302a300506032b6570032100')+key)
+          PY
+          openssl pkeyutl -verify -pubin -keyform DER -inkey runtime/public.der -rawin -in runtime/runtime-manifest.json -sigfile runtime/runtime-manifest.json.sig
+          python3 - <<'PY'
+          from pathlib import Path
+          import hashlib,json,subprocess
+          base='https://github.com/aurora-silicon/aurora-installer/releases/download/native-runtime-v0.9.2-aurora.2'
+          for name,record in json.load(open('runtime/runtime-manifest.json'))['assets'].items():
+              assert Path(name).name==name and record['bytes']<200_000_000
+              path=Path('runtime')/name
+              subprocess.run(['curl','-fLsS','--retry','3',base+'/'+name,'-o',str(path)],check=True)
+              assert path.stat().st_size==record['bytes']
+              with path.open('rb') as stream:assert hashlib.file_digest(stream,'sha256').hexdigest()==record['sha256']
+          PY
+          mkdir recovery
+          python3 - <<'PY'
+          import tarfile
+          with tarfile.open('runtime/aurora-recovery-template-20261018.tar.gz') as archive:archive.extractall('recovery',filter='data')
+          PY
+      - name: Assemble the common payload and profile catalog
+        env:
+          PROFILE: ${{ inputs.profile }}
+          IMAGE_RUN: ${{ inputs.image-run }}
+        run: |
+          python3 producer/macOS/scripts/assemble-distribution-payload.py --filesystems filesystems \
+            --recovery-app 'recovery/Aurora Installer.app' --output assets --release-id "build-$IMAGE_RUN"
+          cp runtime/installer-v0.9.2-aurora.2.tar.gz assets/
+          payload="assets/$PROFILE-build-$IMAGE_RUN.zip"
+          if (( $(stat -c %s "$payload") >= 1900000000 )); then
+            split -b 1073741824 --numeric-suffixes=0 --suffix-length=2 "$payload" "$payload.part"
+          fi
+          python3 - <<'PY'
+          import json,os,subprocess,sys
+          from pathlib import Path
+          native=Path('producer/macOS');sys.path.insert(0,str(native/'scripts'))
+          import supported_models
+          models,_=supported_models.load();profile=os.environ['PROFILE'];run=os.environ['IMAGE_RUN']
+          lock=json.loads((native/'Engine/source-lock.json').read_text())
+          inputs={'installation_profile':profile,'payload_name':profile+'-build-'+run+'.zip',
+              'metadata_name':'installer-data-'+profile+'.json','engine_name':lock['validation_artifact']['filename'],
+              'engine_version':'v0.9.2-aurora.2','evidence_revision':'image-build-'+run,
+              'asahi_installer_tag':lock['upstream_installer']['tag'],'asahi_installer_revision':lock['upstream_installer']['commit'],
+              'asahi_installer_data_revision':lock['upstream_metadata']['commit'],
+              'downstream_revision':subprocess.check_output(['git','-C','producer','rev-parse','HEAD'],text=True).strip(),
+              'device_identifiers':models,'installer':{'minimum_version':'2.1.0','latest_version':'2.1.0',
+                'download_url':'https://aurorasilicon.org/aurora-distributions/installer/installer/2.1.0/Aurora-MX-Mac-Installer-2.1.0.zip'}}
+          Path('catalog-inputs.json').write_text(json.dumps(inputs,indent=2)+'\n')
+          PY
+          tag="payload-$PROFILE-$IMAGE_RUN"
+          python3 producer/macOS/scripts/make-unsigned-catalog.py --base-url "https://github.com/$GITHUB_REPOSITORY/releases/download/$tag" \
+            --assets-dir assets --inputs catalog-inputs.json --output assets/catalog.json
+          cp producer/macOS/Release/trust-root.ed25519.pub assets/
+          bash producer/macOS/scripts/make-release-descriptor --adhoc --public-key assets/trust-root.ed25519.pub \
+            --base-url "https://aurorasilicon.org/aurora-distributions/installer/Profiles/$PROFILE" --output assets/release.json
+          cp image-build.json catalog-inputs.json assets/
+      - name: Sign the exact catalog bytes
+        env:
+          CATALOG_KEY: ${{ secrets.catalog-signing-key }}
+        run: |
+          key="$RUNNER_TEMP/aurora-catalog-key.pem"
+          trap 'rm -f "$key"' EXIT
+          umask 077
+          printf '%s' "$CATALOG_KEY" > "$key"
+          openssl pkey -in "$key" -pubout -outform DER -out derived-public.der
+          cmp derived-public.der runtime/public.der
+          openssl pkeyutl -sign -inkey "$key" -rawin -in assets/catalog.json -out assets/catalog.json.sig
+          openssl pkeyutl -verify -pubin -keyform DER -inkey runtime/public.der -rawin -in assets/catalog.json -sigfile assets/catalog.json.sig
+      - name: Publish the immutable delivery set
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PROFILE: ${{ inputs.profile }}
+          IMAGE_RUN: ${{ inputs.image-run }}
+        run: |
+          tag="payload-$PROFILE-$IMAGE_RUN"
+          payload="assets/$PROFILE-build-$IMAGE_RUN.zip"
+          # A multipart catalog pins the whole ZIP even though only its parts ship.
+          if [[ -e $payload.part00 ]]; then rm -- "$payload"; fi
+          gh release create "$tag" assets/* --repo "$GITHUB_REPOSITORY" --target "$GITHUB_SHA" --prerelease \
+            --title "Aurora $PROFILE image build $IMAGE_RUN" \
+            --notes 'Signed development installer delivery. The catalog binds the complete payload, parts, metadata and native engine. Image assembly and physical installation qualification are recorded separately. Neo local policy inputs are excluded.'
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ${{ inputs.profile }}-delivery-record
+          path: |
+            assets/*.json
+            assets/catalog.json.sig
+            assets/trust-root.ed25519.pub
