@@ -12,6 +12,7 @@ import tempfile
 import time
 
 ROOT = Path(__file__).resolve().parents[1]
+APP_VERSION = '2.1.1'
 PROFILES = tuple(f'{distribution}-{desktop}' for distribution in ('fedora', 'arch', 'nixos')
                  for desktop in ('kde', 'gnome', 'minimal'))
 
@@ -41,12 +42,12 @@ def prepare(source, output, signing_key, tag, source_revision):
         raise ValueError('signing key does not match the pinned catalog root')
     allowed = set(json.loads((ROOT/'keys/supported-models.json').read_text())['supported'])
     url = ('https://github.com/aurora-silicon/aurora-installer/releases/download/'
-           + tag + '/Aurora-Installer-2.1.0-Developer.zip')
+           + tag + f'/Aurora-Installer-{APP_VERSION}-Developer.zip')
     now = int(time.time())
     issued = datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')
     prepared = {}
     receipt = {'schema': 1, 'source_revision': source_revision, 'release_tag': tag,
-               'installer_url': url, 'profiles': {}}
+               'installer_url': url, 'installer_version': APP_VERSION, 'profiles': {}}
     # Authenticate the complete set before emitting anything.
     for profile in PROFILES:
         directory = source/'Profiles'/profile
@@ -67,13 +68,19 @@ def prepare(source, output, signing_key, tag, source_revision):
                 or any(model['status'] != 'enabled' or model['installationProfile'] != profile
                        for model in models)):
             raise ValueError('expected the complete public model set for this profile')
-        if (catalog['installer']['minimumVersion'] != '2.1.0'
-                or catalog['installer']['latestVersion'] != '2.1.0'):
-            raise ValueError('catalog installer version differs from the pinned app build')
+        def version(value):
+            if not re.fullmatch(r'[0-9]+\.[0-9]+\.[0-9]+', value):
+                raise ValueError('expected a numeric installer version')
+            return tuple(map(int, value.split('.')))
+        if not ((2, 1, 0) <= version(catalog['installer']['minimumVersion'])
+                <= version(catalog['installer']['latestVersion']) <= version(APP_VERSION)):
+            raise ValueError('catalog installer version would be downgraded or is unsupported')
         if catalog['sequence'] >= now:
             raise ValueError('wait for the clock to advance beyond the current catalog sequence')
         previous = hashlib.sha256(data['catalog.json']).hexdigest()
         catalog['installer']['downloadURL'] = url
+        catalog['installer']['minimumVersion'] = APP_VERSION
+        catalog['installer']['latestVersion'] = APP_VERSION
         catalog['sequence'] = now
         catalog['issuedAt'] = issued
         data['catalog.json'] = (json.dumps(catalog, indent=2) + '\n').encode()

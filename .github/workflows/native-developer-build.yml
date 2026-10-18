@@ -49,7 +49,7 @@ jobs:
     timeout-minutes: 30
     env:
       XCODEBUILDMCP_SENTRY_DISABLED: 'true'
-      NATIVE_REVISION: 5da62cc76c45cdc4bdffe175cd52e5db29961c7b
+      NATIVE_REVISION: f0d217364539e3cebff975689bcde2cf8d6045e7
     steps:
       - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09
         with:
@@ -127,14 +127,17 @@ jobs:
         run: |
           set -euo pipefail
           xcodebuildmcp swift-package build --package-path "$PWD" --configuration release
-          OMARCHY_DEVELOPER_BUILD=1 OMARCHY_APP_VERSION=2.1.0 OMARCHY_BUILD_JOBS=2 \
+          OMARCHY_DEVELOPER_BUILD=1 OMARCHY_APP_VERSION=2.1.1 OMARCHY_BUILD_JOBS=2 \
             OMARCHY_RECOVERY_TEMPLATE="$RUNNER_TEMP/native-runtime/recovery/Aurora Installer.app" \
             bash Packaging/build-app.sh "$RUNNER_TEMP/release" "$RUNNER_TEMP/native-app"
           app="$RUNNER_TEMP/native-app/Aurora Installer.app"
           codesign --verify --deep --strict "$app"
           [[ $(lipo -archs "$app/Contents/MacOS/OmarchyAppleInstallerApp") == arm64 ]]
-          bash Packaging/build-developer-pkg.sh "$app" "$RUNNER_TEMP/native-output/Aurora-Installer-2.1.0-Developer.pkg"
-          ditto -c -k --sequesterRsrc --keepParent "$app" "$RUNNER_TEMP/native-output/Aurora-Installer-2.1.0-Developer.zip"
+          package="$RUNNER_TEMP/native-output/Aurora-Installer-2.1.1-Developer.pkg"
+          bash Packaging/build-developer-pkg.sh "$app" "$package"
+          bash test/macos-developer-peer-binding.sh "$app" "$package" \
+            2>&1 | tee "$RUNNER_TEMP/native-output/helper-peer-binding.log"
+          ditto -c -k --sequesterRsrc --keepParent "$app" "$RUNNER_TEMP/native-output/Aurora-Installer-2.1.1-Developer.zip"
           cp "$RUNNER_TEMP/release/profile-manifest.json" "$RUNNER_TEMP/native-output/"
           cp "$RUNNER_TEMP/catalog-inputs/native-catalogs.tar.gz" "$RUNNER_TEMP/native-output/"
           export APP_PATH="$app"
@@ -153,7 +156,8 @@ jobs:
                   records[path.name]={'bytes':path.stat().st_size,'sha256':digest}
           manifest={'schema':1,'native_revision':os.environ['NATIVE_REVISION'],'delivery_revision':os.environ['GITHUB_SHA'],
               'workflow_run':os.environ['GITHUB_RUN_ID'],'app_version':info['CFBundleShortVersionString'],
-              'app_build':info['CFBundleVersion'],'signing':'ad-hoc','notarized':False,'assets':records}
+              'app_build':info['CFBundleVersion'],'signing':'ad-hoc','notarized':False,
+              'helper_authentication':'identifier-and-exact-cdhash','peer_binding_test':'passed','assets':records}
           (out/'native-build.json').write_text(json.dumps(manifest,indent=2)+'\n')
           PY
       - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
