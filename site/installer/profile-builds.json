@@ -14,15 +14,19 @@
       "profile": "fedora-kde",
       "assembly": "passed",
       "run": "https://github.com/aurora-silicon/fedora-aurora/actions/runs/39129552471",
-      "source": "9c3968a",
-      "physical_installation": "pending"
+      "source": "9c3968af3d8ebfd8937404b5dc52c94ab1ee591f",
+      "physical_installation": "pending",
+      "delivery": "signed",
+      "release": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-kde-39129552471"
     },
     {
       "profile": "fedora-gnome",
       "assembly": "passed",
       "run": "https://github.com/aurora-silicon/fedora-aurora/actions/runs/39129553941",
-      "source": "9c3968a",
-      "physical_installation": "pending"
+      "source": "9c3968af3d8ebfd8937404b5dc52c94ab1ee591f",
+      "physical_installation": "pending",
+      "delivery": "signed",
+      "release": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-39129553941"
     },
     {
       "profile": "arch-kde",
@@ -41,18 +45,30 @@
     },
     {
       "profile": "nixos-kde",
-      "assembly": "pending",
-      "physical_installation": "pending"
+      "assembly": "passed",
+      "physical_installation": "pending",
+      "delivery": "signed",
+      "run": "https://github.com/aurora-silicon/nixos-aurora/actions/runs/39134190657",
+      "source": "5f3566f4201d3c1934afbddacd0c243154346436",
+      "release": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-39134190657"
     },
     {
       "profile": "nixos-gnome",
-      "assembly": "pending",
-      "physical_installation": "pending"
+      "assembly": "passed",
+      "physical_installation": "pending",
+      "delivery": "signed",
+      "run": "https://github.com/aurora-silicon/nixos-aurora/actions/runs/39134192664",
+      "source": "5f3566f4201d3c1934afbddacd0c243154346436",
+      "release": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39134192664"
     },
     {
       "profile": "nixos-minimal",
-      "assembly": "pending",
-      "physical_installation": "pending"
+      "assembly": "passed",
+      "physical_installation": "pending",
+      "delivery": "signed",
+      "run": "https://github.com/aurora-silicon/nixos-aurora/actions/runs/39134048819",
+      "source": "0a5400ae83d72b1c3d47428c12807e27c041836b",
+      "release": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39134048819"
     }
   ]
 }
