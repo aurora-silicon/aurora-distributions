@@ -15,7 +15,9 @@ jobs:
       url: ${{ steps.deploy.outputs.page_url }}
     steps:
       - uses: actions/checkout@v5
+      - run: python3 -m unittest discover -s tests
       - run: bash scripts/verify-catalogs
+      - run: python3 scripts/fetch-native-downloads.py
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:

@@ -1,1 +1,25 @@
-<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>Aurora distributions</title><style>body{font:17px system-ui;max-width:800px;margin:70px auto;padding:0 24px;color:#eee;background:#101019}a{color:#b5a1ff}p{line-height:1.6}</style><h1>Aurora distributions</h1><p>Fedora Aurora Remix, Aurora ALARM and Aurora NixOS for Apple Silicon. Each distribution has KDE Plasma, GNOME and minimal profiles.</p><p>Development images are being integrated with the native macOS installer. Build evidence and physical device qualification are recorded separately.</p><p><a href="installer/profile-builds.json">Profile build evidence</a> · <a href="https://github.com/aurora-silicon/aurora-installer/tree/feat/fedora-native-20261018/macOS">Native installer source</a> · <a href="https://github.com/aurora-silicon/aurora-distributions">Delivery source</a></p></html>
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>Aurora distributions</title>
+<style>
+body{font:17px system-ui;max-width:820px;margin:70px auto;padding:0 24px;color:#eee;background:#101019}
+a{color:#b5a1ff}p,li{line-height:1.6}table{border-collapse:collapse;width:100%;margin:24px 0}
+th,td{text-align:left;padding:12px;border-bottom:1px solid #363642}small{color:#c0bfd0}
+</style>
+<h1>Aurora distributions</h1>
+<p>Fedora Aurora Remix, Aurora ALARM and Aurora NixOS for Apple Silicon. Each distribution offers KDE Plasma, GNOME and a minimal system.</p>
+<h2>Try the native macOS installer</h2>
+<p><a href="https://github.com/aurora-silicon/aurora-installer/releases/download/native-dev-20261018/Aurora-Installer-2.1.0-Developer.pkg">Download the developer package</a> · <a href="https://github.com/aurora-silicon/aurora-installer/releases/download/native-dev-20261018/Aurora-Installer-2.1.0-Developer.zip">Download the app ZIP</a></p>
+<p>Development build 2.1.0 includes all nine profiles. The package installs the app and its privileged helper. It is unsigned; the app is ad hoc signed and not notarized. <a href="https://github.com/aurora-silicon/aurora-installer/releases/tag/native-dev-20261018">Release notes, signed checksums and build evidence</a>.</p>
+<p>Public catalogs admit listed M1–M3 Macs. Neo is a separate local developer delivery. Images are on the Edge channel; physical installation, encryption, update and reboot qualification remains pending. Stable and RC channels remain empty.</p>
+<table>
+<thead><tr><th>Distribution</th><th>Profiles</th><th>Update repository</th></tr></thead>
+<tbody>
+<tr><td>Fedora Aurora Remix</td><td>KDE · GNOME · Minimal</td><td><a href="https://aurorasilicon.org/fedora-aurora/44/testing/aarch64/">Signed RPMs</a></td></tr>
+<tr><td>Aurora ALARM</td><td>KDE · GNOME · Minimal</td><td><a href="https://aurorasilicon.org/alarm-aurora/testing/aarch64/">Signed Arch packages</a></td></tr>
+<tr><td>Aurora NixOS</td><td>KDE · GNOME · Minimal</td><td><a href="https://aurorasilicon.org/nixos-aurora/cache/">Signed Nix cache</a></td></tr>
+</tbody></table>
+<p><a href="installer/profile-builds.json">Image builds and device qualification</a> · <a href="installer/native-downloads.json">Signed download manifest</a> · <a href="https://github.com/aurora-silicon/aurora-installer/tree/5da62cc76c45cdc4bdffe175cd52e5db29961c7b/macOS">Installer source</a> · <a href="https://github.com/aurora-silicon/aurora-distributions">Delivery source</a></p>
+</html>

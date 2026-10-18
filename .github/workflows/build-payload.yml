@@ -111,7 +111,7 @@ jobs:
               'asahi_installer_data_revision':lock['upstream_metadata']['commit'],
               'downstream_revision':subprocess.check_output(['git','-C','producer','rev-parse','HEAD'],text=True).strip(),
               'device_identifiers':models,'installer':{'minimum_version':'2.1.0','latest_version':'2.1.0',
-                'download_url':'https://aurorasilicon.org/aurora-distributions/installer/installer/2.1.0/Aurora-MX-Mac-Installer-2.1.0.zip'}}
+                'download_url':'https://github.com/aurora-silicon/aurora-installer/releases/download/native-dev-20261018/Aurora-Installer-2.1.0-Developer.zip'}}
           Path('catalog-inputs.json').write_text(json.dumps(inputs,indent=2)+'\n')
           PY
           tag="payload-$PROFILE-$IMAGE_RUN"
