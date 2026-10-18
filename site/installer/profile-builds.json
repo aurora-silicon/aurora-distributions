@@ -1,0 +1,56 @@
+{
+  "schema": 1,
+  "profiles": [
+    {
+      "profile": "fedora-minimal",
+      "assembly": "passed",
+      "run": "https://github.com/aurora-silicon/fedora-aurora/actions/runs/39129550787",
+      "source": "9c3968a",
+      "physical_installation": "pending"
+    },
+    {
+      "profile": "fedora-kde",
+      "assembly": "passed",
+      "run": "https://github.com/aurora-silicon/fedora-aurora/actions/runs/39129552471",
+      "source": "9c3968a",
+      "physical_installation": "pending"
+    },
+    {
+      "profile": "fedora-gnome",
+      "assembly": "passed",
+      "run": "https://github.com/aurora-silicon/fedora-aurora/actions/runs/39129553941",
+      "source": "9c3968a",
+      "physical_installation": "pending"
+    },
+    {
+      "profile": "arch-kde",
+      "assembly": "pending",
+      "physical_installation": "pending"
+    },
+    {
+      "profile": "arch-gnome",
+      "assembly": "pending",
+      "physical_installation": "pending"
+    },
+    {
+      "profile": "arch-minimal",
+      "assembly": "pending",
+      "physical_installation": "pending"
+    },
+    {
+      "profile": "nixos-kde",
+      "assembly": "pending",
+      "physical_installation": "pending"
+    },
+    {
+      "profile": "nixos-gnome",
+      "assembly": "pending",
+      "physical_installation": "pending"
+    },
+    {
+      "profile": "nixos-minimal",
+      "assembly": "pending",
+      "physical_installation": "pending"
+    }
+  ]
+}
