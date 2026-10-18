@@ -2,6 +2,14 @@
 
 Image assembly, Linux VM checks and physical Mac qualification are separate records. The nine current image builds and their signed payloads are listed in `site/installer/profile-builds.json`. Physical installation remains pending for every listed profile; Stable and RC have no promoted images.
 
+## Native installer integration
+
+[Installer PR #5](https://github.com/aurora-silicon/aurora-installer/pull/5) integrated the native macOS installer, Recovery app and nine-profile delivery into `aurora-installer/main` at `44a6dc9fe83a9efe1c70b07cf6e94a49c2d851ae`. Its Git tree is identical to the qualified source `f0d217364539e3cebff975689bcde2cf8d6045e7`; the root Windows CLI remains preserved.
+
+[Source CI 39158235607](https://github.com/aurora-silicon/aurora-installer/actions/runs/39158235607) passed portable checks, strict Swift formatting, Debug/Release tests, real macOS developer peer-binding fixtures, image-builder source checks and engine reproduction. [App/package CI 39158743064](https://github.com/aurora-silicon/aurora-distributions/actions/runs/39158743064) built the actual nine-profile 2.1.1 artifacts and verified their signatures, sealed catalogs, expanded package and exact app/helper peer requirements. The [2.1.1 developer release](https://github.com/aurora-silicon/aurora-installer/releases/tag/native-dev-20261018.2) and signed app-download manifest identify those artifacts.
+
+These records establish source integration and developer packaging. Physical installation, native Recovery, radio behavior and hardware update/reboot qualification remain pending. Public catalogs continue to exclude Neo; private research candidates do not change that admission policy.
+
 ## Final NixOS minimal image
 
 [Captured verification evidence](https://github.com/aurora-silicon/nixos-aurora/releases/tag/vm-verification-20261018.1) covers the final minimal image from [image CI 39139388776](https://github.com/aurora-silicon/nixos-aurora/actions/runs/39139388776), source `8af4b5448d7e04933d136f713514b6dc662889d6`. This was a developer-run native AArch64 KVM test using the shipped kernel and initrd.

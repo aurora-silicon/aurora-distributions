@@ -16,10 +16,12 @@ The `native-developer-build.yml` workflow runs manually on this repository's mai
 
 Its macOS ARM job checks out the pinned installer revision, verifies the signed engine/Recovery runtime manifest, builds through XcodeBuildMCP, and packages the app with all nine sealed catalogs. The result includes a ZIP, developer package, build manifest, profile manifest and prospective catalog bundle. Signing credentials are confined to the Linux preparation job and do not enter the app or macOS job.
 
+Set `AURORA_RELEASE_TAG` to a new, unused tag for the candidate before dispatching. Never reuse a published or withdrawn release tag.
+
 ```sh
 gh workflow run native-developer-build.yml \
   --repo aurora-silicon/aurora-distributions \
-  -f release-tag=native-dev-20261018
+  -f release-tag="$AURORA_RELEASE_TAG"
 ```
 
 Verify the successful run and its `native-build.json` before publishing. Upload the ZIP, developer package, manifests, checksums and signed checksum file to a draft release in `aurora-silicon/aurora-installer`, using the same tag named by the workflow. The tag must point to the manifest's exact native source revision. Verify the uploaded asset digests, then publish it as a prerelease. Only afterward should its prospective catalog metadata be adopted into the live feed; re-check current profile catalogs so a concurrent image publication is never overwritten by an older model set.
@@ -34,7 +36,7 @@ After publication, verify the live signed manifest, the current catalogs and the
 
 Developer app builds are ad hoc signed and are not notarized. The developer package installs the app and binds its privileged helper to that exact app signature. General Developer ID distribution requires the owner's Apple signing credentials and notarization; no production signing identity is represented by these development artifacts. Public catalogs admit their listed M1–M3 models. Neo remains a separate local developer delivery with independently provisioned inputs and explicit device qualification.
 
-Developer packaging must pass `test/macos-developer-peer-binding.sh APP PKG` on the actual artifacts before publication. It verifies the external daemon's final app cdhash, the helper cdhash in the root and all nine profile descriptors, rejection of same-identifier impostors, the package's unchanged signed app and package-only provisioning. The build manifest records this gate and retains its log. The earlier 2.1.0 developer download was withdrawn after review found identifier-only client authentication; its retained artifacts are not a qualified fallback. Publish the corrected version under a new immutable tag, and raise the app metadata's minimum/latest versions to 2.1.1. Existing copies require installation of the replacement package; a sealed developer catalog cannot remotely repair an installed helper.
+Developer packaging must pass `test/macos-developer-peer-binding.sh APP PKG` on the actual artifacts before publication. It verifies the external daemon's final app cdhash, the helper cdhash in the root and all nine profile descriptors, rejection of same-identifier impostors, the package's unchanged signed app and package-only provisioning. The build manifest records this gate and retains its log. The earlier 2.1.0 developer download was withdrawn after review found identifier-only client authentication; its retained artifacts are not a qualified fallback. The corrected [2.1.1 developer release](https://github.com/aurora-silicon/aurora-installer/releases/tag/native-dev-20261018.2) is published under a new immutable tag, and current catalogs require at least 2.1.1. Future amendments must preserve or raise that floor. Existing copies require installation of the replacement package; a sealed developer catalog cannot remotely repair an installed helper.
 
 ## Qualification and storage
 
