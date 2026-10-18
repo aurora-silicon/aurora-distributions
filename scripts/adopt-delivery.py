@@ -64,6 +64,13 @@ def adopt(repository, tag, site):
     (channel/'catalog.signed.json').write_text(json.dumps({'schema_version':1,
         'catalog':base64.b64encode(data['catalog.json']).decode(),
         'signature':base64.b64encode(data['catalog.json.sig']).decode()},separators=(',',':'))+'\n')
+    if profile == 'fedora-kde':
+        root = site/'installer'
+        for name in ('catalog.json', 'catalog.json.sig', 'trust-root.ed25519.pub'):
+            (root/name).write_bytes(data[name])
+        root_channel = root/'channels/edge'
+        root_channel.mkdir(parents=True, exist_ok=True)
+        (root_channel/'catalog.signed.json').write_bytes((channel/'catalog.signed.json').read_bytes())
     status_path = site/'installer/profile-builds.json'; status = json.loads(status_path.read_text())
     for record in status['profiles']:
         if record['profile'] == profile:
