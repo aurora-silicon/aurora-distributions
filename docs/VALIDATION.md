@@ -1,6 +1,18 @@
 # Distribution validation
 
-Image assembly, Linux VM checks and physical Mac qualification are separate records. The nine current image builds and their signed payloads are listed in `site/installer/profile-builds.json`. Physical installation remains pending for every listed profile; Stable and RC have no promoted images.
+Image assembly, Linux VM checks and physical Mac qualification are separate records. The nine current image builds and their signed payloads are listed in `site/installer/profile-builds.json`. A private Fedora KDE Neo installation has reached the hardware desktop; full installation/update/reboot qualification remains incomplete. Stable and RC have no promoted images.
+
+## Neo Fedora KDE developer installation, 2026-10-19
+
+The private developer installer built from `6dca86b6faf5a5387b09d6df1aad887266837bc6` completed native Recovery handoff and installed the refreshed Fedora KDE payload. [Source qualification 39198257551](https://github.com/aurora-silicon/aurora-installer/actions/runs/39198257551) passed. This revision preserves the signed app when preparing Recovery and discovers a completed Recovery target before rejecting a new allocation. The developer build source pin now selects that qualified revision; the public installer download is unchanged until its next artifact publication.
+
+On Neo, the installed kernel `7.2.10-2.fc44.aurora.aarch64` reached a native KDE Wayland session with KWin reporting the Apple A18 Pro renderer. LUKS2 in-place encryption completed in 75 seconds; the resulting AES-XTS volume retained only the owner's Argon2id keyslot after setup. This is an observed installed-system state, not a subsequent owner-passphrase cold-boot test.
+
+Hardware testing exposed an account-console/Plymouth acquisition issue and a text-getty handoff after account creation. [Shared platform fix a659e1a](https://github.com/aurora-silicon/aurora-platform/commit/a659e1aa48d8d755da7835a986ddd579702f5797) passed real systemd console acquisition and encrypted conversion fixtures in [CI 39200154080](https://github.com/aurora-silicon/aurora-platform/actions/runs/39200154080). All three distributions now pin that source as firstboot 0.1.3; their refreshed images still require factory installation qualification.
+
+Wi-Fi connected and completed an HTTP request after changing the saved transition-network profile from SAE to WPA2-PSK; WPA3 remains unsupported by the current MT7932 driver. The owner confirmed Bluetooth works. Speaker testing identified two missing build dependencies: the MAX98360A codec driver and Fedora's PipeWire LV2 module. Loading the matching codec module bound the speaker card, started its protection daemon and exposed the protected DSP output. Audible speaker output and reboot persistence are not yet qualified. The Fedora kernel also lacks SELinux support despite the userspace enforcing configuration; that remains an open release blocker.
+
+The Neo candidate uses privately supplied radio policies. Public catalogs continue to exclude Neo, and these observations do not qualify firmware-policy generation, GNOME/minimal hardware, ALARM/NixOS hardware or an end-to-end Swift installation backend. The separate native Swift branch has qualified authenticated partial firmware extraction, but the installed backend still uses its pinned Python engine.
 
 ## Native installer integration
 
