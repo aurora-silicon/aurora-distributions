@@ -22,7 +22,9 @@ An encrypted KDE AArch64 KVM installation from the preceding image was updated w
 
 The [signed Fedora verification bundle](https://github.com/aurora-silicon/fedora-aurora/releases/tag/vm-verification-20261018.1) contains these installed-system checks, their scripts, captured logs and initial harness failure. Its `verification.json` and raw Ed25519 signature use the same pinned catalog root and verification command shown below for NixOS. The report authenticates every file inside the proof archive; it explicitly excludes fresh-image and hardware qualification.
 
-Fresh factory encryption and owner setup on the rebuilt KDE image remain under validation. These VM checks boot the shipped kernel and initrd directly and do not qualify the EFI boot chain, a graphical desktop, device firmware or physical Mac behavior.
+The [current KDE verification bundle](https://github.com/aurora-silicon/fedora-aurora/releases/tag/vm-verification-20261018.2) covers the exact a913 image. Factory root encryption completed before the original test harness interrupted the first userspace boot, prior to account creation. That disk and its failure log were retained. A new overlay resumed Linux owner creation and passed a cold owner-passphrase boot, login/sudo, persistent hostname and mounts, retirement of both bootstrap keys, retention of only LUKS slot 1, active NetworkManager/peripheral services and DNS resolution. Both boots also exercised the production KDE handoff helper and verified that the real `plasma-setup.service` condition skipped setup without changing the Linux password or LUKS metadata.
+
+This is a factory/resume/cold-boot result; it does not establish an uninterrupted factory boot. The archive retains the harness interruption, the corrected off-host storage guard and the executed scripts. Its signed report is `fedora-current-verification2.json`, with a raw `.json.sig` signature using the pinned catalog key. The included prior-image GUI diagnostics use VM-only QPainter/Qt software rendering. These checks boot the shipped kernel and initrd directly; default OpenGL, the Fedora EFI chain, native Recovery, device firmware and physical Mac behavior remain unqualified.
 
 ## Final NixOS minimal image
 
@@ -53,4 +55,4 @@ The proof archive includes the captured logs and scripts, including the initial 
 
 ## Remaining qualification
 
-These checks cover Linux owner setup, encryption and configuration rebuilds in a QEMU virt fixture. Physical Mac installation, native Recovery, display/peripheral behavior, source-version upgrades and hardware reboot qualification remain pending. KDE and GNOME assembly checks do not establish their graphical behavior on a Mac. Neo remains available for the owner's Omarchy trial until that device is free for the requested Fedora KDE installation.
+These checks cover Linux owner setup, encryption and configuration rebuilds in a QEMU virt fixture. Physical Mac installation, native Recovery, display/peripheral behavior, kernel upgrades and hardware reboot qualification remain pending. NixOS rebuilding at a new source revision remains pending. KDE and GNOME assembly checks do not establish their graphical behavior on a Mac. Neo remains available for the owner's Omarchy trial until that device is free for the requested Fedora KDE installation.
