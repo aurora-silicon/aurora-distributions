@@ -49,7 +49,7 @@ jobs:
     timeout-minutes: 30
     env:
       XCODEBUILDMCP_SENTRY_DISABLED: 'true'
-      NATIVE_REVISION: 76877ed91f1af0ee0cbeb297e7476b56173d847a
+      NATIVE_REVISION: 0870b70a40dd66ed3efc63ae64e86e40a2f2c1fd
     steps:
       - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09
         with:
