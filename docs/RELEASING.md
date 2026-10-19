@@ -14,7 +14,7 @@ Dispatch `adopt-set.yml` here with the selected repository/tag pairs. It verifie
 
 The `native-developer-build.yml` workflow runs manually on this repository's main branch. Its Linux job authenticates all nine current catalogs and prepares signed app-download metadata using `INSTALLER_CATALOG_SIGNING_KEY`. These files remain workflow artifacts; the job does not change the live feeds.
 
-Its macOS ARM job checks out the pinned installer revision, verifies the signed engine/Recovery runtime manifest, builds through XcodeBuildMCP, and packages the app with all nine sealed catalogs. The result includes a ZIP, developer package, build manifest, profile manifest and prospective catalog bundle. Signing credentials are confined to the Linux preparation job and do not enter the app or macOS job.
+Its macOS ARM job checks out the pinned installer revision, verifies the signed engine/Recovery runtime manifest, and requires both runtime source trees to match that checkout. It also checks the exact engine bytes against the source lock. It builds through XcodeBuildMCP and packages the app with all nine sealed catalogs. The result includes a ZIP, developer package, build manifest, profile manifest and prospective catalog bundle. Signing credentials are confined to the Linux preparation job and do not enter the app or macOS job.
 
 Set `AURORA_RELEASE_TAG` to a new, unused tag for the candidate before dispatching. Never reuse a published or withdrawn release tag.
 
