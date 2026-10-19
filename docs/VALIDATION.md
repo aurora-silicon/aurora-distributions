@@ -14,6 +14,12 @@ Wi-Fi connected and completed an HTTP request after changing the saved transitio
 
 The Neo candidate uses privately supplied radio policies. Public catalogs continue to exclude Neo, and these observations do not qualify firmware-policy generation, GNOME/minimal hardware, ALARM/NixOS hardware or an end-to-end Swift installation backend. The separate native Swift branch has qualified authenticated partial firmware extraction, but the installed backend still uses its pinned Python engine.
 
+## Native interface and authenticated firmware library
+
+[Full installer qualification 39202750062](https://github.com/aurora-silicon/aurora-installer/actions/runs/39202750062) passed at `c0cae4a226fd1fffd58374cd2014a327678d51f9`: portable checks, native macOS Debug/Release tests, app/helper peer binding, engine reproduction and image-builder source checks. [Native visual review 39202327317](https://github.com/aurora-silicon/aurora-installer/actions/runs/39202327317) passed and rendered chooser, allocation, preparation, downloading and installation components in light and dark mode. The allocation controls fit at the default window size. Progress reports verified engine stages rather than a percentage inferred from elapsed time. This revision is merged and selected for the next developer artifact build; published downloads remain unchanged until that build is released.
+
+The Swift firmware library uses authenticated partial ranges and native crypto/decompression. Its [live qualification 39199310535](https://github.com/aurora-silicon/aurora-installer/actions/runs/39199310535) fetched 15,996,940 bytes from the pinned J700 IPSW and independently verified 13 outputs totaling 32,014,794 bytes. It does not derive or qualify the missing Neo radio power policies. Firmware download checkpoints are being tested separately. The production installation backend still uses the pinned Python engine; these component results do not satisfy the requested complete Swift migration or physical installation/resume qualification.
+
 ## Native installer integration
 
 [Installer PR #5](https://github.com/aurora-silicon/aurora-installer/pull/5) integrated the native macOS installer, Recovery app and nine-profile delivery into `aurora-installer/main` at `44a6dc9fe83a9efe1c70b07cf6e94a49c2d851ae`. Its Git tree is identical to the qualified source `f0d217364539e3cebff975689bcde2cf8d6045e7`; the root Windows CLI remains preserved.
