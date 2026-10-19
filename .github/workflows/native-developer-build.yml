@@ -118,17 +118,17 @@ jobs:
         run: |
           set -euo pipefail
           xcodebuildmcp swift-package build --package-path "$PWD" --configuration release
-          OMARCHY_DEVELOPER_BUILD=1 OMARCHY_APP_VERSION=2.1.1 OMARCHY_BUILD_JOBS=2 \
+          OMARCHY_DEVELOPER_BUILD=1 OMARCHY_APP_VERSION=2.1.2 OMARCHY_BUILD_JOBS=2 \
             OMARCHY_RECOVERY_TEMPLATE="$RUNNER_TEMP/native-runtime/recovery/Aurora Installer.app" \
             bash Packaging/build-app.sh "$RUNNER_TEMP/release" "$RUNNER_TEMP/native-app"
           app="$RUNNER_TEMP/native-app/Aurora Installer.app"
           codesign --verify --deep --strict "$app"
           [[ $(lipo -archs "$app/Contents/MacOS/OmarchyAppleInstallerApp") == arm64 ]]
-          package="$RUNNER_TEMP/native-output/Aurora-Installer-2.1.1-Developer.pkg"
+          package="$RUNNER_TEMP/native-output/Aurora-Installer-2.1.2-Developer.pkg"
           bash Packaging/build-developer-pkg.sh "$app" "$package"
           bash test/macos-developer-peer-binding.sh "$app" "$package" \
             2>&1 | tee "$RUNNER_TEMP/native-output/helper-peer-binding.log"
-          ditto -c -k --sequesterRsrc --keepParent "$app" "$RUNNER_TEMP/native-output/Aurora-Installer-2.1.1-Developer.zip"
+          ditto -c -k --sequesterRsrc --keepParent "$app" "$RUNNER_TEMP/native-output/Aurora-Installer-2.1.2-Developer.zip"
           cp "$RUNNER_TEMP/release/profile-manifest.json" "$RUNNER_TEMP/native-output/"
           cp "$RUNNER_TEMP/catalog-inputs/native-catalogs.tar.gz" "$RUNNER_TEMP/native-output/"
           export APP_PATH="$app"

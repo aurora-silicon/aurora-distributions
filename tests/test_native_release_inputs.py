@@ -60,9 +60,9 @@ class NativeReleaseInputTests(unittest.TestCase):
             catalog = json.loads((directory/'catalog.json').read_text())
             self.assertEqual(catalog['models'], json.loads(original[profile])['models'])
             self.assertEqual((self.source/'Profiles'/profile/'catalog.json').read_bytes(), original[profile])
-            self.assertTrue(catalog['installer']['downloadURL'].endswith('/native-dev-20261018/Aurora-Installer-2.1.1-Developer.zip'))
-            self.assertEqual(catalog['installer']['minimumVersion'], '2.1.1')
-            self.assertEqual(catalog['installer']['latestVersion'], '2.1.1')
+            self.assertTrue(catalog['installer']['downloadURL'].endswith('/native-dev-20261018/Aurora-Installer-2.1.2-Developer.zip'))
+            self.assertEqual(catalog['installer']['minimumVersion'], '2.1.2')
+            self.assertEqual(catalog['installer']['latestVersion'], '2.1.2')
             module.verify((directory/'catalog.json').read_bytes(), (directory/'catalog.json.sig').read_bytes(),
                           (self.root/'keys/catalog.ed25519.pub').read_bytes())
 
@@ -86,7 +86,7 @@ class NativeReleaseInputTests(unittest.TestCase):
     def test_newer_catalog_version_cannot_be_downgraded(self):
         directory = self.source/'Profiles/fedora-kde'
         catalog = json.loads((directory/'catalog.json').read_text())
-        catalog['installer']['latestVersion'] = '2.1.2'
+        catalog['installer']['latestVersion'] = '2.1.3'
         (directory/'catalog.json').write_text(json.dumps(catalog))
         self.sign(directory)
         with self.assertRaises(ValueError):

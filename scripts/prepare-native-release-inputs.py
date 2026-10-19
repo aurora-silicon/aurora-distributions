@@ -12,7 +12,7 @@ import tempfile
 import time
 
 ROOT = Path(__file__).resolve().parents[1]
-APP_VERSION = '2.1.1'
+APP_VERSION = '2.1.2'
 PROFILES = tuple(f'{distribution}-{desktop}' for distribution in ('fedora', 'arch', 'nixos')
                  for desktop in ('kde', 'gnome', 'minimal'))
 
