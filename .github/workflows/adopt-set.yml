@@ -38,7 +38,7 @@ jobs:
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add site
           if ! git diff --cached --quiet; then
-            git commit -m 'Adopt verified distribution delivery set' --trailer 'Assisted-by: LLM'
+            git commit -m 'Adopt verified distribution delivery set'
             git push
           fi
       - name: Publish the verified profile tree
