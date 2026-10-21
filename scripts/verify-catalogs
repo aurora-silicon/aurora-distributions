@@ -14,8 +14,11 @@ while IFS= read -r -d '' catalog; do
   python3 - "$catalog" <<'PY'
 import json,sys
 from pathlib import Path
-p=Path(sys.argv[1]);d=json.loads(p.read_text());assert d['schemaVersion']==4
+p=Path(sys.argv[1]);d=json.loads(p.read_text());assert d['schemaVersion'] in (4,5)
 if p.parent.parent.name=='Profiles':
  assert all(m.get('installationProfile')==p.parent.name for m in d['models'] if m.get('status')=='enabled')
+# Schema 5 catalogs are native-only: no model may name an installation engine.
+if d['schemaVersion']==5:
+ assert not any(k in m for m in d['models'] for k in ('engineArtifact','engineDigest','engineVersion'))
 PY
 done < <(find "$root/site" -name catalog.json -print0)
