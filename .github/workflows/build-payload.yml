@@ -8,6 +8,10 @@ on:
       image-run:
         type: string
         required: true
+      image-source-revision:
+        type: string
+        required: false
+        default: ''
       neo-reset-qa:
         type: boolean
         required: false
@@ -36,6 +40,7 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           PROFILE: ${{ inputs.profile }}
           IMAGE_RUN: ${{ inputs.image-run }}
+          IMAGE_SOURCE_REVISION: ${{ inputs.image-source-revision }}
           NEO_RESET_QA: ${{ inputs.neo-reset-qa }}
         run: |
           [[ $PROFILE =~ ^(fedora|arch|nixos)-(kde|gnome|minimal)$ && $IMAGE_RUN =~ ^[0-9]+$ ]]
@@ -46,8 +51,10 @@ jobs:
           gh api "repos/$GITHUB_REPOSITORY/actions/runs/$IMAGE_RUN" > image-build.json
           if [[ $NEO_RESET_QA == true ]]; then
             [[ $PROFILE == nixos-kde && $GITHUB_REPOSITORY == aurora-silicon/nixos-aurora ]]
-            jq -e --arg repo "$GITHUB_REPOSITORY" \
-              '.conclusion == "success" and .head_branch == "fix/neo-stage2-reset-20261021" and .head_sha == "1b26e6d2600781973ae9be9929df6369d12c55ef" and .head_repository.full_name == $repo and .path == ".github/workflows/images.yml"' image-build.json
+            [[ $IMAGE_SOURCE_REVISION =~ ^[0-9a-f]{40}$ ]]
+            jq -e --arg repo "$GITHUB_REPOSITORY" --arg branch "$GITHUB_REF_NAME" \
+              --arg revision "$IMAGE_SOURCE_REVISION" \
+              '.conclusion == "success" and .head_branch == $branch and .head_sha == $revision and .head_repository.full_name == $repo and .path == ".github/workflows/images.yml"' image-build.json
           else
             jq -e --arg repo "$GITHUB_REPOSITORY" '.conclusion == "success" and .head_branch == "main" and .head_repository.full_name == $repo and .path == ".github/workflows/images.yml"' image-build.json
           fi
