@@ -29,7 +29,7 @@ jobs:
       - uses: actions/checkout@v5
         with:
           repository: aurora-silicon/aurora-installer
-          ref: 8790880e7bd4d70b1a11b7efc178b8af188e7df3
+          ref: 9a67393979024575377fa7eab80d612c95e1f07c
           path: producer
       - name: Authenticate the completed image build
         env:
