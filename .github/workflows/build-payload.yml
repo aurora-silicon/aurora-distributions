@@ -33,7 +33,7 @@ jobs:
       - uses: actions/checkout@v5
         with:
           repository: aurora-silicon/aurora-installer
-          ref: 207f33532ebd43db3932edfcdf62df4442b69621
+          ref: 2d28c661b0c228fdc7da5743893d816b2740e132
           path: producer
       - name: Authenticate the completed image build
         env:
@@ -50,7 +50,6 @@ jobs:
           esac
           gh api "repos/$GITHUB_REPOSITORY/actions/runs/$IMAGE_RUN" > image-build.json
           if [[ $NEO_RESET_QA == true ]]; then
-            [[ $PROFILE == nixos-kde && $GITHUB_REPOSITORY == aurora-silicon/nixos-aurora ]]
             [[ $IMAGE_SOURCE_REVISION =~ ^[0-9a-f]{40}$ ]]
             jq -e --arg repo "$GITHUB_REPOSITORY" --arg branch "$GITHUB_REF_NAME" \
               --arg revision "$IMAGE_SOURCE_REVISION" \
@@ -125,7 +124,6 @@ jobs:
           import supported_models
           models,_=supported_models.load();profile=os.environ['PROFILE'];run=os.environ['IMAGE_RUN']
           if os.environ['NEO_RESET_QA']=='true':
-              assert profile=='nixos-kde'
               models=['apple,j700']
           lock=json.loads((native/'Engine/source-lock.json').read_text())
           inputs={'installation_profile':profile,'payload_name':profile+'-build-'+run+'.zip',
