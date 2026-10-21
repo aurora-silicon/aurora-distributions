@@ -1,0 +1,48 @@
+name: Prepare signed native-only installer profiles
+on:
+  workflow_dispatch:
+    inputs:
+      release-tag:
+        description: Immutable Aurora Installer alpha tag
+        required: true
+permissions:
+  contents: read
+jobs:
+  catalogs:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09
+        with:
+          persist-credentials: false
+      - name: Check engine-free catalog migration
+        run: python3 -m unittest discover -s tests -p test_native_only_profiles.py
+      - name: Verify and sign all nine catalog profiles
+        env:
+          SIGNING_KEY: ${{ secrets.INSTALLER_CATALOG_SIGNING_KEY }}
+          RELEASE_TAG: ${{ inputs.release-tag }}
+        run: |
+          set -euo pipefail
+          umask 077
+          key="$RUNNER_TEMP/catalog-key.pem"
+          trap 'rm -f "$key"' EXIT
+          python3 - "$key" <<'PY'
+          import os,sys
+          from pathlib import Path
+          value=os.environ['SIGNING_KEY']
+          if not value:
+              raise ValueError('catalog signing key is unavailable')
+          Path(sys.argv[1]).write_text(value)
+          PY
+          python3 scripts/prepare-native-only-profiles.py \
+            --source site/installer --output "$RUNNER_TEMP/native-only-profiles" \
+            --signing-key "$key" --release-tag "$RELEASE_TAG" \
+            --source-revision "$GITHUB_SHA"
+          tar -czf "$RUNNER_TEMP/native-only-profiles.tar.gz" \
+            -C "$RUNNER_TEMP/native-only-profiles" .
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          name: signed-native-only-profiles
+          path: ${{ runner.temp }}/native-only-profiles.tar.gz
+          retention-days: 30
