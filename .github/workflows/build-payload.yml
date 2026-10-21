@@ -8,6 +8,14 @@ on:
       image-run:
         type: string
         required: true
+      image-source-revision:
+        type: string
+        required: false
+        default: ''
+      neo-reset-qa:
+        type: boolean
+        required: false
+        default: false
     secrets:
       catalog-signing-key:
         required: true
@@ -25,13 +33,15 @@ jobs:
       - uses: actions/checkout@v5
         with:
           repository: aurora-silicon/aurora-installer
-          ref: 7cc5b1f553b3544b56f24e26d9006371d2f789a1
+          ref: b49b2c797f337c3f4c3ae7cd05b940f281d4f27b
           path: producer
       - name: Authenticate the completed image build
         env:
           GH_TOKEN: ${{ github.token }}
           PROFILE: ${{ inputs.profile }}
           IMAGE_RUN: ${{ inputs.image-run }}
+          IMAGE_SOURCE_REVISION: ${{ inputs.image-source-revision }}
+          NEO_RESET_QA: ${{ inputs.neo-reset-qa }}
         run: |
           [[ $PROFILE =~ ^(fedora|arch|nixos)-(kde|gnome|minimal)$ && $IMAGE_RUN =~ ^[0-9]+$ ]]
           case "$GITHUB_REPOSITORY:$PROFILE" in
@@ -39,7 +49,15 @@ jobs:
             *) exit 2;;
           esac
           gh api "repos/$GITHUB_REPOSITORY/actions/runs/$IMAGE_RUN" > image-build.json
-          jq -e --arg repo "$GITHUB_REPOSITORY" '.conclusion == "success" and .head_branch == "main" and .head_repository.full_name == $repo and .path == ".github/workflows/images.yml"' image-build.json
+          if [[ $NEO_RESET_QA == true ]]; then
+            [[ $PROFILE == nixos-kde && $GITHUB_REPOSITORY == aurora-silicon/nixos-aurora ]]
+            [[ $IMAGE_SOURCE_REVISION =~ ^[0-9a-f]{40}$ ]]
+            jq -e --arg repo "$GITHUB_REPOSITORY" --arg branch "$GITHUB_REF_NAME" \
+              --arg revision "$IMAGE_SOURCE_REVISION" \
+              '.conclusion == "success" and .head_branch == $branch and .head_sha == $revision and .head_repository.full_name == $repo and .path == ".github/workflows/images.yml"' image-build.json
+          else
+            jq -e --arg repo "$GITHUB_REPOSITORY" '.conclusion == "success" and .head_branch == "main" and .head_repository.full_name == $repo and .path == ".github/workflows/images.yml"' image-build.json
+          fi
           gh run download "$IMAGE_RUN" --repo "$GITHUB_REPOSITORY" --name "$PROFILE-candidate" --dir downloaded
           sudo apt-get update
           sudo apt-get install -y zstd
@@ -59,7 +77,7 @@ jobs:
           PY
       - name: Verify the signed native runtime inputs
         run: |
-          base=https://github.com/aurora-silicon/aurora-installer/releases/download/native-runtime-v0.9.2-aurora.2
+          base=https://github.com/aurora-silicon/aurora-installer/releases/download/native-runtime-v0.9.2-aurora.14
           mkdir runtime
           curl -fLsS --retry 3 "$base/runtime-manifest.json" -o runtime/runtime-manifest.json
           curl -fLsS --retry 3 "$base/runtime-manifest.json.sig" -o runtime/runtime-manifest.json.sig
@@ -72,7 +90,7 @@ jobs:
           python3 - <<'PY'
           from pathlib import Path
           import hashlib,json,subprocess
-          base='https://github.com/aurora-silicon/aurora-installer/releases/download/native-runtime-v0.9.2-aurora.2'
+          base='https://github.com/aurora-silicon/aurora-installer/releases/download/native-runtime-v0.9.2-aurora.14'
           for name,record in json.load(open('runtime/runtime-manifest.json'))['assets'].items():
               assert Path(name).name==name and record['bytes']<200_000_000
               path=Path('runtime')/name
@@ -83,16 +101,19 @@ jobs:
           mkdir recovery
           python3 - <<'PY'
           import tarfile
-          with tarfile.open('runtime/aurora-recovery-template-20261018.tar.gz') as archive:archive.extractall('recovery',filter='data')
+          with tarfile.open('runtime/aurora-recovery-template-alpha1.tar.gz') as archive:archive.extractall('recovery',filter='data')
           PY
       - name: Assemble the common payload and profile catalog
         env:
           PROFILE: ${{ inputs.profile }}
           IMAGE_RUN: ${{ inputs.image-run }}
+          NEO_RESET_QA: ${{ inputs.neo-reset-qa }}
         run: |
+          extra=()
+          if [[ $NEO_RESET_QA == true ]]; then extra+=(--native-neo-reset); fi
           python3 producer/macOS/scripts/assemble-distribution-payload.py --filesystems filesystems \
-            --recovery-app 'recovery/Aurora Installer.app' --output assets --release-id "build-$IMAGE_RUN"
-          cp runtime/installer-v0.9.2-aurora.2.tar.gz assets/
+            --recovery-app 'recovery/Aurora Installer.app' --output assets --release-id "build-$IMAGE_RUN" "${extra[@]}"
+          cp runtime/installer-v0.9.2-aurora.14.tar.gz assets/
           payload="assets/$PROFILE-build-$IMAGE_RUN.zip"
           if (( $(stat -c %s "$payload") >= 1900000000 )); then
             split -b 1073741824 --numeric-suffixes=0 --suffix-length=2 "$payload" "$payload.part"
@@ -103,10 +124,13 @@ jobs:
           native=Path('producer/macOS');sys.path.insert(0,str(native/'scripts'))
           import supported_models
           models,_=supported_models.load();profile=os.environ['PROFILE'];run=os.environ['IMAGE_RUN']
+          if os.environ['NEO_RESET_QA']=='true':
+              assert profile=='nixos-kde'
+              models=['apple,j700']
           lock=json.loads((native/'Engine/source-lock.json').read_text())
           inputs={'installation_profile':profile,'payload_name':profile+'-build-'+run+'.zip',
               'metadata_name':'installer-data-'+profile+'.json','engine_name':lock['validation_artifact']['filename'],
-              'engine_version':'v0.9.2-aurora.2','evidence_revision':'image-build-'+run,
+              'engine_version':lock['downstream_overlay']['version'],'evidence_revision':'image-build-'+run,
               'asahi_installer_tag':lock['upstream_installer']['tag'],'asahi_installer_revision':lock['upstream_installer']['commit'],
               'asahi_installer_data_revision':lock['upstream_metadata']['commit'],
               'downstream_revision':subprocess.check_output(['git','-C','producer','rev-parse','HEAD'],text=True).strip(),
@@ -115,11 +139,20 @@ jobs:
           Path('catalog-inputs.json').write_text(json.dumps(inputs,indent=2)+'\n')
           PY
           tag="payload-$PROFILE-$IMAGE_RUN"
+          catalog_options=()
+          if [[ $NEO_RESET_QA == true ]]; then
+            tag="$tag-neo-reset-qa"
+            catalog_options+=(--qa-only-model apple,j700)
+          fi
           python3 producer/macOS/scripts/make-unsigned-catalog.py --base-url "https://github.com/$GITHUB_REPOSITORY/releases/download/$tag" \
-            --assets-dir assets --inputs catalog-inputs.json --output assets/catalog.json
+            --assets-dir assets --inputs catalog-inputs.json --output assets/catalog.json "${catalog_options[@]}"
           cp producer/macOS/Release/trust-root.ed25519.pub assets/
+          feed="https://aurorasilicon.org/aurora-distributions/installer/Profiles/$PROFILE"
+          if [[ $NEO_RESET_QA == true ]]; then
+            feed="https://github.com/$GITHUB_REPOSITORY/releases/download/$tag"
+          fi
           bash producer/macOS/scripts/make-release-descriptor --adhoc --public-key assets/trust-root.ed25519.pub \
-            --base-url "https://aurorasilicon.org/aurora-distributions/installer/Profiles/$PROFILE" --output assets/release.json
+            --base-url "$feed" --output assets/release.json
           cp image-build.json catalog-inputs.json assets/
       - name: Sign the exact catalog bytes
         env:
@@ -138,14 +171,20 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           PROFILE: ${{ inputs.profile }}
           IMAGE_RUN: ${{ inputs.image-run }}
+          NEO_RESET_QA: ${{ inputs.neo-reset-qa }}
         run: |
           tag="payload-$PROFILE-$IMAGE_RUN"
+          if [[ $NEO_RESET_QA == true ]]; then tag="$tag-neo-reset-qa"; fi
           payload="assets/$PROFILE-build-$IMAGE_RUN.zip"
           # A multipart catalog pins the whole ZIP even though only its parts ship.
           if [[ -e $payload.part00 ]]; then rm -- "$payload"; fi
+          notes='Signed development installer delivery. The catalog binds the complete payload, parts, metadata and native engine. Image assembly and physical installation qualification are recorded separately. Neo local policy inputs are excluded.'
+          if [[ $NEO_RESET_QA == true ]]; then
+            notes='Signed Neo Reset QA delivery for the preserved-Stage-1 installer test. No factory inputs are published. Not adopted into the public feed; physical qualification is pending.'
+          fi
           gh release create "$tag" assets/* --repo "$GITHUB_REPOSITORY" --target "$GITHUB_SHA" --prerelease \
             --title "Aurora $PROFILE image build $IMAGE_RUN" \
-            --notes 'Signed development installer delivery. The catalog binds the complete payload, parts, metadata and native engine. Image assembly and physical installation qualification are recorded separately. Neo local policy inputs are excluded.'
+            --notes "$notes"
       - uses: actions/upload-artifact@v4
         with:
           name: ${{ inputs.profile }}-delivery-record
