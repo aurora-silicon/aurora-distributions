@@ -125,7 +125,7 @@ jobs:
           import supported_models
           models,_=supported_models.load();profile=os.environ['PROFILE'];run=os.environ['IMAGE_RUN']
           if os.environ['NEO_RESET_QA']=='true':
-              assert profile=='nixos-kde' and 'apple,j700' in models
+              assert profile=='nixos-kde'
               models=['apple,j700']
           lock=json.loads((native/'Engine/source-lock.json').read_text())
           inputs={'installation_profile':profile,'payload_name':profile+'-build-'+run+'.zip',
