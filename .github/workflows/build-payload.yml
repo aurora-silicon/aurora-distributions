@@ -94,7 +94,7 @@ jobs:
           mkdir recovery
           python3 - <<'PY'
           import tarfile
-          with tarfile.open('runtime/aurora-recovery-template-20261018.tar.gz') as archive:archive.extractall('recovery',filter='data')
+          with tarfile.open('runtime/aurora-recovery-template-alpha1.tar.gz') as archive:archive.extractall('recovery',filter='data')
           PY
       - name: Assemble the common payload and profile catalog
         env:
