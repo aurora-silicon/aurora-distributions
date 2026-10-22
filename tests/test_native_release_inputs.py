@@ -76,7 +76,7 @@ class NativeReleaseInputTests(unittest.TestCase):
     def test_signed_nonpublic_model_cannot_enter_the_bundle(self):
         directory = self.source/'Profiles/fedora-kde'
         catalog = json.loads((directory/'catalog.json').read_text())
-        catalog['models'][0]['deviceIdentifier'] = 'apple,j700'
+        catalog['models'][0]['deviceIdentifier'] = 'apple,j614s'
         (directory/'catalog.json').write_text(json.dumps(catalog))
         self.sign(directory)
         with self.assertRaises(ValueError):
