@@ -93,6 +93,49 @@ class NativeOnlyProfileTests(unittest.TestCase):
             self.prepare()
         self.assertFalse((self.root/'output').exists())
 
+    def rewrite(self, template, identifiers):
+        """Re-sign every profile for IDENTIFIERS sharing one metadata TEMPLATE."""
+        (self.root/'keys/supported-models.json').write_text(json.dumps({'supported': identifiers}))
+        self.metadata = json.dumps({'os_list': [template]}).encode()
+        for profile in module.PROFILES:
+            directory = self.source/'Profiles'/profile
+            catalog = json.loads((directory/'catalog.json').read_text())
+            model = dict(catalog['models'][0])
+            model['metadataDigest'] = 'sha256:'+hashlib.sha256(self.metadata).hexdigest()
+            catalog['models'] = [dict(model, deviceIdentifier=identifier)
+                                 for identifier in identifiers]
+            (directory/'catalog.json').write_text(json.dumps(catalog))
+            self.sign(directory)
+
+    def neo_template(self, **fields):
+        template = {'aurora_stage1': {'kind': 'common-raw-v1', 'qualified_machines': {
+                        'j274ap': ['26.6.2'], 'j700ap': ['26.6.2']}},
+                    'aurora_stage2': {'kind': 'board-file-v1', 'board_members': {
+                        'j274ap': 'esp/m1n1/boot-j274.bin', 'j700ap': 'esp/m1n1/boot-j700.bin'}}}
+        template.update(fields)
+        return template
+
+    def test_the_neo_is_admitted_with_its_own_stage_two(self):
+        self.rewrite(self.neo_template(), ['apple,j274', 'apple,j700'])
+        self.prepare()
+        for profile in module.PROFILES:
+            catalog = json.loads((self.root/'output/Profiles'/profile/'catalog.json').read_text())
+            self.assertEqual({model['deviceIdentifier'] for model in catalog['models']},
+                             {'apple,j274', 'apple,j700'})
+
+    def test_a_template_that_refuses_a_supported_board_is_rejected_before_output(self):
+        for template in (
+            self.neo_template(excluded_device_classes=['j700ap']),
+            self.neo_template(allowed_device_classes=['j700ap']),
+            self.neo_template(aurora_stage2={'kind': 'board-file-v1', 'board_members': {
+                'j274ap': 'esp/m1n1/boot-j274.bin'}}),
+            {key: value for key, value in self.neo_template().items() if key != 'aurora_stage2'},
+        ):
+            self.rewrite(template, ['apple,j274', 'apple,j700'])
+            with self.assertRaisesRegex(ValueError, 'does not admit every supported board'):
+                self.prepare()
+            self.assertFalse((self.root/'output').exists())
+
     def test_missing_native_stage_one_policy_is_rejected_before_output(self):
         self.metadata = json.dumps({'os_list': [{'aurora_stage1': {
             'kind': 'common-raw-v1', 'qualified_machines': {'j700ap': ['26.6.2']}}}]}).encode()

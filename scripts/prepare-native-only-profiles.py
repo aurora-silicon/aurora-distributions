@@ -100,6 +100,16 @@ def prepare(source, output, signing_key, release_tag, source_revision, fetch=fet
                 or set(policy['qualified_machines']) != boards
                 or any(not versions for versions in policy['qualified_machines'].values())):
             raise ValueError(f'{profile} lacks native Stage 1 policy for a supported board')
+        # Every supported board must be admitted by the shared template, and the
+        # MacBook Neo cannot load the combined Stage 2, so it needs its own.
+        admitted = template.get('allowed_device_classes')
+        excluded = set(template.get('excluded_device_classes') or [])
+        stage2 = template.get('aurora_stage2') or {}
+        neo_stage2 = (stage2.get('kind') == 'board-file-v1'
+                      and (stage2.get('board_members') or {}).get('j700ap'))
+        if (boards & excluded or (admitted is not None and not boards <= set(admitted))
+                or ('j700ap' in boards and not neo_stage2)):
+            raise ValueError(f'{profile} metadata does not admit every supported board')
         previous = hashlib.sha256(data['catalog.json']).hexdigest()
         catalog['schemaVersion'] = 5
         catalog['sequence'] = now
