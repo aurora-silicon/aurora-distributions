@@ -1,3 +1,4 @@
+import base64
 import hashlib
 import importlib.util
 import json
@@ -85,6 +86,53 @@ class NativeOnlyProfileTests(unittest.TestCase):
                           (self.root/'keys/catalog.ed25519.pub').read_bytes())
             for name in module.FILES:
                 self.assertEqual((self.source/'Profiles'/profile/name).read_bytes(), original[(profile, name)])
+
+    def to_schema_five(self, **extra):
+        """Re-sign every profile as the engine-free delivery build-payload emits."""
+        for profile in module.PROFILES:
+            directory = self.source/'Profiles'/profile
+            catalog = json.loads((directory/'catalog.json').read_text())
+            catalog['schemaVersion'] = 5
+            for model in catalog['models']:
+                for field in module.EXECUTION_FIELDS:
+                    model.pop(field, None)
+                model.update(extra)
+            (directory/'catalog.json').write_text(json.dumps(catalog))
+            self.sign(directory)
+
+    def test_engine_free_deliveries_are_resigned_for_the_release(self):
+        self.to_schema_five()
+        self.prepare()
+        receipt = json.loads((self.root/'output/native-only-catalogs.json').read_text())
+        self.assertEqual(receipt['source_catalog_schemas'], [5])
+        for profile in module.PROFILES:
+            catalog = json.loads((self.root/'output/Profiles'/profile/'catalog.json').read_text())
+            self.assertEqual(catalog['schemaVersion'], 5)
+            self.assertEqual(catalog['sequence'], 100)
+            self.assertFalse(set(module.EXECUTION_FIELDS) & set(catalog['models'][0]))
+
+    def test_a_schema_five_delivery_naming_an_engine_is_rejected(self):
+        self.to_schema_five(engineDigest='sha256:'+'a'*64)
+        with self.assertRaisesRegex(ValueError, 'names an engine'):
+            self.prepare()
+        self.assertFalse((self.root/'output').exists())
+
+    def test_empty_channels_are_resigned_as_schema_five(self):
+        self.prepare()
+        public = (self.root/'keys/catalog.ed25519.pub').read_bytes()
+        output = self.root/'output'
+        for directory in [output] + [output/'Profiles'/profile for profile in module.PROFILES]:
+            for channel in module.EMPTY_CHANNELS:
+                target = directory/'channels'/channel
+                catalog = (target/'catalog.json').read_bytes()
+                self.assertEqual(json.loads(catalog),
+                                 {'schemaVersion': 5, 'sequence': 100,
+                                  'issuedAt': json.loads(catalog)['issuedAt'], 'models': []})
+                module.verify(catalog, (target/'catalog.json.sig').read_bytes(), public)
+                envelope = json.loads((target/'catalog.signed.json').read_text())
+                self.assertEqual(base64.b64decode(envelope['catalog']), catalog)
+                self.assertEqual(base64.b64decode(envelope['signature']),
+                                 (target/'catalog.json.sig').read_bytes())
 
     def test_tampered_source_is_rejected_before_output(self):
         path = self.source/'Profiles/nixos-minimal/catalog.json'
