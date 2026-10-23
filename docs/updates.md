@@ -85,6 +85,7 @@ behave like today's manual ones, minus the run-ID bookkeeping.
 | `AUTO_IMAGES` | Rebuild the three images after a testing deploy |
 | `AUTO_PAYLOADS` | Publish a signed payload release after each image build |
 | `STABLE_MIN_SOAK_HOURS` | Minimum time on testing before promotion (default 0) |
+| `TRACKER_APP_CLIENT_ID` | Use this GitHub App (key in the `source-tracking` environment) instead of the workflow token |
 
 Merge policy per source lives in each repository's `tracking.json`. A proposal is never merged
 automatically when upstream history was rewritten, when the kernel's version changes
@@ -222,9 +223,12 @@ installer only if the catalog key leaked.
    scope trust by repository. Recommended: one key per distribution for now.
 5. **NixOS Stage 2 on updates.** Installed NixOS never refreshes aura or the DTBs. Decide whether
    `nixosModules.installed` should regenerate Stage 2 the way `update-m1n1` does.
-6. **A GitHub App for the bot.** Optional. Merges by `GITHUB_TOKEN` do not start push workflows, which the
-   design accounts for by reusing the PR's build and dispatching publication; an App token would also
-   allow branch protection with required reviews.
+6. **Who opens the tracker's PRs.** The workflow token cannot open pull requests while "Allow GitHub
+   Actions to create and approve pull requests" is off, as it is in all four repositories. Either turn it
+   on, or (recommended) install a GitHub App with Contents, Pull requests and Actions write and set
+   `TRACKER_APP_CLIENT_ID` plus the `TRACKER_APP_PRIVATE_KEY` secret in the `source-tracking`
+   environment; the tracker then uses it. App merges also start the normal push builds, and work with
+   branch protection that requires reviews.
 
 ## Gaps not closed here
 

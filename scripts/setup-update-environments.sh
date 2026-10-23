@@ -11,6 +11,7 @@
 #   testing-signing   distro repos   package/cache keys; no reviewers (automation)
 #   stable-promotion  distro repos   required reviewers; gates stable promotion and rollbacks
 #   catalog-signing   all four repos installer catalog key
+#   source-tracking   distro repos   optional GitHub App key for the source tracker
 set -euo pipefail
 org=aurora-silicon
 distros=(alarm-aurora fedora-aurora nixos-aurora)
@@ -55,6 +56,7 @@ for repo in "${distros[@]}"; do
   environment "$repo" testing-signing no
   environment "$repo" stable-promotion yes
   environment "$repo" catalog-signing no
+  environment "$repo" source-tracking no
 done
 environment aurora-distributions catalog-signing no
 
@@ -74,6 +76,15 @@ Next, by hand (the private keys never pass through this script):
   for r in alarm-aurora fedora-aurora nixos-aurora aurora-distributions; do
     gh secret set INSTALLER_CATALOG_SIGNING_KEY --env catalog-signing -R aurora-silicon/$r < catalog-key.pem
   done
+
+The source tracker opens its PR with the workflow token, which these
+repositories do not allow yet. Either allow it (Settings > Actions > General >
+"Allow GitHub Actions to create and approve pull requests"), or, preferred,
+install a GitHub App with Contents, Pull requests and Actions write on the three
+distribution repositories and store it:
+
+  gh variable set TRACKER_APP_CLIENT_ID --body <client id> -R aurora-silicon/<repo>
+  gh secret set TRACKER_APP_PRIVATE_KEY --env source-tracking -R aurora-silicon/<repo> < app.private-key.pem
 
 Then confirm one signing run per repository succeeds, and only then delete the
 repository-level copies, which any workflow on any branch can read:
