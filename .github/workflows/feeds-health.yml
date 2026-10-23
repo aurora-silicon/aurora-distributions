@@ -1,0 +1,80 @@
+name: Feed health
+# Every installed system and the installer depend on aurorasilicon.org, which
+# exists only while aurora-silicon/aurora-silicon.github.io is public with
+# Pages and the custom domain enabled. This checks the live feeds and catalogs
+# (signatures included) and keeps one issue open while anything fails.
+on:
+  schedule:
+    - cron: '7,37 * * * *'
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - .github/workflows/feeds-health.yml
+      - scripts/check-feeds.py
+permissions: {}
+concurrency:
+  group: feeds-health
+  cancel-in-progress: true
+jobs:
+  check:
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+    outputs:
+      healthy: ${{ steps.check.outputs.healthy }}
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+        with:
+          persist-credentials: false
+      - id: check
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if python3 scripts/check-feeds.py --report report.md; then healthy=true; else healthy=false; fi
+          cat report.md >> "$GITHUB_STEP_SUMMARY"
+          echo "healthy=$healthy" >> "$GITHUB_OUTPUT"
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: feed-health
+          path: report.md
+          retention-days: 7
+
+  alert:
+    needs: check
+    if: always() && github.event_name != 'pull_request' && needs.check.result == 'success'
+    runs-on: ubuntu-24.04
+    permissions:
+      issues: write
+    steps:
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
+        with:
+          name: feed-health
+      - env:
+          GH_TOKEN: ${{ github.token }}
+          HEALTHY: ${{ needs.check.outputs.healthy }}
+          WEBHOOK: ${{ secrets.FEEDS_HEALTH_WEBHOOK }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          set -euo pipefail
+          title='Update feeds or installer catalogs are failing'
+          open=$(gh issue list --repo "$GITHUB_REPOSITORY" --state open --search "\"$title\" in:title" --json number --jq '.[0].number // empty')
+          notify() {
+            [[ -n $WEBHOOK ]] || return 0
+            jq -n --arg content "$1" '{content: $content}' |
+              curl -fsS -o /dev/null -H 'Content-Type: application/json' --data @- "$WEBHOOK" || true
+          }
+          if [[ $HEALTHY == true ]]; then
+            if [[ -n $open ]]; then
+              gh issue close "$open" --repo "$GITHUB_REPOSITORY" --comment "Recovered: $RUN_URL"
+              notify "Aurora feeds recovered: $RUN_URL"
+            fi
+            exit 0
+          fi
+          { echo "The scheduled health check failed: $RUN_URL"; echo; cat report.md; } > body.md
+          if [[ -n $open ]]; then
+            # Keep one quiet, current report instead of a comment every run.
+            gh issue edit "$open" --repo "$GITHUB_REPOSITORY" --body-file body.md
+          else
+            gh issue create --repo "$GITHUB_REPOSITORY" --title "$title" --body-file body.md
+            notify "Aurora feeds are failing: $RUN_URL"
+          fi

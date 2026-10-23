@@ -8,9 +8,42 @@ from pathlib import Path
 import re
 import subprocess
 import tempfile
+import urllib.error
 import urllib.request
 
 ROOT = Path(__file__).resolve().parents[1]
+PAYLOAD_WORKFLOW = 'aurora-silicon/aurora-distributions/.github/workflows/build-payload.yml'
+
+
+def verify_provenance(repository, base, data):
+    """Deliveries published since build-payload.yml attests them carry a
+    SHA256SUMS that a GitHub build provenance attestation covers. Verify it
+    and that the downloaded files are the attested ones; older deliveries
+    predate attestations."""
+    try:
+        sums = urllib.request.urlopen(base + '/SHA256SUMS', timeout=60).read().decode()
+    except urllib.error.HTTPError as error:
+        if error.code == 404:
+            return 'none (delivery predates attestations)'
+        raise
+    listed = {}
+    for line in sums.splitlines():
+        digest, name = line.split(maxsplit=1)
+        listed[name.lstrip('*')] = digest
+    for name, content in data.items():
+        if listed.get(name) != hashlib.sha256(content).hexdigest():
+            raise ValueError(f'{name} differs from the attested SHA256SUMS')
+    with tempfile.TemporaryDirectory(prefix='aurora-provenance-') as temporary:
+        catalog = Path(temporary) / 'catalog.json'
+        catalog.write_bytes(data['catalog.json'])
+        result = subprocess.run(['gh', 'attestation', 'verify', str(catalog), '--repo', repository,
+                                 '--signer-workflow', PAYLOAD_WORKFLOW, '--deny-self-hosted-runners',
+                                 '--format', 'json'], check=True, capture_output=True, text=True)
+    subjects = {(s['name'], s['digest']['sha256']) for v in json.loads(result.stdout)
+                for s in v['verificationResult']['statement']['subject']}
+    if not set(listed.items()) <= subjects:
+        raise ValueError('the provenance attestation does not cover every delivery asset')
+    return 'verified'
 
 
 def adopt(repository, tag, site):
@@ -31,6 +64,7 @@ def adopt(repository, tag, site):
         for name in ('catalog.json', 'catalog.json.sig'): (directory/name).write_bytes(data[name])
         subprocess.run(['openssl','pkeyutl','-verify','-pubin','-keyform','DER','-inkey',str(directory/'public.der'),
                         '-rawin','-in',str(directory/'catalog.json'),'-sigfile',str(directory/'catalog.json.sig')],check=True)
+    provenance = verify_provenance(repository, base, data)
     receipt = json.loads(data['delivery.json']); profile = receipt['installation_profile']
     if not re.fullmatch(prefixes[repository] + r'-(kde|gnome|minimal)', profile) or receipt['private_neo_inputs']:
         raise ValueError('delivery is not a public profile for this repository')
@@ -78,7 +112,7 @@ def adopt(repository, tag, site):
                           run=f'https://github.com/{repository}/actions/runs/{run["id"]}',
                           source=run['head_sha'], release=base, physical_installation='pending')
     status_path.write_text(json.dumps(status,indent=2)+'\n')
-    print('Adopted signed public profile:',profile)
+    print('Adopted signed public profile:', profile, '(attestation:', provenance + ')')
 
 
 if __name__ == '__main__':

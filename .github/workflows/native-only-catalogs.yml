@@ -11,6 +11,8 @@ jobs:
   catalogs:
     if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-24.04
+    # The catalog key lives in the catalog-signing environment (main only).
+    environment: catalog-signing
     timeout-minutes: 20
     steps:
       - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09

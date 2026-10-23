@@ -12,6 +12,7 @@ on:
 permissions:
   contents: write
   actions: write
+  attestations: read
 concurrency:
   group: distribution-profile-adoption
   cancel-in-progress: false
@@ -22,9 +23,10 @@ jobs:
   adopt:
     runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
       - name: Verify and adopt the profile
         env:
+          GH_TOKEN: ${{ github.token }}
           REPOSITORY: ${{ inputs.repository }}
           RELEASE_TAG: ${{ inputs.release-tag }}
         run: |

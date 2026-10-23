@@ -9,8 +9,17 @@ on:
         type: string
         required: true
     secrets:
+      INSTALLER_CATALOG_SIGNING_KEY:
+        description: >-
+          Resolved from the caller's catalog-signing environment when the secret lives there (the
+          environment secret takes precedence over a passed value); callers may also pass it
+        required: false
       catalog-signing-key:
-        required: true
+        description: Deprecated name kept for callers pinned before the environment split
+        required: false
+    outputs:
+      tag:
+        value: ${{ jobs.publish.outputs.tag }}
 permissions:
   contents: write
   actions: read
@@ -18,15 +27,25 @@ defaults:
   run:
     shell: bash
 jobs:
+  # Assembly runs without any signing credential. It leaves the complete set
+  # in a draft release; only the catalog's exact bytes go to the signer.
   payload:
     runs-on: ubuntu-24.04-arm
     timeout-minutes: 120
+    permissions:
+      contents: write
+      actions: read
+      attestations: read
+    outputs:
+      tag: ${{ steps.draft.outputs.tag }}
+      catalog-digest: ${{ steps.draft.outputs.catalog-digest }}
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
         with:
           repository: aurora-silicon/aurora-installer
           ref: b35281a38740d394cfdcef5b06578d1ee2f64bda
           path: producer
+          persist-credentials: false
       - name: Authenticate the completed image build
         env:
           GH_TOKEN: ${{ github.token }}
@@ -41,6 +60,14 @@ jobs:
           gh api "repos/$GITHUB_REPOSITORY/actions/runs/$IMAGE_RUN" > image-build.json
           jq -e --arg repo "$GITHUB_REPOSITORY" '.conclusion == "success" and .head_branch == "main" and .head_repository.full_name == $repo and .path == ".github/workflows/images.yml"' image-build.json
           gh run download "$IMAGE_RUN" --repo "$GITHUB_REPOSITORY" --name "$PROFILE-candidate" --dir downloaded
+          # Images built by a workflow that attests must carry valid provenance.
+          head=$(jq -r .head_sha image-build.json)
+          if gh api "repos/$GITHUB_REPOSITORY/contents/.github/workflows/images.yml?ref=$head" \
+               -H 'Accept: application/vnd.github.raw' | grep -q 'actions/attest-build-provenance'; then
+            gh attestation verify "downloaded/out/$PROFILE-filesystems.tar.zst" --repo "$GITHUB_REPOSITORY" \
+              --signer-workflow "$GITHUB_REPOSITORY/.github/workflows/images.yml" --source-digest "$head" \
+              --deny-self-hosted-runners
+          fi
           sudo apt-get update
           sudo apt-get install -y zstd
           python3 - <<'PY'
@@ -122,36 +149,99 @@ jobs:
           bash producer/macOS/scripts/make-release-descriptor --adhoc --public-key assets/trust-root.ed25519.pub \
             --base-url "$feed" --output assets/release.json
           cp image-build.json catalog-inputs.json assets/
-      - name: Sign the exact catalog bytes
-        env:
-          CATALOG_KEY: ${{ secrets.catalog-signing-key }}
-        run: |
-          key="$RUNNER_TEMP/aurora-catalog-key.pem"
-          trap 'rm -f "$key"' EXIT
-          umask 077
-          printf '%s' "$CATALOG_KEY" > "$key"
-          openssl pkey -in "$key" -pubout -outform DER -out derived-public.der
-          cmp derived-public.der runtime/public.der
-          openssl pkeyutl -sign -inkey "$key" -rawin -in assets/catalog.json -out assets/catalog.json.sig
-          openssl pkeyutl -verify -pubin -keyform DER -inkey runtime/public.der -rawin -in assets/catalog.json -sigfile assets/catalog.json.sig
-      - name: Publish the immutable delivery set
+      - id: draft
+        name: Stage the unsigned delivery as a draft release
         env:
           GH_TOKEN: ${{ github.token }}
           PROFILE: ${{ inputs.profile }}
           IMAGE_RUN: ${{ inputs.image-run }}
         run: |
+          set -euo pipefail
           tag="payload-$PROFILE-$IMAGE_RUN"
           payload="assets/$PROFILE-build-$IMAGE_RUN.zip"
           # A multipart catalog pins the whole ZIP even though only its parts ship.
           if [[ -e $payload.part00 ]]; then rm -- "$payload"; fi
-          notes='Signed development installer delivery for every supported Mac, the MacBook Neo included. The catalog binds the complete payload, parts, metadata and native engine. No per-Mac firmware, calibration or radio policy is included; the installer derives them on the Mac. Image assembly and physical installation qualification are recorded separately.'
-          gh release create "$tag" assets/* --repo "$GITHUB_REPOSITORY" --target "$GITHUB_SHA" --prerelease \
-            --title "Aurora $PROFILE image build $IMAGE_RUN" \
-            --notes "$notes"
-      - uses: actions/upload-artifact@v4
+          gh release create "$tag" assets/* --repo "$GITHUB_REPOSITORY" --target "$GITHUB_SHA" --draft \
+            --title "Aurora $PROFILE image build $IMAGE_RUN" --notes 'Staged; awaiting the catalog signature.'
+          printf 'tag=%s\ncatalog-digest=%s\n' "$tag" "$(sha256sum assets/catalog.json | cut -d' ' -f1)" >> "$GITHUB_OUTPUT"
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
         with:
           name: ${{ inputs.profile }}-delivery-record
           path: |
             assets/*.json
             assets/catalog.json.sig
             assets/trust-root.ed25519.pub
+
+  # The catalog key lives in the caller's catalog-signing environment (main
+  # only). This job sees nothing but the catalog bytes it signs.
+  sign:
+    needs: payload
+    runs-on: ubuntu-24.04
+    environment: catalog-signing
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+        with:
+          repository: aurora-silicon/aurora-installer
+          ref: b35281a38740d394cfdcef5b06578d1ee2f64bda
+          path: producer
+          persist-credentials: false
+          sparse-checkout: macOS/Release/trust-root.ed25519.pub
+      - name: Sign the exact catalog bytes
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ needs.payload.outputs.tag }}
+          DIGEST: ${{ needs.payload.outputs.catalog-digest }}
+          CATALOG_KEY: ${{ secrets.INSTALLER_CATALOG_SIGNING_KEY || secrets.catalog-signing-key }}
+        run: |
+          set -euo pipefail
+          gh release download "$TAG" --repo "$GITHUB_REPOSITORY" --pattern catalog.json --dir signing
+          echo "$DIGEST  signing/catalog.json" | sha256sum -c -
+          python3 - <<'PY'
+          from pathlib import Path
+          key=Path('producer/macOS/Release/trust-root.ed25519.pub').read_bytes();assert len(key)==32
+          Path('public.der').write_bytes(bytes.fromhex('302a300506032b6570032100')+key)
+          PY
+          key="$RUNNER_TEMP/aurora-catalog-key.pem"
+          trap 'rm -f "$key"' EXIT
+          umask 077
+          printf '%s' "$CATALOG_KEY" > "$key"
+          openssl pkey -in "$key" -pubout -outform DER -out derived-public.der
+          cmp derived-public.der public.der
+          openssl pkeyutl -sign -inkey "$key" -rawin -in signing/catalog.json -out signing/catalog.json.sig
+          openssl pkeyutl -verify -pubin -keyform DER -inkey public.der -rawin -in signing/catalog.json \
+            -sigfile signing/catalog.json.sig
+          gh release upload "$TAG" signing/catalog.json.sig --repo "$GITHUB_REPOSITORY"
+
+  publish:
+    needs: [payload, sign]
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: write
+      id-token: write
+      attestations: write
+    outputs:
+      tag: ${{ needs.payload.outputs.tag }}
+    steps:
+      - name: List the staged assets' digests
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ needs.payload.outputs.tag }}
+        run: |
+          set -euo pipefail
+          gh release view "$TAG" --repo "$GITHUB_REPOSITORY" --json assets \
+            --jq '.assets[] | "\(.digest | ltrimstr("sha256:"))  \(.name)"' > SHA256SUMS
+          grep -q '  catalog.json.sig$' SHA256SUMS
+          awk 'length($1) != 64 { exit 1 }' SHA256SUMS
+      - uses: actions/attest-build-provenance@4d101475d8b20a2381f78447822ac1eab6504dd8 # v4.2.2
+        with:
+          subject-checksums: SHA256SUMS
+      - name: Publish the immutable delivery set
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ needs.payload.outputs.tag }}
+        run: |
+          gh release upload "$TAG" SHA256SUMS --repo "$GITHUB_REPOSITORY"
+          notes='Signed development installer delivery for every supported Mac, the MacBook Neo included. The catalog binds the complete payload, parts, metadata and native engine, and every asset carries a GitHub build provenance attestation (SHA256SUMS). No per-Mac firmware, calibration or radio policy is included; the installer derives them on the Mac. Image assembly and physical installation qualification are recorded separately.'
+          gh release edit "$TAG" --repo "$GITHUB_REPOSITORY" --draft=false --prerelease --notes "$notes"
