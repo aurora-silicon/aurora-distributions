@@ -73,19 +73,19 @@ automatically after an image build (`AUTO_PAYLOADS`), but adopting them into the
 
 ## Switches
 
-Everything automatic is off until its repository variable is `true`. With all of them off the workflows
-behave like today's manual ones, minus the run-ID bookkeeping.
+Everything automatic is controlled by a repository variable in each distribution repository; a variable
+that is not `true` is off. The settings in force since 2026-10-23:
 
-| Variable | Effect |
-|---|---|
-| `TRACK_SOURCES` | Open or refresh the pin PR every 30 minutes |
-| `AUTO_MERGE_SOURCES` | Merge that PR once every CI run on its exact head has passed and its policy allows it |
-| `AUTO_PUBLISH_TESTING` | Publish a signed snapshot after each successful main build (and every 6 h) |
-| `AUTO_DEPLOY_TESTING` | Make that snapshot the live testing feed |
-| `AUTO_IMAGES` | Rebuild the three images after a testing deploy |
-| `AUTO_PAYLOADS` | Publish a signed payload release after each image build |
-| `STABLE_MIN_SOAK_HOURS` | Minimum time on testing before promotion (default 0) |
-| `TRACKER_APP_CLIENT_ID` | Use this GitHub App (key in the `source-tracking` environment) instead of the workflow token |
+| Variable | Effect | Set to |
+|---|---|---|
+| `TRACK_SOURCES` | Open or refresh the pin PR every 30 minutes | `true` |
+| `AUTO_MERGE_SOURCES` | Merge that PR once every CI run on its exact head has passed and its policy allows it | off; turn on after about a week of clean tracker PRs |
+| `AUTO_PUBLISH_TESTING` | Publish a signed snapshot after each successful main build (and every 6 h) | `true` |
+| `AUTO_DEPLOY_TESTING` | Make that snapshot the live testing feed | off: every installed system follows testing, so deploying stays a deliberate step |
+| `AUTO_IMAGES` | Rebuild the three images after a testing deploy | off |
+| `AUTO_PAYLOADS` | Publish a signed payload release after each image build | off |
+| `STABLE_MIN_SOAK_HOURS` | Minimum time on testing before promotion (default 0) | unset |
+| `TRACKER_APP_CLIENT_ID` | Use this GitHub App (key in the `source-tracking` environment) instead of the workflow token | unset |
 
 Merge policy per source lives in each repository's `tracking.json`. A proposal is never merged
 automatically when upstream history was rewritten, when the kernel's version changes
@@ -119,9 +119,8 @@ Rules the workflows follow:
 - Every third-party action is pinned by commit SHA. Every workflow starts from `permissions: {}` and
   grants each job only what it uses.
 
-**Until the user moves them, the keys are repository secrets**, which any workflow on any branch pushed by
-a writer can read. The workflows already name the environments, so moving the secrets needs no code
-change (`scripts/setup-update-environments.sh`).
+Every signing key exists only as a secret of its environment; repository-level copies were removed on
+2026-10-23 after the keys were copied with libsodium sealed boxes (the plaintext never left GitHub).
 
 ### Provenance
 
@@ -211,29 +210,70 @@ installer only if the catalog key leaked.
   expired artifact), the publish run requests a main build of exactly those packages and finishes; the
   build's completion triggers publication again.
 
-## Decisions for the maintainers
+## Release procedure
 
-1. **Stable channel.** Recommended: yes, with images switching to stable once one snapshot has been
-   promoted. Until then installed systems stay on testing and `AUTO_DEPLOY_TESTING` should stay off.
-2. **Who approves promotion.** Recommended: the `stable-promotion` environment with at least two named
-   reviewers, self-review allowed while the team is small.
-3. **Automatic merging of kernel and Mesa pins.** Recommended: aura and Mesa `auto`, kernel
-   `auto-same-version`, with `AUTO_MERGE_SOURCES` on only after a week of manual merges.
-4. **Separate stable keys.** Optional. dnf and Nix can trust a stable-only key per channel; pacman cannot
-   scope trust by repository. Recommended: one key per distribution for now.
-5. **NixOS Stage 2 on updates.** Installed NixOS never refreshes aura or the DTBs. Decide whether
-   `nixosModules.installed` should regenerate Stage 2 the way `update-m1n1` does.
-6. **Who opens the tracker's PRs.** The workflow token cannot open pull requests while "Allow GitHub
-   Actions to create and approve pull requests" is off, as it is in all four repositories. Either turn it
-   on, or (recommended) install a GitHub App with Contents, Pull requests and Actions write and set
-   `TRACKER_APP_CLIENT_ID` plus the `TRACKER_APP_PRIVATE_KEY` secret in the `source-tracking`
-   environment; the tracker then uses it. App merges also start the normal push builds, and work with
-   branch protection that requires reviews.
+A release (an Alpha, for example) uses the same chain as everyday updates; only the deploys, image builds,
+adoption and DMG are dispatched by hand.
+
+1. **Pins.** Source updates land on `main` as merge commits: the tracker's PR (`auto/track-sources`) or a
+   hand-made PR. `main` builds the changed packages on push.
+2. **Snapshots (automatic).** When the builds finish, `publish.yml` (ALARM, Fedora) and
+   `publish-cache.yml` (NixOS) publish `testing-YYYYMMDD.N` and `cache-testing-YYYYMMDD.N`. A package
+   without a current build is rebuilt on `main` first, and publication runs again by itself. To publish at
+   once: `gh workflow run publish.yml -R aurora-silicon/<repo> --ref main` (NixOS: `publish-cache.yml`).
+   Check that the release has `SHA256SUMS` and that its run summary lists the expected versions.
+3. **Testing feeds (by hand).**
+   ```sh
+   gh workflow run deploy-snapshot.yml -R aurora-silicon/alarm-aurora  --ref main -f channel=testing -f release-tag=<alarm tag>
+   gh workflow run deploy-snapshot.yml -R aurora-silicon/fedora-aurora --ref main -f channel=testing -f release-tag=<fedora tag>
+   gh workflow run deploy-cache.yml    -R aurora-silicon/nixos-aurora  --ref main -f release-tag=<cache tag>
+   ```
+   No approval is needed for a newer snapshot on testing. `deploy-cache.yml` also moves `channel-testing`,
+   which new NixOS installs follow.
+4. **Images.** ALARM: `images.yml -f profile=arch-<p> -f release-tag=<alarm tag>`. Fedora:
+   `images.yml -f profile=fedora-<p>` (builds from the testing feed just deployed). NixOS:
+   `images.yml -f desktop=<p>` on `main`, which must be the commit `channel-testing` now names, so every
+   hardware output comes from the signed cache. With `AUTO_IMAGES=true` the deploy dispatches all three.
+5. **Payloads.** `publish-payload.yml -f profile=<profile> -f image-run=<image run>` for each of the nine
+   images (or `AUTO_PAYLOADS=true`). The catalog is signed in `catalog-signing`; the release carries
+   `SHA256SUMS` and an attestation.
+6. **Adoption, catalogs, installer** (here and in aurora-installer, unchanged): `adopt-set.yml` with the
+   nine deliveries (it verifies signatures and attestations), `native-only-catalogs.yml` for the release
+   tag, commit the signed catalogs, then `native-installer-dmg.yml`.
+7. **Stable** (when the team decides): `gh workflow run promote.yml -R aurora-silicon/<repo> --ref main`,
+   approved by a `stable-promotion` reviewer (`gh api` can approve the pending deployment).
+
+## Settings and decisions
+
+In force since 2026-10-23:
+
+- **Environments** (`scripts/setup-update-environments.sh`): `testing-signing`, `catalog-signing` and
+  `source-tracking` are limited to `main`; `stable-promotion` is limited to `main` and requires a review by
+  DjDeveloperr, with self-review allowed so the same account can dispatch and approve. Every signing key
+  lives only in its environment; the repository-level copies were removed.
+- **Tracker PRs** are opened by the workflow token: "Allow GitHub Actions to create and approve pull
+  requests" is on in alarm-aurora, fedora-aurora and nixos-aurora only. This is acceptable only while no
+  branch requires reviews, because any workflow could then approve its own PR. **Before any branch rule
+  requires reviews, move the tracker to a GitHub App** (`TRACKER_APP_CLIENT_ID`, key in
+  `source-tracking`) and turn the setting off again.
+- **Branch rules:** `main` in alarm-aurora, fedora-aurora, nixos-aurora, aurora-distributions,
+  aurora-installer and aura blocks force pushes and deletion. No required reviews or checks.
+- **Automatic merging:** aura and Mesa `auto`, kernel `auto-same-version` in `tracking.json`;
+  `AUTO_MERGE_SOURCES` stays off for about a week of clean tracker PRs, then is turned on.
+- **NixOS:** new images follow `channel-testing` with a lock pinned to the image commit, `aurora-update`
+  takes the newest signed update in one command, and every rebuild refreshes the ESP Stage 2 exactly as
+  `update-m1n1` does on ALARM and Fedora. There are no unattended upgrades on any distribution.
+
+Still open:
+
+1. **Stable channel for users.** Images keep following testing until one snapshot has been promoted and
+   images are built with `channel=stable`.
+2. **More promotion reviewers.** Add a second reviewer to `stable-promotion` when the team grows.
+3. **Separate stable keys.** Optional. dnf and Nix can trust a stable-only key per channel; pacman cannot
+   scope trust by repository.
 
 ## Gaps not closed here
 
-- Signing keys stay readable by every workflow until they move into environments.
-- `main` has no branch protection in any repository.
 - ALARM recipes for aura, the kernel, Mesa, U-Boot and others use `git+…#commit=` sources with
   `sha256sums=('SKIP')`, pinned by commit ID (SHA-1) rather than by the archive SHA-256 in
   `sources.json`. Moving them to verified archives touches the kernel and Mesa recipes and is left to the
