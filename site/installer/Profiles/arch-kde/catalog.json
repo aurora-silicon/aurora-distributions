@@ -1,11 +1,11 @@
 {
-  "schemaVersion": 5,
-  "sequence": 1792573461,
-  "issuedAt": "2026-10-21T09:04:21Z",
+  "schemaVersion": 4,
+  "sequence": 1792716988,
+  "issuedAt": "2026-10-23T00:56:28Z",
   "installer": {
     "minimumVersion": "0.1.0",
     "latestVersion": "0.1.0",
-    "downloadURL": "https://github.com/aurora-silicon/aurora-installer/releases/tag/v0.1.0-alpha.6"
+    "downloadURL": "https://github.com/aurora-silicon/aurora-installer/releases/tag/v0.1.0-alpha.3"
   },
   "models": [
     {
@@ -14,45 +14,52 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "2d28c661b0c228fdc7da5743893d816b2740e132",
-      "metadataDigest": "sha256:71bef937616e25412e874f515434e1f6af50ed509d73522d4d91e7353e50e431",
-      "payloadDigest": "sha256:bc10d1828256523b8dd3d017bcb7d28139fb0ded40169fcc9709fbedc920718b",
-      "evidenceRevision": "image-build-39556550668",
+      "downstreamRevision": "b35281a38740d394cfdcef5b06578d1ee2f64bda",
+      "metadataDigest": "sha256:d43a1fdfc389cdf86b5377f30165067b04083d120ace6e258152518be3533978",
+      "payloadDigest": "sha256:13204db35514751f3c73b8348cc74e6a5579194149510469910997f41d0debe5",
+      "evidenceRevision": "image-build-39880111668",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/installer-data-arch-kde.json",
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/installer-data-arch-kde.json",
         "fileName": "installer-data-arch-kde.json",
-        "sizeBytes": 9568
+        "sizeBytes": 9625
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip",
-        "fileName": "arch-kde-build-39556550668.zip",
-        "sizeBytes": 4293411026,
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip",
+        "fileName": "arch-kde-build-39880111668.zip",
+        "sizeBytes": 4280056144,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part00",
-            "fileName": "arch-kde-build-39556550668.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part00",
+            "fileName": "arch-kde-build-39880111668.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:a0ce5de3ac998fdf1398c7d208ba7f462e8dbbdcce9cab3587c24e6eeb61293e"
+            "sha256": "sha256:0af75e0e4d608e9f6c9a1f8c1d80b1e78f7e49b348ec2367c5808ff1c73d8856"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part01",
-            "fileName": "arch-kde-build-39556550668.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part01",
+            "fileName": "arch-kde-build-39880111668.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:faf4688c4a963511f869440b73d828cc6630974f88ad0598827a1374f5a6fa81"
+            "sha256": "sha256:28185d42a04e3b6ce064f2971c34d27457d0e00acf5ea926b21d0196c52ebe4c"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part02",
-            "fileName": "arch-kde-build-39556550668.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part02",
+            "fileName": "arch-kde-build-39880111668.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:84560b1856a7a57e4c3630e9b1e283375a614330046dae765f11fe003704271e"
+            "sha256": "sha256:1114ea657b93bfceaf516df7324d4336660bc1fdcaacc4b55d54b9f7fa1f6cf0"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part03",
-            "fileName": "arch-kde-build-39556550668.zip.part03",
-            "sizeBytes": 1072185554,
-            "sha256": "sha256:1e7798c4db32da75796c832a9e2b49aea452b3c127549705b9f6a147f37110c7"
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part03",
+            "fileName": "arch-kde-build-39880111668.zip.part03",
+            "sizeBytes": 1058830672,
+            "sha256": "sha256:5772c1900ad0dc85d5ea886c749aa8071a4ad6f7ecc021ba090ba3e20660cd86"
           }
         ]
+      },
+      "engineVersion": "v0.9.2-aurora.14",
+      "engineDigest": "sha256:21da6f7babcadaaaf520e94f50023a28a1ee5f2e3b2ce48f8274e86c8c257f97",
+      "engineArtifact": {
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/installer-v0.9.2-aurora.14.tar.gz",
+        "fileName": "installer-v0.9.2-aurora.14.tar.gz",
+        "sizeBytes": 17896528
       },
       "installationProfile": "arch-kde"
     },
@@ -62,45 +69,52 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "2d28c661b0c228fdc7da5743893d816b2740e132",
-      "metadataDigest": "sha256:71bef937616e25412e874f515434e1f6af50ed509d73522d4d91e7353e50e431",
-      "payloadDigest": "sha256:bc10d1828256523b8dd3d017bcb7d28139fb0ded40169fcc9709fbedc920718b",
-      "evidenceRevision": "image-build-39556550668",
+      "downstreamRevision": "b35281a38740d394cfdcef5b06578d1ee2f64bda",
+      "metadataDigest": "sha256:d43a1fdfc389cdf86b5377f30165067b04083d120ace6e258152518be3533978",
+      "payloadDigest": "sha256:13204db35514751f3c73b8348cc74e6a5579194149510469910997f41d0debe5",
+      "evidenceRevision": "image-build-39880111668",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/installer-data-arch-kde.json",
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/installer-data-arch-kde.json",
         "fileName": "installer-data-arch-kde.json",
-        "sizeBytes": 9568
+        "sizeBytes": 9625
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip",
-        "fileName": "arch-kde-build-39556550668.zip",
-        "sizeBytes": 4293411026,
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip",
+        "fileName": "arch-kde-build-39880111668.zip",
+        "sizeBytes": 4280056144,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part00",
-            "fileName": "arch-kde-build-39556550668.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part00",
+            "fileName": "arch-kde-build-39880111668.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:a0ce5de3ac998fdf1398c7d208ba7f462e8dbbdcce9cab3587c24e6eeb61293e"
+            "sha256": "sha256:0af75e0e4d608e9f6c9a1f8c1d80b1e78f7e49b348ec2367c5808ff1c73d8856"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part01",
-            "fileName": "arch-kde-build-39556550668.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part01",
+            "fileName": "arch-kde-build-39880111668.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:faf4688c4a963511f869440b73d828cc6630974f88ad0598827a1374f5a6fa81"
+            "sha256": "sha256:28185d42a04e3b6ce064f2971c34d27457d0e00acf5ea926b21d0196c52ebe4c"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part02",
-            "fileName": "arch-kde-build-39556550668.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part02",
+            "fileName": "arch-kde-build-39880111668.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:84560b1856a7a57e4c3630e9b1e283375a614330046dae765f11fe003704271e"
+            "sha256": "sha256:1114ea657b93bfceaf516df7324d4336660bc1fdcaacc4b55d54b9f7fa1f6cf0"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part03",
-            "fileName": "arch-kde-build-39556550668.zip.part03",
-            "sizeBytes": 1072185554,
-            "sha256": "sha256:1e7798c4db32da75796c832a9e2b49aea452b3c127549705b9f6a147f37110c7"
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part03",
+            "fileName": "arch-kde-build-39880111668.zip.part03",
+            "sizeBytes": 1058830672,
+            "sha256": "sha256:5772c1900ad0dc85d5ea886c749aa8071a4ad6f7ecc021ba090ba3e20660cd86"
           }
         ]
+      },
+      "engineVersion": "v0.9.2-aurora.14",
+      "engineDigest": "sha256:21da6f7babcadaaaf520e94f50023a28a1ee5f2e3b2ce48f8274e86c8c257f97",
+      "engineArtifact": {
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/installer-v0.9.2-aurora.14.tar.gz",
+        "fileName": "installer-v0.9.2-aurora.14.tar.gz",
+        "sizeBytes": 17896528
       },
       "installationProfile": "arch-kde"
     },
@@ -110,45 +124,52 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "2d28c661b0c228fdc7da5743893d816b2740e132",
-      "metadataDigest": "sha256:71bef937616e25412e874f515434e1f6af50ed509d73522d4d91e7353e50e431",
-      "payloadDigest": "sha256:bc10d1828256523b8dd3d017bcb7d28139fb0ded40169fcc9709fbedc920718b",
-      "evidenceRevision": "image-build-39556550668",
+      "downstreamRevision": "b35281a38740d394cfdcef5b06578d1ee2f64bda",
+      "metadataDigest": "sha256:d43a1fdfc389cdf86b5377f30165067b04083d120ace6e258152518be3533978",
+      "payloadDigest": "sha256:13204db35514751f3c73b8348cc74e6a5579194149510469910997f41d0debe5",
+      "evidenceRevision": "image-build-39880111668",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/installer-data-arch-kde.json",
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/installer-data-arch-kde.json",
         "fileName": "installer-data-arch-kde.json",
-        "sizeBytes": 9568
+        "sizeBytes": 9625
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip",
-        "fileName": "arch-kde-build-39556550668.zip",
-        "sizeBytes": 4293411026,
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip",
+        "fileName": "arch-kde-build-39880111668.zip",
+        "sizeBytes": 4280056144,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part00",
-            "fileName": "arch-kde-build-39556550668.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part00",
+            "fileName": "arch-kde-build-39880111668.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:a0ce5de3ac998fdf1398c7d208ba7f462e8dbbdcce9cab3587c24e6eeb61293e"
+            "sha256": "sha256:0af75e0e4d608e9f6c9a1f8c1d80b1e78f7e49b348ec2367c5808ff1c73d8856"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part01",
-            "fileName": "arch-kde-build-39556550668.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part01",
+            "fileName": "arch-kde-build-39880111668.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:faf4688c4a963511f869440b73d828cc6630974f88ad0598827a1374f5a6fa81"
+            "sha256": "sha256:28185d42a04e3b6ce064f2971c34d27457d0e00acf5ea926b21d0196c52ebe4c"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part02",
-            "fileName": "arch-kde-build-39556550668.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part02",
+            "fileName": "arch-kde-build-39880111668.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:84560b1856a7a57e4c3630e9b1e283375a614330046dae765f11fe003704271e"
+            "sha256": "sha256:1114ea657b93bfceaf516df7324d4336660bc1fdcaacc4b55d54b9f7fa1f6cf0"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part03",
-            "fileName": "arch-kde-build-39556550668.zip.part03",
-            "sizeBytes": 1072185554,
-            "sha256": "sha256:1e7798c4db32da75796c832a9e2b49aea452b3c127549705b9f6a147f37110c7"
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part03",
+            "fileName": "arch-kde-build-39880111668.zip.part03",
+            "sizeBytes": 1058830672,
+            "sha256": "sha256:5772c1900ad0dc85d5ea886c749aa8071a4ad6f7ecc021ba090ba3e20660cd86"
           }
         ]
+      },
+      "engineVersion": "v0.9.2-aurora.14",
+      "engineDigest": "sha256:21da6f7babcadaaaf520e94f50023a28a1ee5f2e3b2ce48f8274e86c8c257f97",
+      "engineArtifact": {
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/installer-v0.9.2-aurora.14.tar.gz",
+        "fileName": "installer-v0.9.2-aurora.14.tar.gz",
+        "sizeBytes": 17896528
       },
       "installationProfile": "arch-kde"
     },
@@ -158,45 +179,52 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "2d28c661b0c228fdc7da5743893d816b2740e132",
-      "metadataDigest": "sha256:71bef937616e25412e874f515434e1f6af50ed509d73522d4d91e7353e50e431",
-      "payloadDigest": "sha256:bc10d1828256523b8dd3d017bcb7d28139fb0ded40169fcc9709fbedc920718b",
-      "evidenceRevision": "image-build-39556550668",
+      "downstreamRevision": "b35281a38740d394cfdcef5b06578d1ee2f64bda",
+      "metadataDigest": "sha256:d43a1fdfc389cdf86b5377f30165067b04083d120ace6e258152518be3533978",
+      "payloadDigest": "sha256:13204db35514751f3c73b8348cc74e6a5579194149510469910997f41d0debe5",
+      "evidenceRevision": "image-build-39880111668",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/installer-data-arch-kde.json",
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/installer-data-arch-kde.json",
         "fileName": "installer-data-arch-kde.json",
-        "sizeBytes": 9568
+        "sizeBytes": 9625
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip",
-        "fileName": "arch-kde-build-39556550668.zip",
-        "sizeBytes": 4293411026,
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip",
+        "fileName": "arch-kde-build-39880111668.zip",
+        "sizeBytes": 4280056144,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part00",
-            "fileName": "arch-kde-build-39556550668.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part00",
+            "fileName": "arch-kde-build-39880111668.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:a0ce5de3ac998fdf1398c7d208ba7f462e8dbbdcce9cab3587c24e6eeb61293e"
+            "sha256": "sha256:0af75e0e4d608e9f6c9a1f8c1d80b1e78f7e49b348ec2367c5808ff1c73d8856"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part01",
-            "fileName": "arch-kde-build-39556550668.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part01",
+            "fileName": "arch-kde-build-39880111668.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:faf4688c4a963511f869440b73d828cc6630974f88ad0598827a1374f5a6fa81"
+            "sha256": "sha256:28185d42a04e3b6ce064f2971c34d27457d0e00acf5ea926b21d0196c52ebe4c"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part02",
-            "fileName": "arch-kde-build-39556550668.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part02",
+            "fileName": "arch-kde-build-39880111668.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:84560b1856a7a57e4c3630e9b1e283375a614330046dae765f11fe003704271e"
+            "sha256": "sha256:1114ea657b93bfceaf516df7324d4336660bc1fdcaacc4b55d54b9f7fa1f6cf0"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part03",
-            "fileName": "arch-kde-build-39556550668.zip.part03",
-            "sizeBytes": 1072185554,
-            "sha256": "sha256:1e7798c4db32da75796c832a9e2b49aea452b3c127549705b9f6a147f37110c7"
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part03",
+            "fileName": "arch-kde-build-39880111668.zip.part03",
+            "sizeBytes": 1058830672,
+            "sha256": "sha256:5772c1900ad0dc85d5ea886c749aa8071a4ad6f7ecc021ba090ba3e20660cd86"
           }
         ]
+      },
+      "engineVersion": "v0.9.2-aurora.14",
+      "engineDigest": "sha256:21da6f7babcadaaaf520e94f50023a28a1ee5f2e3b2ce48f8274e86c8c257f97",
+      "engineArtifact": {
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/installer-v0.9.2-aurora.14.tar.gz",
+        "fileName": "installer-v0.9.2-aurora.14.tar.gz",
+        "sizeBytes": 17896528
       },
       "installationProfile": "arch-kde"
     },
@@ -206,45 +234,52 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "2d28c661b0c228fdc7da5743893d816b2740e132",
-      "metadataDigest": "sha256:71bef937616e25412e874f515434e1f6af50ed509d73522d4d91e7353e50e431",
-      "payloadDigest": "sha256:bc10d1828256523b8dd3d017bcb7d28139fb0ded40169fcc9709fbedc920718b",
-      "evidenceRevision": "image-build-39556550668",
+      "downstreamRevision": "b35281a38740d394cfdcef5b06578d1ee2f64bda",
+      "metadataDigest": "sha256:d43a1fdfc389cdf86b5377f30165067b04083d120ace6e258152518be3533978",
+      "payloadDigest": "sha256:13204db35514751f3c73b8348cc74e6a5579194149510469910997f41d0debe5",
+      "evidenceRevision": "image-build-39880111668",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/installer-data-arch-kde.json",
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/installer-data-arch-kde.json",
         "fileName": "installer-data-arch-kde.json",
-        "sizeBytes": 9568
+        "sizeBytes": 9625
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip",
-        "fileName": "arch-kde-build-39556550668.zip",
-        "sizeBytes": 4293411026,
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip",
+        "fileName": "arch-kde-build-39880111668.zip",
+        "sizeBytes": 4280056144,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part00",
-            "fileName": "arch-kde-build-39556550668.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part00",
+            "fileName": "arch-kde-build-39880111668.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:a0ce5de3ac998fdf1398c7d208ba7f462e8dbbdcce9cab3587c24e6eeb61293e"
+            "sha256": "sha256:0af75e0e4d608e9f6c9a1f8c1d80b1e78f7e49b348ec2367c5808ff1c73d8856"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part01",
-            "fileName": "arch-kde-build-39556550668.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part01",
+            "fileName": "arch-kde-build-39880111668.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:faf4688c4a963511f869440b73d828cc6630974f88ad0598827a1374f5a6fa81"
+            "sha256": "sha256:28185d42a04e3b6ce064f2971c34d27457d0e00acf5ea926b21d0196c52ebe4c"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part02",
-            "fileName": "arch-kde-build-39556550668.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part02",
+            "fileName": "arch-kde-build-39880111668.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:84560b1856a7a57e4c3630e9b1e283375a614330046dae765f11fe003704271e"
+            "sha256": "sha256:1114ea657b93bfceaf516df7324d4336660bc1fdcaacc4b55d54b9f7fa1f6cf0"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part03",
-            "fileName": "arch-kde-build-39556550668.zip.part03",
-            "sizeBytes": 1072185554,
-            "sha256": "sha256:1e7798c4db32da75796c832a9e2b49aea452b3c127549705b9f6a147f37110c7"
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part03",
+            "fileName": "arch-kde-build-39880111668.zip.part03",
+            "sizeBytes": 1058830672,
+            "sha256": "sha256:5772c1900ad0dc85d5ea886c749aa8071a4ad6f7ecc021ba090ba3e20660cd86"
           }
         ]
+      },
+      "engineVersion": "v0.9.2-aurora.14",
+      "engineDigest": "sha256:21da6f7babcadaaaf520e94f50023a28a1ee5f2e3b2ce48f8274e86c8c257f97",
+      "engineArtifact": {
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/installer-v0.9.2-aurora.14.tar.gz",
+        "fileName": "installer-v0.9.2-aurora.14.tar.gz",
+        "sizeBytes": 17896528
       },
       "installationProfile": "arch-kde"
     },
@@ -254,45 +289,52 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "2d28c661b0c228fdc7da5743893d816b2740e132",
-      "metadataDigest": "sha256:71bef937616e25412e874f515434e1f6af50ed509d73522d4d91e7353e50e431",
-      "payloadDigest": "sha256:bc10d1828256523b8dd3d017bcb7d28139fb0ded40169fcc9709fbedc920718b",
-      "evidenceRevision": "image-build-39556550668",
+      "downstreamRevision": "b35281a38740d394cfdcef5b06578d1ee2f64bda",
+      "metadataDigest": "sha256:d43a1fdfc389cdf86b5377f30165067b04083d120ace6e258152518be3533978",
+      "payloadDigest": "sha256:13204db35514751f3c73b8348cc74e6a5579194149510469910997f41d0debe5",
+      "evidenceRevision": "image-build-39880111668",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/installer-data-arch-kde.json",
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/installer-data-arch-kde.json",
         "fileName": "installer-data-arch-kde.json",
-        "sizeBytes": 9568
+        "sizeBytes": 9625
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip",
-        "fileName": "arch-kde-build-39556550668.zip",
-        "sizeBytes": 4293411026,
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip",
+        "fileName": "arch-kde-build-39880111668.zip",
+        "sizeBytes": 4280056144,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part00",
-            "fileName": "arch-kde-build-39556550668.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part00",
+            "fileName": "arch-kde-build-39880111668.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:a0ce5de3ac998fdf1398c7d208ba7f462e8dbbdcce9cab3587c24e6eeb61293e"
+            "sha256": "sha256:0af75e0e4d608e9f6c9a1f8c1d80b1e78f7e49b348ec2367c5808ff1c73d8856"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part01",
-            "fileName": "arch-kde-build-39556550668.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part01",
+            "fileName": "arch-kde-build-39880111668.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:faf4688c4a963511f869440b73d828cc6630974f88ad0598827a1374f5a6fa81"
+            "sha256": "sha256:28185d42a04e3b6ce064f2971c34d27457d0e00acf5ea926b21d0196c52ebe4c"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part02",
-            "fileName": "arch-kde-build-39556550668.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part02",
+            "fileName": "arch-kde-build-39880111668.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:84560b1856a7a57e4c3630e9b1e283375a614330046dae765f11fe003704271e"
+            "sha256": "sha256:1114ea657b93bfceaf516df7324d4336660bc1fdcaacc4b55d54b9f7fa1f6cf0"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part03",
-            "fileName": "arch-kde-build-39556550668.zip.part03",
-            "sizeBytes": 1072185554,
-            "sha256": "sha256:1e7798c4db32da75796c832a9e2b49aea452b3c127549705b9f6a147f37110c7"
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part03",
+            "fileName": "arch-kde-build-39880111668.zip.part03",
+            "sizeBytes": 1058830672,
+            "sha256": "sha256:5772c1900ad0dc85d5ea886c749aa8071a4ad6f7ecc021ba090ba3e20660cd86"
           }
         ]
+      },
+      "engineVersion": "v0.9.2-aurora.14",
+      "engineDigest": "sha256:21da6f7babcadaaaf520e94f50023a28a1ee5f2e3b2ce48f8274e86c8c257f97",
+      "engineArtifact": {
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/installer-v0.9.2-aurora.14.tar.gz",
+        "fileName": "installer-v0.9.2-aurora.14.tar.gz",
+        "sizeBytes": 17896528
       },
       "installationProfile": "arch-kde"
     },
@@ -302,45 +344,52 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "2d28c661b0c228fdc7da5743893d816b2740e132",
-      "metadataDigest": "sha256:71bef937616e25412e874f515434e1f6af50ed509d73522d4d91e7353e50e431",
-      "payloadDigest": "sha256:bc10d1828256523b8dd3d017bcb7d28139fb0ded40169fcc9709fbedc920718b",
-      "evidenceRevision": "image-build-39556550668",
+      "downstreamRevision": "b35281a38740d394cfdcef5b06578d1ee2f64bda",
+      "metadataDigest": "sha256:d43a1fdfc389cdf86b5377f30165067b04083d120ace6e258152518be3533978",
+      "payloadDigest": "sha256:13204db35514751f3c73b8348cc74e6a5579194149510469910997f41d0debe5",
+      "evidenceRevision": "image-build-39880111668",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/installer-data-arch-kde.json",
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/installer-data-arch-kde.json",
         "fileName": "installer-data-arch-kde.json",
-        "sizeBytes": 9568
+        "sizeBytes": 9625
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip",
-        "fileName": "arch-kde-build-39556550668.zip",
-        "sizeBytes": 4293411026,
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip",
+        "fileName": "arch-kde-build-39880111668.zip",
+        "sizeBytes": 4280056144,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part00",
-            "fileName": "arch-kde-build-39556550668.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part00",
+            "fileName": "arch-kde-build-39880111668.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:a0ce5de3ac998fdf1398c7d208ba7f462e8dbbdcce9cab3587c24e6eeb61293e"
+            "sha256": "sha256:0af75e0e4d608e9f6c9a1f8c1d80b1e78f7e49b348ec2367c5808ff1c73d8856"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part01",
-            "fileName": "arch-kde-build-39556550668.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part01",
+            "fileName": "arch-kde-build-39880111668.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:faf4688c4a963511f869440b73d828cc6630974f88ad0598827a1374f5a6fa81"
+            "sha256": "sha256:28185d42a04e3b6ce064f2971c34d27457d0e00acf5ea926b21d0196c52ebe4c"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part02",
-            "fileName": "arch-kde-build-39556550668.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part02",
+            "fileName": "arch-kde-build-39880111668.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:84560b1856a7a57e4c3630e9b1e283375a614330046dae765f11fe003704271e"
+            "sha256": "sha256:1114ea657b93bfceaf516df7324d4336660bc1fdcaacc4b55d54b9f7fa1f6cf0"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part03",
-            "fileName": "arch-kde-build-39556550668.zip.part03",
-            "sizeBytes": 1072185554,
-            "sha256": "sha256:1e7798c4db32da75796c832a9e2b49aea452b3c127549705b9f6a147f37110c7"
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part03",
+            "fileName": "arch-kde-build-39880111668.zip.part03",
+            "sizeBytes": 1058830672,
+            "sha256": "sha256:5772c1900ad0dc85d5ea886c749aa8071a4ad6f7ecc021ba090ba3e20660cd86"
           }
         ]
+      },
+      "engineVersion": "v0.9.2-aurora.14",
+      "engineDigest": "sha256:21da6f7babcadaaaf520e94f50023a28a1ee5f2e3b2ce48f8274e86c8c257f97",
+      "engineArtifact": {
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/installer-v0.9.2-aurora.14.tar.gz",
+        "fileName": "installer-v0.9.2-aurora.14.tar.gz",
+        "sizeBytes": 17896528
       },
       "installationProfile": "arch-kde"
     },
@@ -350,45 +399,52 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "2d28c661b0c228fdc7da5743893d816b2740e132",
-      "metadataDigest": "sha256:71bef937616e25412e874f515434e1f6af50ed509d73522d4d91e7353e50e431",
-      "payloadDigest": "sha256:bc10d1828256523b8dd3d017bcb7d28139fb0ded40169fcc9709fbedc920718b",
-      "evidenceRevision": "image-build-39556550668",
+      "downstreamRevision": "b35281a38740d394cfdcef5b06578d1ee2f64bda",
+      "metadataDigest": "sha256:d43a1fdfc389cdf86b5377f30165067b04083d120ace6e258152518be3533978",
+      "payloadDigest": "sha256:13204db35514751f3c73b8348cc74e6a5579194149510469910997f41d0debe5",
+      "evidenceRevision": "image-build-39880111668",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/installer-data-arch-kde.json",
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/installer-data-arch-kde.json",
         "fileName": "installer-data-arch-kde.json",
-        "sizeBytes": 9568
+        "sizeBytes": 9625
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip",
-        "fileName": "arch-kde-build-39556550668.zip",
-        "sizeBytes": 4293411026,
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip",
+        "fileName": "arch-kde-build-39880111668.zip",
+        "sizeBytes": 4280056144,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part00",
-            "fileName": "arch-kde-build-39556550668.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part00",
+            "fileName": "arch-kde-build-39880111668.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:a0ce5de3ac998fdf1398c7d208ba7f462e8dbbdcce9cab3587c24e6eeb61293e"
+            "sha256": "sha256:0af75e0e4d608e9f6c9a1f8c1d80b1e78f7e49b348ec2367c5808ff1c73d8856"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part01",
-            "fileName": "arch-kde-build-39556550668.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part01",
+            "fileName": "arch-kde-build-39880111668.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:faf4688c4a963511f869440b73d828cc6630974f88ad0598827a1374f5a6fa81"
+            "sha256": "sha256:28185d42a04e3b6ce064f2971c34d27457d0e00acf5ea926b21d0196c52ebe4c"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part02",
-            "fileName": "arch-kde-build-39556550668.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part02",
+            "fileName": "arch-kde-build-39880111668.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:84560b1856a7a57e4c3630e9b1e283375a614330046dae765f11fe003704271e"
+            "sha256": "sha256:1114ea657b93bfceaf516df7324d4336660bc1fdcaacc4b55d54b9f7fa1f6cf0"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part03",
-            "fileName": "arch-kde-build-39556550668.zip.part03",
-            "sizeBytes": 1072185554,
-            "sha256": "sha256:1e7798c4db32da75796c832a9e2b49aea452b3c127549705b9f6a147f37110c7"
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part03",
+            "fileName": "arch-kde-build-39880111668.zip.part03",
+            "sizeBytes": 1058830672,
+            "sha256": "sha256:5772c1900ad0dc85d5ea886c749aa8071a4ad6f7ecc021ba090ba3e20660cd86"
           }
         ]
+      },
+      "engineVersion": "v0.9.2-aurora.14",
+      "engineDigest": "sha256:21da6f7babcadaaaf520e94f50023a28a1ee5f2e3b2ce48f8274e86c8c257f97",
+      "engineArtifact": {
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/installer-v0.9.2-aurora.14.tar.gz",
+        "fileName": "installer-v0.9.2-aurora.14.tar.gz",
+        "sizeBytes": 17896528
       },
       "installationProfile": "arch-kde"
     },
@@ -398,45 +454,52 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "2d28c661b0c228fdc7da5743893d816b2740e132",
-      "metadataDigest": "sha256:71bef937616e25412e874f515434e1f6af50ed509d73522d4d91e7353e50e431",
-      "payloadDigest": "sha256:bc10d1828256523b8dd3d017bcb7d28139fb0ded40169fcc9709fbedc920718b",
-      "evidenceRevision": "image-build-39556550668",
+      "downstreamRevision": "b35281a38740d394cfdcef5b06578d1ee2f64bda",
+      "metadataDigest": "sha256:d43a1fdfc389cdf86b5377f30165067b04083d120ace6e258152518be3533978",
+      "payloadDigest": "sha256:13204db35514751f3c73b8348cc74e6a5579194149510469910997f41d0debe5",
+      "evidenceRevision": "image-build-39880111668",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/installer-data-arch-kde.json",
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/installer-data-arch-kde.json",
         "fileName": "installer-data-arch-kde.json",
-        "sizeBytes": 9568
+        "sizeBytes": 9625
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip",
-        "fileName": "arch-kde-build-39556550668.zip",
-        "sizeBytes": 4293411026,
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip",
+        "fileName": "arch-kde-build-39880111668.zip",
+        "sizeBytes": 4280056144,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part00",
-            "fileName": "arch-kde-build-39556550668.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part00",
+            "fileName": "arch-kde-build-39880111668.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:a0ce5de3ac998fdf1398c7d208ba7f462e8dbbdcce9cab3587c24e6eeb61293e"
+            "sha256": "sha256:0af75e0e4d608e9f6c9a1f8c1d80b1e78f7e49b348ec2367c5808ff1c73d8856"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part01",
-            "fileName": "arch-kde-build-39556550668.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part01",
+            "fileName": "arch-kde-build-39880111668.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:faf4688c4a963511f869440b73d828cc6630974f88ad0598827a1374f5a6fa81"
+            "sha256": "sha256:28185d42a04e3b6ce064f2971c34d27457d0e00acf5ea926b21d0196c52ebe4c"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part02",
-            "fileName": "arch-kde-build-39556550668.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part02",
+            "fileName": "arch-kde-build-39880111668.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:84560b1856a7a57e4c3630e9b1e283375a614330046dae765f11fe003704271e"
+            "sha256": "sha256:1114ea657b93bfceaf516df7324d4336660bc1fdcaacc4b55d54b9f7fa1f6cf0"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part03",
-            "fileName": "arch-kde-build-39556550668.zip.part03",
-            "sizeBytes": 1072185554,
-            "sha256": "sha256:1e7798c4db32da75796c832a9e2b49aea452b3c127549705b9f6a147f37110c7"
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part03",
+            "fileName": "arch-kde-build-39880111668.zip.part03",
+            "sizeBytes": 1058830672,
+            "sha256": "sha256:5772c1900ad0dc85d5ea886c749aa8071a4ad6f7ecc021ba090ba3e20660cd86"
           }
         ]
+      },
+      "engineVersion": "v0.9.2-aurora.14",
+      "engineDigest": "sha256:21da6f7babcadaaaf520e94f50023a28a1ee5f2e3b2ce48f8274e86c8c257f97",
+      "engineArtifact": {
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/installer-v0.9.2-aurora.14.tar.gz",
+        "fileName": "installer-v0.9.2-aurora.14.tar.gz",
+        "sizeBytes": 17896528
       },
       "installationProfile": "arch-kde"
     },
@@ -446,45 +509,52 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "2d28c661b0c228fdc7da5743893d816b2740e132",
-      "metadataDigest": "sha256:71bef937616e25412e874f515434e1f6af50ed509d73522d4d91e7353e50e431",
-      "payloadDigest": "sha256:bc10d1828256523b8dd3d017bcb7d28139fb0ded40169fcc9709fbedc920718b",
-      "evidenceRevision": "image-build-39556550668",
+      "downstreamRevision": "b35281a38740d394cfdcef5b06578d1ee2f64bda",
+      "metadataDigest": "sha256:d43a1fdfc389cdf86b5377f30165067b04083d120ace6e258152518be3533978",
+      "payloadDigest": "sha256:13204db35514751f3c73b8348cc74e6a5579194149510469910997f41d0debe5",
+      "evidenceRevision": "image-build-39880111668",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/installer-data-arch-kde.json",
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/installer-data-arch-kde.json",
         "fileName": "installer-data-arch-kde.json",
-        "sizeBytes": 9568
+        "sizeBytes": 9625
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip",
-        "fileName": "arch-kde-build-39556550668.zip",
-        "sizeBytes": 4293411026,
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip",
+        "fileName": "arch-kde-build-39880111668.zip",
+        "sizeBytes": 4280056144,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part00",
-            "fileName": "arch-kde-build-39556550668.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part00",
+            "fileName": "arch-kde-build-39880111668.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:a0ce5de3ac998fdf1398c7d208ba7f462e8dbbdcce9cab3587c24e6eeb61293e"
+            "sha256": "sha256:0af75e0e4d608e9f6c9a1f8c1d80b1e78f7e49b348ec2367c5808ff1c73d8856"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part01",
-            "fileName": "arch-kde-build-39556550668.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part01",
+            "fileName": "arch-kde-build-39880111668.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:faf4688c4a963511f869440b73d828cc6630974f88ad0598827a1374f5a6fa81"
+            "sha256": "sha256:28185d42a04e3b6ce064f2971c34d27457d0e00acf5ea926b21d0196c52ebe4c"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part02",
-            "fileName": "arch-kde-build-39556550668.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part02",
+            "fileName": "arch-kde-build-39880111668.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:84560b1856a7a57e4c3630e9b1e283375a614330046dae765f11fe003704271e"
+            "sha256": "sha256:1114ea657b93bfceaf516df7324d4336660bc1fdcaacc4b55d54b9f7fa1f6cf0"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part03",
-            "fileName": "arch-kde-build-39556550668.zip.part03",
-            "sizeBytes": 1072185554,
-            "sha256": "sha256:1e7798c4db32da75796c832a9e2b49aea452b3c127549705b9f6a147f37110c7"
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part03",
+            "fileName": "arch-kde-build-39880111668.zip.part03",
+            "sizeBytes": 1058830672,
+            "sha256": "sha256:5772c1900ad0dc85d5ea886c749aa8071a4ad6f7ecc021ba090ba3e20660cd86"
           }
         ]
+      },
+      "engineVersion": "v0.9.2-aurora.14",
+      "engineDigest": "sha256:21da6f7babcadaaaf520e94f50023a28a1ee5f2e3b2ce48f8274e86c8c257f97",
+      "engineArtifact": {
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/installer-v0.9.2-aurora.14.tar.gz",
+        "fileName": "installer-v0.9.2-aurora.14.tar.gz",
+        "sizeBytes": 17896528
       },
       "installationProfile": "arch-kde"
     },
@@ -494,45 +564,52 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "2d28c661b0c228fdc7da5743893d816b2740e132",
-      "metadataDigest": "sha256:71bef937616e25412e874f515434e1f6af50ed509d73522d4d91e7353e50e431",
-      "payloadDigest": "sha256:bc10d1828256523b8dd3d017bcb7d28139fb0ded40169fcc9709fbedc920718b",
-      "evidenceRevision": "image-build-39556550668",
+      "downstreamRevision": "b35281a38740d394cfdcef5b06578d1ee2f64bda",
+      "metadataDigest": "sha256:d43a1fdfc389cdf86b5377f30165067b04083d120ace6e258152518be3533978",
+      "payloadDigest": "sha256:13204db35514751f3c73b8348cc74e6a5579194149510469910997f41d0debe5",
+      "evidenceRevision": "image-build-39880111668",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/installer-data-arch-kde.json",
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/installer-data-arch-kde.json",
         "fileName": "installer-data-arch-kde.json",
-        "sizeBytes": 9568
+        "sizeBytes": 9625
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip",
-        "fileName": "arch-kde-build-39556550668.zip",
-        "sizeBytes": 4293411026,
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip",
+        "fileName": "arch-kde-build-39880111668.zip",
+        "sizeBytes": 4280056144,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part00",
-            "fileName": "arch-kde-build-39556550668.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part00",
+            "fileName": "arch-kde-build-39880111668.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:a0ce5de3ac998fdf1398c7d208ba7f462e8dbbdcce9cab3587c24e6eeb61293e"
+            "sha256": "sha256:0af75e0e4d608e9f6c9a1f8c1d80b1e78f7e49b348ec2367c5808ff1c73d8856"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part01",
-            "fileName": "arch-kde-build-39556550668.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part01",
+            "fileName": "arch-kde-build-39880111668.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:faf4688c4a963511f869440b73d828cc6630974f88ad0598827a1374f5a6fa81"
+            "sha256": "sha256:28185d42a04e3b6ce064f2971c34d27457d0e00acf5ea926b21d0196c52ebe4c"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part02",
-            "fileName": "arch-kde-build-39556550668.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part02",
+            "fileName": "arch-kde-build-39880111668.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:84560b1856a7a57e4c3630e9b1e283375a614330046dae765f11fe003704271e"
+            "sha256": "sha256:1114ea657b93bfceaf516df7324d4336660bc1fdcaacc4b55d54b9f7fa1f6cf0"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part03",
-            "fileName": "arch-kde-build-39556550668.zip.part03",
-            "sizeBytes": 1072185554,
-            "sha256": "sha256:1e7798c4db32da75796c832a9e2b49aea452b3c127549705b9f6a147f37110c7"
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part03",
+            "fileName": "arch-kde-build-39880111668.zip.part03",
+            "sizeBytes": 1058830672,
+            "sha256": "sha256:5772c1900ad0dc85d5ea886c749aa8071a4ad6f7ecc021ba090ba3e20660cd86"
           }
         ]
+      },
+      "engineVersion": "v0.9.2-aurora.14",
+      "engineDigest": "sha256:21da6f7babcadaaaf520e94f50023a28a1ee5f2e3b2ce48f8274e86c8c257f97",
+      "engineArtifact": {
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/installer-v0.9.2-aurora.14.tar.gz",
+        "fileName": "installer-v0.9.2-aurora.14.tar.gz",
+        "sizeBytes": 17896528
       },
       "installationProfile": "arch-kde"
     },
@@ -542,45 +619,52 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "2d28c661b0c228fdc7da5743893d816b2740e132",
-      "metadataDigest": "sha256:71bef937616e25412e874f515434e1f6af50ed509d73522d4d91e7353e50e431",
-      "payloadDigest": "sha256:bc10d1828256523b8dd3d017bcb7d28139fb0ded40169fcc9709fbedc920718b",
-      "evidenceRevision": "image-build-39556550668",
+      "downstreamRevision": "b35281a38740d394cfdcef5b06578d1ee2f64bda",
+      "metadataDigest": "sha256:d43a1fdfc389cdf86b5377f30165067b04083d120ace6e258152518be3533978",
+      "payloadDigest": "sha256:13204db35514751f3c73b8348cc74e6a5579194149510469910997f41d0debe5",
+      "evidenceRevision": "image-build-39880111668",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/installer-data-arch-kde.json",
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/installer-data-arch-kde.json",
         "fileName": "installer-data-arch-kde.json",
-        "sizeBytes": 9568
+        "sizeBytes": 9625
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip",
-        "fileName": "arch-kde-build-39556550668.zip",
-        "sizeBytes": 4293411026,
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip",
+        "fileName": "arch-kde-build-39880111668.zip",
+        "sizeBytes": 4280056144,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part00",
-            "fileName": "arch-kde-build-39556550668.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part00",
+            "fileName": "arch-kde-build-39880111668.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:a0ce5de3ac998fdf1398c7d208ba7f462e8dbbdcce9cab3587c24e6eeb61293e"
+            "sha256": "sha256:0af75e0e4d608e9f6c9a1f8c1d80b1e78f7e49b348ec2367c5808ff1c73d8856"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part01",
-            "fileName": "arch-kde-build-39556550668.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part01",
+            "fileName": "arch-kde-build-39880111668.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:faf4688c4a963511f869440b73d828cc6630974f88ad0598827a1374f5a6fa81"
+            "sha256": "sha256:28185d42a04e3b6ce064f2971c34d27457d0e00acf5ea926b21d0196c52ebe4c"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part02",
-            "fileName": "arch-kde-build-39556550668.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part02",
+            "fileName": "arch-kde-build-39880111668.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:84560b1856a7a57e4c3630e9b1e283375a614330046dae765f11fe003704271e"
+            "sha256": "sha256:1114ea657b93bfceaf516df7324d4336660bc1fdcaacc4b55d54b9f7fa1f6cf0"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part03",
-            "fileName": "arch-kde-build-39556550668.zip.part03",
-            "sizeBytes": 1072185554,
-            "sha256": "sha256:1e7798c4db32da75796c832a9e2b49aea452b3c127549705b9f6a147f37110c7"
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part03",
+            "fileName": "arch-kde-build-39880111668.zip.part03",
+            "sizeBytes": 1058830672,
+            "sha256": "sha256:5772c1900ad0dc85d5ea886c749aa8071a4ad6f7ecc021ba090ba3e20660cd86"
           }
         ]
+      },
+      "engineVersion": "v0.9.2-aurora.14",
+      "engineDigest": "sha256:21da6f7babcadaaaf520e94f50023a28a1ee5f2e3b2ce48f8274e86c8c257f97",
+      "engineArtifact": {
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/installer-v0.9.2-aurora.14.tar.gz",
+        "fileName": "installer-v0.9.2-aurora.14.tar.gz",
+        "sizeBytes": 17896528
       },
       "installationProfile": "arch-kde"
     },
@@ -590,45 +674,52 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "2d28c661b0c228fdc7da5743893d816b2740e132",
-      "metadataDigest": "sha256:71bef937616e25412e874f515434e1f6af50ed509d73522d4d91e7353e50e431",
-      "payloadDigest": "sha256:bc10d1828256523b8dd3d017bcb7d28139fb0ded40169fcc9709fbedc920718b",
-      "evidenceRevision": "image-build-39556550668",
+      "downstreamRevision": "b35281a38740d394cfdcef5b06578d1ee2f64bda",
+      "metadataDigest": "sha256:d43a1fdfc389cdf86b5377f30165067b04083d120ace6e258152518be3533978",
+      "payloadDigest": "sha256:13204db35514751f3c73b8348cc74e6a5579194149510469910997f41d0debe5",
+      "evidenceRevision": "image-build-39880111668",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/installer-data-arch-kde.json",
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/installer-data-arch-kde.json",
         "fileName": "installer-data-arch-kde.json",
-        "sizeBytes": 9568
+        "sizeBytes": 9625
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip",
-        "fileName": "arch-kde-build-39556550668.zip",
-        "sizeBytes": 4293411026,
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip",
+        "fileName": "arch-kde-build-39880111668.zip",
+        "sizeBytes": 4280056144,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part00",
-            "fileName": "arch-kde-build-39556550668.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part00",
+            "fileName": "arch-kde-build-39880111668.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:a0ce5de3ac998fdf1398c7d208ba7f462e8dbbdcce9cab3587c24e6eeb61293e"
+            "sha256": "sha256:0af75e0e4d608e9f6c9a1f8c1d80b1e78f7e49b348ec2367c5808ff1c73d8856"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part01",
-            "fileName": "arch-kde-build-39556550668.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part01",
+            "fileName": "arch-kde-build-39880111668.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:faf4688c4a963511f869440b73d828cc6630974f88ad0598827a1374f5a6fa81"
+            "sha256": "sha256:28185d42a04e3b6ce064f2971c34d27457d0e00acf5ea926b21d0196c52ebe4c"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part02",
-            "fileName": "arch-kde-build-39556550668.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part02",
+            "fileName": "arch-kde-build-39880111668.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:84560b1856a7a57e4c3630e9b1e283375a614330046dae765f11fe003704271e"
+            "sha256": "sha256:1114ea657b93bfceaf516df7324d4336660bc1fdcaacc4b55d54b9f7fa1f6cf0"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part03",
-            "fileName": "arch-kde-build-39556550668.zip.part03",
-            "sizeBytes": 1072185554,
-            "sha256": "sha256:1e7798c4db32da75796c832a9e2b49aea452b3c127549705b9f6a147f37110c7"
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part03",
+            "fileName": "arch-kde-build-39880111668.zip.part03",
+            "sizeBytes": 1058830672,
+            "sha256": "sha256:5772c1900ad0dc85d5ea886c749aa8071a4ad6f7ecc021ba090ba3e20660cd86"
           }
         ]
+      },
+      "engineVersion": "v0.9.2-aurora.14",
+      "engineDigest": "sha256:21da6f7babcadaaaf520e94f50023a28a1ee5f2e3b2ce48f8274e86c8c257f97",
+      "engineArtifact": {
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/installer-v0.9.2-aurora.14.tar.gz",
+        "fileName": "installer-v0.9.2-aurora.14.tar.gz",
+        "sizeBytes": 17896528
       },
       "installationProfile": "arch-kde"
     },
@@ -638,45 +729,52 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "2d28c661b0c228fdc7da5743893d816b2740e132",
-      "metadataDigest": "sha256:71bef937616e25412e874f515434e1f6af50ed509d73522d4d91e7353e50e431",
-      "payloadDigest": "sha256:bc10d1828256523b8dd3d017bcb7d28139fb0ded40169fcc9709fbedc920718b",
-      "evidenceRevision": "image-build-39556550668",
+      "downstreamRevision": "b35281a38740d394cfdcef5b06578d1ee2f64bda",
+      "metadataDigest": "sha256:d43a1fdfc389cdf86b5377f30165067b04083d120ace6e258152518be3533978",
+      "payloadDigest": "sha256:13204db35514751f3c73b8348cc74e6a5579194149510469910997f41d0debe5",
+      "evidenceRevision": "image-build-39880111668",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/installer-data-arch-kde.json",
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/installer-data-arch-kde.json",
         "fileName": "installer-data-arch-kde.json",
-        "sizeBytes": 9568
+        "sizeBytes": 9625
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip",
-        "fileName": "arch-kde-build-39556550668.zip",
-        "sizeBytes": 4293411026,
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip",
+        "fileName": "arch-kde-build-39880111668.zip",
+        "sizeBytes": 4280056144,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part00",
-            "fileName": "arch-kde-build-39556550668.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part00",
+            "fileName": "arch-kde-build-39880111668.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:a0ce5de3ac998fdf1398c7d208ba7f462e8dbbdcce9cab3587c24e6eeb61293e"
+            "sha256": "sha256:0af75e0e4d608e9f6c9a1f8c1d80b1e78f7e49b348ec2367c5808ff1c73d8856"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part01",
-            "fileName": "arch-kde-build-39556550668.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part01",
+            "fileName": "arch-kde-build-39880111668.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:faf4688c4a963511f869440b73d828cc6630974f88ad0598827a1374f5a6fa81"
+            "sha256": "sha256:28185d42a04e3b6ce064f2971c34d27457d0e00acf5ea926b21d0196c52ebe4c"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part02",
-            "fileName": "arch-kde-build-39556550668.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part02",
+            "fileName": "arch-kde-build-39880111668.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:84560b1856a7a57e4c3630e9b1e283375a614330046dae765f11fe003704271e"
+            "sha256": "sha256:1114ea657b93bfceaf516df7324d4336660bc1fdcaacc4b55d54b9f7fa1f6cf0"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part03",
-            "fileName": "arch-kde-build-39556550668.zip.part03",
-            "sizeBytes": 1072185554,
-            "sha256": "sha256:1e7798c4db32da75796c832a9e2b49aea452b3c127549705b9f6a147f37110c7"
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part03",
+            "fileName": "arch-kde-build-39880111668.zip.part03",
+            "sizeBytes": 1058830672,
+            "sha256": "sha256:5772c1900ad0dc85d5ea886c749aa8071a4ad6f7ecc021ba090ba3e20660cd86"
           }
         ]
+      },
+      "engineVersion": "v0.9.2-aurora.14",
+      "engineDigest": "sha256:21da6f7babcadaaaf520e94f50023a28a1ee5f2e3b2ce48f8274e86c8c257f97",
+      "engineArtifact": {
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/installer-v0.9.2-aurora.14.tar.gz",
+        "fileName": "installer-v0.9.2-aurora.14.tar.gz",
+        "sizeBytes": 17896528
       },
       "installationProfile": "arch-kde"
     },
@@ -686,45 +784,52 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "2d28c661b0c228fdc7da5743893d816b2740e132",
-      "metadataDigest": "sha256:71bef937616e25412e874f515434e1f6af50ed509d73522d4d91e7353e50e431",
-      "payloadDigest": "sha256:bc10d1828256523b8dd3d017bcb7d28139fb0ded40169fcc9709fbedc920718b",
-      "evidenceRevision": "image-build-39556550668",
+      "downstreamRevision": "b35281a38740d394cfdcef5b06578d1ee2f64bda",
+      "metadataDigest": "sha256:d43a1fdfc389cdf86b5377f30165067b04083d120ace6e258152518be3533978",
+      "payloadDigest": "sha256:13204db35514751f3c73b8348cc74e6a5579194149510469910997f41d0debe5",
+      "evidenceRevision": "image-build-39880111668",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/installer-data-arch-kde.json",
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/installer-data-arch-kde.json",
         "fileName": "installer-data-arch-kde.json",
-        "sizeBytes": 9568
+        "sizeBytes": 9625
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip",
-        "fileName": "arch-kde-build-39556550668.zip",
-        "sizeBytes": 4293411026,
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip",
+        "fileName": "arch-kde-build-39880111668.zip",
+        "sizeBytes": 4280056144,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part00",
-            "fileName": "arch-kde-build-39556550668.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part00",
+            "fileName": "arch-kde-build-39880111668.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:a0ce5de3ac998fdf1398c7d208ba7f462e8dbbdcce9cab3587c24e6eeb61293e"
+            "sha256": "sha256:0af75e0e4d608e9f6c9a1f8c1d80b1e78f7e49b348ec2367c5808ff1c73d8856"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part01",
-            "fileName": "arch-kde-build-39556550668.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part01",
+            "fileName": "arch-kde-build-39880111668.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:faf4688c4a963511f869440b73d828cc6630974f88ad0598827a1374f5a6fa81"
+            "sha256": "sha256:28185d42a04e3b6ce064f2971c34d27457d0e00acf5ea926b21d0196c52ebe4c"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part02",
-            "fileName": "arch-kde-build-39556550668.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part02",
+            "fileName": "arch-kde-build-39880111668.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:84560b1856a7a57e4c3630e9b1e283375a614330046dae765f11fe003704271e"
+            "sha256": "sha256:1114ea657b93bfceaf516df7324d4336660bc1fdcaacc4b55d54b9f7fa1f6cf0"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part03",
-            "fileName": "arch-kde-build-39556550668.zip.part03",
-            "sizeBytes": 1072185554,
-            "sha256": "sha256:1e7798c4db32da75796c832a9e2b49aea452b3c127549705b9f6a147f37110c7"
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part03",
+            "fileName": "arch-kde-build-39880111668.zip.part03",
+            "sizeBytes": 1058830672,
+            "sha256": "sha256:5772c1900ad0dc85d5ea886c749aa8071a4ad6f7ecc021ba090ba3e20660cd86"
           }
         ]
+      },
+      "engineVersion": "v0.9.2-aurora.14",
+      "engineDigest": "sha256:21da6f7babcadaaaf520e94f50023a28a1ee5f2e3b2ce48f8274e86c8c257f97",
+      "engineArtifact": {
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/installer-v0.9.2-aurora.14.tar.gz",
+        "fileName": "installer-v0.9.2-aurora.14.tar.gz",
+        "sizeBytes": 17896528
       },
       "installationProfile": "arch-kde"
     },
@@ -734,45 +839,52 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "2d28c661b0c228fdc7da5743893d816b2740e132",
-      "metadataDigest": "sha256:71bef937616e25412e874f515434e1f6af50ed509d73522d4d91e7353e50e431",
-      "payloadDigest": "sha256:bc10d1828256523b8dd3d017bcb7d28139fb0ded40169fcc9709fbedc920718b",
-      "evidenceRevision": "image-build-39556550668",
+      "downstreamRevision": "b35281a38740d394cfdcef5b06578d1ee2f64bda",
+      "metadataDigest": "sha256:d43a1fdfc389cdf86b5377f30165067b04083d120ace6e258152518be3533978",
+      "payloadDigest": "sha256:13204db35514751f3c73b8348cc74e6a5579194149510469910997f41d0debe5",
+      "evidenceRevision": "image-build-39880111668",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/installer-data-arch-kde.json",
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/installer-data-arch-kde.json",
         "fileName": "installer-data-arch-kde.json",
-        "sizeBytes": 9568
+        "sizeBytes": 9625
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip",
-        "fileName": "arch-kde-build-39556550668.zip",
-        "sizeBytes": 4293411026,
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip",
+        "fileName": "arch-kde-build-39880111668.zip",
+        "sizeBytes": 4280056144,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part00",
-            "fileName": "arch-kde-build-39556550668.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part00",
+            "fileName": "arch-kde-build-39880111668.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:a0ce5de3ac998fdf1398c7d208ba7f462e8dbbdcce9cab3587c24e6eeb61293e"
+            "sha256": "sha256:0af75e0e4d608e9f6c9a1f8c1d80b1e78f7e49b348ec2367c5808ff1c73d8856"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part01",
-            "fileName": "arch-kde-build-39556550668.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part01",
+            "fileName": "arch-kde-build-39880111668.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:faf4688c4a963511f869440b73d828cc6630974f88ad0598827a1374f5a6fa81"
+            "sha256": "sha256:28185d42a04e3b6ce064f2971c34d27457d0e00acf5ea926b21d0196c52ebe4c"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part02",
-            "fileName": "arch-kde-build-39556550668.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part02",
+            "fileName": "arch-kde-build-39880111668.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:84560b1856a7a57e4c3630e9b1e283375a614330046dae765f11fe003704271e"
+            "sha256": "sha256:1114ea657b93bfceaf516df7324d4336660bc1fdcaacc4b55d54b9f7fa1f6cf0"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part03",
-            "fileName": "arch-kde-build-39556550668.zip.part03",
-            "sizeBytes": 1072185554,
-            "sha256": "sha256:1e7798c4db32da75796c832a9e2b49aea452b3c127549705b9f6a147f37110c7"
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part03",
+            "fileName": "arch-kde-build-39880111668.zip.part03",
+            "sizeBytes": 1058830672,
+            "sha256": "sha256:5772c1900ad0dc85d5ea886c749aa8071a4ad6f7ecc021ba090ba3e20660cd86"
           }
         ]
+      },
+      "engineVersion": "v0.9.2-aurora.14",
+      "engineDigest": "sha256:21da6f7babcadaaaf520e94f50023a28a1ee5f2e3b2ce48f8274e86c8c257f97",
+      "engineArtifact": {
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/installer-v0.9.2-aurora.14.tar.gz",
+        "fileName": "installer-v0.9.2-aurora.14.tar.gz",
+        "sizeBytes": 17896528
       },
       "installationProfile": "arch-kde"
     },
@@ -782,45 +894,52 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "2d28c661b0c228fdc7da5743893d816b2740e132",
-      "metadataDigest": "sha256:71bef937616e25412e874f515434e1f6af50ed509d73522d4d91e7353e50e431",
-      "payloadDigest": "sha256:bc10d1828256523b8dd3d017bcb7d28139fb0ded40169fcc9709fbedc920718b",
-      "evidenceRevision": "image-build-39556550668",
+      "downstreamRevision": "b35281a38740d394cfdcef5b06578d1ee2f64bda",
+      "metadataDigest": "sha256:d43a1fdfc389cdf86b5377f30165067b04083d120ace6e258152518be3533978",
+      "payloadDigest": "sha256:13204db35514751f3c73b8348cc74e6a5579194149510469910997f41d0debe5",
+      "evidenceRevision": "image-build-39880111668",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/installer-data-arch-kde.json",
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/installer-data-arch-kde.json",
         "fileName": "installer-data-arch-kde.json",
-        "sizeBytes": 9568
+        "sizeBytes": 9625
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip",
-        "fileName": "arch-kde-build-39556550668.zip",
-        "sizeBytes": 4293411026,
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip",
+        "fileName": "arch-kde-build-39880111668.zip",
+        "sizeBytes": 4280056144,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part00",
-            "fileName": "arch-kde-build-39556550668.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part00",
+            "fileName": "arch-kde-build-39880111668.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:a0ce5de3ac998fdf1398c7d208ba7f462e8dbbdcce9cab3587c24e6eeb61293e"
+            "sha256": "sha256:0af75e0e4d608e9f6c9a1f8c1d80b1e78f7e49b348ec2367c5808ff1c73d8856"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part01",
-            "fileName": "arch-kde-build-39556550668.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part01",
+            "fileName": "arch-kde-build-39880111668.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:faf4688c4a963511f869440b73d828cc6630974f88ad0598827a1374f5a6fa81"
+            "sha256": "sha256:28185d42a04e3b6ce064f2971c34d27457d0e00acf5ea926b21d0196c52ebe4c"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part02",
-            "fileName": "arch-kde-build-39556550668.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part02",
+            "fileName": "arch-kde-build-39880111668.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:84560b1856a7a57e4c3630e9b1e283375a614330046dae765f11fe003704271e"
+            "sha256": "sha256:1114ea657b93bfceaf516df7324d4336660bc1fdcaacc4b55d54b9f7fa1f6cf0"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part03",
-            "fileName": "arch-kde-build-39556550668.zip.part03",
-            "sizeBytes": 1072185554,
-            "sha256": "sha256:1e7798c4db32da75796c832a9e2b49aea452b3c127549705b9f6a147f37110c7"
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part03",
+            "fileName": "arch-kde-build-39880111668.zip.part03",
+            "sizeBytes": 1058830672,
+            "sha256": "sha256:5772c1900ad0dc85d5ea886c749aa8071a4ad6f7ecc021ba090ba3e20660cd86"
           }
         ]
+      },
+      "engineVersion": "v0.9.2-aurora.14",
+      "engineDigest": "sha256:21da6f7babcadaaaf520e94f50023a28a1ee5f2e3b2ce48f8274e86c8c257f97",
+      "engineArtifact": {
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/installer-v0.9.2-aurora.14.tar.gz",
+        "fileName": "installer-v0.9.2-aurora.14.tar.gz",
+        "sizeBytes": 17896528
       },
       "installationProfile": "arch-kde"
     },
@@ -830,45 +949,52 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "2d28c661b0c228fdc7da5743893d816b2740e132",
-      "metadataDigest": "sha256:71bef937616e25412e874f515434e1f6af50ed509d73522d4d91e7353e50e431",
-      "payloadDigest": "sha256:bc10d1828256523b8dd3d017bcb7d28139fb0ded40169fcc9709fbedc920718b",
-      "evidenceRevision": "image-build-39556550668",
+      "downstreamRevision": "b35281a38740d394cfdcef5b06578d1ee2f64bda",
+      "metadataDigest": "sha256:d43a1fdfc389cdf86b5377f30165067b04083d120ace6e258152518be3533978",
+      "payloadDigest": "sha256:13204db35514751f3c73b8348cc74e6a5579194149510469910997f41d0debe5",
+      "evidenceRevision": "image-build-39880111668",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/installer-data-arch-kde.json",
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/installer-data-arch-kde.json",
         "fileName": "installer-data-arch-kde.json",
-        "sizeBytes": 9568
+        "sizeBytes": 9625
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip",
-        "fileName": "arch-kde-build-39556550668.zip",
-        "sizeBytes": 4293411026,
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip",
+        "fileName": "arch-kde-build-39880111668.zip",
+        "sizeBytes": 4280056144,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part00",
-            "fileName": "arch-kde-build-39556550668.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part00",
+            "fileName": "arch-kde-build-39880111668.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:a0ce5de3ac998fdf1398c7d208ba7f462e8dbbdcce9cab3587c24e6eeb61293e"
+            "sha256": "sha256:0af75e0e4d608e9f6c9a1f8c1d80b1e78f7e49b348ec2367c5808ff1c73d8856"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part01",
-            "fileName": "arch-kde-build-39556550668.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part01",
+            "fileName": "arch-kde-build-39880111668.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:faf4688c4a963511f869440b73d828cc6630974f88ad0598827a1374f5a6fa81"
+            "sha256": "sha256:28185d42a04e3b6ce064f2971c34d27457d0e00acf5ea926b21d0196c52ebe4c"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part02",
-            "fileName": "arch-kde-build-39556550668.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part02",
+            "fileName": "arch-kde-build-39880111668.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:84560b1856a7a57e4c3630e9b1e283375a614330046dae765f11fe003704271e"
+            "sha256": "sha256:1114ea657b93bfceaf516df7324d4336660bc1fdcaacc4b55d54b9f7fa1f6cf0"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part03",
-            "fileName": "arch-kde-build-39556550668.zip.part03",
-            "sizeBytes": 1072185554,
-            "sha256": "sha256:1e7798c4db32da75796c832a9e2b49aea452b3c127549705b9f6a147f37110c7"
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part03",
+            "fileName": "arch-kde-build-39880111668.zip.part03",
+            "sizeBytes": 1058830672,
+            "sha256": "sha256:5772c1900ad0dc85d5ea886c749aa8071a4ad6f7ecc021ba090ba3e20660cd86"
           }
         ]
+      },
+      "engineVersion": "v0.9.2-aurora.14",
+      "engineDigest": "sha256:21da6f7babcadaaaf520e94f50023a28a1ee5f2e3b2ce48f8274e86c8c257f97",
+      "engineArtifact": {
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/installer-v0.9.2-aurora.14.tar.gz",
+        "fileName": "installer-v0.9.2-aurora.14.tar.gz",
+        "sizeBytes": 17896528
       },
       "installationProfile": "arch-kde"
     },
@@ -878,45 +1004,52 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "2d28c661b0c228fdc7da5743893d816b2740e132",
-      "metadataDigest": "sha256:71bef937616e25412e874f515434e1f6af50ed509d73522d4d91e7353e50e431",
-      "payloadDigest": "sha256:bc10d1828256523b8dd3d017bcb7d28139fb0ded40169fcc9709fbedc920718b",
-      "evidenceRevision": "image-build-39556550668",
+      "downstreamRevision": "b35281a38740d394cfdcef5b06578d1ee2f64bda",
+      "metadataDigest": "sha256:d43a1fdfc389cdf86b5377f30165067b04083d120ace6e258152518be3533978",
+      "payloadDigest": "sha256:13204db35514751f3c73b8348cc74e6a5579194149510469910997f41d0debe5",
+      "evidenceRevision": "image-build-39880111668",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/installer-data-arch-kde.json",
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/installer-data-arch-kde.json",
         "fileName": "installer-data-arch-kde.json",
-        "sizeBytes": 9568
+        "sizeBytes": 9625
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip",
-        "fileName": "arch-kde-build-39556550668.zip",
-        "sizeBytes": 4293411026,
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip",
+        "fileName": "arch-kde-build-39880111668.zip",
+        "sizeBytes": 4280056144,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part00",
-            "fileName": "arch-kde-build-39556550668.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part00",
+            "fileName": "arch-kde-build-39880111668.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:a0ce5de3ac998fdf1398c7d208ba7f462e8dbbdcce9cab3587c24e6eeb61293e"
+            "sha256": "sha256:0af75e0e4d608e9f6c9a1f8c1d80b1e78f7e49b348ec2367c5808ff1c73d8856"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part01",
-            "fileName": "arch-kde-build-39556550668.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part01",
+            "fileName": "arch-kde-build-39880111668.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:faf4688c4a963511f869440b73d828cc6630974f88ad0598827a1374f5a6fa81"
+            "sha256": "sha256:28185d42a04e3b6ce064f2971c34d27457d0e00acf5ea926b21d0196c52ebe4c"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part02",
-            "fileName": "arch-kde-build-39556550668.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part02",
+            "fileName": "arch-kde-build-39880111668.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:84560b1856a7a57e4c3630e9b1e283375a614330046dae765f11fe003704271e"
+            "sha256": "sha256:1114ea657b93bfceaf516df7324d4336660bc1fdcaacc4b55d54b9f7fa1f6cf0"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part03",
-            "fileName": "arch-kde-build-39556550668.zip.part03",
-            "sizeBytes": 1072185554,
-            "sha256": "sha256:1e7798c4db32da75796c832a9e2b49aea452b3c127549705b9f6a147f37110c7"
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part03",
+            "fileName": "arch-kde-build-39880111668.zip.part03",
+            "sizeBytes": 1058830672,
+            "sha256": "sha256:5772c1900ad0dc85d5ea886c749aa8071a4ad6f7ecc021ba090ba3e20660cd86"
           }
         ]
+      },
+      "engineVersion": "v0.9.2-aurora.14",
+      "engineDigest": "sha256:21da6f7babcadaaaf520e94f50023a28a1ee5f2e3b2ce48f8274e86c8c257f97",
+      "engineArtifact": {
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/installer-v0.9.2-aurora.14.tar.gz",
+        "fileName": "installer-v0.9.2-aurora.14.tar.gz",
+        "sizeBytes": 17896528
       },
       "installationProfile": "arch-kde"
     },
@@ -926,45 +1059,52 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "2d28c661b0c228fdc7da5743893d816b2740e132",
-      "metadataDigest": "sha256:71bef937616e25412e874f515434e1f6af50ed509d73522d4d91e7353e50e431",
-      "payloadDigest": "sha256:bc10d1828256523b8dd3d017bcb7d28139fb0ded40169fcc9709fbedc920718b",
-      "evidenceRevision": "image-build-39556550668",
+      "downstreamRevision": "b35281a38740d394cfdcef5b06578d1ee2f64bda",
+      "metadataDigest": "sha256:d43a1fdfc389cdf86b5377f30165067b04083d120ace6e258152518be3533978",
+      "payloadDigest": "sha256:13204db35514751f3c73b8348cc74e6a5579194149510469910997f41d0debe5",
+      "evidenceRevision": "image-build-39880111668",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/installer-data-arch-kde.json",
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/installer-data-arch-kde.json",
         "fileName": "installer-data-arch-kde.json",
-        "sizeBytes": 9568
+        "sizeBytes": 9625
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip",
-        "fileName": "arch-kde-build-39556550668.zip",
-        "sizeBytes": 4293411026,
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip",
+        "fileName": "arch-kde-build-39880111668.zip",
+        "sizeBytes": 4280056144,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part00",
-            "fileName": "arch-kde-build-39556550668.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part00",
+            "fileName": "arch-kde-build-39880111668.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:a0ce5de3ac998fdf1398c7d208ba7f462e8dbbdcce9cab3587c24e6eeb61293e"
+            "sha256": "sha256:0af75e0e4d608e9f6c9a1f8c1d80b1e78f7e49b348ec2367c5808ff1c73d8856"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part01",
-            "fileName": "arch-kde-build-39556550668.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part01",
+            "fileName": "arch-kde-build-39880111668.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:faf4688c4a963511f869440b73d828cc6630974f88ad0598827a1374f5a6fa81"
+            "sha256": "sha256:28185d42a04e3b6ce064f2971c34d27457d0e00acf5ea926b21d0196c52ebe4c"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part02",
-            "fileName": "arch-kde-build-39556550668.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part02",
+            "fileName": "arch-kde-build-39880111668.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:84560b1856a7a57e4c3630e9b1e283375a614330046dae765f11fe003704271e"
+            "sha256": "sha256:1114ea657b93bfceaf516df7324d4336660bc1fdcaacc4b55d54b9f7fa1f6cf0"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part03",
-            "fileName": "arch-kde-build-39556550668.zip.part03",
-            "sizeBytes": 1072185554,
-            "sha256": "sha256:1e7798c4db32da75796c832a9e2b49aea452b3c127549705b9f6a147f37110c7"
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part03",
+            "fileName": "arch-kde-build-39880111668.zip.part03",
+            "sizeBytes": 1058830672,
+            "sha256": "sha256:5772c1900ad0dc85d5ea886c749aa8071a4ad6f7ecc021ba090ba3e20660cd86"
           }
         ]
+      },
+      "engineVersion": "v0.9.2-aurora.14",
+      "engineDigest": "sha256:21da6f7babcadaaaf520e94f50023a28a1ee5f2e3b2ce48f8274e86c8c257f97",
+      "engineArtifact": {
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/installer-v0.9.2-aurora.14.tar.gz",
+        "fileName": "installer-v0.9.2-aurora.14.tar.gz",
+        "sizeBytes": 17896528
       },
       "installationProfile": "arch-kde"
     },
@@ -974,45 +1114,52 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "2d28c661b0c228fdc7da5743893d816b2740e132",
-      "metadataDigest": "sha256:71bef937616e25412e874f515434e1f6af50ed509d73522d4d91e7353e50e431",
-      "payloadDigest": "sha256:bc10d1828256523b8dd3d017bcb7d28139fb0ded40169fcc9709fbedc920718b",
-      "evidenceRevision": "image-build-39556550668",
+      "downstreamRevision": "b35281a38740d394cfdcef5b06578d1ee2f64bda",
+      "metadataDigest": "sha256:d43a1fdfc389cdf86b5377f30165067b04083d120ace6e258152518be3533978",
+      "payloadDigest": "sha256:13204db35514751f3c73b8348cc74e6a5579194149510469910997f41d0debe5",
+      "evidenceRevision": "image-build-39880111668",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/installer-data-arch-kde.json",
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/installer-data-arch-kde.json",
         "fileName": "installer-data-arch-kde.json",
-        "sizeBytes": 9568
+        "sizeBytes": 9625
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip",
-        "fileName": "arch-kde-build-39556550668.zip",
-        "sizeBytes": 4293411026,
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip",
+        "fileName": "arch-kde-build-39880111668.zip",
+        "sizeBytes": 4280056144,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part00",
-            "fileName": "arch-kde-build-39556550668.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part00",
+            "fileName": "arch-kde-build-39880111668.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:a0ce5de3ac998fdf1398c7d208ba7f462e8dbbdcce9cab3587c24e6eeb61293e"
+            "sha256": "sha256:0af75e0e4d608e9f6c9a1f8c1d80b1e78f7e49b348ec2367c5808ff1c73d8856"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part01",
-            "fileName": "arch-kde-build-39556550668.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part01",
+            "fileName": "arch-kde-build-39880111668.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:faf4688c4a963511f869440b73d828cc6630974f88ad0598827a1374f5a6fa81"
+            "sha256": "sha256:28185d42a04e3b6ce064f2971c34d27457d0e00acf5ea926b21d0196c52ebe4c"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part02",
-            "fileName": "arch-kde-build-39556550668.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part02",
+            "fileName": "arch-kde-build-39880111668.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:84560b1856a7a57e4c3630e9b1e283375a614330046dae765f11fe003704271e"
+            "sha256": "sha256:1114ea657b93bfceaf516df7324d4336660bc1fdcaacc4b55d54b9f7fa1f6cf0"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part03",
-            "fileName": "arch-kde-build-39556550668.zip.part03",
-            "sizeBytes": 1072185554,
-            "sha256": "sha256:1e7798c4db32da75796c832a9e2b49aea452b3c127549705b9f6a147f37110c7"
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part03",
+            "fileName": "arch-kde-build-39880111668.zip.part03",
+            "sizeBytes": 1058830672,
+            "sha256": "sha256:5772c1900ad0dc85d5ea886c749aa8071a4ad6f7ecc021ba090ba3e20660cd86"
           }
         ]
+      },
+      "engineVersion": "v0.9.2-aurora.14",
+      "engineDigest": "sha256:21da6f7babcadaaaf520e94f50023a28a1ee5f2e3b2ce48f8274e86c8c257f97",
+      "engineArtifact": {
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/installer-v0.9.2-aurora.14.tar.gz",
+        "fileName": "installer-v0.9.2-aurora.14.tar.gz",
+        "sizeBytes": 17896528
       },
       "installationProfile": "arch-kde"
     },
@@ -1022,45 +1169,52 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "2d28c661b0c228fdc7da5743893d816b2740e132",
-      "metadataDigest": "sha256:71bef937616e25412e874f515434e1f6af50ed509d73522d4d91e7353e50e431",
-      "payloadDigest": "sha256:bc10d1828256523b8dd3d017bcb7d28139fb0ded40169fcc9709fbedc920718b",
-      "evidenceRevision": "image-build-39556550668",
+      "downstreamRevision": "b35281a38740d394cfdcef5b06578d1ee2f64bda",
+      "metadataDigest": "sha256:d43a1fdfc389cdf86b5377f30165067b04083d120ace6e258152518be3533978",
+      "payloadDigest": "sha256:13204db35514751f3c73b8348cc74e6a5579194149510469910997f41d0debe5",
+      "evidenceRevision": "image-build-39880111668",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/installer-data-arch-kde.json",
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/installer-data-arch-kde.json",
         "fileName": "installer-data-arch-kde.json",
-        "sizeBytes": 9568
+        "sizeBytes": 9625
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip",
-        "fileName": "arch-kde-build-39556550668.zip",
-        "sizeBytes": 4293411026,
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip",
+        "fileName": "arch-kde-build-39880111668.zip",
+        "sizeBytes": 4280056144,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part00",
-            "fileName": "arch-kde-build-39556550668.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part00",
+            "fileName": "arch-kde-build-39880111668.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:a0ce5de3ac998fdf1398c7d208ba7f462e8dbbdcce9cab3587c24e6eeb61293e"
+            "sha256": "sha256:0af75e0e4d608e9f6c9a1f8c1d80b1e78f7e49b348ec2367c5808ff1c73d8856"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part01",
-            "fileName": "arch-kde-build-39556550668.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part01",
+            "fileName": "arch-kde-build-39880111668.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:faf4688c4a963511f869440b73d828cc6630974f88ad0598827a1374f5a6fa81"
+            "sha256": "sha256:28185d42a04e3b6ce064f2971c34d27457d0e00acf5ea926b21d0196c52ebe4c"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part02",
-            "fileName": "arch-kde-build-39556550668.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part02",
+            "fileName": "arch-kde-build-39880111668.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:84560b1856a7a57e4c3630e9b1e283375a614330046dae765f11fe003704271e"
+            "sha256": "sha256:1114ea657b93bfceaf516df7324d4336660bc1fdcaacc4b55d54b9f7fa1f6cf0"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part03",
-            "fileName": "arch-kde-build-39556550668.zip.part03",
-            "sizeBytes": 1072185554,
-            "sha256": "sha256:1e7798c4db32da75796c832a9e2b49aea452b3c127549705b9f6a147f37110c7"
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part03",
+            "fileName": "arch-kde-build-39880111668.zip.part03",
+            "sizeBytes": 1058830672,
+            "sha256": "sha256:5772c1900ad0dc85d5ea886c749aa8071a4ad6f7ecc021ba090ba3e20660cd86"
           }
         ]
+      },
+      "engineVersion": "v0.9.2-aurora.14",
+      "engineDigest": "sha256:21da6f7babcadaaaf520e94f50023a28a1ee5f2e3b2ce48f8274e86c8c257f97",
+      "engineArtifact": {
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/installer-v0.9.2-aurora.14.tar.gz",
+        "fileName": "installer-v0.9.2-aurora.14.tar.gz",
+        "sizeBytes": 17896528
       },
       "installationProfile": "arch-kde"
     },
@@ -1070,45 +1224,52 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "2d28c661b0c228fdc7da5743893d816b2740e132",
-      "metadataDigest": "sha256:71bef937616e25412e874f515434e1f6af50ed509d73522d4d91e7353e50e431",
-      "payloadDigest": "sha256:bc10d1828256523b8dd3d017bcb7d28139fb0ded40169fcc9709fbedc920718b",
-      "evidenceRevision": "image-build-39556550668",
+      "downstreamRevision": "b35281a38740d394cfdcef5b06578d1ee2f64bda",
+      "metadataDigest": "sha256:d43a1fdfc389cdf86b5377f30165067b04083d120ace6e258152518be3533978",
+      "payloadDigest": "sha256:13204db35514751f3c73b8348cc74e6a5579194149510469910997f41d0debe5",
+      "evidenceRevision": "image-build-39880111668",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/installer-data-arch-kde.json",
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/installer-data-arch-kde.json",
         "fileName": "installer-data-arch-kde.json",
-        "sizeBytes": 9568
+        "sizeBytes": 9625
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip",
-        "fileName": "arch-kde-build-39556550668.zip",
-        "sizeBytes": 4293411026,
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip",
+        "fileName": "arch-kde-build-39880111668.zip",
+        "sizeBytes": 4280056144,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part00",
-            "fileName": "arch-kde-build-39556550668.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part00",
+            "fileName": "arch-kde-build-39880111668.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:a0ce5de3ac998fdf1398c7d208ba7f462e8dbbdcce9cab3587c24e6eeb61293e"
+            "sha256": "sha256:0af75e0e4d608e9f6c9a1f8c1d80b1e78f7e49b348ec2367c5808ff1c73d8856"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part01",
-            "fileName": "arch-kde-build-39556550668.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part01",
+            "fileName": "arch-kde-build-39880111668.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:faf4688c4a963511f869440b73d828cc6630974f88ad0598827a1374f5a6fa81"
+            "sha256": "sha256:28185d42a04e3b6ce064f2971c34d27457d0e00acf5ea926b21d0196c52ebe4c"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part02",
-            "fileName": "arch-kde-build-39556550668.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part02",
+            "fileName": "arch-kde-build-39880111668.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:84560b1856a7a57e4c3630e9b1e283375a614330046dae765f11fe003704271e"
+            "sha256": "sha256:1114ea657b93bfceaf516df7324d4336660bc1fdcaacc4b55d54b9f7fa1f6cf0"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part03",
-            "fileName": "arch-kde-build-39556550668.zip.part03",
-            "sizeBytes": 1072185554,
-            "sha256": "sha256:1e7798c4db32da75796c832a9e2b49aea452b3c127549705b9f6a147f37110c7"
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part03",
+            "fileName": "arch-kde-build-39880111668.zip.part03",
+            "sizeBytes": 1058830672,
+            "sha256": "sha256:5772c1900ad0dc85d5ea886c749aa8071a4ad6f7ecc021ba090ba3e20660cd86"
           }
         ]
+      },
+      "engineVersion": "v0.9.2-aurora.14",
+      "engineDigest": "sha256:21da6f7babcadaaaf520e94f50023a28a1ee5f2e3b2ce48f8274e86c8c257f97",
+      "engineArtifact": {
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/installer-v0.9.2-aurora.14.tar.gz",
+        "fileName": "installer-v0.9.2-aurora.14.tar.gz",
+        "sizeBytes": 17896528
       },
       "installationProfile": "arch-kde"
     },
@@ -1118,45 +1279,52 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "2d28c661b0c228fdc7da5743893d816b2740e132",
-      "metadataDigest": "sha256:71bef937616e25412e874f515434e1f6af50ed509d73522d4d91e7353e50e431",
-      "payloadDigest": "sha256:bc10d1828256523b8dd3d017bcb7d28139fb0ded40169fcc9709fbedc920718b",
-      "evidenceRevision": "image-build-39556550668",
+      "downstreamRevision": "b35281a38740d394cfdcef5b06578d1ee2f64bda",
+      "metadataDigest": "sha256:d43a1fdfc389cdf86b5377f30165067b04083d120ace6e258152518be3533978",
+      "payloadDigest": "sha256:13204db35514751f3c73b8348cc74e6a5579194149510469910997f41d0debe5",
+      "evidenceRevision": "image-build-39880111668",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/installer-data-arch-kde.json",
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/installer-data-arch-kde.json",
         "fileName": "installer-data-arch-kde.json",
-        "sizeBytes": 9568
+        "sizeBytes": 9625
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip",
-        "fileName": "arch-kde-build-39556550668.zip",
-        "sizeBytes": 4293411026,
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip",
+        "fileName": "arch-kde-build-39880111668.zip",
+        "sizeBytes": 4280056144,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part00",
-            "fileName": "arch-kde-build-39556550668.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part00",
+            "fileName": "arch-kde-build-39880111668.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:a0ce5de3ac998fdf1398c7d208ba7f462e8dbbdcce9cab3587c24e6eeb61293e"
+            "sha256": "sha256:0af75e0e4d608e9f6c9a1f8c1d80b1e78f7e49b348ec2367c5808ff1c73d8856"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part01",
-            "fileName": "arch-kde-build-39556550668.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part01",
+            "fileName": "arch-kde-build-39880111668.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:faf4688c4a963511f869440b73d828cc6630974f88ad0598827a1374f5a6fa81"
+            "sha256": "sha256:28185d42a04e3b6ce064f2971c34d27457d0e00acf5ea926b21d0196c52ebe4c"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part02",
-            "fileName": "arch-kde-build-39556550668.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part02",
+            "fileName": "arch-kde-build-39880111668.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:84560b1856a7a57e4c3630e9b1e283375a614330046dae765f11fe003704271e"
+            "sha256": "sha256:1114ea657b93bfceaf516df7324d4336660bc1fdcaacc4b55d54b9f7fa1f6cf0"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part03",
-            "fileName": "arch-kde-build-39556550668.zip.part03",
-            "sizeBytes": 1072185554,
-            "sha256": "sha256:1e7798c4db32da75796c832a9e2b49aea452b3c127549705b9f6a147f37110c7"
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part03",
+            "fileName": "arch-kde-build-39880111668.zip.part03",
+            "sizeBytes": 1058830672,
+            "sha256": "sha256:5772c1900ad0dc85d5ea886c749aa8071a4ad6f7ecc021ba090ba3e20660cd86"
           }
         ]
+      },
+      "engineVersion": "v0.9.2-aurora.14",
+      "engineDigest": "sha256:21da6f7babcadaaaf520e94f50023a28a1ee5f2e3b2ce48f8274e86c8c257f97",
+      "engineArtifact": {
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/installer-v0.9.2-aurora.14.tar.gz",
+        "fileName": "installer-v0.9.2-aurora.14.tar.gz",
+        "sizeBytes": 17896528
       },
       "installationProfile": "arch-kde"
     },
@@ -1166,45 +1334,52 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "2d28c661b0c228fdc7da5743893d816b2740e132",
-      "metadataDigest": "sha256:71bef937616e25412e874f515434e1f6af50ed509d73522d4d91e7353e50e431",
-      "payloadDigest": "sha256:bc10d1828256523b8dd3d017bcb7d28139fb0ded40169fcc9709fbedc920718b",
-      "evidenceRevision": "image-build-39556550668",
+      "downstreamRevision": "b35281a38740d394cfdcef5b06578d1ee2f64bda",
+      "metadataDigest": "sha256:d43a1fdfc389cdf86b5377f30165067b04083d120ace6e258152518be3533978",
+      "payloadDigest": "sha256:13204db35514751f3c73b8348cc74e6a5579194149510469910997f41d0debe5",
+      "evidenceRevision": "image-build-39880111668",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/installer-data-arch-kde.json",
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/installer-data-arch-kde.json",
         "fileName": "installer-data-arch-kde.json",
-        "sizeBytes": 9568
+        "sizeBytes": 9625
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip",
-        "fileName": "arch-kde-build-39556550668.zip",
-        "sizeBytes": 4293411026,
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip",
+        "fileName": "arch-kde-build-39880111668.zip",
+        "sizeBytes": 4280056144,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part00",
-            "fileName": "arch-kde-build-39556550668.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part00",
+            "fileName": "arch-kde-build-39880111668.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:a0ce5de3ac998fdf1398c7d208ba7f462e8dbbdcce9cab3587c24e6eeb61293e"
+            "sha256": "sha256:0af75e0e4d608e9f6c9a1f8c1d80b1e78f7e49b348ec2367c5808ff1c73d8856"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part01",
-            "fileName": "arch-kde-build-39556550668.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part01",
+            "fileName": "arch-kde-build-39880111668.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:faf4688c4a963511f869440b73d828cc6630974f88ad0598827a1374f5a6fa81"
+            "sha256": "sha256:28185d42a04e3b6ce064f2971c34d27457d0e00acf5ea926b21d0196c52ebe4c"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part02",
-            "fileName": "arch-kde-build-39556550668.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part02",
+            "fileName": "arch-kde-build-39880111668.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:84560b1856a7a57e4c3630e9b1e283375a614330046dae765f11fe003704271e"
+            "sha256": "sha256:1114ea657b93bfceaf516df7324d4336660bc1fdcaacc4b55d54b9f7fa1f6cf0"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part03",
-            "fileName": "arch-kde-build-39556550668.zip.part03",
-            "sizeBytes": 1072185554,
-            "sha256": "sha256:1e7798c4db32da75796c832a9e2b49aea452b3c127549705b9f6a147f37110c7"
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part03",
+            "fileName": "arch-kde-build-39880111668.zip.part03",
+            "sizeBytes": 1058830672,
+            "sha256": "sha256:5772c1900ad0dc85d5ea886c749aa8071a4ad6f7ecc021ba090ba3e20660cd86"
           }
         ]
+      },
+      "engineVersion": "v0.9.2-aurora.14",
+      "engineDigest": "sha256:21da6f7babcadaaaf520e94f50023a28a1ee5f2e3b2ce48f8274e86c8c257f97",
+      "engineArtifact": {
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/installer-v0.9.2-aurora.14.tar.gz",
+        "fileName": "installer-v0.9.2-aurora.14.tar.gz",
+        "sizeBytes": 17896528
       },
       "installationProfile": "arch-kde"
     },
@@ -1214,45 +1389,52 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "2d28c661b0c228fdc7da5743893d816b2740e132",
-      "metadataDigest": "sha256:71bef937616e25412e874f515434e1f6af50ed509d73522d4d91e7353e50e431",
-      "payloadDigest": "sha256:bc10d1828256523b8dd3d017bcb7d28139fb0ded40169fcc9709fbedc920718b",
-      "evidenceRevision": "image-build-39556550668",
+      "downstreamRevision": "b35281a38740d394cfdcef5b06578d1ee2f64bda",
+      "metadataDigest": "sha256:d43a1fdfc389cdf86b5377f30165067b04083d120ace6e258152518be3533978",
+      "payloadDigest": "sha256:13204db35514751f3c73b8348cc74e6a5579194149510469910997f41d0debe5",
+      "evidenceRevision": "image-build-39880111668",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/installer-data-arch-kde.json",
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/installer-data-arch-kde.json",
         "fileName": "installer-data-arch-kde.json",
-        "sizeBytes": 9568
+        "sizeBytes": 9625
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip",
-        "fileName": "arch-kde-build-39556550668.zip",
-        "sizeBytes": 4293411026,
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip",
+        "fileName": "arch-kde-build-39880111668.zip",
+        "sizeBytes": 4280056144,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part00",
-            "fileName": "arch-kde-build-39556550668.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part00",
+            "fileName": "arch-kde-build-39880111668.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:a0ce5de3ac998fdf1398c7d208ba7f462e8dbbdcce9cab3587c24e6eeb61293e"
+            "sha256": "sha256:0af75e0e4d608e9f6c9a1f8c1d80b1e78f7e49b348ec2367c5808ff1c73d8856"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part01",
-            "fileName": "arch-kde-build-39556550668.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part01",
+            "fileName": "arch-kde-build-39880111668.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:faf4688c4a963511f869440b73d828cc6630974f88ad0598827a1374f5a6fa81"
+            "sha256": "sha256:28185d42a04e3b6ce064f2971c34d27457d0e00acf5ea926b21d0196c52ebe4c"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part02",
-            "fileName": "arch-kde-build-39556550668.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part02",
+            "fileName": "arch-kde-build-39880111668.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:84560b1856a7a57e4c3630e9b1e283375a614330046dae765f11fe003704271e"
+            "sha256": "sha256:1114ea657b93bfceaf516df7324d4336660bc1fdcaacc4b55d54b9f7fa1f6cf0"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part03",
-            "fileName": "arch-kde-build-39556550668.zip.part03",
-            "sizeBytes": 1072185554,
-            "sha256": "sha256:1e7798c4db32da75796c832a9e2b49aea452b3c127549705b9f6a147f37110c7"
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part03",
+            "fileName": "arch-kde-build-39880111668.zip.part03",
+            "sizeBytes": 1058830672,
+            "sha256": "sha256:5772c1900ad0dc85d5ea886c749aa8071a4ad6f7ecc021ba090ba3e20660cd86"
           }
         ]
+      },
+      "engineVersion": "v0.9.2-aurora.14",
+      "engineDigest": "sha256:21da6f7babcadaaaf520e94f50023a28a1ee5f2e3b2ce48f8274e86c8c257f97",
+      "engineArtifact": {
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/installer-v0.9.2-aurora.14.tar.gz",
+        "fileName": "installer-v0.9.2-aurora.14.tar.gz",
+        "sizeBytes": 17896528
       },
       "installationProfile": "arch-kde"
     },
@@ -1262,45 +1444,52 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "2d28c661b0c228fdc7da5743893d816b2740e132",
-      "metadataDigest": "sha256:71bef937616e25412e874f515434e1f6af50ed509d73522d4d91e7353e50e431",
-      "payloadDigest": "sha256:bc10d1828256523b8dd3d017bcb7d28139fb0ded40169fcc9709fbedc920718b",
-      "evidenceRevision": "image-build-39556550668",
+      "downstreamRevision": "b35281a38740d394cfdcef5b06578d1ee2f64bda",
+      "metadataDigest": "sha256:d43a1fdfc389cdf86b5377f30165067b04083d120ace6e258152518be3533978",
+      "payloadDigest": "sha256:13204db35514751f3c73b8348cc74e6a5579194149510469910997f41d0debe5",
+      "evidenceRevision": "image-build-39880111668",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/installer-data-arch-kde.json",
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/installer-data-arch-kde.json",
         "fileName": "installer-data-arch-kde.json",
-        "sizeBytes": 9568
+        "sizeBytes": 9625
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip",
-        "fileName": "arch-kde-build-39556550668.zip",
-        "sizeBytes": 4293411026,
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip",
+        "fileName": "arch-kde-build-39880111668.zip",
+        "sizeBytes": 4280056144,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part00",
-            "fileName": "arch-kde-build-39556550668.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part00",
+            "fileName": "arch-kde-build-39880111668.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:a0ce5de3ac998fdf1398c7d208ba7f462e8dbbdcce9cab3587c24e6eeb61293e"
+            "sha256": "sha256:0af75e0e4d608e9f6c9a1f8c1d80b1e78f7e49b348ec2367c5808ff1c73d8856"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part01",
-            "fileName": "arch-kde-build-39556550668.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part01",
+            "fileName": "arch-kde-build-39880111668.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:faf4688c4a963511f869440b73d828cc6630974f88ad0598827a1374f5a6fa81"
+            "sha256": "sha256:28185d42a04e3b6ce064f2971c34d27457d0e00acf5ea926b21d0196c52ebe4c"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part02",
-            "fileName": "arch-kde-build-39556550668.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part02",
+            "fileName": "arch-kde-build-39880111668.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:84560b1856a7a57e4c3630e9b1e283375a614330046dae765f11fe003704271e"
+            "sha256": "sha256:1114ea657b93bfceaf516df7324d4336660bc1fdcaacc4b55d54b9f7fa1f6cf0"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part03",
-            "fileName": "arch-kde-build-39556550668.zip.part03",
-            "sizeBytes": 1072185554,
-            "sha256": "sha256:1e7798c4db32da75796c832a9e2b49aea452b3c127549705b9f6a147f37110c7"
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part03",
+            "fileName": "arch-kde-build-39880111668.zip.part03",
+            "sizeBytes": 1058830672,
+            "sha256": "sha256:5772c1900ad0dc85d5ea886c749aa8071a4ad6f7ecc021ba090ba3e20660cd86"
           }
         ]
+      },
+      "engineVersion": "v0.9.2-aurora.14",
+      "engineDigest": "sha256:21da6f7babcadaaaf520e94f50023a28a1ee5f2e3b2ce48f8274e86c8c257f97",
+      "engineArtifact": {
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/installer-v0.9.2-aurora.14.tar.gz",
+        "fileName": "installer-v0.9.2-aurora.14.tar.gz",
+        "sizeBytes": 17896528
       },
       "installationProfile": "arch-kde"
     },
@@ -1310,45 +1499,52 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "2d28c661b0c228fdc7da5743893d816b2740e132",
-      "metadataDigest": "sha256:71bef937616e25412e874f515434e1f6af50ed509d73522d4d91e7353e50e431",
-      "payloadDigest": "sha256:bc10d1828256523b8dd3d017bcb7d28139fb0ded40169fcc9709fbedc920718b",
-      "evidenceRevision": "image-build-39556550668",
+      "downstreamRevision": "b35281a38740d394cfdcef5b06578d1ee2f64bda",
+      "metadataDigest": "sha256:d43a1fdfc389cdf86b5377f30165067b04083d120ace6e258152518be3533978",
+      "payloadDigest": "sha256:13204db35514751f3c73b8348cc74e6a5579194149510469910997f41d0debe5",
+      "evidenceRevision": "image-build-39880111668",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/installer-data-arch-kde.json",
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/installer-data-arch-kde.json",
         "fileName": "installer-data-arch-kde.json",
-        "sizeBytes": 9568
+        "sizeBytes": 9625
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip",
-        "fileName": "arch-kde-build-39556550668.zip",
-        "sizeBytes": 4293411026,
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip",
+        "fileName": "arch-kde-build-39880111668.zip",
+        "sizeBytes": 4280056144,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part00",
-            "fileName": "arch-kde-build-39556550668.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part00",
+            "fileName": "arch-kde-build-39880111668.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:a0ce5de3ac998fdf1398c7d208ba7f462e8dbbdcce9cab3587c24e6eeb61293e"
+            "sha256": "sha256:0af75e0e4d608e9f6c9a1f8c1d80b1e78f7e49b348ec2367c5808ff1c73d8856"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part01",
-            "fileName": "arch-kde-build-39556550668.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part01",
+            "fileName": "arch-kde-build-39880111668.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:faf4688c4a963511f869440b73d828cc6630974f88ad0598827a1374f5a6fa81"
+            "sha256": "sha256:28185d42a04e3b6ce064f2971c34d27457d0e00acf5ea926b21d0196c52ebe4c"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part02",
-            "fileName": "arch-kde-build-39556550668.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part02",
+            "fileName": "arch-kde-build-39880111668.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:84560b1856a7a57e4c3630e9b1e283375a614330046dae765f11fe003704271e"
+            "sha256": "sha256:1114ea657b93bfceaf516df7324d4336660bc1fdcaacc4b55d54b9f7fa1f6cf0"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part03",
-            "fileName": "arch-kde-build-39556550668.zip.part03",
-            "sizeBytes": 1072185554,
-            "sha256": "sha256:1e7798c4db32da75796c832a9e2b49aea452b3c127549705b9f6a147f37110c7"
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part03",
+            "fileName": "arch-kde-build-39880111668.zip.part03",
+            "sizeBytes": 1058830672,
+            "sha256": "sha256:5772c1900ad0dc85d5ea886c749aa8071a4ad6f7ecc021ba090ba3e20660cd86"
           }
         ]
+      },
+      "engineVersion": "v0.9.2-aurora.14",
+      "engineDigest": "sha256:21da6f7babcadaaaf520e94f50023a28a1ee5f2e3b2ce48f8274e86c8c257f97",
+      "engineArtifact": {
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/installer-v0.9.2-aurora.14.tar.gz",
+        "fileName": "installer-v0.9.2-aurora.14.tar.gz",
+        "sizeBytes": 17896528
       },
       "installationProfile": "arch-kde"
     },
@@ -1358,45 +1554,52 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "2d28c661b0c228fdc7da5743893d816b2740e132",
-      "metadataDigest": "sha256:71bef937616e25412e874f515434e1f6af50ed509d73522d4d91e7353e50e431",
-      "payloadDigest": "sha256:bc10d1828256523b8dd3d017bcb7d28139fb0ded40169fcc9709fbedc920718b",
-      "evidenceRevision": "image-build-39556550668",
+      "downstreamRevision": "b35281a38740d394cfdcef5b06578d1ee2f64bda",
+      "metadataDigest": "sha256:d43a1fdfc389cdf86b5377f30165067b04083d120ace6e258152518be3533978",
+      "payloadDigest": "sha256:13204db35514751f3c73b8348cc74e6a5579194149510469910997f41d0debe5",
+      "evidenceRevision": "image-build-39880111668",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/installer-data-arch-kde.json",
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/installer-data-arch-kde.json",
         "fileName": "installer-data-arch-kde.json",
-        "sizeBytes": 9568
+        "sizeBytes": 9625
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip",
-        "fileName": "arch-kde-build-39556550668.zip",
-        "sizeBytes": 4293411026,
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip",
+        "fileName": "arch-kde-build-39880111668.zip",
+        "sizeBytes": 4280056144,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part00",
-            "fileName": "arch-kde-build-39556550668.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part00",
+            "fileName": "arch-kde-build-39880111668.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:a0ce5de3ac998fdf1398c7d208ba7f462e8dbbdcce9cab3587c24e6eeb61293e"
+            "sha256": "sha256:0af75e0e4d608e9f6c9a1f8c1d80b1e78f7e49b348ec2367c5808ff1c73d8856"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part01",
-            "fileName": "arch-kde-build-39556550668.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part01",
+            "fileName": "arch-kde-build-39880111668.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:faf4688c4a963511f869440b73d828cc6630974f88ad0598827a1374f5a6fa81"
+            "sha256": "sha256:28185d42a04e3b6ce064f2971c34d27457d0e00acf5ea926b21d0196c52ebe4c"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part02",
-            "fileName": "arch-kde-build-39556550668.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part02",
+            "fileName": "arch-kde-build-39880111668.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:84560b1856a7a57e4c3630e9b1e283375a614330046dae765f11fe003704271e"
+            "sha256": "sha256:1114ea657b93bfceaf516df7324d4336660bc1fdcaacc4b55d54b9f7fa1f6cf0"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part03",
-            "fileName": "arch-kde-build-39556550668.zip.part03",
-            "sizeBytes": 1072185554,
-            "sha256": "sha256:1e7798c4db32da75796c832a9e2b49aea452b3c127549705b9f6a147f37110c7"
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part03",
+            "fileName": "arch-kde-build-39880111668.zip.part03",
+            "sizeBytes": 1058830672,
+            "sha256": "sha256:5772c1900ad0dc85d5ea886c749aa8071a4ad6f7ecc021ba090ba3e20660cd86"
           }
         ]
+      },
+      "engineVersion": "v0.9.2-aurora.14",
+      "engineDigest": "sha256:21da6f7babcadaaaf520e94f50023a28a1ee5f2e3b2ce48f8274e86c8c257f97",
+      "engineArtifact": {
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/installer-v0.9.2-aurora.14.tar.gz",
+        "fileName": "installer-v0.9.2-aurora.14.tar.gz",
+        "sizeBytes": 17896528
       },
       "installationProfile": "arch-kde"
     },
@@ -1406,45 +1609,52 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "2d28c661b0c228fdc7da5743893d816b2740e132",
-      "metadataDigest": "sha256:71bef937616e25412e874f515434e1f6af50ed509d73522d4d91e7353e50e431",
-      "payloadDigest": "sha256:bc10d1828256523b8dd3d017bcb7d28139fb0ded40169fcc9709fbedc920718b",
-      "evidenceRevision": "image-build-39556550668",
+      "downstreamRevision": "b35281a38740d394cfdcef5b06578d1ee2f64bda",
+      "metadataDigest": "sha256:d43a1fdfc389cdf86b5377f30165067b04083d120ace6e258152518be3533978",
+      "payloadDigest": "sha256:13204db35514751f3c73b8348cc74e6a5579194149510469910997f41d0debe5",
+      "evidenceRevision": "image-build-39880111668",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/installer-data-arch-kde.json",
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/installer-data-arch-kde.json",
         "fileName": "installer-data-arch-kde.json",
-        "sizeBytes": 9568
+        "sizeBytes": 9625
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip",
-        "fileName": "arch-kde-build-39556550668.zip",
-        "sizeBytes": 4293411026,
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip",
+        "fileName": "arch-kde-build-39880111668.zip",
+        "sizeBytes": 4280056144,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part00",
-            "fileName": "arch-kde-build-39556550668.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part00",
+            "fileName": "arch-kde-build-39880111668.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:a0ce5de3ac998fdf1398c7d208ba7f462e8dbbdcce9cab3587c24e6eeb61293e"
+            "sha256": "sha256:0af75e0e4d608e9f6c9a1f8c1d80b1e78f7e49b348ec2367c5808ff1c73d8856"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part01",
-            "fileName": "arch-kde-build-39556550668.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part01",
+            "fileName": "arch-kde-build-39880111668.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:faf4688c4a963511f869440b73d828cc6630974f88ad0598827a1374f5a6fa81"
+            "sha256": "sha256:28185d42a04e3b6ce064f2971c34d27457d0e00acf5ea926b21d0196c52ebe4c"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part02",
-            "fileName": "arch-kde-build-39556550668.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part02",
+            "fileName": "arch-kde-build-39880111668.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:84560b1856a7a57e4c3630e9b1e283375a614330046dae765f11fe003704271e"
+            "sha256": "sha256:1114ea657b93bfceaf516df7324d4336660bc1fdcaacc4b55d54b9f7fa1f6cf0"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part03",
-            "fileName": "arch-kde-build-39556550668.zip.part03",
-            "sizeBytes": 1072185554,
-            "sha256": "sha256:1e7798c4db32da75796c832a9e2b49aea452b3c127549705b9f6a147f37110c7"
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part03",
+            "fileName": "arch-kde-build-39880111668.zip.part03",
+            "sizeBytes": 1058830672,
+            "sha256": "sha256:5772c1900ad0dc85d5ea886c749aa8071a4ad6f7ecc021ba090ba3e20660cd86"
           }
         ]
+      },
+      "engineVersion": "v0.9.2-aurora.14",
+      "engineDigest": "sha256:21da6f7babcadaaaf520e94f50023a28a1ee5f2e3b2ce48f8274e86c8c257f97",
+      "engineArtifact": {
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/installer-v0.9.2-aurora.14.tar.gz",
+        "fileName": "installer-v0.9.2-aurora.14.tar.gz",
+        "sizeBytes": 17896528
       },
       "installationProfile": "arch-kde"
     },
@@ -1454,45 +1664,52 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "2d28c661b0c228fdc7da5743893d816b2740e132",
-      "metadataDigest": "sha256:71bef937616e25412e874f515434e1f6af50ed509d73522d4d91e7353e50e431",
-      "payloadDigest": "sha256:bc10d1828256523b8dd3d017bcb7d28139fb0ded40169fcc9709fbedc920718b",
-      "evidenceRevision": "image-build-39556550668",
+      "downstreamRevision": "b35281a38740d394cfdcef5b06578d1ee2f64bda",
+      "metadataDigest": "sha256:d43a1fdfc389cdf86b5377f30165067b04083d120ace6e258152518be3533978",
+      "payloadDigest": "sha256:13204db35514751f3c73b8348cc74e6a5579194149510469910997f41d0debe5",
+      "evidenceRevision": "image-build-39880111668",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/installer-data-arch-kde.json",
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/installer-data-arch-kde.json",
         "fileName": "installer-data-arch-kde.json",
-        "sizeBytes": 9568
+        "sizeBytes": 9625
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip",
-        "fileName": "arch-kde-build-39556550668.zip",
-        "sizeBytes": 4293411026,
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip",
+        "fileName": "arch-kde-build-39880111668.zip",
+        "sizeBytes": 4280056144,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part00",
-            "fileName": "arch-kde-build-39556550668.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part00",
+            "fileName": "arch-kde-build-39880111668.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:a0ce5de3ac998fdf1398c7d208ba7f462e8dbbdcce9cab3587c24e6eeb61293e"
+            "sha256": "sha256:0af75e0e4d608e9f6c9a1f8c1d80b1e78f7e49b348ec2367c5808ff1c73d8856"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part01",
-            "fileName": "arch-kde-build-39556550668.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part01",
+            "fileName": "arch-kde-build-39880111668.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:faf4688c4a963511f869440b73d828cc6630974f88ad0598827a1374f5a6fa81"
+            "sha256": "sha256:28185d42a04e3b6ce064f2971c34d27457d0e00acf5ea926b21d0196c52ebe4c"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part02",
-            "fileName": "arch-kde-build-39556550668.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part02",
+            "fileName": "arch-kde-build-39880111668.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:84560b1856a7a57e4c3630e9b1e283375a614330046dae765f11fe003704271e"
+            "sha256": "sha256:1114ea657b93bfceaf516df7324d4336660bc1fdcaacc4b55d54b9f7fa1f6cf0"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part03",
-            "fileName": "arch-kde-build-39556550668.zip.part03",
-            "sizeBytes": 1072185554,
-            "sha256": "sha256:1e7798c4db32da75796c832a9e2b49aea452b3c127549705b9f6a147f37110c7"
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part03",
+            "fileName": "arch-kde-build-39880111668.zip.part03",
+            "sizeBytes": 1058830672,
+            "sha256": "sha256:5772c1900ad0dc85d5ea886c749aa8071a4ad6f7ecc021ba090ba3e20660cd86"
           }
         ]
+      },
+      "engineVersion": "v0.9.2-aurora.14",
+      "engineDigest": "sha256:21da6f7babcadaaaf520e94f50023a28a1ee5f2e3b2ce48f8274e86c8c257f97",
+      "engineArtifact": {
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/installer-v0.9.2-aurora.14.tar.gz",
+        "fileName": "installer-v0.9.2-aurora.14.tar.gz",
+        "sizeBytes": 17896528
       },
       "installationProfile": "arch-kde"
     },
@@ -1502,45 +1719,52 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "2d28c661b0c228fdc7da5743893d816b2740e132",
-      "metadataDigest": "sha256:71bef937616e25412e874f515434e1f6af50ed509d73522d4d91e7353e50e431",
-      "payloadDigest": "sha256:bc10d1828256523b8dd3d017bcb7d28139fb0ded40169fcc9709fbedc920718b",
-      "evidenceRevision": "image-build-39556550668",
+      "downstreamRevision": "b35281a38740d394cfdcef5b06578d1ee2f64bda",
+      "metadataDigest": "sha256:d43a1fdfc389cdf86b5377f30165067b04083d120ace6e258152518be3533978",
+      "payloadDigest": "sha256:13204db35514751f3c73b8348cc74e6a5579194149510469910997f41d0debe5",
+      "evidenceRevision": "image-build-39880111668",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/installer-data-arch-kde.json",
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/installer-data-arch-kde.json",
         "fileName": "installer-data-arch-kde.json",
-        "sizeBytes": 9568
+        "sizeBytes": 9625
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip",
-        "fileName": "arch-kde-build-39556550668.zip",
-        "sizeBytes": 4293411026,
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip",
+        "fileName": "arch-kde-build-39880111668.zip",
+        "sizeBytes": 4280056144,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part00",
-            "fileName": "arch-kde-build-39556550668.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part00",
+            "fileName": "arch-kde-build-39880111668.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:a0ce5de3ac998fdf1398c7d208ba7f462e8dbbdcce9cab3587c24e6eeb61293e"
+            "sha256": "sha256:0af75e0e4d608e9f6c9a1f8c1d80b1e78f7e49b348ec2367c5808ff1c73d8856"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part01",
-            "fileName": "arch-kde-build-39556550668.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part01",
+            "fileName": "arch-kde-build-39880111668.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:faf4688c4a963511f869440b73d828cc6630974f88ad0598827a1374f5a6fa81"
+            "sha256": "sha256:28185d42a04e3b6ce064f2971c34d27457d0e00acf5ea926b21d0196c52ebe4c"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part02",
-            "fileName": "arch-kde-build-39556550668.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part02",
+            "fileName": "arch-kde-build-39880111668.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:84560b1856a7a57e4c3630e9b1e283375a614330046dae765f11fe003704271e"
+            "sha256": "sha256:1114ea657b93bfceaf516df7324d4336660bc1fdcaacc4b55d54b9f7fa1f6cf0"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part03",
-            "fileName": "arch-kde-build-39556550668.zip.part03",
-            "sizeBytes": 1072185554,
-            "sha256": "sha256:1e7798c4db32da75796c832a9e2b49aea452b3c127549705b9f6a147f37110c7"
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part03",
+            "fileName": "arch-kde-build-39880111668.zip.part03",
+            "sizeBytes": 1058830672,
+            "sha256": "sha256:5772c1900ad0dc85d5ea886c749aa8071a4ad6f7ecc021ba090ba3e20660cd86"
           }
         ]
+      },
+      "engineVersion": "v0.9.2-aurora.14",
+      "engineDigest": "sha256:21da6f7babcadaaaf520e94f50023a28a1ee5f2e3b2ce48f8274e86c8c257f97",
+      "engineArtifact": {
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/installer-v0.9.2-aurora.14.tar.gz",
+        "fileName": "installer-v0.9.2-aurora.14.tar.gz",
+        "sizeBytes": 17896528
       },
       "installationProfile": "arch-kde"
     },
@@ -1550,45 +1774,52 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "2d28c661b0c228fdc7da5743893d816b2740e132",
-      "metadataDigest": "sha256:71bef937616e25412e874f515434e1f6af50ed509d73522d4d91e7353e50e431",
-      "payloadDigest": "sha256:bc10d1828256523b8dd3d017bcb7d28139fb0ded40169fcc9709fbedc920718b",
-      "evidenceRevision": "image-build-39556550668",
+      "downstreamRevision": "b35281a38740d394cfdcef5b06578d1ee2f64bda",
+      "metadataDigest": "sha256:d43a1fdfc389cdf86b5377f30165067b04083d120ace6e258152518be3533978",
+      "payloadDigest": "sha256:13204db35514751f3c73b8348cc74e6a5579194149510469910997f41d0debe5",
+      "evidenceRevision": "image-build-39880111668",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/installer-data-arch-kde.json",
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/installer-data-arch-kde.json",
         "fileName": "installer-data-arch-kde.json",
-        "sizeBytes": 9568
+        "sizeBytes": 9625
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip",
-        "fileName": "arch-kde-build-39556550668.zip",
-        "sizeBytes": 4293411026,
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip",
+        "fileName": "arch-kde-build-39880111668.zip",
+        "sizeBytes": 4280056144,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part00",
-            "fileName": "arch-kde-build-39556550668.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part00",
+            "fileName": "arch-kde-build-39880111668.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:a0ce5de3ac998fdf1398c7d208ba7f462e8dbbdcce9cab3587c24e6eeb61293e"
+            "sha256": "sha256:0af75e0e4d608e9f6c9a1f8c1d80b1e78f7e49b348ec2367c5808ff1c73d8856"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part01",
-            "fileName": "arch-kde-build-39556550668.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part01",
+            "fileName": "arch-kde-build-39880111668.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:faf4688c4a963511f869440b73d828cc6630974f88ad0598827a1374f5a6fa81"
+            "sha256": "sha256:28185d42a04e3b6ce064f2971c34d27457d0e00acf5ea926b21d0196c52ebe4c"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part02",
-            "fileName": "arch-kde-build-39556550668.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part02",
+            "fileName": "arch-kde-build-39880111668.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:84560b1856a7a57e4c3630e9b1e283375a614330046dae765f11fe003704271e"
+            "sha256": "sha256:1114ea657b93bfceaf516df7324d4336660bc1fdcaacc4b55d54b9f7fa1f6cf0"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part03",
-            "fileName": "arch-kde-build-39556550668.zip.part03",
-            "sizeBytes": 1072185554,
-            "sha256": "sha256:1e7798c4db32da75796c832a9e2b49aea452b3c127549705b9f6a147f37110c7"
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part03",
+            "fileName": "arch-kde-build-39880111668.zip.part03",
+            "sizeBytes": 1058830672,
+            "sha256": "sha256:5772c1900ad0dc85d5ea886c749aa8071a4ad6f7ecc021ba090ba3e20660cd86"
           }
         ]
+      },
+      "engineVersion": "v0.9.2-aurora.14",
+      "engineDigest": "sha256:21da6f7babcadaaaf520e94f50023a28a1ee5f2e3b2ce48f8274e86c8c257f97",
+      "engineArtifact": {
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/installer-v0.9.2-aurora.14.tar.gz",
+        "fileName": "installer-v0.9.2-aurora.14.tar.gz",
+        "sizeBytes": 17896528
       },
       "installationProfile": "arch-kde"
     },
@@ -1598,45 +1829,107 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "2d28c661b0c228fdc7da5743893d816b2740e132",
-      "metadataDigest": "sha256:71bef937616e25412e874f515434e1f6af50ed509d73522d4d91e7353e50e431",
-      "payloadDigest": "sha256:bc10d1828256523b8dd3d017bcb7d28139fb0ded40169fcc9709fbedc920718b",
-      "evidenceRevision": "image-build-39556550668",
+      "downstreamRevision": "b35281a38740d394cfdcef5b06578d1ee2f64bda",
+      "metadataDigest": "sha256:d43a1fdfc389cdf86b5377f30165067b04083d120ace6e258152518be3533978",
+      "payloadDigest": "sha256:13204db35514751f3c73b8348cc74e6a5579194149510469910997f41d0debe5",
+      "evidenceRevision": "image-build-39880111668",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/installer-data-arch-kde.json",
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/installer-data-arch-kde.json",
         "fileName": "installer-data-arch-kde.json",
-        "sizeBytes": 9568
+        "sizeBytes": 9625
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip",
-        "fileName": "arch-kde-build-39556550668.zip",
-        "sizeBytes": 4293411026,
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip",
+        "fileName": "arch-kde-build-39880111668.zip",
+        "sizeBytes": 4280056144,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part00",
-            "fileName": "arch-kde-build-39556550668.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part00",
+            "fileName": "arch-kde-build-39880111668.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:a0ce5de3ac998fdf1398c7d208ba7f462e8dbbdcce9cab3587c24e6eeb61293e"
+            "sha256": "sha256:0af75e0e4d608e9f6c9a1f8c1d80b1e78f7e49b348ec2367c5808ff1c73d8856"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part01",
-            "fileName": "arch-kde-build-39556550668.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part01",
+            "fileName": "arch-kde-build-39880111668.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:faf4688c4a963511f869440b73d828cc6630974f88ad0598827a1374f5a6fa81"
+            "sha256": "sha256:28185d42a04e3b6ce064f2971c34d27457d0e00acf5ea926b21d0196c52ebe4c"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part02",
-            "fileName": "arch-kde-build-39556550668.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part02",
+            "fileName": "arch-kde-build-39880111668.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:84560b1856a7a57e4c3630e9b1e283375a614330046dae765f11fe003704271e"
+            "sha256": "sha256:1114ea657b93bfceaf516df7324d4336660bc1fdcaacc4b55d54b9f7fa1f6cf0"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39556550668/arch-kde-build-39556550668.zip.part03",
-            "fileName": "arch-kde-build-39556550668.zip.part03",
-            "sizeBytes": 1072185554,
-            "sha256": "sha256:1e7798c4db32da75796c832a9e2b49aea452b3c127549705b9f6a147f37110c7"
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part03",
+            "fileName": "arch-kde-build-39880111668.zip.part03",
+            "sizeBytes": 1058830672,
+            "sha256": "sha256:5772c1900ad0dc85d5ea886c749aa8071a4ad6f7ecc021ba090ba3e20660cd86"
           }
         ]
+      },
+      "engineVersion": "v0.9.2-aurora.14",
+      "engineDigest": "sha256:21da6f7babcadaaaf520e94f50023a28a1ee5f2e3b2ce48f8274e86c8c257f97",
+      "engineArtifact": {
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/installer-v0.9.2-aurora.14.tar.gz",
+        "fileName": "installer-v0.9.2-aurora.14.tar.gz",
+        "sizeBytes": 17896528
+      },
+      "installationProfile": "arch-kde"
+    },
+    {
+      "deviceIdentifier": "apple,j700",
+      "status": "enabled",
+      "asahiInstallerTag": "v0.9.2",
+      "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
+      "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
+      "downstreamRevision": "b35281a38740d394cfdcef5b06578d1ee2f64bda",
+      "metadataDigest": "sha256:d43a1fdfc389cdf86b5377f30165067b04083d120ace6e258152518be3533978",
+      "payloadDigest": "sha256:13204db35514751f3c73b8348cc74e6a5579194149510469910997f41d0debe5",
+      "evidenceRevision": "image-build-39880111668",
+      "metadataArtifact": {
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/installer-data-arch-kde.json",
+        "fileName": "installer-data-arch-kde.json",
+        "sizeBytes": 9625
+      },
+      "payloadArtifact": {
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip",
+        "fileName": "arch-kde-build-39880111668.zip",
+        "sizeBytes": 4280056144,
+        "parts": [
+          {
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part00",
+            "fileName": "arch-kde-build-39880111668.zip.part00",
+            "sizeBytes": 1073741824,
+            "sha256": "sha256:0af75e0e4d608e9f6c9a1f8c1d80b1e78f7e49b348ec2367c5808ff1c73d8856"
+          },
+          {
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part01",
+            "fileName": "arch-kde-build-39880111668.zip.part01",
+            "sizeBytes": 1073741824,
+            "sha256": "sha256:28185d42a04e3b6ce064f2971c34d27457d0e00acf5ea926b21d0196c52ebe4c"
+          },
+          {
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part02",
+            "fileName": "arch-kde-build-39880111668.zip.part02",
+            "sizeBytes": 1073741824,
+            "sha256": "sha256:1114ea657b93bfceaf516df7324d4336660bc1fdcaacc4b55d54b9f7fa1f6cf0"
+          },
+          {
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/arch-kde-build-39880111668.zip.part03",
+            "fileName": "arch-kde-build-39880111668.zip.part03",
+            "sizeBytes": 1058830672,
+            "sha256": "sha256:5772c1900ad0dc85d5ea886c749aa8071a4ad6f7ecc021ba090ba3e20660cd86"
+          }
+        ]
+      },
+      "engineVersion": "v0.9.2-aurora.14",
+      "engineDigest": "sha256:21da6f7babcadaaaf520e94f50023a28a1ee5f2e3b2ce48f8274e86c8c257f97",
+      "engineArtifact": {
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-39880111668/installer-v0.9.2-aurora.14.tar.gz",
+        "fileName": "installer-v0.9.2-aurora.14.tar.gz",
+        "sizeBytes": 17896528
       },
       "installationProfile": "arch-kde"
     }

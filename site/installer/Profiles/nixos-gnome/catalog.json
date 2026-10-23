@@ -1,11 +1,11 @@
 {
-  "schemaVersion": 5,
-  "sequence": 1792573461,
-  "issuedAt": "2026-10-21T09:04:21Z",
+  "schemaVersion": 4,
+  "sequence": 1792717935,
+  "issuedAt": "2026-10-23T01:12:15Z",
   "installer": {
     "minimumVersion": "0.1.0",
     "latestVersion": "0.1.0",
-    "downloadURL": "https://github.com/aurora-silicon/aurora-installer/releases/tag/v0.1.0-alpha.6"
+    "downloadURL": "https://github.com/aurora-silicon/aurora-installer/releases/tag/v0.1.0-alpha.3"
   },
   "models": [
     {
@@ -14,45 +14,52 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "2d28c661b0c228fdc7da5743893d816b2740e132",
-      "metadataDigest": "sha256:1f80663f90dc37617f5c1549486ee3ed70c333e8adba033bbeca114a1608eb3e",
-      "payloadDigest": "sha256:5d39c7b56911cbcd18bb3e77f7dc4e739235846f8feb9e381f46e824e5687dce",
-      "evidenceRevision": "image-build-39555162856",
+      "downstreamRevision": "b35281a38740d394cfdcef5b06578d1ee2f64bda",
+      "metadataDigest": "sha256:a66d3d51d20725185cb9111a26e73a1dcde8ae59a0bb75a51c4fc4b017c167af",
+      "payloadDigest": "sha256:d87fed6299ede5b7e9d49a97f4c38136e532e13f80c19f294399efd483cfb30f",
+      "evidenceRevision": "image-build-39880526037",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/installer-data-nixos-gnome.json",
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/installer-data-nixos-gnome.json",
         "fileName": "installer-data-nixos-gnome.json",
-        "sizeBytes": 9576
+        "sizeBytes": 9633
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip",
-        "fileName": "nixos-gnome-build-39555162856.zip",
-        "sizeBytes": 3998973001,
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip",
+        "fileName": "nixos-gnome-build-39880526037.zip",
+        "sizeBytes": 3902304761,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part00",
-            "fileName": "nixos-gnome-build-39555162856.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part00",
+            "fileName": "nixos-gnome-build-39880526037.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:d4288a4356cca7031d21a20a208114ff3a6273205e507d51b2d99f7f76ff8615"
+            "sha256": "sha256:1069a9e879cbeb7c21e4e2b91f651d6513eec95863dd62a05c288c045db5e813"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part01",
-            "fileName": "nixos-gnome-build-39555162856.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part01",
+            "fileName": "nixos-gnome-build-39880526037.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:7a8eedefec38155965799f745595dc184e62fb776d4b2b03af52aa874ae5e8a2"
+            "sha256": "sha256:16267603868c05338ea1b8c553f915dedf56462bf39d04024ddcb148eaaf0ee4"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part02",
-            "fileName": "nixos-gnome-build-39555162856.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part02",
+            "fileName": "nixos-gnome-build-39880526037.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:6ab7c63a40e7f8aab344637383512cd871913d33f79909728e8931bffac2a1ac"
+            "sha256": "sha256:9685030d7268389aaadeebff578e043f087a64537da3651de0091dc0cce8b902"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part03",
-            "fileName": "nixos-gnome-build-39555162856.zip.part03",
-            "sizeBytes": 777747529,
-            "sha256": "sha256:c0831cb30878238c1c9a1a1b367f97720192d5d040cc89b33efe6427bec25803"
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part03",
+            "fileName": "nixos-gnome-build-39880526037.zip.part03",
+            "sizeBytes": 681079289,
+            "sha256": "sha256:89aa13f34104499497dfda44c77262a2d5526c34827c6edaa8207c5b35ff3039"
           }
         ]
+      },
+      "engineVersion": "v0.9.2-aurora.14",
+      "engineDigest": "sha256:21da6f7babcadaaaf520e94f50023a28a1ee5f2e3b2ce48f8274e86c8c257f97",
+      "engineArtifact": {
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/installer-v0.9.2-aurora.14.tar.gz",
+        "fileName": "installer-v0.9.2-aurora.14.tar.gz",
+        "sizeBytes": 17896528
       },
       "installationProfile": "nixos-gnome"
     },
@@ -62,45 +69,52 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "2d28c661b0c228fdc7da5743893d816b2740e132",
-      "metadataDigest": "sha256:1f80663f90dc37617f5c1549486ee3ed70c333e8adba033bbeca114a1608eb3e",
-      "payloadDigest": "sha256:5d39c7b56911cbcd18bb3e77f7dc4e739235846f8feb9e381f46e824e5687dce",
-      "evidenceRevision": "image-build-39555162856",
+      "downstreamRevision": "b35281a38740d394cfdcef5b06578d1ee2f64bda",
+      "metadataDigest": "sha256:a66d3d51d20725185cb9111a26e73a1dcde8ae59a0bb75a51c4fc4b017c167af",
+      "payloadDigest": "sha256:d87fed6299ede5b7e9d49a97f4c38136e532e13f80c19f294399efd483cfb30f",
+      "evidenceRevision": "image-build-39880526037",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/installer-data-nixos-gnome.json",
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/installer-data-nixos-gnome.json",
         "fileName": "installer-data-nixos-gnome.json",
-        "sizeBytes": 9576
+        "sizeBytes": 9633
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip",
-        "fileName": "nixos-gnome-build-39555162856.zip",
-        "sizeBytes": 3998973001,
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip",
+        "fileName": "nixos-gnome-build-39880526037.zip",
+        "sizeBytes": 3902304761,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part00",
-            "fileName": "nixos-gnome-build-39555162856.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part00",
+            "fileName": "nixos-gnome-build-39880526037.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:d4288a4356cca7031d21a20a208114ff3a6273205e507d51b2d99f7f76ff8615"
+            "sha256": "sha256:1069a9e879cbeb7c21e4e2b91f651d6513eec95863dd62a05c288c045db5e813"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part01",
-            "fileName": "nixos-gnome-build-39555162856.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part01",
+            "fileName": "nixos-gnome-build-39880526037.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:7a8eedefec38155965799f745595dc184e62fb776d4b2b03af52aa874ae5e8a2"
+            "sha256": "sha256:16267603868c05338ea1b8c553f915dedf56462bf39d04024ddcb148eaaf0ee4"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part02",
-            "fileName": "nixos-gnome-build-39555162856.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part02",
+            "fileName": "nixos-gnome-build-39880526037.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:6ab7c63a40e7f8aab344637383512cd871913d33f79909728e8931bffac2a1ac"
+            "sha256": "sha256:9685030d7268389aaadeebff578e043f087a64537da3651de0091dc0cce8b902"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part03",
-            "fileName": "nixos-gnome-build-39555162856.zip.part03",
-            "sizeBytes": 777747529,
-            "sha256": "sha256:c0831cb30878238c1c9a1a1b367f97720192d5d040cc89b33efe6427bec25803"
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part03",
+            "fileName": "nixos-gnome-build-39880526037.zip.part03",
+            "sizeBytes": 681079289,
+            "sha256": "sha256:89aa13f34104499497dfda44c77262a2d5526c34827c6edaa8207c5b35ff3039"
           }
         ]
+      },
+      "engineVersion": "v0.9.2-aurora.14",
+      "engineDigest": "sha256:21da6f7babcadaaaf520e94f50023a28a1ee5f2e3b2ce48f8274e86c8c257f97",
+      "engineArtifact": {
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/installer-v0.9.2-aurora.14.tar.gz",
+        "fileName": "installer-v0.9.2-aurora.14.tar.gz",
+        "sizeBytes": 17896528
       },
       "installationProfile": "nixos-gnome"
     },
@@ -110,45 +124,52 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "2d28c661b0c228fdc7da5743893d816b2740e132",
-      "metadataDigest": "sha256:1f80663f90dc37617f5c1549486ee3ed70c333e8adba033bbeca114a1608eb3e",
-      "payloadDigest": "sha256:5d39c7b56911cbcd18bb3e77f7dc4e739235846f8feb9e381f46e824e5687dce",
-      "evidenceRevision": "image-build-39555162856",
+      "downstreamRevision": "b35281a38740d394cfdcef5b06578d1ee2f64bda",
+      "metadataDigest": "sha256:a66d3d51d20725185cb9111a26e73a1dcde8ae59a0bb75a51c4fc4b017c167af",
+      "payloadDigest": "sha256:d87fed6299ede5b7e9d49a97f4c38136e532e13f80c19f294399efd483cfb30f",
+      "evidenceRevision": "image-build-39880526037",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/installer-data-nixos-gnome.json",
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/installer-data-nixos-gnome.json",
         "fileName": "installer-data-nixos-gnome.json",
-        "sizeBytes": 9576
+        "sizeBytes": 9633
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip",
-        "fileName": "nixos-gnome-build-39555162856.zip",
-        "sizeBytes": 3998973001,
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip",
+        "fileName": "nixos-gnome-build-39880526037.zip",
+        "sizeBytes": 3902304761,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part00",
-            "fileName": "nixos-gnome-build-39555162856.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part00",
+            "fileName": "nixos-gnome-build-39880526037.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:d4288a4356cca7031d21a20a208114ff3a6273205e507d51b2d99f7f76ff8615"
+            "sha256": "sha256:1069a9e879cbeb7c21e4e2b91f651d6513eec95863dd62a05c288c045db5e813"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part01",
-            "fileName": "nixos-gnome-build-39555162856.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part01",
+            "fileName": "nixos-gnome-build-39880526037.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:7a8eedefec38155965799f745595dc184e62fb776d4b2b03af52aa874ae5e8a2"
+            "sha256": "sha256:16267603868c05338ea1b8c553f915dedf56462bf39d04024ddcb148eaaf0ee4"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part02",
-            "fileName": "nixos-gnome-build-39555162856.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part02",
+            "fileName": "nixos-gnome-build-39880526037.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:6ab7c63a40e7f8aab344637383512cd871913d33f79909728e8931bffac2a1ac"
+            "sha256": "sha256:9685030d7268389aaadeebff578e043f087a64537da3651de0091dc0cce8b902"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part03",
-            "fileName": "nixos-gnome-build-39555162856.zip.part03",
-            "sizeBytes": 777747529,
-            "sha256": "sha256:c0831cb30878238c1c9a1a1b367f97720192d5d040cc89b33efe6427bec25803"
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part03",
+            "fileName": "nixos-gnome-build-39880526037.zip.part03",
+            "sizeBytes": 681079289,
+            "sha256": "sha256:89aa13f34104499497dfda44c77262a2d5526c34827c6edaa8207c5b35ff3039"
           }
         ]
+      },
+      "engineVersion": "v0.9.2-aurora.14",
+      "engineDigest": "sha256:21da6f7babcadaaaf520e94f50023a28a1ee5f2e3b2ce48f8274e86c8c257f97",
+      "engineArtifact": {
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/installer-v0.9.2-aurora.14.tar.gz",
+        "fileName": "installer-v0.9.2-aurora.14.tar.gz",
+        "sizeBytes": 17896528
       },
       "installationProfile": "nixos-gnome"
     },
@@ -158,45 +179,52 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "2d28c661b0c228fdc7da5743893d816b2740e132",
-      "metadataDigest": "sha256:1f80663f90dc37617f5c1549486ee3ed70c333e8adba033bbeca114a1608eb3e",
-      "payloadDigest": "sha256:5d39c7b56911cbcd18bb3e77f7dc4e739235846f8feb9e381f46e824e5687dce",
-      "evidenceRevision": "image-build-39555162856",
+      "downstreamRevision": "b35281a38740d394cfdcef5b06578d1ee2f64bda",
+      "metadataDigest": "sha256:a66d3d51d20725185cb9111a26e73a1dcde8ae59a0bb75a51c4fc4b017c167af",
+      "payloadDigest": "sha256:d87fed6299ede5b7e9d49a97f4c38136e532e13f80c19f294399efd483cfb30f",
+      "evidenceRevision": "image-build-39880526037",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/installer-data-nixos-gnome.json",
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/installer-data-nixos-gnome.json",
         "fileName": "installer-data-nixos-gnome.json",
-        "sizeBytes": 9576
+        "sizeBytes": 9633
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip",
-        "fileName": "nixos-gnome-build-39555162856.zip",
-        "sizeBytes": 3998973001,
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip",
+        "fileName": "nixos-gnome-build-39880526037.zip",
+        "sizeBytes": 3902304761,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part00",
-            "fileName": "nixos-gnome-build-39555162856.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part00",
+            "fileName": "nixos-gnome-build-39880526037.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:d4288a4356cca7031d21a20a208114ff3a6273205e507d51b2d99f7f76ff8615"
+            "sha256": "sha256:1069a9e879cbeb7c21e4e2b91f651d6513eec95863dd62a05c288c045db5e813"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part01",
-            "fileName": "nixos-gnome-build-39555162856.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part01",
+            "fileName": "nixos-gnome-build-39880526037.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:7a8eedefec38155965799f745595dc184e62fb776d4b2b03af52aa874ae5e8a2"
+            "sha256": "sha256:16267603868c05338ea1b8c553f915dedf56462bf39d04024ddcb148eaaf0ee4"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part02",
-            "fileName": "nixos-gnome-build-39555162856.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part02",
+            "fileName": "nixos-gnome-build-39880526037.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:6ab7c63a40e7f8aab344637383512cd871913d33f79909728e8931bffac2a1ac"
+            "sha256": "sha256:9685030d7268389aaadeebff578e043f087a64537da3651de0091dc0cce8b902"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part03",
-            "fileName": "nixos-gnome-build-39555162856.zip.part03",
-            "sizeBytes": 777747529,
-            "sha256": "sha256:c0831cb30878238c1c9a1a1b367f97720192d5d040cc89b33efe6427bec25803"
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part03",
+            "fileName": "nixos-gnome-build-39880526037.zip.part03",
+            "sizeBytes": 681079289,
+            "sha256": "sha256:89aa13f34104499497dfda44c77262a2d5526c34827c6edaa8207c5b35ff3039"
           }
         ]
+      },
+      "engineVersion": "v0.9.2-aurora.14",
+      "engineDigest": "sha256:21da6f7babcadaaaf520e94f50023a28a1ee5f2e3b2ce48f8274e86c8c257f97",
+      "engineArtifact": {
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/installer-v0.9.2-aurora.14.tar.gz",
+        "fileName": "installer-v0.9.2-aurora.14.tar.gz",
+        "sizeBytes": 17896528
       },
       "installationProfile": "nixos-gnome"
     },
@@ -206,45 +234,52 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "2d28c661b0c228fdc7da5743893d816b2740e132",
-      "metadataDigest": "sha256:1f80663f90dc37617f5c1549486ee3ed70c333e8adba033bbeca114a1608eb3e",
-      "payloadDigest": "sha256:5d39c7b56911cbcd18bb3e77f7dc4e739235846f8feb9e381f46e824e5687dce",
-      "evidenceRevision": "image-build-39555162856",
+      "downstreamRevision": "b35281a38740d394cfdcef5b06578d1ee2f64bda",
+      "metadataDigest": "sha256:a66d3d51d20725185cb9111a26e73a1dcde8ae59a0bb75a51c4fc4b017c167af",
+      "payloadDigest": "sha256:d87fed6299ede5b7e9d49a97f4c38136e532e13f80c19f294399efd483cfb30f",
+      "evidenceRevision": "image-build-39880526037",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/installer-data-nixos-gnome.json",
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/installer-data-nixos-gnome.json",
         "fileName": "installer-data-nixos-gnome.json",
-        "sizeBytes": 9576
+        "sizeBytes": 9633
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip",
-        "fileName": "nixos-gnome-build-39555162856.zip",
-        "sizeBytes": 3998973001,
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip",
+        "fileName": "nixos-gnome-build-39880526037.zip",
+        "sizeBytes": 3902304761,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part00",
-            "fileName": "nixos-gnome-build-39555162856.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part00",
+            "fileName": "nixos-gnome-build-39880526037.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:d4288a4356cca7031d21a20a208114ff3a6273205e507d51b2d99f7f76ff8615"
+            "sha256": "sha256:1069a9e879cbeb7c21e4e2b91f651d6513eec95863dd62a05c288c045db5e813"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part01",
-            "fileName": "nixos-gnome-build-39555162856.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part01",
+            "fileName": "nixos-gnome-build-39880526037.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:7a8eedefec38155965799f745595dc184e62fb776d4b2b03af52aa874ae5e8a2"
+            "sha256": "sha256:16267603868c05338ea1b8c553f915dedf56462bf39d04024ddcb148eaaf0ee4"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part02",
-            "fileName": "nixos-gnome-build-39555162856.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part02",
+            "fileName": "nixos-gnome-build-39880526037.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:6ab7c63a40e7f8aab344637383512cd871913d33f79909728e8931bffac2a1ac"
+            "sha256": "sha256:9685030d7268389aaadeebff578e043f087a64537da3651de0091dc0cce8b902"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part03",
-            "fileName": "nixos-gnome-build-39555162856.zip.part03",
-            "sizeBytes": 777747529,
-            "sha256": "sha256:c0831cb30878238c1c9a1a1b367f97720192d5d040cc89b33efe6427bec25803"
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part03",
+            "fileName": "nixos-gnome-build-39880526037.zip.part03",
+            "sizeBytes": 681079289,
+            "sha256": "sha256:89aa13f34104499497dfda44c77262a2d5526c34827c6edaa8207c5b35ff3039"
           }
         ]
+      },
+      "engineVersion": "v0.9.2-aurora.14",
+      "engineDigest": "sha256:21da6f7babcadaaaf520e94f50023a28a1ee5f2e3b2ce48f8274e86c8c257f97",
+      "engineArtifact": {
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/installer-v0.9.2-aurora.14.tar.gz",
+        "fileName": "installer-v0.9.2-aurora.14.tar.gz",
+        "sizeBytes": 17896528
       },
       "installationProfile": "nixos-gnome"
     },
@@ -254,45 +289,52 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "2d28c661b0c228fdc7da5743893d816b2740e132",
-      "metadataDigest": "sha256:1f80663f90dc37617f5c1549486ee3ed70c333e8adba033bbeca114a1608eb3e",
-      "payloadDigest": "sha256:5d39c7b56911cbcd18bb3e77f7dc4e739235846f8feb9e381f46e824e5687dce",
-      "evidenceRevision": "image-build-39555162856",
+      "downstreamRevision": "b35281a38740d394cfdcef5b06578d1ee2f64bda",
+      "metadataDigest": "sha256:a66d3d51d20725185cb9111a26e73a1dcde8ae59a0bb75a51c4fc4b017c167af",
+      "payloadDigest": "sha256:d87fed6299ede5b7e9d49a97f4c38136e532e13f80c19f294399efd483cfb30f",
+      "evidenceRevision": "image-build-39880526037",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/installer-data-nixos-gnome.json",
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/installer-data-nixos-gnome.json",
         "fileName": "installer-data-nixos-gnome.json",
-        "sizeBytes": 9576
+        "sizeBytes": 9633
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip",
-        "fileName": "nixos-gnome-build-39555162856.zip",
-        "sizeBytes": 3998973001,
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip",
+        "fileName": "nixos-gnome-build-39880526037.zip",
+        "sizeBytes": 3902304761,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part00",
-            "fileName": "nixos-gnome-build-39555162856.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part00",
+            "fileName": "nixos-gnome-build-39880526037.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:d4288a4356cca7031d21a20a208114ff3a6273205e507d51b2d99f7f76ff8615"
+            "sha256": "sha256:1069a9e879cbeb7c21e4e2b91f651d6513eec95863dd62a05c288c045db5e813"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part01",
-            "fileName": "nixos-gnome-build-39555162856.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part01",
+            "fileName": "nixos-gnome-build-39880526037.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:7a8eedefec38155965799f745595dc184e62fb776d4b2b03af52aa874ae5e8a2"
+            "sha256": "sha256:16267603868c05338ea1b8c553f915dedf56462bf39d04024ddcb148eaaf0ee4"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part02",
-            "fileName": "nixos-gnome-build-39555162856.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part02",
+            "fileName": "nixos-gnome-build-39880526037.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:6ab7c63a40e7f8aab344637383512cd871913d33f79909728e8931bffac2a1ac"
+            "sha256": "sha256:9685030d7268389aaadeebff578e043f087a64537da3651de0091dc0cce8b902"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part03",
-            "fileName": "nixos-gnome-build-39555162856.zip.part03",
-            "sizeBytes": 777747529,
-            "sha256": "sha256:c0831cb30878238c1c9a1a1b367f97720192d5d040cc89b33efe6427bec25803"
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part03",
+            "fileName": "nixos-gnome-build-39880526037.zip.part03",
+            "sizeBytes": 681079289,
+            "sha256": "sha256:89aa13f34104499497dfda44c77262a2d5526c34827c6edaa8207c5b35ff3039"
           }
         ]
+      },
+      "engineVersion": "v0.9.2-aurora.14",
+      "engineDigest": "sha256:21da6f7babcadaaaf520e94f50023a28a1ee5f2e3b2ce48f8274e86c8c257f97",
+      "engineArtifact": {
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/installer-v0.9.2-aurora.14.tar.gz",
+        "fileName": "installer-v0.9.2-aurora.14.tar.gz",
+        "sizeBytes": 17896528
       },
       "installationProfile": "nixos-gnome"
     },
@@ -302,45 +344,52 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "2d28c661b0c228fdc7da5743893d816b2740e132",
-      "metadataDigest": "sha256:1f80663f90dc37617f5c1549486ee3ed70c333e8adba033bbeca114a1608eb3e",
-      "payloadDigest": "sha256:5d39c7b56911cbcd18bb3e77f7dc4e739235846f8feb9e381f46e824e5687dce",
-      "evidenceRevision": "image-build-39555162856",
+      "downstreamRevision": "b35281a38740d394cfdcef5b06578d1ee2f64bda",
+      "metadataDigest": "sha256:a66d3d51d20725185cb9111a26e73a1dcde8ae59a0bb75a51c4fc4b017c167af",
+      "payloadDigest": "sha256:d87fed6299ede5b7e9d49a97f4c38136e532e13f80c19f294399efd483cfb30f",
+      "evidenceRevision": "image-build-39880526037",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/installer-data-nixos-gnome.json",
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/installer-data-nixos-gnome.json",
         "fileName": "installer-data-nixos-gnome.json",
-        "sizeBytes": 9576
+        "sizeBytes": 9633
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip",
-        "fileName": "nixos-gnome-build-39555162856.zip",
-        "sizeBytes": 3998973001,
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip",
+        "fileName": "nixos-gnome-build-39880526037.zip",
+        "sizeBytes": 3902304761,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part00",
-            "fileName": "nixos-gnome-build-39555162856.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part00",
+            "fileName": "nixos-gnome-build-39880526037.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:d4288a4356cca7031d21a20a208114ff3a6273205e507d51b2d99f7f76ff8615"
+            "sha256": "sha256:1069a9e879cbeb7c21e4e2b91f651d6513eec95863dd62a05c288c045db5e813"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part01",
-            "fileName": "nixos-gnome-build-39555162856.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part01",
+            "fileName": "nixos-gnome-build-39880526037.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:7a8eedefec38155965799f745595dc184e62fb776d4b2b03af52aa874ae5e8a2"
+            "sha256": "sha256:16267603868c05338ea1b8c553f915dedf56462bf39d04024ddcb148eaaf0ee4"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part02",
-            "fileName": "nixos-gnome-build-39555162856.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part02",
+            "fileName": "nixos-gnome-build-39880526037.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:6ab7c63a40e7f8aab344637383512cd871913d33f79909728e8931bffac2a1ac"
+            "sha256": "sha256:9685030d7268389aaadeebff578e043f087a64537da3651de0091dc0cce8b902"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part03",
-            "fileName": "nixos-gnome-build-39555162856.zip.part03",
-            "sizeBytes": 777747529,
-            "sha256": "sha256:c0831cb30878238c1c9a1a1b367f97720192d5d040cc89b33efe6427bec25803"
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part03",
+            "fileName": "nixos-gnome-build-39880526037.zip.part03",
+            "sizeBytes": 681079289,
+            "sha256": "sha256:89aa13f34104499497dfda44c77262a2d5526c34827c6edaa8207c5b35ff3039"
           }
         ]
+      },
+      "engineVersion": "v0.9.2-aurora.14",
+      "engineDigest": "sha256:21da6f7babcadaaaf520e94f50023a28a1ee5f2e3b2ce48f8274e86c8c257f97",
+      "engineArtifact": {
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/installer-v0.9.2-aurora.14.tar.gz",
+        "fileName": "installer-v0.9.2-aurora.14.tar.gz",
+        "sizeBytes": 17896528
       },
       "installationProfile": "nixos-gnome"
     },
@@ -350,45 +399,52 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "2d28c661b0c228fdc7da5743893d816b2740e132",
-      "metadataDigest": "sha256:1f80663f90dc37617f5c1549486ee3ed70c333e8adba033bbeca114a1608eb3e",
-      "payloadDigest": "sha256:5d39c7b56911cbcd18bb3e77f7dc4e739235846f8feb9e381f46e824e5687dce",
-      "evidenceRevision": "image-build-39555162856",
+      "downstreamRevision": "b35281a38740d394cfdcef5b06578d1ee2f64bda",
+      "metadataDigest": "sha256:a66d3d51d20725185cb9111a26e73a1dcde8ae59a0bb75a51c4fc4b017c167af",
+      "payloadDigest": "sha256:d87fed6299ede5b7e9d49a97f4c38136e532e13f80c19f294399efd483cfb30f",
+      "evidenceRevision": "image-build-39880526037",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/installer-data-nixos-gnome.json",
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/installer-data-nixos-gnome.json",
         "fileName": "installer-data-nixos-gnome.json",
-        "sizeBytes": 9576
+        "sizeBytes": 9633
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip",
-        "fileName": "nixos-gnome-build-39555162856.zip",
-        "sizeBytes": 3998973001,
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip",
+        "fileName": "nixos-gnome-build-39880526037.zip",
+        "sizeBytes": 3902304761,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part00",
-            "fileName": "nixos-gnome-build-39555162856.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part00",
+            "fileName": "nixos-gnome-build-39880526037.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:d4288a4356cca7031d21a20a208114ff3a6273205e507d51b2d99f7f76ff8615"
+            "sha256": "sha256:1069a9e879cbeb7c21e4e2b91f651d6513eec95863dd62a05c288c045db5e813"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part01",
-            "fileName": "nixos-gnome-build-39555162856.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part01",
+            "fileName": "nixos-gnome-build-39880526037.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:7a8eedefec38155965799f745595dc184e62fb776d4b2b03af52aa874ae5e8a2"
+            "sha256": "sha256:16267603868c05338ea1b8c553f915dedf56462bf39d04024ddcb148eaaf0ee4"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part02",
-            "fileName": "nixos-gnome-build-39555162856.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part02",
+            "fileName": "nixos-gnome-build-39880526037.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:6ab7c63a40e7f8aab344637383512cd871913d33f79909728e8931bffac2a1ac"
+            "sha256": "sha256:9685030d7268389aaadeebff578e043f087a64537da3651de0091dc0cce8b902"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part03",
-            "fileName": "nixos-gnome-build-39555162856.zip.part03",
-            "sizeBytes": 777747529,
-            "sha256": "sha256:c0831cb30878238c1c9a1a1b367f97720192d5d040cc89b33efe6427bec25803"
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part03",
+            "fileName": "nixos-gnome-build-39880526037.zip.part03",
+            "sizeBytes": 681079289,
+            "sha256": "sha256:89aa13f34104499497dfda44c77262a2d5526c34827c6edaa8207c5b35ff3039"
           }
         ]
+      },
+      "engineVersion": "v0.9.2-aurora.14",
+      "engineDigest": "sha256:21da6f7babcadaaaf520e94f50023a28a1ee5f2e3b2ce48f8274e86c8c257f97",
+      "engineArtifact": {
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/installer-v0.9.2-aurora.14.tar.gz",
+        "fileName": "installer-v0.9.2-aurora.14.tar.gz",
+        "sizeBytes": 17896528
       },
       "installationProfile": "nixos-gnome"
     },
@@ -398,45 +454,52 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "2d28c661b0c228fdc7da5743893d816b2740e132",
-      "metadataDigest": "sha256:1f80663f90dc37617f5c1549486ee3ed70c333e8adba033bbeca114a1608eb3e",
-      "payloadDigest": "sha256:5d39c7b56911cbcd18bb3e77f7dc4e739235846f8feb9e381f46e824e5687dce",
-      "evidenceRevision": "image-build-39555162856",
+      "downstreamRevision": "b35281a38740d394cfdcef5b06578d1ee2f64bda",
+      "metadataDigest": "sha256:a66d3d51d20725185cb9111a26e73a1dcde8ae59a0bb75a51c4fc4b017c167af",
+      "payloadDigest": "sha256:d87fed6299ede5b7e9d49a97f4c38136e532e13f80c19f294399efd483cfb30f",
+      "evidenceRevision": "image-build-39880526037",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/installer-data-nixos-gnome.json",
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/installer-data-nixos-gnome.json",
         "fileName": "installer-data-nixos-gnome.json",
-        "sizeBytes": 9576
+        "sizeBytes": 9633
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip",
-        "fileName": "nixos-gnome-build-39555162856.zip",
-        "sizeBytes": 3998973001,
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip",
+        "fileName": "nixos-gnome-build-39880526037.zip",
+        "sizeBytes": 3902304761,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part00",
-            "fileName": "nixos-gnome-build-39555162856.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part00",
+            "fileName": "nixos-gnome-build-39880526037.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:d4288a4356cca7031d21a20a208114ff3a6273205e507d51b2d99f7f76ff8615"
+            "sha256": "sha256:1069a9e879cbeb7c21e4e2b91f651d6513eec95863dd62a05c288c045db5e813"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part01",
-            "fileName": "nixos-gnome-build-39555162856.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part01",
+            "fileName": "nixos-gnome-build-39880526037.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:7a8eedefec38155965799f745595dc184e62fb776d4b2b03af52aa874ae5e8a2"
+            "sha256": "sha256:16267603868c05338ea1b8c553f915dedf56462bf39d04024ddcb148eaaf0ee4"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part02",
-            "fileName": "nixos-gnome-build-39555162856.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part02",
+            "fileName": "nixos-gnome-build-39880526037.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:6ab7c63a40e7f8aab344637383512cd871913d33f79909728e8931bffac2a1ac"
+            "sha256": "sha256:9685030d7268389aaadeebff578e043f087a64537da3651de0091dc0cce8b902"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part03",
-            "fileName": "nixos-gnome-build-39555162856.zip.part03",
-            "sizeBytes": 777747529,
-            "sha256": "sha256:c0831cb30878238c1c9a1a1b367f97720192d5d040cc89b33efe6427bec25803"
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part03",
+            "fileName": "nixos-gnome-build-39880526037.zip.part03",
+            "sizeBytes": 681079289,
+            "sha256": "sha256:89aa13f34104499497dfda44c77262a2d5526c34827c6edaa8207c5b35ff3039"
           }
         ]
+      },
+      "engineVersion": "v0.9.2-aurora.14",
+      "engineDigest": "sha256:21da6f7babcadaaaf520e94f50023a28a1ee5f2e3b2ce48f8274e86c8c257f97",
+      "engineArtifact": {
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/installer-v0.9.2-aurora.14.tar.gz",
+        "fileName": "installer-v0.9.2-aurora.14.tar.gz",
+        "sizeBytes": 17896528
       },
       "installationProfile": "nixos-gnome"
     },
@@ -446,45 +509,52 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "2d28c661b0c228fdc7da5743893d816b2740e132",
-      "metadataDigest": "sha256:1f80663f90dc37617f5c1549486ee3ed70c333e8adba033bbeca114a1608eb3e",
-      "payloadDigest": "sha256:5d39c7b56911cbcd18bb3e77f7dc4e739235846f8feb9e381f46e824e5687dce",
-      "evidenceRevision": "image-build-39555162856",
+      "downstreamRevision": "b35281a38740d394cfdcef5b06578d1ee2f64bda",
+      "metadataDigest": "sha256:a66d3d51d20725185cb9111a26e73a1dcde8ae59a0bb75a51c4fc4b017c167af",
+      "payloadDigest": "sha256:d87fed6299ede5b7e9d49a97f4c38136e532e13f80c19f294399efd483cfb30f",
+      "evidenceRevision": "image-build-39880526037",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/installer-data-nixos-gnome.json",
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/installer-data-nixos-gnome.json",
         "fileName": "installer-data-nixos-gnome.json",
-        "sizeBytes": 9576
+        "sizeBytes": 9633
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip",
-        "fileName": "nixos-gnome-build-39555162856.zip",
-        "sizeBytes": 3998973001,
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip",
+        "fileName": "nixos-gnome-build-39880526037.zip",
+        "sizeBytes": 3902304761,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part00",
-            "fileName": "nixos-gnome-build-39555162856.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part00",
+            "fileName": "nixos-gnome-build-39880526037.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:d4288a4356cca7031d21a20a208114ff3a6273205e507d51b2d99f7f76ff8615"
+            "sha256": "sha256:1069a9e879cbeb7c21e4e2b91f651d6513eec95863dd62a05c288c045db5e813"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part01",
-            "fileName": "nixos-gnome-build-39555162856.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part01",
+            "fileName": "nixos-gnome-build-39880526037.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:7a8eedefec38155965799f745595dc184e62fb776d4b2b03af52aa874ae5e8a2"
+            "sha256": "sha256:16267603868c05338ea1b8c553f915dedf56462bf39d04024ddcb148eaaf0ee4"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part02",
-            "fileName": "nixos-gnome-build-39555162856.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part02",
+            "fileName": "nixos-gnome-build-39880526037.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:6ab7c63a40e7f8aab344637383512cd871913d33f79909728e8931bffac2a1ac"
+            "sha256": "sha256:9685030d7268389aaadeebff578e043f087a64537da3651de0091dc0cce8b902"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part03",
-            "fileName": "nixos-gnome-build-39555162856.zip.part03",
-            "sizeBytes": 777747529,
-            "sha256": "sha256:c0831cb30878238c1c9a1a1b367f97720192d5d040cc89b33efe6427bec25803"
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part03",
+            "fileName": "nixos-gnome-build-39880526037.zip.part03",
+            "sizeBytes": 681079289,
+            "sha256": "sha256:89aa13f34104499497dfda44c77262a2d5526c34827c6edaa8207c5b35ff3039"
           }
         ]
+      },
+      "engineVersion": "v0.9.2-aurora.14",
+      "engineDigest": "sha256:21da6f7babcadaaaf520e94f50023a28a1ee5f2e3b2ce48f8274e86c8c257f97",
+      "engineArtifact": {
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/installer-v0.9.2-aurora.14.tar.gz",
+        "fileName": "installer-v0.9.2-aurora.14.tar.gz",
+        "sizeBytes": 17896528
       },
       "installationProfile": "nixos-gnome"
     },
@@ -494,45 +564,52 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "2d28c661b0c228fdc7da5743893d816b2740e132",
-      "metadataDigest": "sha256:1f80663f90dc37617f5c1549486ee3ed70c333e8adba033bbeca114a1608eb3e",
-      "payloadDigest": "sha256:5d39c7b56911cbcd18bb3e77f7dc4e739235846f8feb9e381f46e824e5687dce",
-      "evidenceRevision": "image-build-39555162856",
+      "downstreamRevision": "b35281a38740d394cfdcef5b06578d1ee2f64bda",
+      "metadataDigest": "sha256:a66d3d51d20725185cb9111a26e73a1dcde8ae59a0bb75a51c4fc4b017c167af",
+      "payloadDigest": "sha256:d87fed6299ede5b7e9d49a97f4c38136e532e13f80c19f294399efd483cfb30f",
+      "evidenceRevision": "image-build-39880526037",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/installer-data-nixos-gnome.json",
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/installer-data-nixos-gnome.json",
         "fileName": "installer-data-nixos-gnome.json",
-        "sizeBytes": 9576
+        "sizeBytes": 9633
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip",
-        "fileName": "nixos-gnome-build-39555162856.zip",
-        "sizeBytes": 3998973001,
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip",
+        "fileName": "nixos-gnome-build-39880526037.zip",
+        "sizeBytes": 3902304761,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part00",
-            "fileName": "nixos-gnome-build-39555162856.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part00",
+            "fileName": "nixos-gnome-build-39880526037.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:d4288a4356cca7031d21a20a208114ff3a6273205e507d51b2d99f7f76ff8615"
+            "sha256": "sha256:1069a9e879cbeb7c21e4e2b91f651d6513eec95863dd62a05c288c045db5e813"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part01",
-            "fileName": "nixos-gnome-build-39555162856.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part01",
+            "fileName": "nixos-gnome-build-39880526037.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:7a8eedefec38155965799f745595dc184e62fb776d4b2b03af52aa874ae5e8a2"
+            "sha256": "sha256:16267603868c05338ea1b8c553f915dedf56462bf39d04024ddcb148eaaf0ee4"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part02",
-            "fileName": "nixos-gnome-build-39555162856.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part02",
+            "fileName": "nixos-gnome-build-39880526037.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:6ab7c63a40e7f8aab344637383512cd871913d33f79909728e8931bffac2a1ac"
+            "sha256": "sha256:9685030d7268389aaadeebff578e043f087a64537da3651de0091dc0cce8b902"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part03",
-            "fileName": "nixos-gnome-build-39555162856.zip.part03",
-            "sizeBytes": 777747529,
-            "sha256": "sha256:c0831cb30878238c1c9a1a1b367f97720192d5d040cc89b33efe6427bec25803"
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part03",
+            "fileName": "nixos-gnome-build-39880526037.zip.part03",
+            "sizeBytes": 681079289,
+            "sha256": "sha256:89aa13f34104499497dfda44c77262a2d5526c34827c6edaa8207c5b35ff3039"
           }
         ]
+      },
+      "engineVersion": "v0.9.2-aurora.14",
+      "engineDigest": "sha256:21da6f7babcadaaaf520e94f50023a28a1ee5f2e3b2ce48f8274e86c8c257f97",
+      "engineArtifact": {
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/installer-v0.9.2-aurora.14.tar.gz",
+        "fileName": "installer-v0.9.2-aurora.14.tar.gz",
+        "sizeBytes": 17896528
       },
       "installationProfile": "nixos-gnome"
     },
@@ -542,45 +619,52 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "2d28c661b0c228fdc7da5743893d816b2740e132",
-      "metadataDigest": "sha256:1f80663f90dc37617f5c1549486ee3ed70c333e8adba033bbeca114a1608eb3e",
-      "payloadDigest": "sha256:5d39c7b56911cbcd18bb3e77f7dc4e739235846f8feb9e381f46e824e5687dce",
-      "evidenceRevision": "image-build-39555162856",
+      "downstreamRevision": "b35281a38740d394cfdcef5b06578d1ee2f64bda",
+      "metadataDigest": "sha256:a66d3d51d20725185cb9111a26e73a1dcde8ae59a0bb75a51c4fc4b017c167af",
+      "payloadDigest": "sha256:d87fed6299ede5b7e9d49a97f4c38136e532e13f80c19f294399efd483cfb30f",
+      "evidenceRevision": "image-build-39880526037",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/installer-data-nixos-gnome.json",
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/installer-data-nixos-gnome.json",
         "fileName": "installer-data-nixos-gnome.json",
-        "sizeBytes": 9576
+        "sizeBytes": 9633
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip",
-        "fileName": "nixos-gnome-build-39555162856.zip",
-        "sizeBytes": 3998973001,
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip",
+        "fileName": "nixos-gnome-build-39880526037.zip",
+        "sizeBytes": 3902304761,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part00",
-            "fileName": "nixos-gnome-build-39555162856.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part00",
+            "fileName": "nixos-gnome-build-39880526037.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:d4288a4356cca7031d21a20a208114ff3a6273205e507d51b2d99f7f76ff8615"
+            "sha256": "sha256:1069a9e879cbeb7c21e4e2b91f651d6513eec95863dd62a05c288c045db5e813"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part01",
-            "fileName": "nixos-gnome-build-39555162856.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part01",
+            "fileName": "nixos-gnome-build-39880526037.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:7a8eedefec38155965799f745595dc184e62fb776d4b2b03af52aa874ae5e8a2"
+            "sha256": "sha256:16267603868c05338ea1b8c553f915dedf56462bf39d04024ddcb148eaaf0ee4"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part02",
-            "fileName": "nixos-gnome-build-39555162856.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part02",
+            "fileName": "nixos-gnome-build-39880526037.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:6ab7c63a40e7f8aab344637383512cd871913d33f79909728e8931bffac2a1ac"
+            "sha256": "sha256:9685030d7268389aaadeebff578e043f087a64537da3651de0091dc0cce8b902"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part03",
-            "fileName": "nixos-gnome-build-39555162856.zip.part03",
-            "sizeBytes": 777747529,
-            "sha256": "sha256:c0831cb30878238c1c9a1a1b367f97720192d5d040cc89b33efe6427bec25803"
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part03",
+            "fileName": "nixos-gnome-build-39880526037.zip.part03",
+            "sizeBytes": 681079289,
+            "sha256": "sha256:89aa13f34104499497dfda44c77262a2d5526c34827c6edaa8207c5b35ff3039"
           }
         ]
+      },
+      "engineVersion": "v0.9.2-aurora.14",
+      "engineDigest": "sha256:21da6f7babcadaaaf520e94f50023a28a1ee5f2e3b2ce48f8274e86c8c257f97",
+      "engineArtifact": {
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/installer-v0.9.2-aurora.14.tar.gz",
+        "fileName": "installer-v0.9.2-aurora.14.tar.gz",
+        "sizeBytes": 17896528
       },
       "installationProfile": "nixos-gnome"
     },
@@ -590,45 +674,52 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "2d28c661b0c228fdc7da5743893d816b2740e132",
-      "metadataDigest": "sha256:1f80663f90dc37617f5c1549486ee3ed70c333e8adba033bbeca114a1608eb3e",
-      "payloadDigest": "sha256:5d39c7b56911cbcd18bb3e77f7dc4e739235846f8feb9e381f46e824e5687dce",
-      "evidenceRevision": "image-build-39555162856",
+      "downstreamRevision": "b35281a38740d394cfdcef5b06578d1ee2f64bda",
+      "metadataDigest": "sha256:a66d3d51d20725185cb9111a26e73a1dcde8ae59a0bb75a51c4fc4b017c167af",
+      "payloadDigest": "sha256:d87fed6299ede5b7e9d49a97f4c38136e532e13f80c19f294399efd483cfb30f",
+      "evidenceRevision": "image-build-39880526037",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/installer-data-nixos-gnome.json",
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/installer-data-nixos-gnome.json",
         "fileName": "installer-data-nixos-gnome.json",
-        "sizeBytes": 9576
+        "sizeBytes": 9633
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip",
-        "fileName": "nixos-gnome-build-39555162856.zip",
-        "sizeBytes": 3998973001,
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip",
+        "fileName": "nixos-gnome-build-39880526037.zip",
+        "sizeBytes": 3902304761,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part00",
-            "fileName": "nixos-gnome-build-39555162856.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part00",
+            "fileName": "nixos-gnome-build-39880526037.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:d4288a4356cca7031d21a20a208114ff3a6273205e507d51b2d99f7f76ff8615"
+            "sha256": "sha256:1069a9e879cbeb7c21e4e2b91f651d6513eec95863dd62a05c288c045db5e813"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part01",
-            "fileName": "nixos-gnome-build-39555162856.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part01",
+            "fileName": "nixos-gnome-build-39880526037.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:7a8eedefec38155965799f745595dc184e62fb776d4b2b03af52aa874ae5e8a2"
+            "sha256": "sha256:16267603868c05338ea1b8c553f915dedf56462bf39d04024ddcb148eaaf0ee4"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part02",
-            "fileName": "nixos-gnome-build-39555162856.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part02",
+            "fileName": "nixos-gnome-build-39880526037.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:6ab7c63a40e7f8aab344637383512cd871913d33f79909728e8931bffac2a1ac"
+            "sha256": "sha256:9685030d7268389aaadeebff578e043f087a64537da3651de0091dc0cce8b902"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part03",
-            "fileName": "nixos-gnome-build-39555162856.zip.part03",
-            "sizeBytes": 777747529,
-            "sha256": "sha256:c0831cb30878238c1c9a1a1b367f97720192d5d040cc89b33efe6427bec25803"
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part03",
+            "fileName": "nixos-gnome-build-39880526037.zip.part03",
+            "sizeBytes": 681079289,
+            "sha256": "sha256:89aa13f34104499497dfda44c77262a2d5526c34827c6edaa8207c5b35ff3039"
           }
         ]
+      },
+      "engineVersion": "v0.9.2-aurora.14",
+      "engineDigest": "sha256:21da6f7babcadaaaf520e94f50023a28a1ee5f2e3b2ce48f8274e86c8c257f97",
+      "engineArtifact": {
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/installer-v0.9.2-aurora.14.tar.gz",
+        "fileName": "installer-v0.9.2-aurora.14.tar.gz",
+        "sizeBytes": 17896528
       },
       "installationProfile": "nixos-gnome"
     },
@@ -638,45 +729,52 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "2d28c661b0c228fdc7da5743893d816b2740e132",
-      "metadataDigest": "sha256:1f80663f90dc37617f5c1549486ee3ed70c333e8adba033bbeca114a1608eb3e",
-      "payloadDigest": "sha256:5d39c7b56911cbcd18bb3e77f7dc4e739235846f8feb9e381f46e824e5687dce",
-      "evidenceRevision": "image-build-39555162856",
+      "downstreamRevision": "b35281a38740d394cfdcef5b06578d1ee2f64bda",
+      "metadataDigest": "sha256:a66d3d51d20725185cb9111a26e73a1dcde8ae59a0bb75a51c4fc4b017c167af",
+      "payloadDigest": "sha256:d87fed6299ede5b7e9d49a97f4c38136e532e13f80c19f294399efd483cfb30f",
+      "evidenceRevision": "image-build-39880526037",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/installer-data-nixos-gnome.json",
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/installer-data-nixos-gnome.json",
         "fileName": "installer-data-nixos-gnome.json",
-        "sizeBytes": 9576
+        "sizeBytes": 9633
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip",
-        "fileName": "nixos-gnome-build-39555162856.zip",
-        "sizeBytes": 3998973001,
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip",
+        "fileName": "nixos-gnome-build-39880526037.zip",
+        "sizeBytes": 3902304761,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part00",
-            "fileName": "nixos-gnome-build-39555162856.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part00",
+            "fileName": "nixos-gnome-build-39880526037.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:d4288a4356cca7031d21a20a208114ff3a6273205e507d51b2d99f7f76ff8615"
+            "sha256": "sha256:1069a9e879cbeb7c21e4e2b91f651d6513eec95863dd62a05c288c045db5e813"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part01",
-            "fileName": "nixos-gnome-build-39555162856.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part01",
+            "fileName": "nixos-gnome-build-39880526037.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:7a8eedefec38155965799f745595dc184e62fb776d4b2b03af52aa874ae5e8a2"
+            "sha256": "sha256:16267603868c05338ea1b8c553f915dedf56462bf39d04024ddcb148eaaf0ee4"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part02",
-            "fileName": "nixos-gnome-build-39555162856.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part02",
+            "fileName": "nixos-gnome-build-39880526037.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:6ab7c63a40e7f8aab344637383512cd871913d33f79909728e8931bffac2a1ac"
+            "sha256": "sha256:9685030d7268389aaadeebff578e043f087a64537da3651de0091dc0cce8b902"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part03",
-            "fileName": "nixos-gnome-build-39555162856.zip.part03",
-            "sizeBytes": 777747529,
-            "sha256": "sha256:c0831cb30878238c1c9a1a1b367f97720192d5d040cc89b33efe6427bec25803"
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part03",
+            "fileName": "nixos-gnome-build-39880526037.zip.part03",
+            "sizeBytes": 681079289,
+            "sha256": "sha256:89aa13f34104499497dfda44c77262a2d5526c34827c6edaa8207c5b35ff3039"
           }
         ]
+      },
+      "engineVersion": "v0.9.2-aurora.14",
+      "engineDigest": "sha256:21da6f7babcadaaaf520e94f50023a28a1ee5f2e3b2ce48f8274e86c8c257f97",
+      "engineArtifact": {
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/installer-v0.9.2-aurora.14.tar.gz",
+        "fileName": "installer-v0.9.2-aurora.14.tar.gz",
+        "sizeBytes": 17896528
       },
       "installationProfile": "nixos-gnome"
     },
@@ -686,45 +784,52 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "2d28c661b0c228fdc7da5743893d816b2740e132",
-      "metadataDigest": "sha256:1f80663f90dc37617f5c1549486ee3ed70c333e8adba033bbeca114a1608eb3e",
-      "payloadDigest": "sha256:5d39c7b56911cbcd18bb3e77f7dc4e739235846f8feb9e381f46e824e5687dce",
-      "evidenceRevision": "image-build-39555162856",
+      "downstreamRevision": "b35281a38740d394cfdcef5b06578d1ee2f64bda",
+      "metadataDigest": "sha256:a66d3d51d20725185cb9111a26e73a1dcde8ae59a0bb75a51c4fc4b017c167af",
+      "payloadDigest": "sha256:d87fed6299ede5b7e9d49a97f4c38136e532e13f80c19f294399efd483cfb30f",
+      "evidenceRevision": "image-build-39880526037",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/installer-data-nixos-gnome.json",
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/installer-data-nixos-gnome.json",
         "fileName": "installer-data-nixos-gnome.json",
-        "sizeBytes": 9576
+        "sizeBytes": 9633
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip",
-        "fileName": "nixos-gnome-build-39555162856.zip",
-        "sizeBytes": 3998973001,
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip",
+        "fileName": "nixos-gnome-build-39880526037.zip",
+        "sizeBytes": 3902304761,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part00",
-            "fileName": "nixos-gnome-build-39555162856.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part00",
+            "fileName": "nixos-gnome-build-39880526037.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:d4288a4356cca7031d21a20a208114ff3a6273205e507d51b2d99f7f76ff8615"
+            "sha256": "sha256:1069a9e879cbeb7c21e4e2b91f651d6513eec95863dd62a05c288c045db5e813"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part01",
-            "fileName": "nixos-gnome-build-39555162856.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part01",
+            "fileName": "nixos-gnome-build-39880526037.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:7a8eedefec38155965799f745595dc184e62fb776d4b2b03af52aa874ae5e8a2"
+            "sha256": "sha256:16267603868c05338ea1b8c553f915dedf56462bf39d04024ddcb148eaaf0ee4"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part02",
-            "fileName": "nixos-gnome-build-39555162856.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part02",
+            "fileName": "nixos-gnome-build-39880526037.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:6ab7c63a40e7f8aab344637383512cd871913d33f79909728e8931bffac2a1ac"
+            "sha256": "sha256:9685030d7268389aaadeebff578e043f087a64537da3651de0091dc0cce8b902"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part03",
-            "fileName": "nixos-gnome-build-39555162856.zip.part03",
-            "sizeBytes": 777747529,
-            "sha256": "sha256:c0831cb30878238c1c9a1a1b367f97720192d5d040cc89b33efe6427bec25803"
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part03",
+            "fileName": "nixos-gnome-build-39880526037.zip.part03",
+            "sizeBytes": 681079289,
+            "sha256": "sha256:89aa13f34104499497dfda44c77262a2d5526c34827c6edaa8207c5b35ff3039"
           }
         ]
+      },
+      "engineVersion": "v0.9.2-aurora.14",
+      "engineDigest": "sha256:21da6f7babcadaaaf520e94f50023a28a1ee5f2e3b2ce48f8274e86c8c257f97",
+      "engineArtifact": {
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/installer-v0.9.2-aurora.14.tar.gz",
+        "fileName": "installer-v0.9.2-aurora.14.tar.gz",
+        "sizeBytes": 17896528
       },
       "installationProfile": "nixos-gnome"
     },
@@ -734,45 +839,52 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "2d28c661b0c228fdc7da5743893d816b2740e132",
-      "metadataDigest": "sha256:1f80663f90dc37617f5c1549486ee3ed70c333e8adba033bbeca114a1608eb3e",
-      "payloadDigest": "sha256:5d39c7b56911cbcd18bb3e77f7dc4e739235846f8feb9e381f46e824e5687dce",
-      "evidenceRevision": "image-build-39555162856",
+      "downstreamRevision": "b35281a38740d394cfdcef5b06578d1ee2f64bda",
+      "metadataDigest": "sha256:a66d3d51d20725185cb9111a26e73a1dcde8ae59a0bb75a51c4fc4b017c167af",
+      "payloadDigest": "sha256:d87fed6299ede5b7e9d49a97f4c38136e532e13f80c19f294399efd483cfb30f",
+      "evidenceRevision": "image-build-39880526037",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/installer-data-nixos-gnome.json",
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/installer-data-nixos-gnome.json",
         "fileName": "installer-data-nixos-gnome.json",
-        "sizeBytes": 9576
+        "sizeBytes": 9633
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip",
-        "fileName": "nixos-gnome-build-39555162856.zip",
-        "sizeBytes": 3998973001,
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip",
+        "fileName": "nixos-gnome-build-39880526037.zip",
+        "sizeBytes": 3902304761,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part00",
-            "fileName": "nixos-gnome-build-39555162856.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part00",
+            "fileName": "nixos-gnome-build-39880526037.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:d4288a4356cca7031d21a20a208114ff3a6273205e507d51b2d99f7f76ff8615"
+            "sha256": "sha256:1069a9e879cbeb7c21e4e2b91f651d6513eec95863dd62a05c288c045db5e813"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part01",
-            "fileName": "nixos-gnome-build-39555162856.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part01",
+            "fileName": "nixos-gnome-build-39880526037.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:7a8eedefec38155965799f745595dc184e62fb776d4b2b03af52aa874ae5e8a2"
+            "sha256": "sha256:16267603868c05338ea1b8c553f915dedf56462bf39d04024ddcb148eaaf0ee4"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part02",
-            "fileName": "nixos-gnome-build-39555162856.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part02",
+            "fileName": "nixos-gnome-build-39880526037.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:6ab7c63a40e7f8aab344637383512cd871913d33f79909728e8931bffac2a1ac"
+            "sha256": "sha256:9685030d7268389aaadeebff578e043f087a64537da3651de0091dc0cce8b902"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part03",
-            "fileName": "nixos-gnome-build-39555162856.zip.part03",
-            "sizeBytes": 777747529,
-            "sha256": "sha256:c0831cb30878238c1c9a1a1b367f97720192d5d040cc89b33efe6427bec25803"
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part03",
+            "fileName": "nixos-gnome-build-39880526037.zip.part03",
+            "sizeBytes": 681079289,
+            "sha256": "sha256:89aa13f34104499497dfda44c77262a2d5526c34827c6edaa8207c5b35ff3039"
           }
         ]
+      },
+      "engineVersion": "v0.9.2-aurora.14",
+      "engineDigest": "sha256:21da6f7babcadaaaf520e94f50023a28a1ee5f2e3b2ce48f8274e86c8c257f97",
+      "engineArtifact": {
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/installer-v0.9.2-aurora.14.tar.gz",
+        "fileName": "installer-v0.9.2-aurora.14.tar.gz",
+        "sizeBytes": 17896528
       },
       "installationProfile": "nixos-gnome"
     },
@@ -782,45 +894,52 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "2d28c661b0c228fdc7da5743893d816b2740e132",
-      "metadataDigest": "sha256:1f80663f90dc37617f5c1549486ee3ed70c333e8adba033bbeca114a1608eb3e",
-      "payloadDigest": "sha256:5d39c7b56911cbcd18bb3e77f7dc4e739235846f8feb9e381f46e824e5687dce",
-      "evidenceRevision": "image-build-39555162856",
+      "downstreamRevision": "b35281a38740d394cfdcef5b06578d1ee2f64bda",
+      "metadataDigest": "sha256:a66d3d51d20725185cb9111a26e73a1dcde8ae59a0bb75a51c4fc4b017c167af",
+      "payloadDigest": "sha256:d87fed6299ede5b7e9d49a97f4c38136e532e13f80c19f294399efd483cfb30f",
+      "evidenceRevision": "image-build-39880526037",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/installer-data-nixos-gnome.json",
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/installer-data-nixos-gnome.json",
         "fileName": "installer-data-nixos-gnome.json",
-        "sizeBytes": 9576
+        "sizeBytes": 9633
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip",
-        "fileName": "nixos-gnome-build-39555162856.zip",
-        "sizeBytes": 3998973001,
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip",
+        "fileName": "nixos-gnome-build-39880526037.zip",
+        "sizeBytes": 3902304761,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part00",
-            "fileName": "nixos-gnome-build-39555162856.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part00",
+            "fileName": "nixos-gnome-build-39880526037.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:d4288a4356cca7031d21a20a208114ff3a6273205e507d51b2d99f7f76ff8615"
+            "sha256": "sha256:1069a9e879cbeb7c21e4e2b91f651d6513eec95863dd62a05c288c045db5e813"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part01",
-            "fileName": "nixos-gnome-build-39555162856.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part01",
+            "fileName": "nixos-gnome-build-39880526037.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:7a8eedefec38155965799f745595dc184e62fb776d4b2b03af52aa874ae5e8a2"
+            "sha256": "sha256:16267603868c05338ea1b8c553f915dedf56462bf39d04024ddcb148eaaf0ee4"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part02",
-            "fileName": "nixos-gnome-build-39555162856.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part02",
+            "fileName": "nixos-gnome-build-39880526037.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:6ab7c63a40e7f8aab344637383512cd871913d33f79909728e8931bffac2a1ac"
+            "sha256": "sha256:9685030d7268389aaadeebff578e043f087a64537da3651de0091dc0cce8b902"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part03",
-            "fileName": "nixos-gnome-build-39555162856.zip.part03",
-            "sizeBytes": 777747529,
-            "sha256": "sha256:c0831cb30878238c1c9a1a1b367f97720192d5d040cc89b33efe6427bec25803"
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part03",
+            "fileName": "nixos-gnome-build-39880526037.zip.part03",
+            "sizeBytes": 681079289,
+            "sha256": "sha256:89aa13f34104499497dfda44c77262a2d5526c34827c6edaa8207c5b35ff3039"
           }
         ]
+      },
+      "engineVersion": "v0.9.2-aurora.14",
+      "engineDigest": "sha256:21da6f7babcadaaaf520e94f50023a28a1ee5f2e3b2ce48f8274e86c8c257f97",
+      "engineArtifact": {
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/installer-v0.9.2-aurora.14.tar.gz",
+        "fileName": "installer-v0.9.2-aurora.14.tar.gz",
+        "sizeBytes": 17896528
       },
       "installationProfile": "nixos-gnome"
     },
@@ -830,45 +949,52 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "2d28c661b0c228fdc7da5743893d816b2740e132",
-      "metadataDigest": "sha256:1f80663f90dc37617f5c1549486ee3ed70c333e8adba033bbeca114a1608eb3e",
-      "payloadDigest": "sha256:5d39c7b56911cbcd18bb3e77f7dc4e739235846f8feb9e381f46e824e5687dce",
-      "evidenceRevision": "image-build-39555162856",
+      "downstreamRevision": "b35281a38740d394cfdcef5b06578d1ee2f64bda",
+      "metadataDigest": "sha256:a66d3d51d20725185cb9111a26e73a1dcde8ae59a0bb75a51c4fc4b017c167af",
+      "payloadDigest": "sha256:d87fed6299ede5b7e9d49a97f4c38136e532e13f80c19f294399efd483cfb30f",
+      "evidenceRevision": "image-build-39880526037",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/installer-data-nixos-gnome.json",
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/installer-data-nixos-gnome.json",
         "fileName": "installer-data-nixos-gnome.json",
-        "sizeBytes": 9576
+        "sizeBytes": 9633
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip",
-        "fileName": "nixos-gnome-build-39555162856.zip",
-        "sizeBytes": 3998973001,
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip",
+        "fileName": "nixos-gnome-build-39880526037.zip",
+        "sizeBytes": 3902304761,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part00",
-            "fileName": "nixos-gnome-build-39555162856.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part00",
+            "fileName": "nixos-gnome-build-39880526037.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:d4288a4356cca7031d21a20a208114ff3a6273205e507d51b2d99f7f76ff8615"
+            "sha256": "sha256:1069a9e879cbeb7c21e4e2b91f651d6513eec95863dd62a05c288c045db5e813"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part01",
-            "fileName": "nixos-gnome-build-39555162856.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part01",
+            "fileName": "nixos-gnome-build-39880526037.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:7a8eedefec38155965799f745595dc184e62fb776d4b2b03af52aa874ae5e8a2"
+            "sha256": "sha256:16267603868c05338ea1b8c553f915dedf56462bf39d04024ddcb148eaaf0ee4"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part02",
-            "fileName": "nixos-gnome-build-39555162856.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part02",
+            "fileName": "nixos-gnome-build-39880526037.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:6ab7c63a40e7f8aab344637383512cd871913d33f79909728e8931bffac2a1ac"
+            "sha256": "sha256:9685030d7268389aaadeebff578e043f087a64537da3651de0091dc0cce8b902"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part03",
-            "fileName": "nixos-gnome-build-39555162856.zip.part03",
-            "sizeBytes": 777747529,
-            "sha256": "sha256:c0831cb30878238c1c9a1a1b367f97720192d5d040cc89b33efe6427bec25803"
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part03",
+            "fileName": "nixos-gnome-build-39880526037.zip.part03",
+            "sizeBytes": 681079289,
+            "sha256": "sha256:89aa13f34104499497dfda44c77262a2d5526c34827c6edaa8207c5b35ff3039"
           }
         ]
+      },
+      "engineVersion": "v0.9.2-aurora.14",
+      "engineDigest": "sha256:21da6f7babcadaaaf520e94f50023a28a1ee5f2e3b2ce48f8274e86c8c257f97",
+      "engineArtifact": {
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/installer-v0.9.2-aurora.14.tar.gz",
+        "fileName": "installer-v0.9.2-aurora.14.tar.gz",
+        "sizeBytes": 17896528
       },
       "installationProfile": "nixos-gnome"
     },
@@ -878,45 +1004,52 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "2d28c661b0c228fdc7da5743893d816b2740e132",
-      "metadataDigest": "sha256:1f80663f90dc37617f5c1549486ee3ed70c333e8adba033bbeca114a1608eb3e",
-      "payloadDigest": "sha256:5d39c7b56911cbcd18bb3e77f7dc4e739235846f8feb9e381f46e824e5687dce",
-      "evidenceRevision": "image-build-39555162856",
+      "downstreamRevision": "b35281a38740d394cfdcef5b06578d1ee2f64bda",
+      "metadataDigest": "sha256:a66d3d51d20725185cb9111a26e73a1dcde8ae59a0bb75a51c4fc4b017c167af",
+      "payloadDigest": "sha256:d87fed6299ede5b7e9d49a97f4c38136e532e13f80c19f294399efd483cfb30f",
+      "evidenceRevision": "image-build-39880526037",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/installer-data-nixos-gnome.json",
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/installer-data-nixos-gnome.json",
         "fileName": "installer-data-nixos-gnome.json",
-        "sizeBytes": 9576
+        "sizeBytes": 9633
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip",
-        "fileName": "nixos-gnome-build-39555162856.zip",
-        "sizeBytes": 3998973001,
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip",
+        "fileName": "nixos-gnome-build-39880526037.zip",
+        "sizeBytes": 3902304761,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part00",
-            "fileName": "nixos-gnome-build-39555162856.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part00",
+            "fileName": "nixos-gnome-build-39880526037.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:d4288a4356cca7031d21a20a208114ff3a6273205e507d51b2d99f7f76ff8615"
+            "sha256": "sha256:1069a9e879cbeb7c21e4e2b91f651d6513eec95863dd62a05c288c045db5e813"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part01",
-            "fileName": "nixos-gnome-build-39555162856.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part01",
+            "fileName": "nixos-gnome-build-39880526037.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:7a8eedefec38155965799f745595dc184e62fb776d4b2b03af52aa874ae5e8a2"
+            "sha256": "sha256:16267603868c05338ea1b8c553f915dedf56462bf39d04024ddcb148eaaf0ee4"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part02",
-            "fileName": "nixos-gnome-build-39555162856.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part02",
+            "fileName": "nixos-gnome-build-39880526037.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:6ab7c63a40e7f8aab344637383512cd871913d33f79909728e8931bffac2a1ac"
+            "sha256": "sha256:9685030d7268389aaadeebff578e043f087a64537da3651de0091dc0cce8b902"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part03",
-            "fileName": "nixos-gnome-build-39555162856.zip.part03",
-            "sizeBytes": 777747529,
-            "sha256": "sha256:c0831cb30878238c1c9a1a1b367f97720192d5d040cc89b33efe6427bec25803"
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part03",
+            "fileName": "nixos-gnome-build-39880526037.zip.part03",
+            "sizeBytes": 681079289,
+            "sha256": "sha256:89aa13f34104499497dfda44c77262a2d5526c34827c6edaa8207c5b35ff3039"
           }
         ]
+      },
+      "engineVersion": "v0.9.2-aurora.14",
+      "engineDigest": "sha256:21da6f7babcadaaaf520e94f50023a28a1ee5f2e3b2ce48f8274e86c8c257f97",
+      "engineArtifact": {
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/installer-v0.9.2-aurora.14.tar.gz",
+        "fileName": "installer-v0.9.2-aurora.14.tar.gz",
+        "sizeBytes": 17896528
       },
       "installationProfile": "nixos-gnome"
     },
@@ -926,45 +1059,52 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "2d28c661b0c228fdc7da5743893d816b2740e132",
-      "metadataDigest": "sha256:1f80663f90dc37617f5c1549486ee3ed70c333e8adba033bbeca114a1608eb3e",
-      "payloadDigest": "sha256:5d39c7b56911cbcd18bb3e77f7dc4e739235846f8feb9e381f46e824e5687dce",
-      "evidenceRevision": "image-build-39555162856",
+      "downstreamRevision": "b35281a38740d394cfdcef5b06578d1ee2f64bda",
+      "metadataDigest": "sha256:a66d3d51d20725185cb9111a26e73a1dcde8ae59a0bb75a51c4fc4b017c167af",
+      "payloadDigest": "sha256:d87fed6299ede5b7e9d49a97f4c38136e532e13f80c19f294399efd483cfb30f",
+      "evidenceRevision": "image-build-39880526037",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/installer-data-nixos-gnome.json",
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/installer-data-nixos-gnome.json",
         "fileName": "installer-data-nixos-gnome.json",
-        "sizeBytes": 9576
+        "sizeBytes": 9633
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip",
-        "fileName": "nixos-gnome-build-39555162856.zip",
-        "sizeBytes": 3998973001,
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip",
+        "fileName": "nixos-gnome-build-39880526037.zip",
+        "sizeBytes": 3902304761,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part00",
-            "fileName": "nixos-gnome-build-39555162856.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part00",
+            "fileName": "nixos-gnome-build-39880526037.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:d4288a4356cca7031d21a20a208114ff3a6273205e507d51b2d99f7f76ff8615"
+            "sha256": "sha256:1069a9e879cbeb7c21e4e2b91f651d6513eec95863dd62a05c288c045db5e813"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part01",
-            "fileName": "nixos-gnome-build-39555162856.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part01",
+            "fileName": "nixos-gnome-build-39880526037.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:7a8eedefec38155965799f745595dc184e62fb776d4b2b03af52aa874ae5e8a2"
+            "sha256": "sha256:16267603868c05338ea1b8c553f915dedf56462bf39d04024ddcb148eaaf0ee4"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part02",
-            "fileName": "nixos-gnome-build-39555162856.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part02",
+            "fileName": "nixos-gnome-build-39880526037.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:6ab7c63a40e7f8aab344637383512cd871913d33f79909728e8931bffac2a1ac"
+            "sha256": "sha256:9685030d7268389aaadeebff578e043f087a64537da3651de0091dc0cce8b902"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part03",
-            "fileName": "nixos-gnome-build-39555162856.zip.part03",
-            "sizeBytes": 777747529,
-            "sha256": "sha256:c0831cb30878238c1c9a1a1b367f97720192d5d040cc89b33efe6427bec25803"
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part03",
+            "fileName": "nixos-gnome-build-39880526037.zip.part03",
+            "sizeBytes": 681079289,
+            "sha256": "sha256:89aa13f34104499497dfda44c77262a2d5526c34827c6edaa8207c5b35ff3039"
           }
         ]
+      },
+      "engineVersion": "v0.9.2-aurora.14",
+      "engineDigest": "sha256:21da6f7babcadaaaf520e94f50023a28a1ee5f2e3b2ce48f8274e86c8c257f97",
+      "engineArtifact": {
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/installer-v0.9.2-aurora.14.tar.gz",
+        "fileName": "installer-v0.9.2-aurora.14.tar.gz",
+        "sizeBytes": 17896528
       },
       "installationProfile": "nixos-gnome"
     },
@@ -974,45 +1114,52 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "2d28c661b0c228fdc7da5743893d816b2740e132",
-      "metadataDigest": "sha256:1f80663f90dc37617f5c1549486ee3ed70c333e8adba033bbeca114a1608eb3e",
-      "payloadDigest": "sha256:5d39c7b56911cbcd18bb3e77f7dc4e739235846f8feb9e381f46e824e5687dce",
-      "evidenceRevision": "image-build-39555162856",
+      "downstreamRevision": "b35281a38740d394cfdcef5b06578d1ee2f64bda",
+      "metadataDigest": "sha256:a66d3d51d20725185cb9111a26e73a1dcde8ae59a0bb75a51c4fc4b017c167af",
+      "payloadDigest": "sha256:d87fed6299ede5b7e9d49a97f4c38136e532e13f80c19f294399efd483cfb30f",
+      "evidenceRevision": "image-build-39880526037",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/installer-data-nixos-gnome.json",
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/installer-data-nixos-gnome.json",
         "fileName": "installer-data-nixos-gnome.json",
-        "sizeBytes": 9576
+        "sizeBytes": 9633
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip",
-        "fileName": "nixos-gnome-build-39555162856.zip",
-        "sizeBytes": 3998973001,
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip",
+        "fileName": "nixos-gnome-build-39880526037.zip",
+        "sizeBytes": 3902304761,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part00",
-            "fileName": "nixos-gnome-build-39555162856.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part00",
+            "fileName": "nixos-gnome-build-39880526037.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:d4288a4356cca7031d21a20a208114ff3a6273205e507d51b2d99f7f76ff8615"
+            "sha256": "sha256:1069a9e879cbeb7c21e4e2b91f651d6513eec95863dd62a05c288c045db5e813"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part01",
-            "fileName": "nixos-gnome-build-39555162856.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part01",
+            "fileName": "nixos-gnome-build-39880526037.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:7a8eedefec38155965799f745595dc184e62fb776d4b2b03af52aa874ae5e8a2"
+            "sha256": "sha256:16267603868c05338ea1b8c553f915dedf56462bf39d04024ddcb148eaaf0ee4"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part02",
-            "fileName": "nixos-gnome-build-39555162856.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part02",
+            "fileName": "nixos-gnome-build-39880526037.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:6ab7c63a40e7f8aab344637383512cd871913d33f79909728e8931bffac2a1ac"
+            "sha256": "sha256:9685030d7268389aaadeebff578e043f087a64537da3651de0091dc0cce8b902"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part03",
-            "fileName": "nixos-gnome-build-39555162856.zip.part03",
-            "sizeBytes": 777747529,
-            "sha256": "sha256:c0831cb30878238c1c9a1a1b367f97720192d5d040cc89b33efe6427bec25803"
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part03",
+            "fileName": "nixos-gnome-build-39880526037.zip.part03",
+            "sizeBytes": 681079289,
+            "sha256": "sha256:89aa13f34104499497dfda44c77262a2d5526c34827c6edaa8207c5b35ff3039"
           }
         ]
+      },
+      "engineVersion": "v0.9.2-aurora.14",
+      "engineDigest": "sha256:21da6f7babcadaaaf520e94f50023a28a1ee5f2e3b2ce48f8274e86c8c257f97",
+      "engineArtifact": {
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/installer-v0.9.2-aurora.14.tar.gz",
+        "fileName": "installer-v0.9.2-aurora.14.tar.gz",
+        "sizeBytes": 17896528
       },
       "installationProfile": "nixos-gnome"
     },
@@ -1022,45 +1169,52 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "2d28c661b0c228fdc7da5743893d816b2740e132",
-      "metadataDigest": "sha256:1f80663f90dc37617f5c1549486ee3ed70c333e8adba033bbeca114a1608eb3e",
-      "payloadDigest": "sha256:5d39c7b56911cbcd18bb3e77f7dc4e739235846f8feb9e381f46e824e5687dce",
-      "evidenceRevision": "image-build-39555162856",
+      "downstreamRevision": "b35281a38740d394cfdcef5b06578d1ee2f64bda",
+      "metadataDigest": "sha256:a66d3d51d20725185cb9111a26e73a1dcde8ae59a0bb75a51c4fc4b017c167af",
+      "payloadDigest": "sha256:d87fed6299ede5b7e9d49a97f4c38136e532e13f80c19f294399efd483cfb30f",
+      "evidenceRevision": "image-build-39880526037",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/installer-data-nixos-gnome.json",
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/installer-data-nixos-gnome.json",
         "fileName": "installer-data-nixos-gnome.json",
-        "sizeBytes": 9576
+        "sizeBytes": 9633
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip",
-        "fileName": "nixos-gnome-build-39555162856.zip",
-        "sizeBytes": 3998973001,
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip",
+        "fileName": "nixos-gnome-build-39880526037.zip",
+        "sizeBytes": 3902304761,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part00",
-            "fileName": "nixos-gnome-build-39555162856.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part00",
+            "fileName": "nixos-gnome-build-39880526037.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:d4288a4356cca7031d21a20a208114ff3a6273205e507d51b2d99f7f76ff8615"
+            "sha256": "sha256:1069a9e879cbeb7c21e4e2b91f651d6513eec95863dd62a05c288c045db5e813"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part01",
-            "fileName": "nixos-gnome-build-39555162856.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part01",
+            "fileName": "nixos-gnome-build-39880526037.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:7a8eedefec38155965799f745595dc184e62fb776d4b2b03af52aa874ae5e8a2"
+            "sha256": "sha256:16267603868c05338ea1b8c553f915dedf56462bf39d04024ddcb148eaaf0ee4"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part02",
-            "fileName": "nixos-gnome-build-39555162856.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part02",
+            "fileName": "nixos-gnome-build-39880526037.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:6ab7c63a40e7f8aab344637383512cd871913d33f79909728e8931bffac2a1ac"
+            "sha256": "sha256:9685030d7268389aaadeebff578e043f087a64537da3651de0091dc0cce8b902"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part03",
-            "fileName": "nixos-gnome-build-39555162856.zip.part03",
-            "sizeBytes": 777747529,
-            "sha256": "sha256:c0831cb30878238c1c9a1a1b367f97720192d5d040cc89b33efe6427bec25803"
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part03",
+            "fileName": "nixos-gnome-build-39880526037.zip.part03",
+            "sizeBytes": 681079289,
+            "sha256": "sha256:89aa13f34104499497dfda44c77262a2d5526c34827c6edaa8207c5b35ff3039"
           }
         ]
+      },
+      "engineVersion": "v0.9.2-aurora.14",
+      "engineDigest": "sha256:21da6f7babcadaaaf520e94f50023a28a1ee5f2e3b2ce48f8274e86c8c257f97",
+      "engineArtifact": {
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/installer-v0.9.2-aurora.14.tar.gz",
+        "fileName": "installer-v0.9.2-aurora.14.tar.gz",
+        "sizeBytes": 17896528
       },
       "installationProfile": "nixos-gnome"
     },
@@ -1070,45 +1224,52 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "2d28c661b0c228fdc7da5743893d816b2740e132",
-      "metadataDigest": "sha256:1f80663f90dc37617f5c1549486ee3ed70c333e8adba033bbeca114a1608eb3e",
-      "payloadDigest": "sha256:5d39c7b56911cbcd18bb3e77f7dc4e739235846f8feb9e381f46e824e5687dce",
-      "evidenceRevision": "image-build-39555162856",
+      "downstreamRevision": "b35281a38740d394cfdcef5b06578d1ee2f64bda",
+      "metadataDigest": "sha256:a66d3d51d20725185cb9111a26e73a1dcde8ae59a0bb75a51c4fc4b017c167af",
+      "payloadDigest": "sha256:d87fed6299ede5b7e9d49a97f4c38136e532e13f80c19f294399efd483cfb30f",
+      "evidenceRevision": "image-build-39880526037",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/installer-data-nixos-gnome.json",
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/installer-data-nixos-gnome.json",
         "fileName": "installer-data-nixos-gnome.json",
-        "sizeBytes": 9576
+        "sizeBytes": 9633
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip",
-        "fileName": "nixos-gnome-build-39555162856.zip",
-        "sizeBytes": 3998973001,
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip",
+        "fileName": "nixos-gnome-build-39880526037.zip",
+        "sizeBytes": 3902304761,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part00",
-            "fileName": "nixos-gnome-build-39555162856.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part00",
+            "fileName": "nixos-gnome-build-39880526037.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:d4288a4356cca7031d21a20a208114ff3a6273205e507d51b2d99f7f76ff8615"
+            "sha256": "sha256:1069a9e879cbeb7c21e4e2b91f651d6513eec95863dd62a05c288c045db5e813"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part01",
-            "fileName": "nixos-gnome-build-39555162856.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part01",
+            "fileName": "nixos-gnome-build-39880526037.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:7a8eedefec38155965799f745595dc184e62fb776d4b2b03af52aa874ae5e8a2"
+            "sha256": "sha256:16267603868c05338ea1b8c553f915dedf56462bf39d04024ddcb148eaaf0ee4"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part02",
-            "fileName": "nixos-gnome-build-39555162856.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part02",
+            "fileName": "nixos-gnome-build-39880526037.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:6ab7c63a40e7f8aab344637383512cd871913d33f79909728e8931bffac2a1ac"
+            "sha256": "sha256:9685030d7268389aaadeebff578e043f087a64537da3651de0091dc0cce8b902"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part03",
-            "fileName": "nixos-gnome-build-39555162856.zip.part03",
-            "sizeBytes": 777747529,
-            "sha256": "sha256:c0831cb30878238c1c9a1a1b367f97720192d5d040cc89b33efe6427bec25803"
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part03",
+            "fileName": "nixos-gnome-build-39880526037.zip.part03",
+            "sizeBytes": 681079289,
+            "sha256": "sha256:89aa13f34104499497dfda44c77262a2d5526c34827c6edaa8207c5b35ff3039"
           }
         ]
+      },
+      "engineVersion": "v0.9.2-aurora.14",
+      "engineDigest": "sha256:21da6f7babcadaaaf520e94f50023a28a1ee5f2e3b2ce48f8274e86c8c257f97",
+      "engineArtifact": {
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/installer-v0.9.2-aurora.14.tar.gz",
+        "fileName": "installer-v0.9.2-aurora.14.tar.gz",
+        "sizeBytes": 17896528
       },
       "installationProfile": "nixos-gnome"
     },
@@ -1118,45 +1279,52 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "2d28c661b0c228fdc7da5743893d816b2740e132",
-      "metadataDigest": "sha256:1f80663f90dc37617f5c1549486ee3ed70c333e8adba033bbeca114a1608eb3e",
-      "payloadDigest": "sha256:5d39c7b56911cbcd18bb3e77f7dc4e739235846f8feb9e381f46e824e5687dce",
-      "evidenceRevision": "image-build-39555162856",
+      "downstreamRevision": "b35281a38740d394cfdcef5b06578d1ee2f64bda",
+      "metadataDigest": "sha256:a66d3d51d20725185cb9111a26e73a1dcde8ae59a0bb75a51c4fc4b017c167af",
+      "payloadDigest": "sha256:d87fed6299ede5b7e9d49a97f4c38136e532e13f80c19f294399efd483cfb30f",
+      "evidenceRevision": "image-build-39880526037",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/installer-data-nixos-gnome.json",
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/installer-data-nixos-gnome.json",
         "fileName": "installer-data-nixos-gnome.json",
-        "sizeBytes": 9576
+        "sizeBytes": 9633
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip",
-        "fileName": "nixos-gnome-build-39555162856.zip",
-        "sizeBytes": 3998973001,
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip",
+        "fileName": "nixos-gnome-build-39880526037.zip",
+        "sizeBytes": 3902304761,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part00",
-            "fileName": "nixos-gnome-build-39555162856.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part00",
+            "fileName": "nixos-gnome-build-39880526037.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:d4288a4356cca7031d21a20a208114ff3a6273205e507d51b2d99f7f76ff8615"
+            "sha256": "sha256:1069a9e879cbeb7c21e4e2b91f651d6513eec95863dd62a05c288c045db5e813"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part01",
-            "fileName": "nixos-gnome-build-39555162856.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part01",
+            "fileName": "nixos-gnome-build-39880526037.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:7a8eedefec38155965799f745595dc184e62fb776d4b2b03af52aa874ae5e8a2"
+            "sha256": "sha256:16267603868c05338ea1b8c553f915dedf56462bf39d04024ddcb148eaaf0ee4"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part02",
-            "fileName": "nixos-gnome-build-39555162856.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part02",
+            "fileName": "nixos-gnome-build-39880526037.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:6ab7c63a40e7f8aab344637383512cd871913d33f79909728e8931bffac2a1ac"
+            "sha256": "sha256:9685030d7268389aaadeebff578e043f087a64537da3651de0091dc0cce8b902"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part03",
-            "fileName": "nixos-gnome-build-39555162856.zip.part03",
-            "sizeBytes": 777747529,
-            "sha256": "sha256:c0831cb30878238c1c9a1a1b367f97720192d5d040cc89b33efe6427bec25803"
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part03",
+            "fileName": "nixos-gnome-build-39880526037.zip.part03",
+            "sizeBytes": 681079289,
+            "sha256": "sha256:89aa13f34104499497dfda44c77262a2d5526c34827c6edaa8207c5b35ff3039"
           }
         ]
+      },
+      "engineVersion": "v0.9.2-aurora.14",
+      "engineDigest": "sha256:21da6f7babcadaaaf520e94f50023a28a1ee5f2e3b2ce48f8274e86c8c257f97",
+      "engineArtifact": {
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/installer-v0.9.2-aurora.14.tar.gz",
+        "fileName": "installer-v0.9.2-aurora.14.tar.gz",
+        "sizeBytes": 17896528
       },
       "installationProfile": "nixos-gnome"
     },
@@ -1166,45 +1334,52 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "2d28c661b0c228fdc7da5743893d816b2740e132",
-      "metadataDigest": "sha256:1f80663f90dc37617f5c1549486ee3ed70c333e8adba033bbeca114a1608eb3e",
-      "payloadDigest": "sha256:5d39c7b56911cbcd18bb3e77f7dc4e739235846f8feb9e381f46e824e5687dce",
-      "evidenceRevision": "image-build-39555162856",
+      "downstreamRevision": "b35281a38740d394cfdcef5b06578d1ee2f64bda",
+      "metadataDigest": "sha256:a66d3d51d20725185cb9111a26e73a1dcde8ae59a0bb75a51c4fc4b017c167af",
+      "payloadDigest": "sha256:d87fed6299ede5b7e9d49a97f4c38136e532e13f80c19f294399efd483cfb30f",
+      "evidenceRevision": "image-build-39880526037",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/installer-data-nixos-gnome.json",
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/installer-data-nixos-gnome.json",
         "fileName": "installer-data-nixos-gnome.json",
-        "sizeBytes": 9576
+        "sizeBytes": 9633
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip",
-        "fileName": "nixos-gnome-build-39555162856.zip",
-        "sizeBytes": 3998973001,
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip",
+        "fileName": "nixos-gnome-build-39880526037.zip",
+        "sizeBytes": 3902304761,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part00",
-            "fileName": "nixos-gnome-build-39555162856.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part00",
+            "fileName": "nixos-gnome-build-39880526037.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:d4288a4356cca7031d21a20a208114ff3a6273205e507d51b2d99f7f76ff8615"
+            "sha256": "sha256:1069a9e879cbeb7c21e4e2b91f651d6513eec95863dd62a05c288c045db5e813"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part01",
-            "fileName": "nixos-gnome-build-39555162856.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part01",
+            "fileName": "nixos-gnome-build-39880526037.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:7a8eedefec38155965799f745595dc184e62fb776d4b2b03af52aa874ae5e8a2"
+            "sha256": "sha256:16267603868c05338ea1b8c553f915dedf56462bf39d04024ddcb148eaaf0ee4"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part02",
-            "fileName": "nixos-gnome-build-39555162856.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part02",
+            "fileName": "nixos-gnome-build-39880526037.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:6ab7c63a40e7f8aab344637383512cd871913d33f79909728e8931bffac2a1ac"
+            "sha256": "sha256:9685030d7268389aaadeebff578e043f087a64537da3651de0091dc0cce8b902"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part03",
-            "fileName": "nixos-gnome-build-39555162856.zip.part03",
-            "sizeBytes": 777747529,
-            "sha256": "sha256:c0831cb30878238c1c9a1a1b367f97720192d5d040cc89b33efe6427bec25803"
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part03",
+            "fileName": "nixos-gnome-build-39880526037.zip.part03",
+            "sizeBytes": 681079289,
+            "sha256": "sha256:89aa13f34104499497dfda44c77262a2d5526c34827c6edaa8207c5b35ff3039"
           }
         ]
+      },
+      "engineVersion": "v0.9.2-aurora.14",
+      "engineDigest": "sha256:21da6f7babcadaaaf520e94f50023a28a1ee5f2e3b2ce48f8274e86c8c257f97",
+      "engineArtifact": {
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/installer-v0.9.2-aurora.14.tar.gz",
+        "fileName": "installer-v0.9.2-aurora.14.tar.gz",
+        "sizeBytes": 17896528
       },
       "installationProfile": "nixos-gnome"
     },
@@ -1214,45 +1389,52 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "2d28c661b0c228fdc7da5743893d816b2740e132",
-      "metadataDigest": "sha256:1f80663f90dc37617f5c1549486ee3ed70c333e8adba033bbeca114a1608eb3e",
-      "payloadDigest": "sha256:5d39c7b56911cbcd18bb3e77f7dc4e739235846f8feb9e381f46e824e5687dce",
-      "evidenceRevision": "image-build-39555162856",
+      "downstreamRevision": "b35281a38740d394cfdcef5b06578d1ee2f64bda",
+      "metadataDigest": "sha256:a66d3d51d20725185cb9111a26e73a1dcde8ae59a0bb75a51c4fc4b017c167af",
+      "payloadDigest": "sha256:d87fed6299ede5b7e9d49a97f4c38136e532e13f80c19f294399efd483cfb30f",
+      "evidenceRevision": "image-build-39880526037",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/installer-data-nixos-gnome.json",
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/installer-data-nixos-gnome.json",
         "fileName": "installer-data-nixos-gnome.json",
-        "sizeBytes": 9576
+        "sizeBytes": 9633
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip",
-        "fileName": "nixos-gnome-build-39555162856.zip",
-        "sizeBytes": 3998973001,
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip",
+        "fileName": "nixos-gnome-build-39880526037.zip",
+        "sizeBytes": 3902304761,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part00",
-            "fileName": "nixos-gnome-build-39555162856.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part00",
+            "fileName": "nixos-gnome-build-39880526037.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:d4288a4356cca7031d21a20a208114ff3a6273205e507d51b2d99f7f76ff8615"
+            "sha256": "sha256:1069a9e879cbeb7c21e4e2b91f651d6513eec95863dd62a05c288c045db5e813"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part01",
-            "fileName": "nixos-gnome-build-39555162856.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part01",
+            "fileName": "nixos-gnome-build-39880526037.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:7a8eedefec38155965799f745595dc184e62fb776d4b2b03af52aa874ae5e8a2"
+            "sha256": "sha256:16267603868c05338ea1b8c553f915dedf56462bf39d04024ddcb148eaaf0ee4"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part02",
-            "fileName": "nixos-gnome-build-39555162856.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part02",
+            "fileName": "nixos-gnome-build-39880526037.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:6ab7c63a40e7f8aab344637383512cd871913d33f79909728e8931bffac2a1ac"
+            "sha256": "sha256:9685030d7268389aaadeebff578e043f087a64537da3651de0091dc0cce8b902"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part03",
-            "fileName": "nixos-gnome-build-39555162856.zip.part03",
-            "sizeBytes": 777747529,
-            "sha256": "sha256:c0831cb30878238c1c9a1a1b367f97720192d5d040cc89b33efe6427bec25803"
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part03",
+            "fileName": "nixos-gnome-build-39880526037.zip.part03",
+            "sizeBytes": 681079289,
+            "sha256": "sha256:89aa13f34104499497dfda44c77262a2d5526c34827c6edaa8207c5b35ff3039"
           }
         ]
+      },
+      "engineVersion": "v0.9.2-aurora.14",
+      "engineDigest": "sha256:21da6f7babcadaaaf520e94f50023a28a1ee5f2e3b2ce48f8274e86c8c257f97",
+      "engineArtifact": {
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/installer-v0.9.2-aurora.14.tar.gz",
+        "fileName": "installer-v0.9.2-aurora.14.tar.gz",
+        "sizeBytes": 17896528
       },
       "installationProfile": "nixos-gnome"
     },
@@ -1262,45 +1444,52 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "2d28c661b0c228fdc7da5743893d816b2740e132",
-      "metadataDigest": "sha256:1f80663f90dc37617f5c1549486ee3ed70c333e8adba033bbeca114a1608eb3e",
-      "payloadDigest": "sha256:5d39c7b56911cbcd18bb3e77f7dc4e739235846f8feb9e381f46e824e5687dce",
-      "evidenceRevision": "image-build-39555162856",
+      "downstreamRevision": "b35281a38740d394cfdcef5b06578d1ee2f64bda",
+      "metadataDigest": "sha256:a66d3d51d20725185cb9111a26e73a1dcde8ae59a0bb75a51c4fc4b017c167af",
+      "payloadDigest": "sha256:d87fed6299ede5b7e9d49a97f4c38136e532e13f80c19f294399efd483cfb30f",
+      "evidenceRevision": "image-build-39880526037",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/installer-data-nixos-gnome.json",
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/installer-data-nixos-gnome.json",
         "fileName": "installer-data-nixos-gnome.json",
-        "sizeBytes": 9576
+        "sizeBytes": 9633
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip",
-        "fileName": "nixos-gnome-build-39555162856.zip",
-        "sizeBytes": 3998973001,
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip",
+        "fileName": "nixos-gnome-build-39880526037.zip",
+        "sizeBytes": 3902304761,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part00",
-            "fileName": "nixos-gnome-build-39555162856.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part00",
+            "fileName": "nixos-gnome-build-39880526037.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:d4288a4356cca7031d21a20a208114ff3a6273205e507d51b2d99f7f76ff8615"
+            "sha256": "sha256:1069a9e879cbeb7c21e4e2b91f651d6513eec95863dd62a05c288c045db5e813"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part01",
-            "fileName": "nixos-gnome-build-39555162856.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part01",
+            "fileName": "nixos-gnome-build-39880526037.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:7a8eedefec38155965799f745595dc184e62fb776d4b2b03af52aa874ae5e8a2"
+            "sha256": "sha256:16267603868c05338ea1b8c553f915dedf56462bf39d04024ddcb148eaaf0ee4"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part02",
-            "fileName": "nixos-gnome-build-39555162856.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part02",
+            "fileName": "nixos-gnome-build-39880526037.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:6ab7c63a40e7f8aab344637383512cd871913d33f79909728e8931bffac2a1ac"
+            "sha256": "sha256:9685030d7268389aaadeebff578e043f087a64537da3651de0091dc0cce8b902"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part03",
-            "fileName": "nixos-gnome-build-39555162856.zip.part03",
-            "sizeBytes": 777747529,
-            "sha256": "sha256:c0831cb30878238c1c9a1a1b367f97720192d5d040cc89b33efe6427bec25803"
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part03",
+            "fileName": "nixos-gnome-build-39880526037.zip.part03",
+            "sizeBytes": 681079289,
+            "sha256": "sha256:89aa13f34104499497dfda44c77262a2d5526c34827c6edaa8207c5b35ff3039"
           }
         ]
+      },
+      "engineVersion": "v0.9.2-aurora.14",
+      "engineDigest": "sha256:21da6f7babcadaaaf520e94f50023a28a1ee5f2e3b2ce48f8274e86c8c257f97",
+      "engineArtifact": {
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/installer-v0.9.2-aurora.14.tar.gz",
+        "fileName": "installer-v0.9.2-aurora.14.tar.gz",
+        "sizeBytes": 17896528
       },
       "installationProfile": "nixos-gnome"
     },
@@ -1310,45 +1499,52 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "2d28c661b0c228fdc7da5743893d816b2740e132",
-      "metadataDigest": "sha256:1f80663f90dc37617f5c1549486ee3ed70c333e8adba033bbeca114a1608eb3e",
-      "payloadDigest": "sha256:5d39c7b56911cbcd18bb3e77f7dc4e739235846f8feb9e381f46e824e5687dce",
-      "evidenceRevision": "image-build-39555162856",
+      "downstreamRevision": "b35281a38740d394cfdcef5b06578d1ee2f64bda",
+      "metadataDigest": "sha256:a66d3d51d20725185cb9111a26e73a1dcde8ae59a0bb75a51c4fc4b017c167af",
+      "payloadDigest": "sha256:d87fed6299ede5b7e9d49a97f4c38136e532e13f80c19f294399efd483cfb30f",
+      "evidenceRevision": "image-build-39880526037",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/installer-data-nixos-gnome.json",
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/installer-data-nixos-gnome.json",
         "fileName": "installer-data-nixos-gnome.json",
-        "sizeBytes": 9576
+        "sizeBytes": 9633
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip",
-        "fileName": "nixos-gnome-build-39555162856.zip",
-        "sizeBytes": 3998973001,
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip",
+        "fileName": "nixos-gnome-build-39880526037.zip",
+        "sizeBytes": 3902304761,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part00",
-            "fileName": "nixos-gnome-build-39555162856.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part00",
+            "fileName": "nixos-gnome-build-39880526037.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:d4288a4356cca7031d21a20a208114ff3a6273205e507d51b2d99f7f76ff8615"
+            "sha256": "sha256:1069a9e879cbeb7c21e4e2b91f651d6513eec95863dd62a05c288c045db5e813"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part01",
-            "fileName": "nixos-gnome-build-39555162856.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part01",
+            "fileName": "nixos-gnome-build-39880526037.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:7a8eedefec38155965799f745595dc184e62fb776d4b2b03af52aa874ae5e8a2"
+            "sha256": "sha256:16267603868c05338ea1b8c553f915dedf56462bf39d04024ddcb148eaaf0ee4"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part02",
-            "fileName": "nixos-gnome-build-39555162856.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part02",
+            "fileName": "nixos-gnome-build-39880526037.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:6ab7c63a40e7f8aab344637383512cd871913d33f79909728e8931bffac2a1ac"
+            "sha256": "sha256:9685030d7268389aaadeebff578e043f087a64537da3651de0091dc0cce8b902"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part03",
-            "fileName": "nixos-gnome-build-39555162856.zip.part03",
-            "sizeBytes": 777747529,
-            "sha256": "sha256:c0831cb30878238c1c9a1a1b367f97720192d5d040cc89b33efe6427bec25803"
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part03",
+            "fileName": "nixos-gnome-build-39880526037.zip.part03",
+            "sizeBytes": 681079289,
+            "sha256": "sha256:89aa13f34104499497dfda44c77262a2d5526c34827c6edaa8207c5b35ff3039"
           }
         ]
+      },
+      "engineVersion": "v0.9.2-aurora.14",
+      "engineDigest": "sha256:21da6f7babcadaaaf520e94f50023a28a1ee5f2e3b2ce48f8274e86c8c257f97",
+      "engineArtifact": {
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/installer-v0.9.2-aurora.14.tar.gz",
+        "fileName": "installer-v0.9.2-aurora.14.tar.gz",
+        "sizeBytes": 17896528
       },
       "installationProfile": "nixos-gnome"
     },
@@ -1358,45 +1554,52 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "2d28c661b0c228fdc7da5743893d816b2740e132",
-      "metadataDigest": "sha256:1f80663f90dc37617f5c1549486ee3ed70c333e8adba033bbeca114a1608eb3e",
-      "payloadDigest": "sha256:5d39c7b56911cbcd18bb3e77f7dc4e739235846f8feb9e381f46e824e5687dce",
-      "evidenceRevision": "image-build-39555162856",
+      "downstreamRevision": "b35281a38740d394cfdcef5b06578d1ee2f64bda",
+      "metadataDigest": "sha256:a66d3d51d20725185cb9111a26e73a1dcde8ae59a0bb75a51c4fc4b017c167af",
+      "payloadDigest": "sha256:d87fed6299ede5b7e9d49a97f4c38136e532e13f80c19f294399efd483cfb30f",
+      "evidenceRevision": "image-build-39880526037",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/installer-data-nixos-gnome.json",
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/installer-data-nixos-gnome.json",
         "fileName": "installer-data-nixos-gnome.json",
-        "sizeBytes": 9576
+        "sizeBytes": 9633
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip",
-        "fileName": "nixos-gnome-build-39555162856.zip",
-        "sizeBytes": 3998973001,
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip",
+        "fileName": "nixos-gnome-build-39880526037.zip",
+        "sizeBytes": 3902304761,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part00",
-            "fileName": "nixos-gnome-build-39555162856.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part00",
+            "fileName": "nixos-gnome-build-39880526037.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:d4288a4356cca7031d21a20a208114ff3a6273205e507d51b2d99f7f76ff8615"
+            "sha256": "sha256:1069a9e879cbeb7c21e4e2b91f651d6513eec95863dd62a05c288c045db5e813"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part01",
-            "fileName": "nixos-gnome-build-39555162856.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part01",
+            "fileName": "nixos-gnome-build-39880526037.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:7a8eedefec38155965799f745595dc184e62fb776d4b2b03af52aa874ae5e8a2"
+            "sha256": "sha256:16267603868c05338ea1b8c553f915dedf56462bf39d04024ddcb148eaaf0ee4"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part02",
-            "fileName": "nixos-gnome-build-39555162856.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part02",
+            "fileName": "nixos-gnome-build-39880526037.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:6ab7c63a40e7f8aab344637383512cd871913d33f79909728e8931bffac2a1ac"
+            "sha256": "sha256:9685030d7268389aaadeebff578e043f087a64537da3651de0091dc0cce8b902"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part03",
-            "fileName": "nixos-gnome-build-39555162856.zip.part03",
-            "sizeBytes": 777747529,
-            "sha256": "sha256:c0831cb30878238c1c9a1a1b367f97720192d5d040cc89b33efe6427bec25803"
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part03",
+            "fileName": "nixos-gnome-build-39880526037.zip.part03",
+            "sizeBytes": 681079289,
+            "sha256": "sha256:89aa13f34104499497dfda44c77262a2d5526c34827c6edaa8207c5b35ff3039"
           }
         ]
+      },
+      "engineVersion": "v0.9.2-aurora.14",
+      "engineDigest": "sha256:21da6f7babcadaaaf520e94f50023a28a1ee5f2e3b2ce48f8274e86c8c257f97",
+      "engineArtifact": {
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/installer-v0.9.2-aurora.14.tar.gz",
+        "fileName": "installer-v0.9.2-aurora.14.tar.gz",
+        "sizeBytes": 17896528
       },
       "installationProfile": "nixos-gnome"
     },
@@ -1406,45 +1609,52 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "2d28c661b0c228fdc7da5743893d816b2740e132",
-      "metadataDigest": "sha256:1f80663f90dc37617f5c1549486ee3ed70c333e8adba033bbeca114a1608eb3e",
-      "payloadDigest": "sha256:5d39c7b56911cbcd18bb3e77f7dc4e739235846f8feb9e381f46e824e5687dce",
-      "evidenceRevision": "image-build-39555162856",
+      "downstreamRevision": "b35281a38740d394cfdcef5b06578d1ee2f64bda",
+      "metadataDigest": "sha256:a66d3d51d20725185cb9111a26e73a1dcde8ae59a0bb75a51c4fc4b017c167af",
+      "payloadDigest": "sha256:d87fed6299ede5b7e9d49a97f4c38136e532e13f80c19f294399efd483cfb30f",
+      "evidenceRevision": "image-build-39880526037",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/installer-data-nixos-gnome.json",
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/installer-data-nixos-gnome.json",
         "fileName": "installer-data-nixos-gnome.json",
-        "sizeBytes": 9576
+        "sizeBytes": 9633
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip",
-        "fileName": "nixos-gnome-build-39555162856.zip",
-        "sizeBytes": 3998973001,
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip",
+        "fileName": "nixos-gnome-build-39880526037.zip",
+        "sizeBytes": 3902304761,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part00",
-            "fileName": "nixos-gnome-build-39555162856.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part00",
+            "fileName": "nixos-gnome-build-39880526037.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:d4288a4356cca7031d21a20a208114ff3a6273205e507d51b2d99f7f76ff8615"
+            "sha256": "sha256:1069a9e879cbeb7c21e4e2b91f651d6513eec95863dd62a05c288c045db5e813"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part01",
-            "fileName": "nixos-gnome-build-39555162856.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part01",
+            "fileName": "nixos-gnome-build-39880526037.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:7a8eedefec38155965799f745595dc184e62fb776d4b2b03af52aa874ae5e8a2"
+            "sha256": "sha256:16267603868c05338ea1b8c553f915dedf56462bf39d04024ddcb148eaaf0ee4"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part02",
-            "fileName": "nixos-gnome-build-39555162856.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part02",
+            "fileName": "nixos-gnome-build-39880526037.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:6ab7c63a40e7f8aab344637383512cd871913d33f79909728e8931bffac2a1ac"
+            "sha256": "sha256:9685030d7268389aaadeebff578e043f087a64537da3651de0091dc0cce8b902"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part03",
-            "fileName": "nixos-gnome-build-39555162856.zip.part03",
-            "sizeBytes": 777747529,
-            "sha256": "sha256:c0831cb30878238c1c9a1a1b367f97720192d5d040cc89b33efe6427bec25803"
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part03",
+            "fileName": "nixos-gnome-build-39880526037.zip.part03",
+            "sizeBytes": 681079289,
+            "sha256": "sha256:89aa13f34104499497dfda44c77262a2d5526c34827c6edaa8207c5b35ff3039"
           }
         ]
+      },
+      "engineVersion": "v0.9.2-aurora.14",
+      "engineDigest": "sha256:21da6f7babcadaaaf520e94f50023a28a1ee5f2e3b2ce48f8274e86c8c257f97",
+      "engineArtifact": {
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/installer-v0.9.2-aurora.14.tar.gz",
+        "fileName": "installer-v0.9.2-aurora.14.tar.gz",
+        "sizeBytes": 17896528
       },
       "installationProfile": "nixos-gnome"
     },
@@ -1454,45 +1664,52 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "2d28c661b0c228fdc7da5743893d816b2740e132",
-      "metadataDigest": "sha256:1f80663f90dc37617f5c1549486ee3ed70c333e8adba033bbeca114a1608eb3e",
-      "payloadDigest": "sha256:5d39c7b56911cbcd18bb3e77f7dc4e739235846f8feb9e381f46e824e5687dce",
-      "evidenceRevision": "image-build-39555162856",
+      "downstreamRevision": "b35281a38740d394cfdcef5b06578d1ee2f64bda",
+      "metadataDigest": "sha256:a66d3d51d20725185cb9111a26e73a1dcde8ae59a0bb75a51c4fc4b017c167af",
+      "payloadDigest": "sha256:d87fed6299ede5b7e9d49a97f4c38136e532e13f80c19f294399efd483cfb30f",
+      "evidenceRevision": "image-build-39880526037",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/installer-data-nixos-gnome.json",
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/installer-data-nixos-gnome.json",
         "fileName": "installer-data-nixos-gnome.json",
-        "sizeBytes": 9576
+        "sizeBytes": 9633
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip",
-        "fileName": "nixos-gnome-build-39555162856.zip",
-        "sizeBytes": 3998973001,
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip",
+        "fileName": "nixos-gnome-build-39880526037.zip",
+        "sizeBytes": 3902304761,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part00",
-            "fileName": "nixos-gnome-build-39555162856.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part00",
+            "fileName": "nixos-gnome-build-39880526037.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:d4288a4356cca7031d21a20a208114ff3a6273205e507d51b2d99f7f76ff8615"
+            "sha256": "sha256:1069a9e879cbeb7c21e4e2b91f651d6513eec95863dd62a05c288c045db5e813"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part01",
-            "fileName": "nixos-gnome-build-39555162856.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part01",
+            "fileName": "nixos-gnome-build-39880526037.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:7a8eedefec38155965799f745595dc184e62fb776d4b2b03af52aa874ae5e8a2"
+            "sha256": "sha256:16267603868c05338ea1b8c553f915dedf56462bf39d04024ddcb148eaaf0ee4"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part02",
-            "fileName": "nixos-gnome-build-39555162856.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part02",
+            "fileName": "nixos-gnome-build-39880526037.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:6ab7c63a40e7f8aab344637383512cd871913d33f79909728e8931bffac2a1ac"
+            "sha256": "sha256:9685030d7268389aaadeebff578e043f087a64537da3651de0091dc0cce8b902"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part03",
-            "fileName": "nixos-gnome-build-39555162856.zip.part03",
-            "sizeBytes": 777747529,
-            "sha256": "sha256:c0831cb30878238c1c9a1a1b367f97720192d5d040cc89b33efe6427bec25803"
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part03",
+            "fileName": "nixos-gnome-build-39880526037.zip.part03",
+            "sizeBytes": 681079289,
+            "sha256": "sha256:89aa13f34104499497dfda44c77262a2d5526c34827c6edaa8207c5b35ff3039"
           }
         ]
+      },
+      "engineVersion": "v0.9.2-aurora.14",
+      "engineDigest": "sha256:21da6f7babcadaaaf520e94f50023a28a1ee5f2e3b2ce48f8274e86c8c257f97",
+      "engineArtifact": {
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/installer-v0.9.2-aurora.14.tar.gz",
+        "fileName": "installer-v0.9.2-aurora.14.tar.gz",
+        "sizeBytes": 17896528
       },
       "installationProfile": "nixos-gnome"
     },
@@ -1502,45 +1719,52 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "2d28c661b0c228fdc7da5743893d816b2740e132",
-      "metadataDigest": "sha256:1f80663f90dc37617f5c1549486ee3ed70c333e8adba033bbeca114a1608eb3e",
-      "payloadDigest": "sha256:5d39c7b56911cbcd18bb3e77f7dc4e739235846f8feb9e381f46e824e5687dce",
-      "evidenceRevision": "image-build-39555162856",
+      "downstreamRevision": "b35281a38740d394cfdcef5b06578d1ee2f64bda",
+      "metadataDigest": "sha256:a66d3d51d20725185cb9111a26e73a1dcde8ae59a0bb75a51c4fc4b017c167af",
+      "payloadDigest": "sha256:d87fed6299ede5b7e9d49a97f4c38136e532e13f80c19f294399efd483cfb30f",
+      "evidenceRevision": "image-build-39880526037",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/installer-data-nixos-gnome.json",
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/installer-data-nixos-gnome.json",
         "fileName": "installer-data-nixos-gnome.json",
-        "sizeBytes": 9576
+        "sizeBytes": 9633
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip",
-        "fileName": "nixos-gnome-build-39555162856.zip",
-        "sizeBytes": 3998973001,
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip",
+        "fileName": "nixos-gnome-build-39880526037.zip",
+        "sizeBytes": 3902304761,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part00",
-            "fileName": "nixos-gnome-build-39555162856.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part00",
+            "fileName": "nixos-gnome-build-39880526037.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:d4288a4356cca7031d21a20a208114ff3a6273205e507d51b2d99f7f76ff8615"
+            "sha256": "sha256:1069a9e879cbeb7c21e4e2b91f651d6513eec95863dd62a05c288c045db5e813"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part01",
-            "fileName": "nixos-gnome-build-39555162856.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part01",
+            "fileName": "nixos-gnome-build-39880526037.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:7a8eedefec38155965799f745595dc184e62fb776d4b2b03af52aa874ae5e8a2"
+            "sha256": "sha256:16267603868c05338ea1b8c553f915dedf56462bf39d04024ddcb148eaaf0ee4"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part02",
-            "fileName": "nixos-gnome-build-39555162856.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part02",
+            "fileName": "nixos-gnome-build-39880526037.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:6ab7c63a40e7f8aab344637383512cd871913d33f79909728e8931bffac2a1ac"
+            "sha256": "sha256:9685030d7268389aaadeebff578e043f087a64537da3651de0091dc0cce8b902"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part03",
-            "fileName": "nixos-gnome-build-39555162856.zip.part03",
-            "sizeBytes": 777747529,
-            "sha256": "sha256:c0831cb30878238c1c9a1a1b367f97720192d5d040cc89b33efe6427bec25803"
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part03",
+            "fileName": "nixos-gnome-build-39880526037.zip.part03",
+            "sizeBytes": 681079289,
+            "sha256": "sha256:89aa13f34104499497dfda44c77262a2d5526c34827c6edaa8207c5b35ff3039"
           }
         ]
+      },
+      "engineVersion": "v0.9.2-aurora.14",
+      "engineDigest": "sha256:21da6f7babcadaaaf520e94f50023a28a1ee5f2e3b2ce48f8274e86c8c257f97",
+      "engineArtifact": {
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/installer-v0.9.2-aurora.14.tar.gz",
+        "fileName": "installer-v0.9.2-aurora.14.tar.gz",
+        "sizeBytes": 17896528
       },
       "installationProfile": "nixos-gnome"
     },
@@ -1550,45 +1774,52 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "2d28c661b0c228fdc7da5743893d816b2740e132",
-      "metadataDigest": "sha256:1f80663f90dc37617f5c1549486ee3ed70c333e8adba033bbeca114a1608eb3e",
-      "payloadDigest": "sha256:5d39c7b56911cbcd18bb3e77f7dc4e739235846f8feb9e381f46e824e5687dce",
-      "evidenceRevision": "image-build-39555162856",
+      "downstreamRevision": "b35281a38740d394cfdcef5b06578d1ee2f64bda",
+      "metadataDigest": "sha256:a66d3d51d20725185cb9111a26e73a1dcde8ae59a0bb75a51c4fc4b017c167af",
+      "payloadDigest": "sha256:d87fed6299ede5b7e9d49a97f4c38136e532e13f80c19f294399efd483cfb30f",
+      "evidenceRevision": "image-build-39880526037",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/installer-data-nixos-gnome.json",
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/installer-data-nixos-gnome.json",
         "fileName": "installer-data-nixos-gnome.json",
-        "sizeBytes": 9576
+        "sizeBytes": 9633
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip",
-        "fileName": "nixos-gnome-build-39555162856.zip",
-        "sizeBytes": 3998973001,
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip",
+        "fileName": "nixos-gnome-build-39880526037.zip",
+        "sizeBytes": 3902304761,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part00",
-            "fileName": "nixos-gnome-build-39555162856.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part00",
+            "fileName": "nixos-gnome-build-39880526037.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:d4288a4356cca7031d21a20a208114ff3a6273205e507d51b2d99f7f76ff8615"
+            "sha256": "sha256:1069a9e879cbeb7c21e4e2b91f651d6513eec95863dd62a05c288c045db5e813"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part01",
-            "fileName": "nixos-gnome-build-39555162856.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part01",
+            "fileName": "nixos-gnome-build-39880526037.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:7a8eedefec38155965799f745595dc184e62fb776d4b2b03af52aa874ae5e8a2"
+            "sha256": "sha256:16267603868c05338ea1b8c553f915dedf56462bf39d04024ddcb148eaaf0ee4"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part02",
-            "fileName": "nixos-gnome-build-39555162856.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part02",
+            "fileName": "nixos-gnome-build-39880526037.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:6ab7c63a40e7f8aab344637383512cd871913d33f79909728e8931bffac2a1ac"
+            "sha256": "sha256:9685030d7268389aaadeebff578e043f087a64537da3651de0091dc0cce8b902"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part03",
-            "fileName": "nixos-gnome-build-39555162856.zip.part03",
-            "sizeBytes": 777747529,
-            "sha256": "sha256:c0831cb30878238c1c9a1a1b367f97720192d5d040cc89b33efe6427bec25803"
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part03",
+            "fileName": "nixos-gnome-build-39880526037.zip.part03",
+            "sizeBytes": 681079289,
+            "sha256": "sha256:89aa13f34104499497dfda44c77262a2d5526c34827c6edaa8207c5b35ff3039"
           }
         ]
+      },
+      "engineVersion": "v0.9.2-aurora.14",
+      "engineDigest": "sha256:21da6f7babcadaaaf520e94f50023a28a1ee5f2e3b2ce48f8274e86c8c257f97",
+      "engineArtifact": {
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/installer-v0.9.2-aurora.14.tar.gz",
+        "fileName": "installer-v0.9.2-aurora.14.tar.gz",
+        "sizeBytes": 17896528
       },
       "installationProfile": "nixos-gnome"
     },
@@ -1598,45 +1829,107 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "2d28c661b0c228fdc7da5743893d816b2740e132",
-      "metadataDigest": "sha256:1f80663f90dc37617f5c1549486ee3ed70c333e8adba033bbeca114a1608eb3e",
-      "payloadDigest": "sha256:5d39c7b56911cbcd18bb3e77f7dc4e739235846f8feb9e381f46e824e5687dce",
-      "evidenceRevision": "image-build-39555162856",
+      "downstreamRevision": "b35281a38740d394cfdcef5b06578d1ee2f64bda",
+      "metadataDigest": "sha256:a66d3d51d20725185cb9111a26e73a1dcde8ae59a0bb75a51c4fc4b017c167af",
+      "payloadDigest": "sha256:d87fed6299ede5b7e9d49a97f4c38136e532e13f80c19f294399efd483cfb30f",
+      "evidenceRevision": "image-build-39880526037",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/installer-data-nixos-gnome.json",
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/installer-data-nixos-gnome.json",
         "fileName": "installer-data-nixos-gnome.json",
-        "sizeBytes": 9576
+        "sizeBytes": 9633
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip",
-        "fileName": "nixos-gnome-build-39555162856.zip",
-        "sizeBytes": 3998973001,
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip",
+        "fileName": "nixos-gnome-build-39880526037.zip",
+        "sizeBytes": 3902304761,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part00",
-            "fileName": "nixos-gnome-build-39555162856.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part00",
+            "fileName": "nixos-gnome-build-39880526037.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:d4288a4356cca7031d21a20a208114ff3a6273205e507d51b2d99f7f76ff8615"
+            "sha256": "sha256:1069a9e879cbeb7c21e4e2b91f651d6513eec95863dd62a05c288c045db5e813"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part01",
-            "fileName": "nixos-gnome-build-39555162856.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part01",
+            "fileName": "nixos-gnome-build-39880526037.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:7a8eedefec38155965799f745595dc184e62fb776d4b2b03af52aa874ae5e8a2"
+            "sha256": "sha256:16267603868c05338ea1b8c553f915dedf56462bf39d04024ddcb148eaaf0ee4"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part02",
-            "fileName": "nixos-gnome-build-39555162856.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part02",
+            "fileName": "nixos-gnome-build-39880526037.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:6ab7c63a40e7f8aab344637383512cd871913d33f79909728e8931bffac2a1ac"
+            "sha256": "sha256:9685030d7268389aaadeebff578e043f087a64537da3651de0091dc0cce8b902"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39555162856/nixos-gnome-build-39555162856.zip.part03",
-            "fileName": "nixos-gnome-build-39555162856.zip.part03",
-            "sizeBytes": 777747529,
-            "sha256": "sha256:c0831cb30878238c1c9a1a1b367f97720192d5d040cc89b33efe6427bec25803"
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part03",
+            "fileName": "nixos-gnome-build-39880526037.zip.part03",
+            "sizeBytes": 681079289,
+            "sha256": "sha256:89aa13f34104499497dfda44c77262a2d5526c34827c6edaa8207c5b35ff3039"
           }
         ]
+      },
+      "engineVersion": "v0.9.2-aurora.14",
+      "engineDigest": "sha256:21da6f7babcadaaaf520e94f50023a28a1ee5f2e3b2ce48f8274e86c8c257f97",
+      "engineArtifact": {
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/installer-v0.9.2-aurora.14.tar.gz",
+        "fileName": "installer-v0.9.2-aurora.14.tar.gz",
+        "sizeBytes": 17896528
+      },
+      "installationProfile": "nixos-gnome"
+    },
+    {
+      "deviceIdentifier": "apple,j700",
+      "status": "enabled",
+      "asahiInstallerTag": "v0.9.2",
+      "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
+      "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
+      "downstreamRevision": "b35281a38740d394cfdcef5b06578d1ee2f64bda",
+      "metadataDigest": "sha256:a66d3d51d20725185cb9111a26e73a1dcde8ae59a0bb75a51c4fc4b017c167af",
+      "payloadDigest": "sha256:d87fed6299ede5b7e9d49a97f4c38136e532e13f80c19f294399efd483cfb30f",
+      "evidenceRevision": "image-build-39880526037",
+      "metadataArtifact": {
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/installer-data-nixos-gnome.json",
+        "fileName": "installer-data-nixos-gnome.json",
+        "sizeBytes": 9633
+      },
+      "payloadArtifact": {
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip",
+        "fileName": "nixos-gnome-build-39880526037.zip",
+        "sizeBytes": 3902304761,
+        "parts": [
+          {
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part00",
+            "fileName": "nixos-gnome-build-39880526037.zip.part00",
+            "sizeBytes": 1073741824,
+            "sha256": "sha256:1069a9e879cbeb7c21e4e2b91f651d6513eec95863dd62a05c288c045db5e813"
+          },
+          {
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part01",
+            "fileName": "nixos-gnome-build-39880526037.zip.part01",
+            "sizeBytes": 1073741824,
+            "sha256": "sha256:16267603868c05338ea1b8c553f915dedf56462bf39d04024ddcb148eaaf0ee4"
+          },
+          {
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part02",
+            "fileName": "nixos-gnome-build-39880526037.zip.part02",
+            "sizeBytes": 1073741824,
+            "sha256": "sha256:9685030d7268389aaadeebff578e043f087a64537da3651de0091dc0cce8b902"
+          },
+          {
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/nixos-gnome-build-39880526037.zip.part03",
+            "fileName": "nixos-gnome-build-39880526037.zip.part03",
+            "sizeBytes": 681079289,
+            "sha256": "sha256:89aa13f34104499497dfda44c77262a2d5526c34827c6edaa8207c5b35ff3039"
+          }
+        ]
+      },
+      "engineVersion": "v0.9.2-aurora.14",
+      "engineDigest": "sha256:21da6f7babcadaaaf520e94f50023a28a1ee5f2e3b2ce48f8274e86c8c257f97",
+      "engineArtifact": {
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-39880526037/installer-v0.9.2-aurora.14.tar.gz",
+        "fileName": "installer-v0.9.2-aurora.14.tar.gz",
+        "sizeBytes": 17896528
       },
       "installationProfile": "nixos-gnome"
     }
