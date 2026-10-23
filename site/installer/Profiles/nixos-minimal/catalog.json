@@ -1,11 +1,11 @@
 {
-  "schemaVersion": 5,
-  "sequence": 1792750951,
-  "issuedAt": "2026-10-23T10:22:31Z",
+  "schemaVersion": 4,
+  "sequence": 1792784059,
+  "issuedAt": "2026-10-23T19:34:19Z",
   "installer": {
     "minimumVersion": "0.1.0",
     "latestVersion": "0.1.0",
-    "downloadURL": "https://github.com/aurora-silicon/aurora-installer/releases/tag/v0.1.0-alpha.9"
+    "downloadURL": "https://github.com/aurora-silicon/aurora-installer/releases/tag/v0.1.0-alpha.3"
   },
   "models": [
     {
@@ -15,32 +15,39 @@
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
       "downstreamRevision": "b35281a38740d394cfdcef5b06578d1ee2f64bda",
-      "metadataDigest": "sha256:767c65509ee8a8e7d498edc60cc457625afc09f6a34731c057b30a939038c5fe",
-      "payloadDigest": "sha256:4689a7cacb5ad5e47f580f378a817b4fe04a8b79312cfaefd1aa28a6be0b93f7",
-      "evidenceRevision": "image-build-39902959217",
+      "metadataDigest": "sha256:26b25e3e5fddba7a4cddbe045963947dd9bde747b0f4d7d22eb71270ba8a50e2",
+      "payloadDigest": "sha256:f1d8fc9585b0036723c5ba65dfc843516f59e9219f87da8f7f0a882ba11f2f52",
+      "evidenceRevision": "image-build-40006988161",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/installer-data-nixos-minimal.json",
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/installer-data-nixos-minimal.json",
         "fileName": "installer-data-nixos-minimal.json",
-        "sizeBytes": 9638
+        "sizeBytes": 9686
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/nixos-minimal-build-39902959217.zip",
-        "fileName": "nixos-minimal-build-39902959217.zip",
-        "sizeBytes": 2005976445,
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/nixos-minimal-build-40006988161.zip",
+        "fileName": "nixos-minimal-build-40006988161.zip",
+        "sizeBytes": 2010754627,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/nixos-minimal-build-39902959217.zip.part00",
-            "fileName": "nixos-minimal-build-39902959217.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/nixos-minimal-build-40006988161.zip.part00",
+            "fileName": "nixos-minimal-build-40006988161.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:2ac22144f9d2e3a4db72e9043eccbf8ff64ca91f1956c479e0dcd2a16a867e22"
+            "sha256": "sha256:6ff701062aa05651634b4336138a5047536e7a68e49029f501173254d50f92c3"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/nixos-minimal-build-39902959217.zip.part01",
-            "fileName": "nixos-minimal-build-39902959217.zip.part01",
-            "sizeBytes": 932234621,
-            "sha256": "sha256:14fc68d0b302776ae04556c9cadb79788f4f9e6c82fc24de33c9cbf4c84ce805"
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/nixos-minimal-build-40006988161.zip.part01",
+            "fileName": "nixos-minimal-build-40006988161.zip.part01",
+            "sizeBytes": 937012803,
+            "sha256": "sha256:01a7c68eac83b410982eb6786adbbc2299da8969c4af2c696247701eab7c998e"
           }
         ]
+      },
+      "engineVersion": "v0.9.2-aurora.14",
+      "engineDigest": "sha256:21da6f7babcadaaaf520e94f50023a28a1ee5f2e3b2ce48f8274e86c8c257f97",
+      "engineArtifact": {
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/installer-v0.9.2-aurora.14.tar.gz",
+        "fileName": "installer-v0.9.2-aurora.14.tar.gz",
+        "sizeBytes": 17896528
       },
       "installationProfile": "nixos-minimal"
     },
@@ -51,32 +58,39 @@
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
       "downstreamRevision": "b35281a38740d394cfdcef5b06578d1ee2f64bda",
-      "metadataDigest": "sha256:767c65509ee8a8e7d498edc60cc457625afc09f6a34731c057b30a939038c5fe",
-      "payloadDigest": "sha256:4689a7cacb5ad5e47f580f378a817b4fe04a8b79312cfaefd1aa28a6be0b93f7",
-      "evidenceRevision": "image-build-39902959217",
+      "metadataDigest": "sha256:26b25e3e5fddba7a4cddbe045963947dd9bde747b0f4d7d22eb71270ba8a50e2",
+      "payloadDigest": "sha256:f1d8fc9585b0036723c5ba65dfc843516f59e9219f87da8f7f0a882ba11f2f52",
+      "evidenceRevision": "image-build-40006988161",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/installer-data-nixos-minimal.json",
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/installer-data-nixos-minimal.json",
         "fileName": "installer-data-nixos-minimal.json",
-        "sizeBytes": 9638
+        "sizeBytes": 9686
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/nixos-minimal-build-39902959217.zip",
-        "fileName": "nixos-minimal-build-39902959217.zip",
-        "sizeBytes": 2005976445,
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/nixos-minimal-build-40006988161.zip",
+        "fileName": "nixos-minimal-build-40006988161.zip",
+        "sizeBytes": 2010754627,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/nixos-minimal-build-39902959217.zip.part00",
-            "fileName": "nixos-minimal-build-39902959217.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/nixos-minimal-build-40006988161.zip.part00",
+            "fileName": "nixos-minimal-build-40006988161.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:2ac22144f9d2e3a4db72e9043eccbf8ff64ca91f1956c479e0dcd2a16a867e22"
+            "sha256": "sha256:6ff701062aa05651634b4336138a5047536e7a68e49029f501173254d50f92c3"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/nixos-minimal-build-39902959217.zip.part01",
-            "fileName": "nixos-minimal-build-39902959217.zip.part01",
-            "sizeBytes": 932234621,
-            "sha256": "sha256:14fc68d0b302776ae04556c9cadb79788f4f9e6c82fc24de33c9cbf4c84ce805"
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/nixos-minimal-build-40006988161.zip.part01",
+            "fileName": "nixos-minimal-build-40006988161.zip.part01",
+            "sizeBytes": 937012803,
+            "sha256": "sha256:01a7c68eac83b410982eb6786adbbc2299da8969c4af2c696247701eab7c998e"
           }
         ]
+      },
+      "engineVersion": "v0.9.2-aurora.14",
+      "engineDigest": "sha256:21da6f7babcadaaaf520e94f50023a28a1ee5f2e3b2ce48f8274e86c8c257f97",
+      "engineArtifact": {
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/installer-v0.9.2-aurora.14.tar.gz",
+        "fileName": "installer-v0.9.2-aurora.14.tar.gz",
+        "sizeBytes": 17896528
       },
       "installationProfile": "nixos-minimal"
     },
@@ -87,32 +101,39 @@
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
       "downstreamRevision": "b35281a38740d394cfdcef5b06578d1ee2f64bda",
-      "metadataDigest": "sha256:767c65509ee8a8e7d498edc60cc457625afc09f6a34731c057b30a939038c5fe",
-      "payloadDigest": "sha256:4689a7cacb5ad5e47f580f378a817b4fe04a8b79312cfaefd1aa28a6be0b93f7",
-      "evidenceRevision": "image-build-39902959217",
+      "metadataDigest": "sha256:26b25e3e5fddba7a4cddbe045963947dd9bde747b0f4d7d22eb71270ba8a50e2",
+      "payloadDigest": "sha256:f1d8fc9585b0036723c5ba65dfc843516f59e9219f87da8f7f0a882ba11f2f52",
+      "evidenceRevision": "image-build-40006988161",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/installer-data-nixos-minimal.json",
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/installer-data-nixos-minimal.json",
         "fileName": "installer-data-nixos-minimal.json",
-        "sizeBytes": 9638
+        "sizeBytes": 9686
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/nixos-minimal-build-39902959217.zip",
-        "fileName": "nixos-minimal-build-39902959217.zip",
-        "sizeBytes": 2005976445,
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/nixos-minimal-build-40006988161.zip",
+        "fileName": "nixos-minimal-build-40006988161.zip",
+        "sizeBytes": 2010754627,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/nixos-minimal-build-39902959217.zip.part00",
-            "fileName": "nixos-minimal-build-39902959217.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/nixos-minimal-build-40006988161.zip.part00",
+            "fileName": "nixos-minimal-build-40006988161.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:2ac22144f9d2e3a4db72e9043eccbf8ff64ca91f1956c479e0dcd2a16a867e22"
+            "sha256": "sha256:6ff701062aa05651634b4336138a5047536e7a68e49029f501173254d50f92c3"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/nixos-minimal-build-39902959217.zip.part01",
-            "fileName": "nixos-minimal-build-39902959217.zip.part01",
-            "sizeBytes": 932234621,
-            "sha256": "sha256:14fc68d0b302776ae04556c9cadb79788f4f9e6c82fc24de33c9cbf4c84ce805"
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/nixos-minimal-build-40006988161.zip.part01",
+            "fileName": "nixos-minimal-build-40006988161.zip.part01",
+            "sizeBytes": 937012803,
+            "sha256": "sha256:01a7c68eac83b410982eb6786adbbc2299da8969c4af2c696247701eab7c998e"
           }
         ]
+      },
+      "engineVersion": "v0.9.2-aurora.14",
+      "engineDigest": "sha256:21da6f7babcadaaaf520e94f50023a28a1ee5f2e3b2ce48f8274e86c8c257f97",
+      "engineArtifact": {
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/installer-v0.9.2-aurora.14.tar.gz",
+        "fileName": "installer-v0.9.2-aurora.14.tar.gz",
+        "sizeBytes": 17896528
       },
       "installationProfile": "nixos-minimal"
     },
@@ -123,32 +144,39 @@
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
       "downstreamRevision": "b35281a38740d394cfdcef5b06578d1ee2f64bda",
-      "metadataDigest": "sha256:767c65509ee8a8e7d498edc60cc457625afc09f6a34731c057b30a939038c5fe",
-      "payloadDigest": "sha256:4689a7cacb5ad5e47f580f378a817b4fe04a8b79312cfaefd1aa28a6be0b93f7",
-      "evidenceRevision": "image-build-39902959217",
+      "metadataDigest": "sha256:26b25e3e5fddba7a4cddbe045963947dd9bde747b0f4d7d22eb71270ba8a50e2",
+      "payloadDigest": "sha256:f1d8fc9585b0036723c5ba65dfc843516f59e9219f87da8f7f0a882ba11f2f52",
+      "evidenceRevision": "image-build-40006988161",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/installer-data-nixos-minimal.json",
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/installer-data-nixos-minimal.json",
         "fileName": "installer-data-nixos-minimal.json",
-        "sizeBytes": 9638
+        "sizeBytes": 9686
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/nixos-minimal-build-39902959217.zip",
-        "fileName": "nixos-minimal-build-39902959217.zip",
-        "sizeBytes": 2005976445,
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/nixos-minimal-build-40006988161.zip",
+        "fileName": "nixos-minimal-build-40006988161.zip",
+        "sizeBytes": 2010754627,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/nixos-minimal-build-39902959217.zip.part00",
-            "fileName": "nixos-minimal-build-39902959217.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/nixos-minimal-build-40006988161.zip.part00",
+            "fileName": "nixos-minimal-build-40006988161.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:2ac22144f9d2e3a4db72e9043eccbf8ff64ca91f1956c479e0dcd2a16a867e22"
+            "sha256": "sha256:6ff701062aa05651634b4336138a5047536e7a68e49029f501173254d50f92c3"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/nixos-minimal-build-39902959217.zip.part01",
-            "fileName": "nixos-minimal-build-39902959217.zip.part01",
-            "sizeBytes": 932234621,
-            "sha256": "sha256:14fc68d0b302776ae04556c9cadb79788f4f9e6c82fc24de33c9cbf4c84ce805"
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/nixos-minimal-build-40006988161.zip.part01",
+            "fileName": "nixos-minimal-build-40006988161.zip.part01",
+            "sizeBytes": 937012803,
+            "sha256": "sha256:01a7c68eac83b410982eb6786adbbc2299da8969c4af2c696247701eab7c998e"
           }
         ]
+      },
+      "engineVersion": "v0.9.2-aurora.14",
+      "engineDigest": "sha256:21da6f7babcadaaaf520e94f50023a28a1ee5f2e3b2ce48f8274e86c8c257f97",
+      "engineArtifact": {
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/installer-v0.9.2-aurora.14.tar.gz",
+        "fileName": "installer-v0.9.2-aurora.14.tar.gz",
+        "sizeBytes": 17896528
       },
       "installationProfile": "nixos-minimal"
     },
@@ -159,32 +187,39 @@
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
       "downstreamRevision": "b35281a38740d394cfdcef5b06578d1ee2f64bda",
-      "metadataDigest": "sha256:767c65509ee8a8e7d498edc60cc457625afc09f6a34731c057b30a939038c5fe",
-      "payloadDigest": "sha256:4689a7cacb5ad5e47f580f378a817b4fe04a8b79312cfaefd1aa28a6be0b93f7",
-      "evidenceRevision": "image-build-39902959217",
+      "metadataDigest": "sha256:26b25e3e5fddba7a4cddbe045963947dd9bde747b0f4d7d22eb71270ba8a50e2",
+      "payloadDigest": "sha256:f1d8fc9585b0036723c5ba65dfc843516f59e9219f87da8f7f0a882ba11f2f52",
+      "evidenceRevision": "image-build-40006988161",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/installer-data-nixos-minimal.json",
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/installer-data-nixos-minimal.json",
         "fileName": "installer-data-nixos-minimal.json",
-        "sizeBytes": 9638
+        "sizeBytes": 9686
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/nixos-minimal-build-39902959217.zip",
-        "fileName": "nixos-minimal-build-39902959217.zip",
-        "sizeBytes": 2005976445,
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/nixos-minimal-build-40006988161.zip",
+        "fileName": "nixos-minimal-build-40006988161.zip",
+        "sizeBytes": 2010754627,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/nixos-minimal-build-39902959217.zip.part00",
-            "fileName": "nixos-minimal-build-39902959217.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/nixos-minimal-build-40006988161.zip.part00",
+            "fileName": "nixos-minimal-build-40006988161.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:2ac22144f9d2e3a4db72e9043eccbf8ff64ca91f1956c479e0dcd2a16a867e22"
+            "sha256": "sha256:6ff701062aa05651634b4336138a5047536e7a68e49029f501173254d50f92c3"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/nixos-minimal-build-39902959217.zip.part01",
-            "fileName": "nixos-minimal-build-39902959217.zip.part01",
-            "sizeBytes": 932234621,
-            "sha256": "sha256:14fc68d0b302776ae04556c9cadb79788f4f9e6c82fc24de33c9cbf4c84ce805"
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/nixos-minimal-build-40006988161.zip.part01",
+            "fileName": "nixos-minimal-build-40006988161.zip.part01",
+            "sizeBytes": 937012803,
+            "sha256": "sha256:01a7c68eac83b410982eb6786adbbc2299da8969c4af2c696247701eab7c998e"
           }
         ]
+      },
+      "engineVersion": "v0.9.2-aurora.14",
+      "engineDigest": "sha256:21da6f7babcadaaaf520e94f50023a28a1ee5f2e3b2ce48f8274e86c8c257f97",
+      "engineArtifact": {
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/installer-v0.9.2-aurora.14.tar.gz",
+        "fileName": "installer-v0.9.2-aurora.14.tar.gz",
+        "sizeBytes": 17896528
       },
       "installationProfile": "nixos-minimal"
     },
@@ -195,32 +230,39 @@
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
       "downstreamRevision": "b35281a38740d394cfdcef5b06578d1ee2f64bda",
-      "metadataDigest": "sha256:767c65509ee8a8e7d498edc60cc457625afc09f6a34731c057b30a939038c5fe",
-      "payloadDigest": "sha256:4689a7cacb5ad5e47f580f378a817b4fe04a8b79312cfaefd1aa28a6be0b93f7",
-      "evidenceRevision": "image-build-39902959217",
+      "metadataDigest": "sha256:26b25e3e5fddba7a4cddbe045963947dd9bde747b0f4d7d22eb71270ba8a50e2",
+      "payloadDigest": "sha256:f1d8fc9585b0036723c5ba65dfc843516f59e9219f87da8f7f0a882ba11f2f52",
+      "evidenceRevision": "image-build-40006988161",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/installer-data-nixos-minimal.json",
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/installer-data-nixos-minimal.json",
         "fileName": "installer-data-nixos-minimal.json",
-        "sizeBytes": 9638
+        "sizeBytes": 9686
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/nixos-minimal-build-39902959217.zip",
-        "fileName": "nixos-minimal-build-39902959217.zip",
-        "sizeBytes": 2005976445,
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/nixos-minimal-build-40006988161.zip",
+        "fileName": "nixos-minimal-build-40006988161.zip",
+        "sizeBytes": 2010754627,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/nixos-minimal-build-39902959217.zip.part00",
-            "fileName": "nixos-minimal-build-39902959217.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/nixos-minimal-build-40006988161.zip.part00",
+            "fileName": "nixos-minimal-build-40006988161.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:2ac22144f9d2e3a4db72e9043eccbf8ff64ca91f1956c479e0dcd2a16a867e22"
+            "sha256": "sha256:6ff701062aa05651634b4336138a5047536e7a68e49029f501173254d50f92c3"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/nixos-minimal-build-39902959217.zip.part01",
-            "fileName": "nixos-minimal-build-39902959217.zip.part01",
-            "sizeBytes": 932234621,
-            "sha256": "sha256:14fc68d0b302776ae04556c9cadb79788f4f9e6c82fc24de33c9cbf4c84ce805"
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/nixos-minimal-build-40006988161.zip.part01",
+            "fileName": "nixos-minimal-build-40006988161.zip.part01",
+            "sizeBytes": 937012803,
+            "sha256": "sha256:01a7c68eac83b410982eb6786adbbc2299da8969c4af2c696247701eab7c998e"
           }
         ]
+      },
+      "engineVersion": "v0.9.2-aurora.14",
+      "engineDigest": "sha256:21da6f7babcadaaaf520e94f50023a28a1ee5f2e3b2ce48f8274e86c8c257f97",
+      "engineArtifact": {
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/installer-v0.9.2-aurora.14.tar.gz",
+        "fileName": "installer-v0.9.2-aurora.14.tar.gz",
+        "sizeBytes": 17896528
       },
       "installationProfile": "nixos-minimal"
     },
@@ -231,32 +273,39 @@
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
       "downstreamRevision": "b35281a38740d394cfdcef5b06578d1ee2f64bda",
-      "metadataDigest": "sha256:767c65509ee8a8e7d498edc60cc457625afc09f6a34731c057b30a939038c5fe",
-      "payloadDigest": "sha256:4689a7cacb5ad5e47f580f378a817b4fe04a8b79312cfaefd1aa28a6be0b93f7",
-      "evidenceRevision": "image-build-39902959217",
+      "metadataDigest": "sha256:26b25e3e5fddba7a4cddbe045963947dd9bde747b0f4d7d22eb71270ba8a50e2",
+      "payloadDigest": "sha256:f1d8fc9585b0036723c5ba65dfc843516f59e9219f87da8f7f0a882ba11f2f52",
+      "evidenceRevision": "image-build-40006988161",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/installer-data-nixos-minimal.json",
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/installer-data-nixos-minimal.json",
         "fileName": "installer-data-nixos-minimal.json",
-        "sizeBytes": 9638
+        "sizeBytes": 9686
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/nixos-minimal-build-39902959217.zip",
-        "fileName": "nixos-minimal-build-39902959217.zip",
-        "sizeBytes": 2005976445,
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/nixos-minimal-build-40006988161.zip",
+        "fileName": "nixos-minimal-build-40006988161.zip",
+        "sizeBytes": 2010754627,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/nixos-minimal-build-39902959217.zip.part00",
-            "fileName": "nixos-minimal-build-39902959217.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/nixos-minimal-build-40006988161.zip.part00",
+            "fileName": "nixos-minimal-build-40006988161.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:2ac22144f9d2e3a4db72e9043eccbf8ff64ca91f1956c479e0dcd2a16a867e22"
+            "sha256": "sha256:6ff701062aa05651634b4336138a5047536e7a68e49029f501173254d50f92c3"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/nixos-minimal-build-39902959217.zip.part01",
-            "fileName": "nixos-minimal-build-39902959217.zip.part01",
-            "sizeBytes": 932234621,
-            "sha256": "sha256:14fc68d0b302776ae04556c9cadb79788f4f9e6c82fc24de33c9cbf4c84ce805"
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/nixos-minimal-build-40006988161.zip.part01",
+            "fileName": "nixos-minimal-build-40006988161.zip.part01",
+            "sizeBytes": 937012803,
+            "sha256": "sha256:01a7c68eac83b410982eb6786adbbc2299da8969c4af2c696247701eab7c998e"
           }
         ]
+      },
+      "engineVersion": "v0.9.2-aurora.14",
+      "engineDigest": "sha256:21da6f7babcadaaaf520e94f50023a28a1ee5f2e3b2ce48f8274e86c8c257f97",
+      "engineArtifact": {
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/installer-v0.9.2-aurora.14.tar.gz",
+        "fileName": "installer-v0.9.2-aurora.14.tar.gz",
+        "sizeBytes": 17896528
       },
       "installationProfile": "nixos-minimal"
     },
@@ -267,32 +316,39 @@
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
       "downstreamRevision": "b35281a38740d394cfdcef5b06578d1ee2f64bda",
-      "metadataDigest": "sha256:767c65509ee8a8e7d498edc60cc457625afc09f6a34731c057b30a939038c5fe",
-      "payloadDigest": "sha256:4689a7cacb5ad5e47f580f378a817b4fe04a8b79312cfaefd1aa28a6be0b93f7",
-      "evidenceRevision": "image-build-39902959217",
+      "metadataDigest": "sha256:26b25e3e5fddba7a4cddbe045963947dd9bde747b0f4d7d22eb71270ba8a50e2",
+      "payloadDigest": "sha256:f1d8fc9585b0036723c5ba65dfc843516f59e9219f87da8f7f0a882ba11f2f52",
+      "evidenceRevision": "image-build-40006988161",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/installer-data-nixos-minimal.json",
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/installer-data-nixos-minimal.json",
         "fileName": "installer-data-nixos-minimal.json",
-        "sizeBytes": 9638
+        "sizeBytes": 9686
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/nixos-minimal-build-39902959217.zip",
-        "fileName": "nixos-minimal-build-39902959217.zip",
-        "sizeBytes": 2005976445,
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/nixos-minimal-build-40006988161.zip",
+        "fileName": "nixos-minimal-build-40006988161.zip",
+        "sizeBytes": 2010754627,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/nixos-minimal-build-39902959217.zip.part00",
-            "fileName": "nixos-minimal-build-39902959217.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/nixos-minimal-build-40006988161.zip.part00",
+            "fileName": "nixos-minimal-build-40006988161.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:2ac22144f9d2e3a4db72e9043eccbf8ff64ca91f1956c479e0dcd2a16a867e22"
+            "sha256": "sha256:6ff701062aa05651634b4336138a5047536e7a68e49029f501173254d50f92c3"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/nixos-minimal-build-39902959217.zip.part01",
-            "fileName": "nixos-minimal-build-39902959217.zip.part01",
-            "sizeBytes": 932234621,
-            "sha256": "sha256:14fc68d0b302776ae04556c9cadb79788f4f9e6c82fc24de33c9cbf4c84ce805"
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/nixos-minimal-build-40006988161.zip.part01",
+            "fileName": "nixos-minimal-build-40006988161.zip.part01",
+            "sizeBytes": 937012803,
+            "sha256": "sha256:01a7c68eac83b410982eb6786adbbc2299da8969c4af2c696247701eab7c998e"
           }
         ]
+      },
+      "engineVersion": "v0.9.2-aurora.14",
+      "engineDigest": "sha256:21da6f7babcadaaaf520e94f50023a28a1ee5f2e3b2ce48f8274e86c8c257f97",
+      "engineArtifact": {
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/installer-v0.9.2-aurora.14.tar.gz",
+        "fileName": "installer-v0.9.2-aurora.14.tar.gz",
+        "sizeBytes": 17896528
       },
       "installationProfile": "nixos-minimal"
     },
@@ -303,32 +359,39 @@
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
       "downstreamRevision": "b35281a38740d394cfdcef5b06578d1ee2f64bda",
-      "metadataDigest": "sha256:767c65509ee8a8e7d498edc60cc457625afc09f6a34731c057b30a939038c5fe",
-      "payloadDigest": "sha256:4689a7cacb5ad5e47f580f378a817b4fe04a8b79312cfaefd1aa28a6be0b93f7",
-      "evidenceRevision": "image-build-39902959217",
+      "metadataDigest": "sha256:26b25e3e5fddba7a4cddbe045963947dd9bde747b0f4d7d22eb71270ba8a50e2",
+      "payloadDigest": "sha256:f1d8fc9585b0036723c5ba65dfc843516f59e9219f87da8f7f0a882ba11f2f52",
+      "evidenceRevision": "image-build-40006988161",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/installer-data-nixos-minimal.json",
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/installer-data-nixos-minimal.json",
         "fileName": "installer-data-nixos-minimal.json",
-        "sizeBytes": 9638
+        "sizeBytes": 9686
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/nixos-minimal-build-39902959217.zip",
-        "fileName": "nixos-minimal-build-39902959217.zip",
-        "sizeBytes": 2005976445,
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/nixos-minimal-build-40006988161.zip",
+        "fileName": "nixos-minimal-build-40006988161.zip",
+        "sizeBytes": 2010754627,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/nixos-minimal-build-39902959217.zip.part00",
-            "fileName": "nixos-minimal-build-39902959217.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/nixos-minimal-build-40006988161.zip.part00",
+            "fileName": "nixos-minimal-build-40006988161.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:2ac22144f9d2e3a4db72e9043eccbf8ff64ca91f1956c479e0dcd2a16a867e22"
+            "sha256": "sha256:6ff701062aa05651634b4336138a5047536e7a68e49029f501173254d50f92c3"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/nixos-minimal-build-39902959217.zip.part01",
-            "fileName": "nixos-minimal-build-39902959217.zip.part01",
-            "sizeBytes": 932234621,
-            "sha256": "sha256:14fc68d0b302776ae04556c9cadb79788f4f9e6c82fc24de33c9cbf4c84ce805"
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/nixos-minimal-build-40006988161.zip.part01",
+            "fileName": "nixos-minimal-build-40006988161.zip.part01",
+            "sizeBytes": 937012803,
+            "sha256": "sha256:01a7c68eac83b410982eb6786adbbc2299da8969c4af2c696247701eab7c998e"
           }
         ]
+      },
+      "engineVersion": "v0.9.2-aurora.14",
+      "engineDigest": "sha256:21da6f7babcadaaaf520e94f50023a28a1ee5f2e3b2ce48f8274e86c8c257f97",
+      "engineArtifact": {
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/installer-v0.9.2-aurora.14.tar.gz",
+        "fileName": "installer-v0.9.2-aurora.14.tar.gz",
+        "sizeBytes": 17896528
       },
       "installationProfile": "nixos-minimal"
     },
@@ -339,32 +402,39 @@
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
       "downstreamRevision": "b35281a38740d394cfdcef5b06578d1ee2f64bda",
-      "metadataDigest": "sha256:767c65509ee8a8e7d498edc60cc457625afc09f6a34731c057b30a939038c5fe",
-      "payloadDigest": "sha256:4689a7cacb5ad5e47f580f378a817b4fe04a8b79312cfaefd1aa28a6be0b93f7",
-      "evidenceRevision": "image-build-39902959217",
+      "metadataDigest": "sha256:26b25e3e5fddba7a4cddbe045963947dd9bde747b0f4d7d22eb71270ba8a50e2",
+      "payloadDigest": "sha256:f1d8fc9585b0036723c5ba65dfc843516f59e9219f87da8f7f0a882ba11f2f52",
+      "evidenceRevision": "image-build-40006988161",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/installer-data-nixos-minimal.json",
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/installer-data-nixos-minimal.json",
         "fileName": "installer-data-nixos-minimal.json",
-        "sizeBytes": 9638
+        "sizeBytes": 9686
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/nixos-minimal-build-39902959217.zip",
-        "fileName": "nixos-minimal-build-39902959217.zip",
-        "sizeBytes": 2005976445,
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/nixos-minimal-build-40006988161.zip",
+        "fileName": "nixos-minimal-build-40006988161.zip",
+        "sizeBytes": 2010754627,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/nixos-minimal-build-39902959217.zip.part00",
-            "fileName": "nixos-minimal-build-39902959217.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/nixos-minimal-build-40006988161.zip.part00",
+            "fileName": "nixos-minimal-build-40006988161.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:2ac22144f9d2e3a4db72e9043eccbf8ff64ca91f1956c479e0dcd2a16a867e22"
+            "sha256": "sha256:6ff701062aa05651634b4336138a5047536e7a68e49029f501173254d50f92c3"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/nixos-minimal-build-39902959217.zip.part01",
-            "fileName": "nixos-minimal-build-39902959217.zip.part01",
-            "sizeBytes": 932234621,
-            "sha256": "sha256:14fc68d0b302776ae04556c9cadb79788f4f9e6c82fc24de33c9cbf4c84ce805"
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/nixos-minimal-build-40006988161.zip.part01",
+            "fileName": "nixos-minimal-build-40006988161.zip.part01",
+            "sizeBytes": 937012803,
+            "sha256": "sha256:01a7c68eac83b410982eb6786adbbc2299da8969c4af2c696247701eab7c998e"
           }
         ]
+      },
+      "engineVersion": "v0.9.2-aurora.14",
+      "engineDigest": "sha256:21da6f7babcadaaaf520e94f50023a28a1ee5f2e3b2ce48f8274e86c8c257f97",
+      "engineArtifact": {
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/installer-v0.9.2-aurora.14.tar.gz",
+        "fileName": "installer-v0.9.2-aurora.14.tar.gz",
+        "sizeBytes": 17896528
       },
       "installationProfile": "nixos-minimal"
     },
@@ -375,32 +445,39 @@
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
       "downstreamRevision": "b35281a38740d394cfdcef5b06578d1ee2f64bda",
-      "metadataDigest": "sha256:767c65509ee8a8e7d498edc60cc457625afc09f6a34731c057b30a939038c5fe",
-      "payloadDigest": "sha256:4689a7cacb5ad5e47f580f378a817b4fe04a8b79312cfaefd1aa28a6be0b93f7",
-      "evidenceRevision": "image-build-39902959217",
+      "metadataDigest": "sha256:26b25e3e5fddba7a4cddbe045963947dd9bde747b0f4d7d22eb71270ba8a50e2",
+      "payloadDigest": "sha256:f1d8fc9585b0036723c5ba65dfc843516f59e9219f87da8f7f0a882ba11f2f52",
+      "evidenceRevision": "image-build-40006988161",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/installer-data-nixos-minimal.json",
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/installer-data-nixos-minimal.json",
         "fileName": "installer-data-nixos-minimal.json",
-        "sizeBytes": 9638
+        "sizeBytes": 9686
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/nixos-minimal-build-39902959217.zip",
-        "fileName": "nixos-minimal-build-39902959217.zip",
-        "sizeBytes": 2005976445,
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/nixos-minimal-build-40006988161.zip",
+        "fileName": "nixos-minimal-build-40006988161.zip",
+        "sizeBytes": 2010754627,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/nixos-minimal-build-39902959217.zip.part00",
-            "fileName": "nixos-minimal-build-39902959217.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/nixos-minimal-build-40006988161.zip.part00",
+            "fileName": "nixos-minimal-build-40006988161.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:2ac22144f9d2e3a4db72e9043eccbf8ff64ca91f1956c479e0dcd2a16a867e22"
+            "sha256": "sha256:6ff701062aa05651634b4336138a5047536e7a68e49029f501173254d50f92c3"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/nixos-minimal-build-39902959217.zip.part01",
-            "fileName": "nixos-minimal-build-39902959217.zip.part01",
-            "sizeBytes": 932234621,
-            "sha256": "sha256:14fc68d0b302776ae04556c9cadb79788f4f9e6c82fc24de33c9cbf4c84ce805"
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/nixos-minimal-build-40006988161.zip.part01",
+            "fileName": "nixos-minimal-build-40006988161.zip.part01",
+            "sizeBytes": 937012803,
+            "sha256": "sha256:01a7c68eac83b410982eb6786adbbc2299da8969c4af2c696247701eab7c998e"
           }
         ]
+      },
+      "engineVersion": "v0.9.2-aurora.14",
+      "engineDigest": "sha256:21da6f7babcadaaaf520e94f50023a28a1ee5f2e3b2ce48f8274e86c8c257f97",
+      "engineArtifact": {
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/installer-v0.9.2-aurora.14.tar.gz",
+        "fileName": "installer-v0.9.2-aurora.14.tar.gz",
+        "sizeBytes": 17896528
       },
       "installationProfile": "nixos-minimal"
     },
@@ -411,32 +488,39 @@
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
       "downstreamRevision": "b35281a38740d394cfdcef5b06578d1ee2f64bda",
-      "metadataDigest": "sha256:767c65509ee8a8e7d498edc60cc457625afc09f6a34731c057b30a939038c5fe",
-      "payloadDigest": "sha256:4689a7cacb5ad5e47f580f378a817b4fe04a8b79312cfaefd1aa28a6be0b93f7",
-      "evidenceRevision": "image-build-39902959217",
+      "metadataDigest": "sha256:26b25e3e5fddba7a4cddbe045963947dd9bde747b0f4d7d22eb71270ba8a50e2",
+      "payloadDigest": "sha256:f1d8fc9585b0036723c5ba65dfc843516f59e9219f87da8f7f0a882ba11f2f52",
+      "evidenceRevision": "image-build-40006988161",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/installer-data-nixos-minimal.json",
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/installer-data-nixos-minimal.json",
         "fileName": "installer-data-nixos-minimal.json",
-        "sizeBytes": 9638
+        "sizeBytes": 9686
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/nixos-minimal-build-39902959217.zip",
-        "fileName": "nixos-minimal-build-39902959217.zip",
-        "sizeBytes": 2005976445,
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/nixos-minimal-build-40006988161.zip",
+        "fileName": "nixos-minimal-build-40006988161.zip",
+        "sizeBytes": 2010754627,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/nixos-minimal-build-39902959217.zip.part00",
-            "fileName": "nixos-minimal-build-39902959217.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/nixos-minimal-build-40006988161.zip.part00",
+            "fileName": "nixos-minimal-build-40006988161.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:2ac22144f9d2e3a4db72e9043eccbf8ff64ca91f1956c479e0dcd2a16a867e22"
+            "sha256": "sha256:6ff701062aa05651634b4336138a5047536e7a68e49029f501173254d50f92c3"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/nixos-minimal-build-39902959217.zip.part01",
-            "fileName": "nixos-minimal-build-39902959217.zip.part01",
-            "sizeBytes": 932234621,
-            "sha256": "sha256:14fc68d0b302776ae04556c9cadb79788f4f9e6c82fc24de33c9cbf4c84ce805"
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/nixos-minimal-build-40006988161.zip.part01",
+            "fileName": "nixos-minimal-build-40006988161.zip.part01",
+            "sizeBytes": 937012803,
+            "sha256": "sha256:01a7c68eac83b410982eb6786adbbc2299da8969c4af2c696247701eab7c998e"
           }
         ]
+      },
+      "engineVersion": "v0.9.2-aurora.14",
+      "engineDigest": "sha256:21da6f7babcadaaaf520e94f50023a28a1ee5f2e3b2ce48f8274e86c8c257f97",
+      "engineArtifact": {
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/installer-v0.9.2-aurora.14.tar.gz",
+        "fileName": "installer-v0.9.2-aurora.14.tar.gz",
+        "sizeBytes": 17896528
       },
       "installationProfile": "nixos-minimal"
     },
@@ -447,32 +531,39 @@
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
       "downstreamRevision": "b35281a38740d394cfdcef5b06578d1ee2f64bda",
-      "metadataDigest": "sha256:767c65509ee8a8e7d498edc60cc457625afc09f6a34731c057b30a939038c5fe",
-      "payloadDigest": "sha256:4689a7cacb5ad5e47f580f378a817b4fe04a8b79312cfaefd1aa28a6be0b93f7",
-      "evidenceRevision": "image-build-39902959217",
+      "metadataDigest": "sha256:26b25e3e5fddba7a4cddbe045963947dd9bde747b0f4d7d22eb71270ba8a50e2",
+      "payloadDigest": "sha256:f1d8fc9585b0036723c5ba65dfc843516f59e9219f87da8f7f0a882ba11f2f52",
+      "evidenceRevision": "image-build-40006988161",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/installer-data-nixos-minimal.json",
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/installer-data-nixos-minimal.json",
         "fileName": "installer-data-nixos-minimal.json",
-        "sizeBytes": 9638
+        "sizeBytes": 9686
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/nixos-minimal-build-39902959217.zip",
-        "fileName": "nixos-minimal-build-39902959217.zip",
-        "sizeBytes": 2005976445,
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/nixos-minimal-build-40006988161.zip",
+        "fileName": "nixos-minimal-build-40006988161.zip",
+        "sizeBytes": 2010754627,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/nixos-minimal-build-39902959217.zip.part00",
-            "fileName": "nixos-minimal-build-39902959217.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/nixos-minimal-build-40006988161.zip.part00",
+            "fileName": "nixos-minimal-build-40006988161.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:2ac22144f9d2e3a4db72e9043eccbf8ff64ca91f1956c479e0dcd2a16a867e22"
+            "sha256": "sha256:6ff701062aa05651634b4336138a5047536e7a68e49029f501173254d50f92c3"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/nixos-minimal-build-39902959217.zip.part01",
-            "fileName": "nixos-minimal-build-39902959217.zip.part01",
-            "sizeBytes": 932234621,
-            "sha256": "sha256:14fc68d0b302776ae04556c9cadb79788f4f9e6c82fc24de33c9cbf4c84ce805"
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/nixos-minimal-build-40006988161.zip.part01",
+            "fileName": "nixos-minimal-build-40006988161.zip.part01",
+            "sizeBytes": 937012803,
+            "sha256": "sha256:01a7c68eac83b410982eb6786adbbc2299da8969c4af2c696247701eab7c998e"
           }
         ]
+      },
+      "engineVersion": "v0.9.2-aurora.14",
+      "engineDigest": "sha256:21da6f7babcadaaaf520e94f50023a28a1ee5f2e3b2ce48f8274e86c8c257f97",
+      "engineArtifact": {
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/installer-v0.9.2-aurora.14.tar.gz",
+        "fileName": "installer-v0.9.2-aurora.14.tar.gz",
+        "sizeBytes": 17896528
       },
       "installationProfile": "nixos-minimal"
     },
@@ -483,32 +574,39 @@
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
       "downstreamRevision": "b35281a38740d394cfdcef5b06578d1ee2f64bda",
-      "metadataDigest": "sha256:767c65509ee8a8e7d498edc60cc457625afc09f6a34731c057b30a939038c5fe",
-      "payloadDigest": "sha256:4689a7cacb5ad5e47f580f378a817b4fe04a8b79312cfaefd1aa28a6be0b93f7",
-      "evidenceRevision": "image-build-39902959217",
+      "metadataDigest": "sha256:26b25e3e5fddba7a4cddbe045963947dd9bde747b0f4d7d22eb71270ba8a50e2",
+      "payloadDigest": "sha256:f1d8fc9585b0036723c5ba65dfc843516f59e9219f87da8f7f0a882ba11f2f52",
+      "evidenceRevision": "image-build-40006988161",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/installer-data-nixos-minimal.json",
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/installer-data-nixos-minimal.json",
         "fileName": "installer-data-nixos-minimal.json",
-        "sizeBytes": 9638
+        "sizeBytes": 9686
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/nixos-minimal-build-39902959217.zip",
-        "fileName": "nixos-minimal-build-39902959217.zip",
-        "sizeBytes": 2005976445,
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/nixos-minimal-build-40006988161.zip",
+        "fileName": "nixos-minimal-build-40006988161.zip",
+        "sizeBytes": 2010754627,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/nixos-minimal-build-39902959217.zip.part00",
-            "fileName": "nixos-minimal-build-39902959217.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/nixos-minimal-build-40006988161.zip.part00",
+            "fileName": "nixos-minimal-build-40006988161.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:2ac22144f9d2e3a4db72e9043eccbf8ff64ca91f1956c479e0dcd2a16a867e22"
+            "sha256": "sha256:6ff701062aa05651634b4336138a5047536e7a68e49029f501173254d50f92c3"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/nixos-minimal-build-39902959217.zip.part01",
-            "fileName": "nixos-minimal-build-39902959217.zip.part01",
-            "sizeBytes": 932234621,
-            "sha256": "sha256:14fc68d0b302776ae04556c9cadb79788f4f9e6c82fc24de33c9cbf4c84ce805"
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/nixos-minimal-build-40006988161.zip.part01",
+            "fileName": "nixos-minimal-build-40006988161.zip.part01",
+            "sizeBytes": 937012803,
+            "sha256": "sha256:01a7c68eac83b410982eb6786adbbc2299da8969c4af2c696247701eab7c998e"
           }
         ]
+      },
+      "engineVersion": "v0.9.2-aurora.14",
+      "engineDigest": "sha256:21da6f7babcadaaaf520e94f50023a28a1ee5f2e3b2ce48f8274e86c8c257f97",
+      "engineArtifact": {
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/installer-v0.9.2-aurora.14.tar.gz",
+        "fileName": "installer-v0.9.2-aurora.14.tar.gz",
+        "sizeBytes": 17896528
       },
       "installationProfile": "nixos-minimal"
     },
@@ -519,32 +617,39 @@
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
       "downstreamRevision": "b35281a38740d394cfdcef5b06578d1ee2f64bda",
-      "metadataDigest": "sha256:767c65509ee8a8e7d498edc60cc457625afc09f6a34731c057b30a939038c5fe",
-      "payloadDigest": "sha256:4689a7cacb5ad5e47f580f378a817b4fe04a8b79312cfaefd1aa28a6be0b93f7",
-      "evidenceRevision": "image-build-39902959217",
+      "metadataDigest": "sha256:26b25e3e5fddba7a4cddbe045963947dd9bde747b0f4d7d22eb71270ba8a50e2",
+      "payloadDigest": "sha256:f1d8fc9585b0036723c5ba65dfc843516f59e9219f87da8f7f0a882ba11f2f52",
+      "evidenceRevision": "image-build-40006988161",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/installer-data-nixos-minimal.json",
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/installer-data-nixos-minimal.json",
         "fileName": "installer-data-nixos-minimal.json",
-        "sizeBytes": 9638
+        "sizeBytes": 9686
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/nixos-minimal-build-39902959217.zip",
-        "fileName": "nixos-minimal-build-39902959217.zip",
-        "sizeBytes": 2005976445,
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/nixos-minimal-build-40006988161.zip",
+        "fileName": "nixos-minimal-build-40006988161.zip",
+        "sizeBytes": 2010754627,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/nixos-minimal-build-39902959217.zip.part00",
-            "fileName": "nixos-minimal-build-39902959217.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/nixos-minimal-build-40006988161.zip.part00",
+            "fileName": "nixos-minimal-build-40006988161.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:2ac22144f9d2e3a4db72e9043eccbf8ff64ca91f1956c479e0dcd2a16a867e22"
+            "sha256": "sha256:6ff701062aa05651634b4336138a5047536e7a68e49029f501173254d50f92c3"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/nixos-minimal-build-39902959217.zip.part01",
-            "fileName": "nixos-minimal-build-39902959217.zip.part01",
-            "sizeBytes": 932234621,
-            "sha256": "sha256:14fc68d0b302776ae04556c9cadb79788f4f9e6c82fc24de33c9cbf4c84ce805"
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/nixos-minimal-build-40006988161.zip.part01",
+            "fileName": "nixos-minimal-build-40006988161.zip.part01",
+            "sizeBytes": 937012803,
+            "sha256": "sha256:01a7c68eac83b410982eb6786adbbc2299da8969c4af2c696247701eab7c998e"
           }
         ]
+      },
+      "engineVersion": "v0.9.2-aurora.14",
+      "engineDigest": "sha256:21da6f7babcadaaaf520e94f50023a28a1ee5f2e3b2ce48f8274e86c8c257f97",
+      "engineArtifact": {
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/installer-v0.9.2-aurora.14.tar.gz",
+        "fileName": "installer-v0.9.2-aurora.14.tar.gz",
+        "sizeBytes": 17896528
       },
       "installationProfile": "nixos-minimal"
     },
@@ -555,32 +660,39 @@
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
       "downstreamRevision": "b35281a38740d394cfdcef5b06578d1ee2f64bda",
-      "metadataDigest": "sha256:767c65509ee8a8e7d498edc60cc457625afc09f6a34731c057b30a939038c5fe",
-      "payloadDigest": "sha256:4689a7cacb5ad5e47f580f378a817b4fe04a8b79312cfaefd1aa28a6be0b93f7",
-      "evidenceRevision": "image-build-39902959217",
+      "metadataDigest": "sha256:26b25e3e5fddba7a4cddbe045963947dd9bde747b0f4d7d22eb71270ba8a50e2",
+      "payloadDigest": "sha256:f1d8fc9585b0036723c5ba65dfc843516f59e9219f87da8f7f0a882ba11f2f52",
+      "evidenceRevision": "image-build-40006988161",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/installer-data-nixos-minimal.json",
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/installer-data-nixos-minimal.json",
         "fileName": "installer-data-nixos-minimal.json",
-        "sizeBytes": 9638
+        "sizeBytes": 9686
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/nixos-minimal-build-39902959217.zip",
-        "fileName": "nixos-minimal-build-39902959217.zip",
-        "sizeBytes": 2005976445,
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/nixos-minimal-build-40006988161.zip",
+        "fileName": "nixos-minimal-build-40006988161.zip",
+        "sizeBytes": 2010754627,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/nixos-minimal-build-39902959217.zip.part00",
-            "fileName": "nixos-minimal-build-39902959217.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/nixos-minimal-build-40006988161.zip.part00",
+            "fileName": "nixos-minimal-build-40006988161.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:2ac22144f9d2e3a4db72e9043eccbf8ff64ca91f1956c479e0dcd2a16a867e22"
+            "sha256": "sha256:6ff701062aa05651634b4336138a5047536e7a68e49029f501173254d50f92c3"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/nixos-minimal-build-39902959217.zip.part01",
-            "fileName": "nixos-minimal-build-39902959217.zip.part01",
-            "sizeBytes": 932234621,
-            "sha256": "sha256:14fc68d0b302776ae04556c9cadb79788f4f9e6c82fc24de33c9cbf4c84ce805"
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/nixos-minimal-build-40006988161.zip.part01",
+            "fileName": "nixos-minimal-build-40006988161.zip.part01",
+            "sizeBytes": 937012803,
+            "sha256": "sha256:01a7c68eac83b410982eb6786adbbc2299da8969c4af2c696247701eab7c998e"
           }
         ]
+      },
+      "engineVersion": "v0.9.2-aurora.14",
+      "engineDigest": "sha256:21da6f7babcadaaaf520e94f50023a28a1ee5f2e3b2ce48f8274e86c8c257f97",
+      "engineArtifact": {
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/installer-v0.9.2-aurora.14.tar.gz",
+        "fileName": "installer-v0.9.2-aurora.14.tar.gz",
+        "sizeBytes": 17896528
       },
       "installationProfile": "nixos-minimal"
     },
@@ -591,32 +703,39 @@
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
       "downstreamRevision": "b35281a38740d394cfdcef5b06578d1ee2f64bda",
-      "metadataDigest": "sha256:767c65509ee8a8e7d498edc60cc457625afc09f6a34731c057b30a939038c5fe",
-      "payloadDigest": "sha256:4689a7cacb5ad5e47f580f378a817b4fe04a8b79312cfaefd1aa28a6be0b93f7",
-      "evidenceRevision": "image-build-39902959217",
+      "metadataDigest": "sha256:26b25e3e5fddba7a4cddbe045963947dd9bde747b0f4d7d22eb71270ba8a50e2",
+      "payloadDigest": "sha256:f1d8fc9585b0036723c5ba65dfc843516f59e9219f87da8f7f0a882ba11f2f52",
+      "evidenceRevision": "image-build-40006988161",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/installer-data-nixos-minimal.json",
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/installer-data-nixos-minimal.json",
         "fileName": "installer-data-nixos-minimal.json",
-        "sizeBytes": 9638
+        "sizeBytes": 9686
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/nixos-minimal-build-39902959217.zip",
-        "fileName": "nixos-minimal-build-39902959217.zip",
-        "sizeBytes": 2005976445,
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/nixos-minimal-build-40006988161.zip",
+        "fileName": "nixos-minimal-build-40006988161.zip",
+        "sizeBytes": 2010754627,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/nixos-minimal-build-39902959217.zip.part00",
-            "fileName": "nixos-minimal-build-39902959217.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/nixos-minimal-build-40006988161.zip.part00",
+            "fileName": "nixos-minimal-build-40006988161.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:2ac22144f9d2e3a4db72e9043eccbf8ff64ca91f1956c479e0dcd2a16a867e22"
+            "sha256": "sha256:6ff701062aa05651634b4336138a5047536e7a68e49029f501173254d50f92c3"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/nixos-minimal-build-39902959217.zip.part01",
-            "fileName": "nixos-minimal-build-39902959217.zip.part01",
-            "sizeBytes": 932234621,
-            "sha256": "sha256:14fc68d0b302776ae04556c9cadb79788f4f9e6c82fc24de33c9cbf4c84ce805"
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/nixos-minimal-build-40006988161.zip.part01",
+            "fileName": "nixos-minimal-build-40006988161.zip.part01",
+            "sizeBytes": 937012803,
+            "sha256": "sha256:01a7c68eac83b410982eb6786adbbc2299da8969c4af2c696247701eab7c998e"
           }
         ]
+      },
+      "engineVersion": "v0.9.2-aurora.14",
+      "engineDigest": "sha256:21da6f7babcadaaaf520e94f50023a28a1ee5f2e3b2ce48f8274e86c8c257f97",
+      "engineArtifact": {
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/installer-v0.9.2-aurora.14.tar.gz",
+        "fileName": "installer-v0.9.2-aurora.14.tar.gz",
+        "sizeBytes": 17896528
       },
       "installationProfile": "nixos-minimal"
     },
@@ -627,32 +746,39 @@
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
       "downstreamRevision": "b35281a38740d394cfdcef5b06578d1ee2f64bda",
-      "metadataDigest": "sha256:767c65509ee8a8e7d498edc60cc457625afc09f6a34731c057b30a939038c5fe",
-      "payloadDigest": "sha256:4689a7cacb5ad5e47f580f378a817b4fe04a8b79312cfaefd1aa28a6be0b93f7",
-      "evidenceRevision": "image-build-39902959217",
+      "metadataDigest": "sha256:26b25e3e5fddba7a4cddbe045963947dd9bde747b0f4d7d22eb71270ba8a50e2",
+      "payloadDigest": "sha256:f1d8fc9585b0036723c5ba65dfc843516f59e9219f87da8f7f0a882ba11f2f52",
+      "evidenceRevision": "image-build-40006988161",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/installer-data-nixos-minimal.json",
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/installer-data-nixos-minimal.json",
         "fileName": "installer-data-nixos-minimal.json",
-        "sizeBytes": 9638
+        "sizeBytes": 9686
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/nixos-minimal-build-39902959217.zip",
-        "fileName": "nixos-minimal-build-39902959217.zip",
-        "sizeBytes": 2005976445,
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/nixos-minimal-build-40006988161.zip",
+        "fileName": "nixos-minimal-build-40006988161.zip",
+        "sizeBytes": 2010754627,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/nixos-minimal-build-39902959217.zip.part00",
-            "fileName": "nixos-minimal-build-39902959217.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/nixos-minimal-build-40006988161.zip.part00",
+            "fileName": "nixos-minimal-build-40006988161.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:2ac22144f9d2e3a4db72e9043eccbf8ff64ca91f1956c479e0dcd2a16a867e22"
+            "sha256": "sha256:6ff701062aa05651634b4336138a5047536e7a68e49029f501173254d50f92c3"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/nixos-minimal-build-39902959217.zip.part01",
-            "fileName": "nixos-minimal-build-39902959217.zip.part01",
-            "sizeBytes": 932234621,
-            "sha256": "sha256:14fc68d0b302776ae04556c9cadb79788f4f9e6c82fc24de33c9cbf4c84ce805"
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/nixos-minimal-build-40006988161.zip.part01",
+            "fileName": "nixos-minimal-build-40006988161.zip.part01",
+            "sizeBytes": 937012803,
+            "sha256": "sha256:01a7c68eac83b410982eb6786adbbc2299da8969c4af2c696247701eab7c998e"
           }
         ]
+      },
+      "engineVersion": "v0.9.2-aurora.14",
+      "engineDigest": "sha256:21da6f7babcadaaaf520e94f50023a28a1ee5f2e3b2ce48f8274e86c8c257f97",
+      "engineArtifact": {
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/installer-v0.9.2-aurora.14.tar.gz",
+        "fileName": "installer-v0.9.2-aurora.14.tar.gz",
+        "sizeBytes": 17896528
       },
       "installationProfile": "nixos-minimal"
     },
@@ -663,32 +789,39 @@
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
       "downstreamRevision": "b35281a38740d394cfdcef5b06578d1ee2f64bda",
-      "metadataDigest": "sha256:767c65509ee8a8e7d498edc60cc457625afc09f6a34731c057b30a939038c5fe",
-      "payloadDigest": "sha256:4689a7cacb5ad5e47f580f378a817b4fe04a8b79312cfaefd1aa28a6be0b93f7",
-      "evidenceRevision": "image-build-39902959217",
+      "metadataDigest": "sha256:26b25e3e5fddba7a4cddbe045963947dd9bde747b0f4d7d22eb71270ba8a50e2",
+      "payloadDigest": "sha256:f1d8fc9585b0036723c5ba65dfc843516f59e9219f87da8f7f0a882ba11f2f52",
+      "evidenceRevision": "image-build-40006988161",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/installer-data-nixos-minimal.json",
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/installer-data-nixos-minimal.json",
         "fileName": "installer-data-nixos-minimal.json",
-        "sizeBytes": 9638
+        "sizeBytes": 9686
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/nixos-minimal-build-39902959217.zip",
-        "fileName": "nixos-minimal-build-39902959217.zip",
-        "sizeBytes": 2005976445,
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/nixos-minimal-build-40006988161.zip",
+        "fileName": "nixos-minimal-build-40006988161.zip",
+        "sizeBytes": 2010754627,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/nixos-minimal-build-39902959217.zip.part00",
-            "fileName": "nixos-minimal-build-39902959217.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/nixos-minimal-build-40006988161.zip.part00",
+            "fileName": "nixos-minimal-build-40006988161.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:2ac22144f9d2e3a4db72e9043eccbf8ff64ca91f1956c479e0dcd2a16a867e22"
+            "sha256": "sha256:6ff701062aa05651634b4336138a5047536e7a68e49029f501173254d50f92c3"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/nixos-minimal-build-39902959217.zip.part01",
-            "fileName": "nixos-minimal-build-39902959217.zip.part01",
-            "sizeBytes": 932234621,
-            "sha256": "sha256:14fc68d0b302776ae04556c9cadb79788f4f9e6c82fc24de33c9cbf4c84ce805"
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/nixos-minimal-build-40006988161.zip.part01",
+            "fileName": "nixos-minimal-build-40006988161.zip.part01",
+            "sizeBytes": 937012803,
+            "sha256": "sha256:01a7c68eac83b410982eb6786adbbc2299da8969c4af2c696247701eab7c998e"
           }
         ]
+      },
+      "engineVersion": "v0.9.2-aurora.14",
+      "engineDigest": "sha256:21da6f7babcadaaaf520e94f50023a28a1ee5f2e3b2ce48f8274e86c8c257f97",
+      "engineArtifact": {
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/installer-v0.9.2-aurora.14.tar.gz",
+        "fileName": "installer-v0.9.2-aurora.14.tar.gz",
+        "sizeBytes": 17896528
       },
       "installationProfile": "nixos-minimal"
     },
@@ -699,32 +832,39 @@
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
       "downstreamRevision": "b35281a38740d394cfdcef5b06578d1ee2f64bda",
-      "metadataDigest": "sha256:767c65509ee8a8e7d498edc60cc457625afc09f6a34731c057b30a939038c5fe",
-      "payloadDigest": "sha256:4689a7cacb5ad5e47f580f378a817b4fe04a8b79312cfaefd1aa28a6be0b93f7",
-      "evidenceRevision": "image-build-39902959217",
+      "metadataDigest": "sha256:26b25e3e5fddba7a4cddbe045963947dd9bde747b0f4d7d22eb71270ba8a50e2",
+      "payloadDigest": "sha256:f1d8fc9585b0036723c5ba65dfc843516f59e9219f87da8f7f0a882ba11f2f52",
+      "evidenceRevision": "image-build-40006988161",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/installer-data-nixos-minimal.json",
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/installer-data-nixos-minimal.json",
         "fileName": "installer-data-nixos-minimal.json",
-        "sizeBytes": 9638
+        "sizeBytes": 9686
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/nixos-minimal-build-39902959217.zip",
-        "fileName": "nixos-minimal-build-39902959217.zip",
-        "sizeBytes": 2005976445,
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/nixos-minimal-build-40006988161.zip",
+        "fileName": "nixos-minimal-build-40006988161.zip",
+        "sizeBytes": 2010754627,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/nixos-minimal-build-39902959217.zip.part00",
-            "fileName": "nixos-minimal-build-39902959217.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/nixos-minimal-build-40006988161.zip.part00",
+            "fileName": "nixos-minimal-build-40006988161.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:2ac22144f9d2e3a4db72e9043eccbf8ff64ca91f1956c479e0dcd2a16a867e22"
+            "sha256": "sha256:6ff701062aa05651634b4336138a5047536e7a68e49029f501173254d50f92c3"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/nixos-minimal-build-39902959217.zip.part01",
-            "fileName": "nixos-minimal-build-39902959217.zip.part01",
-            "sizeBytes": 932234621,
-            "sha256": "sha256:14fc68d0b302776ae04556c9cadb79788f4f9e6c82fc24de33c9cbf4c84ce805"
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/nixos-minimal-build-40006988161.zip.part01",
+            "fileName": "nixos-minimal-build-40006988161.zip.part01",
+            "sizeBytes": 937012803,
+            "sha256": "sha256:01a7c68eac83b410982eb6786adbbc2299da8969c4af2c696247701eab7c998e"
           }
         ]
+      },
+      "engineVersion": "v0.9.2-aurora.14",
+      "engineDigest": "sha256:21da6f7babcadaaaf520e94f50023a28a1ee5f2e3b2ce48f8274e86c8c257f97",
+      "engineArtifact": {
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/installer-v0.9.2-aurora.14.tar.gz",
+        "fileName": "installer-v0.9.2-aurora.14.tar.gz",
+        "sizeBytes": 17896528
       },
       "installationProfile": "nixos-minimal"
     },
@@ -735,32 +875,39 @@
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
       "downstreamRevision": "b35281a38740d394cfdcef5b06578d1ee2f64bda",
-      "metadataDigest": "sha256:767c65509ee8a8e7d498edc60cc457625afc09f6a34731c057b30a939038c5fe",
-      "payloadDigest": "sha256:4689a7cacb5ad5e47f580f378a817b4fe04a8b79312cfaefd1aa28a6be0b93f7",
-      "evidenceRevision": "image-build-39902959217",
+      "metadataDigest": "sha256:26b25e3e5fddba7a4cddbe045963947dd9bde747b0f4d7d22eb71270ba8a50e2",
+      "payloadDigest": "sha256:f1d8fc9585b0036723c5ba65dfc843516f59e9219f87da8f7f0a882ba11f2f52",
+      "evidenceRevision": "image-build-40006988161",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/installer-data-nixos-minimal.json",
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/installer-data-nixos-minimal.json",
         "fileName": "installer-data-nixos-minimal.json",
-        "sizeBytes": 9638
+        "sizeBytes": 9686
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/nixos-minimal-build-39902959217.zip",
-        "fileName": "nixos-minimal-build-39902959217.zip",
-        "sizeBytes": 2005976445,
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/nixos-minimal-build-40006988161.zip",
+        "fileName": "nixos-minimal-build-40006988161.zip",
+        "sizeBytes": 2010754627,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/nixos-minimal-build-39902959217.zip.part00",
-            "fileName": "nixos-minimal-build-39902959217.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/nixos-minimal-build-40006988161.zip.part00",
+            "fileName": "nixos-minimal-build-40006988161.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:2ac22144f9d2e3a4db72e9043eccbf8ff64ca91f1956c479e0dcd2a16a867e22"
+            "sha256": "sha256:6ff701062aa05651634b4336138a5047536e7a68e49029f501173254d50f92c3"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/nixos-minimal-build-39902959217.zip.part01",
-            "fileName": "nixos-minimal-build-39902959217.zip.part01",
-            "sizeBytes": 932234621,
-            "sha256": "sha256:14fc68d0b302776ae04556c9cadb79788f4f9e6c82fc24de33c9cbf4c84ce805"
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/nixos-minimal-build-40006988161.zip.part01",
+            "fileName": "nixos-minimal-build-40006988161.zip.part01",
+            "sizeBytes": 937012803,
+            "sha256": "sha256:01a7c68eac83b410982eb6786adbbc2299da8969c4af2c696247701eab7c998e"
           }
         ]
+      },
+      "engineVersion": "v0.9.2-aurora.14",
+      "engineDigest": "sha256:21da6f7babcadaaaf520e94f50023a28a1ee5f2e3b2ce48f8274e86c8c257f97",
+      "engineArtifact": {
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/installer-v0.9.2-aurora.14.tar.gz",
+        "fileName": "installer-v0.9.2-aurora.14.tar.gz",
+        "sizeBytes": 17896528
       },
       "installationProfile": "nixos-minimal"
     },
@@ -771,32 +918,39 @@
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
       "downstreamRevision": "b35281a38740d394cfdcef5b06578d1ee2f64bda",
-      "metadataDigest": "sha256:767c65509ee8a8e7d498edc60cc457625afc09f6a34731c057b30a939038c5fe",
-      "payloadDigest": "sha256:4689a7cacb5ad5e47f580f378a817b4fe04a8b79312cfaefd1aa28a6be0b93f7",
-      "evidenceRevision": "image-build-39902959217",
+      "metadataDigest": "sha256:26b25e3e5fddba7a4cddbe045963947dd9bde747b0f4d7d22eb71270ba8a50e2",
+      "payloadDigest": "sha256:f1d8fc9585b0036723c5ba65dfc843516f59e9219f87da8f7f0a882ba11f2f52",
+      "evidenceRevision": "image-build-40006988161",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/installer-data-nixos-minimal.json",
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/installer-data-nixos-minimal.json",
         "fileName": "installer-data-nixos-minimal.json",
-        "sizeBytes": 9638
+        "sizeBytes": 9686
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/nixos-minimal-build-39902959217.zip",
-        "fileName": "nixos-minimal-build-39902959217.zip",
-        "sizeBytes": 2005976445,
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/nixos-minimal-build-40006988161.zip",
+        "fileName": "nixos-minimal-build-40006988161.zip",
+        "sizeBytes": 2010754627,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/nixos-minimal-build-39902959217.zip.part00",
-            "fileName": "nixos-minimal-build-39902959217.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/nixos-minimal-build-40006988161.zip.part00",
+            "fileName": "nixos-minimal-build-40006988161.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:2ac22144f9d2e3a4db72e9043eccbf8ff64ca91f1956c479e0dcd2a16a867e22"
+            "sha256": "sha256:6ff701062aa05651634b4336138a5047536e7a68e49029f501173254d50f92c3"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/nixos-minimal-build-39902959217.zip.part01",
-            "fileName": "nixos-minimal-build-39902959217.zip.part01",
-            "sizeBytes": 932234621,
-            "sha256": "sha256:14fc68d0b302776ae04556c9cadb79788f4f9e6c82fc24de33c9cbf4c84ce805"
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/nixos-minimal-build-40006988161.zip.part01",
+            "fileName": "nixos-minimal-build-40006988161.zip.part01",
+            "sizeBytes": 937012803,
+            "sha256": "sha256:01a7c68eac83b410982eb6786adbbc2299da8969c4af2c696247701eab7c998e"
           }
         ]
+      },
+      "engineVersion": "v0.9.2-aurora.14",
+      "engineDigest": "sha256:21da6f7babcadaaaf520e94f50023a28a1ee5f2e3b2ce48f8274e86c8c257f97",
+      "engineArtifact": {
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/installer-v0.9.2-aurora.14.tar.gz",
+        "fileName": "installer-v0.9.2-aurora.14.tar.gz",
+        "sizeBytes": 17896528
       },
       "installationProfile": "nixos-minimal"
     },
@@ -807,32 +961,39 @@
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
       "downstreamRevision": "b35281a38740d394cfdcef5b06578d1ee2f64bda",
-      "metadataDigest": "sha256:767c65509ee8a8e7d498edc60cc457625afc09f6a34731c057b30a939038c5fe",
-      "payloadDigest": "sha256:4689a7cacb5ad5e47f580f378a817b4fe04a8b79312cfaefd1aa28a6be0b93f7",
-      "evidenceRevision": "image-build-39902959217",
+      "metadataDigest": "sha256:26b25e3e5fddba7a4cddbe045963947dd9bde747b0f4d7d22eb71270ba8a50e2",
+      "payloadDigest": "sha256:f1d8fc9585b0036723c5ba65dfc843516f59e9219f87da8f7f0a882ba11f2f52",
+      "evidenceRevision": "image-build-40006988161",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/installer-data-nixos-minimal.json",
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/installer-data-nixos-minimal.json",
         "fileName": "installer-data-nixos-minimal.json",
-        "sizeBytes": 9638
+        "sizeBytes": 9686
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/nixos-minimal-build-39902959217.zip",
-        "fileName": "nixos-minimal-build-39902959217.zip",
-        "sizeBytes": 2005976445,
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/nixos-minimal-build-40006988161.zip",
+        "fileName": "nixos-minimal-build-40006988161.zip",
+        "sizeBytes": 2010754627,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/nixos-minimal-build-39902959217.zip.part00",
-            "fileName": "nixos-minimal-build-39902959217.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/nixos-minimal-build-40006988161.zip.part00",
+            "fileName": "nixos-minimal-build-40006988161.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:2ac22144f9d2e3a4db72e9043eccbf8ff64ca91f1956c479e0dcd2a16a867e22"
+            "sha256": "sha256:6ff701062aa05651634b4336138a5047536e7a68e49029f501173254d50f92c3"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/nixos-minimal-build-39902959217.zip.part01",
-            "fileName": "nixos-minimal-build-39902959217.zip.part01",
-            "sizeBytes": 932234621,
-            "sha256": "sha256:14fc68d0b302776ae04556c9cadb79788f4f9e6c82fc24de33c9cbf4c84ce805"
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/nixos-minimal-build-40006988161.zip.part01",
+            "fileName": "nixos-minimal-build-40006988161.zip.part01",
+            "sizeBytes": 937012803,
+            "sha256": "sha256:01a7c68eac83b410982eb6786adbbc2299da8969c4af2c696247701eab7c998e"
           }
         ]
+      },
+      "engineVersion": "v0.9.2-aurora.14",
+      "engineDigest": "sha256:21da6f7babcadaaaf520e94f50023a28a1ee5f2e3b2ce48f8274e86c8c257f97",
+      "engineArtifact": {
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/installer-v0.9.2-aurora.14.tar.gz",
+        "fileName": "installer-v0.9.2-aurora.14.tar.gz",
+        "sizeBytes": 17896528
       },
       "installationProfile": "nixos-minimal"
     },
@@ -843,32 +1004,39 @@
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
       "downstreamRevision": "b35281a38740d394cfdcef5b06578d1ee2f64bda",
-      "metadataDigest": "sha256:767c65509ee8a8e7d498edc60cc457625afc09f6a34731c057b30a939038c5fe",
-      "payloadDigest": "sha256:4689a7cacb5ad5e47f580f378a817b4fe04a8b79312cfaefd1aa28a6be0b93f7",
-      "evidenceRevision": "image-build-39902959217",
+      "metadataDigest": "sha256:26b25e3e5fddba7a4cddbe045963947dd9bde747b0f4d7d22eb71270ba8a50e2",
+      "payloadDigest": "sha256:f1d8fc9585b0036723c5ba65dfc843516f59e9219f87da8f7f0a882ba11f2f52",
+      "evidenceRevision": "image-build-40006988161",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/installer-data-nixos-minimal.json",
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/installer-data-nixos-minimal.json",
         "fileName": "installer-data-nixos-minimal.json",
-        "sizeBytes": 9638
+        "sizeBytes": 9686
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/nixos-minimal-build-39902959217.zip",
-        "fileName": "nixos-minimal-build-39902959217.zip",
-        "sizeBytes": 2005976445,
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/nixos-minimal-build-40006988161.zip",
+        "fileName": "nixos-minimal-build-40006988161.zip",
+        "sizeBytes": 2010754627,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/nixos-minimal-build-39902959217.zip.part00",
-            "fileName": "nixos-minimal-build-39902959217.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/nixos-minimal-build-40006988161.zip.part00",
+            "fileName": "nixos-minimal-build-40006988161.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:2ac22144f9d2e3a4db72e9043eccbf8ff64ca91f1956c479e0dcd2a16a867e22"
+            "sha256": "sha256:6ff701062aa05651634b4336138a5047536e7a68e49029f501173254d50f92c3"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/nixos-minimal-build-39902959217.zip.part01",
-            "fileName": "nixos-minimal-build-39902959217.zip.part01",
-            "sizeBytes": 932234621,
-            "sha256": "sha256:14fc68d0b302776ae04556c9cadb79788f4f9e6c82fc24de33c9cbf4c84ce805"
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/nixos-minimal-build-40006988161.zip.part01",
+            "fileName": "nixos-minimal-build-40006988161.zip.part01",
+            "sizeBytes": 937012803,
+            "sha256": "sha256:01a7c68eac83b410982eb6786adbbc2299da8969c4af2c696247701eab7c998e"
           }
         ]
+      },
+      "engineVersion": "v0.9.2-aurora.14",
+      "engineDigest": "sha256:21da6f7babcadaaaf520e94f50023a28a1ee5f2e3b2ce48f8274e86c8c257f97",
+      "engineArtifact": {
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/installer-v0.9.2-aurora.14.tar.gz",
+        "fileName": "installer-v0.9.2-aurora.14.tar.gz",
+        "sizeBytes": 17896528
       },
       "installationProfile": "nixos-minimal"
     },
@@ -879,32 +1047,39 @@
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
       "downstreamRevision": "b35281a38740d394cfdcef5b06578d1ee2f64bda",
-      "metadataDigest": "sha256:767c65509ee8a8e7d498edc60cc457625afc09f6a34731c057b30a939038c5fe",
-      "payloadDigest": "sha256:4689a7cacb5ad5e47f580f378a817b4fe04a8b79312cfaefd1aa28a6be0b93f7",
-      "evidenceRevision": "image-build-39902959217",
+      "metadataDigest": "sha256:26b25e3e5fddba7a4cddbe045963947dd9bde747b0f4d7d22eb71270ba8a50e2",
+      "payloadDigest": "sha256:f1d8fc9585b0036723c5ba65dfc843516f59e9219f87da8f7f0a882ba11f2f52",
+      "evidenceRevision": "image-build-40006988161",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/installer-data-nixos-minimal.json",
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/installer-data-nixos-minimal.json",
         "fileName": "installer-data-nixos-minimal.json",
-        "sizeBytes": 9638
+        "sizeBytes": 9686
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/nixos-minimal-build-39902959217.zip",
-        "fileName": "nixos-minimal-build-39902959217.zip",
-        "sizeBytes": 2005976445,
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/nixos-minimal-build-40006988161.zip",
+        "fileName": "nixos-minimal-build-40006988161.zip",
+        "sizeBytes": 2010754627,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/nixos-minimal-build-39902959217.zip.part00",
-            "fileName": "nixos-minimal-build-39902959217.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/nixos-minimal-build-40006988161.zip.part00",
+            "fileName": "nixos-minimal-build-40006988161.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:2ac22144f9d2e3a4db72e9043eccbf8ff64ca91f1956c479e0dcd2a16a867e22"
+            "sha256": "sha256:6ff701062aa05651634b4336138a5047536e7a68e49029f501173254d50f92c3"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/nixos-minimal-build-39902959217.zip.part01",
-            "fileName": "nixos-minimal-build-39902959217.zip.part01",
-            "sizeBytes": 932234621,
-            "sha256": "sha256:14fc68d0b302776ae04556c9cadb79788f4f9e6c82fc24de33c9cbf4c84ce805"
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/nixos-minimal-build-40006988161.zip.part01",
+            "fileName": "nixos-minimal-build-40006988161.zip.part01",
+            "sizeBytes": 937012803,
+            "sha256": "sha256:01a7c68eac83b410982eb6786adbbc2299da8969c4af2c696247701eab7c998e"
           }
         ]
+      },
+      "engineVersion": "v0.9.2-aurora.14",
+      "engineDigest": "sha256:21da6f7babcadaaaf520e94f50023a28a1ee5f2e3b2ce48f8274e86c8c257f97",
+      "engineArtifact": {
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/installer-v0.9.2-aurora.14.tar.gz",
+        "fileName": "installer-v0.9.2-aurora.14.tar.gz",
+        "sizeBytes": 17896528
       },
       "installationProfile": "nixos-minimal"
     },
@@ -915,32 +1090,39 @@
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
       "downstreamRevision": "b35281a38740d394cfdcef5b06578d1ee2f64bda",
-      "metadataDigest": "sha256:767c65509ee8a8e7d498edc60cc457625afc09f6a34731c057b30a939038c5fe",
-      "payloadDigest": "sha256:4689a7cacb5ad5e47f580f378a817b4fe04a8b79312cfaefd1aa28a6be0b93f7",
-      "evidenceRevision": "image-build-39902959217",
+      "metadataDigest": "sha256:26b25e3e5fddba7a4cddbe045963947dd9bde747b0f4d7d22eb71270ba8a50e2",
+      "payloadDigest": "sha256:f1d8fc9585b0036723c5ba65dfc843516f59e9219f87da8f7f0a882ba11f2f52",
+      "evidenceRevision": "image-build-40006988161",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/installer-data-nixos-minimal.json",
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/installer-data-nixos-minimal.json",
         "fileName": "installer-data-nixos-minimal.json",
-        "sizeBytes": 9638
+        "sizeBytes": 9686
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/nixos-minimal-build-39902959217.zip",
-        "fileName": "nixos-minimal-build-39902959217.zip",
-        "sizeBytes": 2005976445,
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/nixos-minimal-build-40006988161.zip",
+        "fileName": "nixos-minimal-build-40006988161.zip",
+        "sizeBytes": 2010754627,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/nixos-minimal-build-39902959217.zip.part00",
-            "fileName": "nixos-minimal-build-39902959217.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/nixos-minimal-build-40006988161.zip.part00",
+            "fileName": "nixos-minimal-build-40006988161.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:2ac22144f9d2e3a4db72e9043eccbf8ff64ca91f1956c479e0dcd2a16a867e22"
+            "sha256": "sha256:6ff701062aa05651634b4336138a5047536e7a68e49029f501173254d50f92c3"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/nixos-minimal-build-39902959217.zip.part01",
-            "fileName": "nixos-minimal-build-39902959217.zip.part01",
-            "sizeBytes": 932234621,
-            "sha256": "sha256:14fc68d0b302776ae04556c9cadb79788f4f9e6c82fc24de33c9cbf4c84ce805"
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/nixos-minimal-build-40006988161.zip.part01",
+            "fileName": "nixos-minimal-build-40006988161.zip.part01",
+            "sizeBytes": 937012803,
+            "sha256": "sha256:01a7c68eac83b410982eb6786adbbc2299da8969c4af2c696247701eab7c998e"
           }
         ]
+      },
+      "engineVersion": "v0.9.2-aurora.14",
+      "engineDigest": "sha256:21da6f7babcadaaaf520e94f50023a28a1ee5f2e3b2ce48f8274e86c8c257f97",
+      "engineArtifact": {
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/installer-v0.9.2-aurora.14.tar.gz",
+        "fileName": "installer-v0.9.2-aurora.14.tar.gz",
+        "sizeBytes": 17896528
       },
       "installationProfile": "nixos-minimal"
     },
@@ -951,32 +1133,39 @@
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
       "downstreamRevision": "b35281a38740d394cfdcef5b06578d1ee2f64bda",
-      "metadataDigest": "sha256:767c65509ee8a8e7d498edc60cc457625afc09f6a34731c057b30a939038c5fe",
-      "payloadDigest": "sha256:4689a7cacb5ad5e47f580f378a817b4fe04a8b79312cfaefd1aa28a6be0b93f7",
-      "evidenceRevision": "image-build-39902959217",
+      "metadataDigest": "sha256:26b25e3e5fddba7a4cddbe045963947dd9bde747b0f4d7d22eb71270ba8a50e2",
+      "payloadDigest": "sha256:f1d8fc9585b0036723c5ba65dfc843516f59e9219f87da8f7f0a882ba11f2f52",
+      "evidenceRevision": "image-build-40006988161",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/installer-data-nixos-minimal.json",
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/installer-data-nixos-minimal.json",
         "fileName": "installer-data-nixos-minimal.json",
-        "sizeBytes": 9638
+        "sizeBytes": 9686
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/nixos-minimal-build-39902959217.zip",
-        "fileName": "nixos-minimal-build-39902959217.zip",
-        "sizeBytes": 2005976445,
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/nixos-minimal-build-40006988161.zip",
+        "fileName": "nixos-minimal-build-40006988161.zip",
+        "sizeBytes": 2010754627,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/nixos-minimal-build-39902959217.zip.part00",
-            "fileName": "nixos-minimal-build-39902959217.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/nixos-minimal-build-40006988161.zip.part00",
+            "fileName": "nixos-minimal-build-40006988161.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:2ac22144f9d2e3a4db72e9043eccbf8ff64ca91f1956c479e0dcd2a16a867e22"
+            "sha256": "sha256:6ff701062aa05651634b4336138a5047536e7a68e49029f501173254d50f92c3"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/nixos-minimal-build-39902959217.zip.part01",
-            "fileName": "nixos-minimal-build-39902959217.zip.part01",
-            "sizeBytes": 932234621,
-            "sha256": "sha256:14fc68d0b302776ae04556c9cadb79788f4f9e6c82fc24de33c9cbf4c84ce805"
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/nixos-minimal-build-40006988161.zip.part01",
+            "fileName": "nixos-minimal-build-40006988161.zip.part01",
+            "sizeBytes": 937012803,
+            "sha256": "sha256:01a7c68eac83b410982eb6786adbbc2299da8969c4af2c696247701eab7c998e"
           }
         ]
+      },
+      "engineVersion": "v0.9.2-aurora.14",
+      "engineDigest": "sha256:21da6f7babcadaaaf520e94f50023a28a1ee5f2e3b2ce48f8274e86c8c257f97",
+      "engineArtifact": {
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/installer-v0.9.2-aurora.14.tar.gz",
+        "fileName": "installer-v0.9.2-aurora.14.tar.gz",
+        "sizeBytes": 17896528
       },
       "installationProfile": "nixos-minimal"
     },
@@ -987,32 +1176,39 @@
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
       "downstreamRevision": "b35281a38740d394cfdcef5b06578d1ee2f64bda",
-      "metadataDigest": "sha256:767c65509ee8a8e7d498edc60cc457625afc09f6a34731c057b30a939038c5fe",
-      "payloadDigest": "sha256:4689a7cacb5ad5e47f580f378a817b4fe04a8b79312cfaefd1aa28a6be0b93f7",
-      "evidenceRevision": "image-build-39902959217",
+      "metadataDigest": "sha256:26b25e3e5fddba7a4cddbe045963947dd9bde747b0f4d7d22eb71270ba8a50e2",
+      "payloadDigest": "sha256:f1d8fc9585b0036723c5ba65dfc843516f59e9219f87da8f7f0a882ba11f2f52",
+      "evidenceRevision": "image-build-40006988161",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/installer-data-nixos-minimal.json",
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/installer-data-nixos-minimal.json",
         "fileName": "installer-data-nixos-minimal.json",
-        "sizeBytes": 9638
+        "sizeBytes": 9686
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/nixos-minimal-build-39902959217.zip",
-        "fileName": "nixos-minimal-build-39902959217.zip",
-        "sizeBytes": 2005976445,
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/nixos-minimal-build-40006988161.zip",
+        "fileName": "nixos-minimal-build-40006988161.zip",
+        "sizeBytes": 2010754627,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/nixos-minimal-build-39902959217.zip.part00",
-            "fileName": "nixos-minimal-build-39902959217.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/nixos-minimal-build-40006988161.zip.part00",
+            "fileName": "nixos-minimal-build-40006988161.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:2ac22144f9d2e3a4db72e9043eccbf8ff64ca91f1956c479e0dcd2a16a867e22"
+            "sha256": "sha256:6ff701062aa05651634b4336138a5047536e7a68e49029f501173254d50f92c3"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/nixos-minimal-build-39902959217.zip.part01",
-            "fileName": "nixos-minimal-build-39902959217.zip.part01",
-            "sizeBytes": 932234621,
-            "sha256": "sha256:14fc68d0b302776ae04556c9cadb79788f4f9e6c82fc24de33c9cbf4c84ce805"
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/nixos-minimal-build-40006988161.zip.part01",
+            "fileName": "nixos-minimal-build-40006988161.zip.part01",
+            "sizeBytes": 937012803,
+            "sha256": "sha256:01a7c68eac83b410982eb6786adbbc2299da8969c4af2c696247701eab7c998e"
           }
         ]
+      },
+      "engineVersion": "v0.9.2-aurora.14",
+      "engineDigest": "sha256:21da6f7babcadaaaf520e94f50023a28a1ee5f2e3b2ce48f8274e86c8c257f97",
+      "engineArtifact": {
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/installer-v0.9.2-aurora.14.tar.gz",
+        "fileName": "installer-v0.9.2-aurora.14.tar.gz",
+        "sizeBytes": 17896528
       },
       "installationProfile": "nixos-minimal"
     },
@@ -1023,32 +1219,39 @@
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
       "downstreamRevision": "b35281a38740d394cfdcef5b06578d1ee2f64bda",
-      "metadataDigest": "sha256:767c65509ee8a8e7d498edc60cc457625afc09f6a34731c057b30a939038c5fe",
-      "payloadDigest": "sha256:4689a7cacb5ad5e47f580f378a817b4fe04a8b79312cfaefd1aa28a6be0b93f7",
-      "evidenceRevision": "image-build-39902959217",
+      "metadataDigest": "sha256:26b25e3e5fddba7a4cddbe045963947dd9bde747b0f4d7d22eb71270ba8a50e2",
+      "payloadDigest": "sha256:f1d8fc9585b0036723c5ba65dfc843516f59e9219f87da8f7f0a882ba11f2f52",
+      "evidenceRevision": "image-build-40006988161",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/installer-data-nixos-minimal.json",
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/installer-data-nixos-minimal.json",
         "fileName": "installer-data-nixos-minimal.json",
-        "sizeBytes": 9638
+        "sizeBytes": 9686
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/nixos-minimal-build-39902959217.zip",
-        "fileName": "nixos-minimal-build-39902959217.zip",
-        "sizeBytes": 2005976445,
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/nixos-minimal-build-40006988161.zip",
+        "fileName": "nixos-minimal-build-40006988161.zip",
+        "sizeBytes": 2010754627,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/nixos-minimal-build-39902959217.zip.part00",
-            "fileName": "nixos-minimal-build-39902959217.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/nixos-minimal-build-40006988161.zip.part00",
+            "fileName": "nixos-minimal-build-40006988161.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:2ac22144f9d2e3a4db72e9043eccbf8ff64ca91f1956c479e0dcd2a16a867e22"
+            "sha256": "sha256:6ff701062aa05651634b4336138a5047536e7a68e49029f501173254d50f92c3"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/nixos-minimal-build-39902959217.zip.part01",
-            "fileName": "nixos-minimal-build-39902959217.zip.part01",
-            "sizeBytes": 932234621,
-            "sha256": "sha256:14fc68d0b302776ae04556c9cadb79788f4f9e6c82fc24de33c9cbf4c84ce805"
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/nixos-minimal-build-40006988161.zip.part01",
+            "fileName": "nixos-minimal-build-40006988161.zip.part01",
+            "sizeBytes": 937012803,
+            "sha256": "sha256:01a7c68eac83b410982eb6786adbbc2299da8969c4af2c696247701eab7c998e"
           }
         ]
+      },
+      "engineVersion": "v0.9.2-aurora.14",
+      "engineDigest": "sha256:21da6f7babcadaaaf520e94f50023a28a1ee5f2e3b2ce48f8274e86c8c257f97",
+      "engineArtifact": {
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/installer-v0.9.2-aurora.14.tar.gz",
+        "fileName": "installer-v0.9.2-aurora.14.tar.gz",
+        "sizeBytes": 17896528
       },
       "installationProfile": "nixos-minimal"
     },
@@ -1059,32 +1262,39 @@
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
       "downstreamRevision": "b35281a38740d394cfdcef5b06578d1ee2f64bda",
-      "metadataDigest": "sha256:767c65509ee8a8e7d498edc60cc457625afc09f6a34731c057b30a939038c5fe",
-      "payloadDigest": "sha256:4689a7cacb5ad5e47f580f378a817b4fe04a8b79312cfaefd1aa28a6be0b93f7",
-      "evidenceRevision": "image-build-39902959217",
+      "metadataDigest": "sha256:26b25e3e5fddba7a4cddbe045963947dd9bde747b0f4d7d22eb71270ba8a50e2",
+      "payloadDigest": "sha256:f1d8fc9585b0036723c5ba65dfc843516f59e9219f87da8f7f0a882ba11f2f52",
+      "evidenceRevision": "image-build-40006988161",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/installer-data-nixos-minimal.json",
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/installer-data-nixos-minimal.json",
         "fileName": "installer-data-nixos-minimal.json",
-        "sizeBytes": 9638
+        "sizeBytes": 9686
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/nixos-minimal-build-39902959217.zip",
-        "fileName": "nixos-minimal-build-39902959217.zip",
-        "sizeBytes": 2005976445,
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/nixos-minimal-build-40006988161.zip",
+        "fileName": "nixos-minimal-build-40006988161.zip",
+        "sizeBytes": 2010754627,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/nixos-minimal-build-39902959217.zip.part00",
-            "fileName": "nixos-minimal-build-39902959217.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/nixos-minimal-build-40006988161.zip.part00",
+            "fileName": "nixos-minimal-build-40006988161.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:2ac22144f9d2e3a4db72e9043eccbf8ff64ca91f1956c479e0dcd2a16a867e22"
+            "sha256": "sha256:6ff701062aa05651634b4336138a5047536e7a68e49029f501173254d50f92c3"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/nixos-minimal-build-39902959217.zip.part01",
-            "fileName": "nixos-minimal-build-39902959217.zip.part01",
-            "sizeBytes": 932234621,
-            "sha256": "sha256:14fc68d0b302776ae04556c9cadb79788f4f9e6c82fc24de33c9cbf4c84ce805"
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/nixos-minimal-build-40006988161.zip.part01",
+            "fileName": "nixos-minimal-build-40006988161.zip.part01",
+            "sizeBytes": 937012803,
+            "sha256": "sha256:01a7c68eac83b410982eb6786adbbc2299da8969c4af2c696247701eab7c998e"
           }
         ]
+      },
+      "engineVersion": "v0.9.2-aurora.14",
+      "engineDigest": "sha256:21da6f7babcadaaaf520e94f50023a28a1ee5f2e3b2ce48f8274e86c8c257f97",
+      "engineArtifact": {
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/installer-v0.9.2-aurora.14.tar.gz",
+        "fileName": "installer-v0.9.2-aurora.14.tar.gz",
+        "sizeBytes": 17896528
       },
       "installationProfile": "nixos-minimal"
     },
@@ -1095,32 +1305,39 @@
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
       "downstreamRevision": "b35281a38740d394cfdcef5b06578d1ee2f64bda",
-      "metadataDigest": "sha256:767c65509ee8a8e7d498edc60cc457625afc09f6a34731c057b30a939038c5fe",
-      "payloadDigest": "sha256:4689a7cacb5ad5e47f580f378a817b4fe04a8b79312cfaefd1aa28a6be0b93f7",
-      "evidenceRevision": "image-build-39902959217",
+      "metadataDigest": "sha256:26b25e3e5fddba7a4cddbe045963947dd9bde747b0f4d7d22eb71270ba8a50e2",
+      "payloadDigest": "sha256:f1d8fc9585b0036723c5ba65dfc843516f59e9219f87da8f7f0a882ba11f2f52",
+      "evidenceRevision": "image-build-40006988161",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/installer-data-nixos-minimal.json",
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/installer-data-nixos-minimal.json",
         "fileName": "installer-data-nixos-minimal.json",
-        "sizeBytes": 9638
+        "sizeBytes": 9686
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/nixos-minimal-build-39902959217.zip",
-        "fileName": "nixos-minimal-build-39902959217.zip",
-        "sizeBytes": 2005976445,
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/nixos-minimal-build-40006988161.zip",
+        "fileName": "nixos-minimal-build-40006988161.zip",
+        "sizeBytes": 2010754627,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/nixos-minimal-build-39902959217.zip.part00",
-            "fileName": "nixos-minimal-build-39902959217.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/nixos-minimal-build-40006988161.zip.part00",
+            "fileName": "nixos-minimal-build-40006988161.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:2ac22144f9d2e3a4db72e9043eccbf8ff64ca91f1956c479e0dcd2a16a867e22"
+            "sha256": "sha256:6ff701062aa05651634b4336138a5047536e7a68e49029f501173254d50f92c3"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/nixos-minimal-build-39902959217.zip.part01",
-            "fileName": "nixos-minimal-build-39902959217.zip.part01",
-            "sizeBytes": 932234621,
-            "sha256": "sha256:14fc68d0b302776ae04556c9cadb79788f4f9e6c82fc24de33c9cbf4c84ce805"
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/nixos-minimal-build-40006988161.zip.part01",
+            "fileName": "nixos-minimal-build-40006988161.zip.part01",
+            "sizeBytes": 937012803,
+            "sha256": "sha256:01a7c68eac83b410982eb6786adbbc2299da8969c4af2c696247701eab7c998e"
           }
         ]
+      },
+      "engineVersion": "v0.9.2-aurora.14",
+      "engineDigest": "sha256:21da6f7babcadaaaf520e94f50023a28a1ee5f2e3b2ce48f8274e86c8c257f97",
+      "engineArtifact": {
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/installer-v0.9.2-aurora.14.tar.gz",
+        "fileName": "installer-v0.9.2-aurora.14.tar.gz",
+        "sizeBytes": 17896528
       },
       "installationProfile": "nixos-minimal"
     },
@@ -1131,32 +1348,39 @@
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
       "downstreamRevision": "b35281a38740d394cfdcef5b06578d1ee2f64bda",
-      "metadataDigest": "sha256:767c65509ee8a8e7d498edc60cc457625afc09f6a34731c057b30a939038c5fe",
-      "payloadDigest": "sha256:4689a7cacb5ad5e47f580f378a817b4fe04a8b79312cfaefd1aa28a6be0b93f7",
-      "evidenceRevision": "image-build-39902959217",
+      "metadataDigest": "sha256:26b25e3e5fddba7a4cddbe045963947dd9bde747b0f4d7d22eb71270ba8a50e2",
+      "payloadDigest": "sha256:f1d8fc9585b0036723c5ba65dfc843516f59e9219f87da8f7f0a882ba11f2f52",
+      "evidenceRevision": "image-build-40006988161",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/installer-data-nixos-minimal.json",
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/installer-data-nixos-minimal.json",
         "fileName": "installer-data-nixos-minimal.json",
-        "sizeBytes": 9638
+        "sizeBytes": 9686
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/nixos-minimal-build-39902959217.zip",
-        "fileName": "nixos-minimal-build-39902959217.zip",
-        "sizeBytes": 2005976445,
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/nixos-minimal-build-40006988161.zip",
+        "fileName": "nixos-minimal-build-40006988161.zip",
+        "sizeBytes": 2010754627,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/nixos-minimal-build-39902959217.zip.part00",
-            "fileName": "nixos-minimal-build-39902959217.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/nixos-minimal-build-40006988161.zip.part00",
+            "fileName": "nixos-minimal-build-40006988161.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:2ac22144f9d2e3a4db72e9043eccbf8ff64ca91f1956c479e0dcd2a16a867e22"
+            "sha256": "sha256:6ff701062aa05651634b4336138a5047536e7a68e49029f501173254d50f92c3"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/nixos-minimal-build-39902959217.zip.part01",
-            "fileName": "nixos-minimal-build-39902959217.zip.part01",
-            "sizeBytes": 932234621,
-            "sha256": "sha256:14fc68d0b302776ae04556c9cadb79788f4f9e6c82fc24de33c9cbf4c84ce805"
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/nixos-minimal-build-40006988161.zip.part01",
+            "fileName": "nixos-minimal-build-40006988161.zip.part01",
+            "sizeBytes": 937012803,
+            "sha256": "sha256:01a7c68eac83b410982eb6786adbbc2299da8969c4af2c696247701eab7c998e"
           }
         ]
+      },
+      "engineVersion": "v0.9.2-aurora.14",
+      "engineDigest": "sha256:21da6f7babcadaaaf520e94f50023a28a1ee5f2e3b2ce48f8274e86c8c257f97",
+      "engineArtifact": {
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/installer-v0.9.2-aurora.14.tar.gz",
+        "fileName": "installer-v0.9.2-aurora.14.tar.gz",
+        "sizeBytes": 17896528
       },
       "installationProfile": "nixos-minimal"
     },
@@ -1167,32 +1391,39 @@
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
       "downstreamRevision": "b35281a38740d394cfdcef5b06578d1ee2f64bda",
-      "metadataDigest": "sha256:767c65509ee8a8e7d498edc60cc457625afc09f6a34731c057b30a939038c5fe",
-      "payloadDigest": "sha256:4689a7cacb5ad5e47f580f378a817b4fe04a8b79312cfaefd1aa28a6be0b93f7",
-      "evidenceRevision": "image-build-39902959217",
+      "metadataDigest": "sha256:26b25e3e5fddba7a4cddbe045963947dd9bde747b0f4d7d22eb71270ba8a50e2",
+      "payloadDigest": "sha256:f1d8fc9585b0036723c5ba65dfc843516f59e9219f87da8f7f0a882ba11f2f52",
+      "evidenceRevision": "image-build-40006988161",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/installer-data-nixos-minimal.json",
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/installer-data-nixos-minimal.json",
         "fileName": "installer-data-nixos-minimal.json",
-        "sizeBytes": 9638
+        "sizeBytes": 9686
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/nixos-minimal-build-39902959217.zip",
-        "fileName": "nixos-minimal-build-39902959217.zip",
-        "sizeBytes": 2005976445,
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/nixos-minimal-build-40006988161.zip",
+        "fileName": "nixos-minimal-build-40006988161.zip",
+        "sizeBytes": 2010754627,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/nixos-minimal-build-39902959217.zip.part00",
-            "fileName": "nixos-minimal-build-39902959217.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/nixos-minimal-build-40006988161.zip.part00",
+            "fileName": "nixos-minimal-build-40006988161.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:2ac22144f9d2e3a4db72e9043eccbf8ff64ca91f1956c479e0dcd2a16a867e22"
+            "sha256": "sha256:6ff701062aa05651634b4336138a5047536e7a68e49029f501173254d50f92c3"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/nixos-minimal-build-39902959217.zip.part01",
-            "fileName": "nixos-minimal-build-39902959217.zip.part01",
-            "sizeBytes": 932234621,
-            "sha256": "sha256:14fc68d0b302776ae04556c9cadb79788f4f9e6c82fc24de33c9cbf4c84ce805"
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/nixos-minimal-build-40006988161.zip.part01",
+            "fileName": "nixos-minimal-build-40006988161.zip.part01",
+            "sizeBytes": 937012803,
+            "sha256": "sha256:01a7c68eac83b410982eb6786adbbc2299da8969c4af2c696247701eab7c998e"
           }
         ]
+      },
+      "engineVersion": "v0.9.2-aurora.14",
+      "engineDigest": "sha256:21da6f7babcadaaaf520e94f50023a28a1ee5f2e3b2ce48f8274e86c8c257f97",
+      "engineArtifact": {
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/installer-v0.9.2-aurora.14.tar.gz",
+        "fileName": "installer-v0.9.2-aurora.14.tar.gz",
+        "sizeBytes": 17896528
       },
       "installationProfile": "nixos-minimal"
     },
@@ -1203,32 +1434,39 @@
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
       "downstreamRevision": "b35281a38740d394cfdcef5b06578d1ee2f64bda",
-      "metadataDigest": "sha256:767c65509ee8a8e7d498edc60cc457625afc09f6a34731c057b30a939038c5fe",
-      "payloadDigest": "sha256:4689a7cacb5ad5e47f580f378a817b4fe04a8b79312cfaefd1aa28a6be0b93f7",
-      "evidenceRevision": "image-build-39902959217",
+      "metadataDigest": "sha256:26b25e3e5fddba7a4cddbe045963947dd9bde747b0f4d7d22eb71270ba8a50e2",
+      "payloadDigest": "sha256:f1d8fc9585b0036723c5ba65dfc843516f59e9219f87da8f7f0a882ba11f2f52",
+      "evidenceRevision": "image-build-40006988161",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/installer-data-nixos-minimal.json",
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/installer-data-nixos-minimal.json",
         "fileName": "installer-data-nixos-minimal.json",
-        "sizeBytes": 9638
+        "sizeBytes": 9686
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/nixos-minimal-build-39902959217.zip",
-        "fileName": "nixos-minimal-build-39902959217.zip",
-        "sizeBytes": 2005976445,
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/nixos-minimal-build-40006988161.zip",
+        "fileName": "nixos-minimal-build-40006988161.zip",
+        "sizeBytes": 2010754627,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/nixos-minimal-build-39902959217.zip.part00",
-            "fileName": "nixos-minimal-build-39902959217.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/nixos-minimal-build-40006988161.zip.part00",
+            "fileName": "nixos-minimal-build-40006988161.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:2ac22144f9d2e3a4db72e9043eccbf8ff64ca91f1956c479e0dcd2a16a867e22"
+            "sha256": "sha256:6ff701062aa05651634b4336138a5047536e7a68e49029f501173254d50f92c3"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/nixos-minimal-build-39902959217.zip.part01",
-            "fileName": "nixos-minimal-build-39902959217.zip.part01",
-            "sizeBytes": 932234621,
-            "sha256": "sha256:14fc68d0b302776ae04556c9cadb79788f4f9e6c82fc24de33c9cbf4c84ce805"
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/nixos-minimal-build-40006988161.zip.part01",
+            "fileName": "nixos-minimal-build-40006988161.zip.part01",
+            "sizeBytes": 937012803,
+            "sha256": "sha256:01a7c68eac83b410982eb6786adbbc2299da8969c4af2c696247701eab7c998e"
           }
         ]
+      },
+      "engineVersion": "v0.9.2-aurora.14",
+      "engineDigest": "sha256:21da6f7babcadaaaf520e94f50023a28a1ee5f2e3b2ce48f8274e86c8c257f97",
+      "engineArtifact": {
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/installer-v0.9.2-aurora.14.tar.gz",
+        "fileName": "installer-v0.9.2-aurora.14.tar.gz",
+        "sizeBytes": 17896528
       },
       "installationProfile": "nixos-minimal"
     },
@@ -1239,32 +1477,39 @@
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
       "downstreamRevision": "b35281a38740d394cfdcef5b06578d1ee2f64bda",
-      "metadataDigest": "sha256:767c65509ee8a8e7d498edc60cc457625afc09f6a34731c057b30a939038c5fe",
-      "payloadDigest": "sha256:4689a7cacb5ad5e47f580f378a817b4fe04a8b79312cfaefd1aa28a6be0b93f7",
-      "evidenceRevision": "image-build-39902959217",
+      "metadataDigest": "sha256:26b25e3e5fddba7a4cddbe045963947dd9bde747b0f4d7d22eb71270ba8a50e2",
+      "payloadDigest": "sha256:f1d8fc9585b0036723c5ba65dfc843516f59e9219f87da8f7f0a882ba11f2f52",
+      "evidenceRevision": "image-build-40006988161",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/installer-data-nixos-minimal.json",
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/installer-data-nixos-minimal.json",
         "fileName": "installer-data-nixos-minimal.json",
-        "sizeBytes": 9638
+        "sizeBytes": 9686
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/nixos-minimal-build-39902959217.zip",
-        "fileName": "nixos-minimal-build-39902959217.zip",
-        "sizeBytes": 2005976445,
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/nixos-minimal-build-40006988161.zip",
+        "fileName": "nixos-minimal-build-40006988161.zip",
+        "sizeBytes": 2010754627,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/nixos-minimal-build-39902959217.zip.part00",
-            "fileName": "nixos-minimal-build-39902959217.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/nixos-minimal-build-40006988161.zip.part00",
+            "fileName": "nixos-minimal-build-40006988161.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:2ac22144f9d2e3a4db72e9043eccbf8ff64ca91f1956c479e0dcd2a16a867e22"
+            "sha256": "sha256:6ff701062aa05651634b4336138a5047536e7a68e49029f501173254d50f92c3"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-39902959217/nixos-minimal-build-39902959217.zip.part01",
-            "fileName": "nixos-minimal-build-39902959217.zip.part01",
-            "sizeBytes": 932234621,
-            "sha256": "sha256:14fc68d0b302776ae04556c9cadb79788f4f9e6c82fc24de33c9cbf4c84ce805"
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/nixos-minimal-build-40006988161.zip.part01",
+            "fileName": "nixos-minimal-build-40006988161.zip.part01",
+            "sizeBytes": 937012803,
+            "sha256": "sha256:01a7c68eac83b410982eb6786adbbc2299da8969c4af2c696247701eab7c998e"
           }
         ]
+      },
+      "engineVersion": "v0.9.2-aurora.14",
+      "engineDigest": "sha256:21da6f7babcadaaaf520e94f50023a28a1ee5f2e3b2ce48f8274e86c8c257f97",
+      "engineArtifact": {
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-40006988161/installer-v0.9.2-aurora.14.tar.gz",
+        "fileName": "installer-v0.9.2-aurora.14.tar.gz",
+        "sizeBytes": 17896528
       },
       "installationProfile": "nixos-minimal"
     }
