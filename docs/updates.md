@@ -130,8 +130,8 @@ change (`scripts/setup-update-environments.sh`).
 - Publication verifies those attestations (`gh attestation verify --signer-workflow … --source-digest
   <commit>`) before signing, for every build whose workflow attests.
 - Snapshot, cache and payload releases carry a `SHA256SUMS` and an attestation covering every asset.
-  Deployment and promotion verify it; snapshots published before this change are accepted with a note in
-  the run summary.
+  Deployment, promotion and catalog adoption (`adopt-delivery.py`) verify it; releases published before
+  this change are accepted and reported as unattested.
 - Source archives: every pin carries a SHA-256 (and, for NixOS, the same hash in SRI form). The tracker
   additionally recomputes the archive's Git tree hash and compares it with the commit's tree, so the hash
   pinned is the hash of exactly that commit. Fedora and NixOS builds verify every archive against
