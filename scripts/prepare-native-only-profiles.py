@@ -1,5 +1,11 @@
 #!/usr/bin/env python3
-"""Re-sign the existing nine image deliveries as engine-free native catalogs."""
+"""Re-sign the nine image deliveries as native-only catalogs for an installer release.
+
+Deliveries are schema 5 and name no engine. Schema 4 deliveries built before
+that are still accepted, and their engine pins are dropped. The empty stable
+and rc channel catalogs are re-signed as schema 5 as well, so an installer that
+reads only schema 5 sees those channels as having no release yet.
+"""
 
 import argparse
 import base64
@@ -19,6 +25,9 @@ PROFILES = tuple(f'{distribution}-{desktop}' for distribution in ('fedora', 'arc
 FILES = ('release.json', 'trust-root.ed25519.pub', 'catalog.json', 'catalog.json.sig',
          'delivery.json', 'image-build.json')
 PUBLIC_DER_PREFIX = bytes.fromhex('302a300506032b6570032100')
+EXECUTION_FIELDS = ('engineVersion', 'engineDigest', 'engineArtifact',
+                    'repairManifestDigest', 'repairManifestArtifact')
+EMPTY_CHANNELS = ('stable', 'rc')
 
 
 def verify(catalog, signature, public):
@@ -58,7 +67,7 @@ def prepare(source, output, signing_key, release_tag, source_revision, fetch=fet
     issued = datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')
     url = ('https://github.com/aurora-silicon/aurora-installer/releases/tag/' + release_tag)
     prepared = {}
-    receipt = {'schema': 1, 'source_revision': source_revision, 'source_catalog_schema': 4,
+    receipt = {'schema': 1, 'source_revision': source_revision, 'source_catalog_schemas': [],
                'output_catalog_schema': 5, 'release_tag': release_tag, 'profiles': {}}
     for profile in PROFILES:
         directory = source/'Profiles'/profile
@@ -73,17 +82,21 @@ def prepare(source, output, signing_key, release_tag, source_revision, fetch=fet
         verify(data['catalog.json'], data['catalog.json.sig'], public)
         catalog = json.loads(data['catalog.json'])
         models = catalog['models']
-        if (catalog['schemaVersion'] != 4 or catalog['sequence'] >= now
+        if (catalog['schemaVersion'] not in (4, 5) or catalog['sequence'] >= now
                 or len(models) != len(allowed)
                 or {model['deviceIdentifier'] for model in models} != allowed
                 or any(model['status'] != 'enabled' or model['installationProfile'] != profile
                        or model.get('repairManifestArtifact') is not None
                        or model.get('repairManifestDigest') is not None for model in models)):
-            raise ValueError(f'{profile} is not a complete public schema-4 profile')
-        if any(not all(key in model for key in ('engineArtifact', 'engineDigest', 'engineVersion',
-                                               'metadataArtifact', 'metadataDigest',
+            raise ValueError(f'{profile} is not a complete public profile')
+        if catalog['schemaVersion'] == 5 and any(field in model for model in models
+                                                 for field in EXECUTION_FIELDS):
+            raise ValueError(f'{profile} is schema 5 but names an engine')
+        if any(not all(key in model for key in ('metadataArtifact', 'metadataDigest',
                                                'payloadArtifact', 'payloadDigest')) for model in models):
             raise ValueError(f'{profile} is missing an authenticated delivery field')
+        if catalog['schemaVersion'] not in receipt['source_catalog_schemas']:
+            receipt['source_catalog_schemas'].append(catalog['schemaVersion'])
         metadata = {(model['metadataArtifact']['sourceURL'], model['metadataDigest'])
                     for model in models}
         if len(metadata) != 1:
@@ -117,8 +130,7 @@ def prepare(source, output, signing_key, release_tag, source_revision, fetch=fet
         catalog['installer'] = {'minimumVersion': version, 'latestVersion': version,
                                 'downloadURL': url}
         for model in models:
-            for field in ('engineVersion', 'engineDigest', 'engineArtifact',
-                          'repairManifestDigest', 'repairManifestArtifact'):
+            for field in EXECUTION_FIELDS:
                 model.pop(field, None)
         data['catalog.json'] = (json.dumps(catalog, indent=2) + '\n').encode()
         prepared[profile] = data
@@ -126,6 +138,23 @@ def prepare(source, output, signing_key, release_tag, source_revision, fetch=fet
             'previous_catalog_sha256': previous,
             'catalog_sha256': hashlib.sha256(data['catalog.json']).hexdigest(),
             'metadata_sha256': hashlib.sha256(raw).hexdigest(), 'models': len(models)}
+    empty = (json.dumps({'schemaVersion': 5, 'sequence': now, 'issuedAt': issued, 'models': []},
+                        indent=2) + '\n').encode()
+
+    def write_empty_channels(directory):
+        for channel in EMPTY_CHANNELS:
+            target = directory/'channels'/channel
+            target.mkdir(parents=True)
+            (target/'catalog.json').write_bytes(empty)
+            subprocess.run(['openssl', 'pkeyutl', '-sign', '-inkey', str(signing_key), '-rawin',
+                            '-in', str(target/'catalog.json'),
+                            '-out', str(target/'catalog.json.sig')], check=True)
+            signature = (target/'catalog.json.sig').read_bytes()
+            verify(empty, signature, public)
+            (target/'catalog.signed.json').write_text(json.dumps({
+                'schema_version': 1, 'catalog': base64.b64encode(empty).decode(),
+                'signature': base64.b64encode(signature).decode()}, separators=(',', ':')) + '\n')
+
     with tempfile.TemporaryDirectory(prefix='aurora-native-profiles-', dir=output.parent) as temporary:
         staged = Path(temporary)/'signed'
         staged.mkdir()
@@ -145,6 +174,8 @@ def prepare(source, output, signing_key, release_tag, source_revision, fetch=fet
             (channel/'catalog.signed.json').write_text(json.dumps({
                 'schema_version': 1, 'catalog': base64.b64encode(data['catalog.json']).decode(),
                 'signature': base64.b64encode(signature).decode()}, separators=(',', ':')) + '\n')
+            write_empty_channels(directory)
+        write_empty_channels(staged)
         for name in ('release.json', 'trust-root.ed25519.pub'):
             (staged/name).write_bytes((source/name).read_bytes())
         for name in ('catalog.json', 'catalog.json.sig'):
