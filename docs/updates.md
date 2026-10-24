@@ -239,7 +239,8 @@ adoption and DMG are dispatched by hand.
    `SHA256SUMS` and an attestation.
 6. **Adoption, catalogs, installer** (here and in aurora-installer, unchanged): `adopt-set.yml` with the
    nine deliveries (it verifies signatures and attestations), `native-only-catalogs.yml` for the release
-   tag, commit the signed catalogs, then `native-installer-dmg.yml`.
+   tag (it also re-signs the empty stable and rc catalogs as schema 5), commit the signed catalogs, then
+   `native-installer-dmg.yml`. Deliveries are schema 5 and carry no engine archive.
 7. **Stable** (when the team decides): `gh workflow run promote.yml -R aurora-silicon/<repo> --ref main`,
    approved by a `stable-promotion` reviewer (`gh api` can approve the pending deployment).
 
