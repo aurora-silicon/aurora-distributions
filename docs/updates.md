@@ -102,7 +102,7 @@ GPU UAPI (`updatelib.uapi_report`: any constant, record size or field offset bot
 | ALARM package key `A33623FB…` | packages, pacman databases | `alarm-aurora` environment `testing-signing` | `publish.yml` job `sign` |
 | Fedora RPM key (`fedora-aurora/keys/fingerprint.txt`) | RPMs, `repomd.xml`, metadata archive | `fedora-aurora` environment `testing-signing` | `publish.yml` job `sign` |
 | Nix cache key `aurora-nixos-1` | narinfo files | `nixos-aurora` environment `testing-signing` | `publish-cache.yml` job `sign` |
-| Installer catalog key (`keys/catalog.ed25519.pub`) | catalogs, download manifests | `catalog-signing` environment in all four repositories | `build-payload.yml` job `sign`, `native-only-catalogs.yml`, `native-developer-build.yml` |
+| Installer catalog key (`keys/catalog.ed25519.pub`) | catalogs, download manifests | `catalog-signing` environment in all four repositories | `build-payload.yml` job `sign`, `native-only-catalogs.yml` |
 
 Rules the workflows follow:
 
