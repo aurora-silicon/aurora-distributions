@@ -50,22 +50,22 @@ promoted only if testing has served it, and only after `STABLE_MIN_SOAK_HOURS`.
 |---|---|---|---|
 | Feed | `[aurora]` in `/etc/pacman.conf`, `Server = …/testing/aarch64`, `SigLevel = Required DatabaseRequired` | `/etc/yum.repos.d/aurora.repo`, `baseurl=…/44/testing/aarch64`, `gpgcheck=1`, `repo_gpgcheck=1` | `extra-substituters` = the Aurora cache, `extra-trusted-public-keys` = `aurora-nixos-1:…` |
 | Trust | Aurora key locally signed at build; `aurora-keyring` package | `/etc/pki/rpm-gpg/RPM-GPG-KEY-aurora` (no package owns it) | key compiled into the system from `keys/cache.pub` |
-| Follows | testing | testing | nothing: `/etc/nixos/flake.nix` pins the exact image commit |
-| Kernel or aura update | pacman hook runs `update-m1n1`: aura + every DTB of the newest kernel + U-Boot into the ESP Stage 2; mkinitcpio rebuilds the initramfs | `kernel-install` runs dracut and `update-m1n1` (RPM triggers on the aura and U-Boot paths) | a rebuild installs the new kernel and initrd, but **leaves Stage 2 (aura and DTBs) as installed** |
+| Follows | testing | testing | the Git ref `channel-testing`; `flake.lock` pins the installed commit until `sudo aurora-update` (images before Alpha 10 pin one commit until the one-time edit in nixos-aurora `docs/updates.md`) |
+| Kernel or aura update | pacman hook runs `update-m1n1`: aura + every DTB of the newest kernel + U-Boot into the ESP Stage 2; mkinitcpio rebuilds the initramfs | `kernel-install` runs dracut and `update-m1n1` (RPM triggers on the aura and U-Boot paths) | every rebuild runs `aurora-install-stage2`: the same aura + every DTB + U-Boot file, checked at build and install time, written only when it changes, previous kept as `m1n1/boot.bin.old` |
 | Device firmware | read from the ESP at boot by the initramfs hook; never redistributed | same (dracut module) | same (initrd service) |
 
-No channel is selectable today: every image hard-codes testing (or, for NixOS, no channel at all). The
-installer's own channels (`stable`, `rc`, `edge` in `aurora-installer/macOS/Release/release.json`, default
+Every image follows testing; stable is chosen at image build time (below). Nothing upgrades unattended on
+any distribution. The installer's own channels (`stable`, `rc`, `edge` in `aurora-installer/macOS/Release/release.json`, default
 `edge`) choose installer catalogs, not package feeds.
 
 ## Images and the installer
 
-`images.yml` in each repository now takes a `channel` input. The default keeps today's URLs (testing; for
-NixOS `pinned`), so nothing changes on installed systems until someone builds images with
-`channel=stable`. Building stable images is the moment installed systems start following stable; it is a
-deliberate decision. For NixOS, `channel=testing|stable` writes
-`github:aurora-silicon/nixos-aurora/channel-<channel>` into `/etc/nixos/flake.nix`, so
-`nix flake update --flake /etc/nixos` followed by a rebuild takes the newest signed update.
+`images.yml` in each repository takes a `channel` input, default `testing` (NixOS also offers `pinned`,
+the old exact-commit input). Building stable images is the moment installed systems start following
+stable; it is a deliberate decision. For NixOS the image writes
+`github:aurora-silicon/nixos-aurora/channel-<channel>` into `/etc/nixos/flake.nix` and locks it to the
+image commit, so the first rebuild reproduces the installed system and `sudo aurora-update` takes the
+newest signed update.
 
 The installer keeps choosing payloads through its signed catalogs. Payload releases can be produced
 automatically after an image build (`AUTO_PAYLOADS`), but adopting them into the catalogs stays
@@ -78,7 +78,7 @@ that is not `true` is off. The settings in force since 2026-10-23:
 
 | Variable | Effect | Set to |
 |---|---|---|
-| `TRACK_SOURCES` | Open or refresh the pin PR every 30 minutes | `true` |
+| `TRACK_SOURCES` | Open or refresh the pin PR every 30 minutes | off until workflows may open PRs (see Settings), then `true` |
 | `AUTO_MERGE_SOURCES` | Merge that PR once every CI run on its exact head has passed and its policy allows it | off; turn on after about a week of clean tracker PRs |
 | `AUTO_PUBLISH_TESTING` | Publish a signed snapshot after each successful main build (and every 6 h) | `true` |
 | `AUTO_DEPLOY_TESTING` | Make that snapshot the live testing feed | off: every installed system follows testing, so deploying stays a deliberate step |
@@ -233,7 +233,10 @@ adoption and DMG are dispatched by hand.
 4. **Images.** ALARM: `images.yml -f profile=arch-<p> -f release-tag=<alarm tag>`. Fedora:
    `images.yml -f profile=fedora-<p>` (builds from the testing feed just deployed). NixOS:
    `images.yml -f desktop=<p>` on `main`, which must be the commit `channel-testing` now names, so every
-   hardware output comes from the signed cache. With `AUTO_IMAGES=true` the deploy dispatches all three.
+   hardware output comes from the signed cache, and its image job also builds the checked Stage 2 that
+   installed systems refresh. With `AUTO_IMAGES=true` the deploy dispatches all three. Release notes for
+   the first channel-following NixOS release (Alpha 10) carry the one-time `flake.nix` edit for existing
+   installs (nixos-aurora `docs/updates.md`).
 5. **Payloads.** `publish-payload.yml -f profile=<profile> -f image-run=<image run>` for each of the nine
    images (or `AUTO_PAYLOADS=true`). The catalog is signed in `catalog-signing`; the release carries
    `SHA256SUMS` and an attestation.
@@ -251,11 +254,22 @@ In force since 2026-10-23:
   `source-tracking` are limited to `main`; `stable-promotion` is limited to `main` and requires a review by
   DjDeveloperr, with self-review allowed so the same account can dispatch and approve. Every signing key
   lives only in its environment; the repository-level copies were removed.
-- **Tracker PRs** are opened by the workflow token: "Allow GitHub Actions to create and approve pull
-  requests" is on in alarm-aurora, fedora-aurora and nixos-aurora only. This is acceptable only while no
-  branch requires reviews, because any workflow could then approve its own PR. **Before any branch rule
-  requires reviews, move the tracker to a GitHub App** (`TRACKER_APP_CLIENT_ID`, key in
-  `source-tracking`) and turn the setting off again.
+- **Tracker PRs** are opened by the workflow token, which needs "Allow GitHub Actions to create and
+  approve pull requests" in alarm-aurora, fedora-aurora and nixos-aurora only. The organization setting
+  currently forbids it, so `TRACK_SOURCES` stays off. To turn the tracker on, an organization owner enables
+  the setting under Organization settings, Actions, General, Workflow permissions (repositories stay off
+  unless enabled individually), then:
+  ```sh
+  for r in alarm-aurora fedora-aurora nixos-aurora; do
+    gh api --method PUT repos/aurora-silicon/$r/actions/permissions/workflow \
+      -f default_workflow_permissions=read -F can_approve_pull_request_reviews=true
+    gh variable set TRACK_SOURCES -R aurora-silicon/$r --body true
+  done
+  ```
+  The workflow token is acceptable only while no branch requires reviews, because any workflow could then
+  approve its own PR. **Before any branch rule requires reviews, move the tracker to a GitHub App**
+  (`TRACKER_APP_CLIENT_ID`, key in `source-tracking`) and turn the setting off again. A GitHub App also
+  works without the organization setting.
 - **Branch rules:** `main` in alarm-aurora, fedora-aurora, nixos-aurora, aurora-distributions,
   aurora-installer and aura blocks force pushes and deletion. No required reviews or checks.
 - **Automatic merging:** aura and Mesa `auto`, kernel `auto-same-version` in `tracking.json`;
