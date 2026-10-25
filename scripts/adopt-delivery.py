@@ -76,10 +76,17 @@ def adopt(repository, tag, site):
     catalog = json.loads(data['catalog.json'])
     models = catalog['models']
     allowed = set(json.loads((ROOT/'keys/supported-models.json').read_text())['supported'])
-    if (catalog['schemaVersion'] != 4 or {model['deviceIdentifier'] for model in models} != allowed
+    # Deliveries are schema 5 and name no engine. Schema 4 deliveries built
+    # before that still adopt; the native-only step strips their engine pins.
+    if (catalog['schemaVersion'] not in (4, 5) or {model['deviceIdentifier'] for model in models} != allowed
             or len(models) != len(allowed) or any(model['status'] != 'enabled'
                or model['installationProfile'] != profile for model in models)):
         raise ValueError('catalog model coverage or profile binding differs')
+    if catalog['schemaVersion'] == 5 and any(
+            field in model for model in models
+            for field in ('engineVersion', 'engineDigest', 'engineArtifact',
+                          'repairManifestDigest', 'repairManifestArtifact')):
+        raise ValueError('a native-only catalog names an engine or repair artifact')
     descriptor = json.loads(data['release.json'])
     if descriptor['schema_version'] != 3 or descriptor['trust_root_fingerprint'] != 'sha256:' + hashlib.sha256(trusted).hexdigest():
         raise ValueError('profile descriptor differs from the pinned root')
