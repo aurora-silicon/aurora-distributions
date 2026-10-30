@@ -43,7 +43,7 @@ jobs:
       - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
         with:
           repository: aurora-silicon/aurora-installer
-          ref: 9a1635086e4f1e05c08800faa29d92b1241b9f9c
+          ref: 64a88d00873351d623cb9d2c6b050679bd735109
           path: producer
           persist-credentials: false
       - name: Authenticate the completed image build
@@ -188,7 +188,7 @@ jobs:
       - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
         with:
           repository: aurora-silicon/aurora-installer
-          ref: 9a1635086e4f1e05c08800faa29d92b1241b9f9c
+          ref: 64a88d00873351d623cb9d2c6b050679bd735109
           path: producer
           persist-credentials: false
           sparse-checkout: macOS/Release/trust-root.ed25519.pub

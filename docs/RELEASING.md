@@ -22,7 +22,7 @@ The Pages job runs the focused tests, authenticates every raw catalog, and runs 
 
 After publication, verify the live signed manifest, the current catalogs and the compatibility ZIP against their expected digests. When changing the reusable payload workflow, update the distribution repositories' pinned workflow revision after this repository's coherent release commit has passed deployment. This does not require rebuilding existing images.
 
-Public catalogs admit every model in `keys/supported-models.json`: the M1–M3 Macs and the MacBook Neo. Public deliveries carry no Neo firmware, calibration or radio policy; the native installer derives them on the Mac being installed. A payload assembled with private Neo policy inputs stays local, and adoption refuses it.
+Public catalogs admit every model in `keys/supported-models.json`: the M1–M3 Macs, the 16-inch M4 Pro MacBook Pro (J616s) and the MacBook Neo. Boards listed under `stage1_unqualified` stay enabled but are left out of the common Stage 1 qualification, so the installer stops before any disk change on them. The Neo and the J616s need their own board Stage 2 in every payload. Public deliveries carry no Neo firmware, calibration or radio policy; the native installer derives them on the Mac being installed. A payload assembled with private Neo policy inputs stays local, and adoption refuses it.
 
 ## Qualification and storage
 
