@@ -1,11 +1,11 @@
 {
   "schemaVersion": 5,
-  "sequence": 1793320222,
-  "issuedAt": "2026-10-30T00:30:22Z",
+  "sequence": 1793343634,
+  "issuedAt": "2026-10-30T07:00:34Z",
   "installer": {
     "minimumVersion": "0.1.0",
     "latestVersion": "0.1.0",
-    "downloadURL": "https://github.com/aurora-silicon/aurora-installer/releases/tag/v0.1.0-alpha.11"
+    "downloadURL": "https://github.com/aurora-silicon/aurora-installer/releases/tag/v0.1.0-alpha.3"
   },
   "models": [
     {
@@ -14,43 +14,43 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "9a1635086e4f1e05c08800faa29d92b1241b9f9c",
-      "metadataDigest": "sha256:64a1b872ddfb46382a2f10db146dd5bc7a1da598575c31474fd8618f2daa5363",
-      "payloadDigest": "sha256:ab001bcd29cab932c6f0821d8055231792a2adadf6bcdb19470e310645ac0c2b",
-      "evidenceRevision": "image-build-40971709885",
+      "downstreamRevision": "b4cd9ac391b5d607ed98af2076323dd4f5537a50",
+      "metadataDigest": "sha256:89387d7ffb908aadf48e740e4968868edd6af96eb0c4a0544abbf8c970e2ddb4",
+      "payloadDigest": "sha256:ee2c7f51ad8551b6ebaaf0111b606b6bcfe8f90fc5794279a8888f652e761b98",
+      "evidenceRevision": "image-build-41015311031",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/installer-data-arch-gnome.json",
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/installer-data-arch-gnome.json",
         "fileName": "installer-data-arch-gnome.json",
-        "sizeBytes": 9679
+        "sizeBytes": 9441
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip",
-        "fileName": "arch-gnome-build-40971709885.zip",
-        "sizeBytes": 3621920498,
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip",
+        "fileName": "arch-gnome-build-41015311031.zip",
+        "sizeBytes": 3836824809,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part00",
-            "fileName": "arch-gnome-build-40971709885.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part00",
+            "fileName": "arch-gnome-build-41015311031.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:ab3181cf5e8e15b769cc96190e8cd1ba52c907b244f871f6a11f1fbeefc396ea"
+            "sha256": "sha256:04ae8928cd6730fdc88b99d15516a53701c69022aacca9803b7387257420d262"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part01",
-            "fileName": "arch-gnome-build-40971709885.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part01",
+            "fileName": "arch-gnome-build-41015311031.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:09de0fecbf079ffc0aa20f110422b77ed160c6ef3299a6eadf3fac7ae730f102"
+            "sha256": "sha256:16aaad07007e8b159dd1678b50f85c47b1f2955f4c18f03d29668dee10b92157"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part02",
-            "fileName": "arch-gnome-build-40971709885.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part02",
+            "fileName": "arch-gnome-build-41015311031.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:f7b7683064f5309c14a6db480f1f9954bb5e60297416237c2253d59cb6bd0d56"
+            "sha256": "sha256:e0a4e706d5b1367a62a7eceb6931d8280ba2a9d89c63102a682fda9eb18caee5"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part03",
-            "fileName": "arch-gnome-build-40971709885.zip.part03",
-            "sizeBytes": 400695026,
-            "sha256": "sha256:fb60b066dec08d385e25004e8c3443febe6752be86bc1c4462b87242de7254af"
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part03",
+            "fileName": "arch-gnome-build-41015311031.zip.part03",
+            "sizeBytes": 615599337,
+            "sha256": "sha256:21ce8041868580681396b67d7de22e00afd75a911850f0be7ffc866fa3846ded"
           }
         ]
       },
@@ -62,43 +62,43 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "9a1635086e4f1e05c08800faa29d92b1241b9f9c",
-      "metadataDigest": "sha256:64a1b872ddfb46382a2f10db146dd5bc7a1da598575c31474fd8618f2daa5363",
-      "payloadDigest": "sha256:ab001bcd29cab932c6f0821d8055231792a2adadf6bcdb19470e310645ac0c2b",
-      "evidenceRevision": "image-build-40971709885",
+      "downstreamRevision": "b4cd9ac391b5d607ed98af2076323dd4f5537a50",
+      "metadataDigest": "sha256:89387d7ffb908aadf48e740e4968868edd6af96eb0c4a0544abbf8c970e2ddb4",
+      "payloadDigest": "sha256:ee2c7f51ad8551b6ebaaf0111b606b6bcfe8f90fc5794279a8888f652e761b98",
+      "evidenceRevision": "image-build-41015311031",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/installer-data-arch-gnome.json",
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/installer-data-arch-gnome.json",
         "fileName": "installer-data-arch-gnome.json",
-        "sizeBytes": 9679
+        "sizeBytes": 9441
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip",
-        "fileName": "arch-gnome-build-40971709885.zip",
-        "sizeBytes": 3621920498,
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip",
+        "fileName": "arch-gnome-build-41015311031.zip",
+        "sizeBytes": 3836824809,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part00",
-            "fileName": "arch-gnome-build-40971709885.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part00",
+            "fileName": "arch-gnome-build-41015311031.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:ab3181cf5e8e15b769cc96190e8cd1ba52c907b244f871f6a11f1fbeefc396ea"
+            "sha256": "sha256:04ae8928cd6730fdc88b99d15516a53701c69022aacca9803b7387257420d262"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part01",
-            "fileName": "arch-gnome-build-40971709885.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part01",
+            "fileName": "arch-gnome-build-41015311031.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:09de0fecbf079ffc0aa20f110422b77ed160c6ef3299a6eadf3fac7ae730f102"
+            "sha256": "sha256:16aaad07007e8b159dd1678b50f85c47b1f2955f4c18f03d29668dee10b92157"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part02",
-            "fileName": "arch-gnome-build-40971709885.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part02",
+            "fileName": "arch-gnome-build-41015311031.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:f7b7683064f5309c14a6db480f1f9954bb5e60297416237c2253d59cb6bd0d56"
+            "sha256": "sha256:e0a4e706d5b1367a62a7eceb6931d8280ba2a9d89c63102a682fda9eb18caee5"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part03",
-            "fileName": "arch-gnome-build-40971709885.zip.part03",
-            "sizeBytes": 400695026,
-            "sha256": "sha256:fb60b066dec08d385e25004e8c3443febe6752be86bc1c4462b87242de7254af"
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part03",
+            "fileName": "arch-gnome-build-41015311031.zip.part03",
+            "sizeBytes": 615599337,
+            "sha256": "sha256:21ce8041868580681396b67d7de22e00afd75a911850f0be7ffc866fa3846ded"
           }
         ]
       },
@@ -110,43 +110,43 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "9a1635086e4f1e05c08800faa29d92b1241b9f9c",
-      "metadataDigest": "sha256:64a1b872ddfb46382a2f10db146dd5bc7a1da598575c31474fd8618f2daa5363",
-      "payloadDigest": "sha256:ab001bcd29cab932c6f0821d8055231792a2adadf6bcdb19470e310645ac0c2b",
-      "evidenceRevision": "image-build-40971709885",
+      "downstreamRevision": "b4cd9ac391b5d607ed98af2076323dd4f5537a50",
+      "metadataDigest": "sha256:89387d7ffb908aadf48e740e4968868edd6af96eb0c4a0544abbf8c970e2ddb4",
+      "payloadDigest": "sha256:ee2c7f51ad8551b6ebaaf0111b606b6bcfe8f90fc5794279a8888f652e761b98",
+      "evidenceRevision": "image-build-41015311031",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/installer-data-arch-gnome.json",
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/installer-data-arch-gnome.json",
         "fileName": "installer-data-arch-gnome.json",
-        "sizeBytes": 9679
+        "sizeBytes": 9441
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip",
-        "fileName": "arch-gnome-build-40971709885.zip",
-        "sizeBytes": 3621920498,
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip",
+        "fileName": "arch-gnome-build-41015311031.zip",
+        "sizeBytes": 3836824809,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part00",
-            "fileName": "arch-gnome-build-40971709885.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part00",
+            "fileName": "arch-gnome-build-41015311031.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:ab3181cf5e8e15b769cc96190e8cd1ba52c907b244f871f6a11f1fbeefc396ea"
+            "sha256": "sha256:04ae8928cd6730fdc88b99d15516a53701c69022aacca9803b7387257420d262"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part01",
-            "fileName": "arch-gnome-build-40971709885.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part01",
+            "fileName": "arch-gnome-build-41015311031.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:09de0fecbf079ffc0aa20f110422b77ed160c6ef3299a6eadf3fac7ae730f102"
+            "sha256": "sha256:16aaad07007e8b159dd1678b50f85c47b1f2955f4c18f03d29668dee10b92157"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part02",
-            "fileName": "arch-gnome-build-40971709885.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part02",
+            "fileName": "arch-gnome-build-41015311031.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:f7b7683064f5309c14a6db480f1f9954bb5e60297416237c2253d59cb6bd0d56"
+            "sha256": "sha256:e0a4e706d5b1367a62a7eceb6931d8280ba2a9d89c63102a682fda9eb18caee5"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part03",
-            "fileName": "arch-gnome-build-40971709885.zip.part03",
-            "sizeBytes": 400695026,
-            "sha256": "sha256:fb60b066dec08d385e25004e8c3443febe6752be86bc1c4462b87242de7254af"
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part03",
+            "fileName": "arch-gnome-build-41015311031.zip.part03",
+            "sizeBytes": 615599337,
+            "sha256": "sha256:21ce8041868580681396b67d7de22e00afd75a911850f0be7ffc866fa3846ded"
           }
         ]
       },
@@ -158,43 +158,43 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "9a1635086e4f1e05c08800faa29d92b1241b9f9c",
-      "metadataDigest": "sha256:64a1b872ddfb46382a2f10db146dd5bc7a1da598575c31474fd8618f2daa5363",
-      "payloadDigest": "sha256:ab001bcd29cab932c6f0821d8055231792a2adadf6bcdb19470e310645ac0c2b",
-      "evidenceRevision": "image-build-40971709885",
+      "downstreamRevision": "b4cd9ac391b5d607ed98af2076323dd4f5537a50",
+      "metadataDigest": "sha256:89387d7ffb908aadf48e740e4968868edd6af96eb0c4a0544abbf8c970e2ddb4",
+      "payloadDigest": "sha256:ee2c7f51ad8551b6ebaaf0111b606b6bcfe8f90fc5794279a8888f652e761b98",
+      "evidenceRevision": "image-build-41015311031",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/installer-data-arch-gnome.json",
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/installer-data-arch-gnome.json",
         "fileName": "installer-data-arch-gnome.json",
-        "sizeBytes": 9679
+        "sizeBytes": 9441
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip",
-        "fileName": "arch-gnome-build-40971709885.zip",
-        "sizeBytes": 3621920498,
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip",
+        "fileName": "arch-gnome-build-41015311031.zip",
+        "sizeBytes": 3836824809,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part00",
-            "fileName": "arch-gnome-build-40971709885.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part00",
+            "fileName": "arch-gnome-build-41015311031.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:ab3181cf5e8e15b769cc96190e8cd1ba52c907b244f871f6a11f1fbeefc396ea"
+            "sha256": "sha256:04ae8928cd6730fdc88b99d15516a53701c69022aacca9803b7387257420d262"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part01",
-            "fileName": "arch-gnome-build-40971709885.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part01",
+            "fileName": "arch-gnome-build-41015311031.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:09de0fecbf079ffc0aa20f110422b77ed160c6ef3299a6eadf3fac7ae730f102"
+            "sha256": "sha256:16aaad07007e8b159dd1678b50f85c47b1f2955f4c18f03d29668dee10b92157"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part02",
-            "fileName": "arch-gnome-build-40971709885.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part02",
+            "fileName": "arch-gnome-build-41015311031.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:f7b7683064f5309c14a6db480f1f9954bb5e60297416237c2253d59cb6bd0d56"
+            "sha256": "sha256:e0a4e706d5b1367a62a7eceb6931d8280ba2a9d89c63102a682fda9eb18caee5"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part03",
-            "fileName": "arch-gnome-build-40971709885.zip.part03",
-            "sizeBytes": 400695026,
-            "sha256": "sha256:fb60b066dec08d385e25004e8c3443febe6752be86bc1c4462b87242de7254af"
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part03",
+            "fileName": "arch-gnome-build-41015311031.zip.part03",
+            "sizeBytes": 615599337,
+            "sha256": "sha256:21ce8041868580681396b67d7de22e00afd75a911850f0be7ffc866fa3846ded"
           }
         ]
       },
@@ -206,43 +206,43 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "9a1635086e4f1e05c08800faa29d92b1241b9f9c",
-      "metadataDigest": "sha256:64a1b872ddfb46382a2f10db146dd5bc7a1da598575c31474fd8618f2daa5363",
-      "payloadDigest": "sha256:ab001bcd29cab932c6f0821d8055231792a2adadf6bcdb19470e310645ac0c2b",
-      "evidenceRevision": "image-build-40971709885",
+      "downstreamRevision": "b4cd9ac391b5d607ed98af2076323dd4f5537a50",
+      "metadataDigest": "sha256:89387d7ffb908aadf48e740e4968868edd6af96eb0c4a0544abbf8c970e2ddb4",
+      "payloadDigest": "sha256:ee2c7f51ad8551b6ebaaf0111b606b6bcfe8f90fc5794279a8888f652e761b98",
+      "evidenceRevision": "image-build-41015311031",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/installer-data-arch-gnome.json",
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/installer-data-arch-gnome.json",
         "fileName": "installer-data-arch-gnome.json",
-        "sizeBytes": 9679
+        "sizeBytes": 9441
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip",
-        "fileName": "arch-gnome-build-40971709885.zip",
-        "sizeBytes": 3621920498,
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip",
+        "fileName": "arch-gnome-build-41015311031.zip",
+        "sizeBytes": 3836824809,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part00",
-            "fileName": "arch-gnome-build-40971709885.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part00",
+            "fileName": "arch-gnome-build-41015311031.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:ab3181cf5e8e15b769cc96190e8cd1ba52c907b244f871f6a11f1fbeefc396ea"
+            "sha256": "sha256:04ae8928cd6730fdc88b99d15516a53701c69022aacca9803b7387257420d262"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part01",
-            "fileName": "arch-gnome-build-40971709885.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part01",
+            "fileName": "arch-gnome-build-41015311031.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:09de0fecbf079ffc0aa20f110422b77ed160c6ef3299a6eadf3fac7ae730f102"
+            "sha256": "sha256:16aaad07007e8b159dd1678b50f85c47b1f2955f4c18f03d29668dee10b92157"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part02",
-            "fileName": "arch-gnome-build-40971709885.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part02",
+            "fileName": "arch-gnome-build-41015311031.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:f7b7683064f5309c14a6db480f1f9954bb5e60297416237c2253d59cb6bd0d56"
+            "sha256": "sha256:e0a4e706d5b1367a62a7eceb6931d8280ba2a9d89c63102a682fda9eb18caee5"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part03",
-            "fileName": "arch-gnome-build-40971709885.zip.part03",
-            "sizeBytes": 400695026,
-            "sha256": "sha256:fb60b066dec08d385e25004e8c3443febe6752be86bc1c4462b87242de7254af"
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part03",
+            "fileName": "arch-gnome-build-41015311031.zip.part03",
+            "sizeBytes": 615599337,
+            "sha256": "sha256:21ce8041868580681396b67d7de22e00afd75a911850f0be7ffc866fa3846ded"
           }
         ]
       },
@@ -254,43 +254,43 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "9a1635086e4f1e05c08800faa29d92b1241b9f9c",
-      "metadataDigest": "sha256:64a1b872ddfb46382a2f10db146dd5bc7a1da598575c31474fd8618f2daa5363",
-      "payloadDigest": "sha256:ab001bcd29cab932c6f0821d8055231792a2adadf6bcdb19470e310645ac0c2b",
-      "evidenceRevision": "image-build-40971709885",
+      "downstreamRevision": "b4cd9ac391b5d607ed98af2076323dd4f5537a50",
+      "metadataDigest": "sha256:89387d7ffb908aadf48e740e4968868edd6af96eb0c4a0544abbf8c970e2ddb4",
+      "payloadDigest": "sha256:ee2c7f51ad8551b6ebaaf0111b606b6bcfe8f90fc5794279a8888f652e761b98",
+      "evidenceRevision": "image-build-41015311031",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/installer-data-arch-gnome.json",
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/installer-data-arch-gnome.json",
         "fileName": "installer-data-arch-gnome.json",
-        "sizeBytes": 9679
+        "sizeBytes": 9441
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip",
-        "fileName": "arch-gnome-build-40971709885.zip",
-        "sizeBytes": 3621920498,
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip",
+        "fileName": "arch-gnome-build-41015311031.zip",
+        "sizeBytes": 3836824809,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part00",
-            "fileName": "arch-gnome-build-40971709885.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part00",
+            "fileName": "arch-gnome-build-41015311031.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:ab3181cf5e8e15b769cc96190e8cd1ba52c907b244f871f6a11f1fbeefc396ea"
+            "sha256": "sha256:04ae8928cd6730fdc88b99d15516a53701c69022aacca9803b7387257420d262"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part01",
-            "fileName": "arch-gnome-build-40971709885.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part01",
+            "fileName": "arch-gnome-build-41015311031.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:09de0fecbf079ffc0aa20f110422b77ed160c6ef3299a6eadf3fac7ae730f102"
+            "sha256": "sha256:16aaad07007e8b159dd1678b50f85c47b1f2955f4c18f03d29668dee10b92157"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part02",
-            "fileName": "arch-gnome-build-40971709885.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part02",
+            "fileName": "arch-gnome-build-41015311031.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:f7b7683064f5309c14a6db480f1f9954bb5e60297416237c2253d59cb6bd0d56"
+            "sha256": "sha256:e0a4e706d5b1367a62a7eceb6931d8280ba2a9d89c63102a682fda9eb18caee5"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part03",
-            "fileName": "arch-gnome-build-40971709885.zip.part03",
-            "sizeBytes": 400695026,
-            "sha256": "sha256:fb60b066dec08d385e25004e8c3443febe6752be86bc1c4462b87242de7254af"
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part03",
+            "fileName": "arch-gnome-build-41015311031.zip.part03",
+            "sizeBytes": 615599337,
+            "sha256": "sha256:21ce8041868580681396b67d7de22e00afd75a911850f0be7ffc866fa3846ded"
           }
         ]
       },
@@ -302,43 +302,43 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "9a1635086e4f1e05c08800faa29d92b1241b9f9c",
-      "metadataDigest": "sha256:64a1b872ddfb46382a2f10db146dd5bc7a1da598575c31474fd8618f2daa5363",
-      "payloadDigest": "sha256:ab001bcd29cab932c6f0821d8055231792a2adadf6bcdb19470e310645ac0c2b",
-      "evidenceRevision": "image-build-40971709885",
+      "downstreamRevision": "b4cd9ac391b5d607ed98af2076323dd4f5537a50",
+      "metadataDigest": "sha256:89387d7ffb908aadf48e740e4968868edd6af96eb0c4a0544abbf8c970e2ddb4",
+      "payloadDigest": "sha256:ee2c7f51ad8551b6ebaaf0111b606b6bcfe8f90fc5794279a8888f652e761b98",
+      "evidenceRevision": "image-build-41015311031",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/installer-data-arch-gnome.json",
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/installer-data-arch-gnome.json",
         "fileName": "installer-data-arch-gnome.json",
-        "sizeBytes": 9679
+        "sizeBytes": 9441
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip",
-        "fileName": "arch-gnome-build-40971709885.zip",
-        "sizeBytes": 3621920498,
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip",
+        "fileName": "arch-gnome-build-41015311031.zip",
+        "sizeBytes": 3836824809,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part00",
-            "fileName": "arch-gnome-build-40971709885.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part00",
+            "fileName": "arch-gnome-build-41015311031.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:ab3181cf5e8e15b769cc96190e8cd1ba52c907b244f871f6a11f1fbeefc396ea"
+            "sha256": "sha256:04ae8928cd6730fdc88b99d15516a53701c69022aacca9803b7387257420d262"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part01",
-            "fileName": "arch-gnome-build-40971709885.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part01",
+            "fileName": "arch-gnome-build-41015311031.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:09de0fecbf079ffc0aa20f110422b77ed160c6ef3299a6eadf3fac7ae730f102"
+            "sha256": "sha256:16aaad07007e8b159dd1678b50f85c47b1f2955f4c18f03d29668dee10b92157"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part02",
-            "fileName": "arch-gnome-build-40971709885.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part02",
+            "fileName": "arch-gnome-build-41015311031.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:f7b7683064f5309c14a6db480f1f9954bb5e60297416237c2253d59cb6bd0d56"
+            "sha256": "sha256:e0a4e706d5b1367a62a7eceb6931d8280ba2a9d89c63102a682fda9eb18caee5"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part03",
-            "fileName": "arch-gnome-build-40971709885.zip.part03",
-            "sizeBytes": 400695026,
-            "sha256": "sha256:fb60b066dec08d385e25004e8c3443febe6752be86bc1c4462b87242de7254af"
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part03",
+            "fileName": "arch-gnome-build-41015311031.zip.part03",
+            "sizeBytes": 615599337,
+            "sha256": "sha256:21ce8041868580681396b67d7de22e00afd75a911850f0be7ffc866fa3846ded"
           }
         ]
       },
@@ -350,43 +350,43 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "9a1635086e4f1e05c08800faa29d92b1241b9f9c",
-      "metadataDigest": "sha256:64a1b872ddfb46382a2f10db146dd5bc7a1da598575c31474fd8618f2daa5363",
-      "payloadDigest": "sha256:ab001bcd29cab932c6f0821d8055231792a2adadf6bcdb19470e310645ac0c2b",
-      "evidenceRevision": "image-build-40971709885",
+      "downstreamRevision": "b4cd9ac391b5d607ed98af2076323dd4f5537a50",
+      "metadataDigest": "sha256:89387d7ffb908aadf48e740e4968868edd6af96eb0c4a0544abbf8c970e2ddb4",
+      "payloadDigest": "sha256:ee2c7f51ad8551b6ebaaf0111b606b6bcfe8f90fc5794279a8888f652e761b98",
+      "evidenceRevision": "image-build-41015311031",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/installer-data-arch-gnome.json",
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/installer-data-arch-gnome.json",
         "fileName": "installer-data-arch-gnome.json",
-        "sizeBytes": 9679
+        "sizeBytes": 9441
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip",
-        "fileName": "arch-gnome-build-40971709885.zip",
-        "sizeBytes": 3621920498,
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip",
+        "fileName": "arch-gnome-build-41015311031.zip",
+        "sizeBytes": 3836824809,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part00",
-            "fileName": "arch-gnome-build-40971709885.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part00",
+            "fileName": "arch-gnome-build-41015311031.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:ab3181cf5e8e15b769cc96190e8cd1ba52c907b244f871f6a11f1fbeefc396ea"
+            "sha256": "sha256:04ae8928cd6730fdc88b99d15516a53701c69022aacca9803b7387257420d262"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part01",
-            "fileName": "arch-gnome-build-40971709885.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part01",
+            "fileName": "arch-gnome-build-41015311031.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:09de0fecbf079ffc0aa20f110422b77ed160c6ef3299a6eadf3fac7ae730f102"
+            "sha256": "sha256:16aaad07007e8b159dd1678b50f85c47b1f2955f4c18f03d29668dee10b92157"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part02",
-            "fileName": "arch-gnome-build-40971709885.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part02",
+            "fileName": "arch-gnome-build-41015311031.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:f7b7683064f5309c14a6db480f1f9954bb5e60297416237c2253d59cb6bd0d56"
+            "sha256": "sha256:e0a4e706d5b1367a62a7eceb6931d8280ba2a9d89c63102a682fda9eb18caee5"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part03",
-            "fileName": "arch-gnome-build-40971709885.zip.part03",
-            "sizeBytes": 400695026,
-            "sha256": "sha256:fb60b066dec08d385e25004e8c3443febe6752be86bc1c4462b87242de7254af"
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part03",
+            "fileName": "arch-gnome-build-41015311031.zip.part03",
+            "sizeBytes": 615599337,
+            "sha256": "sha256:21ce8041868580681396b67d7de22e00afd75a911850f0be7ffc866fa3846ded"
           }
         ]
       },
@@ -398,43 +398,43 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "9a1635086e4f1e05c08800faa29d92b1241b9f9c",
-      "metadataDigest": "sha256:64a1b872ddfb46382a2f10db146dd5bc7a1da598575c31474fd8618f2daa5363",
-      "payloadDigest": "sha256:ab001bcd29cab932c6f0821d8055231792a2adadf6bcdb19470e310645ac0c2b",
-      "evidenceRevision": "image-build-40971709885",
+      "downstreamRevision": "b4cd9ac391b5d607ed98af2076323dd4f5537a50",
+      "metadataDigest": "sha256:89387d7ffb908aadf48e740e4968868edd6af96eb0c4a0544abbf8c970e2ddb4",
+      "payloadDigest": "sha256:ee2c7f51ad8551b6ebaaf0111b606b6bcfe8f90fc5794279a8888f652e761b98",
+      "evidenceRevision": "image-build-41015311031",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/installer-data-arch-gnome.json",
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/installer-data-arch-gnome.json",
         "fileName": "installer-data-arch-gnome.json",
-        "sizeBytes": 9679
+        "sizeBytes": 9441
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip",
-        "fileName": "arch-gnome-build-40971709885.zip",
-        "sizeBytes": 3621920498,
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip",
+        "fileName": "arch-gnome-build-41015311031.zip",
+        "sizeBytes": 3836824809,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part00",
-            "fileName": "arch-gnome-build-40971709885.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part00",
+            "fileName": "arch-gnome-build-41015311031.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:ab3181cf5e8e15b769cc96190e8cd1ba52c907b244f871f6a11f1fbeefc396ea"
+            "sha256": "sha256:04ae8928cd6730fdc88b99d15516a53701c69022aacca9803b7387257420d262"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part01",
-            "fileName": "arch-gnome-build-40971709885.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part01",
+            "fileName": "arch-gnome-build-41015311031.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:09de0fecbf079ffc0aa20f110422b77ed160c6ef3299a6eadf3fac7ae730f102"
+            "sha256": "sha256:16aaad07007e8b159dd1678b50f85c47b1f2955f4c18f03d29668dee10b92157"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part02",
-            "fileName": "arch-gnome-build-40971709885.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part02",
+            "fileName": "arch-gnome-build-41015311031.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:f7b7683064f5309c14a6db480f1f9954bb5e60297416237c2253d59cb6bd0d56"
+            "sha256": "sha256:e0a4e706d5b1367a62a7eceb6931d8280ba2a9d89c63102a682fda9eb18caee5"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part03",
-            "fileName": "arch-gnome-build-40971709885.zip.part03",
-            "sizeBytes": 400695026,
-            "sha256": "sha256:fb60b066dec08d385e25004e8c3443febe6752be86bc1c4462b87242de7254af"
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part03",
+            "fileName": "arch-gnome-build-41015311031.zip.part03",
+            "sizeBytes": 615599337,
+            "sha256": "sha256:21ce8041868580681396b67d7de22e00afd75a911850f0be7ffc866fa3846ded"
           }
         ]
       },
@@ -446,43 +446,43 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "9a1635086e4f1e05c08800faa29d92b1241b9f9c",
-      "metadataDigest": "sha256:64a1b872ddfb46382a2f10db146dd5bc7a1da598575c31474fd8618f2daa5363",
-      "payloadDigest": "sha256:ab001bcd29cab932c6f0821d8055231792a2adadf6bcdb19470e310645ac0c2b",
-      "evidenceRevision": "image-build-40971709885",
+      "downstreamRevision": "b4cd9ac391b5d607ed98af2076323dd4f5537a50",
+      "metadataDigest": "sha256:89387d7ffb908aadf48e740e4968868edd6af96eb0c4a0544abbf8c970e2ddb4",
+      "payloadDigest": "sha256:ee2c7f51ad8551b6ebaaf0111b606b6bcfe8f90fc5794279a8888f652e761b98",
+      "evidenceRevision": "image-build-41015311031",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/installer-data-arch-gnome.json",
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/installer-data-arch-gnome.json",
         "fileName": "installer-data-arch-gnome.json",
-        "sizeBytes": 9679
+        "sizeBytes": 9441
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip",
-        "fileName": "arch-gnome-build-40971709885.zip",
-        "sizeBytes": 3621920498,
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip",
+        "fileName": "arch-gnome-build-41015311031.zip",
+        "sizeBytes": 3836824809,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part00",
-            "fileName": "arch-gnome-build-40971709885.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part00",
+            "fileName": "arch-gnome-build-41015311031.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:ab3181cf5e8e15b769cc96190e8cd1ba52c907b244f871f6a11f1fbeefc396ea"
+            "sha256": "sha256:04ae8928cd6730fdc88b99d15516a53701c69022aacca9803b7387257420d262"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part01",
-            "fileName": "arch-gnome-build-40971709885.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part01",
+            "fileName": "arch-gnome-build-41015311031.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:09de0fecbf079ffc0aa20f110422b77ed160c6ef3299a6eadf3fac7ae730f102"
+            "sha256": "sha256:16aaad07007e8b159dd1678b50f85c47b1f2955f4c18f03d29668dee10b92157"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part02",
-            "fileName": "arch-gnome-build-40971709885.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part02",
+            "fileName": "arch-gnome-build-41015311031.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:f7b7683064f5309c14a6db480f1f9954bb5e60297416237c2253d59cb6bd0d56"
+            "sha256": "sha256:e0a4e706d5b1367a62a7eceb6931d8280ba2a9d89c63102a682fda9eb18caee5"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part03",
-            "fileName": "arch-gnome-build-40971709885.zip.part03",
-            "sizeBytes": 400695026,
-            "sha256": "sha256:fb60b066dec08d385e25004e8c3443febe6752be86bc1c4462b87242de7254af"
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part03",
+            "fileName": "arch-gnome-build-41015311031.zip.part03",
+            "sizeBytes": 615599337,
+            "sha256": "sha256:21ce8041868580681396b67d7de22e00afd75a911850f0be7ffc866fa3846ded"
           }
         ]
       },
@@ -494,43 +494,43 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "9a1635086e4f1e05c08800faa29d92b1241b9f9c",
-      "metadataDigest": "sha256:64a1b872ddfb46382a2f10db146dd5bc7a1da598575c31474fd8618f2daa5363",
-      "payloadDigest": "sha256:ab001bcd29cab932c6f0821d8055231792a2adadf6bcdb19470e310645ac0c2b",
-      "evidenceRevision": "image-build-40971709885",
+      "downstreamRevision": "b4cd9ac391b5d607ed98af2076323dd4f5537a50",
+      "metadataDigest": "sha256:89387d7ffb908aadf48e740e4968868edd6af96eb0c4a0544abbf8c970e2ddb4",
+      "payloadDigest": "sha256:ee2c7f51ad8551b6ebaaf0111b606b6bcfe8f90fc5794279a8888f652e761b98",
+      "evidenceRevision": "image-build-41015311031",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/installer-data-arch-gnome.json",
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/installer-data-arch-gnome.json",
         "fileName": "installer-data-arch-gnome.json",
-        "sizeBytes": 9679
+        "sizeBytes": 9441
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip",
-        "fileName": "arch-gnome-build-40971709885.zip",
-        "sizeBytes": 3621920498,
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip",
+        "fileName": "arch-gnome-build-41015311031.zip",
+        "sizeBytes": 3836824809,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part00",
-            "fileName": "arch-gnome-build-40971709885.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part00",
+            "fileName": "arch-gnome-build-41015311031.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:ab3181cf5e8e15b769cc96190e8cd1ba52c907b244f871f6a11f1fbeefc396ea"
+            "sha256": "sha256:04ae8928cd6730fdc88b99d15516a53701c69022aacca9803b7387257420d262"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part01",
-            "fileName": "arch-gnome-build-40971709885.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part01",
+            "fileName": "arch-gnome-build-41015311031.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:09de0fecbf079ffc0aa20f110422b77ed160c6ef3299a6eadf3fac7ae730f102"
+            "sha256": "sha256:16aaad07007e8b159dd1678b50f85c47b1f2955f4c18f03d29668dee10b92157"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part02",
-            "fileName": "arch-gnome-build-40971709885.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part02",
+            "fileName": "arch-gnome-build-41015311031.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:f7b7683064f5309c14a6db480f1f9954bb5e60297416237c2253d59cb6bd0d56"
+            "sha256": "sha256:e0a4e706d5b1367a62a7eceb6931d8280ba2a9d89c63102a682fda9eb18caee5"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part03",
-            "fileName": "arch-gnome-build-40971709885.zip.part03",
-            "sizeBytes": 400695026,
-            "sha256": "sha256:fb60b066dec08d385e25004e8c3443febe6752be86bc1c4462b87242de7254af"
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part03",
+            "fileName": "arch-gnome-build-41015311031.zip.part03",
+            "sizeBytes": 615599337,
+            "sha256": "sha256:21ce8041868580681396b67d7de22e00afd75a911850f0be7ffc866fa3846ded"
           }
         ]
       },
@@ -542,43 +542,43 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "9a1635086e4f1e05c08800faa29d92b1241b9f9c",
-      "metadataDigest": "sha256:64a1b872ddfb46382a2f10db146dd5bc7a1da598575c31474fd8618f2daa5363",
-      "payloadDigest": "sha256:ab001bcd29cab932c6f0821d8055231792a2adadf6bcdb19470e310645ac0c2b",
-      "evidenceRevision": "image-build-40971709885",
+      "downstreamRevision": "b4cd9ac391b5d607ed98af2076323dd4f5537a50",
+      "metadataDigest": "sha256:89387d7ffb908aadf48e740e4968868edd6af96eb0c4a0544abbf8c970e2ddb4",
+      "payloadDigest": "sha256:ee2c7f51ad8551b6ebaaf0111b606b6bcfe8f90fc5794279a8888f652e761b98",
+      "evidenceRevision": "image-build-41015311031",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/installer-data-arch-gnome.json",
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/installer-data-arch-gnome.json",
         "fileName": "installer-data-arch-gnome.json",
-        "sizeBytes": 9679
+        "sizeBytes": 9441
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip",
-        "fileName": "arch-gnome-build-40971709885.zip",
-        "sizeBytes": 3621920498,
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip",
+        "fileName": "arch-gnome-build-41015311031.zip",
+        "sizeBytes": 3836824809,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part00",
-            "fileName": "arch-gnome-build-40971709885.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part00",
+            "fileName": "arch-gnome-build-41015311031.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:ab3181cf5e8e15b769cc96190e8cd1ba52c907b244f871f6a11f1fbeefc396ea"
+            "sha256": "sha256:04ae8928cd6730fdc88b99d15516a53701c69022aacca9803b7387257420d262"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part01",
-            "fileName": "arch-gnome-build-40971709885.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part01",
+            "fileName": "arch-gnome-build-41015311031.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:09de0fecbf079ffc0aa20f110422b77ed160c6ef3299a6eadf3fac7ae730f102"
+            "sha256": "sha256:16aaad07007e8b159dd1678b50f85c47b1f2955f4c18f03d29668dee10b92157"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part02",
-            "fileName": "arch-gnome-build-40971709885.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part02",
+            "fileName": "arch-gnome-build-41015311031.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:f7b7683064f5309c14a6db480f1f9954bb5e60297416237c2253d59cb6bd0d56"
+            "sha256": "sha256:e0a4e706d5b1367a62a7eceb6931d8280ba2a9d89c63102a682fda9eb18caee5"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part03",
-            "fileName": "arch-gnome-build-40971709885.zip.part03",
-            "sizeBytes": 400695026,
-            "sha256": "sha256:fb60b066dec08d385e25004e8c3443febe6752be86bc1c4462b87242de7254af"
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part03",
+            "fileName": "arch-gnome-build-41015311031.zip.part03",
+            "sizeBytes": 615599337,
+            "sha256": "sha256:21ce8041868580681396b67d7de22e00afd75a911850f0be7ffc866fa3846ded"
           }
         ]
       },
@@ -590,43 +590,43 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "9a1635086e4f1e05c08800faa29d92b1241b9f9c",
-      "metadataDigest": "sha256:64a1b872ddfb46382a2f10db146dd5bc7a1da598575c31474fd8618f2daa5363",
-      "payloadDigest": "sha256:ab001bcd29cab932c6f0821d8055231792a2adadf6bcdb19470e310645ac0c2b",
-      "evidenceRevision": "image-build-40971709885",
+      "downstreamRevision": "b4cd9ac391b5d607ed98af2076323dd4f5537a50",
+      "metadataDigest": "sha256:89387d7ffb908aadf48e740e4968868edd6af96eb0c4a0544abbf8c970e2ddb4",
+      "payloadDigest": "sha256:ee2c7f51ad8551b6ebaaf0111b606b6bcfe8f90fc5794279a8888f652e761b98",
+      "evidenceRevision": "image-build-41015311031",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/installer-data-arch-gnome.json",
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/installer-data-arch-gnome.json",
         "fileName": "installer-data-arch-gnome.json",
-        "sizeBytes": 9679
+        "sizeBytes": 9441
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip",
-        "fileName": "arch-gnome-build-40971709885.zip",
-        "sizeBytes": 3621920498,
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip",
+        "fileName": "arch-gnome-build-41015311031.zip",
+        "sizeBytes": 3836824809,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part00",
-            "fileName": "arch-gnome-build-40971709885.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part00",
+            "fileName": "arch-gnome-build-41015311031.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:ab3181cf5e8e15b769cc96190e8cd1ba52c907b244f871f6a11f1fbeefc396ea"
+            "sha256": "sha256:04ae8928cd6730fdc88b99d15516a53701c69022aacca9803b7387257420d262"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part01",
-            "fileName": "arch-gnome-build-40971709885.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part01",
+            "fileName": "arch-gnome-build-41015311031.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:09de0fecbf079ffc0aa20f110422b77ed160c6ef3299a6eadf3fac7ae730f102"
+            "sha256": "sha256:16aaad07007e8b159dd1678b50f85c47b1f2955f4c18f03d29668dee10b92157"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part02",
-            "fileName": "arch-gnome-build-40971709885.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part02",
+            "fileName": "arch-gnome-build-41015311031.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:f7b7683064f5309c14a6db480f1f9954bb5e60297416237c2253d59cb6bd0d56"
+            "sha256": "sha256:e0a4e706d5b1367a62a7eceb6931d8280ba2a9d89c63102a682fda9eb18caee5"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part03",
-            "fileName": "arch-gnome-build-40971709885.zip.part03",
-            "sizeBytes": 400695026,
-            "sha256": "sha256:fb60b066dec08d385e25004e8c3443febe6752be86bc1c4462b87242de7254af"
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part03",
+            "fileName": "arch-gnome-build-41015311031.zip.part03",
+            "sizeBytes": 615599337,
+            "sha256": "sha256:21ce8041868580681396b67d7de22e00afd75a911850f0be7ffc866fa3846ded"
           }
         ]
       },
@@ -638,43 +638,43 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "9a1635086e4f1e05c08800faa29d92b1241b9f9c",
-      "metadataDigest": "sha256:64a1b872ddfb46382a2f10db146dd5bc7a1da598575c31474fd8618f2daa5363",
-      "payloadDigest": "sha256:ab001bcd29cab932c6f0821d8055231792a2adadf6bcdb19470e310645ac0c2b",
-      "evidenceRevision": "image-build-40971709885",
+      "downstreamRevision": "b4cd9ac391b5d607ed98af2076323dd4f5537a50",
+      "metadataDigest": "sha256:89387d7ffb908aadf48e740e4968868edd6af96eb0c4a0544abbf8c970e2ddb4",
+      "payloadDigest": "sha256:ee2c7f51ad8551b6ebaaf0111b606b6bcfe8f90fc5794279a8888f652e761b98",
+      "evidenceRevision": "image-build-41015311031",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/installer-data-arch-gnome.json",
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/installer-data-arch-gnome.json",
         "fileName": "installer-data-arch-gnome.json",
-        "sizeBytes": 9679
+        "sizeBytes": 9441
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip",
-        "fileName": "arch-gnome-build-40971709885.zip",
-        "sizeBytes": 3621920498,
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip",
+        "fileName": "arch-gnome-build-41015311031.zip",
+        "sizeBytes": 3836824809,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part00",
-            "fileName": "arch-gnome-build-40971709885.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part00",
+            "fileName": "arch-gnome-build-41015311031.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:ab3181cf5e8e15b769cc96190e8cd1ba52c907b244f871f6a11f1fbeefc396ea"
+            "sha256": "sha256:04ae8928cd6730fdc88b99d15516a53701c69022aacca9803b7387257420d262"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part01",
-            "fileName": "arch-gnome-build-40971709885.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part01",
+            "fileName": "arch-gnome-build-41015311031.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:09de0fecbf079ffc0aa20f110422b77ed160c6ef3299a6eadf3fac7ae730f102"
+            "sha256": "sha256:16aaad07007e8b159dd1678b50f85c47b1f2955f4c18f03d29668dee10b92157"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part02",
-            "fileName": "arch-gnome-build-40971709885.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part02",
+            "fileName": "arch-gnome-build-41015311031.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:f7b7683064f5309c14a6db480f1f9954bb5e60297416237c2253d59cb6bd0d56"
+            "sha256": "sha256:e0a4e706d5b1367a62a7eceb6931d8280ba2a9d89c63102a682fda9eb18caee5"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part03",
-            "fileName": "arch-gnome-build-40971709885.zip.part03",
-            "sizeBytes": 400695026,
-            "sha256": "sha256:fb60b066dec08d385e25004e8c3443febe6752be86bc1c4462b87242de7254af"
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part03",
+            "fileName": "arch-gnome-build-41015311031.zip.part03",
+            "sizeBytes": 615599337,
+            "sha256": "sha256:21ce8041868580681396b67d7de22e00afd75a911850f0be7ffc866fa3846ded"
           }
         ]
       },
@@ -686,43 +686,43 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "9a1635086e4f1e05c08800faa29d92b1241b9f9c",
-      "metadataDigest": "sha256:64a1b872ddfb46382a2f10db146dd5bc7a1da598575c31474fd8618f2daa5363",
-      "payloadDigest": "sha256:ab001bcd29cab932c6f0821d8055231792a2adadf6bcdb19470e310645ac0c2b",
-      "evidenceRevision": "image-build-40971709885",
+      "downstreamRevision": "b4cd9ac391b5d607ed98af2076323dd4f5537a50",
+      "metadataDigest": "sha256:89387d7ffb908aadf48e740e4968868edd6af96eb0c4a0544abbf8c970e2ddb4",
+      "payloadDigest": "sha256:ee2c7f51ad8551b6ebaaf0111b606b6bcfe8f90fc5794279a8888f652e761b98",
+      "evidenceRevision": "image-build-41015311031",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/installer-data-arch-gnome.json",
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/installer-data-arch-gnome.json",
         "fileName": "installer-data-arch-gnome.json",
-        "sizeBytes": 9679
+        "sizeBytes": 9441
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip",
-        "fileName": "arch-gnome-build-40971709885.zip",
-        "sizeBytes": 3621920498,
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip",
+        "fileName": "arch-gnome-build-41015311031.zip",
+        "sizeBytes": 3836824809,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part00",
-            "fileName": "arch-gnome-build-40971709885.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part00",
+            "fileName": "arch-gnome-build-41015311031.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:ab3181cf5e8e15b769cc96190e8cd1ba52c907b244f871f6a11f1fbeefc396ea"
+            "sha256": "sha256:04ae8928cd6730fdc88b99d15516a53701c69022aacca9803b7387257420d262"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part01",
-            "fileName": "arch-gnome-build-40971709885.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part01",
+            "fileName": "arch-gnome-build-41015311031.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:09de0fecbf079ffc0aa20f110422b77ed160c6ef3299a6eadf3fac7ae730f102"
+            "sha256": "sha256:16aaad07007e8b159dd1678b50f85c47b1f2955f4c18f03d29668dee10b92157"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part02",
-            "fileName": "arch-gnome-build-40971709885.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part02",
+            "fileName": "arch-gnome-build-41015311031.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:f7b7683064f5309c14a6db480f1f9954bb5e60297416237c2253d59cb6bd0d56"
+            "sha256": "sha256:e0a4e706d5b1367a62a7eceb6931d8280ba2a9d89c63102a682fda9eb18caee5"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part03",
-            "fileName": "arch-gnome-build-40971709885.zip.part03",
-            "sizeBytes": 400695026,
-            "sha256": "sha256:fb60b066dec08d385e25004e8c3443febe6752be86bc1c4462b87242de7254af"
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part03",
+            "fileName": "arch-gnome-build-41015311031.zip.part03",
+            "sizeBytes": 615599337,
+            "sha256": "sha256:21ce8041868580681396b67d7de22e00afd75a911850f0be7ffc866fa3846ded"
           }
         ]
       },
@@ -734,43 +734,43 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "9a1635086e4f1e05c08800faa29d92b1241b9f9c",
-      "metadataDigest": "sha256:64a1b872ddfb46382a2f10db146dd5bc7a1da598575c31474fd8618f2daa5363",
-      "payloadDigest": "sha256:ab001bcd29cab932c6f0821d8055231792a2adadf6bcdb19470e310645ac0c2b",
-      "evidenceRevision": "image-build-40971709885",
+      "downstreamRevision": "b4cd9ac391b5d607ed98af2076323dd4f5537a50",
+      "metadataDigest": "sha256:89387d7ffb908aadf48e740e4968868edd6af96eb0c4a0544abbf8c970e2ddb4",
+      "payloadDigest": "sha256:ee2c7f51ad8551b6ebaaf0111b606b6bcfe8f90fc5794279a8888f652e761b98",
+      "evidenceRevision": "image-build-41015311031",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/installer-data-arch-gnome.json",
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/installer-data-arch-gnome.json",
         "fileName": "installer-data-arch-gnome.json",
-        "sizeBytes": 9679
+        "sizeBytes": 9441
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip",
-        "fileName": "arch-gnome-build-40971709885.zip",
-        "sizeBytes": 3621920498,
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip",
+        "fileName": "arch-gnome-build-41015311031.zip",
+        "sizeBytes": 3836824809,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part00",
-            "fileName": "arch-gnome-build-40971709885.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part00",
+            "fileName": "arch-gnome-build-41015311031.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:ab3181cf5e8e15b769cc96190e8cd1ba52c907b244f871f6a11f1fbeefc396ea"
+            "sha256": "sha256:04ae8928cd6730fdc88b99d15516a53701c69022aacca9803b7387257420d262"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part01",
-            "fileName": "arch-gnome-build-40971709885.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part01",
+            "fileName": "arch-gnome-build-41015311031.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:09de0fecbf079ffc0aa20f110422b77ed160c6ef3299a6eadf3fac7ae730f102"
+            "sha256": "sha256:16aaad07007e8b159dd1678b50f85c47b1f2955f4c18f03d29668dee10b92157"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part02",
-            "fileName": "arch-gnome-build-40971709885.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part02",
+            "fileName": "arch-gnome-build-41015311031.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:f7b7683064f5309c14a6db480f1f9954bb5e60297416237c2253d59cb6bd0d56"
+            "sha256": "sha256:e0a4e706d5b1367a62a7eceb6931d8280ba2a9d89c63102a682fda9eb18caee5"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part03",
-            "fileName": "arch-gnome-build-40971709885.zip.part03",
-            "sizeBytes": 400695026,
-            "sha256": "sha256:fb60b066dec08d385e25004e8c3443febe6752be86bc1c4462b87242de7254af"
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part03",
+            "fileName": "arch-gnome-build-41015311031.zip.part03",
+            "sizeBytes": 615599337,
+            "sha256": "sha256:21ce8041868580681396b67d7de22e00afd75a911850f0be7ffc866fa3846ded"
           }
         ]
       },
@@ -782,43 +782,43 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "9a1635086e4f1e05c08800faa29d92b1241b9f9c",
-      "metadataDigest": "sha256:64a1b872ddfb46382a2f10db146dd5bc7a1da598575c31474fd8618f2daa5363",
-      "payloadDigest": "sha256:ab001bcd29cab932c6f0821d8055231792a2adadf6bcdb19470e310645ac0c2b",
-      "evidenceRevision": "image-build-40971709885",
+      "downstreamRevision": "b4cd9ac391b5d607ed98af2076323dd4f5537a50",
+      "metadataDigest": "sha256:89387d7ffb908aadf48e740e4968868edd6af96eb0c4a0544abbf8c970e2ddb4",
+      "payloadDigest": "sha256:ee2c7f51ad8551b6ebaaf0111b606b6bcfe8f90fc5794279a8888f652e761b98",
+      "evidenceRevision": "image-build-41015311031",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/installer-data-arch-gnome.json",
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/installer-data-arch-gnome.json",
         "fileName": "installer-data-arch-gnome.json",
-        "sizeBytes": 9679
+        "sizeBytes": 9441
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip",
-        "fileName": "arch-gnome-build-40971709885.zip",
-        "sizeBytes": 3621920498,
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip",
+        "fileName": "arch-gnome-build-41015311031.zip",
+        "sizeBytes": 3836824809,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part00",
-            "fileName": "arch-gnome-build-40971709885.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part00",
+            "fileName": "arch-gnome-build-41015311031.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:ab3181cf5e8e15b769cc96190e8cd1ba52c907b244f871f6a11f1fbeefc396ea"
+            "sha256": "sha256:04ae8928cd6730fdc88b99d15516a53701c69022aacca9803b7387257420d262"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part01",
-            "fileName": "arch-gnome-build-40971709885.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part01",
+            "fileName": "arch-gnome-build-41015311031.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:09de0fecbf079ffc0aa20f110422b77ed160c6ef3299a6eadf3fac7ae730f102"
+            "sha256": "sha256:16aaad07007e8b159dd1678b50f85c47b1f2955f4c18f03d29668dee10b92157"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part02",
-            "fileName": "arch-gnome-build-40971709885.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part02",
+            "fileName": "arch-gnome-build-41015311031.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:f7b7683064f5309c14a6db480f1f9954bb5e60297416237c2253d59cb6bd0d56"
+            "sha256": "sha256:e0a4e706d5b1367a62a7eceb6931d8280ba2a9d89c63102a682fda9eb18caee5"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part03",
-            "fileName": "arch-gnome-build-40971709885.zip.part03",
-            "sizeBytes": 400695026,
-            "sha256": "sha256:fb60b066dec08d385e25004e8c3443febe6752be86bc1c4462b87242de7254af"
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part03",
+            "fileName": "arch-gnome-build-41015311031.zip.part03",
+            "sizeBytes": 615599337,
+            "sha256": "sha256:21ce8041868580681396b67d7de22e00afd75a911850f0be7ffc866fa3846ded"
           }
         ]
       },
@@ -830,43 +830,43 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "9a1635086e4f1e05c08800faa29d92b1241b9f9c",
-      "metadataDigest": "sha256:64a1b872ddfb46382a2f10db146dd5bc7a1da598575c31474fd8618f2daa5363",
-      "payloadDigest": "sha256:ab001bcd29cab932c6f0821d8055231792a2adadf6bcdb19470e310645ac0c2b",
-      "evidenceRevision": "image-build-40971709885",
+      "downstreamRevision": "b4cd9ac391b5d607ed98af2076323dd4f5537a50",
+      "metadataDigest": "sha256:89387d7ffb908aadf48e740e4968868edd6af96eb0c4a0544abbf8c970e2ddb4",
+      "payloadDigest": "sha256:ee2c7f51ad8551b6ebaaf0111b606b6bcfe8f90fc5794279a8888f652e761b98",
+      "evidenceRevision": "image-build-41015311031",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/installer-data-arch-gnome.json",
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/installer-data-arch-gnome.json",
         "fileName": "installer-data-arch-gnome.json",
-        "sizeBytes": 9679
+        "sizeBytes": 9441
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip",
-        "fileName": "arch-gnome-build-40971709885.zip",
-        "sizeBytes": 3621920498,
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip",
+        "fileName": "arch-gnome-build-41015311031.zip",
+        "sizeBytes": 3836824809,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part00",
-            "fileName": "arch-gnome-build-40971709885.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part00",
+            "fileName": "arch-gnome-build-41015311031.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:ab3181cf5e8e15b769cc96190e8cd1ba52c907b244f871f6a11f1fbeefc396ea"
+            "sha256": "sha256:04ae8928cd6730fdc88b99d15516a53701c69022aacca9803b7387257420d262"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part01",
-            "fileName": "arch-gnome-build-40971709885.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part01",
+            "fileName": "arch-gnome-build-41015311031.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:09de0fecbf079ffc0aa20f110422b77ed160c6ef3299a6eadf3fac7ae730f102"
+            "sha256": "sha256:16aaad07007e8b159dd1678b50f85c47b1f2955f4c18f03d29668dee10b92157"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part02",
-            "fileName": "arch-gnome-build-40971709885.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part02",
+            "fileName": "arch-gnome-build-41015311031.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:f7b7683064f5309c14a6db480f1f9954bb5e60297416237c2253d59cb6bd0d56"
+            "sha256": "sha256:e0a4e706d5b1367a62a7eceb6931d8280ba2a9d89c63102a682fda9eb18caee5"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part03",
-            "fileName": "arch-gnome-build-40971709885.zip.part03",
-            "sizeBytes": 400695026,
-            "sha256": "sha256:fb60b066dec08d385e25004e8c3443febe6752be86bc1c4462b87242de7254af"
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part03",
+            "fileName": "arch-gnome-build-41015311031.zip.part03",
+            "sizeBytes": 615599337,
+            "sha256": "sha256:21ce8041868580681396b67d7de22e00afd75a911850f0be7ffc866fa3846ded"
           }
         ]
       },
@@ -878,43 +878,43 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "9a1635086e4f1e05c08800faa29d92b1241b9f9c",
-      "metadataDigest": "sha256:64a1b872ddfb46382a2f10db146dd5bc7a1da598575c31474fd8618f2daa5363",
-      "payloadDigest": "sha256:ab001bcd29cab932c6f0821d8055231792a2adadf6bcdb19470e310645ac0c2b",
-      "evidenceRevision": "image-build-40971709885",
+      "downstreamRevision": "b4cd9ac391b5d607ed98af2076323dd4f5537a50",
+      "metadataDigest": "sha256:89387d7ffb908aadf48e740e4968868edd6af96eb0c4a0544abbf8c970e2ddb4",
+      "payloadDigest": "sha256:ee2c7f51ad8551b6ebaaf0111b606b6bcfe8f90fc5794279a8888f652e761b98",
+      "evidenceRevision": "image-build-41015311031",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/installer-data-arch-gnome.json",
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/installer-data-arch-gnome.json",
         "fileName": "installer-data-arch-gnome.json",
-        "sizeBytes": 9679
+        "sizeBytes": 9441
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip",
-        "fileName": "arch-gnome-build-40971709885.zip",
-        "sizeBytes": 3621920498,
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip",
+        "fileName": "arch-gnome-build-41015311031.zip",
+        "sizeBytes": 3836824809,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part00",
-            "fileName": "arch-gnome-build-40971709885.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part00",
+            "fileName": "arch-gnome-build-41015311031.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:ab3181cf5e8e15b769cc96190e8cd1ba52c907b244f871f6a11f1fbeefc396ea"
+            "sha256": "sha256:04ae8928cd6730fdc88b99d15516a53701c69022aacca9803b7387257420d262"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part01",
-            "fileName": "arch-gnome-build-40971709885.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part01",
+            "fileName": "arch-gnome-build-41015311031.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:09de0fecbf079ffc0aa20f110422b77ed160c6ef3299a6eadf3fac7ae730f102"
+            "sha256": "sha256:16aaad07007e8b159dd1678b50f85c47b1f2955f4c18f03d29668dee10b92157"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part02",
-            "fileName": "arch-gnome-build-40971709885.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part02",
+            "fileName": "arch-gnome-build-41015311031.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:f7b7683064f5309c14a6db480f1f9954bb5e60297416237c2253d59cb6bd0d56"
+            "sha256": "sha256:e0a4e706d5b1367a62a7eceb6931d8280ba2a9d89c63102a682fda9eb18caee5"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part03",
-            "fileName": "arch-gnome-build-40971709885.zip.part03",
-            "sizeBytes": 400695026,
-            "sha256": "sha256:fb60b066dec08d385e25004e8c3443febe6752be86bc1c4462b87242de7254af"
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part03",
+            "fileName": "arch-gnome-build-41015311031.zip.part03",
+            "sizeBytes": 615599337,
+            "sha256": "sha256:21ce8041868580681396b67d7de22e00afd75a911850f0be7ffc866fa3846ded"
           }
         ]
       },
@@ -926,43 +926,43 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "9a1635086e4f1e05c08800faa29d92b1241b9f9c",
-      "metadataDigest": "sha256:64a1b872ddfb46382a2f10db146dd5bc7a1da598575c31474fd8618f2daa5363",
-      "payloadDigest": "sha256:ab001bcd29cab932c6f0821d8055231792a2adadf6bcdb19470e310645ac0c2b",
-      "evidenceRevision": "image-build-40971709885",
+      "downstreamRevision": "b4cd9ac391b5d607ed98af2076323dd4f5537a50",
+      "metadataDigest": "sha256:89387d7ffb908aadf48e740e4968868edd6af96eb0c4a0544abbf8c970e2ddb4",
+      "payloadDigest": "sha256:ee2c7f51ad8551b6ebaaf0111b606b6bcfe8f90fc5794279a8888f652e761b98",
+      "evidenceRevision": "image-build-41015311031",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/installer-data-arch-gnome.json",
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/installer-data-arch-gnome.json",
         "fileName": "installer-data-arch-gnome.json",
-        "sizeBytes": 9679
+        "sizeBytes": 9441
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip",
-        "fileName": "arch-gnome-build-40971709885.zip",
-        "sizeBytes": 3621920498,
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip",
+        "fileName": "arch-gnome-build-41015311031.zip",
+        "sizeBytes": 3836824809,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part00",
-            "fileName": "arch-gnome-build-40971709885.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part00",
+            "fileName": "arch-gnome-build-41015311031.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:ab3181cf5e8e15b769cc96190e8cd1ba52c907b244f871f6a11f1fbeefc396ea"
+            "sha256": "sha256:04ae8928cd6730fdc88b99d15516a53701c69022aacca9803b7387257420d262"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part01",
-            "fileName": "arch-gnome-build-40971709885.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part01",
+            "fileName": "arch-gnome-build-41015311031.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:09de0fecbf079ffc0aa20f110422b77ed160c6ef3299a6eadf3fac7ae730f102"
+            "sha256": "sha256:16aaad07007e8b159dd1678b50f85c47b1f2955f4c18f03d29668dee10b92157"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part02",
-            "fileName": "arch-gnome-build-40971709885.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part02",
+            "fileName": "arch-gnome-build-41015311031.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:f7b7683064f5309c14a6db480f1f9954bb5e60297416237c2253d59cb6bd0d56"
+            "sha256": "sha256:e0a4e706d5b1367a62a7eceb6931d8280ba2a9d89c63102a682fda9eb18caee5"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part03",
-            "fileName": "arch-gnome-build-40971709885.zip.part03",
-            "sizeBytes": 400695026,
-            "sha256": "sha256:fb60b066dec08d385e25004e8c3443febe6752be86bc1c4462b87242de7254af"
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part03",
+            "fileName": "arch-gnome-build-41015311031.zip.part03",
+            "sizeBytes": 615599337,
+            "sha256": "sha256:21ce8041868580681396b67d7de22e00afd75a911850f0be7ffc866fa3846ded"
           }
         ]
       },
@@ -974,43 +974,43 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "9a1635086e4f1e05c08800faa29d92b1241b9f9c",
-      "metadataDigest": "sha256:64a1b872ddfb46382a2f10db146dd5bc7a1da598575c31474fd8618f2daa5363",
-      "payloadDigest": "sha256:ab001bcd29cab932c6f0821d8055231792a2adadf6bcdb19470e310645ac0c2b",
-      "evidenceRevision": "image-build-40971709885",
+      "downstreamRevision": "b4cd9ac391b5d607ed98af2076323dd4f5537a50",
+      "metadataDigest": "sha256:89387d7ffb908aadf48e740e4968868edd6af96eb0c4a0544abbf8c970e2ddb4",
+      "payloadDigest": "sha256:ee2c7f51ad8551b6ebaaf0111b606b6bcfe8f90fc5794279a8888f652e761b98",
+      "evidenceRevision": "image-build-41015311031",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/installer-data-arch-gnome.json",
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/installer-data-arch-gnome.json",
         "fileName": "installer-data-arch-gnome.json",
-        "sizeBytes": 9679
+        "sizeBytes": 9441
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip",
-        "fileName": "arch-gnome-build-40971709885.zip",
-        "sizeBytes": 3621920498,
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip",
+        "fileName": "arch-gnome-build-41015311031.zip",
+        "sizeBytes": 3836824809,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part00",
-            "fileName": "arch-gnome-build-40971709885.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part00",
+            "fileName": "arch-gnome-build-41015311031.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:ab3181cf5e8e15b769cc96190e8cd1ba52c907b244f871f6a11f1fbeefc396ea"
+            "sha256": "sha256:04ae8928cd6730fdc88b99d15516a53701c69022aacca9803b7387257420d262"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part01",
-            "fileName": "arch-gnome-build-40971709885.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part01",
+            "fileName": "arch-gnome-build-41015311031.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:09de0fecbf079ffc0aa20f110422b77ed160c6ef3299a6eadf3fac7ae730f102"
+            "sha256": "sha256:16aaad07007e8b159dd1678b50f85c47b1f2955f4c18f03d29668dee10b92157"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part02",
-            "fileName": "arch-gnome-build-40971709885.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part02",
+            "fileName": "arch-gnome-build-41015311031.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:f7b7683064f5309c14a6db480f1f9954bb5e60297416237c2253d59cb6bd0d56"
+            "sha256": "sha256:e0a4e706d5b1367a62a7eceb6931d8280ba2a9d89c63102a682fda9eb18caee5"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part03",
-            "fileName": "arch-gnome-build-40971709885.zip.part03",
-            "sizeBytes": 400695026,
-            "sha256": "sha256:fb60b066dec08d385e25004e8c3443febe6752be86bc1c4462b87242de7254af"
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part03",
+            "fileName": "arch-gnome-build-41015311031.zip.part03",
+            "sizeBytes": 615599337,
+            "sha256": "sha256:21ce8041868580681396b67d7de22e00afd75a911850f0be7ffc866fa3846ded"
           }
         ]
       },
@@ -1022,43 +1022,43 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "9a1635086e4f1e05c08800faa29d92b1241b9f9c",
-      "metadataDigest": "sha256:64a1b872ddfb46382a2f10db146dd5bc7a1da598575c31474fd8618f2daa5363",
-      "payloadDigest": "sha256:ab001bcd29cab932c6f0821d8055231792a2adadf6bcdb19470e310645ac0c2b",
-      "evidenceRevision": "image-build-40971709885",
+      "downstreamRevision": "b4cd9ac391b5d607ed98af2076323dd4f5537a50",
+      "metadataDigest": "sha256:89387d7ffb908aadf48e740e4968868edd6af96eb0c4a0544abbf8c970e2ddb4",
+      "payloadDigest": "sha256:ee2c7f51ad8551b6ebaaf0111b606b6bcfe8f90fc5794279a8888f652e761b98",
+      "evidenceRevision": "image-build-41015311031",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/installer-data-arch-gnome.json",
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/installer-data-arch-gnome.json",
         "fileName": "installer-data-arch-gnome.json",
-        "sizeBytes": 9679
+        "sizeBytes": 9441
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip",
-        "fileName": "arch-gnome-build-40971709885.zip",
-        "sizeBytes": 3621920498,
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip",
+        "fileName": "arch-gnome-build-41015311031.zip",
+        "sizeBytes": 3836824809,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part00",
-            "fileName": "arch-gnome-build-40971709885.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part00",
+            "fileName": "arch-gnome-build-41015311031.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:ab3181cf5e8e15b769cc96190e8cd1ba52c907b244f871f6a11f1fbeefc396ea"
+            "sha256": "sha256:04ae8928cd6730fdc88b99d15516a53701c69022aacca9803b7387257420d262"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part01",
-            "fileName": "arch-gnome-build-40971709885.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part01",
+            "fileName": "arch-gnome-build-41015311031.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:09de0fecbf079ffc0aa20f110422b77ed160c6ef3299a6eadf3fac7ae730f102"
+            "sha256": "sha256:16aaad07007e8b159dd1678b50f85c47b1f2955f4c18f03d29668dee10b92157"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part02",
-            "fileName": "arch-gnome-build-40971709885.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part02",
+            "fileName": "arch-gnome-build-41015311031.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:f7b7683064f5309c14a6db480f1f9954bb5e60297416237c2253d59cb6bd0d56"
+            "sha256": "sha256:e0a4e706d5b1367a62a7eceb6931d8280ba2a9d89c63102a682fda9eb18caee5"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part03",
-            "fileName": "arch-gnome-build-40971709885.zip.part03",
-            "sizeBytes": 400695026,
-            "sha256": "sha256:fb60b066dec08d385e25004e8c3443febe6752be86bc1c4462b87242de7254af"
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part03",
+            "fileName": "arch-gnome-build-41015311031.zip.part03",
+            "sizeBytes": 615599337,
+            "sha256": "sha256:21ce8041868580681396b67d7de22e00afd75a911850f0be7ffc866fa3846ded"
           }
         ]
       },
@@ -1070,43 +1070,43 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "9a1635086e4f1e05c08800faa29d92b1241b9f9c",
-      "metadataDigest": "sha256:64a1b872ddfb46382a2f10db146dd5bc7a1da598575c31474fd8618f2daa5363",
-      "payloadDigest": "sha256:ab001bcd29cab932c6f0821d8055231792a2adadf6bcdb19470e310645ac0c2b",
-      "evidenceRevision": "image-build-40971709885",
+      "downstreamRevision": "b4cd9ac391b5d607ed98af2076323dd4f5537a50",
+      "metadataDigest": "sha256:89387d7ffb908aadf48e740e4968868edd6af96eb0c4a0544abbf8c970e2ddb4",
+      "payloadDigest": "sha256:ee2c7f51ad8551b6ebaaf0111b606b6bcfe8f90fc5794279a8888f652e761b98",
+      "evidenceRevision": "image-build-41015311031",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/installer-data-arch-gnome.json",
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/installer-data-arch-gnome.json",
         "fileName": "installer-data-arch-gnome.json",
-        "sizeBytes": 9679
+        "sizeBytes": 9441
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip",
-        "fileName": "arch-gnome-build-40971709885.zip",
-        "sizeBytes": 3621920498,
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip",
+        "fileName": "arch-gnome-build-41015311031.zip",
+        "sizeBytes": 3836824809,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part00",
-            "fileName": "arch-gnome-build-40971709885.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part00",
+            "fileName": "arch-gnome-build-41015311031.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:ab3181cf5e8e15b769cc96190e8cd1ba52c907b244f871f6a11f1fbeefc396ea"
+            "sha256": "sha256:04ae8928cd6730fdc88b99d15516a53701c69022aacca9803b7387257420d262"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part01",
-            "fileName": "arch-gnome-build-40971709885.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part01",
+            "fileName": "arch-gnome-build-41015311031.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:09de0fecbf079ffc0aa20f110422b77ed160c6ef3299a6eadf3fac7ae730f102"
+            "sha256": "sha256:16aaad07007e8b159dd1678b50f85c47b1f2955f4c18f03d29668dee10b92157"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part02",
-            "fileName": "arch-gnome-build-40971709885.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part02",
+            "fileName": "arch-gnome-build-41015311031.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:f7b7683064f5309c14a6db480f1f9954bb5e60297416237c2253d59cb6bd0d56"
+            "sha256": "sha256:e0a4e706d5b1367a62a7eceb6931d8280ba2a9d89c63102a682fda9eb18caee5"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part03",
-            "fileName": "arch-gnome-build-40971709885.zip.part03",
-            "sizeBytes": 400695026,
-            "sha256": "sha256:fb60b066dec08d385e25004e8c3443febe6752be86bc1c4462b87242de7254af"
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part03",
+            "fileName": "arch-gnome-build-41015311031.zip.part03",
+            "sizeBytes": 615599337,
+            "sha256": "sha256:21ce8041868580681396b67d7de22e00afd75a911850f0be7ffc866fa3846ded"
           }
         ]
       },
@@ -1118,43 +1118,43 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "9a1635086e4f1e05c08800faa29d92b1241b9f9c",
-      "metadataDigest": "sha256:64a1b872ddfb46382a2f10db146dd5bc7a1da598575c31474fd8618f2daa5363",
-      "payloadDigest": "sha256:ab001bcd29cab932c6f0821d8055231792a2adadf6bcdb19470e310645ac0c2b",
-      "evidenceRevision": "image-build-40971709885",
+      "downstreamRevision": "b4cd9ac391b5d607ed98af2076323dd4f5537a50",
+      "metadataDigest": "sha256:89387d7ffb908aadf48e740e4968868edd6af96eb0c4a0544abbf8c970e2ddb4",
+      "payloadDigest": "sha256:ee2c7f51ad8551b6ebaaf0111b606b6bcfe8f90fc5794279a8888f652e761b98",
+      "evidenceRevision": "image-build-41015311031",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/installer-data-arch-gnome.json",
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/installer-data-arch-gnome.json",
         "fileName": "installer-data-arch-gnome.json",
-        "sizeBytes": 9679
+        "sizeBytes": 9441
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip",
-        "fileName": "arch-gnome-build-40971709885.zip",
-        "sizeBytes": 3621920498,
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip",
+        "fileName": "arch-gnome-build-41015311031.zip",
+        "sizeBytes": 3836824809,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part00",
-            "fileName": "arch-gnome-build-40971709885.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part00",
+            "fileName": "arch-gnome-build-41015311031.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:ab3181cf5e8e15b769cc96190e8cd1ba52c907b244f871f6a11f1fbeefc396ea"
+            "sha256": "sha256:04ae8928cd6730fdc88b99d15516a53701c69022aacca9803b7387257420d262"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part01",
-            "fileName": "arch-gnome-build-40971709885.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part01",
+            "fileName": "arch-gnome-build-41015311031.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:09de0fecbf079ffc0aa20f110422b77ed160c6ef3299a6eadf3fac7ae730f102"
+            "sha256": "sha256:16aaad07007e8b159dd1678b50f85c47b1f2955f4c18f03d29668dee10b92157"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part02",
-            "fileName": "arch-gnome-build-40971709885.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part02",
+            "fileName": "arch-gnome-build-41015311031.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:f7b7683064f5309c14a6db480f1f9954bb5e60297416237c2253d59cb6bd0d56"
+            "sha256": "sha256:e0a4e706d5b1367a62a7eceb6931d8280ba2a9d89c63102a682fda9eb18caee5"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part03",
-            "fileName": "arch-gnome-build-40971709885.zip.part03",
-            "sizeBytes": 400695026,
-            "sha256": "sha256:fb60b066dec08d385e25004e8c3443febe6752be86bc1c4462b87242de7254af"
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part03",
+            "fileName": "arch-gnome-build-41015311031.zip.part03",
+            "sizeBytes": 615599337,
+            "sha256": "sha256:21ce8041868580681396b67d7de22e00afd75a911850f0be7ffc866fa3846ded"
           }
         ]
       },
@@ -1166,43 +1166,43 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "9a1635086e4f1e05c08800faa29d92b1241b9f9c",
-      "metadataDigest": "sha256:64a1b872ddfb46382a2f10db146dd5bc7a1da598575c31474fd8618f2daa5363",
-      "payloadDigest": "sha256:ab001bcd29cab932c6f0821d8055231792a2adadf6bcdb19470e310645ac0c2b",
-      "evidenceRevision": "image-build-40971709885",
+      "downstreamRevision": "b4cd9ac391b5d607ed98af2076323dd4f5537a50",
+      "metadataDigest": "sha256:89387d7ffb908aadf48e740e4968868edd6af96eb0c4a0544abbf8c970e2ddb4",
+      "payloadDigest": "sha256:ee2c7f51ad8551b6ebaaf0111b606b6bcfe8f90fc5794279a8888f652e761b98",
+      "evidenceRevision": "image-build-41015311031",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/installer-data-arch-gnome.json",
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/installer-data-arch-gnome.json",
         "fileName": "installer-data-arch-gnome.json",
-        "sizeBytes": 9679
+        "sizeBytes": 9441
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip",
-        "fileName": "arch-gnome-build-40971709885.zip",
-        "sizeBytes": 3621920498,
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip",
+        "fileName": "arch-gnome-build-41015311031.zip",
+        "sizeBytes": 3836824809,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part00",
-            "fileName": "arch-gnome-build-40971709885.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part00",
+            "fileName": "arch-gnome-build-41015311031.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:ab3181cf5e8e15b769cc96190e8cd1ba52c907b244f871f6a11f1fbeefc396ea"
+            "sha256": "sha256:04ae8928cd6730fdc88b99d15516a53701c69022aacca9803b7387257420d262"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part01",
-            "fileName": "arch-gnome-build-40971709885.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part01",
+            "fileName": "arch-gnome-build-41015311031.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:09de0fecbf079ffc0aa20f110422b77ed160c6ef3299a6eadf3fac7ae730f102"
+            "sha256": "sha256:16aaad07007e8b159dd1678b50f85c47b1f2955f4c18f03d29668dee10b92157"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part02",
-            "fileName": "arch-gnome-build-40971709885.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part02",
+            "fileName": "arch-gnome-build-41015311031.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:f7b7683064f5309c14a6db480f1f9954bb5e60297416237c2253d59cb6bd0d56"
+            "sha256": "sha256:e0a4e706d5b1367a62a7eceb6931d8280ba2a9d89c63102a682fda9eb18caee5"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part03",
-            "fileName": "arch-gnome-build-40971709885.zip.part03",
-            "sizeBytes": 400695026,
-            "sha256": "sha256:fb60b066dec08d385e25004e8c3443febe6752be86bc1c4462b87242de7254af"
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part03",
+            "fileName": "arch-gnome-build-41015311031.zip.part03",
+            "sizeBytes": 615599337,
+            "sha256": "sha256:21ce8041868580681396b67d7de22e00afd75a911850f0be7ffc866fa3846ded"
           }
         ]
       },
@@ -1214,43 +1214,43 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "9a1635086e4f1e05c08800faa29d92b1241b9f9c",
-      "metadataDigest": "sha256:64a1b872ddfb46382a2f10db146dd5bc7a1da598575c31474fd8618f2daa5363",
-      "payloadDigest": "sha256:ab001bcd29cab932c6f0821d8055231792a2adadf6bcdb19470e310645ac0c2b",
-      "evidenceRevision": "image-build-40971709885",
+      "downstreamRevision": "b4cd9ac391b5d607ed98af2076323dd4f5537a50",
+      "metadataDigest": "sha256:89387d7ffb908aadf48e740e4968868edd6af96eb0c4a0544abbf8c970e2ddb4",
+      "payloadDigest": "sha256:ee2c7f51ad8551b6ebaaf0111b606b6bcfe8f90fc5794279a8888f652e761b98",
+      "evidenceRevision": "image-build-41015311031",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/installer-data-arch-gnome.json",
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/installer-data-arch-gnome.json",
         "fileName": "installer-data-arch-gnome.json",
-        "sizeBytes": 9679
+        "sizeBytes": 9441
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip",
-        "fileName": "arch-gnome-build-40971709885.zip",
-        "sizeBytes": 3621920498,
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip",
+        "fileName": "arch-gnome-build-41015311031.zip",
+        "sizeBytes": 3836824809,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part00",
-            "fileName": "arch-gnome-build-40971709885.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part00",
+            "fileName": "arch-gnome-build-41015311031.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:ab3181cf5e8e15b769cc96190e8cd1ba52c907b244f871f6a11f1fbeefc396ea"
+            "sha256": "sha256:04ae8928cd6730fdc88b99d15516a53701c69022aacca9803b7387257420d262"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part01",
-            "fileName": "arch-gnome-build-40971709885.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part01",
+            "fileName": "arch-gnome-build-41015311031.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:09de0fecbf079ffc0aa20f110422b77ed160c6ef3299a6eadf3fac7ae730f102"
+            "sha256": "sha256:16aaad07007e8b159dd1678b50f85c47b1f2955f4c18f03d29668dee10b92157"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part02",
-            "fileName": "arch-gnome-build-40971709885.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part02",
+            "fileName": "arch-gnome-build-41015311031.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:f7b7683064f5309c14a6db480f1f9954bb5e60297416237c2253d59cb6bd0d56"
+            "sha256": "sha256:e0a4e706d5b1367a62a7eceb6931d8280ba2a9d89c63102a682fda9eb18caee5"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part03",
-            "fileName": "arch-gnome-build-40971709885.zip.part03",
-            "sizeBytes": 400695026,
-            "sha256": "sha256:fb60b066dec08d385e25004e8c3443febe6752be86bc1c4462b87242de7254af"
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part03",
+            "fileName": "arch-gnome-build-41015311031.zip.part03",
+            "sizeBytes": 615599337,
+            "sha256": "sha256:21ce8041868580681396b67d7de22e00afd75a911850f0be7ffc866fa3846ded"
           }
         ]
       },
@@ -1262,43 +1262,43 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "9a1635086e4f1e05c08800faa29d92b1241b9f9c",
-      "metadataDigest": "sha256:64a1b872ddfb46382a2f10db146dd5bc7a1da598575c31474fd8618f2daa5363",
-      "payloadDigest": "sha256:ab001bcd29cab932c6f0821d8055231792a2adadf6bcdb19470e310645ac0c2b",
-      "evidenceRevision": "image-build-40971709885",
+      "downstreamRevision": "b4cd9ac391b5d607ed98af2076323dd4f5537a50",
+      "metadataDigest": "sha256:89387d7ffb908aadf48e740e4968868edd6af96eb0c4a0544abbf8c970e2ddb4",
+      "payloadDigest": "sha256:ee2c7f51ad8551b6ebaaf0111b606b6bcfe8f90fc5794279a8888f652e761b98",
+      "evidenceRevision": "image-build-41015311031",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/installer-data-arch-gnome.json",
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/installer-data-arch-gnome.json",
         "fileName": "installer-data-arch-gnome.json",
-        "sizeBytes": 9679
+        "sizeBytes": 9441
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip",
-        "fileName": "arch-gnome-build-40971709885.zip",
-        "sizeBytes": 3621920498,
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip",
+        "fileName": "arch-gnome-build-41015311031.zip",
+        "sizeBytes": 3836824809,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part00",
-            "fileName": "arch-gnome-build-40971709885.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part00",
+            "fileName": "arch-gnome-build-41015311031.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:ab3181cf5e8e15b769cc96190e8cd1ba52c907b244f871f6a11f1fbeefc396ea"
+            "sha256": "sha256:04ae8928cd6730fdc88b99d15516a53701c69022aacca9803b7387257420d262"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part01",
-            "fileName": "arch-gnome-build-40971709885.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part01",
+            "fileName": "arch-gnome-build-41015311031.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:09de0fecbf079ffc0aa20f110422b77ed160c6ef3299a6eadf3fac7ae730f102"
+            "sha256": "sha256:16aaad07007e8b159dd1678b50f85c47b1f2955f4c18f03d29668dee10b92157"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part02",
-            "fileName": "arch-gnome-build-40971709885.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part02",
+            "fileName": "arch-gnome-build-41015311031.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:f7b7683064f5309c14a6db480f1f9954bb5e60297416237c2253d59cb6bd0d56"
+            "sha256": "sha256:e0a4e706d5b1367a62a7eceb6931d8280ba2a9d89c63102a682fda9eb18caee5"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part03",
-            "fileName": "arch-gnome-build-40971709885.zip.part03",
-            "sizeBytes": 400695026,
-            "sha256": "sha256:fb60b066dec08d385e25004e8c3443febe6752be86bc1c4462b87242de7254af"
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part03",
+            "fileName": "arch-gnome-build-41015311031.zip.part03",
+            "sizeBytes": 615599337,
+            "sha256": "sha256:21ce8041868580681396b67d7de22e00afd75a911850f0be7ffc866fa3846ded"
           }
         ]
       },
@@ -1310,43 +1310,43 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "9a1635086e4f1e05c08800faa29d92b1241b9f9c",
-      "metadataDigest": "sha256:64a1b872ddfb46382a2f10db146dd5bc7a1da598575c31474fd8618f2daa5363",
-      "payloadDigest": "sha256:ab001bcd29cab932c6f0821d8055231792a2adadf6bcdb19470e310645ac0c2b",
-      "evidenceRevision": "image-build-40971709885",
+      "downstreamRevision": "b4cd9ac391b5d607ed98af2076323dd4f5537a50",
+      "metadataDigest": "sha256:89387d7ffb908aadf48e740e4968868edd6af96eb0c4a0544abbf8c970e2ddb4",
+      "payloadDigest": "sha256:ee2c7f51ad8551b6ebaaf0111b606b6bcfe8f90fc5794279a8888f652e761b98",
+      "evidenceRevision": "image-build-41015311031",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/installer-data-arch-gnome.json",
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/installer-data-arch-gnome.json",
         "fileName": "installer-data-arch-gnome.json",
-        "sizeBytes": 9679
+        "sizeBytes": 9441
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip",
-        "fileName": "arch-gnome-build-40971709885.zip",
-        "sizeBytes": 3621920498,
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip",
+        "fileName": "arch-gnome-build-41015311031.zip",
+        "sizeBytes": 3836824809,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part00",
-            "fileName": "arch-gnome-build-40971709885.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part00",
+            "fileName": "arch-gnome-build-41015311031.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:ab3181cf5e8e15b769cc96190e8cd1ba52c907b244f871f6a11f1fbeefc396ea"
+            "sha256": "sha256:04ae8928cd6730fdc88b99d15516a53701c69022aacca9803b7387257420d262"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part01",
-            "fileName": "arch-gnome-build-40971709885.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part01",
+            "fileName": "arch-gnome-build-41015311031.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:09de0fecbf079ffc0aa20f110422b77ed160c6ef3299a6eadf3fac7ae730f102"
+            "sha256": "sha256:16aaad07007e8b159dd1678b50f85c47b1f2955f4c18f03d29668dee10b92157"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part02",
-            "fileName": "arch-gnome-build-40971709885.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part02",
+            "fileName": "arch-gnome-build-41015311031.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:f7b7683064f5309c14a6db480f1f9954bb5e60297416237c2253d59cb6bd0d56"
+            "sha256": "sha256:e0a4e706d5b1367a62a7eceb6931d8280ba2a9d89c63102a682fda9eb18caee5"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part03",
-            "fileName": "arch-gnome-build-40971709885.zip.part03",
-            "sizeBytes": 400695026,
-            "sha256": "sha256:fb60b066dec08d385e25004e8c3443febe6752be86bc1c4462b87242de7254af"
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part03",
+            "fileName": "arch-gnome-build-41015311031.zip.part03",
+            "sizeBytes": 615599337,
+            "sha256": "sha256:21ce8041868580681396b67d7de22e00afd75a911850f0be7ffc866fa3846ded"
           }
         ]
       },
@@ -1358,43 +1358,43 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "9a1635086e4f1e05c08800faa29d92b1241b9f9c",
-      "metadataDigest": "sha256:64a1b872ddfb46382a2f10db146dd5bc7a1da598575c31474fd8618f2daa5363",
-      "payloadDigest": "sha256:ab001bcd29cab932c6f0821d8055231792a2adadf6bcdb19470e310645ac0c2b",
-      "evidenceRevision": "image-build-40971709885",
+      "downstreamRevision": "b4cd9ac391b5d607ed98af2076323dd4f5537a50",
+      "metadataDigest": "sha256:89387d7ffb908aadf48e740e4968868edd6af96eb0c4a0544abbf8c970e2ddb4",
+      "payloadDigest": "sha256:ee2c7f51ad8551b6ebaaf0111b606b6bcfe8f90fc5794279a8888f652e761b98",
+      "evidenceRevision": "image-build-41015311031",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/installer-data-arch-gnome.json",
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/installer-data-arch-gnome.json",
         "fileName": "installer-data-arch-gnome.json",
-        "sizeBytes": 9679
+        "sizeBytes": 9441
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip",
-        "fileName": "arch-gnome-build-40971709885.zip",
-        "sizeBytes": 3621920498,
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip",
+        "fileName": "arch-gnome-build-41015311031.zip",
+        "sizeBytes": 3836824809,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part00",
-            "fileName": "arch-gnome-build-40971709885.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part00",
+            "fileName": "arch-gnome-build-41015311031.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:ab3181cf5e8e15b769cc96190e8cd1ba52c907b244f871f6a11f1fbeefc396ea"
+            "sha256": "sha256:04ae8928cd6730fdc88b99d15516a53701c69022aacca9803b7387257420d262"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part01",
-            "fileName": "arch-gnome-build-40971709885.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part01",
+            "fileName": "arch-gnome-build-41015311031.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:09de0fecbf079ffc0aa20f110422b77ed160c6ef3299a6eadf3fac7ae730f102"
+            "sha256": "sha256:16aaad07007e8b159dd1678b50f85c47b1f2955f4c18f03d29668dee10b92157"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part02",
-            "fileName": "arch-gnome-build-40971709885.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part02",
+            "fileName": "arch-gnome-build-41015311031.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:f7b7683064f5309c14a6db480f1f9954bb5e60297416237c2253d59cb6bd0d56"
+            "sha256": "sha256:e0a4e706d5b1367a62a7eceb6931d8280ba2a9d89c63102a682fda9eb18caee5"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part03",
-            "fileName": "arch-gnome-build-40971709885.zip.part03",
-            "sizeBytes": 400695026,
-            "sha256": "sha256:fb60b066dec08d385e25004e8c3443febe6752be86bc1c4462b87242de7254af"
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part03",
+            "fileName": "arch-gnome-build-41015311031.zip.part03",
+            "sizeBytes": 615599337,
+            "sha256": "sha256:21ce8041868580681396b67d7de22e00afd75a911850f0be7ffc866fa3846ded"
           }
         ]
       },
@@ -1406,43 +1406,43 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "9a1635086e4f1e05c08800faa29d92b1241b9f9c",
-      "metadataDigest": "sha256:64a1b872ddfb46382a2f10db146dd5bc7a1da598575c31474fd8618f2daa5363",
-      "payloadDigest": "sha256:ab001bcd29cab932c6f0821d8055231792a2adadf6bcdb19470e310645ac0c2b",
-      "evidenceRevision": "image-build-40971709885",
+      "downstreamRevision": "b4cd9ac391b5d607ed98af2076323dd4f5537a50",
+      "metadataDigest": "sha256:89387d7ffb908aadf48e740e4968868edd6af96eb0c4a0544abbf8c970e2ddb4",
+      "payloadDigest": "sha256:ee2c7f51ad8551b6ebaaf0111b606b6bcfe8f90fc5794279a8888f652e761b98",
+      "evidenceRevision": "image-build-41015311031",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/installer-data-arch-gnome.json",
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/installer-data-arch-gnome.json",
         "fileName": "installer-data-arch-gnome.json",
-        "sizeBytes": 9679
+        "sizeBytes": 9441
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip",
-        "fileName": "arch-gnome-build-40971709885.zip",
-        "sizeBytes": 3621920498,
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip",
+        "fileName": "arch-gnome-build-41015311031.zip",
+        "sizeBytes": 3836824809,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part00",
-            "fileName": "arch-gnome-build-40971709885.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part00",
+            "fileName": "arch-gnome-build-41015311031.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:ab3181cf5e8e15b769cc96190e8cd1ba52c907b244f871f6a11f1fbeefc396ea"
+            "sha256": "sha256:04ae8928cd6730fdc88b99d15516a53701c69022aacca9803b7387257420d262"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part01",
-            "fileName": "arch-gnome-build-40971709885.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part01",
+            "fileName": "arch-gnome-build-41015311031.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:09de0fecbf079ffc0aa20f110422b77ed160c6ef3299a6eadf3fac7ae730f102"
+            "sha256": "sha256:16aaad07007e8b159dd1678b50f85c47b1f2955f4c18f03d29668dee10b92157"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part02",
-            "fileName": "arch-gnome-build-40971709885.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part02",
+            "fileName": "arch-gnome-build-41015311031.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:f7b7683064f5309c14a6db480f1f9954bb5e60297416237c2253d59cb6bd0d56"
+            "sha256": "sha256:e0a4e706d5b1367a62a7eceb6931d8280ba2a9d89c63102a682fda9eb18caee5"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part03",
-            "fileName": "arch-gnome-build-40971709885.zip.part03",
-            "sizeBytes": 400695026,
-            "sha256": "sha256:fb60b066dec08d385e25004e8c3443febe6752be86bc1c4462b87242de7254af"
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part03",
+            "fileName": "arch-gnome-build-41015311031.zip.part03",
+            "sizeBytes": 615599337,
+            "sha256": "sha256:21ce8041868580681396b67d7de22e00afd75a911850f0be7ffc866fa3846ded"
           }
         ]
       },
@@ -1454,43 +1454,43 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "9a1635086e4f1e05c08800faa29d92b1241b9f9c",
-      "metadataDigest": "sha256:64a1b872ddfb46382a2f10db146dd5bc7a1da598575c31474fd8618f2daa5363",
-      "payloadDigest": "sha256:ab001bcd29cab932c6f0821d8055231792a2adadf6bcdb19470e310645ac0c2b",
-      "evidenceRevision": "image-build-40971709885",
+      "downstreamRevision": "b4cd9ac391b5d607ed98af2076323dd4f5537a50",
+      "metadataDigest": "sha256:89387d7ffb908aadf48e740e4968868edd6af96eb0c4a0544abbf8c970e2ddb4",
+      "payloadDigest": "sha256:ee2c7f51ad8551b6ebaaf0111b606b6bcfe8f90fc5794279a8888f652e761b98",
+      "evidenceRevision": "image-build-41015311031",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/installer-data-arch-gnome.json",
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/installer-data-arch-gnome.json",
         "fileName": "installer-data-arch-gnome.json",
-        "sizeBytes": 9679
+        "sizeBytes": 9441
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip",
-        "fileName": "arch-gnome-build-40971709885.zip",
-        "sizeBytes": 3621920498,
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip",
+        "fileName": "arch-gnome-build-41015311031.zip",
+        "sizeBytes": 3836824809,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part00",
-            "fileName": "arch-gnome-build-40971709885.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part00",
+            "fileName": "arch-gnome-build-41015311031.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:ab3181cf5e8e15b769cc96190e8cd1ba52c907b244f871f6a11f1fbeefc396ea"
+            "sha256": "sha256:04ae8928cd6730fdc88b99d15516a53701c69022aacca9803b7387257420d262"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part01",
-            "fileName": "arch-gnome-build-40971709885.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part01",
+            "fileName": "arch-gnome-build-41015311031.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:09de0fecbf079ffc0aa20f110422b77ed160c6ef3299a6eadf3fac7ae730f102"
+            "sha256": "sha256:16aaad07007e8b159dd1678b50f85c47b1f2955f4c18f03d29668dee10b92157"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part02",
-            "fileName": "arch-gnome-build-40971709885.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part02",
+            "fileName": "arch-gnome-build-41015311031.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:f7b7683064f5309c14a6db480f1f9954bb5e60297416237c2253d59cb6bd0d56"
+            "sha256": "sha256:e0a4e706d5b1367a62a7eceb6931d8280ba2a9d89c63102a682fda9eb18caee5"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part03",
-            "fileName": "arch-gnome-build-40971709885.zip.part03",
-            "sizeBytes": 400695026,
-            "sha256": "sha256:fb60b066dec08d385e25004e8c3443febe6752be86bc1c4462b87242de7254af"
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part03",
+            "fileName": "arch-gnome-build-41015311031.zip.part03",
+            "sizeBytes": 615599337,
+            "sha256": "sha256:21ce8041868580681396b67d7de22e00afd75a911850f0be7ffc866fa3846ded"
           }
         ]
       },
@@ -1502,43 +1502,43 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "9a1635086e4f1e05c08800faa29d92b1241b9f9c",
-      "metadataDigest": "sha256:64a1b872ddfb46382a2f10db146dd5bc7a1da598575c31474fd8618f2daa5363",
-      "payloadDigest": "sha256:ab001bcd29cab932c6f0821d8055231792a2adadf6bcdb19470e310645ac0c2b",
-      "evidenceRevision": "image-build-40971709885",
+      "downstreamRevision": "b4cd9ac391b5d607ed98af2076323dd4f5537a50",
+      "metadataDigest": "sha256:89387d7ffb908aadf48e740e4968868edd6af96eb0c4a0544abbf8c970e2ddb4",
+      "payloadDigest": "sha256:ee2c7f51ad8551b6ebaaf0111b606b6bcfe8f90fc5794279a8888f652e761b98",
+      "evidenceRevision": "image-build-41015311031",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/installer-data-arch-gnome.json",
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/installer-data-arch-gnome.json",
         "fileName": "installer-data-arch-gnome.json",
-        "sizeBytes": 9679
+        "sizeBytes": 9441
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip",
-        "fileName": "arch-gnome-build-40971709885.zip",
-        "sizeBytes": 3621920498,
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip",
+        "fileName": "arch-gnome-build-41015311031.zip",
+        "sizeBytes": 3836824809,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part00",
-            "fileName": "arch-gnome-build-40971709885.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part00",
+            "fileName": "arch-gnome-build-41015311031.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:ab3181cf5e8e15b769cc96190e8cd1ba52c907b244f871f6a11f1fbeefc396ea"
+            "sha256": "sha256:04ae8928cd6730fdc88b99d15516a53701c69022aacca9803b7387257420d262"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part01",
-            "fileName": "arch-gnome-build-40971709885.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part01",
+            "fileName": "arch-gnome-build-41015311031.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:09de0fecbf079ffc0aa20f110422b77ed160c6ef3299a6eadf3fac7ae730f102"
+            "sha256": "sha256:16aaad07007e8b159dd1678b50f85c47b1f2955f4c18f03d29668dee10b92157"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part02",
-            "fileName": "arch-gnome-build-40971709885.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part02",
+            "fileName": "arch-gnome-build-41015311031.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:f7b7683064f5309c14a6db480f1f9954bb5e60297416237c2253d59cb6bd0d56"
+            "sha256": "sha256:e0a4e706d5b1367a62a7eceb6931d8280ba2a9d89c63102a682fda9eb18caee5"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part03",
-            "fileName": "arch-gnome-build-40971709885.zip.part03",
-            "sizeBytes": 400695026,
-            "sha256": "sha256:fb60b066dec08d385e25004e8c3443febe6752be86bc1c4462b87242de7254af"
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part03",
+            "fileName": "arch-gnome-build-41015311031.zip.part03",
+            "sizeBytes": 615599337,
+            "sha256": "sha256:21ce8041868580681396b67d7de22e00afd75a911850f0be7ffc866fa3846ded"
           }
         ]
       },
@@ -1550,43 +1550,43 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "9a1635086e4f1e05c08800faa29d92b1241b9f9c",
-      "metadataDigest": "sha256:64a1b872ddfb46382a2f10db146dd5bc7a1da598575c31474fd8618f2daa5363",
-      "payloadDigest": "sha256:ab001bcd29cab932c6f0821d8055231792a2adadf6bcdb19470e310645ac0c2b",
-      "evidenceRevision": "image-build-40971709885",
+      "downstreamRevision": "b4cd9ac391b5d607ed98af2076323dd4f5537a50",
+      "metadataDigest": "sha256:89387d7ffb908aadf48e740e4968868edd6af96eb0c4a0544abbf8c970e2ddb4",
+      "payloadDigest": "sha256:ee2c7f51ad8551b6ebaaf0111b606b6bcfe8f90fc5794279a8888f652e761b98",
+      "evidenceRevision": "image-build-41015311031",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/installer-data-arch-gnome.json",
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/installer-data-arch-gnome.json",
         "fileName": "installer-data-arch-gnome.json",
-        "sizeBytes": 9679
+        "sizeBytes": 9441
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip",
-        "fileName": "arch-gnome-build-40971709885.zip",
-        "sizeBytes": 3621920498,
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip",
+        "fileName": "arch-gnome-build-41015311031.zip",
+        "sizeBytes": 3836824809,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part00",
-            "fileName": "arch-gnome-build-40971709885.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part00",
+            "fileName": "arch-gnome-build-41015311031.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:ab3181cf5e8e15b769cc96190e8cd1ba52c907b244f871f6a11f1fbeefc396ea"
+            "sha256": "sha256:04ae8928cd6730fdc88b99d15516a53701c69022aacca9803b7387257420d262"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part01",
-            "fileName": "arch-gnome-build-40971709885.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part01",
+            "fileName": "arch-gnome-build-41015311031.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:09de0fecbf079ffc0aa20f110422b77ed160c6ef3299a6eadf3fac7ae730f102"
+            "sha256": "sha256:16aaad07007e8b159dd1678b50f85c47b1f2955f4c18f03d29668dee10b92157"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part02",
-            "fileName": "arch-gnome-build-40971709885.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part02",
+            "fileName": "arch-gnome-build-41015311031.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:f7b7683064f5309c14a6db480f1f9954bb5e60297416237c2253d59cb6bd0d56"
+            "sha256": "sha256:e0a4e706d5b1367a62a7eceb6931d8280ba2a9d89c63102a682fda9eb18caee5"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part03",
-            "fileName": "arch-gnome-build-40971709885.zip.part03",
-            "sizeBytes": 400695026,
-            "sha256": "sha256:fb60b066dec08d385e25004e8c3443febe6752be86bc1c4462b87242de7254af"
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part03",
+            "fileName": "arch-gnome-build-41015311031.zip.part03",
+            "sizeBytes": 615599337,
+            "sha256": "sha256:21ce8041868580681396b67d7de22e00afd75a911850f0be7ffc866fa3846ded"
           }
         ]
       },
@@ -1598,43 +1598,43 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "9a1635086e4f1e05c08800faa29d92b1241b9f9c",
-      "metadataDigest": "sha256:64a1b872ddfb46382a2f10db146dd5bc7a1da598575c31474fd8618f2daa5363",
-      "payloadDigest": "sha256:ab001bcd29cab932c6f0821d8055231792a2adadf6bcdb19470e310645ac0c2b",
-      "evidenceRevision": "image-build-40971709885",
+      "downstreamRevision": "b4cd9ac391b5d607ed98af2076323dd4f5537a50",
+      "metadataDigest": "sha256:89387d7ffb908aadf48e740e4968868edd6af96eb0c4a0544abbf8c970e2ddb4",
+      "payloadDigest": "sha256:ee2c7f51ad8551b6ebaaf0111b606b6bcfe8f90fc5794279a8888f652e761b98",
+      "evidenceRevision": "image-build-41015311031",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/installer-data-arch-gnome.json",
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/installer-data-arch-gnome.json",
         "fileName": "installer-data-arch-gnome.json",
-        "sizeBytes": 9679
+        "sizeBytes": 9441
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip",
-        "fileName": "arch-gnome-build-40971709885.zip",
-        "sizeBytes": 3621920498,
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip",
+        "fileName": "arch-gnome-build-41015311031.zip",
+        "sizeBytes": 3836824809,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part00",
-            "fileName": "arch-gnome-build-40971709885.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part00",
+            "fileName": "arch-gnome-build-41015311031.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:ab3181cf5e8e15b769cc96190e8cd1ba52c907b244f871f6a11f1fbeefc396ea"
+            "sha256": "sha256:04ae8928cd6730fdc88b99d15516a53701c69022aacca9803b7387257420d262"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part01",
-            "fileName": "arch-gnome-build-40971709885.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part01",
+            "fileName": "arch-gnome-build-41015311031.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:09de0fecbf079ffc0aa20f110422b77ed160c6ef3299a6eadf3fac7ae730f102"
+            "sha256": "sha256:16aaad07007e8b159dd1678b50f85c47b1f2955f4c18f03d29668dee10b92157"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part02",
-            "fileName": "arch-gnome-build-40971709885.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part02",
+            "fileName": "arch-gnome-build-41015311031.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:f7b7683064f5309c14a6db480f1f9954bb5e60297416237c2253d59cb6bd0d56"
+            "sha256": "sha256:e0a4e706d5b1367a62a7eceb6931d8280ba2a9d89c63102a682fda9eb18caee5"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part03",
-            "fileName": "arch-gnome-build-40971709885.zip.part03",
-            "sizeBytes": 400695026,
-            "sha256": "sha256:fb60b066dec08d385e25004e8c3443febe6752be86bc1c4462b87242de7254af"
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part03",
+            "fileName": "arch-gnome-build-41015311031.zip.part03",
+            "sizeBytes": 615599337,
+            "sha256": "sha256:21ce8041868580681396b67d7de22e00afd75a911850f0be7ffc866fa3846ded"
           }
         ]
       },
@@ -1646,43 +1646,43 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "9a1635086e4f1e05c08800faa29d92b1241b9f9c",
-      "metadataDigest": "sha256:64a1b872ddfb46382a2f10db146dd5bc7a1da598575c31474fd8618f2daa5363",
-      "payloadDigest": "sha256:ab001bcd29cab932c6f0821d8055231792a2adadf6bcdb19470e310645ac0c2b",
-      "evidenceRevision": "image-build-40971709885",
+      "downstreamRevision": "b4cd9ac391b5d607ed98af2076323dd4f5537a50",
+      "metadataDigest": "sha256:89387d7ffb908aadf48e740e4968868edd6af96eb0c4a0544abbf8c970e2ddb4",
+      "payloadDigest": "sha256:ee2c7f51ad8551b6ebaaf0111b606b6bcfe8f90fc5794279a8888f652e761b98",
+      "evidenceRevision": "image-build-41015311031",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/installer-data-arch-gnome.json",
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/installer-data-arch-gnome.json",
         "fileName": "installer-data-arch-gnome.json",
-        "sizeBytes": 9679
+        "sizeBytes": 9441
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip",
-        "fileName": "arch-gnome-build-40971709885.zip",
-        "sizeBytes": 3621920498,
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip",
+        "fileName": "arch-gnome-build-41015311031.zip",
+        "sizeBytes": 3836824809,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part00",
-            "fileName": "arch-gnome-build-40971709885.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part00",
+            "fileName": "arch-gnome-build-41015311031.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:ab3181cf5e8e15b769cc96190e8cd1ba52c907b244f871f6a11f1fbeefc396ea"
+            "sha256": "sha256:04ae8928cd6730fdc88b99d15516a53701c69022aacca9803b7387257420d262"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part01",
-            "fileName": "arch-gnome-build-40971709885.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part01",
+            "fileName": "arch-gnome-build-41015311031.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:09de0fecbf079ffc0aa20f110422b77ed160c6ef3299a6eadf3fac7ae730f102"
+            "sha256": "sha256:16aaad07007e8b159dd1678b50f85c47b1f2955f4c18f03d29668dee10b92157"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part02",
-            "fileName": "arch-gnome-build-40971709885.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part02",
+            "fileName": "arch-gnome-build-41015311031.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:f7b7683064f5309c14a6db480f1f9954bb5e60297416237c2253d59cb6bd0d56"
+            "sha256": "sha256:e0a4e706d5b1367a62a7eceb6931d8280ba2a9d89c63102a682fda9eb18caee5"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-40971709885/arch-gnome-build-40971709885.zip.part03",
-            "fileName": "arch-gnome-build-40971709885.zip.part03",
-            "sizeBytes": 400695026,
-            "sha256": "sha256:fb60b066dec08d385e25004e8c3443febe6752be86bc1c4462b87242de7254af"
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-41015311031/arch-gnome-build-41015311031.zip.part03",
+            "fileName": "arch-gnome-build-41015311031.zip.part03",
+            "sizeBytes": 615599337,
+            "sha256": "sha256:21ce8041868580681396b67d7de22e00afd75a911850f0be7ffc866fa3846ded"
           }
         ]
       },
