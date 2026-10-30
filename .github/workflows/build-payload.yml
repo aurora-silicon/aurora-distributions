@@ -247,5 +247,5 @@ jobs:
           TAG: ${{ needs.payload.outputs.tag }}
         run: |
           gh release upload "$TAG" SHA256SUMS --repo "$GITHUB_REPOSITORY"
-          notes='Signed development installer delivery for every supported Mac, the MacBook Neo included. The schema-5 catalog binds the complete payload, parts and metadata for the installer's built-in native engine, and every asset carries a GitHub build provenance attestation (SHA256SUMS). No per-Mac firmware, calibration or radio policy is included; the installer derives them on the Mac. Image assembly and physical installation qualification are recorded separately.'
+          notes='Signed development installer delivery for every supported Mac, the MacBook Neo included. The schema-5 catalog binds the complete payload, parts and metadata for the installer’s built-in native engine, and every asset carries a GitHub build provenance attestation (SHA256SUMS). No per-Mac firmware, calibration or radio policy is included; the installer derives them on the Mac. Image assembly and physical installation qualification are recorded separately.'
           gh release edit "$TAG" --repo "$GITHUB_REPOSITORY" --draft=false --prerelease --notes "$notes"
