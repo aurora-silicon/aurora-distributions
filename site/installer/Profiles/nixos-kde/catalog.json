@@ -1,11 +1,11 @@
 {
   "schemaVersion": 5,
-  "sequence": 1793349976,
-  "issuedAt": "2026-10-30T08:46:16Z",
+  "sequence": 1793360028,
+  "issuedAt": "2026-10-30T11:33:48Z",
   "installer": {
     "minimumVersion": "0.1.0",
     "latestVersion": "0.1.0",
-    "downloadURL": "https://github.com/aurora-silicon/aurora-installer/releases/tag/v0.1.0-alpha.12"
+    "downloadURL": "https://github.com/aurora-silicon/aurora-installer/releases/tag/v0.1.0-alpha.3"
   },
   "models": [
     {
@@ -14,49 +14,49 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "9a1635086e4f1e05c08800faa29d92b1241b9f9c",
-      "metadataDigest": "sha256:e6a07fb51b1b042c83eb23d01c7efc48c621c420a5e1ebce3cf26f676bf22bbc",
-      "payloadDigest": "sha256:b92cc3548635ac92bdb36d770e6e3fb31cb44969cadfb0402fc43842704e8fcc",
-      "evidenceRevision": "image-build-40970707573",
+      "downstreamRevision": "b4cd9ac391b5d607ed98af2076323dd4f5537a50",
+      "metadataDigest": "sha256:d2773e7221e6588ed749358f4555010ace0d897b692065beb719b4e00d31b652",
+      "payloadDigest": "sha256:80a6d4aa177ebe288a8122c5fc11d403b3768cff2e32ca000939c426241b1c7d",
+      "evidenceRevision": "image-build-41043824619",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/installer-data-nixos-kde.json",
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/installer-data-nixos-kde.json",
         "fileName": "installer-data-nixos-kde.json",
-        "sizeBytes": 9675
+        "sizeBytes": 9437
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip",
-        "fileName": "nixos-kde-build-40970707573.zip",
-        "sizeBytes": 5061828639,
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip",
+        "fileName": "nixos-kde-build-41043824619.zip",
+        "sizeBytes": 5179368363,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part00",
-            "fileName": "nixos-kde-build-40970707573.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part00",
+            "fileName": "nixos-kde-build-41043824619.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:98b5a76a6ae89ef8ba10a57939f5cf649e33b03f2f7fca1dca2d379945e2db88"
+            "sha256": "sha256:3409405103ca95bc8264850e40e2f4fb1f7cf24b9192dc23ec6ae6457506020e"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part01",
-            "fileName": "nixos-kde-build-40970707573.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part01",
+            "fileName": "nixos-kde-build-41043824619.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:d70f97a472692ded3e6cdea65e274984c71d84a3c36a7f4463d1e14d12777366"
+            "sha256": "sha256:0672a9cd922a0f46ae49809f91300e77856bf8f4a4f41c9d2e73d45d5ce10174"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part02",
-            "fileName": "nixos-kde-build-40970707573.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part02",
+            "fileName": "nixos-kde-build-41043824619.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:27f40ac0156d85072538c2ed3a9a1ed37abdaddd895f27ba55cf964c0ec64db6"
+            "sha256": "sha256:ab1e0d4d0a51528f5d9fd37d82d9ec68f0b4af019445cb84612e4b1f3c114164"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part03",
-            "fileName": "nixos-kde-build-40970707573.zip.part03",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part03",
+            "fileName": "nixos-kde-build-41043824619.zip.part03",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:848920a3c1f4fc8278161bbfeaead14b57c1aaf2a8d7d36b31f8bd35f059f826"
+            "sha256": "sha256:e0c7b18155c1658db63fa05714ce3e11d69739e84ec5b405fe585a50db2c64bc"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part04",
-            "fileName": "nixos-kde-build-40970707573.zip.part04",
-            "sizeBytes": 766861343,
-            "sha256": "sha256:62051aca92b886a934d808a296256157a4c9b347ab9ec4ec1def9c50d3f1d2ba"
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part04",
+            "fileName": "nixos-kde-build-41043824619.zip.part04",
+            "sizeBytes": 884401067,
+            "sha256": "sha256:141c66b4f6ad9a356001e7ce2359c47ecd4d7c1f15e0ec616da39f4a68370be8"
           }
         ]
       },
@@ -68,49 +68,49 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "9a1635086e4f1e05c08800faa29d92b1241b9f9c",
-      "metadataDigest": "sha256:e6a07fb51b1b042c83eb23d01c7efc48c621c420a5e1ebce3cf26f676bf22bbc",
-      "payloadDigest": "sha256:b92cc3548635ac92bdb36d770e6e3fb31cb44969cadfb0402fc43842704e8fcc",
-      "evidenceRevision": "image-build-40970707573",
+      "downstreamRevision": "b4cd9ac391b5d607ed98af2076323dd4f5537a50",
+      "metadataDigest": "sha256:d2773e7221e6588ed749358f4555010ace0d897b692065beb719b4e00d31b652",
+      "payloadDigest": "sha256:80a6d4aa177ebe288a8122c5fc11d403b3768cff2e32ca000939c426241b1c7d",
+      "evidenceRevision": "image-build-41043824619",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/installer-data-nixos-kde.json",
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/installer-data-nixos-kde.json",
         "fileName": "installer-data-nixos-kde.json",
-        "sizeBytes": 9675
+        "sizeBytes": 9437
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip",
-        "fileName": "nixos-kde-build-40970707573.zip",
-        "sizeBytes": 5061828639,
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip",
+        "fileName": "nixos-kde-build-41043824619.zip",
+        "sizeBytes": 5179368363,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part00",
-            "fileName": "nixos-kde-build-40970707573.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part00",
+            "fileName": "nixos-kde-build-41043824619.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:98b5a76a6ae89ef8ba10a57939f5cf649e33b03f2f7fca1dca2d379945e2db88"
+            "sha256": "sha256:3409405103ca95bc8264850e40e2f4fb1f7cf24b9192dc23ec6ae6457506020e"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part01",
-            "fileName": "nixos-kde-build-40970707573.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part01",
+            "fileName": "nixos-kde-build-41043824619.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:d70f97a472692ded3e6cdea65e274984c71d84a3c36a7f4463d1e14d12777366"
+            "sha256": "sha256:0672a9cd922a0f46ae49809f91300e77856bf8f4a4f41c9d2e73d45d5ce10174"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part02",
-            "fileName": "nixos-kde-build-40970707573.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part02",
+            "fileName": "nixos-kde-build-41043824619.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:27f40ac0156d85072538c2ed3a9a1ed37abdaddd895f27ba55cf964c0ec64db6"
+            "sha256": "sha256:ab1e0d4d0a51528f5d9fd37d82d9ec68f0b4af019445cb84612e4b1f3c114164"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part03",
-            "fileName": "nixos-kde-build-40970707573.zip.part03",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part03",
+            "fileName": "nixos-kde-build-41043824619.zip.part03",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:848920a3c1f4fc8278161bbfeaead14b57c1aaf2a8d7d36b31f8bd35f059f826"
+            "sha256": "sha256:e0c7b18155c1658db63fa05714ce3e11d69739e84ec5b405fe585a50db2c64bc"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part04",
-            "fileName": "nixos-kde-build-40970707573.zip.part04",
-            "sizeBytes": 766861343,
-            "sha256": "sha256:62051aca92b886a934d808a296256157a4c9b347ab9ec4ec1def9c50d3f1d2ba"
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part04",
+            "fileName": "nixos-kde-build-41043824619.zip.part04",
+            "sizeBytes": 884401067,
+            "sha256": "sha256:141c66b4f6ad9a356001e7ce2359c47ecd4d7c1f15e0ec616da39f4a68370be8"
           }
         ]
       },
@@ -122,49 +122,49 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "9a1635086e4f1e05c08800faa29d92b1241b9f9c",
-      "metadataDigest": "sha256:e6a07fb51b1b042c83eb23d01c7efc48c621c420a5e1ebce3cf26f676bf22bbc",
-      "payloadDigest": "sha256:b92cc3548635ac92bdb36d770e6e3fb31cb44969cadfb0402fc43842704e8fcc",
-      "evidenceRevision": "image-build-40970707573",
+      "downstreamRevision": "b4cd9ac391b5d607ed98af2076323dd4f5537a50",
+      "metadataDigest": "sha256:d2773e7221e6588ed749358f4555010ace0d897b692065beb719b4e00d31b652",
+      "payloadDigest": "sha256:80a6d4aa177ebe288a8122c5fc11d403b3768cff2e32ca000939c426241b1c7d",
+      "evidenceRevision": "image-build-41043824619",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/installer-data-nixos-kde.json",
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/installer-data-nixos-kde.json",
         "fileName": "installer-data-nixos-kde.json",
-        "sizeBytes": 9675
+        "sizeBytes": 9437
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip",
-        "fileName": "nixos-kde-build-40970707573.zip",
-        "sizeBytes": 5061828639,
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip",
+        "fileName": "nixos-kde-build-41043824619.zip",
+        "sizeBytes": 5179368363,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part00",
-            "fileName": "nixos-kde-build-40970707573.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part00",
+            "fileName": "nixos-kde-build-41043824619.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:98b5a76a6ae89ef8ba10a57939f5cf649e33b03f2f7fca1dca2d379945e2db88"
+            "sha256": "sha256:3409405103ca95bc8264850e40e2f4fb1f7cf24b9192dc23ec6ae6457506020e"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part01",
-            "fileName": "nixos-kde-build-40970707573.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part01",
+            "fileName": "nixos-kde-build-41043824619.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:d70f97a472692ded3e6cdea65e274984c71d84a3c36a7f4463d1e14d12777366"
+            "sha256": "sha256:0672a9cd922a0f46ae49809f91300e77856bf8f4a4f41c9d2e73d45d5ce10174"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part02",
-            "fileName": "nixos-kde-build-40970707573.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part02",
+            "fileName": "nixos-kde-build-41043824619.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:27f40ac0156d85072538c2ed3a9a1ed37abdaddd895f27ba55cf964c0ec64db6"
+            "sha256": "sha256:ab1e0d4d0a51528f5d9fd37d82d9ec68f0b4af019445cb84612e4b1f3c114164"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part03",
-            "fileName": "nixos-kde-build-40970707573.zip.part03",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part03",
+            "fileName": "nixos-kde-build-41043824619.zip.part03",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:848920a3c1f4fc8278161bbfeaead14b57c1aaf2a8d7d36b31f8bd35f059f826"
+            "sha256": "sha256:e0c7b18155c1658db63fa05714ce3e11d69739e84ec5b405fe585a50db2c64bc"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part04",
-            "fileName": "nixos-kde-build-40970707573.zip.part04",
-            "sizeBytes": 766861343,
-            "sha256": "sha256:62051aca92b886a934d808a296256157a4c9b347ab9ec4ec1def9c50d3f1d2ba"
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part04",
+            "fileName": "nixos-kde-build-41043824619.zip.part04",
+            "sizeBytes": 884401067,
+            "sha256": "sha256:141c66b4f6ad9a356001e7ce2359c47ecd4d7c1f15e0ec616da39f4a68370be8"
           }
         ]
       },
@@ -176,49 +176,49 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "9a1635086e4f1e05c08800faa29d92b1241b9f9c",
-      "metadataDigest": "sha256:e6a07fb51b1b042c83eb23d01c7efc48c621c420a5e1ebce3cf26f676bf22bbc",
-      "payloadDigest": "sha256:b92cc3548635ac92bdb36d770e6e3fb31cb44969cadfb0402fc43842704e8fcc",
-      "evidenceRevision": "image-build-40970707573",
+      "downstreamRevision": "b4cd9ac391b5d607ed98af2076323dd4f5537a50",
+      "metadataDigest": "sha256:d2773e7221e6588ed749358f4555010ace0d897b692065beb719b4e00d31b652",
+      "payloadDigest": "sha256:80a6d4aa177ebe288a8122c5fc11d403b3768cff2e32ca000939c426241b1c7d",
+      "evidenceRevision": "image-build-41043824619",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/installer-data-nixos-kde.json",
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/installer-data-nixos-kde.json",
         "fileName": "installer-data-nixos-kde.json",
-        "sizeBytes": 9675
+        "sizeBytes": 9437
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip",
-        "fileName": "nixos-kde-build-40970707573.zip",
-        "sizeBytes": 5061828639,
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip",
+        "fileName": "nixos-kde-build-41043824619.zip",
+        "sizeBytes": 5179368363,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part00",
-            "fileName": "nixos-kde-build-40970707573.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part00",
+            "fileName": "nixos-kde-build-41043824619.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:98b5a76a6ae89ef8ba10a57939f5cf649e33b03f2f7fca1dca2d379945e2db88"
+            "sha256": "sha256:3409405103ca95bc8264850e40e2f4fb1f7cf24b9192dc23ec6ae6457506020e"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part01",
-            "fileName": "nixos-kde-build-40970707573.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part01",
+            "fileName": "nixos-kde-build-41043824619.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:d70f97a472692ded3e6cdea65e274984c71d84a3c36a7f4463d1e14d12777366"
+            "sha256": "sha256:0672a9cd922a0f46ae49809f91300e77856bf8f4a4f41c9d2e73d45d5ce10174"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part02",
-            "fileName": "nixos-kde-build-40970707573.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part02",
+            "fileName": "nixos-kde-build-41043824619.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:27f40ac0156d85072538c2ed3a9a1ed37abdaddd895f27ba55cf964c0ec64db6"
+            "sha256": "sha256:ab1e0d4d0a51528f5d9fd37d82d9ec68f0b4af019445cb84612e4b1f3c114164"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part03",
-            "fileName": "nixos-kde-build-40970707573.zip.part03",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part03",
+            "fileName": "nixos-kde-build-41043824619.zip.part03",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:848920a3c1f4fc8278161bbfeaead14b57c1aaf2a8d7d36b31f8bd35f059f826"
+            "sha256": "sha256:e0c7b18155c1658db63fa05714ce3e11d69739e84ec5b405fe585a50db2c64bc"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part04",
-            "fileName": "nixos-kde-build-40970707573.zip.part04",
-            "sizeBytes": 766861343,
-            "sha256": "sha256:62051aca92b886a934d808a296256157a4c9b347ab9ec4ec1def9c50d3f1d2ba"
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part04",
+            "fileName": "nixos-kde-build-41043824619.zip.part04",
+            "sizeBytes": 884401067,
+            "sha256": "sha256:141c66b4f6ad9a356001e7ce2359c47ecd4d7c1f15e0ec616da39f4a68370be8"
           }
         ]
       },
@@ -230,49 +230,49 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "9a1635086e4f1e05c08800faa29d92b1241b9f9c",
-      "metadataDigest": "sha256:e6a07fb51b1b042c83eb23d01c7efc48c621c420a5e1ebce3cf26f676bf22bbc",
-      "payloadDigest": "sha256:b92cc3548635ac92bdb36d770e6e3fb31cb44969cadfb0402fc43842704e8fcc",
-      "evidenceRevision": "image-build-40970707573",
+      "downstreamRevision": "b4cd9ac391b5d607ed98af2076323dd4f5537a50",
+      "metadataDigest": "sha256:d2773e7221e6588ed749358f4555010ace0d897b692065beb719b4e00d31b652",
+      "payloadDigest": "sha256:80a6d4aa177ebe288a8122c5fc11d403b3768cff2e32ca000939c426241b1c7d",
+      "evidenceRevision": "image-build-41043824619",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/installer-data-nixos-kde.json",
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/installer-data-nixos-kde.json",
         "fileName": "installer-data-nixos-kde.json",
-        "sizeBytes": 9675
+        "sizeBytes": 9437
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip",
-        "fileName": "nixos-kde-build-40970707573.zip",
-        "sizeBytes": 5061828639,
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip",
+        "fileName": "nixos-kde-build-41043824619.zip",
+        "sizeBytes": 5179368363,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part00",
-            "fileName": "nixos-kde-build-40970707573.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part00",
+            "fileName": "nixos-kde-build-41043824619.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:98b5a76a6ae89ef8ba10a57939f5cf649e33b03f2f7fca1dca2d379945e2db88"
+            "sha256": "sha256:3409405103ca95bc8264850e40e2f4fb1f7cf24b9192dc23ec6ae6457506020e"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part01",
-            "fileName": "nixos-kde-build-40970707573.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part01",
+            "fileName": "nixos-kde-build-41043824619.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:d70f97a472692ded3e6cdea65e274984c71d84a3c36a7f4463d1e14d12777366"
+            "sha256": "sha256:0672a9cd922a0f46ae49809f91300e77856bf8f4a4f41c9d2e73d45d5ce10174"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part02",
-            "fileName": "nixos-kde-build-40970707573.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part02",
+            "fileName": "nixos-kde-build-41043824619.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:27f40ac0156d85072538c2ed3a9a1ed37abdaddd895f27ba55cf964c0ec64db6"
+            "sha256": "sha256:ab1e0d4d0a51528f5d9fd37d82d9ec68f0b4af019445cb84612e4b1f3c114164"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part03",
-            "fileName": "nixos-kde-build-40970707573.zip.part03",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part03",
+            "fileName": "nixos-kde-build-41043824619.zip.part03",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:848920a3c1f4fc8278161bbfeaead14b57c1aaf2a8d7d36b31f8bd35f059f826"
+            "sha256": "sha256:e0c7b18155c1658db63fa05714ce3e11d69739e84ec5b405fe585a50db2c64bc"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part04",
-            "fileName": "nixos-kde-build-40970707573.zip.part04",
-            "sizeBytes": 766861343,
-            "sha256": "sha256:62051aca92b886a934d808a296256157a4c9b347ab9ec4ec1def9c50d3f1d2ba"
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part04",
+            "fileName": "nixos-kde-build-41043824619.zip.part04",
+            "sizeBytes": 884401067,
+            "sha256": "sha256:141c66b4f6ad9a356001e7ce2359c47ecd4d7c1f15e0ec616da39f4a68370be8"
           }
         ]
       },
@@ -284,49 +284,49 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "9a1635086e4f1e05c08800faa29d92b1241b9f9c",
-      "metadataDigest": "sha256:e6a07fb51b1b042c83eb23d01c7efc48c621c420a5e1ebce3cf26f676bf22bbc",
-      "payloadDigest": "sha256:b92cc3548635ac92bdb36d770e6e3fb31cb44969cadfb0402fc43842704e8fcc",
-      "evidenceRevision": "image-build-40970707573",
+      "downstreamRevision": "b4cd9ac391b5d607ed98af2076323dd4f5537a50",
+      "metadataDigest": "sha256:d2773e7221e6588ed749358f4555010ace0d897b692065beb719b4e00d31b652",
+      "payloadDigest": "sha256:80a6d4aa177ebe288a8122c5fc11d403b3768cff2e32ca000939c426241b1c7d",
+      "evidenceRevision": "image-build-41043824619",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/installer-data-nixos-kde.json",
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/installer-data-nixos-kde.json",
         "fileName": "installer-data-nixos-kde.json",
-        "sizeBytes": 9675
+        "sizeBytes": 9437
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip",
-        "fileName": "nixos-kde-build-40970707573.zip",
-        "sizeBytes": 5061828639,
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip",
+        "fileName": "nixos-kde-build-41043824619.zip",
+        "sizeBytes": 5179368363,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part00",
-            "fileName": "nixos-kde-build-40970707573.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part00",
+            "fileName": "nixos-kde-build-41043824619.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:98b5a76a6ae89ef8ba10a57939f5cf649e33b03f2f7fca1dca2d379945e2db88"
+            "sha256": "sha256:3409405103ca95bc8264850e40e2f4fb1f7cf24b9192dc23ec6ae6457506020e"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part01",
-            "fileName": "nixos-kde-build-40970707573.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part01",
+            "fileName": "nixos-kde-build-41043824619.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:d70f97a472692ded3e6cdea65e274984c71d84a3c36a7f4463d1e14d12777366"
+            "sha256": "sha256:0672a9cd922a0f46ae49809f91300e77856bf8f4a4f41c9d2e73d45d5ce10174"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part02",
-            "fileName": "nixos-kde-build-40970707573.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part02",
+            "fileName": "nixos-kde-build-41043824619.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:27f40ac0156d85072538c2ed3a9a1ed37abdaddd895f27ba55cf964c0ec64db6"
+            "sha256": "sha256:ab1e0d4d0a51528f5d9fd37d82d9ec68f0b4af019445cb84612e4b1f3c114164"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part03",
-            "fileName": "nixos-kde-build-40970707573.zip.part03",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part03",
+            "fileName": "nixos-kde-build-41043824619.zip.part03",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:848920a3c1f4fc8278161bbfeaead14b57c1aaf2a8d7d36b31f8bd35f059f826"
+            "sha256": "sha256:e0c7b18155c1658db63fa05714ce3e11d69739e84ec5b405fe585a50db2c64bc"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part04",
-            "fileName": "nixos-kde-build-40970707573.zip.part04",
-            "sizeBytes": 766861343,
-            "sha256": "sha256:62051aca92b886a934d808a296256157a4c9b347ab9ec4ec1def9c50d3f1d2ba"
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part04",
+            "fileName": "nixos-kde-build-41043824619.zip.part04",
+            "sizeBytes": 884401067,
+            "sha256": "sha256:141c66b4f6ad9a356001e7ce2359c47ecd4d7c1f15e0ec616da39f4a68370be8"
           }
         ]
       },
@@ -338,49 +338,49 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "9a1635086e4f1e05c08800faa29d92b1241b9f9c",
-      "metadataDigest": "sha256:e6a07fb51b1b042c83eb23d01c7efc48c621c420a5e1ebce3cf26f676bf22bbc",
-      "payloadDigest": "sha256:b92cc3548635ac92bdb36d770e6e3fb31cb44969cadfb0402fc43842704e8fcc",
-      "evidenceRevision": "image-build-40970707573",
+      "downstreamRevision": "b4cd9ac391b5d607ed98af2076323dd4f5537a50",
+      "metadataDigest": "sha256:d2773e7221e6588ed749358f4555010ace0d897b692065beb719b4e00d31b652",
+      "payloadDigest": "sha256:80a6d4aa177ebe288a8122c5fc11d403b3768cff2e32ca000939c426241b1c7d",
+      "evidenceRevision": "image-build-41043824619",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/installer-data-nixos-kde.json",
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/installer-data-nixos-kde.json",
         "fileName": "installer-data-nixos-kde.json",
-        "sizeBytes": 9675
+        "sizeBytes": 9437
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip",
-        "fileName": "nixos-kde-build-40970707573.zip",
-        "sizeBytes": 5061828639,
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip",
+        "fileName": "nixos-kde-build-41043824619.zip",
+        "sizeBytes": 5179368363,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part00",
-            "fileName": "nixos-kde-build-40970707573.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part00",
+            "fileName": "nixos-kde-build-41043824619.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:98b5a76a6ae89ef8ba10a57939f5cf649e33b03f2f7fca1dca2d379945e2db88"
+            "sha256": "sha256:3409405103ca95bc8264850e40e2f4fb1f7cf24b9192dc23ec6ae6457506020e"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part01",
-            "fileName": "nixos-kde-build-40970707573.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part01",
+            "fileName": "nixos-kde-build-41043824619.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:d70f97a472692ded3e6cdea65e274984c71d84a3c36a7f4463d1e14d12777366"
+            "sha256": "sha256:0672a9cd922a0f46ae49809f91300e77856bf8f4a4f41c9d2e73d45d5ce10174"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part02",
-            "fileName": "nixos-kde-build-40970707573.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part02",
+            "fileName": "nixos-kde-build-41043824619.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:27f40ac0156d85072538c2ed3a9a1ed37abdaddd895f27ba55cf964c0ec64db6"
+            "sha256": "sha256:ab1e0d4d0a51528f5d9fd37d82d9ec68f0b4af019445cb84612e4b1f3c114164"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part03",
-            "fileName": "nixos-kde-build-40970707573.zip.part03",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part03",
+            "fileName": "nixos-kde-build-41043824619.zip.part03",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:848920a3c1f4fc8278161bbfeaead14b57c1aaf2a8d7d36b31f8bd35f059f826"
+            "sha256": "sha256:e0c7b18155c1658db63fa05714ce3e11d69739e84ec5b405fe585a50db2c64bc"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part04",
-            "fileName": "nixos-kde-build-40970707573.zip.part04",
-            "sizeBytes": 766861343,
-            "sha256": "sha256:62051aca92b886a934d808a296256157a4c9b347ab9ec4ec1def9c50d3f1d2ba"
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part04",
+            "fileName": "nixos-kde-build-41043824619.zip.part04",
+            "sizeBytes": 884401067,
+            "sha256": "sha256:141c66b4f6ad9a356001e7ce2359c47ecd4d7c1f15e0ec616da39f4a68370be8"
           }
         ]
       },
@@ -392,49 +392,49 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "9a1635086e4f1e05c08800faa29d92b1241b9f9c",
-      "metadataDigest": "sha256:e6a07fb51b1b042c83eb23d01c7efc48c621c420a5e1ebce3cf26f676bf22bbc",
-      "payloadDigest": "sha256:b92cc3548635ac92bdb36d770e6e3fb31cb44969cadfb0402fc43842704e8fcc",
-      "evidenceRevision": "image-build-40970707573",
+      "downstreamRevision": "b4cd9ac391b5d607ed98af2076323dd4f5537a50",
+      "metadataDigest": "sha256:d2773e7221e6588ed749358f4555010ace0d897b692065beb719b4e00d31b652",
+      "payloadDigest": "sha256:80a6d4aa177ebe288a8122c5fc11d403b3768cff2e32ca000939c426241b1c7d",
+      "evidenceRevision": "image-build-41043824619",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/installer-data-nixos-kde.json",
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/installer-data-nixos-kde.json",
         "fileName": "installer-data-nixos-kde.json",
-        "sizeBytes": 9675
+        "sizeBytes": 9437
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip",
-        "fileName": "nixos-kde-build-40970707573.zip",
-        "sizeBytes": 5061828639,
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip",
+        "fileName": "nixos-kde-build-41043824619.zip",
+        "sizeBytes": 5179368363,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part00",
-            "fileName": "nixos-kde-build-40970707573.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part00",
+            "fileName": "nixos-kde-build-41043824619.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:98b5a76a6ae89ef8ba10a57939f5cf649e33b03f2f7fca1dca2d379945e2db88"
+            "sha256": "sha256:3409405103ca95bc8264850e40e2f4fb1f7cf24b9192dc23ec6ae6457506020e"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part01",
-            "fileName": "nixos-kde-build-40970707573.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part01",
+            "fileName": "nixos-kde-build-41043824619.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:d70f97a472692ded3e6cdea65e274984c71d84a3c36a7f4463d1e14d12777366"
+            "sha256": "sha256:0672a9cd922a0f46ae49809f91300e77856bf8f4a4f41c9d2e73d45d5ce10174"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part02",
-            "fileName": "nixos-kde-build-40970707573.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part02",
+            "fileName": "nixos-kde-build-41043824619.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:27f40ac0156d85072538c2ed3a9a1ed37abdaddd895f27ba55cf964c0ec64db6"
+            "sha256": "sha256:ab1e0d4d0a51528f5d9fd37d82d9ec68f0b4af019445cb84612e4b1f3c114164"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part03",
-            "fileName": "nixos-kde-build-40970707573.zip.part03",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part03",
+            "fileName": "nixos-kde-build-41043824619.zip.part03",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:848920a3c1f4fc8278161bbfeaead14b57c1aaf2a8d7d36b31f8bd35f059f826"
+            "sha256": "sha256:e0c7b18155c1658db63fa05714ce3e11d69739e84ec5b405fe585a50db2c64bc"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part04",
-            "fileName": "nixos-kde-build-40970707573.zip.part04",
-            "sizeBytes": 766861343,
-            "sha256": "sha256:62051aca92b886a934d808a296256157a4c9b347ab9ec4ec1def9c50d3f1d2ba"
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part04",
+            "fileName": "nixos-kde-build-41043824619.zip.part04",
+            "sizeBytes": 884401067,
+            "sha256": "sha256:141c66b4f6ad9a356001e7ce2359c47ecd4d7c1f15e0ec616da39f4a68370be8"
           }
         ]
       },
@@ -446,49 +446,49 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "9a1635086e4f1e05c08800faa29d92b1241b9f9c",
-      "metadataDigest": "sha256:e6a07fb51b1b042c83eb23d01c7efc48c621c420a5e1ebce3cf26f676bf22bbc",
-      "payloadDigest": "sha256:b92cc3548635ac92bdb36d770e6e3fb31cb44969cadfb0402fc43842704e8fcc",
-      "evidenceRevision": "image-build-40970707573",
+      "downstreamRevision": "b4cd9ac391b5d607ed98af2076323dd4f5537a50",
+      "metadataDigest": "sha256:d2773e7221e6588ed749358f4555010ace0d897b692065beb719b4e00d31b652",
+      "payloadDigest": "sha256:80a6d4aa177ebe288a8122c5fc11d403b3768cff2e32ca000939c426241b1c7d",
+      "evidenceRevision": "image-build-41043824619",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/installer-data-nixos-kde.json",
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/installer-data-nixos-kde.json",
         "fileName": "installer-data-nixos-kde.json",
-        "sizeBytes": 9675
+        "sizeBytes": 9437
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip",
-        "fileName": "nixos-kde-build-40970707573.zip",
-        "sizeBytes": 5061828639,
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip",
+        "fileName": "nixos-kde-build-41043824619.zip",
+        "sizeBytes": 5179368363,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part00",
-            "fileName": "nixos-kde-build-40970707573.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part00",
+            "fileName": "nixos-kde-build-41043824619.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:98b5a76a6ae89ef8ba10a57939f5cf649e33b03f2f7fca1dca2d379945e2db88"
+            "sha256": "sha256:3409405103ca95bc8264850e40e2f4fb1f7cf24b9192dc23ec6ae6457506020e"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part01",
-            "fileName": "nixos-kde-build-40970707573.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part01",
+            "fileName": "nixos-kde-build-41043824619.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:d70f97a472692ded3e6cdea65e274984c71d84a3c36a7f4463d1e14d12777366"
+            "sha256": "sha256:0672a9cd922a0f46ae49809f91300e77856bf8f4a4f41c9d2e73d45d5ce10174"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part02",
-            "fileName": "nixos-kde-build-40970707573.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part02",
+            "fileName": "nixos-kde-build-41043824619.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:27f40ac0156d85072538c2ed3a9a1ed37abdaddd895f27ba55cf964c0ec64db6"
+            "sha256": "sha256:ab1e0d4d0a51528f5d9fd37d82d9ec68f0b4af019445cb84612e4b1f3c114164"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part03",
-            "fileName": "nixos-kde-build-40970707573.zip.part03",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part03",
+            "fileName": "nixos-kde-build-41043824619.zip.part03",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:848920a3c1f4fc8278161bbfeaead14b57c1aaf2a8d7d36b31f8bd35f059f826"
+            "sha256": "sha256:e0c7b18155c1658db63fa05714ce3e11d69739e84ec5b405fe585a50db2c64bc"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part04",
-            "fileName": "nixos-kde-build-40970707573.zip.part04",
-            "sizeBytes": 766861343,
-            "sha256": "sha256:62051aca92b886a934d808a296256157a4c9b347ab9ec4ec1def9c50d3f1d2ba"
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part04",
+            "fileName": "nixos-kde-build-41043824619.zip.part04",
+            "sizeBytes": 884401067,
+            "sha256": "sha256:141c66b4f6ad9a356001e7ce2359c47ecd4d7c1f15e0ec616da39f4a68370be8"
           }
         ]
       },
@@ -500,49 +500,49 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "9a1635086e4f1e05c08800faa29d92b1241b9f9c",
-      "metadataDigest": "sha256:e6a07fb51b1b042c83eb23d01c7efc48c621c420a5e1ebce3cf26f676bf22bbc",
-      "payloadDigest": "sha256:b92cc3548635ac92bdb36d770e6e3fb31cb44969cadfb0402fc43842704e8fcc",
-      "evidenceRevision": "image-build-40970707573",
+      "downstreamRevision": "b4cd9ac391b5d607ed98af2076323dd4f5537a50",
+      "metadataDigest": "sha256:d2773e7221e6588ed749358f4555010ace0d897b692065beb719b4e00d31b652",
+      "payloadDigest": "sha256:80a6d4aa177ebe288a8122c5fc11d403b3768cff2e32ca000939c426241b1c7d",
+      "evidenceRevision": "image-build-41043824619",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/installer-data-nixos-kde.json",
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/installer-data-nixos-kde.json",
         "fileName": "installer-data-nixos-kde.json",
-        "sizeBytes": 9675
+        "sizeBytes": 9437
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip",
-        "fileName": "nixos-kde-build-40970707573.zip",
-        "sizeBytes": 5061828639,
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip",
+        "fileName": "nixos-kde-build-41043824619.zip",
+        "sizeBytes": 5179368363,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part00",
-            "fileName": "nixos-kde-build-40970707573.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part00",
+            "fileName": "nixos-kde-build-41043824619.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:98b5a76a6ae89ef8ba10a57939f5cf649e33b03f2f7fca1dca2d379945e2db88"
+            "sha256": "sha256:3409405103ca95bc8264850e40e2f4fb1f7cf24b9192dc23ec6ae6457506020e"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part01",
-            "fileName": "nixos-kde-build-40970707573.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part01",
+            "fileName": "nixos-kde-build-41043824619.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:d70f97a472692ded3e6cdea65e274984c71d84a3c36a7f4463d1e14d12777366"
+            "sha256": "sha256:0672a9cd922a0f46ae49809f91300e77856bf8f4a4f41c9d2e73d45d5ce10174"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part02",
-            "fileName": "nixos-kde-build-40970707573.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part02",
+            "fileName": "nixos-kde-build-41043824619.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:27f40ac0156d85072538c2ed3a9a1ed37abdaddd895f27ba55cf964c0ec64db6"
+            "sha256": "sha256:ab1e0d4d0a51528f5d9fd37d82d9ec68f0b4af019445cb84612e4b1f3c114164"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part03",
-            "fileName": "nixos-kde-build-40970707573.zip.part03",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part03",
+            "fileName": "nixos-kde-build-41043824619.zip.part03",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:848920a3c1f4fc8278161bbfeaead14b57c1aaf2a8d7d36b31f8bd35f059f826"
+            "sha256": "sha256:e0c7b18155c1658db63fa05714ce3e11d69739e84ec5b405fe585a50db2c64bc"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part04",
-            "fileName": "nixos-kde-build-40970707573.zip.part04",
-            "sizeBytes": 766861343,
-            "sha256": "sha256:62051aca92b886a934d808a296256157a4c9b347ab9ec4ec1def9c50d3f1d2ba"
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part04",
+            "fileName": "nixos-kde-build-41043824619.zip.part04",
+            "sizeBytes": 884401067,
+            "sha256": "sha256:141c66b4f6ad9a356001e7ce2359c47ecd4d7c1f15e0ec616da39f4a68370be8"
           }
         ]
       },
@@ -554,49 +554,49 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "9a1635086e4f1e05c08800faa29d92b1241b9f9c",
-      "metadataDigest": "sha256:e6a07fb51b1b042c83eb23d01c7efc48c621c420a5e1ebce3cf26f676bf22bbc",
-      "payloadDigest": "sha256:b92cc3548635ac92bdb36d770e6e3fb31cb44969cadfb0402fc43842704e8fcc",
-      "evidenceRevision": "image-build-40970707573",
+      "downstreamRevision": "b4cd9ac391b5d607ed98af2076323dd4f5537a50",
+      "metadataDigest": "sha256:d2773e7221e6588ed749358f4555010ace0d897b692065beb719b4e00d31b652",
+      "payloadDigest": "sha256:80a6d4aa177ebe288a8122c5fc11d403b3768cff2e32ca000939c426241b1c7d",
+      "evidenceRevision": "image-build-41043824619",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/installer-data-nixos-kde.json",
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/installer-data-nixos-kde.json",
         "fileName": "installer-data-nixos-kde.json",
-        "sizeBytes": 9675
+        "sizeBytes": 9437
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip",
-        "fileName": "nixos-kde-build-40970707573.zip",
-        "sizeBytes": 5061828639,
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip",
+        "fileName": "nixos-kde-build-41043824619.zip",
+        "sizeBytes": 5179368363,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part00",
-            "fileName": "nixos-kde-build-40970707573.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part00",
+            "fileName": "nixos-kde-build-41043824619.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:98b5a76a6ae89ef8ba10a57939f5cf649e33b03f2f7fca1dca2d379945e2db88"
+            "sha256": "sha256:3409405103ca95bc8264850e40e2f4fb1f7cf24b9192dc23ec6ae6457506020e"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part01",
-            "fileName": "nixos-kde-build-40970707573.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part01",
+            "fileName": "nixos-kde-build-41043824619.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:d70f97a472692ded3e6cdea65e274984c71d84a3c36a7f4463d1e14d12777366"
+            "sha256": "sha256:0672a9cd922a0f46ae49809f91300e77856bf8f4a4f41c9d2e73d45d5ce10174"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part02",
-            "fileName": "nixos-kde-build-40970707573.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part02",
+            "fileName": "nixos-kde-build-41043824619.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:27f40ac0156d85072538c2ed3a9a1ed37abdaddd895f27ba55cf964c0ec64db6"
+            "sha256": "sha256:ab1e0d4d0a51528f5d9fd37d82d9ec68f0b4af019445cb84612e4b1f3c114164"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part03",
-            "fileName": "nixos-kde-build-40970707573.zip.part03",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part03",
+            "fileName": "nixos-kde-build-41043824619.zip.part03",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:848920a3c1f4fc8278161bbfeaead14b57c1aaf2a8d7d36b31f8bd35f059f826"
+            "sha256": "sha256:e0c7b18155c1658db63fa05714ce3e11d69739e84ec5b405fe585a50db2c64bc"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part04",
-            "fileName": "nixos-kde-build-40970707573.zip.part04",
-            "sizeBytes": 766861343,
-            "sha256": "sha256:62051aca92b886a934d808a296256157a4c9b347ab9ec4ec1def9c50d3f1d2ba"
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part04",
+            "fileName": "nixos-kde-build-41043824619.zip.part04",
+            "sizeBytes": 884401067,
+            "sha256": "sha256:141c66b4f6ad9a356001e7ce2359c47ecd4d7c1f15e0ec616da39f4a68370be8"
           }
         ]
       },
@@ -608,49 +608,49 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "9a1635086e4f1e05c08800faa29d92b1241b9f9c",
-      "metadataDigest": "sha256:e6a07fb51b1b042c83eb23d01c7efc48c621c420a5e1ebce3cf26f676bf22bbc",
-      "payloadDigest": "sha256:b92cc3548635ac92bdb36d770e6e3fb31cb44969cadfb0402fc43842704e8fcc",
-      "evidenceRevision": "image-build-40970707573",
+      "downstreamRevision": "b4cd9ac391b5d607ed98af2076323dd4f5537a50",
+      "metadataDigest": "sha256:d2773e7221e6588ed749358f4555010ace0d897b692065beb719b4e00d31b652",
+      "payloadDigest": "sha256:80a6d4aa177ebe288a8122c5fc11d403b3768cff2e32ca000939c426241b1c7d",
+      "evidenceRevision": "image-build-41043824619",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/installer-data-nixos-kde.json",
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/installer-data-nixos-kde.json",
         "fileName": "installer-data-nixos-kde.json",
-        "sizeBytes": 9675
+        "sizeBytes": 9437
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip",
-        "fileName": "nixos-kde-build-40970707573.zip",
-        "sizeBytes": 5061828639,
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip",
+        "fileName": "nixos-kde-build-41043824619.zip",
+        "sizeBytes": 5179368363,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part00",
-            "fileName": "nixos-kde-build-40970707573.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part00",
+            "fileName": "nixos-kde-build-41043824619.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:98b5a76a6ae89ef8ba10a57939f5cf649e33b03f2f7fca1dca2d379945e2db88"
+            "sha256": "sha256:3409405103ca95bc8264850e40e2f4fb1f7cf24b9192dc23ec6ae6457506020e"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part01",
-            "fileName": "nixos-kde-build-40970707573.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part01",
+            "fileName": "nixos-kde-build-41043824619.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:d70f97a472692ded3e6cdea65e274984c71d84a3c36a7f4463d1e14d12777366"
+            "sha256": "sha256:0672a9cd922a0f46ae49809f91300e77856bf8f4a4f41c9d2e73d45d5ce10174"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part02",
-            "fileName": "nixos-kde-build-40970707573.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part02",
+            "fileName": "nixos-kde-build-41043824619.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:27f40ac0156d85072538c2ed3a9a1ed37abdaddd895f27ba55cf964c0ec64db6"
+            "sha256": "sha256:ab1e0d4d0a51528f5d9fd37d82d9ec68f0b4af019445cb84612e4b1f3c114164"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part03",
-            "fileName": "nixos-kde-build-40970707573.zip.part03",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part03",
+            "fileName": "nixos-kde-build-41043824619.zip.part03",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:848920a3c1f4fc8278161bbfeaead14b57c1aaf2a8d7d36b31f8bd35f059f826"
+            "sha256": "sha256:e0c7b18155c1658db63fa05714ce3e11d69739e84ec5b405fe585a50db2c64bc"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part04",
-            "fileName": "nixos-kde-build-40970707573.zip.part04",
-            "sizeBytes": 766861343,
-            "sha256": "sha256:62051aca92b886a934d808a296256157a4c9b347ab9ec4ec1def9c50d3f1d2ba"
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part04",
+            "fileName": "nixos-kde-build-41043824619.zip.part04",
+            "sizeBytes": 884401067,
+            "sha256": "sha256:141c66b4f6ad9a356001e7ce2359c47ecd4d7c1f15e0ec616da39f4a68370be8"
           }
         ]
       },
@@ -662,49 +662,49 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "9a1635086e4f1e05c08800faa29d92b1241b9f9c",
-      "metadataDigest": "sha256:e6a07fb51b1b042c83eb23d01c7efc48c621c420a5e1ebce3cf26f676bf22bbc",
-      "payloadDigest": "sha256:b92cc3548635ac92bdb36d770e6e3fb31cb44969cadfb0402fc43842704e8fcc",
-      "evidenceRevision": "image-build-40970707573",
+      "downstreamRevision": "b4cd9ac391b5d607ed98af2076323dd4f5537a50",
+      "metadataDigest": "sha256:d2773e7221e6588ed749358f4555010ace0d897b692065beb719b4e00d31b652",
+      "payloadDigest": "sha256:80a6d4aa177ebe288a8122c5fc11d403b3768cff2e32ca000939c426241b1c7d",
+      "evidenceRevision": "image-build-41043824619",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/installer-data-nixos-kde.json",
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/installer-data-nixos-kde.json",
         "fileName": "installer-data-nixos-kde.json",
-        "sizeBytes": 9675
+        "sizeBytes": 9437
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip",
-        "fileName": "nixos-kde-build-40970707573.zip",
-        "sizeBytes": 5061828639,
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip",
+        "fileName": "nixos-kde-build-41043824619.zip",
+        "sizeBytes": 5179368363,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part00",
-            "fileName": "nixos-kde-build-40970707573.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part00",
+            "fileName": "nixos-kde-build-41043824619.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:98b5a76a6ae89ef8ba10a57939f5cf649e33b03f2f7fca1dca2d379945e2db88"
+            "sha256": "sha256:3409405103ca95bc8264850e40e2f4fb1f7cf24b9192dc23ec6ae6457506020e"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part01",
-            "fileName": "nixos-kde-build-40970707573.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part01",
+            "fileName": "nixos-kde-build-41043824619.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:d70f97a472692ded3e6cdea65e274984c71d84a3c36a7f4463d1e14d12777366"
+            "sha256": "sha256:0672a9cd922a0f46ae49809f91300e77856bf8f4a4f41c9d2e73d45d5ce10174"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part02",
-            "fileName": "nixos-kde-build-40970707573.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part02",
+            "fileName": "nixos-kde-build-41043824619.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:27f40ac0156d85072538c2ed3a9a1ed37abdaddd895f27ba55cf964c0ec64db6"
+            "sha256": "sha256:ab1e0d4d0a51528f5d9fd37d82d9ec68f0b4af019445cb84612e4b1f3c114164"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part03",
-            "fileName": "nixos-kde-build-40970707573.zip.part03",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part03",
+            "fileName": "nixos-kde-build-41043824619.zip.part03",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:848920a3c1f4fc8278161bbfeaead14b57c1aaf2a8d7d36b31f8bd35f059f826"
+            "sha256": "sha256:e0c7b18155c1658db63fa05714ce3e11d69739e84ec5b405fe585a50db2c64bc"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part04",
-            "fileName": "nixos-kde-build-40970707573.zip.part04",
-            "sizeBytes": 766861343,
-            "sha256": "sha256:62051aca92b886a934d808a296256157a4c9b347ab9ec4ec1def9c50d3f1d2ba"
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part04",
+            "fileName": "nixos-kde-build-41043824619.zip.part04",
+            "sizeBytes": 884401067,
+            "sha256": "sha256:141c66b4f6ad9a356001e7ce2359c47ecd4d7c1f15e0ec616da39f4a68370be8"
           }
         ]
       },
@@ -716,49 +716,49 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "9a1635086e4f1e05c08800faa29d92b1241b9f9c",
-      "metadataDigest": "sha256:e6a07fb51b1b042c83eb23d01c7efc48c621c420a5e1ebce3cf26f676bf22bbc",
-      "payloadDigest": "sha256:b92cc3548635ac92bdb36d770e6e3fb31cb44969cadfb0402fc43842704e8fcc",
-      "evidenceRevision": "image-build-40970707573",
+      "downstreamRevision": "b4cd9ac391b5d607ed98af2076323dd4f5537a50",
+      "metadataDigest": "sha256:d2773e7221e6588ed749358f4555010ace0d897b692065beb719b4e00d31b652",
+      "payloadDigest": "sha256:80a6d4aa177ebe288a8122c5fc11d403b3768cff2e32ca000939c426241b1c7d",
+      "evidenceRevision": "image-build-41043824619",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/installer-data-nixos-kde.json",
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/installer-data-nixos-kde.json",
         "fileName": "installer-data-nixos-kde.json",
-        "sizeBytes": 9675
+        "sizeBytes": 9437
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip",
-        "fileName": "nixos-kde-build-40970707573.zip",
-        "sizeBytes": 5061828639,
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip",
+        "fileName": "nixos-kde-build-41043824619.zip",
+        "sizeBytes": 5179368363,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part00",
-            "fileName": "nixos-kde-build-40970707573.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part00",
+            "fileName": "nixos-kde-build-41043824619.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:98b5a76a6ae89ef8ba10a57939f5cf649e33b03f2f7fca1dca2d379945e2db88"
+            "sha256": "sha256:3409405103ca95bc8264850e40e2f4fb1f7cf24b9192dc23ec6ae6457506020e"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part01",
-            "fileName": "nixos-kde-build-40970707573.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part01",
+            "fileName": "nixos-kde-build-41043824619.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:d70f97a472692ded3e6cdea65e274984c71d84a3c36a7f4463d1e14d12777366"
+            "sha256": "sha256:0672a9cd922a0f46ae49809f91300e77856bf8f4a4f41c9d2e73d45d5ce10174"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part02",
-            "fileName": "nixos-kde-build-40970707573.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part02",
+            "fileName": "nixos-kde-build-41043824619.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:27f40ac0156d85072538c2ed3a9a1ed37abdaddd895f27ba55cf964c0ec64db6"
+            "sha256": "sha256:ab1e0d4d0a51528f5d9fd37d82d9ec68f0b4af019445cb84612e4b1f3c114164"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part03",
-            "fileName": "nixos-kde-build-40970707573.zip.part03",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part03",
+            "fileName": "nixos-kde-build-41043824619.zip.part03",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:848920a3c1f4fc8278161bbfeaead14b57c1aaf2a8d7d36b31f8bd35f059f826"
+            "sha256": "sha256:e0c7b18155c1658db63fa05714ce3e11d69739e84ec5b405fe585a50db2c64bc"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part04",
-            "fileName": "nixos-kde-build-40970707573.zip.part04",
-            "sizeBytes": 766861343,
-            "sha256": "sha256:62051aca92b886a934d808a296256157a4c9b347ab9ec4ec1def9c50d3f1d2ba"
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part04",
+            "fileName": "nixos-kde-build-41043824619.zip.part04",
+            "sizeBytes": 884401067,
+            "sha256": "sha256:141c66b4f6ad9a356001e7ce2359c47ecd4d7c1f15e0ec616da39f4a68370be8"
           }
         ]
       },
@@ -770,49 +770,49 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "9a1635086e4f1e05c08800faa29d92b1241b9f9c",
-      "metadataDigest": "sha256:e6a07fb51b1b042c83eb23d01c7efc48c621c420a5e1ebce3cf26f676bf22bbc",
-      "payloadDigest": "sha256:b92cc3548635ac92bdb36d770e6e3fb31cb44969cadfb0402fc43842704e8fcc",
-      "evidenceRevision": "image-build-40970707573",
+      "downstreamRevision": "b4cd9ac391b5d607ed98af2076323dd4f5537a50",
+      "metadataDigest": "sha256:d2773e7221e6588ed749358f4555010ace0d897b692065beb719b4e00d31b652",
+      "payloadDigest": "sha256:80a6d4aa177ebe288a8122c5fc11d403b3768cff2e32ca000939c426241b1c7d",
+      "evidenceRevision": "image-build-41043824619",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/installer-data-nixos-kde.json",
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/installer-data-nixos-kde.json",
         "fileName": "installer-data-nixos-kde.json",
-        "sizeBytes": 9675
+        "sizeBytes": 9437
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip",
-        "fileName": "nixos-kde-build-40970707573.zip",
-        "sizeBytes": 5061828639,
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip",
+        "fileName": "nixos-kde-build-41043824619.zip",
+        "sizeBytes": 5179368363,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part00",
-            "fileName": "nixos-kde-build-40970707573.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part00",
+            "fileName": "nixos-kde-build-41043824619.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:98b5a76a6ae89ef8ba10a57939f5cf649e33b03f2f7fca1dca2d379945e2db88"
+            "sha256": "sha256:3409405103ca95bc8264850e40e2f4fb1f7cf24b9192dc23ec6ae6457506020e"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part01",
-            "fileName": "nixos-kde-build-40970707573.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part01",
+            "fileName": "nixos-kde-build-41043824619.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:d70f97a472692ded3e6cdea65e274984c71d84a3c36a7f4463d1e14d12777366"
+            "sha256": "sha256:0672a9cd922a0f46ae49809f91300e77856bf8f4a4f41c9d2e73d45d5ce10174"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part02",
-            "fileName": "nixos-kde-build-40970707573.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part02",
+            "fileName": "nixos-kde-build-41043824619.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:27f40ac0156d85072538c2ed3a9a1ed37abdaddd895f27ba55cf964c0ec64db6"
+            "sha256": "sha256:ab1e0d4d0a51528f5d9fd37d82d9ec68f0b4af019445cb84612e4b1f3c114164"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part03",
-            "fileName": "nixos-kde-build-40970707573.zip.part03",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part03",
+            "fileName": "nixos-kde-build-41043824619.zip.part03",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:848920a3c1f4fc8278161bbfeaead14b57c1aaf2a8d7d36b31f8bd35f059f826"
+            "sha256": "sha256:e0c7b18155c1658db63fa05714ce3e11d69739e84ec5b405fe585a50db2c64bc"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part04",
-            "fileName": "nixos-kde-build-40970707573.zip.part04",
-            "sizeBytes": 766861343,
-            "sha256": "sha256:62051aca92b886a934d808a296256157a4c9b347ab9ec4ec1def9c50d3f1d2ba"
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part04",
+            "fileName": "nixos-kde-build-41043824619.zip.part04",
+            "sizeBytes": 884401067,
+            "sha256": "sha256:141c66b4f6ad9a356001e7ce2359c47ecd4d7c1f15e0ec616da39f4a68370be8"
           }
         ]
       },
@@ -824,49 +824,49 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "9a1635086e4f1e05c08800faa29d92b1241b9f9c",
-      "metadataDigest": "sha256:e6a07fb51b1b042c83eb23d01c7efc48c621c420a5e1ebce3cf26f676bf22bbc",
-      "payloadDigest": "sha256:b92cc3548635ac92bdb36d770e6e3fb31cb44969cadfb0402fc43842704e8fcc",
-      "evidenceRevision": "image-build-40970707573",
+      "downstreamRevision": "b4cd9ac391b5d607ed98af2076323dd4f5537a50",
+      "metadataDigest": "sha256:d2773e7221e6588ed749358f4555010ace0d897b692065beb719b4e00d31b652",
+      "payloadDigest": "sha256:80a6d4aa177ebe288a8122c5fc11d403b3768cff2e32ca000939c426241b1c7d",
+      "evidenceRevision": "image-build-41043824619",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/installer-data-nixos-kde.json",
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/installer-data-nixos-kde.json",
         "fileName": "installer-data-nixos-kde.json",
-        "sizeBytes": 9675
+        "sizeBytes": 9437
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip",
-        "fileName": "nixos-kde-build-40970707573.zip",
-        "sizeBytes": 5061828639,
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip",
+        "fileName": "nixos-kde-build-41043824619.zip",
+        "sizeBytes": 5179368363,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part00",
-            "fileName": "nixos-kde-build-40970707573.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part00",
+            "fileName": "nixos-kde-build-41043824619.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:98b5a76a6ae89ef8ba10a57939f5cf649e33b03f2f7fca1dca2d379945e2db88"
+            "sha256": "sha256:3409405103ca95bc8264850e40e2f4fb1f7cf24b9192dc23ec6ae6457506020e"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part01",
-            "fileName": "nixos-kde-build-40970707573.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part01",
+            "fileName": "nixos-kde-build-41043824619.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:d70f97a472692ded3e6cdea65e274984c71d84a3c36a7f4463d1e14d12777366"
+            "sha256": "sha256:0672a9cd922a0f46ae49809f91300e77856bf8f4a4f41c9d2e73d45d5ce10174"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part02",
-            "fileName": "nixos-kde-build-40970707573.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part02",
+            "fileName": "nixos-kde-build-41043824619.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:27f40ac0156d85072538c2ed3a9a1ed37abdaddd895f27ba55cf964c0ec64db6"
+            "sha256": "sha256:ab1e0d4d0a51528f5d9fd37d82d9ec68f0b4af019445cb84612e4b1f3c114164"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part03",
-            "fileName": "nixos-kde-build-40970707573.zip.part03",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part03",
+            "fileName": "nixos-kde-build-41043824619.zip.part03",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:848920a3c1f4fc8278161bbfeaead14b57c1aaf2a8d7d36b31f8bd35f059f826"
+            "sha256": "sha256:e0c7b18155c1658db63fa05714ce3e11d69739e84ec5b405fe585a50db2c64bc"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part04",
-            "fileName": "nixos-kde-build-40970707573.zip.part04",
-            "sizeBytes": 766861343,
-            "sha256": "sha256:62051aca92b886a934d808a296256157a4c9b347ab9ec4ec1def9c50d3f1d2ba"
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part04",
+            "fileName": "nixos-kde-build-41043824619.zip.part04",
+            "sizeBytes": 884401067,
+            "sha256": "sha256:141c66b4f6ad9a356001e7ce2359c47ecd4d7c1f15e0ec616da39f4a68370be8"
           }
         ]
       },
@@ -878,49 +878,49 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "9a1635086e4f1e05c08800faa29d92b1241b9f9c",
-      "metadataDigest": "sha256:e6a07fb51b1b042c83eb23d01c7efc48c621c420a5e1ebce3cf26f676bf22bbc",
-      "payloadDigest": "sha256:b92cc3548635ac92bdb36d770e6e3fb31cb44969cadfb0402fc43842704e8fcc",
-      "evidenceRevision": "image-build-40970707573",
+      "downstreamRevision": "b4cd9ac391b5d607ed98af2076323dd4f5537a50",
+      "metadataDigest": "sha256:d2773e7221e6588ed749358f4555010ace0d897b692065beb719b4e00d31b652",
+      "payloadDigest": "sha256:80a6d4aa177ebe288a8122c5fc11d403b3768cff2e32ca000939c426241b1c7d",
+      "evidenceRevision": "image-build-41043824619",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/installer-data-nixos-kde.json",
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/installer-data-nixos-kde.json",
         "fileName": "installer-data-nixos-kde.json",
-        "sizeBytes": 9675
+        "sizeBytes": 9437
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip",
-        "fileName": "nixos-kde-build-40970707573.zip",
-        "sizeBytes": 5061828639,
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip",
+        "fileName": "nixos-kde-build-41043824619.zip",
+        "sizeBytes": 5179368363,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part00",
-            "fileName": "nixos-kde-build-40970707573.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part00",
+            "fileName": "nixos-kde-build-41043824619.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:98b5a76a6ae89ef8ba10a57939f5cf649e33b03f2f7fca1dca2d379945e2db88"
+            "sha256": "sha256:3409405103ca95bc8264850e40e2f4fb1f7cf24b9192dc23ec6ae6457506020e"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part01",
-            "fileName": "nixos-kde-build-40970707573.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part01",
+            "fileName": "nixos-kde-build-41043824619.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:d70f97a472692ded3e6cdea65e274984c71d84a3c36a7f4463d1e14d12777366"
+            "sha256": "sha256:0672a9cd922a0f46ae49809f91300e77856bf8f4a4f41c9d2e73d45d5ce10174"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part02",
-            "fileName": "nixos-kde-build-40970707573.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part02",
+            "fileName": "nixos-kde-build-41043824619.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:27f40ac0156d85072538c2ed3a9a1ed37abdaddd895f27ba55cf964c0ec64db6"
+            "sha256": "sha256:ab1e0d4d0a51528f5d9fd37d82d9ec68f0b4af019445cb84612e4b1f3c114164"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part03",
-            "fileName": "nixos-kde-build-40970707573.zip.part03",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part03",
+            "fileName": "nixos-kde-build-41043824619.zip.part03",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:848920a3c1f4fc8278161bbfeaead14b57c1aaf2a8d7d36b31f8bd35f059f826"
+            "sha256": "sha256:e0c7b18155c1658db63fa05714ce3e11d69739e84ec5b405fe585a50db2c64bc"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part04",
-            "fileName": "nixos-kde-build-40970707573.zip.part04",
-            "sizeBytes": 766861343,
-            "sha256": "sha256:62051aca92b886a934d808a296256157a4c9b347ab9ec4ec1def9c50d3f1d2ba"
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part04",
+            "fileName": "nixos-kde-build-41043824619.zip.part04",
+            "sizeBytes": 884401067,
+            "sha256": "sha256:141c66b4f6ad9a356001e7ce2359c47ecd4d7c1f15e0ec616da39f4a68370be8"
           }
         ]
       },
@@ -932,49 +932,49 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "9a1635086e4f1e05c08800faa29d92b1241b9f9c",
-      "metadataDigest": "sha256:e6a07fb51b1b042c83eb23d01c7efc48c621c420a5e1ebce3cf26f676bf22bbc",
-      "payloadDigest": "sha256:b92cc3548635ac92bdb36d770e6e3fb31cb44969cadfb0402fc43842704e8fcc",
-      "evidenceRevision": "image-build-40970707573",
+      "downstreamRevision": "b4cd9ac391b5d607ed98af2076323dd4f5537a50",
+      "metadataDigest": "sha256:d2773e7221e6588ed749358f4555010ace0d897b692065beb719b4e00d31b652",
+      "payloadDigest": "sha256:80a6d4aa177ebe288a8122c5fc11d403b3768cff2e32ca000939c426241b1c7d",
+      "evidenceRevision": "image-build-41043824619",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/installer-data-nixos-kde.json",
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/installer-data-nixos-kde.json",
         "fileName": "installer-data-nixos-kde.json",
-        "sizeBytes": 9675
+        "sizeBytes": 9437
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip",
-        "fileName": "nixos-kde-build-40970707573.zip",
-        "sizeBytes": 5061828639,
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip",
+        "fileName": "nixos-kde-build-41043824619.zip",
+        "sizeBytes": 5179368363,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part00",
-            "fileName": "nixos-kde-build-40970707573.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part00",
+            "fileName": "nixos-kde-build-41043824619.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:98b5a76a6ae89ef8ba10a57939f5cf649e33b03f2f7fca1dca2d379945e2db88"
+            "sha256": "sha256:3409405103ca95bc8264850e40e2f4fb1f7cf24b9192dc23ec6ae6457506020e"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part01",
-            "fileName": "nixos-kde-build-40970707573.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part01",
+            "fileName": "nixos-kde-build-41043824619.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:d70f97a472692ded3e6cdea65e274984c71d84a3c36a7f4463d1e14d12777366"
+            "sha256": "sha256:0672a9cd922a0f46ae49809f91300e77856bf8f4a4f41c9d2e73d45d5ce10174"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part02",
-            "fileName": "nixos-kde-build-40970707573.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part02",
+            "fileName": "nixos-kde-build-41043824619.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:27f40ac0156d85072538c2ed3a9a1ed37abdaddd895f27ba55cf964c0ec64db6"
+            "sha256": "sha256:ab1e0d4d0a51528f5d9fd37d82d9ec68f0b4af019445cb84612e4b1f3c114164"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part03",
-            "fileName": "nixos-kde-build-40970707573.zip.part03",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part03",
+            "fileName": "nixos-kde-build-41043824619.zip.part03",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:848920a3c1f4fc8278161bbfeaead14b57c1aaf2a8d7d36b31f8bd35f059f826"
+            "sha256": "sha256:e0c7b18155c1658db63fa05714ce3e11d69739e84ec5b405fe585a50db2c64bc"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part04",
-            "fileName": "nixos-kde-build-40970707573.zip.part04",
-            "sizeBytes": 766861343,
-            "sha256": "sha256:62051aca92b886a934d808a296256157a4c9b347ab9ec4ec1def9c50d3f1d2ba"
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part04",
+            "fileName": "nixos-kde-build-41043824619.zip.part04",
+            "sizeBytes": 884401067,
+            "sha256": "sha256:141c66b4f6ad9a356001e7ce2359c47ecd4d7c1f15e0ec616da39f4a68370be8"
           }
         ]
       },
@@ -986,49 +986,49 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "9a1635086e4f1e05c08800faa29d92b1241b9f9c",
-      "metadataDigest": "sha256:e6a07fb51b1b042c83eb23d01c7efc48c621c420a5e1ebce3cf26f676bf22bbc",
-      "payloadDigest": "sha256:b92cc3548635ac92bdb36d770e6e3fb31cb44969cadfb0402fc43842704e8fcc",
-      "evidenceRevision": "image-build-40970707573",
+      "downstreamRevision": "b4cd9ac391b5d607ed98af2076323dd4f5537a50",
+      "metadataDigest": "sha256:d2773e7221e6588ed749358f4555010ace0d897b692065beb719b4e00d31b652",
+      "payloadDigest": "sha256:80a6d4aa177ebe288a8122c5fc11d403b3768cff2e32ca000939c426241b1c7d",
+      "evidenceRevision": "image-build-41043824619",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/installer-data-nixos-kde.json",
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/installer-data-nixos-kde.json",
         "fileName": "installer-data-nixos-kde.json",
-        "sizeBytes": 9675
+        "sizeBytes": 9437
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip",
-        "fileName": "nixos-kde-build-40970707573.zip",
-        "sizeBytes": 5061828639,
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip",
+        "fileName": "nixos-kde-build-41043824619.zip",
+        "sizeBytes": 5179368363,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part00",
-            "fileName": "nixos-kde-build-40970707573.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part00",
+            "fileName": "nixos-kde-build-41043824619.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:98b5a76a6ae89ef8ba10a57939f5cf649e33b03f2f7fca1dca2d379945e2db88"
+            "sha256": "sha256:3409405103ca95bc8264850e40e2f4fb1f7cf24b9192dc23ec6ae6457506020e"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part01",
-            "fileName": "nixos-kde-build-40970707573.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part01",
+            "fileName": "nixos-kde-build-41043824619.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:d70f97a472692ded3e6cdea65e274984c71d84a3c36a7f4463d1e14d12777366"
+            "sha256": "sha256:0672a9cd922a0f46ae49809f91300e77856bf8f4a4f41c9d2e73d45d5ce10174"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part02",
-            "fileName": "nixos-kde-build-40970707573.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part02",
+            "fileName": "nixos-kde-build-41043824619.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:27f40ac0156d85072538c2ed3a9a1ed37abdaddd895f27ba55cf964c0ec64db6"
+            "sha256": "sha256:ab1e0d4d0a51528f5d9fd37d82d9ec68f0b4af019445cb84612e4b1f3c114164"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part03",
-            "fileName": "nixos-kde-build-40970707573.zip.part03",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part03",
+            "fileName": "nixos-kde-build-41043824619.zip.part03",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:848920a3c1f4fc8278161bbfeaead14b57c1aaf2a8d7d36b31f8bd35f059f826"
+            "sha256": "sha256:e0c7b18155c1658db63fa05714ce3e11d69739e84ec5b405fe585a50db2c64bc"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part04",
-            "fileName": "nixos-kde-build-40970707573.zip.part04",
-            "sizeBytes": 766861343,
-            "sha256": "sha256:62051aca92b886a934d808a296256157a4c9b347ab9ec4ec1def9c50d3f1d2ba"
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part04",
+            "fileName": "nixos-kde-build-41043824619.zip.part04",
+            "sizeBytes": 884401067,
+            "sha256": "sha256:141c66b4f6ad9a356001e7ce2359c47ecd4d7c1f15e0ec616da39f4a68370be8"
           }
         ]
       },
@@ -1040,49 +1040,49 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "9a1635086e4f1e05c08800faa29d92b1241b9f9c",
-      "metadataDigest": "sha256:e6a07fb51b1b042c83eb23d01c7efc48c621c420a5e1ebce3cf26f676bf22bbc",
-      "payloadDigest": "sha256:b92cc3548635ac92bdb36d770e6e3fb31cb44969cadfb0402fc43842704e8fcc",
-      "evidenceRevision": "image-build-40970707573",
+      "downstreamRevision": "b4cd9ac391b5d607ed98af2076323dd4f5537a50",
+      "metadataDigest": "sha256:d2773e7221e6588ed749358f4555010ace0d897b692065beb719b4e00d31b652",
+      "payloadDigest": "sha256:80a6d4aa177ebe288a8122c5fc11d403b3768cff2e32ca000939c426241b1c7d",
+      "evidenceRevision": "image-build-41043824619",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/installer-data-nixos-kde.json",
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/installer-data-nixos-kde.json",
         "fileName": "installer-data-nixos-kde.json",
-        "sizeBytes": 9675
+        "sizeBytes": 9437
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip",
-        "fileName": "nixos-kde-build-40970707573.zip",
-        "sizeBytes": 5061828639,
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip",
+        "fileName": "nixos-kde-build-41043824619.zip",
+        "sizeBytes": 5179368363,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part00",
-            "fileName": "nixos-kde-build-40970707573.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part00",
+            "fileName": "nixos-kde-build-41043824619.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:98b5a76a6ae89ef8ba10a57939f5cf649e33b03f2f7fca1dca2d379945e2db88"
+            "sha256": "sha256:3409405103ca95bc8264850e40e2f4fb1f7cf24b9192dc23ec6ae6457506020e"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part01",
-            "fileName": "nixos-kde-build-40970707573.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part01",
+            "fileName": "nixos-kde-build-41043824619.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:d70f97a472692ded3e6cdea65e274984c71d84a3c36a7f4463d1e14d12777366"
+            "sha256": "sha256:0672a9cd922a0f46ae49809f91300e77856bf8f4a4f41c9d2e73d45d5ce10174"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part02",
-            "fileName": "nixos-kde-build-40970707573.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part02",
+            "fileName": "nixos-kde-build-41043824619.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:27f40ac0156d85072538c2ed3a9a1ed37abdaddd895f27ba55cf964c0ec64db6"
+            "sha256": "sha256:ab1e0d4d0a51528f5d9fd37d82d9ec68f0b4af019445cb84612e4b1f3c114164"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part03",
-            "fileName": "nixos-kde-build-40970707573.zip.part03",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part03",
+            "fileName": "nixos-kde-build-41043824619.zip.part03",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:848920a3c1f4fc8278161bbfeaead14b57c1aaf2a8d7d36b31f8bd35f059f826"
+            "sha256": "sha256:e0c7b18155c1658db63fa05714ce3e11d69739e84ec5b405fe585a50db2c64bc"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part04",
-            "fileName": "nixos-kde-build-40970707573.zip.part04",
-            "sizeBytes": 766861343,
-            "sha256": "sha256:62051aca92b886a934d808a296256157a4c9b347ab9ec4ec1def9c50d3f1d2ba"
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part04",
+            "fileName": "nixos-kde-build-41043824619.zip.part04",
+            "sizeBytes": 884401067,
+            "sha256": "sha256:141c66b4f6ad9a356001e7ce2359c47ecd4d7c1f15e0ec616da39f4a68370be8"
           }
         ]
       },
@@ -1094,49 +1094,49 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "9a1635086e4f1e05c08800faa29d92b1241b9f9c",
-      "metadataDigest": "sha256:e6a07fb51b1b042c83eb23d01c7efc48c621c420a5e1ebce3cf26f676bf22bbc",
-      "payloadDigest": "sha256:b92cc3548635ac92bdb36d770e6e3fb31cb44969cadfb0402fc43842704e8fcc",
-      "evidenceRevision": "image-build-40970707573",
+      "downstreamRevision": "b4cd9ac391b5d607ed98af2076323dd4f5537a50",
+      "metadataDigest": "sha256:d2773e7221e6588ed749358f4555010ace0d897b692065beb719b4e00d31b652",
+      "payloadDigest": "sha256:80a6d4aa177ebe288a8122c5fc11d403b3768cff2e32ca000939c426241b1c7d",
+      "evidenceRevision": "image-build-41043824619",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/installer-data-nixos-kde.json",
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/installer-data-nixos-kde.json",
         "fileName": "installer-data-nixos-kde.json",
-        "sizeBytes": 9675
+        "sizeBytes": 9437
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip",
-        "fileName": "nixos-kde-build-40970707573.zip",
-        "sizeBytes": 5061828639,
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip",
+        "fileName": "nixos-kde-build-41043824619.zip",
+        "sizeBytes": 5179368363,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part00",
-            "fileName": "nixos-kde-build-40970707573.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part00",
+            "fileName": "nixos-kde-build-41043824619.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:98b5a76a6ae89ef8ba10a57939f5cf649e33b03f2f7fca1dca2d379945e2db88"
+            "sha256": "sha256:3409405103ca95bc8264850e40e2f4fb1f7cf24b9192dc23ec6ae6457506020e"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part01",
-            "fileName": "nixos-kde-build-40970707573.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part01",
+            "fileName": "nixos-kde-build-41043824619.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:d70f97a472692ded3e6cdea65e274984c71d84a3c36a7f4463d1e14d12777366"
+            "sha256": "sha256:0672a9cd922a0f46ae49809f91300e77856bf8f4a4f41c9d2e73d45d5ce10174"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part02",
-            "fileName": "nixos-kde-build-40970707573.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part02",
+            "fileName": "nixos-kde-build-41043824619.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:27f40ac0156d85072538c2ed3a9a1ed37abdaddd895f27ba55cf964c0ec64db6"
+            "sha256": "sha256:ab1e0d4d0a51528f5d9fd37d82d9ec68f0b4af019445cb84612e4b1f3c114164"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part03",
-            "fileName": "nixos-kde-build-40970707573.zip.part03",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part03",
+            "fileName": "nixos-kde-build-41043824619.zip.part03",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:848920a3c1f4fc8278161bbfeaead14b57c1aaf2a8d7d36b31f8bd35f059f826"
+            "sha256": "sha256:e0c7b18155c1658db63fa05714ce3e11d69739e84ec5b405fe585a50db2c64bc"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part04",
-            "fileName": "nixos-kde-build-40970707573.zip.part04",
-            "sizeBytes": 766861343,
-            "sha256": "sha256:62051aca92b886a934d808a296256157a4c9b347ab9ec4ec1def9c50d3f1d2ba"
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part04",
+            "fileName": "nixos-kde-build-41043824619.zip.part04",
+            "sizeBytes": 884401067,
+            "sha256": "sha256:141c66b4f6ad9a356001e7ce2359c47ecd4d7c1f15e0ec616da39f4a68370be8"
           }
         ]
       },
@@ -1148,49 +1148,49 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "9a1635086e4f1e05c08800faa29d92b1241b9f9c",
-      "metadataDigest": "sha256:e6a07fb51b1b042c83eb23d01c7efc48c621c420a5e1ebce3cf26f676bf22bbc",
-      "payloadDigest": "sha256:b92cc3548635ac92bdb36d770e6e3fb31cb44969cadfb0402fc43842704e8fcc",
-      "evidenceRevision": "image-build-40970707573",
+      "downstreamRevision": "b4cd9ac391b5d607ed98af2076323dd4f5537a50",
+      "metadataDigest": "sha256:d2773e7221e6588ed749358f4555010ace0d897b692065beb719b4e00d31b652",
+      "payloadDigest": "sha256:80a6d4aa177ebe288a8122c5fc11d403b3768cff2e32ca000939c426241b1c7d",
+      "evidenceRevision": "image-build-41043824619",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/installer-data-nixos-kde.json",
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/installer-data-nixos-kde.json",
         "fileName": "installer-data-nixos-kde.json",
-        "sizeBytes": 9675
+        "sizeBytes": 9437
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip",
-        "fileName": "nixos-kde-build-40970707573.zip",
-        "sizeBytes": 5061828639,
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip",
+        "fileName": "nixos-kde-build-41043824619.zip",
+        "sizeBytes": 5179368363,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part00",
-            "fileName": "nixos-kde-build-40970707573.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part00",
+            "fileName": "nixos-kde-build-41043824619.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:98b5a76a6ae89ef8ba10a57939f5cf649e33b03f2f7fca1dca2d379945e2db88"
+            "sha256": "sha256:3409405103ca95bc8264850e40e2f4fb1f7cf24b9192dc23ec6ae6457506020e"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part01",
-            "fileName": "nixos-kde-build-40970707573.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part01",
+            "fileName": "nixos-kde-build-41043824619.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:d70f97a472692ded3e6cdea65e274984c71d84a3c36a7f4463d1e14d12777366"
+            "sha256": "sha256:0672a9cd922a0f46ae49809f91300e77856bf8f4a4f41c9d2e73d45d5ce10174"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part02",
-            "fileName": "nixos-kde-build-40970707573.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part02",
+            "fileName": "nixos-kde-build-41043824619.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:27f40ac0156d85072538c2ed3a9a1ed37abdaddd895f27ba55cf964c0ec64db6"
+            "sha256": "sha256:ab1e0d4d0a51528f5d9fd37d82d9ec68f0b4af019445cb84612e4b1f3c114164"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part03",
-            "fileName": "nixos-kde-build-40970707573.zip.part03",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part03",
+            "fileName": "nixos-kde-build-41043824619.zip.part03",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:848920a3c1f4fc8278161bbfeaead14b57c1aaf2a8d7d36b31f8bd35f059f826"
+            "sha256": "sha256:e0c7b18155c1658db63fa05714ce3e11d69739e84ec5b405fe585a50db2c64bc"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part04",
-            "fileName": "nixos-kde-build-40970707573.zip.part04",
-            "sizeBytes": 766861343,
-            "sha256": "sha256:62051aca92b886a934d808a296256157a4c9b347ab9ec4ec1def9c50d3f1d2ba"
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part04",
+            "fileName": "nixos-kde-build-41043824619.zip.part04",
+            "sizeBytes": 884401067,
+            "sha256": "sha256:141c66b4f6ad9a356001e7ce2359c47ecd4d7c1f15e0ec616da39f4a68370be8"
           }
         ]
       },
@@ -1202,49 +1202,49 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "9a1635086e4f1e05c08800faa29d92b1241b9f9c",
-      "metadataDigest": "sha256:e6a07fb51b1b042c83eb23d01c7efc48c621c420a5e1ebce3cf26f676bf22bbc",
-      "payloadDigest": "sha256:b92cc3548635ac92bdb36d770e6e3fb31cb44969cadfb0402fc43842704e8fcc",
-      "evidenceRevision": "image-build-40970707573",
+      "downstreamRevision": "b4cd9ac391b5d607ed98af2076323dd4f5537a50",
+      "metadataDigest": "sha256:d2773e7221e6588ed749358f4555010ace0d897b692065beb719b4e00d31b652",
+      "payloadDigest": "sha256:80a6d4aa177ebe288a8122c5fc11d403b3768cff2e32ca000939c426241b1c7d",
+      "evidenceRevision": "image-build-41043824619",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/installer-data-nixos-kde.json",
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/installer-data-nixos-kde.json",
         "fileName": "installer-data-nixos-kde.json",
-        "sizeBytes": 9675
+        "sizeBytes": 9437
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip",
-        "fileName": "nixos-kde-build-40970707573.zip",
-        "sizeBytes": 5061828639,
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip",
+        "fileName": "nixos-kde-build-41043824619.zip",
+        "sizeBytes": 5179368363,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part00",
-            "fileName": "nixos-kde-build-40970707573.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part00",
+            "fileName": "nixos-kde-build-41043824619.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:98b5a76a6ae89ef8ba10a57939f5cf649e33b03f2f7fca1dca2d379945e2db88"
+            "sha256": "sha256:3409405103ca95bc8264850e40e2f4fb1f7cf24b9192dc23ec6ae6457506020e"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part01",
-            "fileName": "nixos-kde-build-40970707573.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part01",
+            "fileName": "nixos-kde-build-41043824619.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:d70f97a472692ded3e6cdea65e274984c71d84a3c36a7f4463d1e14d12777366"
+            "sha256": "sha256:0672a9cd922a0f46ae49809f91300e77856bf8f4a4f41c9d2e73d45d5ce10174"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part02",
-            "fileName": "nixos-kde-build-40970707573.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part02",
+            "fileName": "nixos-kde-build-41043824619.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:27f40ac0156d85072538c2ed3a9a1ed37abdaddd895f27ba55cf964c0ec64db6"
+            "sha256": "sha256:ab1e0d4d0a51528f5d9fd37d82d9ec68f0b4af019445cb84612e4b1f3c114164"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part03",
-            "fileName": "nixos-kde-build-40970707573.zip.part03",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part03",
+            "fileName": "nixos-kde-build-41043824619.zip.part03",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:848920a3c1f4fc8278161bbfeaead14b57c1aaf2a8d7d36b31f8bd35f059f826"
+            "sha256": "sha256:e0c7b18155c1658db63fa05714ce3e11d69739e84ec5b405fe585a50db2c64bc"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part04",
-            "fileName": "nixos-kde-build-40970707573.zip.part04",
-            "sizeBytes": 766861343,
-            "sha256": "sha256:62051aca92b886a934d808a296256157a4c9b347ab9ec4ec1def9c50d3f1d2ba"
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part04",
+            "fileName": "nixos-kde-build-41043824619.zip.part04",
+            "sizeBytes": 884401067,
+            "sha256": "sha256:141c66b4f6ad9a356001e7ce2359c47ecd4d7c1f15e0ec616da39f4a68370be8"
           }
         ]
       },
@@ -1256,49 +1256,49 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "9a1635086e4f1e05c08800faa29d92b1241b9f9c",
-      "metadataDigest": "sha256:e6a07fb51b1b042c83eb23d01c7efc48c621c420a5e1ebce3cf26f676bf22bbc",
-      "payloadDigest": "sha256:b92cc3548635ac92bdb36d770e6e3fb31cb44969cadfb0402fc43842704e8fcc",
-      "evidenceRevision": "image-build-40970707573",
+      "downstreamRevision": "b4cd9ac391b5d607ed98af2076323dd4f5537a50",
+      "metadataDigest": "sha256:d2773e7221e6588ed749358f4555010ace0d897b692065beb719b4e00d31b652",
+      "payloadDigest": "sha256:80a6d4aa177ebe288a8122c5fc11d403b3768cff2e32ca000939c426241b1c7d",
+      "evidenceRevision": "image-build-41043824619",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/installer-data-nixos-kde.json",
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/installer-data-nixos-kde.json",
         "fileName": "installer-data-nixos-kde.json",
-        "sizeBytes": 9675
+        "sizeBytes": 9437
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip",
-        "fileName": "nixos-kde-build-40970707573.zip",
-        "sizeBytes": 5061828639,
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip",
+        "fileName": "nixos-kde-build-41043824619.zip",
+        "sizeBytes": 5179368363,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part00",
-            "fileName": "nixos-kde-build-40970707573.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part00",
+            "fileName": "nixos-kde-build-41043824619.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:98b5a76a6ae89ef8ba10a57939f5cf649e33b03f2f7fca1dca2d379945e2db88"
+            "sha256": "sha256:3409405103ca95bc8264850e40e2f4fb1f7cf24b9192dc23ec6ae6457506020e"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part01",
-            "fileName": "nixos-kde-build-40970707573.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part01",
+            "fileName": "nixos-kde-build-41043824619.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:d70f97a472692ded3e6cdea65e274984c71d84a3c36a7f4463d1e14d12777366"
+            "sha256": "sha256:0672a9cd922a0f46ae49809f91300e77856bf8f4a4f41c9d2e73d45d5ce10174"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part02",
-            "fileName": "nixos-kde-build-40970707573.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part02",
+            "fileName": "nixos-kde-build-41043824619.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:27f40ac0156d85072538c2ed3a9a1ed37abdaddd895f27ba55cf964c0ec64db6"
+            "sha256": "sha256:ab1e0d4d0a51528f5d9fd37d82d9ec68f0b4af019445cb84612e4b1f3c114164"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part03",
-            "fileName": "nixos-kde-build-40970707573.zip.part03",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part03",
+            "fileName": "nixos-kde-build-41043824619.zip.part03",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:848920a3c1f4fc8278161bbfeaead14b57c1aaf2a8d7d36b31f8bd35f059f826"
+            "sha256": "sha256:e0c7b18155c1658db63fa05714ce3e11d69739e84ec5b405fe585a50db2c64bc"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part04",
-            "fileName": "nixos-kde-build-40970707573.zip.part04",
-            "sizeBytes": 766861343,
-            "sha256": "sha256:62051aca92b886a934d808a296256157a4c9b347ab9ec4ec1def9c50d3f1d2ba"
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part04",
+            "fileName": "nixos-kde-build-41043824619.zip.part04",
+            "sizeBytes": 884401067,
+            "sha256": "sha256:141c66b4f6ad9a356001e7ce2359c47ecd4d7c1f15e0ec616da39f4a68370be8"
           }
         ]
       },
@@ -1310,49 +1310,49 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "9a1635086e4f1e05c08800faa29d92b1241b9f9c",
-      "metadataDigest": "sha256:e6a07fb51b1b042c83eb23d01c7efc48c621c420a5e1ebce3cf26f676bf22bbc",
-      "payloadDigest": "sha256:b92cc3548635ac92bdb36d770e6e3fb31cb44969cadfb0402fc43842704e8fcc",
-      "evidenceRevision": "image-build-40970707573",
+      "downstreamRevision": "b4cd9ac391b5d607ed98af2076323dd4f5537a50",
+      "metadataDigest": "sha256:d2773e7221e6588ed749358f4555010ace0d897b692065beb719b4e00d31b652",
+      "payloadDigest": "sha256:80a6d4aa177ebe288a8122c5fc11d403b3768cff2e32ca000939c426241b1c7d",
+      "evidenceRevision": "image-build-41043824619",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/installer-data-nixos-kde.json",
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/installer-data-nixos-kde.json",
         "fileName": "installer-data-nixos-kde.json",
-        "sizeBytes": 9675
+        "sizeBytes": 9437
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip",
-        "fileName": "nixos-kde-build-40970707573.zip",
-        "sizeBytes": 5061828639,
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip",
+        "fileName": "nixos-kde-build-41043824619.zip",
+        "sizeBytes": 5179368363,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part00",
-            "fileName": "nixos-kde-build-40970707573.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part00",
+            "fileName": "nixos-kde-build-41043824619.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:98b5a76a6ae89ef8ba10a57939f5cf649e33b03f2f7fca1dca2d379945e2db88"
+            "sha256": "sha256:3409405103ca95bc8264850e40e2f4fb1f7cf24b9192dc23ec6ae6457506020e"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part01",
-            "fileName": "nixos-kde-build-40970707573.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part01",
+            "fileName": "nixos-kde-build-41043824619.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:d70f97a472692ded3e6cdea65e274984c71d84a3c36a7f4463d1e14d12777366"
+            "sha256": "sha256:0672a9cd922a0f46ae49809f91300e77856bf8f4a4f41c9d2e73d45d5ce10174"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part02",
-            "fileName": "nixos-kde-build-40970707573.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part02",
+            "fileName": "nixos-kde-build-41043824619.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:27f40ac0156d85072538c2ed3a9a1ed37abdaddd895f27ba55cf964c0ec64db6"
+            "sha256": "sha256:ab1e0d4d0a51528f5d9fd37d82d9ec68f0b4af019445cb84612e4b1f3c114164"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part03",
-            "fileName": "nixos-kde-build-40970707573.zip.part03",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part03",
+            "fileName": "nixos-kde-build-41043824619.zip.part03",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:848920a3c1f4fc8278161bbfeaead14b57c1aaf2a8d7d36b31f8bd35f059f826"
+            "sha256": "sha256:e0c7b18155c1658db63fa05714ce3e11d69739e84ec5b405fe585a50db2c64bc"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part04",
-            "fileName": "nixos-kde-build-40970707573.zip.part04",
-            "sizeBytes": 766861343,
-            "sha256": "sha256:62051aca92b886a934d808a296256157a4c9b347ab9ec4ec1def9c50d3f1d2ba"
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part04",
+            "fileName": "nixos-kde-build-41043824619.zip.part04",
+            "sizeBytes": 884401067,
+            "sha256": "sha256:141c66b4f6ad9a356001e7ce2359c47ecd4d7c1f15e0ec616da39f4a68370be8"
           }
         ]
       },
@@ -1364,49 +1364,49 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "9a1635086e4f1e05c08800faa29d92b1241b9f9c",
-      "metadataDigest": "sha256:e6a07fb51b1b042c83eb23d01c7efc48c621c420a5e1ebce3cf26f676bf22bbc",
-      "payloadDigest": "sha256:b92cc3548635ac92bdb36d770e6e3fb31cb44969cadfb0402fc43842704e8fcc",
-      "evidenceRevision": "image-build-40970707573",
+      "downstreamRevision": "b4cd9ac391b5d607ed98af2076323dd4f5537a50",
+      "metadataDigest": "sha256:d2773e7221e6588ed749358f4555010ace0d897b692065beb719b4e00d31b652",
+      "payloadDigest": "sha256:80a6d4aa177ebe288a8122c5fc11d403b3768cff2e32ca000939c426241b1c7d",
+      "evidenceRevision": "image-build-41043824619",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/installer-data-nixos-kde.json",
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/installer-data-nixos-kde.json",
         "fileName": "installer-data-nixos-kde.json",
-        "sizeBytes": 9675
+        "sizeBytes": 9437
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip",
-        "fileName": "nixos-kde-build-40970707573.zip",
-        "sizeBytes": 5061828639,
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip",
+        "fileName": "nixos-kde-build-41043824619.zip",
+        "sizeBytes": 5179368363,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part00",
-            "fileName": "nixos-kde-build-40970707573.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part00",
+            "fileName": "nixos-kde-build-41043824619.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:98b5a76a6ae89ef8ba10a57939f5cf649e33b03f2f7fca1dca2d379945e2db88"
+            "sha256": "sha256:3409405103ca95bc8264850e40e2f4fb1f7cf24b9192dc23ec6ae6457506020e"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part01",
-            "fileName": "nixos-kde-build-40970707573.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part01",
+            "fileName": "nixos-kde-build-41043824619.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:d70f97a472692ded3e6cdea65e274984c71d84a3c36a7f4463d1e14d12777366"
+            "sha256": "sha256:0672a9cd922a0f46ae49809f91300e77856bf8f4a4f41c9d2e73d45d5ce10174"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part02",
-            "fileName": "nixos-kde-build-40970707573.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part02",
+            "fileName": "nixos-kde-build-41043824619.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:27f40ac0156d85072538c2ed3a9a1ed37abdaddd895f27ba55cf964c0ec64db6"
+            "sha256": "sha256:ab1e0d4d0a51528f5d9fd37d82d9ec68f0b4af019445cb84612e4b1f3c114164"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part03",
-            "fileName": "nixos-kde-build-40970707573.zip.part03",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part03",
+            "fileName": "nixos-kde-build-41043824619.zip.part03",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:848920a3c1f4fc8278161bbfeaead14b57c1aaf2a8d7d36b31f8bd35f059f826"
+            "sha256": "sha256:e0c7b18155c1658db63fa05714ce3e11d69739e84ec5b405fe585a50db2c64bc"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part04",
-            "fileName": "nixos-kde-build-40970707573.zip.part04",
-            "sizeBytes": 766861343,
-            "sha256": "sha256:62051aca92b886a934d808a296256157a4c9b347ab9ec4ec1def9c50d3f1d2ba"
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part04",
+            "fileName": "nixos-kde-build-41043824619.zip.part04",
+            "sizeBytes": 884401067,
+            "sha256": "sha256:141c66b4f6ad9a356001e7ce2359c47ecd4d7c1f15e0ec616da39f4a68370be8"
           }
         ]
       },
@@ -1418,49 +1418,49 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "9a1635086e4f1e05c08800faa29d92b1241b9f9c",
-      "metadataDigest": "sha256:e6a07fb51b1b042c83eb23d01c7efc48c621c420a5e1ebce3cf26f676bf22bbc",
-      "payloadDigest": "sha256:b92cc3548635ac92bdb36d770e6e3fb31cb44969cadfb0402fc43842704e8fcc",
-      "evidenceRevision": "image-build-40970707573",
+      "downstreamRevision": "b4cd9ac391b5d607ed98af2076323dd4f5537a50",
+      "metadataDigest": "sha256:d2773e7221e6588ed749358f4555010ace0d897b692065beb719b4e00d31b652",
+      "payloadDigest": "sha256:80a6d4aa177ebe288a8122c5fc11d403b3768cff2e32ca000939c426241b1c7d",
+      "evidenceRevision": "image-build-41043824619",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/installer-data-nixos-kde.json",
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/installer-data-nixos-kde.json",
         "fileName": "installer-data-nixos-kde.json",
-        "sizeBytes": 9675
+        "sizeBytes": 9437
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip",
-        "fileName": "nixos-kde-build-40970707573.zip",
-        "sizeBytes": 5061828639,
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip",
+        "fileName": "nixos-kde-build-41043824619.zip",
+        "sizeBytes": 5179368363,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part00",
-            "fileName": "nixos-kde-build-40970707573.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part00",
+            "fileName": "nixos-kde-build-41043824619.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:98b5a76a6ae89ef8ba10a57939f5cf649e33b03f2f7fca1dca2d379945e2db88"
+            "sha256": "sha256:3409405103ca95bc8264850e40e2f4fb1f7cf24b9192dc23ec6ae6457506020e"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part01",
-            "fileName": "nixos-kde-build-40970707573.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part01",
+            "fileName": "nixos-kde-build-41043824619.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:d70f97a472692ded3e6cdea65e274984c71d84a3c36a7f4463d1e14d12777366"
+            "sha256": "sha256:0672a9cd922a0f46ae49809f91300e77856bf8f4a4f41c9d2e73d45d5ce10174"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part02",
-            "fileName": "nixos-kde-build-40970707573.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part02",
+            "fileName": "nixos-kde-build-41043824619.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:27f40ac0156d85072538c2ed3a9a1ed37abdaddd895f27ba55cf964c0ec64db6"
+            "sha256": "sha256:ab1e0d4d0a51528f5d9fd37d82d9ec68f0b4af019445cb84612e4b1f3c114164"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part03",
-            "fileName": "nixos-kde-build-40970707573.zip.part03",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part03",
+            "fileName": "nixos-kde-build-41043824619.zip.part03",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:848920a3c1f4fc8278161bbfeaead14b57c1aaf2a8d7d36b31f8bd35f059f826"
+            "sha256": "sha256:e0c7b18155c1658db63fa05714ce3e11d69739e84ec5b405fe585a50db2c64bc"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part04",
-            "fileName": "nixos-kde-build-40970707573.zip.part04",
-            "sizeBytes": 766861343,
-            "sha256": "sha256:62051aca92b886a934d808a296256157a4c9b347ab9ec4ec1def9c50d3f1d2ba"
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part04",
+            "fileName": "nixos-kde-build-41043824619.zip.part04",
+            "sizeBytes": 884401067,
+            "sha256": "sha256:141c66b4f6ad9a356001e7ce2359c47ecd4d7c1f15e0ec616da39f4a68370be8"
           }
         ]
       },
@@ -1472,49 +1472,49 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "9a1635086e4f1e05c08800faa29d92b1241b9f9c",
-      "metadataDigest": "sha256:e6a07fb51b1b042c83eb23d01c7efc48c621c420a5e1ebce3cf26f676bf22bbc",
-      "payloadDigest": "sha256:b92cc3548635ac92bdb36d770e6e3fb31cb44969cadfb0402fc43842704e8fcc",
-      "evidenceRevision": "image-build-40970707573",
+      "downstreamRevision": "b4cd9ac391b5d607ed98af2076323dd4f5537a50",
+      "metadataDigest": "sha256:d2773e7221e6588ed749358f4555010ace0d897b692065beb719b4e00d31b652",
+      "payloadDigest": "sha256:80a6d4aa177ebe288a8122c5fc11d403b3768cff2e32ca000939c426241b1c7d",
+      "evidenceRevision": "image-build-41043824619",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/installer-data-nixos-kde.json",
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/installer-data-nixos-kde.json",
         "fileName": "installer-data-nixos-kde.json",
-        "sizeBytes": 9675
+        "sizeBytes": 9437
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip",
-        "fileName": "nixos-kde-build-40970707573.zip",
-        "sizeBytes": 5061828639,
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip",
+        "fileName": "nixos-kde-build-41043824619.zip",
+        "sizeBytes": 5179368363,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part00",
-            "fileName": "nixos-kde-build-40970707573.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part00",
+            "fileName": "nixos-kde-build-41043824619.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:98b5a76a6ae89ef8ba10a57939f5cf649e33b03f2f7fca1dca2d379945e2db88"
+            "sha256": "sha256:3409405103ca95bc8264850e40e2f4fb1f7cf24b9192dc23ec6ae6457506020e"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part01",
-            "fileName": "nixos-kde-build-40970707573.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part01",
+            "fileName": "nixos-kde-build-41043824619.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:d70f97a472692ded3e6cdea65e274984c71d84a3c36a7f4463d1e14d12777366"
+            "sha256": "sha256:0672a9cd922a0f46ae49809f91300e77856bf8f4a4f41c9d2e73d45d5ce10174"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part02",
-            "fileName": "nixos-kde-build-40970707573.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part02",
+            "fileName": "nixos-kde-build-41043824619.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:27f40ac0156d85072538c2ed3a9a1ed37abdaddd895f27ba55cf964c0ec64db6"
+            "sha256": "sha256:ab1e0d4d0a51528f5d9fd37d82d9ec68f0b4af019445cb84612e4b1f3c114164"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part03",
-            "fileName": "nixos-kde-build-40970707573.zip.part03",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part03",
+            "fileName": "nixos-kde-build-41043824619.zip.part03",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:848920a3c1f4fc8278161bbfeaead14b57c1aaf2a8d7d36b31f8bd35f059f826"
+            "sha256": "sha256:e0c7b18155c1658db63fa05714ce3e11d69739e84ec5b405fe585a50db2c64bc"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part04",
-            "fileName": "nixos-kde-build-40970707573.zip.part04",
-            "sizeBytes": 766861343,
-            "sha256": "sha256:62051aca92b886a934d808a296256157a4c9b347ab9ec4ec1def9c50d3f1d2ba"
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part04",
+            "fileName": "nixos-kde-build-41043824619.zip.part04",
+            "sizeBytes": 884401067,
+            "sha256": "sha256:141c66b4f6ad9a356001e7ce2359c47ecd4d7c1f15e0ec616da39f4a68370be8"
           }
         ]
       },
@@ -1526,49 +1526,49 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "9a1635086e4f1e05c08800faa29d92b1241b9f9c",
-      "metadataDigest": "sha256:e6a07fb51b1b042c83eb23d01c7efc48c621c420a5e1ebce3cf26f676bf22bbc",
-      "payloadDigest": "sha256:b92cc3548635ac92bdb36d770e6e3fb31cb44969cadfb0402fc43842704e8fcc",
-      "evidenceRevision": "image-build-40970707573",
+      "downstreamRevision": "b4cd9ac391b5d607ed98af2076323dd4f5537a50",
+      "metadataDigest": "sha256:d2773e7221e6588ed749358f4555010ace0d897b692065beb719b4e00d31b652",
+      "payloadDigest": "sha256:80a6d4aa177ebe288a8122c5fc11d403b3768cff2e32ca000939c426241b1c7d",
+      "evidenceRevision": "image-build-41043824619",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/installer-data-nixos-kde.json",
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/installer-data-nixos-kde.json",
         "fileName": "installer-data-nixos-kde.json",
-        "sizeBytes": 9675
+        "sizeBytes": 9437
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip",
-        "fileName": "nixos-kde-build-40970707573.zip",
-        "sizeBytes": 5061828639,
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip",
+        "fileName": "nixos-kde-build-41043824619.zip",
+        "sizeBytes": 5179368363,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part00",
-            "fileName": "nixos-kde-build-40970707573.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part00",
+            "fileName": "nixos-kde-build-41043824619.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:98b5a76a6ae89ef8ba10a57939f5cf649e33b03f2f7fca1dca2d379945e2db88"
+            "sha256": "sha256:3409405103ca95bc8264850e40e2f4fb1f7cf24b9192dc23ec6ae6457506020e"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part01",
-            "fileName": "nixos-kde-build-40970707573.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part01",
+            "fileName": "nixos-kde-build-41043824619.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:d70f97a472692ded3e6cdea65e274984c71d84a3c36a7f4463d1e14d12777366"
+            "sha256": "sha256:0672a9cd922a0f46ae49809f91300e77856bf8f4a4f41c9d2e73d45d5ce10174"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part02",
-            "fileName": "nixos-kde-build-40970707573.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part02",
+            "fileName": "nixos-kde-build-41043824619.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:27f40ac0156d85072538c2ed3a9a1ed37abdaddd895f27ba55cf964c0ec64db6"
+            "sha256": "sha256:ab1e0d4d0a51528f5d9fd37d82d9ec68f0b4af019445cb84612e4b1f3c114164"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part03",
-            "fileName": "nixos-kde-build-40970707573.zip.part03",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part03",
+            "fileName": "nixos-kde-build-41043824619.zip.part03",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:848920a3c1f4fc8278161bbfeaead14b57c1aaf2a8d7d36b31f8bd35f059f826"
+            "sha256": "sha256:e0c7b18155c1658db63fa05714ce3e11d69739e84ec5b405fe585a50db2c64bc"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part04",
-            "fileName": "nixos-kde-build-40970707573.zip.part04",
-            "sizeBytes": 766861343,
-            "sha256": "sha256:62051aca92b886a934d808a296256157a4c9b347ab9ec4ec1def9c50d3f1d2ba"
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part04",
+            "fileName": "nixos-kde-build-41043824619.zip.part04",
+            "sizeBytes": 884401067,
+            "sha256": "sha256:141c66b4f6ad9a356001e7ce2359c47ecd4d7c1f15e0ec616da39f4a68370be8"
           }
         ]
       },
@@ -1580,49 +1580,49 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "9a1635086e4f1e05c08800faa29d92b1241b9f9c",
-      "metadataDigest": "sha256:e6a07fb51b1b042c83eb23d01c7efc48c621c420a5e1ebce3cf26f676bf22bbc",
-      "payloadDigest": "sha256:b92cc3548635ac92bdb36d770e6e3fb31cb44969cadfb0402fc43842704e8fcc",
-      "evidenceRevision": "image-build-40970707573",
+      "downstreamRevision": "b4cd9ac391b5d607ed98af2076323dd4f5537a50",
+      "metadataDigest": "sha256:d2773e7221e6588ed749358f4555010ace0d897b692065beb719b4e00d31b652",
+      "payloadDigest": "sha256:80a6d4aa177ebe288a8122c5fc11d403b3768cff2e32ca000939c426241b1c7d",
+      "evidenceRevision": "image-build-41043824619",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/installer-data-nixos-kde.json",
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/installer-data-nixos-kde.json",
         "fileName": "installer-data-nixos-kde.json",
-        "sizeBytes": 9675
+        "sizeBytes": 9437
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip",
-        "fileName": "nixos-kde-build-40970707573.zip",
-        "sizeBytes": 5061828639,
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip",
+        "fileName": "nixos-kde-build-41043824619.zip",
+        "sizeBytes": 5179368363,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part00",
-            "fileName": "nixos-kde-build-40970707573.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part00",
+            "fileName": "nixos-kde-build-41043824619.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:98b5a76a6ae89ef8ba10a57939f5cf649e33b03f2f7fca1dca2d379945e2db88"
+            "sha256": "sha256:3409405103ca95bc8264850e40e2f4fb1f7cf24b9192dc23ec6ae6457506020e"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part01",
-            "fileName": "nixos-kde-build-40970707573.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part01",
+            "fileName": "nixos-kde-build-41043824619.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:d70f97a472692ded3e6cdea65e274984c71d84a3c36a7f4463d1e14d12777366"
+            "sha256": "sha256:0672a9cd922a0f46ae49809f91300e77856bf8f4a4f41c9d2e73d45d5ce10174"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part02",
-            "fileName": "nixos-kde-build-40970707573.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part02",
+            "fileName": "nixos-kde-build-41043824619.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:27f40ac0156d85072538c2ed3a9a1ed37abdaddd895f27ba55cf964c0ec64db6"
+            "sha256": "sha256:ab1e0d4d0a51528f5d9fd37d82d9ec68f0b4af019445cb84612e4b1f3c114164"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part03",
-            "fileName": "nixos-kde-build-40970707573.zip.part03",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part03",
+            "fileName": "nixos-kde-build-41043824619.zip.part03",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:848920a3c1f4fc8278161bbfeaead14b57c1aaf2a8d7d36b31f8bd35f059f826"
+            "sha256": "sha256:e0c7b18155c1658db63fa05714ce3e11d69739e84ec5b405fe585a50db2c64bc"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part04",
-            "fileName": "nixos-kde-build-40970707573.zip.part04",
-            "sizeBytes": 766861343,
-            "sha256": "sha256:62051aca92b886a934d808a296256157a4c9b347ab9ec4ec1def9c50d3f1d2ba"
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part04",
+            "fileName": "nixos-kde-build-41043824619.zip.part04",
+            "sizeBytes": 884401067,
+            "sha256": "sha256:141c66b4f6ad9a356001e7ce2359c47ecd4d7c1f15e0ec616da39f4a68370be8"
           }
         ]
       },
@@ -1634,49 +1634,49 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "9a1635086e4f1e05c08800faa29d92b1241b9f9c",
-      "metadataDigest": "sha256:e6a07fb51b1b042c83eb23d01c7efc48c621c420a5e1ebce3cf26f676bf22bbc",
-      "payloadDigest": "sha256:b92cc3548635ac92bdb36d770e6e3fb31cb44969cadfb0402fc43842704e8fcc",
-      "evidenceRevision": "image-build-40970707573",
+      "downstreamRevision": "b4cd9ac391b5d607ed98af2076323dd4f5537a50",
+      "metadataDigest": "sha256:d2773e7221e6588ed749358f4555010ace0d897b692065beb719b4e00d31b652",
+      "payloadDigest": "sha256:80a6d4aa177ebe288a8122c5fc11d403b3768cff2e32ca000939c426241b1c7d",
+      "evidenceRevision": "image-build-41043824619",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/installer-data-nixos-kde.json",
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/installer-data-nixos-kde.json",
         "fileName": "installer-data-nixos-kde.json",
-        "sizeBytes": 9675
+        "sizeBytes": 9437
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip",
-        "fileName": "nixos-kde-build-40970707573.zip",
-        "sizeBytes": 5061828639,
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip",
+        "fileName": "nixos-kde-build-41043824619.zip",
+        "sizeBytes": 5179368363,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part00",
-            "fileName": "nixos-kde-build-40970707573.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part00",
+            "fileName": "nixos-kde-build-41043824619.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:98b5a76a6ae89ef8ba10a57939f5cf649e33b03f2f7fca1dca2d379945e2db88"
+            "sha256": "sha256:3409405103ca95bc8264850e40e2f4fb1f7cf24b9192dc23ec6ae6457506020e"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part01",
-            "fileName": "nixos-kde-build-40970707573.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part01",
+            "fileName": "nixos-kde-build-41043824619.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:d70f97a472692ded3e6cdea65e274984c71d84a3c36a7f4463d1e14d12777366"
+            "sha256": "sha256:0672a9cd922a0f46ae49809f91300e77856bf8f4a4f41c9d2e73d45d5ce10174"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part02",
-            "fileName": "nixos-kde-build-40970707573.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part02",
+            "fileName": "nixos-kde-build-41043824619.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:27f40ac0156d85072538c2ed3a9a1ed37abdaddd895f27ba55cf964c0ec64db6"
+            "sha256": "sha256:ab1e0d4d0a51528f5d9fd37d82d9ec68f0b4af019445cb84612e4b1f3c114164"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part03",
-            "fileName": "nixos-kde-build-40970707573.zip.part03",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part03",
+            "fileName": "nixos-kde-build-41043824619.zip.part03",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:848920a3c1f4fc8278161bbfeaead14b57c1aaf2a8d7d36b31f8bd35f059f826"
+            "sha256": "sha256:e0c7b18155c1658db63fa05714ce3e11d69739e84ec5b405fe585a50db2c64bc"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part04",
-            "fileName": "nixos-kde-build-40970707573.zip.part04",
-            "sizeBytes": 766861343,
-            "sha256": "sha256:62051aca92b886a934d808a296256157a4c9b347ab9ec4ec1def9c50d3f1d2ba"
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part04",
+            "fileName": "nixos-kde-build-41043824619.zip.part04",
+            "sizeBytes": 884401067,
+            "sha256": "sha256:141c66b4f6ad9a356001e7ce2359c47ecd4d7c1f15e0ec616da39f4a68370be8"
           }
         ]
       },
@@ -1688,49 +1688,49 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "9a1635086e4f1e05c08800faa29d92b1241b9f9c",
-      "metadataDigest": "sha256:e6a07fb51b1b042c83eb23d01c7efc48c621c420a5e1ebce3cf26f676bf22bbc",
-      "payloadDigest": "sha256:b92cc3548635ac92bdb36d770e6e3fb31cb44969cadfb0402fc43842704e8fcc",
-      "evidenceRevision": "image-build-40970707573",
+      "downstreamRevision": "b4cd9ac391b5d607ed98af2076323dd4f5537a50",
+      "metadataDigest": "sha256:d2773e7221e6588ed749358f4555010ace0d897b692065beb719b4e00d31b652",
+      "payloadDigest": "sha256:80a6d4aa177ebe288a8122c5fc11d403b3768cff2e32ca000939c426241b1c7d",
+      "evidenceRevision": "image-build-41043824619",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/installer-data-nixos-kde.json",
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/installer-data-nixos-kde.json",
         "fileName": "installer-data-nixos-kde.json",
-        "sizeBytes": 9675
+        "sizeBytes": 9437
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip",
-        "fileName": "nixos-kde-build-40970707573.zip",
-        "sizeBytes": 5061828639,
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip",
+        "fileName": "nixos-kde-build-41043824619.zip",
+        "sizeBytes": 5179368363,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part00",
-            "fileName": "nixos-kde-build-40970707573.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part00",
+            "fileName": "nixos-kde-build-41043824619.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:98b5a76a6ae89ef8ba10a57939f5cf649e33b03f2f7fca1dca2d379945e2db88"
+            "sha256": "sha256:3409405103ca95bc8264850e40e2f4fb1f7cf24b9192dc23ec6ae6457506020e"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part01",
-            "fileName": "nixos-kde-build-40970707573.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part01",
+            "fileName": "nixos-kde-build-41043824619.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:d70f97a472692ded3e6cdea65e274984c71d84a3c36a7f4463d1e14d12777366"
+            "sha256": "sha256:0672a9cd922a0f46ae49809f91300e77856bf8f4a4f41c9d2e73d45d5ce10174"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part02",
-            "fileName": "nixos-kde-build-40970707573.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part02",
+            "fileName": "nixos-kde-build-41043824619.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:27f40ac0156d85072538c2ed3a9a1ed37abdaddd895f27ba55cf964c0ec64db6"
+            "sha256": "sha256:ab1e0d4d0a51528f5d9fd37d82d9ec68f0b4af019445cb84612e4b1f3c114164"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part03",
-            "fileName": "nixos-kde-build-40970707573.zip.part03",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part03",
+            "fileName": "nixos-kde-build-41043824619.zip.part03",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:848920a3c1f4fc8278161bbfeaead14b57c1aaf2a8d7d36b31f8bd35f059f826"
+            "sha256": "sha256:e0c7b18155c1658db63fa05714ce3e11d69739e84ec5b405fe585a50db2c64bc"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part04",
-            "fileName": "nixos-kde-build-40970707573.zip.part04",
-            "sizeBytes": 766861343,
-            "sha256": "sha256:62051aca92b886a934d808a296256157a4c9b347ab9ec4ec1def9c50d3f1d2ba"
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part04",
+            "fileName": "nixos-kde-build-41043824619.zip.part04",
+            "sizeBytes": 884401067,
+            "sha256": "sha256:141c66b4f6ad9a356001e7ce2359c47ecd4d7c1f15e0ec616da39f4a68370be8"
           }
         ]
       },
@@ -1742,49 +1742,49 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "9a1635086e4f1e05c08800faa29d92b1241b9f9c",
-      "metadataDigest": "sha256:e6a07fb51b1b042c83eb23d01c7efc48c621c420a5e1ebce3cf26f676bf22bbc",
-      "payloadDigest": "sha256:b92cc3548635ac92bdb36d770e6e3fb31cb44969cadfb0402fc43842704e8fcc",
-      "evidenceRevision": "image-build-40970707573",
+      "downstreamRevision": "b4cd9ac391b5d607ed98af2076323dd4f5537a50",
+      "metadataDigest": "sha256:d2773e7221e6588ed749358f4555010ace0d897b692065beb719b4e00d31b652",
+      "payloadDigest": "sha256:80a6d4aa177ebe288a8122c5fc11d403b3768cff2e32ca000939c426241b1c7d",
+      "evidenceRevision": "image-build-41043824619",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/installer-data-nixos-kde.json",
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/installer-data-nixos-kde.json",
         "fileName": "installer-data-nixos-kde.json",
-        "sizeBytes": 9675
+        "sizeBytes": 9437
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip",
-        "fileName": "nixos-kde-build-40970707573.zip",
-        "sizeBytes": 5061828639,
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip",
+        "fileName": "nixos-kde-build-41043824619.zip",
+        "sizeBytes": 5179368363,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part00",
-            "fileName": "nixos-kde-build-40970707573.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part00",
+            "fileName": "nixos-kde-build-41043824619.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:98b5a76a6ae89ef8ba10a57939f5cf649e33b03f2f7fca1dca2d379945e2db88"
+            "sha256": "sha256:3409405103ca95bc8264850e40e2f4fb1f7cf24b9192dc23ec6ae6457506020e"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part01",
-            "fileName": "nixos-kde-build-40970707573.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part01",
+            "fileName": "nixos-kde-build-41043824619.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:d70f97a472692ded3e6cdea65e274984c71d84a3c36a7f4463d1e14d12777366"
+            "sha256": "sha256:0672a9cd922a0f46ae49809f91300e77856bf8f4a4f41c9d2e73d45d5ce10174"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part02",
-            "fileName": "nixos-kde-build-40970707573.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part02",
+            "fileName": "nixos-kde-build-41043824619.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:27f40ac0156d85072538c2ed3a9a1ed37abdaddd895f27ba55cf964c0ec64db6"
+            "sha256": "sha256:ab1e0d4d0a51528f5d9fd37d82d9ec68f0b4af019445cb84612e4b1f3c114164"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part03",
-            "fileName": "nixos-kde-build-40970707573.zip.part03",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part03",
+            "fileName": "nixos-kde-build-41043824619.zip.part03",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:848920a3c1f4fc8278161bbfeaead14b57c1aaf2a8d7d36b31f8bd35f059f826"
+            "sha256": "sha256:e0c7b18155c1658db63fa05714ce3e11d69739e84ec5b405fe585a50db2c64bc"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part04",
-            "fileName": "nixos-kde-build-40970707573.zip.part04",
-            "sizeBytes": 766861343,
-            "sha256": "sha256:62051aca92b886a934d808a296256157a4c9b347ab9ec4ec1def9c50d3f1d2ba"
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part04",
+            "fileName": "nixos-kde-build-41043824619.zip.part04",
+            "sizeBytes": 884401067,
+            "sha256": "sha256:141c66b4f6ad9a356001e7ce2359c47ecd4d7c1f15e0ec616da39f4a68370be8"
           }
         ]
       },
@@ -1796,49 +1796,49 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "9a1635086e4f1e05c08800faa29d92b1241b9f9c",
-      "metadataDigest": "sha256:e6a07fb51b1b042c83eb23d01c7efc48c621c420a5e1ebce3cf26f676bf22bbc",
-      "payloadDigest": "sha256:b92cc3548635ac92bdb36d770e6e3fb31cb44969cadfb0402fc43842704e8fcc",
-      "evidenceRevision": "image-build-40970707573",
+      "downstreamRevision": "b4cd9ac391b5d607ed98af2076323dd4f5537a50",
+      "metadataDigest": "sha256:d2773e7221e6588ed749358f4555010ace0d897b692065beb719b4e00d31b652",
+      "payloadDigest": "sha256:80a6d4aa177ebe288a8122c5fc11d403b3768cff2e32ca000939c426241b1c7d",
+      "evidenceRevision": "image-build-41043824619",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/installer-data-nixos-kde.json",
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/installer-data-nixos-kde.json",
         "fileName": "installer-data-nixos-kde.json",
-        "sizeBytes": 9675
+        "sizeBytes": 9437
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip",
-        "fileName": "nixos-kde-build-40970707573.zip",
-        "sizeBytes": 5061828639,
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip",
+        "fileName": "nixos-kde-build-41043824619.zip",
+        "sizeBytes": 5179368363,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part00",
-            "fileName": "nixos-kde-build-40970707573.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part00",
+            "fileName": "nixos-kde-build-41043824619.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:98b5a76a6ae89ef8ba10a57939f5cf649e33b03f2f7fca1dca2d379945e2db88"
+            "sha256": "sha256:3409405103ca95bc8264850e40e2f4fb1f7cf24b9192dc23ec6ae6457506020e"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part01",
-            "fileName": "nixos-kde-build-40970707573.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part01",
+            "fileName": "nixos-kde-build-41043824619.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:d70f97a472692ded3e6cdea65e274984c71d84a3c36a7f4463d1e14d12777366"
+            "sha256": "sha256:0672a9cd922a0f46ae49809f91300e77856bf8f4a4f41c9d2e73d45d5ce10174"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part02",
-            "fileName": "nixos-kde-build-40970707573.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part02",
+            "fileName": "nixos-kde-build-41043824619.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:27f40ac0156d85072538c2ed3a9a1ed37abdaddd895f27ba55cf964c0ec64db6"
+            "sha256": "sha256:ab1e0d4d0a51528f5d9fd37d82d9ec68f0b4af019445cb84612e4b1f3c114164"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part03",
-            "fileName": "nixos-kde-build-40970707573.zip.part03",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part03",
+            "fileName": "nixos-kde-build-41043824619.zip.part03",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:848920a3c1f4fc8278161bbfeaead14b57c1aaf2a8d7d36b31f8bd35f059f826"
+            "sha256": "sha256:e0c7b18155c1658db63fa05714ce3e11d69739e84ec5b405fe585a50db2c64bc"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part04",
-            "fileName": "nixos-kde-build-40970707573.zip.part04",
-            "sizeBytes": 766861343,
-            "sha256": "sha256:62051aca92b886a934d808a296256157a4c9b347ab9ec4ec1def9c50d3f1d2ba"
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part04",
+            "fileName": "nixos-kde-build-41043824619.zip.part04",
+            "sizeBytes": 884401067,
+            "sha256": "sha256:141c66b4f6ad9a356001e7ce2359c47ecd4d7c1f15e0ec616da39f4a68370be8"
           }
         ]
       },
@@ -1850,49 +1850,49 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "9a1635086e4f1e05c08800faa29d92b1241b9f9c",
-      "metadataDigest": "sha256:e6a07fb51b1b042c83eb23d01c7efc48c621c420a5e1ebce3cf26f676bf22bbc",
-      "payloadDigest": "sha256:b92cc3548635ac92bdb36d770e6e3fb31cb44969cadfb0402fc43842704e8fcc",
-      "evidenceRevision": "image-build-40970707573",
+      "downstreamRevision": "b4cd9ac391b5d607ed98af2076323dd4f5537a50",
+      "metadataDigest": "sha256:d2773e7221e6588ed749358f4555010ace0d897b692065beb719b4e00d31b652",
+      "payloadDigest": "sha256:80a6d4aa177ebe288a8122c5fc11d403b3768cff2e32ca000939c426241b1c7d",
+      "evidenceRevision": "image-build-41043824619",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/installer-data-nixos-kde.json",
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/installer-data-nixos-kde.json",
         "fileName": "installer-data-nixos-kde.json",
-        "sizeBytes": 9675
+        "sizeBytes": 9437
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip",
-        "fileName": "nixos-kde-build-40970707573.zip",
-        "sizeBytes": 5061828639,
+        "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip",
+        "fileName": "nixos-kde-build-41043824619.zip",
+        "sizeBytes": 5179368363,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part00",
-            "fileName": "nixos-kde-build-40970707573.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part00",
+            "fileName": "nixos-kde-build-41043824619.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:98b5a76a6ae89ef8ba10a57939f5cf649e33b03f2f7fca1dca2d379945e2db88"
+            "sha256": "sha256:3409405103ca95bc8264850e40e2f4fb1f7cf24b9192dc23ec6ae6457506020e"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part01",
-            "fileName": "nixos-kde-build-40970707573.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part01",
+            "fileName": "nixos-kde-build-41043824619.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:d70f97a472692ded3e6cdea65e274984c71d84a3c36a7f4463d1e14d12777366"
+            "sha256": "sha256:0672a9cd922a0f46ae49809f91300e77856bf8f4a4f41c9d2e73d45d5ce10174"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part02",
-            "fileName": "nixos-kde-build-40970707573.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part02",
+            "fileName": "nixos-kde-build-41043824619.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:27f40ac0156d85072538c2ed3a9a1ed37abdaddd895f27ba55cf964c0ec64db6"
+            "sha256": "sha256:ab1e0d4d0a51528f5d9fd37d82d9ec68f0b4af019445cb84612e4b1f3c114164"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part03",
-            "fileName": "nixos-kde-build-40970707573.zip.part03",
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part03",
+            "fileName": "nixos-kde-build-41043824619.zip.part03",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:848920a3c1f4fc8278161bbfeaead14b57c1aaf2a8d7d36b31f8bd35f059f826"
+            "sha256": "sha256:e0c7b18155c1658db63fa05714ce3e11d69739e84ec5b405fe585a50db2c64bc"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-40970707573/nixos-kde-build-40970707573.zip.part04",
-            "fileName": "nixos-kde-build-40970707573.zip.part04",
-            "sizeBytes": 766861343,
-            "sha256": "sha256:62051aca92b886a934d808a296256157a4c9b347ab9ec4ec1def9c50d3f1d2ba"
+            "sourceURL": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-41043824619/nixos-kde-build-41043824619.zip.part04",
+            "fileName": "nixos-kde-build-41043824619.zip.part04",
+            "sizeBytes": 884401067,
+            "sha256": "sha256:141c66b4f6ad9a356001e7ce2359c47ecd4d7c1f15e0ec616da39f4a68370be8"
           }
         ]
       },
