@@ -28,6 +28,8 @@ PUBLIC_DER_PREFIX = bytes.fromhex('302a300506032b6570032100')
 EXECUTION_FIELDS = ('engineVersion', 'engineDigest', 'engineArtifact',
                     'repairManifestDigest', 'repairManifestArtifact')
 EMPTY_CHANNELS = ('stable', 'rc')
+# Boards that boot only their own board Stage 2, never the combined one.
+BOARD_STAGE2_REQUIRED = ('j700ap', 'j616sap')
 
 
 def verify(catalog, signature, public):
@@ -62,7 +64,9 @@ def prepare(source, output, signing_key, release_tag, source_revision, fetch=fet
                                        '-pubout', '-outform', 'DER'])
     if key_der != PUBLIC_DER_PREFIX + public:
         raise ValueError('catalog signing key differs from the pinned root')
-    allowed = set(json.loads((ROOT/'keys/supported-models.json').read_text())['supported'])
+    manifest = json.loads((ROOT/'keys/supported-models.json').read_text())
+    allowed = set(manifest['supported'])
+    stage1_unqualified = set(manifest.get('stage1_unqualified', {})) & allowed
     now = int(time.time())
     issued = datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')
     url = ('https://github.com/aurora-silicon/aurora-installer/releases/tag/' + release_tag)
@@ -108,20 +112,23 @@ def prepare(source, output, signing_key, release_tag, source_revision, fetch=fet
         template = json.loads(raw)['os_list'][0]
         policy = template.get('aurora_stage1')
         boards = {model['deviceIdentifier'].removeprefix('apple,') + 'ap' for model in models}
+        # A board whose iBoot is known to refuse the common Stage 1 is listed in
+        # stage1_unqualified and left out of the qualification on purpose: the
+        # installer then stops before any disk change. Every other board needs it.
+        unqualified = {identifier.removeprefix('apple,') + 'ap' for identifier in stage1_unqualified}
         if (not isinstance(policy, dict) or set(policy) != {'kind', 'qualified_machines'}
                 or policy['kind'] != 'common-raw-v1'
-                or set(policy['qualified_machines']) != boards
+                or set(policy['qualified_machines']) != boards - unqualified
                 or any(not versions for versions in policy['qualified_machines'].values())):
             raise ValueError(f'{profile} lacks native Stage 1 policy for a supported board')
-        # Every supported board must be admitted by the shared template, and the
-        # MacBook Neo cannot load the combined Stage 2, so it needs its own.
+        # Every supported board must be admitted by the shared template. The
+        # MacBook Neo and the J616s boot only their own board Stage 2.
         admitted = template.get('allowed_device_classes')
         excluded = set(template.get('excluded_device_classes') or [])
         stage2 = template.get('aurora_stage2') or {}
-        neo_stage2 = (stage2.get('kind') == 'board-file-v1'
-                      and (stage2.get('board_members') or {}).get('j700ap'))
+        members = (stage2.get('board_members') or {}) if stage2.get('kind') == 'board-file-v1' else {}
         if (boards & excluded or (admitted is not None and not boards <= set(admitted))
-                or ('j700ap' in boards and not neo_stage2)):
+                or any(board in boards and not members.get(board) for board in BOARD_STAGE2_REQUIRED)):
             raise ValueError(f'{profile} metadata does not admit every supported board')
         previous = hashlib.sha256(data['catalog.json']).hexdigest()
         catalog['schemaVersion'] = 5

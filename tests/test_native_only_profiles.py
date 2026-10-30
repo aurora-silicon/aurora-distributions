@@ -184,6 +184,18 @@ class NativeOnlyProfileTests(unittest.TestCase):
                 self.prepare()
             self.assertFalse((self.root/'output').exists())
 
+    def test_a_stage_one_unqualified_board_may_be_left_out_of_qualification(self):
+        template = self.neo_template()
+        self.rewrite(template, ['apple,j274', 'apple,j700', 'apple,j316s'])
+        manifest = {'supported': ['apple,j274', 'apple,j700', 'apple,j316s']}
+        (self.root/'keys/supported-models.json').write_text(json.dumps(manifest))
+        with self.assertRaisesRegex(ValueError, 'lacks native Stage 1 policy'):
+            self.prepare()
+        self.assertFalse((self.root/'output').exists())
+        manifest['stage1_unqualified'] = {'apple,j316s': 'iBoot refuses the common Stage 1'}
+        (self.root/'keys/supported-models.json').write_text(json.dumps(manifest))
+        self.prepare()
+
     def test_missing_native_stage_one_policy_is_rejected_before_output(self):
         self.metadata = json.dumps({'os_list': [{'aurora_stage1': {
             'kind': 'common-raw-v1', 'qualified_machines': {'j700ap': ['26.6.2']}}}]}).encode()
