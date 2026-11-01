@@ -113,12 +113,13 @@ def prepare(source, output, signing_key, release_tag, source_revision, fetch=fet
         policy = template.get('aurora_stage1')
         boards = {model['deviceIdentifier'].removeprefix('apple,') + 'ap' for model in models}
         # A board whose iBoot is known to refuse the common Stage 1 is listed in
-        # stage1_unqualified and left out of the qualification on purpose: the
-        # installer then stops before any disk change. Every other board needs it.
+        # stage1_unqualified may be left out of the qualification (the installer
+        # then stops before any disk change); a payload built before it was marked
+        # may still qualify it. Every other board needs it.
         unqualified = {identifier.removeprefix('apple,') + 'ap' for identifier in stage1_unqualified}
         if (not isinstance(policy, dict) or set(policy) != {'kind', 'qualified_machines'}
                 or policy['kind'] != 'common-raw-v1'
-                or set(policy['qualified_machines']) != boards - unqualified
+                or not boards - unqualified <= set(policy['qualified_machines']) <= boards
                 or any(not versions for versions in policy['qualified_machines'].values())):
             raise ValueError(f'{profile} lacks native Stage 1 policy for a supported board')
         # Every supported board must be admitted by the shared template. The
