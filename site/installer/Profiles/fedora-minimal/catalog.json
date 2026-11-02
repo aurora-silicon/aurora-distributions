@@ -1,11 +1,11 @@
 {
   "schemaVersion": 5,
-  "sequence": 1793592286,
-  "issuedAt": "2026-11-02T04:04:46Z",
+  "sequence": 1793615510,
+  "issuedAt": "2026-11-02T10:31:50Z",
   "installer": {
     "minimumVersion": "0.1.0",
     "latestVersion": "0.1.0",
-    "downloadURL": "https://github.com/aurora-silicon/aurora-installer/releases/tag/v0.1.0-alpha.16"
+    "downloadURL": "https://github.com/aurora-silicon/aurora-installer/releases/tag/v0.1.0-alpha.3"
   },
   "models": [
     {
@@ -14,19 +14,33 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "3c29dbbefc9f3672c2ab5077ea5482165b16a64b",
-      "metadataDigest": "sha256:646d5edf65cf20170177defb279f8320dfb3476daaf4e93cf748f0ced12d993e",
-      "payloadDigest": "sha256:451a3df35fa7a7f11e57de36c221943111fc2ea1157730048439c305afe580c5",
-      "evidenceRevision": "image-build-41371545744",
+      "downstreamRevision": "1b2f6925c21701948494cba7c0f2dfafee184aaf",
+      "metadataDigest": "sha256:8a1aafd709f40d20a7f8edac5e3222575bf84c0207be68978128d0e51612537b",
+      "payloadDigest": "sha256:89644b7ac640b31fec7fbd9cb89a3b17b89b01df24ff519a6ad4f2ff02bfd6da",
+      "evidenceRevision": "image-build-41413717158",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41371545744/installer-data-fedora-minimal.json",
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/installer-data-fedora-minimal.json",
         "fileName": "installer-data-fedora-minimal.json",
         "sizeBytes": 7785
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41371545744/fedora-minimal-build-41371545744.zip",
-        "fileName": "fedora-minimal-build-41371545744.zip",
-        "sizeBytes": 1850565691
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/fedora-minimal-build-41413717158.zip",
+        "fileName": "fedora-minimal-build-41413717158.zip",
+        "sizeBytes": 2147028581,
+        "parts": [
+          {
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/fedora-minimal-build-41413717158.zip.part00",
+            "fileName": "fedora-minimal-build-41413717158.zip.part00",
+            "sizeBytes": 1073741824,
+            "sha256": "sha256:0b37b200e23cd8937fe86f265ed6cbd9ffae5cd63577be2fbc55ba4bed5077f3"
+          },
+          {
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/fedora-minimal-build-41413717158.zip.part01",
+            "fileName": "fedora-minimal-build-41413717158.zip.part01",
+            "sizeBytes": 1073286757,
+            "sha256": "sha256:9579049414c6a2348c50ebe5180d0d18f82094393d15cad74fc8446823f7db7f"
+          }
+        ]
       },
       "installationProfile": "fedora-minimal"
     },
@@ -36,19 +50,33 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "3c29dbbefc9f3672c2ab5077ea5482165b16a64b",
-      "metadataDigest": "sha256:646d5edf65cf20170177defb279f8320dfb3476daaf4e93cf748f0ced12d993e",
-      "payloadDigest": "sha256:451a3df35fa7a7f11e57de36c221943111fc2ea1157730048439c305afe580c5",
-      "evidenceRevision": "image-build-41371545744",
+      "downstreamRevision": "1b2f6925c21701948494cba7c0f2dfafee184aaf",
+      "metadataDigest": "sha256:8a1aafd709f40d20a7f8edac5e3222575bf84c0207be68978128d0e51612537b",
+      "payloadDigest": "sha256:89644b7ac640b31fec7fbd9cb89a3b17b89b01df24ff519a6ad4f2ff02bfd6da",
+      "evidenceRevision": "image-build-41413717158",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41371545744/installer-data-fedora-minimal.json",
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/installer-data-fedora-minimal.json",
         "fileName": "installer-data-fedora-minimal.json",
         "sizeBytes": 7785
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41371545744/fedora-minimal-build-41371545744.zip",
-        "fileName": "fedora-minimal-build-41371545744.zip",
-        "sizeBytes": 1850565691
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/fedora-minimal-build-41413717158.zip",
+        "fileName": "fedora-minimal-build-41413717158.zip",
+        "sizeBytes": 2147028581,
+        "parts": [
+          {
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/fedora-minimal-build-41413717158.zip.part00",
+            "fileName": "fedora-minimal-build-41413717158.zip.part00",
+            "sizeBytes": 1073741824,
+            "sha256": "sha256:0b37b200e23cd8937fe86f265ed6cbd9ffae5cd63577be2fbc55ba4bed5077f3"
+          },
+          {
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/fedora-minimal-build-41413717158.zip.part01",
+            "fileName": "fedora-minimal-build-41413717158.zip.part01",
+            "sizeBytes": 1073286757,
+            "sha256": "sha256:9579049414c6a2348c50ebe5180d0d18f82094393d15cad74fc8446823f7db7f"
+          }
+        ]
       },
       "installationProfile": "fedora-minimal"
     },
@@ -58,19 +86,33 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "3c29dbbefc9f3672c2ab5077ea5482165b16a64b",
-      "metadataDigest": "sha256:646d5edf65cf20170177defb279f8320dfb3476daaf4e93cf748f0ced12d993e",
-      "payloadDigest": "sha256:451a3df35fa7a7f11e57de36c221943111fc2ea1157730048439c305afe580c5",
-      "evidenceRevision": "image-build-41371545744",
+      "downstreamRevision": "1b2f6925c21701948494cba7c0f2dfafee184aaf",
+      "metadataDigest": "sha256:8a1aafd709f40d20a7f8edac5e3222575bf84c0207be68978128d0e51612537b",
+      "payloadDigest": "sha256:89644b7ac640b31fec7fbd9cb89a3b17b89b01df24ff519a6ad4f2ff02bfd6da",
+      "evidenceRevision": "image-build-41413717158",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41371545744/installer-data-fedora-minimal.json",
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/installer-data-fedora-minimal.json",
         "fileName": "installer-data-fedora-minimal.json",
         "sizeBytes": 7785
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41371545744/fedora-minimal-build-41371545744.zip",
-        "fileName": "fedora-minimal-build-41371545744.zip",
-        "sizeBytes": 1850565691
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/fedora-minimal-build-41413717158.zip",
+        "fileName": "fedora-minimal-build-41413717158.zip",
+        "sizeBytes": 2147028581,
+        "parts": [
+          {
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/fedora-minimal-build-41413717158.zip.part00",
+            "fileName": "fedora-minimal-build-41413717158.zip.part00",
+            "sizeBytes": 1073741824,
+            "sha256": "sha256:0b37b200e23cd8937fe86f265ed6cbd9ffae5cd63577be2fbc55ba4bed5077f3"
+          },
+          {
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/fedora-minimal-build-41413717158.zip.part01",
+            "fileName": "fedora-minimal-build-41413717158.zip.part01",
+            "sizeBytes": 1073286757,
+            "sha256": "sha256:9579049414c6a2348c50ebe5180d0d18f82094393d15cad74fc8446823f7db7f"
+          }
+        ]
       },
       "installationProfile": "fedora-minimal"
     },
@@ -80,19 +122,33 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "3c29dbbefc9f3672c2ab5077ea5482165b16a64b",
-      "metadataDigest": "sha256:646d5edf65cf20170177defb279f8320dfb3476daaf4e93cf748f0ced12d993e",
-      "payloadDigest": "sha256:451a3df35fa7a7f11e57de36c221943111fc2ea1157730048439c305afe580c5",
-      "evidenceRevision": "image-build-41371545744",
+      "downstreamRevision": "1b2f6925c21701948494cba7c0f2dfafee184aaf",
+      "metadataDigest": "sha256:8a1aafd709f40d20a7f8edac5e3222575bf84c0207be68978128d0e51612537b",
+      "payloadDigest": "sha256:89644b7ac640b31fec7fbd9cb89a3b17b89b01df24ff519a6ad4f2ff02bfd6da",
+      "evidenceRevision": "image-build-41413717158",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41371545744/installer-data-fedora-minimal.json",
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/installer-data-fedora-minimal.json",
         "fileName": "installer-data-fedora-minimal.json",
         "sizeBytes": 7785
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41371545744/fedora-minimal-build-41371545744.zip",
-        "fileName": "fedora-minimal-build-41371545744.zip",
-        "sizeBytes": 1850565691
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/fedora-minimal-build-41413717158.zip",
+        "fileName": "fedora-minimal-build-41413717158.zip",
+        "sizeBytes": 2147028581,
+        "parts": [
+          {
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/fedora-minimal-build-41413717158.zip.part00",
+            "fileName": "fedora-minimal-build-41413717158.zip.part00",
+            "sizeBytes": 1073741824,
+            "sha256": "sha256:0b37b200e23cd8937fe86f265ed6cbd9ffae5cd63577be2fbc55ba4bed5077f3"
+          },
+          {
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/fedora-minimal-build-41413717158.zip.part01",
+            "fileName": "fedora-minimal-build-41413717158.zip.part01",
+            "sizeBytes": 1073286757,
+            "sha256": "sha256:9579049414c6a2348c50ebe5180d0d18f82094393d15cad74fc8446823f7db7f"
+          }
+        ]
       },
       "installationProfile": "fedora-minimal"
     },
@@ -102,19 +158,33 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "3c29dbbefc9f3672c2ab5077ea5482165b16a64b",
-      "metadataDigest": "sha256:646d5edf65cf20170177defb279f8320dfb3476daaf4e93cf748f0ced12d993e",
-      "payloadDigest": "sha256:451a3df35fa7a7f11e57de36c221943111fc2ea1157730048439c305afe580c5",
-      "evidenceRevision": "image-build-41371545744",
+      "downstreamRevision": "1b2f6925c21701948494cba7c0f2dfafee184aaf",
+      "metadataDigest": "sha256:8a1aafd709f40d20a7f8edac5e3222575bf84c0207be68978128d0e51612537b",
+      "payloadDigest": "sha256:89644b7ac640b31fec7fbd9cb89a3b17b89b01df24ff519a6ad4f2ff02bfd6da",
+      "evidenceRevision": "image-build-41413717158",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41371545744/installer-data-fedora-minimal.json",
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/installer-data-fedora-minimal.json",
         "fileName": "installer-data-fedora-minimal.json",
         "sizeBytes": 7785
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41371545744/fedora-minimal-build-41371545744.zip",
-        "fileName": "fedora-minimal-build-41371545744.zip",
-        "sizeBytes": 1850565691
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/fedora-minimal-build-41413717158.zip",
+        "fileName": "fedora-minimal-build-41413717158.zip",
+        "sizeBytes": 2147028581,
+        "parts": [
+          {
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/fedora-minimal-build-41413717158.zip.part00",
+            "fileName": "fedora-minimal-build-41413717158.zip.part00",
+            "sizeBytes": 1073741824,
+            "sha256": "sha256:0b37b200e23cd8937fe86f265ed6cbd9ffae5cd63577be2fbc55ba4bed5077f3"
+          },
+          {
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/fedora-minimal-build-41413717158.zip.part01",
+            "fileName": "fedora-minimal-build-41413717158.zip.part01",
+            "sizeBytes": 1073286757,
+            "sha256": "sha256:9579049414c6a2348c50ebe5180d0d18f82094393d15cad74fc8446823f7db7f"
+          }
+        ]
       },
       "installationProfile": "fedora-minimal"
     },
@@ -124,19 +194,33 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "3c29dbbefc9f3672c2ab5077ea5482165b16a64b",
-      "metadataDigest": "sha256:646d5edf65cf20170177defb279f8320dfb3476daaf4e93cf748f0ced12d993e",
-      "payloadDigest": "sha256:451a3df35fa7a7f11e57de36c221943111fc2ea1157730048439c305afe580c5",
-      "evidenceRevision": "image-build-41371545744",
+      "downstreamRevision": "1b2f6925c21701948494cba7c0f2dfafee184aaf",
+      "metadataDigest": "sha256:8a1aafd709f40d20a7f8edac5e3222575bf84c0207be68978128d0e51612537b",
+      "payloadDigest": "sha256:89644b7ac640b31fec7fbd9cb89a3b17b89b01df24ff519a6ad4f2ff02bfd6da",
+      "evidenceRevision": "image-build-41413717158",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41371545744/installer-data-fedora-minimal.json",
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/installer-data-fedora-minimal.json",
         "fileName": "installer-data-fedora-minimal.json",
         "sizeBytes": 7785
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41371545744/fedora-minimal-build-41371545744.zip",
-        "fileName": "fedora-minimal-build-41371545744.zip",
-        "sizeBytes": 1850565691
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/fedora-minimal-build-41413717158.zip",
+        "fileName": "fedora-minimal-build-41413717158.zip",
+        "sizeBytes": 2147028581,
+        "parts": [
+          {
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/fedora-minimal-build-41413717158.zip.part00",
+            "fileName": "fedora-minimal-build-41413717158.zip.part00",
+            "sizeBytes": 1073741824,
+            "sha256": "sha256:0b37b200e23cd8937fe86f265ed6cbd9ffae5cd63577be2fbc55ba4bed5077f3"
+          },
+          {
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/fedora-minimal-build-41413717158.zip.part01",
+            "fileName": "fedora-minimal-build-41413717158.zip.part01",
+            "sizeBytes": 1073286757,
+            "sha256": "sha256:9579049414c6a2348c50ebe5180d0d18f82094393d15cad74fc8446823f7db7f"
+          }
+        ]
       },
       "installationProfile": "fedora-minimal"
     },
@@ -146,19 +230,33 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "3c29dbbefc9f3672c2ab5077ea5482165b16a64b",
-      "metadataDigest": "sha256:646d5edf65cf20170177defb279f8320dfb3476daaf4e93cf748f0ced12d993e",
-      "payloadDigest": "sha256:451a3df35fa7a7f11e57de36c221943111fc2ea1157730048439c305afe580c5",
-      "evidenceRevision": "image-build-41371545744",
+      "downstreamRevision": "1b2f6925c21701948494cba7c0f2dfafee184aaf",
+      "metadataDigest": "sha256:8a1aafd709f40d20a7f8edac5e3222575bf84c0207be68978128d0e51612537b",
+      "payloadDigest": "sha256:89644b7ac640b31fec7fbd9cb89a3b17b89b01df24ff519a6ad4f2ff02bfd6da",
+      "evidenceRevision": "image-build-41413717158",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41371545744/installer-data-fedora-minimal.json",
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/installer-data-fedora-minimal.json",
         "fileName": "installer-data-fedora-minimal.json",
         "sizeBytes": 7785
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41371545744/fedora-minimal-build-41371545744.zip",
-        "fileName": "fedora-minimal-build-41371545744.zip",
-        "sizeBytes": 1850565691
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/fedora-minimal-build-41413717158.zip",
+        "fileName": "fedora-minimal-build-41413717158.zip",
+        "sizeBytes": 2147028581,
+        "parts": [
+          {
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/fedora-minimal-build-41413717158.zip.part00",
+            "fileName": "fedora-minimal-build-41413717158.zip.part00",
+            "sizeBytes": 1073741824,
+            "sha256": "sha256:0b37b200e23cd8937fe86f265ed6cbd9ffae5cd63577be2fbc55ba4bed5077f3"
+          },
+          {
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/fedora-minimal-build-41413717158.zip.part01",
+            "fileName": "fedora-minimal-build-41413717158.zip.part01",
+            "sizeBytes": 1073286757,
+            "sha256": "sha256:9579049414c6a2348c50ebe5180d0d18f82094393d15cad74fc8446823f7db7f"
+          }
+        ]
       },
       "installationProfile": "fedora-minimal"
     },
@@ -168,19 +266,33 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "3c29dbbefc9f3672c2ab5077ea5482165b16a64b",
-      "metadataDigest": "sha256:646d5edf65cf20170177defb279f8320dfb3476daaf4e93cf748f0ced12d993e",
-      "payloadDigest": "sha256:451a3df35fa7a7f11e57de36c221943111fc2ea1157730048439c305afe580c5",
-      "evidenceRevision": "image-build-41371545744",
+      "downstreamRevision": "1b2f6925c21701948494cba7c0f2dfafee184aaf",
+      "metadataDigest": "sha256:8a1aafd709f40d20a7f8edac5e3222575bf84c0207be68978128d0e51612537b",
+      "payloadDigest": "sha256:89644b7ac640b31fec7fbd9cb89a3b17b89b01df24ff519a6ad4f2ff02bfd6da",
+      "evidenceRevision": "image-build-41413717158",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41371545744/installer-data-fedora-minimal.json",
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/installer-data-fedora-minimal.json",
         "fileName": "installer-data-fedora-minimal.json",
         "sizeBytes": 7785
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41371545744/fedora-minimal-build-41371545744.zip",
-        "fileName": "fedora-minimal-build-41371545744.zip",
-        "sizeBytes": 1850565691
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/fedora-minimal-build-41413717158.zip",
+        "fileName": "fedora-minimal-build-41413717158.zip",
+        "sizeBytes": 2147028581,
+        "parts": [
+          {
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/fedora-minimal-build-41413717158.zip.part00",
+            "fileName": "fedora-minimal-build-41413717158.zip.part00",
+            "sizeBytes": 1073741824,
+            "sha256": "sha256:0b37b200e23cd8937fe86f265ed6cbd9ffae5cd63577be2fbc55ba4bed5077f3"
+          },
+          {
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/fedora-minimal-build-41413717158.zip.part01",
+            "fileName": "fedora-minimal-build-41413717158.zip.part01",
+            "sizeBytes": 1073286757,
+            "sha256": "sha256:9579049414c6a2348c50ebe5180d0d18f82094393d15cad74fc8446823f7db7f"
+          }
+        ]
       },
       "installationProfile": "fedora-minimal"
     },
@@ -190,19 +302,33 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "3c29dbbefc9f3672c2ab5077ea5482165b16a64b",
-      "metadataDigest": "sha256:646d5edf65cf20170177defb279f8320dfb3476daaf4e93cf748f0ced12d993e",
-      "payloadDigest": "sha256:451a3df35fa7a7f11e57de36c221943111fc2ea1157730048439c305afe580c5",
-      "evidenceRevision": "image-build-41371545744",
+      "downstreamRevision": "1b2f6925c21701948494cba7c0f2dfafee184aaf",
+      "metadataDigest": "sha256:8a1aafd709f40d20a7f8edac5e3222575bf84c0207be68978128d0e51612537b",
+      "payloadDigest": "sha256:89644b7ac640b31fec7fbd9cb89a3b17b89b01df24ff519a6ad4f2ff02bfd6da",
+      "evidenceRevision": "image-build-41413717158",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41371545744/installer-data-fedora-minimal.json",
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/installer-data-fedora-minimal.json",
         "fileName": "installer-data-fedora-minimal.json",
         "sizeBytes": 7785
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41371545744/fedora-minimal-build-41371545744.zip",
-        "fileName": "fedora-minimal-build-41371545744.zip",
-        "sizeBytes": 1850565691
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/fedora-minimal-build-41413717158.zip",
+        "fileName": "fedora-minimal-build-41413717158.zip",
+        "sizeBytes": 2147028581,
+        "parts": [
+          {
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/fedora-minimal-build-41413717158.zip.part00",
+            "fileName": "fedora-minimal-build-41413717158.zip.part00",
+            "sizeBytes": 1073741824,
+            "sha256": "sha256:0b37b200e23cd8937fe86f265ed6cbd9ffae5cd63577be2fbc55ba4bed5077f3"
+          },
+          {
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/fedora-minimal-build-41413717158.zip.part01",
+            "fileName": "fedora-minimal-build-41413717158.zip.part01",
+            "sizeBytes": 1073286757,
+            "sha256": "sha256:9579049414c6a2348c50ebe5180d0d18f82094393d15cad74fc8446823f7db7f"
+          }
+        ]
       },
       "installationProfile": "fedora-minimal"
     },
@@ -212,19 +338,33 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "3c29dbbefc9f3672c2ab5077ea5482165b16a64b",
-      "metadataDigest": "sha256:646d5edf65cf20170177defb279f8320dfb3476daaf4e93cf748f0ced12d993e",
-      "payloadDigest": "sha256:451a3df35fa7a7f11e57de36c221943111fc2ea1157730048439c305afe580c5",
-      "evidenceRevision": "image-build-41371545744",
+      "downstreamRevision": "1b2f6925c21701948494cba7c0f2dfafee184aaf",
+      "metadataDigest": "sha256:8a1aafd709f40d20a7f8edac5e3222575bf84c0207be68978128d0e51612537b",
+      "payloadDigest": "sha256:89644b7ac640b31fec7fbd9cb89a3b17b89b01df24ff519a6ad4f2ff02bfd6da",
+      "evidenceRevision": "image-build-41413717158",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41371545744/installer-data-fedora-minimal.json",
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/installer-data-fedora-minimal.json",
         "fileName": "installer-data-fedora-minimal.json",
         "sizeBytes": 7785
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41371545744/fedora-minimal-build-41371545744.zip",
-        "fileName": "fedora-minimal-build-41371545744.zip",
-        "sizeBytes": 1850565691
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/fedora-minimal-build-41413717158.zip",
+        "fileName": "fedora-minimal-build-41413717158.zip",
+        "sizeBytes": 2147028581,
+        "parts": [
+          {
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/fedora-minimal-build-41413717158.zip.part00",
+            "fileName": "fedora-minimal-build-41413717158.zip.part00",
+            "sizeBytes": 1073741824,
+            "sha256": "sha256:0b37b200e23cd8937fe86f265ed6cbd9ffae5cd63577be2fbc55ba4bed5077f3"
+          },
+          {
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/fedora-minimal-build-41413717158.zip.part01",
+            "fileName": "fedora-minimal-build-41413717158.zip.part01",
+            "sizeBytes": 1073286757,
+            "sha256": "sha256:9579049414c6a2348c50ebe5180d0d18f82094393d15cad74fc8446823f7db7f"
+          }
+        ]
       },
       "installationProfile": "fedora-minimal"
     },
@@ -234,19 +374,33 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "3c29dbbefc9f3672c2ab5077ea5482165b16a64b",
-      "metadataDigest": "sha256:646d5edf65cf20170177defb279f8320dfb3476daaf4e93cf748f0ced12d993e",
-      "payloadDigest": "sha256:451a3df35fa7a7f11e57de36c221943111fc2ea1157730048439c305afe580c5",
-      "evidenceRevision": "image-build-41371545744",
+      "downstreamRevision": "1b2f6925c21701948494cba7c0f2dfafee184aaf",
+      "metadataDigest": "sha256:8a1aafd709f40d20a7f8edac5e3222575bf84c0207be68978128d0e51612537b",
+      "payloadDigest": "sha256:89644b7ac640b31fec7fbd9cb89a3b17b89b01df24ff519a6ad4f2ff02bfd6da",
+      "evidenceRevision": "image-build-41413717158",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41371545744/installer-data-fedora-minimal.json",
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/installer-data-fedora-minimal.json",
         "fileName": "installer-data-fedora-minimal.json",
         "sizeBytes": 7785
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41371545744/fedora-minimal-build-41371545744.zip",
-        "fileName": "fedora-minimal-build-41371545744.zip",
-        "sizeBytes": 1850565691
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/fedora-minimal-build-41413717158.zip",
+        "fileName": "fedora-minimal-build-41413717158.zip",
+        "sizeBytes": 2147028581,
+        "parts": [
+          {
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/fedora-minimal-build-41413717158.zip.part00",
+            "fileName": "fedora-minimal-build-41413717158.zip.part00",
+            "sizeBytes": 1073741824,
+            "sha256": "sha256:0b37b200e23cd8937fe86f265ed6cbd9ffae5cd63577be2fbc55ba4bed5077f3"
+          },
+          {
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/fedora-minimal-build-41413717158.zip.part01",
+            "fileName": "fedora-minimal-build-41413717158.zip.part01",
+            "sizeBytes": 1073286757,
+            "sha256": "sha256:9579049414c6a2348c50ebe5180d0d18f82094393d15cad74fc8446823f7db7f"
+          }
+        ]
       },
       "installationProfile": "fedora-minimal"
     },
@@ -256,19 +410,33 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "3c29dbbefc9f3672c2ab5077ea5482165b16a64b",
-      "metadataDigest": "sha256:646d5edf65cf20170177defb279f8320dfb3476daaf4e93cf748f0ced12d993e",
-      "payloadDigest": "sha256:451a3df35fa7a7f11e57de36c221943111fc2ea1157730048439c305afe580c5",
-      "evidenceRevision": "image-build-41371545744",
+      "downstreamRevision": "1b2f6925c21701948494cba7c0f2dfafee184aaf",
+      "metadataDigest": "sha256:8a1aafd709f40d20a7f8edac5e3222575bf84c0207be68978128d0e51612537b",
+      "payloadDigest": "sha256:89644b7ac640b31fec7fbd9cb89a3b17b89b01df24ff519a6ad4f2ff02bfd6da",
+      "evidenceRevision": "image-build-41413717158",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41371545744/installer-data-fedora-minimal.json",
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/installer-data-fedora-minimal.json",
         "fileName": "installer-data-fedora-minimal.json",
         "sizeBytes": 7785
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41371545744/fedora-minimal-build-41371545744.zip",
-        "fileName": "fedora-minimal-build-41371545744.zip",
-        "sizeBytes": 1850565691
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/fedora-minimal-build-41413717158.zip",
+        "fileName": "fedora-minimal-build-41413717158.zip",
+        "sizeBytes": 2147028581,
+        "parts": [
+          {
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/fedora-minimal-build-41413717158.zip.part00",
+            "fileName": "fedora-minimal-build-41413717158.zip.part00",
+            "sizeBytes": 1073741824,
+            "sha256": "sha256:0b37b200e23cd8937fe86f265ed6cbd9ffae5cd63577be2fbc55ba4bed5077f3"
+          },
+          {
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/fedora-minimal-build-41413717158.zip.part01",
+            "fileName": "fedora-minimal-build-41413717158.zip.part01",
+            "sizeBytes": 1073286757,
+            "sha256": "sha256:9579049414c6a2348c50ebe5180d0d18f82094393d15cad74fc8446823f7db7f"
+          }
+        ]
       },
       "installationProfile": "fedora-minimal"
     },
@@ -278,19 +446,33 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "3c29dbbefc9f3672c2ab5077ea5482165b16a64b",
-      "metadataDigest": "sha256:646d5edf65cf20170177defb279f8320dfb3476daaf4e93cf748f0ced12d993e",
-      "payloadDigest": "sha256:451a3df35fa7a7f11e57de36c221943111fc2ea1157730048439c305afe580c5",
-      "evidenceRevision": "image-build-41371545744",
+      "downstreamRevision": "1b2f6925c21701948494cba7c0f2dfafee184aaf",
+      "metadataDigest": "sha256:8a1aafd709f40d20a7f8edac5e3222575bf84c0207be68978128d0e51612537b",
+      "payloadDigest": "sha256:89644b7ac640b31fec7fbd9cb89a3b17b89b01df24ff519a6ad4f2ff02bfd6da",
+      "evidenceRevision": "image-build-41413717158",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41371545744/installer-data-fedora-minimal.json",
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/installer-data-fedora-minimal.json",
         "fileName": "installer-data-fedora-minimal.json",
         "sizeBytes": 7785
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41371545744/fedora-minimal-build-41371545744.zip",
-        "fileName": "fedora-minimal-build-41371545744.zip",
-        "sizeBytes": 1850565691
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/fedora-minimal-build-41413717158.zip",
+        "fileName": "fedora-minimal-build-41413717158.zip",
+        "sizeBytes": 2147028581,
+        "parts": [
+          {
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/fedora-minimal-build-41413717158.zip.part00",
+            "fileName": "fedora-minimal-build-41413717158.zip.part00",
+            "sizeBytes": 1073741824,
+            "sha256": "sha256:0b37b200e23cd8937fe86f265ed6cbd9ffae5cd63577be2fbc55ba4bed5077f3"
+          },
+          {
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/fedora-minimal-build-41413717158.zip.part01",
+            "fileName": "fedora-minimal-build-41413717158.zip.part01",
+            "sizeBytes": 1073286757,
+            "sha256": "sha256:9579049414c6a2348c50ebe5180d0d18f82094393d15cad74fc8446823f7db7f"
+          }
+        ]
       },
       "installationProfile": "fedora-minimal"
     },
@@ -300,19 +482,33 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "3c29dbbefc9f3672c2ab5077ea5482165b16a64b",
-      "metadataDigest": "sha256:646d5edf65cf20170177defb279f8320dfb3476daaf4e93cf748f0ced12d993e",
-      "payloadDigest": "sha256:451a3df35fa7a7f11e57de36c221943111fc2ea1157730048439c305afe580c5",
-      "evidenceRevision": "image-build-41371545744",
+      "downstreamRevision": "1b2f6925c21701948494cba7c0f2dfafee184aaf",
+      "metadataDigest": "sha256:8a1aafd709f40d20a7f8edac5e3222575bf84c0207be68978128d0e51612537b",
+      "payloadDigest": "sha256:89644b7ac640b31fec7fbd9cb89a3b17b89b01df24ff519a6ad4f2ff02bfd6da",
+      "evidenceRevision": "image-build-41413717158",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41371545744/installer-data-fedora-minimal.json",
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/installer-data-fedora-minimal.json",
         "fileName": "installer-data-fedora-minimal.json",
         "sizeBytes": 7785
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41371545744/fedora-minimal-build-41371545744.zip",
-        "fileName": "fedora-minimal-build-41371545744.zip",
-        "sizeBytes": 1850565691
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/fedora-minimal-build-41413717158.zip",
+        "fileName": "fedora-minimal-build-41413717158.zip",
+        "sizeBytes": 2147028581,
+        "parts": [
+          {
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/fedora-minimal-build-41413717158.zip.part00",
+            "fileName": "fedora-minimal-build-41413717158.zip.part00",
+            "sizeBytes": 1073741824,
+            "sha256": "sha256:0b37b200e23cd8937fe86f265ed6cbd9ffae5cd63577be2fbc55ba4bed5077f3"
+          },
+          {
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/fedora-minimal-build-41413717158.zip.part01",
+            "fileName": "fedora-minimal-build-41413717158.zip.part01",
+            "sizeBytes": 1073286757,
+            "sha256": "sha256:9579049414c6a2348c50ebe5180d0d18f82094393d15cad74fc8446823f7db7f"
+          }
+        ]
       },
       "installationProfile": "fedora-minimal"
     },
@@ -322,19 +518,33 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "3c29dbbefc9f3672c2ab5077ea5482165b16a64b",
-      "metadataDigest": "sha256:646d5edf65cf20170177defb279f8320dfb3476daaf4e93cf748f0ced12d993e",
-      "payloadDigest": "sha256:451a3df35fa7a7f11e57de36c221943111fc2ea1157730048439c305afe580c5",
-      "evidenceRevision": "image-build-41371545744",
+      "downstreamRevision": "1b2f6925c21701948494cba7c0f2dfafee184aaf",
+      "metadataDigest": "sha256:8a1aafd709f40d20a7f8edac5e3222575bf84c0207be68978128d0e51612537b",
+      "payloadDigest": "sha256:89644b7ac640b31fec7fbd9cb89a3b17b89b01df24ff519a6ad4f2ff02bfd6da",
+      "evidenceRevision": "image-build-41413717158",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41371545744/installer-data-fedora-minimal.json",
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/installer-data-fedora-minimal.json",
         "fileName": "installer-data-fedora-minimal.json",
         "sizeBytes": 7785
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41371545744/fedora-minimal-build-41371545744.zip",
-        "fileName": "fedora-minimal-build-41371545744.zip",
-        "sizeBytes": 1850565691
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/fedora-minimal-build-41413717158.zip",
+        "fileName": "fedora-minimal-build-41413717158.zip",
+        "sizeBytes": 2147028581,
+        "parts": [
+          {
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/fedora-minimal-build-41413717158.zip.part00",
+            "fileName": "fedora-minimal-build-41413717158.zip.part00",
+            "sizeBytes": 1073741824,
+            "sha256": "sha256:0b37b200e23cd8937fe86f265ed6cbd9ffae5cd63577be2fbc55ba4bed5077f3"
+          },
+          {
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/fedora-minimal-build-41413717158.zip.part01",
+            "fileName": "fedora-minimal-build-41413717158.zip.part01",
+            "sizeBytes": 1073286757,
+            "sha256": "sha256:9579049414c6a2348c50ebe5180d0d18f82094393d15cad74fc8446823f7db7f"
+          }
+        ]
       },
       "installationProfile": "fedora-minimal"
     },
@@ -344,19 +554,33 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "3c29dbbefc9f3672c2ab5077ea5482165b16a64b",
-      "metadataDigest": "sha256:646d5edf65cf20170177defb279f8320dfb3476daaf4e93cf748f0ced12d993e",
-      "payloadDigest": "sha256:451a3df35fa7a7f11e57de36c221943111fc2ea1157730048439c305afe580c5",
-      "evidenceRevision": "image-build-41371545744",
+      "downstreamRevision": "1b2f6925c21701948494cba7c0f2dfafee184aaf",
+      "metadataDigest": "sha256:8a1aafd709f40d20a7f8edac5e3222575bf84c0207be68978128d0e51612537b",
+      "payloadDigest": "sha256:89644b7ac640b31fec7fbd9cb89a3b17b89b01df24ff519a6ad4f2ff02bfd6da",
+      "evidenceRevision": "image-build-41413717158",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41371545744/installer-data-fedora-minimal.json",
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/installer-data-fedora-minimal.json",
         "fileName": "installer-data-fedora-minimal.json",
         "sizeBytes": 7785
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41371545744/fedora-minimal-build-41371545744.zip",
-        "fileName": "fedora-minimal-build-41371545744.zip",
-        "sizeBytes": 1850565691
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/fedora-minimal-build-41413717158.zip",
+        "fileName": "fedora-minimal-build-41413717158.zip",
+        "sizeBytes": 2147028581,
+        "parts": [
+          {
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/fedora-minimal-build-41413717158.zip.part00",
+            "fileName": "fedora-minimal-build-41413717158.zip.part00",
+            "sizeBytes": 1073741824,
+            "sha256": "sha256:0b37b200e23cd8937fe86f265ed6cbd9ffae5cd63577be2fbc55ba4bed5077f3"
+          },
+          {
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/fedora-minimal-build-41413717158.zip.part01",
+            "fileName": "fedora-minimal-build-41413717158.zip.part01",
+            "sizeBytes": 1073286757,
+            "sha256": "sha256:9579049414c6a2348c50ebe5180d0d18f82094393d15cad74fc8446823f7db7f"
+          }
+        ]
       },
       "installationProfile": "fedora-minimal"
     },
@@ -366,19 +590,33 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "3c29dbbefc9f3672c2ab5077ea5482165b16a64b",
-      "metadataDigest": "sha256:646d5edf65cf20170177defb279f8320dfb3476daaf4e93cf748f0ced12d993e",
-      "payloadDigest": "sha256:451a3df35fa7a7f11e57de36c221943111fc2ea1157730048439c305afe580c5",
-      "evidenceRevision": "image-build-41371545744",
+      "downstreamRevision": "1b2f6925c21701948494cba7c0f2dfafee184aaf",
+      "metadataDigest": "sha256:8a1aafd709f40d20a7f8edac5e3222575bf84c0207be68978128d0e51612537b",
+      "payloadDigest": "sha256:89644b7ac640b31fec7fbd9cb89a3b17b89b01df24ff519a6ad4f2ff02bfd6da",
+      "evidenceRevision": "image-build-41413717158",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41371545744/installer-data-fedora-minimal.json",
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/installer-data-fedora-minimal.json",
         "fileName": "installer-data-fedora-minimal.json",
         "sizeBytes": 7785
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41371545744/fedora-minimal-build-41371545744.zip",
-        "fileName": "fedora-minimal-build-41371545744.zip",
-        "sizeBytes": 1850565691
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/fedora-minimal-build-41413717158.zip",
+        "fileName": "fedora-minimal-build-41413717158.zip",
+        "sizeBytes": 2147028581,
+        "parts": [
+          {
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/fedora-minimal-build-41413717158.zip.part00",
+            "fileName": "fedora-minimal-build-41413717158.zip.part00",
+            "sizeBytes": 1073741824,
+            "sha256": "sha256:0b37b200e23cd8937fe86f265ed6cbd9ffae5cd63577be2fbc55ba4bed5077f3"
+          },
+          {
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/fedora-minimal-build-41413717158.zip.part01",
+            "fileName": "fedora-minimal-build-41413717158.zip.part01",
+            "sizeBytes": 1073286757,
+            "sha256": "sha256:9579049414c6a2348c50ebe5180d0d18f82094393d15cad74fc8446823f7db7f"
+          }
+        ]
       },
       "installationProfile": "fedora-minimal"
     },
@@ -388,19 +626,33 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "3c29dbbefc9f3672c2ab5077ea5482165b16a64b",
-      "metadataDigest": "sha256:646d5edf65cf20170177defb279f8320dfb3476daaf4e93cf748f0ced12d993e",
-      "payloadDigest": "sha256:451a3df35fa7a7f11e57de36c221943111fc2ea1157730048439c305afe580c5",
-      "evidenceRevision": "image-build-41371545744",
+      "downstreamRevision": "1b2f6925c21701948494cba7c0f2dfafee184aaf",
+      "metadataDigest": "sha256:8a1aafd709f40d20a7f8edac5e3222575bf84c0207be68978128d0e51612537b",
+      "payloadDigest": "sha256:89644b7ac640b31fec7fbd9cb89a3b17b89b01df24ff519a6ad4f2ff02bfd6da",
+      "evidenceRevision": "image-build-41413717158",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41371545744/installer-data-fedora-minimal.json",
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/installer-data-fedora-minimal.json",
         "fileName": "installer-data-fedora-minimal.json",
         "sizeBytes": 7785
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41371545744/fedora-minimal-build-41371545744.zip",
-        "fileName": "fedora-minimal-build-41371545744.zip",
-        "sizeBytes": 1850565691
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/fedora-minimal-build-41413717158.zip",
+        "fileName": "fedora-minimal-build-41413717158.zip",
+        "sizeBytes": 2147028581,
+        "parts": [
+          {
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/fedora-minimal-build-41413717158.zip.part00",
+            "fileName": "fedora-minimal-build-41413717158.zip.part00",
+            "sizeBytes": 1073741824,
+            "sha256": "sha256:0b37b200e23cd8937fe86f265ed6cbd9ffae5cd63577be2fbc55ba4bed5077f3"
+          },
+          {
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/fedora-minimal-build-41413717158.zip.part01",
+            "fileName": "fedora-minimal-build-41413717158.zip.part01",
+            "sizeBytes": 1073286757,
+            "sha256": "sha256:9579049414c6a2348c50ebe5180d0d18f82094393d15cad74fc8446823f7db7f"
+          }
+        ]
       },
       "installationProfile": "fedora-minimal"
     },
@@ -410,19 +662,33 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "3c29dbbefc9f3672c2ab5077ea5482165b16a64b",
-      "metadataDigest": "sha256:646d5edf65cf20170177defb279f8320dfb3476daaf4e93cf748f0ced12d993e",
-      "payloadDigest": "sha256:451a3df35fa7a7f11e57de36c221943111fc2ea1157730048439c305afe580c5",
-      "evidenceRevision": "image-build-41371545744",
+      "downstreamRevision": "1b2f6925c21701948494cba7c0f2dfafee184aaf",
+      "metadataDigest": "sha256:8a1aafd709f40d20a7f8edac5e3222575bf84c0207be68978128d0e51612537b",
+      "payloadDigest": "sha256:89644b7ac640b31fec7fbd9cb89a3b17b89b01df24ff519a6ad4f2ff02bfd6da",
+      "evidenceRevision": "image-build-41413717158",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41371545744/installer-data-fedora-minimal.json",
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/installer-data-fedora-minimal.json",
         "fileName": "installer-data-fedora-minimal.json",
         "sizeBytes": 7785
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41371545744/fedora-minimal-build-41371545744.zip",
-        "fileName": "fedora-minimal-build-41371545744.zip",
-        "sizeBytes": 1850565691
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/fedora-minimal-build-41413717158.zip",
+        "fileName": "fedora-minimal-build-41413717158.zip",
+        "sizeBytes": 2147028581,
+        "parts": [
+          {
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/fedora-minimal-build-41413717158.zip.part00",
+            "fileName": "fedora-minimal-build-41413717158.zip.part00",
+            "sizeBytes": 1073741824,
+            "sha256": "sha256:0b37b200e23cd8937fe86f265ed6cbd9ffae5cd63577be2fbc55ba4bed5077f3"
+          },
+          {
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/fedora-minimal-build-41413717158.zip.part01",
+            "fileName": "fedora-minimal-build-41413717158.zip.part01",
+            "sizeBytes": 1073286757,
+            "sha256": "sha256:9579049414c6a2348c50ebe5180d0d18f82094393d15cad74fc8446823f7db7f"
+          }
+        ]
       },
       "installationProfile": "fedora-minimal"
     },
@@ -432,19 +698,33 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "3c29dbbefc9f3672c2ab5077ea5482165b16a64b",
-      "metadataDigest": "sha256:646d5edf65cf20170177defb279f8320dfb3476daaf4e93cf748f0ced12d993e",
-      "payloadDigest": "sha256:451a3df35fa7a7f11e57de36c221943111fc2ea1157730048439c305afe580c5",
-      "evidenceRevision": "image-build-41371545744",
+      "downstreamRevision": "1b2f6925c21701948494cba7c0f2dfafee184aaf",
+      "metadataDigest": "sha256:8a1aafd709f40d20a7f8edac5e3222575bf84c0207be68978128d0e51612537b",
+      "payloadDigest": "sha256:89644b7ac640b31fec7fbd9cb89a3b17b89b01df24ff519a6ad4f2ff02bfd6da",
+      "evidenceRevision": "image-build-41413717158",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41371545744/installer-data-fedora-minimal.json",
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/installer-data-fedora-minimal.json",
         "fileName": "installer-data-fedora-minimal.json",
         "sizeBytes": 7785
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41371545744/fedora-minimal-build-41371545744.zip",
-        "fileName": "fedora-minimal-build-41371545744.zip",
-        "sizeBytes": 1850565691
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/fedora-minimal-build-41413717158.zip",
+        "fileName": "fedora-minimal-build-41413717158.zip",
+        "sizeBytes": 2147028581,
+        "parts": [
+          {
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/fedora-minimal-build-41413717158.zip.part00",
+            "fileName": "fedora-minimal-build-41413717158.zip.part00",
+            "sizeBytes": 1073741824,
+            "sha256": "sha256:0b37b200e23cd8937fe86f265ed6cbd9ffae5cd63577be2fbc55ba4bed5077f3"
+          },
+          {
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/fedora-minimal-build-41413717158.zip.part01",
+            "fileName": "fedora-minimal-build-41413717158.zip.part01",
+            "sizeBytes": 1073286757,
+            "sha256": "sha256:9579049414c6a2348c50ebe5180d0d18f82094393d15cad74fc8446823f7db7f"
+          }
+        ]
       },
       "installationProfile": "fedora-minimal"
     },
@@ -454,19 +734,33 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "3c29dbbefc9f3672c2ab5077ea5482165b16a64b",
-      "metadataDigest": "sha256:646d5edf65cf20170177defb279f8320dfb3476daaf4e93cf748f0ced12d993e",
-      "payloadDigest": "sha256:451a3df35fa7a7f11e57de36c221943111fc2ea1157730048439c305afe580c5",
-      "evidenceRevision": "image-build-41371545744",
+      "downstreamRevision": "1b2f6925c21701948494cba7c0f2dfafee184aaf",
+      "metadataDigest": "sha256:8a1aafd709f40d20a7f8edac5e3222575bf84c0207be68978128d0e51612537b",
+      "payloadDigest": "sha256:89644b7ac640b31fec7fbd9cb89a3b17b89b01df24ff519a6ad4f2ff02bfd6da",
+      "evidenceRevision": "image-build-41413717158",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41371545744/installer-data-fedora-minimal.json",
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/installer-data-fedora-minimal.json",
         "fileName": "installer-data-fedora-minimal.json",
         "sizeBytes": 7785
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41371545744/fedora-minimal-build-41371545744.zip",
-        "fileName": "fedora-minimal-build-41371545744.zip",
-        "sizeBytes": 1850565691
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/fedora-minimal-build-41413717158.zip",
+        "fileName": "fedora-minimal-build-41413717158.zip",
+        "sizeBytes": 2147028581,
+        "parts": [
+          {
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/fedora-minimal-build-41413717158.zip.part00",
+            "fileName": "fedora-minimal-build-41413717158.zip.part00",
+            "sizeBytes": 1073741824,
+            "sha256": "sha256:0b37b200e23cd8937fe86f265ed6cbd9ffae5cd63577be2fbc55ba4bed5077f3"
+          },
+          {
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/fedora-minimal-build-41413717158.zip.part01",
+            "fileName": "fedora-minimal-build-41413717158.zip.part01",
+            "sizeBytes": 1073286757,
+            "sha256": "sha256:9579049414c6a2348c50ebe5180d0d18f82094393d15cad74fc8446823f7db7f"
+          }
+        ]
       },
       "installationProfile": "fedora-minimal"
     },
@@ -476,19 +770,33 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "3c29dbbefc9f3672c2ab5077ea5482165b16a64b",
-      "metadataDigest": "sha256:646d5edf65cf20170177defb279f8320dfb3476daaf4e93cf748f0ced12d993e",
-      "payloadDigest": "sha256:451a3df35fa7a7f11e57de36c221943111fc2ea1157730048439c305afe580c5",
-      "evidenceRevision": "image-build-41371545744",
+      "downstreamRevision": "1b2f6925c21701948494cba7c0f2dfafee184aaf",
+      "metadataDigest": "sha256:8a1aafd709f40d20a7f8edac5e3222575bf84c0207be68978128d0e51612537b",
+      "payloadDigest": "sha256:89644b7ac640b31fec7fbd9cb89a3b17b89b01df24ff519a6ad4f2ff02bfd6da",
+      "evidenceRevision": "image-build-41413717158",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41371545744/installer-data-fedora-minimal.json",
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/installer-data-fedora-minimal.json",
         "fileName": "installer-data-fedora-minimal.json",
         "sizeBytes": 7785
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41371545744/fedora-minimal-build-41371545744.zip",
-        "fileName": "fedora-minimal-build-41371545744.zip",
-        "sizeBytes": 1850565691
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/fedora-minimal-build-41413717158.zip",
+        "fileName": "fedora-minimal-build-41413717158.zip",
+        "sizeBytes": 2147028581,
+        "parts": [
+          {
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/fedora-minimal-build-41413717158.zip.part00",
+            "fileName": "fedora-minimal-build-41413717158.zip.part00",
+            "sizeBytes": 1073741824,
+            "sha256": "sha256:0b37b200e23cd8937fe86f265ed6cbd9ffae5cd63577be2fbc55ba4bed5077f3"
+          },
+          {
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/fedora-minimal-build-41413717158.zip.part01",
+            "fileName": "fedora-minimal-build-41413717158.zip.part01",
+            "sizeBytes": 1073286757,
+            "sha256": "sha256:9579049414c6a2348c50ebe5180d0d18f82094393d15cad74fc8446823f7db7f"
+          }
+        ]
       },
       "installationProfile": "fedora-minimal"
     },
@@ -498,19 +806,33 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "3c29dbbefc9f3672c2ab5077ea5482165b16a64b",
-      "metadataDigest": "sha256:646d5edf65cf20170177defb279f8320dfb3476daaf4e93cf748f0ced12d993e",
-      "payloadDigest": "sha256:451a3df35fa7a7f11e57de36c221943111fc2ea1157730048439c305afe580c5",
-      "evidenceRevision": "image-build-41371545744",
+      "downstreamRevision": "1b2f6925c21701948494cba7c0f2dfafee184aaf",
+      "metadataDigest": "sha256:8a1aafd709f40d20a7f8edac5e3222575bf84c0207be68978128d0e51612537b",
+      "payloadDigest": "sha256:89644b7ac640b31fec7fbd9cb89a3b17b89b01df24ff519a6ad4f2ff02bfd6da",
+      "evidenceRevision": "image-build-41413717158",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41371545744/installer-data-fedora-minimal.json",
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/installer-data-fedora-minimal.json",
         "fileName": "installer-data-fedora-minimal.json",
         "sizeBytes": 7785
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41371545744/fedora-minimal-build-41371545744.zip",
-        "fileName": "fedora-minimal-build-41371545744.zip",
-        "sizeBytes": 1850565691
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/fedora-minimal-build-41413717158.zip",
+        "fileName": "fedora-minimal-build-41413717158.zip",
+        "sizeBytes": 2147028581,
+        "parts": [
+          {
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/fedora-minimal-build-41413717158.zip.part00",
+            "fileName": "fedora-minimal-build-41413717158.zip.part00",
+            "sizeBytes": 1073741824,
+            "sha256": "sha256:0b37b200e23cd8937fe86f265ed6cbd9ffae5cd63577be2fbc55ba4bed5077f3"
+          },
+          {
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/fedora-minimal-build-41413717158.zip.part01",
+            "fileName": "fedora-minimal-build-41413717158.zip.part01",
+            "sizeBytes": 1073286757,
+            "sha256": "sha256:9579049414c6a2348c50ebe5180d0d18f82094393d15cad74fc8446823f7db7f"
+          }
+        ]
       },
       "installationProfile": "fedora-minimal"
     },
@@ -520,19 +842,33 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "3c29dbbefc9f3672c2ab5077ea5482165b16a64b",
-      "metadataDigest": "sha256:646d5edf65cf20170177defb279f8320dfb3476daaf4e93cf748f0ced12d993e",
-      "payloadDigest": "sha256:451a3df35fa7a7f11e57de36c221943111fc2ea1157730048439c305afe580c5",
-      "evidenceRevision": "image-build-41371545744",
+      "downstreamRevision": "1b2f6925c21701948494cba7c0f2dfafee184aaf",
+      "metadataDigest": "sha256:8a1aafd709f40d20a7f8edac5e3222575bf84c0207be68978128d0e51612537b",
+      "payloadDigest": "sha256:89644b7ac640b31fec7fbd9cb89a3b17b89b01df24ff519a6ad4f2ff02bfd6da",
+      "evidenceRevision": "image-build-41413717158",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41371545744/installer-data-fedora-minimal.json",
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/installer-data-fedora-minimal.json",
         "fileName": "installer-data-fedora-minimal.json",
         "sizeBytes": 7785
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41371545744/fedora-minimal-build-41371545744.zip",
-        "fileName": "fedora-minimal-build-41371545744.zip",
-        "sizeBytes": 1850565691
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/fedora-minimal-build-41413717158.zip",
+        "fileName": "fedora-minimal-build-41413717158.zip",
+        "sizeBytes": 2147028581,
+        "parts": [
+          {
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/fedora-minimal-build-41413717158.zip.part00",
+            "fileName": "fedora-minimal-build-41413717158.zip.part00",
+            "sizeBytes": 1073741824,
+            "sha256": "sha256:0b37b200e23cd8937fe86f265ed6cbd9ffae5cd63577be2fbc55ba4bed5077f3"
+          },
+          {
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/fedora-minimal-build-41413717158.zip.part01",
+            "fileName": "fedora-minimal-build-41413717158.zip.part01",
+            "sizeBytes": 1073286757,
+            "sha256": "sha256:9579049414c6a2348c50ebe5180d0d18f82094393d15cad74fc8446823f7db7f"
+          }
+        ]
       },
       "installationProfile": "fedora-minimal"
     },
@@ -542,19 +878,33 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "3c29dbbefc9f3672c2ab5077ea5482165b16a64b",
-      "metadataDigest": "sha256:646d5edf65cf20170177defb279f8320dfb3476daaf4e93cf748f0ced12d993e",
-      "payloadDigest": "sha256:451a3df35fa7a7f11e57de36c221943111fc2ea1157730048439c305afe580c5",
-      "evidenceRevision": "image-build-41371545744",
+      "downstreamRevision": "1b2f6925c21701948494cba7c0f2dfafee184aaf",
+      "metadataDigest": "sha256:8a1aafd709f40d20a7f8edac5e3222575bf84c0207be68978128d0e51612537b",
+      "payloadDigest": "sha256:89644b7ac640b31fec7fbd9cb89a3b17b89b01df24ff519a6ad4f2ff02bfd6da",
+      "evidenceRevision": "image-build-41413717158",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41371545744/installer-data-fedora-minimal.json",
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/installer-data-fedora-minimal.json",
         "fileName": "installer-data-fedora-minimal.json",
         "sizeBytes": 7785
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41371545744/fedora-minimal-build-41371545744.zip",
-        "fileName": "fedora-minimal-build-41371545744.zip",
-        "sizeBytes": 1850565691
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/fedora-minimal-build-41413717158.zip",
+        "fileName": "fedora-minimal-build-41413717158.zip",
+        "sizeBytes": 2147028581,
+        "parts": [
+          {
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/fedora-minimal-build-41413717158.zip.part00",
+            "fileName": "fedora-minimal-build-41413717158.zip.part00",
+            "sizeBytes": 1073741824,
+            "sha256": "sha256:0b37b200e23cd8937fe86f265ed6cbd9ffae5cd63577be2fbc55ba4bed5077f3"
+          },
+          {
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/fedora-minimal-build-41413717158.zip.part01",
+            "fileName": "fedora-minimal-build-41413717158.zip.part01",
+            "sizeBytes": 1073286757,
+            "sha256": "sha256:9579049414c6a2348c50ebe5180d0d18f82094393d15cad74fc8446823f7db7f"
+          }
+        ]
       },
       "installationProfile": "fedora-minimal"
     },
@@ -564,19 +914,33 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "3c29dbbefc9f3672c2ab5077ea5482165b16a64b",
-      "metadataDigest": "sha256:646d5edf65cf20170177defb279f8320dfb3476daaf4e93cf748f0ced12d993e",
-      "payloadDigest": "sha256:451a3df35fa7a7f11e57de36c221943111fc2ea1157730048439c305afe580c5",
-      "evidenceRevision": "image-build-41371545744",
+      "downstreamRevision": "1b2f6925c21701948494cba7c0f2dfafee184aaf",
+      "metadataDigest": "sha256:8a1aafd709f40d20a7f8edac5e3222575bf84c0207be68978128d0e51612537b",
+      "payloadDigest": "sha256:89644b7ac640b31fec7fbd9cb89a3b17b89b01df24ff519a6ad4f2ff02bfd6da",
+      "evidenceRevision": "image-build-41413717158",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41371545744/installer-data-fedora-minimal.json",
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/installer-data-fedora-minimal.json",
         "fileName": "installer-data-fedora-minimal.json",
         "sizeBytes": 7785
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41371545744/fedora-minimal-build-41371545744.zip",
-        "fileName": "fedora-minimal-build-41371545744.zip",
-        "sizeBytes": 1850565691
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/fedora-minimal-build-41413717158.zip",
+        "fileName": "fedora-minimal-build-41413717158.zip",
+        "sizeBytes": 2147028581,
+        "parts": [
+          {
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/fedora-minimal-build-41413717158.zip.part00",
+            "fileName": "fedora-minimal-build-41413717158.zip.part00",
+            "sizeBytes": 1073741824,
+            "sha256": "sha256:0b37b200e23cd8937fe86f265ed6cbd9ffae5cd63577be2fbc55ba4bed5077f3"
+          },
+          {
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/fedora-minimal-build-41413717158.zip.part01",
+            "fileName": "fedora-minimal-build-41413717158.zip.part01",
+            "sizeBytes": 1073286757,
+            "sha256": "sha256:9579049414c6a2348c50ebe5180d0d18f82094393d15cad74fc8446823f7db7f"
+          }
+        ]
       },
       "installationProfile": "fedora-minimal"
     },
@@ -586,19 +950,33 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "3c29dbbefc9f3672c2ab5077ea5482165b16a64b",
-      "metadataDigest": "sha256:646d5edf65cf20170177defb279f8320dfb3476daaf4e93cf748f0ced12d993e",
-      "payloadDigest": "sha256:451a3df35fa7a7f11e57de36c221943111fc2ea1157730048439c305afe580c5",
-      "evidenceRevision": "image-build-41371545744",
+      "downstreamRevision": "1b2f6925c21701948494cba7c0f2dfafee184aaf",
+      "metadataDigest": "sha256:8a1aafd709f40d20a7f8edac5e3222575bf84c0207be68978128d0e51612537b",
+      "payloadDigest": "sha256:89644b7ac640b31fec7fbd9cb89a3b17b89b01df24ff519a6ad4f2ff02bfd6da",
+      "evidenceRevision": "image-build-41413717158",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41371545744/installer-data-fedora-minimal.json",
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/installer-data-fedora-minimal.json",
         "fileName": "installer-data-fedora-minimal.json",
         "sizeBytes": 7785
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41371545744/fedora-minimal-build-41371545744.zip",
-        "fileName": "fedora-minimal-build-41371545744.zip",
-        "sizeBytes": 1850565691
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/fedora-minimal-build-41413717158.zip",
+        "fileName": "fedora-minimal-build-41413717158.zip",
+        "sizeBytes": 2147028581,
+        "parts": [
+          {
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/fedora-minimal-build-41413717158.zip.part00",
+            "fileName": "fedora-minimal-build-41413717158.zip.part00",
+            "sizeBytes": 1073741824,
+            "sha256": "sha256:0b37b200e23cd8937fe86f265ed6cbd9ffae5cd63577be2fbc55ba4bed5077f3"
+          },
+          {
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/fedora-minimal-build-41413717158.zip.part01",
+            "fileName": "fedora-minimal-build-41413717158.zip.part01",
+            "sizeBytes": 1073286757,
+            "sha256": "sha256:9579049414c6a2348c50ebe5180d0d18f82094393d15cad74fc8446823f7db7f"
+          }
+        ]
       },
       "installationProfile": "fedora-minimal"
     },
@@ -608,19 +986,33 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "3c29dbbefc9f3672c2ab5077ea5482165b16a64b",
-      "metadataDigest": "sha256:646d5edf65cf20170177defb279f8320dfb3476daaf4e93cf748f0ced12d993e",
-      "payloadDigest": "sha256:451a3df35fa7a7f11e57de36c221943111fc2ea1157730048439c305afe580c5",
-      "evidenceRevision": "image-build-41371545744",
+      "downstreamRevision": "1b2f6925c21701948494cba7c0f2dfafee184aaf",
+      "metadataDigest": "sha256:8a1aafd709f40d20a7f8edac5e3222575bf84c0207be68978128d0e51612537b",
+      "payloadDigest": "sha256:89644b7ac640b31fec7fbd9cb89a3b17b89b01df24ff519a6ad4f2ff02bfd6da",
+      "evidenceRevision": "image-build-41413717158",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41371545744/installer-data-fedora-minimal.json",
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/installer-data-fedora-minimal.json",
         "fileName": "installer-data-fedora-minimal.json",
         "sizeBytes": 7785
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41371545744/fedora-minimal-build-41371545744.zip",
-        "fileName": "fedora-minimal-build-41371545744.zip",
-        "sizeBytes": 1850565691
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/fedora-minimal-build-41413717158.zip",
+        "fileName": "fedora-minimal-build-41413717158.zip",
+        "sizeBytes": 2147028581,
+        "parts": [
+          {
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/fedora-minimal-build-41413717158.zip.part00",
+            "fileName": "fedora-minimal-build-41413717158.zip.part00",
+            "sizeBytes": 1073741824,
+            "sha256": "sha256:0b37b200e23cd8937fe86f265ed6cbd9ffae5cd63577be2fbc55ba4bed5077f3"
+          },
+          {
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/fedora-minimal-build-41413717158.zip.part01",
+            "fileName": "fedora-minimal-build-41413717158.zip.part01",
+            "sizeBytes": 1073286757,
+            "sha256": "sha256:9579049414c6a2348c50ebe5180d0d18f82094393d15cad74fc8446823f7db7f"
+          }
+        ]
       },
       "installationProfile": "fedora-minimal"
     },
@@ -630,19 +1022,33 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "3c29dbbefc9f3672c2ab5077ea5482165b16a64b",
-      "metadataDigest": "sha256:646d5edf65cf20170177defb279f8320dfb3476daaf4e93cf748f0ced12d993e",
-      "payloadDigest": "sha256:451a3df35fa7a7f11e57de36c221943111fc2ea1157730048439c305afe580c5",
-      "evidenceRevision": "image-build-41371545744",
+      "downstreamRevision": "1b2f6925c21701948494cba7c0f2dfafee184aaf",
+      "metadataDigest": "sha256:8a1aafd709f40d20a7f8edac5e3222575bf84c0207be68978128d0e51612537b",
+      "payloadDigest": "sha256:89644b7ac640b31fec7fbd9cb89a3b17b89b01df24ff519a6ad4f2ff02bfd6da",
+      "evidenceRevision": "image-build-41413717158",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41371545744/installer-data-fedora-minimal.json",
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/installer-data-fedora-minimal.json",
         "fileName": "installer-data-fedora-minimal.json",
         "sizeBytes": 7785
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41371545744/fedora-minimal-build-41371545744.zip",
-        "fileName": "fedora-minimal-build-41371545744.zip",
-        "sizeBytes": 1850565691
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/fedora-minimal-build-41413717158.zip",
+        "fileName": "fedora-minimal-build-41413717158.zip",
+        "sizeBytes": 2147028581,
+        "parts": [
+          {
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/fedora-minimal-build-41413717158.zip.part00",
+            "fileName": "fedora-minimal-build-41413717158.zip.part00",
+            "sizeBytes": 1073741824,
+            "sha256": "sha256:0b37b200e23cd8937fe86f265ed6cbd9ffae5cd63577be2fbc55ba4bed5077f3"
+          },
+          {
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/fedora-minimal-build-41413717158.zip.part01",
+            "fileName": "fedora-minimal-build-41413717158.zip.part01",
+            "sizeBytes": 1073286757,
+            "sha256": "sha256:9579049414c6a2348c50ebe5180d0d18f82094393d15cad74fc8446823f7db7f"
+          }
+        ]
       },
       "installationProfile": "fedora-minimal"
     },
@@ -652,19 +1058,33 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "3c29dbbefc9f3672c2ab5077ea5482165b16a64b",
-      "metadataDigest": "sha256:646d5edf65cf20170177defb279f8320dfb3476daaf4e93cf748f0ced12d993e",
-      "payloadDigest": "sha256:451a3df35fa7a7f11e57de36c221943111fc2ea1157730048439c305afe580c5",
-      "evidenceRevision": "image-build-41371545744",
+      "downstreamRevision": "1b2f6925c21701948494cba7c0f2dfafee184aaf",
+      "metadataDigest": "sha256:8a1aafd709f40d20a7f8edac5e3222575bf84c0207be68978128d0e51612537b",
+      "payloadDigest": "sha256:89644b7ac640b31fec7fbd9cb89a3b17b89b01df24ff519a6ad4f2ff02bfd6da",
+      "evidenceRevision": "image-build-41413717158",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41371545744/installer-data-fedora-minimal.json",
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/installer-data-fedora-minimal.json",
         "fileName": "installer-data-fedora-minimal.json",
         "sizeBytes": 7785
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41371545744/fedora-minimal-build-41371545744.zip",
-        "fileName": "fedora-minimal-build-41371545744.zip",
-        "sizeBytes": 1850565691
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/fedora-minimal-build-41413717158.zip",
+        "fileName": "fedora-minimal-build-41413717158.zip",
+        "sizeBytes": 2147028581,
+        "parts": [
+          {
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/fedora-minimal-build-41413717158.zip.part00",
+            "fileName": "fedora-minimal-build-41413717158.zip.part00",
+            "sizeBytes": 1073741824,
+            "sha256": "sha256:0b37b200e23cd8937fe86f265ed6cbd9ffae5cd63577be2fbc55ba4bed5077f3"
+          },
+          {
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/fedora-minimal-build-41413717158.zip.part01",
+            "fileName": "fedora-minimal-build-41413717158.zip.part01",
+            "sizeBytes": 1073286757,
+            "sha256": "sha256:9579049414c6a2348c50ebe5180d0d18f82094393d15cad74fc8446823f7db7f"
+          }
+        ]
       },
       "installationProfile": "fedora-minimal"
     },
@@ -674,19 +1094,33 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "3c29dbbefc9f3672c2ab5077ea5482165b16a64b",
-      "metadataDigest": "sha256:646d5edf65cf20170177defb279f8320dfb3476daaf4e93cf748f0ced12d993e",
-      "payloadDigest": "sha256:451a3df35fa7a7f11e57de36c221943111fc2ea1157730048439c305afe580c5",
-      "evidenceRevision": "image-build-41371545744",
+      "downstreamRevision": "1b2f6925c21701948494cba7c0f2dfafee184aaf",
+      "metadataDigest": "sha256:8a1aafd709f40d20a7f8edac5e3222575bf84c0207be68978128d0e51612537b",
+      "payloadDigest": "sha256:89644b7ac640b31fec7fbd9cb89a3b17b89b01df24ff519a6ad4f2ff02bfd6da",
+      "evidenceRevision": "image-build-41413717158",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41371545744/installer-data-fedora-minimal.json",
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/installer-data-fedora-minimal.json",
         "fileName": "installer-data-fedora-minimal.json",
         "sizeBytes": 7785
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41371545744/fedora-minimal-build-41371545744.zip",
-        "fileName": "fedora-minimal-build-41371545744.zip",
-        "sizeBytes": 1850565691
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/fedora-minimal-build-41413717158.zip",
+        "fileName": "fedora-minimal-build-41413717158.zip",
+        "sizeBytes": 2147028581,
+        "parts": [
+          {
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/fedora-minimal-build-41413717158.zip.part00",
+            "fileName": "fedora-minimal-build-41413717158.zip.part00",
+            "sizeBytes": 1073741824,
+            "sha256": "sha256:0b37b200e23cd8937fe86f265ed6cbd9ffae5cd63577be2fbc55ba4bed5077f3"
+          },
+          {
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/fedora-minimal-build-41413717158.zip.part01",
+            "fileName": "fedora-minimal-build-41413717158.zip.part01",
+            "sizeBytes": 1073286757,
+            "sha256": "sha256:9579049414c6a2348c50ebe5180d0d18f82094393d15cad74fc8446823f7db7f"
+          }
+        ]
       },
       "installationProfile": "fedora-minimal"
     },
@@ -696,19 +1130,33 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "3c29dbbefc9f3672c2ab5077ea5482165b16a64b",
-      "metadataDigest": "sha256:646d5edf65cf20170177defb279f8320dfb3476daaf4e93cf748f0ced12d993e",
-      "payloadDigest": "sha256:451a3df35fa7a7f11e57de36c221943111fc2ea1157730048439c305afe580c5",
-      "evidenceRevision": "image-build-41371545744",
+      "downstreamRevision": "1b2f6925c21701948494cba7c0f2dfafee184aaf",
+      "metadataDigest": "sha256:8a1aafd709f40d20a7f8edac5e3222575bf84c0207be68978128d0e51612537b",
+      "payloadDigest": "sha256:89644b7ac640b31fec7fbd9cb89a3b17b89b01df24ff519a6ad4f2ff02bfd6da",
+      "evidenceRevision": "image-build-41413717158",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41371545744/installer-data-fedora-minimal.json",
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/installer-data-fedora-minimal.json",
         "fileName": "installer-data-fedora-minimal.json",
         "sizeBytes": 7785
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41371545744/fedora-minimal-build-41371545744.zip",
-        "fileName": "fedora-minimal-build-41371545744.zip",
-        "sizeBytes": 1850565691
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/fedora-minimal-build-41413717158.zip",
+        "fileName": "fedora-minimal-build-41413717158.zip",
+        "sizeBytes": 2147028581,
+        "parts": [
+          {
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/fedora-minimal-build-41413717158.zip.part00",
+            "fileName": "fedora-minimal-build-41413717158.zip.part00",
+            "sizeBytes": 1073741824,
+            "sha256": "sha256:0b37b200e23cd8937fe86f265ed6cbd9ffae5cd63577be2fbc55ba4bed5077f3"
+          },
+          {
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/fedora-minimal-build-41413717158.zip.part01",
+            "fileName": "fedora-minimal-build-41413717158.zip.part01",
+            "sizeBytes": 1073286757,
+            "sha256": "sha256:9579049414c6a2348c50ebe5180d0d18f82094393d15cad74fc8446823f7db7f"
+          }
+        ]
       },
       "installationProfile": "fedora-minimal"
     },
@@ -718,19 +1166,33 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "3c29dbbefc9f3672c2ab5077ea5482165b16a64b",
-      "metadataDigest": "sha256:646d5edf65cf20170177defb279f8320dfb3476daaf4e93cf748f0ced12d993e",
-      "payloadDigest": "sha256:451a3df35fa7a7f11e57de36c221943111fc2ea1157730048439c305afe580c5",
-      "evidenceRevision": "image-build-41371545744",
+      "downstreamRevision": "1b2f6925c21701948494cba7c0f2dfafee184aaf",
+      "metadataDigest": "sha256:8a1aafd709f40d20a7f8edac5e3222575bf84c0207be68978128d0e51612537b",
+      "payloadDigest": "sha256:89644b7ac640b31fec7fbd9cb89a3b17b89b01df24ff519a6ad4f2ff02bfd6da",
+      "evidenceRevision": "image-build-41413717158",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41371545744/installer-data-fedora-minimal.json",
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/installer-data-fedora-minimal.json",
         "fileName": "installer-data-fedora-minimal.json",
         "sizeBytes": 7785
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41371545744/fedora-minimal-build-41371545744.zip",
-        "fileName": "fedora-minimal-build-41371545744.zip",
-        "sizeBytes": 1850565691
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/fedora-minimal-build-41413717158.zip",
+        "fileName": "fedora-minimal-build-41413717158.zip",
+        "sizeBytes": 2147028581,
+        "parts": [
+          {
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/fedora-minimal-build-41413717158.zip.part00",
+            "fileName": "fedora-minimal-build-41413717158.zip.part00",
+            "sizeBytes": 1073741824,
+            "sha256": "sha256:0b37b200e23cd8937fe86f265ed6cbd9ffae5cd63577be2fbc55ba4bed5077f3"
+          },
+          {
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/fedora-minimal-build-41413717158.zip.part01",
+            "fileName": "fedora-minimal-build-41413717158.zip.part01",
+            "sizeBytes": 1073286757,
+            "sha256": "sha256:9579049414c6a2348c50ebe5180d0d18f82094393d15cad74fc8446823f7db7f"
+          }
+        ]
       },
       "installationProfile": "fedora-minimal"
     },
@@ -740,19 +1202,33 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "3c29dbbefc9f3672c2ab5077ea5482165b16a64b",
-      "metadataDigest": "sha256:646d5edf65cf20170177defb279f8320dfb3476daaf4e93cf748f0ced12d993e",
-      "payloadDigest": "sha256:451a3df35fa7a7f11e57de36c221943111fc2ea1157730048439c305afe580c5",
-      "evidenceRevision": "image-build-41371545744",
+      "downstreamRevision": "1b2f6925c21701948494cba7c0f2dfafee184aaf",
+      "metadataDigest": "sha256:8a1aafd709f40d20a7f8edac5e3222575bf84c0207be68978128d0e51612537b",
+      "payloadDigest": "sha256:89644b7ac640b31fec7fbd9cb89a3b17b89b01df24ff519a6ad4f2ff02bfd6da",
+      "evidenceRevision": "image-build-41413717158",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41371545744/installer-data-fedora-minimal.json",
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/installer-data-fedora-minimal.json",
         "fileName": "installer-data-fedora-minimal.json",
         "sizeBytes": 7785
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41371545744/fedora-minimal-build-41371545744.zip",
-        "fileName": "fedora-minimal-build-41371545744.zip",
-        "sizeBytes": 1850565691
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/fedora-minimal-build-41413717158.zip",
+        "fileName": "fedora-minimal-build-41413717158.zip",
+        "sizeBytes": 2147028581,
+        "parts": [
+          {
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/fedora-minimal-build-41413717158.zip.part00",
+            "fileName": "fedora-minimal-build-41413717158.zip.part00",
+            "sizeBytes": 1073741824,
+            "sha256": "sha256:0b37b200e23cd8937fe86f265ed6cbd9ffae5cd63577be2fbc55ba4bed5077f3"
+          },
+          {
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/fedora-minimal-build-41413717158.zip.part01",
+            "fileName": "fedora-minimal-build-41413717158.zip.part01",
+            "sizeBytes": 1073286757,
+            "sha256": "sha256:9579049414c6a2348c50ebe5180d0d18f82094393d15cad74fc8446823f7db7f"
+          }
+        ]
       },
       "installationProfile": "fedora-minimal"
     },
@@ -762,19 +1238,33 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "3c29dbbefc9f3672c2ab5077ea5482165b16a64b",
-      "metadataDigest": "sha256:646d5edf65cf20170177defb279f8320dfb3476daaf4e93cf748f0ced12d993e",
-      "payloadDigest": "sha256:451a3df35fa7a7f11e57de36c221943111fc2ea1157730048439c305afe580c5",
-      "evidenceRevision": "image-build-41371545744",
+      "downstreamRevision": "1b2f6925c21701948494cba7c0f2dfafee184aaf",
+      "metadataDigest": "sha256:8a1aafd709f40d20a7f8edac5e3222575bf84c0207be68978128d0e51612537b",
+      "payloadDigest": "sha256:89644b7ac640b31fec7fbd9cb89a3b17b89b01df24ff519a6ad4f2ff02bfd6da",
+      "evidenceRevision": "image-build-41413717158",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41371545744/installer-data-fedora-minimal.json",
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/installer-data-fedora-minimal.json",
         "fileName": "installer-data-fedora-minimal.json",
         "sizeBytes": 7785
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41371545744/fedora-minimal-build-41371545744.zip",
-        "fileName": "fedora-minimal-build-41371545744.zip",
-        "sizeBytes": 1850565691
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/fedora-minimal-build-41413717158.zip",
+        "fileName": "fedora-minimal-build-41413717158.zip",
+        "sizeBytes": 2147028581,
+        "parts": [
+          {
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/fedora-minimal-build-41413717158.zip.part00",
+            "fileName": "fedora-minimal-build-41413717158.zip.part00",
+            "sizeBytes": 1073741824,
+            "sha256": "sha256:0b37b200e23cd8937fe86f265ed6cbd9ffae5cd63577be2fbc55ba4bed5077f3"
+          },
+          {
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/fedora-minimal-build-41413717158.zip.part01",
+            "fileName": "fedora-minimal-build-41413717158.zip.part01",
+            "sizeBytes": 1073286757,
+            "sha256": "sha256:9579049414c6a2348c50ebe5180d0d18f82094393d15cad74fc8446823f7db7f"
+          }
+        ]
       },
       "installationProfile": "fedora-minimal"
     },
@@ -784,19 +1274,33 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "3c29dbbefc9f3672c2ab5077ea5482165b16a64b",
-      "metadataDigest": "sha256:646d5edf65cf20170177defb279f8320dfb3476daaf4e93cf748f0ced12d993e",
-      "payloadDigest": "sha256:451a3df35fa7a7f11e57de36c221943111fc2ea1157730048439c305afe580c5",
-      "evidenceRevision": "image-build-41371545744",
+      "downstreamRevision": "1b2f6925c21701948494cba7c0f2dfafee184aaf",
+      "metadataDigest": "sha256:8a1aafd709f40d20a7f8edac5e3222575bf84c0207be68978128d0e51612537b",
+      "payloadDigest": "sha256:89644b7ac640b31fec7fbd9cb89a3b17b89b01df24ff519a6ad4f2ff02bfd6da",
+      "evidenceRevision": "image-build-41413717158",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41371545744/installer-data-fedora-minimal.json",
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/installer-data-fedora-minimal.json",
         "fileName": "installer-data-fedora-minimal.json",
         "sizeBytes": 7785
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41371545744/fedora-minimal-build-41371545744.zip",
-        "fileName": "fedora-minimal-build-41371545744.zip",
-        "sizeBytes": 1850565691
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/fedora-minimal-build-41413717158.zip",
+        "fileName": "fedora-minimal-build-41413717158.zip",
+        "sizeBytes": 2147028581,
+        "parts": [
+          {
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/fedora-minimal-build-41413717158.zip.part00",
+            "fileName": "fedora-minimal-build-41413717158.zip.part00",
+            "sizeBytes": 1073741824,
+            "sha256": "sha256:0b37b200e23cd8937fe86f265ed6cbd9ffae5cd63577be2fbc55ba4bed5077f3"
+          },
+          {
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/fedora-minimal-build-41413717158.zip.part01",
+            "fileName": "fedora-minimal-build-41413717158.zip.part01",
+            "sizeBytes": 1073286757,
+            "sha256": "sha256:9579049414c6a2348c50ebe5180d0d18f82094393d15cad74fc8446823f7db7f"
+          }
+        ]
       },
       "installationProfile": "fedora-minimal"
     },
@@ -806,19 +1310,33 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "3c29dbbefc9f3672c2ab5077ea5482165b16a64b",
-      "metadataDigest": "sha256:646d5edf65cf20170177defb279f8320dfb3476daaf4e93cf748f0ced12d993e",
-      "payloadDigest": "sha256:451a3df35fa7a7f11e57de36c221943111fc2ea1157730048439c305afe580c5",
-      "evidenceRevision": "image-build-41371545744",
+      "downstreamRevision": "1b2f6925c21701948494cba7c0f2dfafee184aaf",
+      "metadataDigest": "sha256:8a1aafd709f40d20a7f8edac5e3222575bf84c0207be68978128d0e51612537b",
+      "payloadDigest": "sha256:89644b7ac640b31fec7fbd9cb89a3b17b89b01df24ff519a6ad4f2ff02bfd6da",
+      "evidenceRevision": "image-build-41413717158",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41371545744/installer-data-fedora-minimal.json",
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/installer-data-fedora-minimal.json",
         "fileName": "installer-data-fedora-minimal.json",
         "sizeBytes": 7785
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41371545744/fedora-minimal-build-41371545744.zip",
-        "fileName": "fedora-minimal-build-41371545744.zip",
-        "sizeBytes": 1850565691
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/fedora-minimal-build-41413717158.zip",
+        "fileName": "fedora-minimal-build-41413717158.zip",
+        "sizeBytes": 2147028581,
+        "parts": [
+          {
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/fedora-minimal-build-41413717158.zip.part00",
+            "fileName": "fedora-minimal-build-41413717158.zip.part00",
+            "sizeBytes": 1073741824,
+            "sha256": "sha256:0b37b200e23cd8937fe86f265ed6cbd9ffae5cd63577be2fbc55ba4bed5077f3"
+          },
+          {
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-41413717158/fedora-minimal-build-41413717158.zip.part01",
+            "fileName": "fedora-minimal-build-41413717158.zip.part01",
+            "sizeBytes": 1073286757,
+            "sha256": "sha256:9579049414c6a2348c50ebe5180d0d18f82094393d15cad74fc8446823f7db7f"
+          }
+        ]
       },
       "installationProfile": "fedora-minimal"
     }
