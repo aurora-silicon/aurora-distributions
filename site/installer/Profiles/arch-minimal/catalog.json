@@ -1,11 +1,11 @@
 {
   "schemaVersion": 5,
-  "sequence": 1793592286,
-  "issuedAt": "2026-11-02T04:04:46Z",
+  "sequence": 1793647157,
+  "issuedAt": "2026-11-02T19:19:17Z",
   "installer": {
     "minimumVersion": "0.1.0",
     "latestVersion": "0.1.0",
-    "downloadURL": "https://github.com/aurora-silicon/aurora-installer/releases/tag/v0.1.0-alpha.16"
+    "downloadURL": "https://github.com/aurora-silicon/aurora-installer/releases/tag/v0.1.0-alpha.3"
   },
   "models": [
     {
@@ -14,37 +14,37 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "3c29dbbefc9f3672c2ab5077ea5482165b16a64b",
-      "metadataDigest": "sha256:31912836dffb0c7e4b8eab4fb9a9adb9500ec3ea89daf225e2cbc34872c17c4a",
-      "payloadDigest": "sha256:21be94601df086354fd58a61ad1db04b710de495639fecc9ae7ded596ce46244",
-      "evidenceRevision": "image-build-41374265847",
+      "downstreamRevision": "6c01a9464736e623b074152ff8eb84b8df8d49aa",
+      "metadataDigest": "sha256:25de1f198669e612946ceb7c011469ae6c736d9ccf2dc198d6b3d876705cfbe2",
+      "payloadDigest": "sha256:755d77908381cf51d474f2aa2462fa9503f7550d4ee4755e16cdb130879eddce",
+      "evidenceRevision": "image-build-41507716042",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/installer-data-arch-minimal.json",
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/installer-data-arch-minimal.json",
         "fileName": "installer-data-arch-minimal.json",
-        "sizeBytes": 9922
+        "sizeBytes": 10089
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip",
-        "fileName": "arch-minimal-build-41374265847.zip",
-        "sizeBytes": 3043019827,
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip",
+        "fileName": "arch-minimal-build-41507716042.zip",
+        "sizeBytes": 3046371458,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip.part00",
-            "fileName": "arch-minimal-build-41374265847.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip.part00",
+            "fileName": "arch-minimal-build-41507716042.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:2446d9db7ce2a4ce1f0be70c4dfb0de9e1f315a9c6416a2c5c2f8e4c07ef4eeb"
+            "sha256": "sha256:70acce4eddb809b870d15ce5115c605596314e661dd69aa4f1ff67985339bf15"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip.part01",
-            "fileName": "arch-minimal-build-41374265847.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip.part01",
+            "fileName": "arch-minimal-build-41507716042.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:f52cb0279a3cea8658fec28577cf60ff2159aa8b766485dce3d30ec897df64d6"
+            "sha256": "sha256:fb282d7d77100352f2f6f43a98e7a317b34ecbe8dd2aacaff61b6db4c1bcf3b0"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip.part02",
-            "fileName": "arch-minimal-build-41374265847.zip.part02",
-            "sizeBytes": 895536179,
-            "sha256": "sha256:d3b59df44ae58e299d4afa5cf16bbac181f763b8e4f88b41ee597f633e040672"
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip.part02",
+            "fileName": "arch-minimal-build-41507716042.zip.part02",
+            "sizeBytes": 898887810,
+            "sha256": "sha256:c90c3265e3f306eda2586f37712cfb5587880a47ecce93e19ea47b5885386b9d"
           }
         ]
       },
@@ -56,37 +56,37 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "3c29dbbefc9f3672c2ab5077ea5482165b16a64b",
-      "metadataDigest": "sha256:31912836dffb0c7e4b8eab4fb9a9adb9500ec3ea89daf225e2cbc34872c17c4a",
-      "payloadDigest": "sha256:21be94601df086354fd58a61ad1db04b710de495639fecc9ae7ded596ce46244",
-      "evidenceRevision": "image-build-41374265847",
+      "downstreamRevision": "6c01a9464736e623b074152ff8eb84b8df8d49aa",
+      "metadataDigest": "sha256:25de1f198669e612946ceb7c011469ae6c736d9ccf2dc198d6b3d876705cfbe2",
+      "payloadDigest": "sha256:755d77908381cf51d474f2aa2462fa9503f7550d4ee4755e16cdb130879eddce",
+      "evidenceRevision": "image-build-41507716042",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/installer-data-arch-minimal.json",
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/installer-data-arch-minimal.json",
         "fileName": "installer-data-arch-minimal.json",
-        "sizeBytes": 9922
+        "sizeBytes": 10089
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip",
-        "fileName": "arch-minimal-build-41374265847.zip",
-        "sizeBytes": 3043019827,
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip",
+        "fileName": "arch-minimal-build-41507716042.zip",
+        "sizeBytes": 3046371458,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip.part00",
-            "fileName": "arch-minimal-build-41374265847.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip.part00",
+            "fileName": "arch-minimal-build-41507716042.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:2446d9db7ce2a4ce1f0be70c4dfb0de9e1f315a9c6416a2c5c2f8e4c07ef4eeb"
+            "sha256": "sha256:70acce4eddb809b870d15ce5115c605596314e661dd69aa4f1ff67985339bf15"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip.part01",
-            "fileName": "arch-minimal-build-41374265847.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip.part01",
+            "fileName": "arch-minimal-build-41507716042.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:f52cb0279a3cea8658fec28577cf60ff2159aa8b766485dce3d30ec897df64d6"
+            "sha256": "sha256:fb282d7d77100352f2f6f43a98e7a317b34ecbe8dd2aacaff61b6db4c1bcf3b0"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip.part02",
-            "fileName": "arch-minimal-build-41374265847.zip.part02",
-            "sizeBytes": 895536179,
-            "sha256": "sha256:d3b59df44ae58e299d4afa5cf16bbac181f763b8e4f88b41ee597f633e040672"
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip.part02",
+            "fileName": "arch-minimal-build-41507716042.zip.part02",
+            "sizeBytes": 898887810,
+            "sha256": "sha256:c90c3265e3f306eda2586f37712cfb5587880a47ecce93e19ea47b5885386b9d"
           }
         ]
       },
@@ -98,37 +98,37 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "3c29dbbefc9f3672c2ab5077ea5482165b16a64b",
-      "metadataDigest": "sha256:31912836dffb0c7e4b8eab4fb9a9adb9500ec3ea89daf225e2cbc34872c17c4a",
-      "payloadDigest": "sha256:21be94601df086354fd58a61ad1db04b710de495639fecc9ae7ded596ce46244",
-      "evidenceRevision": "image-build-41374265847",
+      "downstreamRevision": "6c01a9464736e623b074152ff8eb84b8df8d49aa",
+      "metadataDigest": "sha256:25de1f198669e612946ceb7c011469ae6c736d9ccf2dc198d6b3d876705cfbe2",
+      "payloadDigest": "sha256:755d77908381cf51d474f2aa2462fa9503f7550d4ee4755e16cdb130879eddce",
+      "evidenceRevision": "image-build-41507716042",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/installer-data-arch-minimal.json",
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/installer-data-arch-minimal.json",
         "fileName": "installer-data-arch-minimal.json",
-        "sizeBytes": 9922
+        "sizeBytes": 10089
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip",
-        "fileName": "arch-minimal-build-41374265847.zip",
-        "sizeBytes": 3043019827,
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip",
+        "fileName": "arch-minimal-build-41507716042.zip",
+        "sizeBytes": 3046371458,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip.part00",
-            "fileName": "arch-minimal-build-41374265847.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip.part00",
+            "fileName": "arch-minimal-build-41507716042.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:2446d9db7ce2a4ce1f0be70c4dfb0de9e1f315a9c6416a2c5c2f8e4c07ef4eeb"
+            "sha256": "sha256:70acce4eddb809b870d15ce5115c605596314e661dd69aa4f1ff67985339bf15"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip.part01",
-            "fileName": "arch-minimal-build-41374265847.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip.part01",
+            "fileName": "arch-minimal-build-41507716042.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:f52cb0279a3cea8658fec28577cf60ff2159aa8b766485dce3d30ec897df64d6"
+            "sha256": "sha256:fb282d7d77100352f2f6f43a98e7a317b34ecbe8dd2aacaff61b6db4c1bcf3b0"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip.part02",
-            "fileName": "arch-minimal-build-41374265847.zip.part02",
-            "sizeBytes": 895536179,
-            "sha256": "sha256:d3b59df44ae58e299d4afa5cf16bbac181f763b8e4f88b41ee597f633e040672"
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip.part02",
+            "fileName": "arch-minimal-build-41507716042.zip.part02",
+            "sizeBytes": 898887810,
+            "sha256": "sha256:c90c3265e3f306eda2586f37712cfb5587880a47ecce93e19ea47b5885386b9d"
           }
         ]
       },
@@ -140,37 +140,37 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "3c29dbbefc9f3672c2ab5077ea5482165b16a64b",
-      "metadataDigest": "sha256:31912836dffb0c7e4b8eab4fb9a9adb9500ec3ea89daf225e2cbc34872c17c4a",
-      "payloadDigest": "sha256:21be94601df086354fd58a61ad1db04b710de495639fecc9ae7ded596ce46244",
-      "evidenceRevision": "image-build-41374265847",
+      "downstreamRevision": "6c01a9464736e623b074152ff8eb84b8df8d49aa",
+      "metadataDigest": "sha256:25de1f198669e612946ceb7c011469ae6c736d9ccf2dc198d6b3d876705cfbe2",
+      "payloadDigest": "sha256:755d77908381cf51d474f2aa2462fa9503f7550d4ee4755e16cdb130879eddce",
+      "evidenceRevision": "image-build-41507716042",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/installer-data-arch-minimal.json",
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/installer-data-arch-minimal.json",
         "fileName": "installer-data-arch-minimal.json",
-        "sizeBytes": 9922
+        "sizeBytes": 10089
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip",
-        "fileName": "arch-minimal-build-41374265847.zip",
-        "sizeBytes": 3043019827,
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip",
+        "fileName": "arch-minimal-build-41507716042.zip",
+        "sizeBytes": 3046371458,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip.part00",
-            "fileName": "arch-minimal-build-41374265847.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip.part00",
+            "fileName": "arch-minimal-build-41507716042.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:2446d9db7ce2a4ce1f0be70c4dfb0de9e1f315a9c6416a2c5c2f8e4c07ef4eeb"
+            "sha256": "sha256:70acce4eddb809b870d15ce5115c605596314e661dd69aa4f1ff67985339bf15"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip.part01",
-            "fileName": "arch-minimal-build-41374265847.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip.part01",
+            "fileName": "arch-minimal-build-41507716042.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:f52cb0279a3cea8658fec28577cf60ff2159aa8b766485dce3d30ec897df64d6"
+            "sha256": "sha256:fb282d7d77100352f2f6f43a98e7a317b34ecbe8dd2aacaff61b6db4c1bcf3b0"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip.part02",
-            "fileName": "arch-minimal-build-41374265847.zip.part02",
-            "sizeBytes": 895536179,
-            "sha256": "sha256:d3b59df44ae58e299d4afa5cf16bbac181f763b8e4f88b41ee597f633e040672"
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip.part02",
+            "fileName": "arch-minimal-build-41507716042.zip.part02",
+            "sizeBytes": 898887810,
+            "sha256": "sha256:c90c3265e3f306eda2586f37712cfb5587880a47ecce93e19ea47b5885386b9d"
           }
         ]
       },
@@ -182,37 +182,37 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "3c29dbbefc9f3672c2ab5077ea5482165b16a64b",
-      "metadataDigest": "sha256:31912836dffb0c7e4b8eab4fb9a9adb9500ec3ea89daf225e2cbc34872c17c4a",
-      "payloadDigest": "sha256:21be94601df086354fd58a61ad1db04b710de495639fecc9ae7ded596ce46244",
-      "evidenceRevision": "image-build-41374265847",
+      "downstreamRevision": "6c01a9464736e623b074152ff8eb84b8df8d49aa",
+      "metadataDigest": "sha256:25de1f198669e612946ceb7c011469ae6c736d9ccf2dc198d6b3d876705cfbe2",
+      "payloadDigest": "sha256:755d77908381cf51d474f2aa2462fa9503f7550d4ee4755e16cdb130879eddce",
+      "evidenceRevision": "image-build-41507716042",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/installer-data-arch-minimal.json",
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/installer-data-arch-minimal.json",
         "fileName": "installer-data-arch-minimal.json",
-        "sizeBytes": 9922
+        "sizeBytes": 10089
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip",
-        "fileName": "arch-minimal-build-41374265847.zip",
-        "sizeBytes": 3043019827,
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip",
+        "fileName": "arch-minimal-build-41507716042.zip",
+        "sizeBytes": 3046371458,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip.part00",
-            "fileName": "arch-minimal-build-41374265847.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip.part00",
+            "fileName": "arch-minimal-build-41507716042.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:2446d9db7ce2a4ce1f0be70c4dfb0de9e1f315a9c6416a2c5c2f8e4c07ef4eeb"
+            "sha256": "sha256:70acce4eddb809b870d15ce5115c605596314e661dd69aa4f1ff67985339bf15"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip.part01",
-            "fileName": "arch-minimal-build-41374265847.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip.part01",
+            "fileName": "arch-minimal-build-41507716042.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:f52cb0279a3cea8658fec28577cf60ff2159aa8b766485dce3d30ec897df64d6"
+            "sha256": "sha256:fb282d7d77100352f2f6f43a98e7a317b34ecbe8dd2aacaff61b6db4c1bcf3b0"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip.part02",
-            "fileName": "arch-minimal-build-41374265847.zip.part02",
-            "sizeBytes": 895536179,
-            "sha256": "sha256:d3b59df44ae58e299d4afa5cf16bbac181f763b8e4f88b41ee597f633e040672"
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip.part02",
+            "fileName": "arch-minimal-build-41507716042.zip.part02",
+            "sizeBytes": 898887810,
+            "sha256": "sha256:c90c3265e3f306eda2586f37712cfb5587880a47ecce93e19ea47b5885386b9d"
           }
         ]
       },
@@ -224,37 +224,37 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "3c29dbbefc9f3672c2ab5077ea5482165b16a64b",
-      "metadataDigest": "sha256:31912836dffb0c7e4b8eab4fb9a9adb9500ec3ea89daf225e2cbc34872c17c4a",
-      "payloadDigest": "sha256:21be94601df086354fd58a61ad1db04b710de495639fecc9ae7ded596ce46244",
-      "evidenceRevision": "image-build-41374265847",
+      "downstreamRevision": "6c01a9464736e623b074152ff8eb84b8df8d49aa",
+      "metadataDigest": "sha256:25de1f198669e612946ceb7c011469ae6c736d9ccf2dc198d6b3d876705cfbe2",
+      "payloadDigest": "sha256:755d77908381cf51d474f2aa2462fa9503f7550d4ee4755e16cdb130879eddce",
+      "evidenceRevision": "image-build-41507716042",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/installer-data-arch-minimal.json",
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/installer-data-arch-minimal.json",
         "fileName": "installer-data-arch-minimal.json",
-        "sizeBytes": 9922
+        "sizeBytes": 10089
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip",
-        "fileName": "arch-minimal-build-41374265847.zip",
-        "sizeBytes": 3043019827,
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip",
+        "fileName": "arch-minimal-build-41507716042.zip",
+        "sizeBytes": 3046371458,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip.part00",
-            "fileName": "arch-minimal-build-41374265847.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip.part00",
+            "fileName": "arch-minimal-build-41507716042.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:2446d9db7ce2a4ce1f0be70c4dfb0de9e1f315a9c6416a2c5c2f8e4c07ef4eeb"
+            "sha256": "sha256:70acce4eddb809b870d15ce5115c605596314e661dd69aa4f1ff67985339bf15"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip.part01",
-            "fileName": "arch-minimal-build-41374265847.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip.part01",
+            "fileName": "arch-minimal-build-41507716042.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:f52cb0279a3cea8658fec28577cf60ff2159aa8b766485dce3d30ec897df64d6"
+            "sha256": "sha256:fb282d7d77100352f2f6f43a98e7a317b34ecbe8dd2aacaff61b6db4c1bcf3b0"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip.part02",
-            "fileName": "arch-minimal-build-41374265847.zip.part02",
-            "sizeBytes": 895536179,
-            "sha256": "sha256:d3b59df44ae58e299d4afa5cf16bbac181f763b8e4f88b41ee597f633e040672"
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip.part02",
+            "fileName": "arch-minimal-build-41507716042.zip.part02",
+            "sizeBytes": 898887810,
+            "sha256": "sha256:c90c3265e3f306eda2586f37712cfb5587880a47ecce93e19ea47b5885386b9d"
           }
         ]
       },
@@ -266,37 +266,37 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "3c29dbbefc9f3672c2ab5077ea5482165b16a64b",
-      "metadataDigest": "sha256:31912836dffb0c7e4b8eab4fb9a9adb9500ec3ea89daf225e2cbc34872c17c4a",
-      "payloadDigest": "sha256:21be94601df086354fd58a61ad1db04b710de495639fecc9ae7ded596ce46244",
-      "evidenceRevision": "image-build-41374265847",
+      "downstreamRevision": "6c01a9464736e623b074152ff8eb84b8df8d49aa",
+      "metadataDigest": "sha256:25de1f198669e612946ceb7c011469ae6c736d9ccf2dc198d6b3d876705cfbe2",
+      "payloadDigest": "sha256:755d77908381cf51d474f2aa2462fa9503f7550d4ee4755e16cdb130879eddce",
+      "evidenceRevision": "image-build-41507716042",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/installer-data-arch-minimal.json",
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/installer-data-arch-minimal.json",
         "fileName": "installer-data-arch-minimal.json",
-        "sizeBytes": 9922
+        "sizeBytes": 10089
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip",
-        "fileName": "arch-minimal-build-41374265847.zip",
-        "sizeBytes": 3043019827,
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip",
+        "fileName": "arch-minimal-build-41507716042.zip",
+        "sizeBytes": 3046371458,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip.part00",
-            "fileName": "arch-minimal-build-41374265847.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip.part00",
+            "fileName": "arch-minimal-build-41507716042.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:2446d9db7ce2a4ce1f0be70c4dfb0de9e1f315a9c6416a2c5c2f8e4c07ef4eeb"
+            "sha256": "sha256:70acce4eddb809b870d15ce5115c605596314e661dd69aa4f1ff67985339bf15"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip.part01",
-            "fileName": "arch-minimal-build-41374265847.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip.part01",
+            "fileName": "arch-minimal-build-41507716042.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:f52cb0279a3cea8658fec28577cf60ff2159aa8b766485dce3d30ec897df64d6"
+            "sha256": "sha256:fb282d7d77100352f2f6f43a98e7a317b34ecbe8dd2aacaff61b6db4c1bcf3b0"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip.part02",
-            "fileName": "arch-minimal-build-41374265847.zip.part02",
-            "sizeBytes": 895536179,
-            "sha256": "sha256:d3b59df44ae58e299d4afa5cf16bbac181f763b8e4f88b41ee597f633e040672"
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip.part02",
+            "fileName": "arch-minimal-build-41507716042.zip.part02",
+            "sizeBytes": 898887810,
+            "sha256": "sha256:c90c3265e3f306eda2586f37712cfb5587880a47ecce93e19ea47b5885386b9d"
           }
         ]
       },
@@ -308,37 +308,37 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "3c29dbbefc9f3672c2ab5077ea5482165b16a64b",
-      "metadataDigest": "sha256:31912836dffb0c7e4b8eab4fb9a9adb9500ec3ea89daf225e2cbc34872c17c4a",
-      "payloadDigest": "sha256:21be94601df086354fd58a61ad1db04b710de495639fecc9ae7ded596ce46244",
-      "evidenceRevision": "image-build-41374265847",
+      "downstreamRevision": "6c01a9464736e623b074152ff8eb84b8df8d49aa",
+      "metadataDigest": "sha256:25de1f198669e612946ceb7c011469ae6c736d9ccf2dc198d6b3d876705cfbe2",
+      "payloadDigest": "sha256:755d77908381cf51d474f2aa2462fa9503f7550d4ee4755e16cdb130879eddce",
+      "evidenceRevision": "image-build-41507716042",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/installer-data-arch-minimal.json",
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/installer-data-arch-minimal.json",
         "fileName": "installer-data-arch-minimal.json",
-        "sizeBytes": 9922
+        "sizeBytes": 10089
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip",
-        "fileName": "arch-minimal-build-41374265847.zip",
-        "sizeBytes": 3043019827,
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip",
+        "fileName": "arch-minimal-build-41507716042.zip",
+        "sizeBytes": 3046371458,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip.part00",
-            "fileName": "arch-minimal-build-41374265847.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip.part00",
+            "fileName": "arch-minimal-build-41507716042.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:2446d9db7ce2a4ce1f0be70c4dfb0de9e1f315a9c6416a2c5c2f8e4c07ef4eeb"
+            "sha256": "sha256:70acce4eddb809b870d15ce5115c605596314e661dd69aa4f1ff67985339bf15"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip.part01",
-            "fileName": "arch-minimal-build-41374265847.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip.part01",
+            "fileName": "arch-minimal-build-41507716042.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:f52cb0279a3cea8658fec28577cf60ff2159aa8b766485dce3d30ec897df64d6"
+            "sha256": "sha256:fb282d7d77100352f2f6f43a98e7a317b34ecbe8dd2aacaff61b6db4c1bcf3b0"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip.part02",
-            "fileName": "arch-minimal-build-41374265847.zip.part02",
-            "sizeBytes": 895536179,
-            "sha256": "sha256:d3b59df44ae58e299d4afa5cf16bbac181f763b8e4f88b41ee597f633e040672"
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip.part02",
+            "fileName": "arch-minimal-build-41507716042.zip.part02",
+            "sizeBytes": 898887810,
+            "sha256": "sha256:c90c3265e3f306eda2586f37712cfb5587880a47ecce93e19ea47b5885386b9d"
           }
         ]
       },
@@ -350,37 +350,37 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "3c29dbbefc9f3672c2ab5077ea5482165b16a64b",
-      "metadataDigest": "sha256:31912836dffb0c7e4b8eab4fb9a9adb9500ec3ea89daf225e2cbc34872c17c4a",
-      "payloadDigest": "sha256:21be94601df086354fd58a61ad1db04b710de495639fecc9ae7ded596ce46244",
-      "evidenceRevision": "image-build-41374265847",
+      "downstreamRevision": "6c01a9464736e623b074152ff8eb84b8df8d49aa",
+      "metadataDigest": "sha256:25de1f198669e612946ceb7c011469ae6c736d9ccf2dc198d6b3d876705cfbe2",
+      "payloadDigest": "sha256:755d77908381cf51d474f2aa2462fa9503f7550d4ee4755e16cdb130879eddce",
+      "evidenceRevision": "image-build-41507716042",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/installer-data-arch-minimal.json",
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/installer-data-arch-minimal.json",
         "fileName": "installer-data-arch-minimal.json",
-        "sizeBytes": 9922
+        "sizeBytes": 10089
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip",
-        "fileName": "arch-minimal-build-41374265847.zip",
-        "sizeBytes": 3043019827,
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip",
+        "fileName": "arch-minimal-build-41507716042.zip",
+        "sizeBytes": 3046371458,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip.part00",
-            "fileName": "arch-minimal-build-41374265847.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip.part00",
+            "fileName": "arch-minimal-build-41507716042.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:2446d9db7ce2a4ce1f0be70c4dfb0de9e1f315a9c6416a2c5c2f8e4c07ef4eeb"
+            "sha256": "sha256:70acce4eddb809b870d15ce5115c605596314e661dd69aa4f1ff67985339bf15"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip.part01",
-            "fileName": "arch-minimal-build-41374265847.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip.part01",
+            "fileName": "arch-minimal-build-41507716042.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:f52cb0279a3cea8658fec28577cf60ff2159aa8b766485dce3d30ec897df64d6"
+            "sha256": "sha256:fb282d7d77100352f2f6f43a98e7a317b34ecbe8dd2aacaff61b6db4c1bcf3b0"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip.part02",
-            "fileName": "arch-minimal-build-41374265847.zip.part02",
-            "sizeBytes": 895536179,
-            "sha256": "sha256:d3b59df44ae58e299d4afa5cf16bbac181f763b8e4f88b41ee597f633e040672"
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip.part02",
+            "fileName": "arch-minimal-build-41507716042.zip.part02",
+            "sizeBytes": 898887810,
+            "sha256": "sha256:c90c3265e3f306eda2586f37712cfb5587880a47ecce93e19ea47b5885386b9d"
           }
         ]
       },
@@ -392,37 +392,37 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "3c29dbbefc9f3672c2ab5077ea5482165b16a64b",
-      "metadataDigest": "sha256:31912836dffb0c7e4b8eab4fb9a9adb9500ec3ea89daf225e2cbc34872c17c4a",
-      "payloadDigest": "sha256:21be94601df086354fd58a61ad1db04b710de495639fecc9ae7ded596ce46244",
-      "evidenceRevision": "image-build-41374265847",
+      "downstreamRevision": "6c01a9464736e623b074152ff8eb84b8df8d49aa",
+      "metadataDigest": "sha256:25de1f198669e612946ceb7c011469ae6c736d9ccf2dc198d6b3d876705cfbe2",
+      "payloadDigest": "sha256:755d77908381cf51d474f2aa2462fa9503f7550d4ee4755e16cdb130879eddce",
+      "evidenceRevision": "image-build-41507716042",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/installer-data-arch-minimal.json",
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/installer-data-arch-minimal.json",
         "fileName": "installer-data-arch-minimal.json",
-        "sizeBytes": 9922
+        "sizeBytes": 10089
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip",
-        "fileName": "arch-minimal-build-41374265847.zip",
-        "sizeBytes": 3043019827,
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip",
+        "fileName": "arch-minimal-build-41507716042.zip",
+        "sizeBytes": 3046371458,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip.part00",
-            "fileName": "arch-minimal-build-41374265847.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip.part00",
+            "fileName": "arch-minimal-build-41507716042.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:2446d9db7ce2a4ce1f0be70c4dfb0de9e1f315a9c6416a2c5c2f8e4c07ef4eeb"
+            "sha256": "sha256:70acce4eddb809b870d15ce5115c605596314e661dd69aa4f1ff67985339bf15"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip.part01",
-            "fileName": "arch-minimal-build-41374265847.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip.part01",
+            "fileName": "arch-minimal-build-41507716042.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:f52cb0279a3cea8658fec28577cf60ff2159aa8b766485dce3d30ec897df64d6"
+            "sha256": "sha256:fb282d7d77100352f2f6f43a98e7a317b34ecbe8dd2aacaff61b6db4c1bcf3b0"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip.part02",
-            "fileName": "arch-minimal-build-41374265847.zip.part02",
-            "sizeBytes": 895536179,
-            "sha256": "sha256:d3b59df44ae58e299d4afa5cf16bbac181f763b8e4f88b41ee597f633e040672"
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip.part02",
+            "fileName": "arch-minimal-build-41507716042.zip.part02",
+            "sizeBytes": 898887810,
+            "sha256": "sha256:c90c3265e3f306eda2586f37712cfb5587880a47ecce93e19ea47b5885386b9d"
           }
         ]
       },
@@ -434,37 +434,37 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "3c29dbbefc9f3672c2ab5077ea5482165b16a64b",
-      "metadataDigest": "sha256:31912836dffb0c7e4b8eab4fb9a9adb9500ec3ea89daf225e2cbc34872c17c4a",
-      "payloadDigest": "sha256:21be94601df086354fd58a61ad1db04b710de495639fecc9ae7ded596ce46244",
-      "evidenceRevision": "image-build-41374265847",
+      "downstreamRevision": "6c01a9464736e623b074152ff8eb84b8df8d49aa",
+      "metadataDigest": "sha256:25de1f198669e612946ceb7c011469ae6c736d9ccf2dc198d6b3d876705cfbe2",
+      "payloadDigest": "sha256:755d77908381cf51d474f2aa2462fa9503f7550d4ee4755e16cdb130879eddce",
+      "evidenceRevision": "image-build-41507716042",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/installer-data-arch-minimal.json",
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/installer-data-arch-minimal.json",
         "fileName": "installer-data-arch-minimal.json",
-        "sizeBytes": 9922
+        "sizeBytes": 10089
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip",
-        "fileName": "arch-minimal-build-41374265847.zip",
-        "sizeBytes": 3043019827,
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip",
+        "fileName": "arch-minimal-build-41507716042.zip",
+        "sizeBytes": 3046371458,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip.part00",
-            "fileName": "arch-minimal-build-41374265847.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip.part00",
+            "fileName": "arch-minimal-build-41507716042.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:2446d9db7ce2a4ce1f0be70c4dfb0de9e1f315a9c6416a2c5c2f8e4c07ef4eeb"
+            "sha256": "sha256:70acce4eddb809b870d15ce5115c605596314e661dd69aa4f1ff67985339bf15"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip.part01",
-            "fileName": "arch-minimal-build-41374265847.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip.part01",
+            "fileName": "arch-minimal-build-41507716042.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:f52cb0279a3cea8658fec28577cf60ff2159aa8b766485dce3d30ec897df64d6"
+            "sha256": "sha256:fb282d7d77100352f2f6f43a98e7a317b34ecbe8dd2aacaff61b6db4c1bcf3b0"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip.part02",
-            "fileName": "arch-minimal-build-41374265847.zip.part02",
-            "sizeBytes": 895536179,
-            "sha256": "sha256:d3b59df44ae58e299d4afa5cf16bbac181f763b8e4f88b41ee597f633e040672"
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip.part02",
+            "fileName": "arch-minimal-build-41507716042.zip.part02",
+            "sizeBytes": 898887810,
+            "sha256": "sha256:c90c3265e3f306eda2586f37712cfb5587880a47ecce93e19ea47b5885386b9d"
           }
         ]
       },
@@ -476,37 +476,37 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "3c29dbbefc9f3672c2ab5077ea5482165b16a64b",
-      "metadataDigest": "sha256:31912836dffb0c7e4b8eab4fb9a9adb9500ec3ea89daf225e2cbc34872c17c4a",
-      "payloadDigest": "sha256:21be94601df086354fd58a61ad1db04b710de495639fecc9ae7ded596ce46244",
-      "evidenceRevision": "image-build-41374265847",
+      "downstreamRevision": "6c01a9464736e623b074152ff8eb84b8df8d49aa",
+      "metadataDigest": "sha256:25de1f198669e612946ceb7c011469ae6c736d9ccf2dc198d6b3d876705cfbe2",
+      "payloadDigest": "sha256:755d77908381cf51d474f2aa2462fa9503f7550d4ee4755e16cdb130879eddce",
+      "evidenceRevision": "image-build-41507716042",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/installer-data-arch-minimal.json",
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/installer-data-arch-minimal.json",
         "fileName": "installer-data-arch-minimal.json",
-        "sizeBytes": 9922
+        "sizeBytes": 10089
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip",
-        "fileName": "arch-minimal-build-41374265847.zip",
-        "sizeBytes": 3043019827,
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip",
+        "fileName": "arch-minimal-build-41507716042.zip",
+        "sizeBytes": 3046371458,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip.part00",
-            "fileName": "arch-minimal-build-41374265847.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip.part00",
+            "fileName": "arch-minimal-build-41507716042.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:2446d9db7ce2a4ce1f0be70c4dfb0de9e1f315a9c6416a2c5c2f8e4c07ef4eeb"
+            "sha256": "sha256:70acce4eddb809b870d15ce5115c605596314e661dd69aa4f1ff67985339bf15"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip.part01",
-            "fileName": "arch-minimal-build-41374265847.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip.part01",
+            "fileName": "arch-minimal-build-41507716042.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:f52cb0279a3cea8658fec28577cf60ff2159aa8b766485dce3d30ec897df64d6"
+            "sha256": "sha256:fb282d7d77100352f2f6f43a98e7a317b34ecbe8dd2aacaff61b6db4c1bcf3b0"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip.part02",
-            "fileName": "arch-minimal-build-41374265847.zip.part02",
-            "sizeBytes": 895536179,
-            "sha256": "sha256:d3b59df44ae58e299d4afa5cf16bbac181f763b8e4f88b41ee597f633e040672"
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip.part02",
+            "fileName": "arch-minimal-build-41507716042.zip.part02",
+            "sizeBytes": 898887810,
+            "sha256": "sha256:c90c3265e3f306eda2586f37712cfb5587880a47ecce93e19ea47b5885386b9d"
           }
         ]
       },
@@ -518,37 +518,37 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "3c29dbbefc9f3672c2ab5077ea5482165b16a64b",
-      "metadataDigest": "sha256:31912836dffb0c7e4b8eab4fb9a9adb9500ec3ea89daf225e2cbc34872c17c4a",
-      "payloadDigest": "sha256:21be94601df086354fd58a61ad1db04b710de495639fecc9ae7ded596ce46244",
-      "evidenceRevision": "image-build-41374265847",
+      "downstreamRevision": "6c01a9464736e623b074152ff8eb84b8df8d49aa",
+      "metadataDigest": "sha256:25de1f198669e612946ceb7c011469ae6c736d9ccf2dc198d6b3d876705cfbe2",
+      "payloadDigest": "sha256:755d77908381cf51d474f2aa2462fa9503f7550d4ee4755e16cdb130879eddce",
+      "evidenceRevision": "image-build-41507716042",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/installer-data-arch-minimal.json",
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/installer-data-arch-minimal.json",
         "fileName": "installer-data-arch-minimal.json",
-        "sizeBytes": 9922
+        "sizeBytes": 10089
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip",
-        "fileName": "arch-minimal-build-41374265847.zip",
-        "sizeBytes": 3043019827,
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip",
+        "fileName": "arch-minimal-build-41507716042.zip",
+        "sizeBytes": 3046371458,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip.part00",
-            "fileName": "arch-minimal-build-41374265847.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip.part00",
+            "fileName": "arch-minimal-build-41507716042.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:2446d9db7ce2a4ce1f0be70c4dfb0de9e1f315a9c6416a2c5c2f8e4c07ef4eeb"
+            "sha256": "sha256:70acce4eddb809b870d15ce5115c605596314e661dd69aa4f1ff67985339bf15"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip.part01",
-            "fileName": "arch-minimal-build-41374265847.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip.part01",
+            "fileName": "arch-minimal-build-41507716042.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:f52cb0279a3cea8658fec28577cf60ff2159aa8b766485dce3d30ec897df64d6"
+            "sha256": "sha256:fb282d7d77100352f2f6f43a98e7a317b34ecbe8dd2aacaff61b6db4c1bcf3b0"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip.part02",
-            "fileName": "arch-minimal-build-41374265847.zip.part02",
-            "sizeBytes": 895536179,
-            "sha256": "sha256:d3b59df44ae58e299d4afa5cf16bbac181f763b8e4f88b41ee597f633e040672"
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip.part02",
+            "fileName": "arch-minimal-build-41507716042.zip.part02",
+            "sizeBytes": 898887810,
+            "sha256": "sha256:c90c3265e3f306eda2586f37712cfb5587880a47ecce93e19ea47b5885386b9d"
           }
         ]
       },
@@ -560,37 +560,37 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "3c29dbbefc9f3672c2ab5077ea5482165b16a64b",
-      "metadataDigest": "sha256:31912836dffb0c7e4b8eab4fb9a9adb9500ec3ea89daf225e2cbc34872c17c4a",
-      "payloadDigest": "sha256:21be94601df086354fd58a61ad1db04b710de495639fecc9ae7ded596ce46244",
-      "evidenceRevision": "image-build-41374265847",
+      "downstreamRevision": "6c01a9464736e623b074152ff8eb84b8df8d49aa",
+      "metadataDigest": "sha256:25de1f198669e612946ceb7c011469ae6c736d9ccf2dc198d6b3d876705cfbe2",
+      "payloadDigest": "sha256:755d77908381cf51d474f2aa2462fa9503f7550d4ee4755e16cdb130879eddce",
+      "evidenceRevision": "image-build-41507716042",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/installer-data-arch-minimal.json",
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/installer-data-arch-minimal.json",
         "fileName": "installer-data-arch-minimal.json",
-        "sizeBytes": 9922
+        "sizeBytes": 10089
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip",
-        "fileName": "arch-minimal-build-41374265847.zip",
-        "sizeBytes": 3043019827,
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip",
+        "fileName": "arch-minimal-build-41507716042.zip",
+        "sizeBytes": 3046371458,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip.part00",
-            "fileName": "arch-minimal-build-41374265847.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip.part00",
+            "fileName": "arch-minimal-build-41507716042.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:2446d9db7ce2a4ce1f0be70c4dfb0de9e1f315a9c6416a2c5c2f8e4c07ef4eeb"
+            "sha256": "sha256:70acce4eddb809b870d15ce5115c605596314e661dd69aa4f1ff67985339bf15"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip.part01",
-            "fileName": "arch-minimal-build-41374265847.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip.part01",
+            "fileName": "arch-minimal-build-41507716042.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:f52cb0279a3cea8658fec28577cf60ff2159aa8b766485dce3d30ec897df64d6"
+            "sha256": "sha256:fb282d7d77100352f2f6f43a98e7a317b34ecbe8dd2aacaff61b6db4c1bcf3b0"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip.part02",
-            "fileName": "arch-minimal-build-41374265847.zip.part02",
-            "sizeBytes": 895536179,
-            "sha256": "sha256:d3b59df44ae58e299d4afa5cf16bbac181f763b8e4f88b41ee597f633e040672"
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip.part02",
+            "fileName": "arch-minimal-build-41507716042.zip.part02",
+            "sizeBytes": 898887810,
+            "sha256": "sha256:c90c3265e3f306eda2586f37712cfb5587880a47ecce93e19ea47b5885386b9d"
           }
         ]
       },
@@ -602,37 +602,37 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "3c29dbbefc9f3672c2ab5077ea5482165b16a64b",
-      "metadataDigest": "sha256:31912836dffb0c7e4b8eab4fb9a9adb9500ec3ea89daf225e2cbc34872c17c4a",
-      "payloadDigest": "sha256:21be94601df086354fd58a61ad1db04b710de495639fecc9ae7ded596ce46244",
-      "evidenceRevision": "image-build-41374265847",
+      "downstreamRevision": "6c01a9464736e623b074152ff8eb84b8df8d49aa",
+      "metadataDigest": "sha256:25de1f198669e612946ceb7c011469ae6c736d9ccf2dc198d6b3d876705cfbe2",
+      "payloadDigest": "sha256:755d77908381cf51d474f2aa2462fa9503f7550d4ee4755e16cdb130879eddce",
+      "evidenceRevision": "image-build-41507716042",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/installer-data-arch-minimal.json",
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/installer-data-arch-minimal.json",
         "fileName": "installer-data-arch-minimal.json",
-        "sizeBytes": 9922
+        "sizeBytes": 10089
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip",
-        "fileName": "arch-minimal-build-41374265847.zip",
-        "sizeBytes": 3043019827,
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip",
+        "fileName": "arch-minimal-build-41507716042.zip",
+        "sizeBytes": 3046371458,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip.part00",
-            "fileName": "arch-minimal-build-41374265847.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip.part00",
+            "fileName": "arch-minimal-build-41507716042.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:2446d9db7ce2a4ce1f0be70c4dfb0de9e1f315a9c6416a2c5c2f8e4c07ef4eeb"
+            "sha256": "sha256:70acce4eddb809b870d15ce5115c605596314e661dd69aa4f1ff67985339bf15"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip.part01",
-            "fileName": "arch-minimal-build-41374265847.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip.part01",
+            "fileName": "arch-minimal-build-41507716042.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:f52cb0279a3cea8658fec28577cf60ff2159aa8b766485dce3d30ec897df64d6"
+            "sha256": "sha256:fb282d7d77100352f2f6f43a98e7a317b34ecbe8dd2aacaff61b6db4c1bcf3b0"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip.part02",
-            "fileName": "arch-minimal-build-41374265847.zip.part02",
-            "sizeBytes": 895536179,
-            "sha256": "sha256:d3b59df44ae58e299d4afa5cf16bbac181f763b8e4f88b41ee597f633e040672"
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip.part02",
+            "fileName": "arch-minimal-build-41507716042.zip.part02",
+            "sizeBytes": 898887810,
+            "sha256": "sha256:c90c3265e3f306eda2586f37712cfb5587880a47ecce93e19ea47b5885386b9d"
           }
         ]
       },
@@ -644,37 +644,37 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "3c29dbbefc9f3672c2ab5077ea5482165b16a64b",
-      "metadataDigest": "sha256:31912836dffb0c7e4b8eab4fb9a9adb9500ec3ea89daf225e2cbc34872c17c4a",
-      "payloadDigest": "sha256:21be94601df086354fd58a61ad1db04b710de495639fecc9ae7ded596ce46244",
-      "evidenceRevision": "image-build-41374265847",
+      "downstreamRevision": "6c01a9464736e623b074152ff8eb84b8df8d49aa",
+      "metadataDigest": "sha256:25de1f198669e612946ceb7c011469ae6c736d9ccf2dc198d6b3d876705cfbe2",
+      "payloadDigest": "sha256:755d77908381cf51d474f2aa2462fa9503f7550d4ee4755e16cdb130879eddce",
+      "evidenceRevision": "image-build-41507716042",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/installer-data-arch-minimal.json",
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/installer-data-arch-minimal.json",
         "fileName": "installer-data-arch-minimal.json",
-        "sizeBytes": 9922
+        "sizeBytes": 10089
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip",
-        "fileName": "arch-minimal-build-41374265847.zip",
-        "sizeBytes": 3043019827,
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip",
+        "fileName": "arch-minimal-build-41507716042.zip",
+        "sizeBytes": 3046371458,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip.part00",
-            "fileName": "arch-minimal-build-41374265847.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip.part00",
+            "fileName": "arch-minimal-build-41507716042.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:2446d9db7ce2a4ce1f0be70c4dfb0de9e1f315a9c6416a2c5c2f8e4c07ef4eeb"
+            "sha256": "sha256:70acce4eddb809b870d15ce5115c605596314e661dd69aa4f1ff67985339bf15"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip.part01",
-            "fileName": "arch-minimal-build-41374265847.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip.part01",
+            "fileName": "arch-minimal-build-41507716042.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:f52cb0279a3cea8658fec28577cf60ff2159aa8b766485dce3d30ec897df64d6"
+            "sha256": "sha256:fb282d7d77100352f2f6f43a98e7a317b34ecbe8dd2aacaff61b6db4c1bcf3b0"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip.part02",
-            "fileName": "arch-minimal-build-41374265847.zip.part02",
-            "sizeBytes": 895536179,
-            "sha256": "sha256:d3b59df44ae58e299d4afa5cf16bbac181f763b8e4f88b41ee597f633e040672"
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip.part02",
+            "fileName": "arch-minimal-build-41507716042.zip.part02",
+            "sizeBytes": 898887810,
+            "sha256": "sha256:c90c3265e3f306eda2586f37712cfb5587880a47ecce93e19ea47b5885386b9d"
           }
         ]
       },
@@ -686,37 +686,37 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "3c29dbbefc9f3672c2ab5077ea5482165b16a64b",
-      "metadataDigest": "sha256:31912836dffb0c7e4b8eab4fb9a9adb9500ec3ea89daf225e2cbc34872c17c4a",
-      "payloadDigest": "sha256:21be94601df086354fd58a61ad1db04b710de495639fecc9ae7ded596ce46244",
-      "evidenceRevision": "image-build-41374265847",
+      "downstreamRevision": "6c01a9464736e623b074152ff8eb84b8df8d49aa",
+      "metadataDigest": "sha256:25de1f198669e612946ceb7c011469ae6c736d9ccf2dc198d6b3d876705cfbe2",
+      "payloadDigest": "sha256:755d77908381cf51d474f2aa2462fa9503f7550d4ee4755e16cdb130879eddce",
+      "evidenceRevision": "image-build-41507716042",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/installer-data-arch-minimal.json",
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/installer-data-arch-minimal.json",
         "fileName": "installer-data-arch-minimal.json",
-        "sizeBytes": 9922
+        "sizeBytes": 10089
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip",
-        "fileName": "arch-minimal-build-41374265847.zip",
-        "sizeBytes": 3043019827,
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip",
+        "fileName": "arch-minimal-build-41507716042.zip",
+        "sizeBytes": 3046371458,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip.part00",
-            "fileName": "arch-minimal-build-41374265847.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip.part00",
+            "fileName": "arch-minimal-build-41507716042.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:2446d9db7ce2a4ce1f0be70c4dfb0de9e1f315a9c6416a2c5c2f8e4c07ef4eeb"
+            "sha256": "sha256:70acce4eddb809b870d15ce5115c605596314e661dd69aa4f1ff67985339bf15"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip.part01",
-            "fileName": "arch-minimal-build-41374265847.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip.part01",
+            "fileName": "arch-minimal-build-41507716042.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:f52cb0279a3cea8658fec28577cf60ff2159aa8b766485dce3d30ec897df64d6"
+            "sha256": "sha256:fb282d7d77100352f2f6f43a98e7a317b34ecbe8dd2aacaff61b6db4c1bcf3b0"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip.part02",
-            "fileName": "arch-minimal-build-41374265847.zip.part02",
-            "sizeBytes": 895536179,
-            "sha256": "sha256:d3b59df44ae58e299d4afa5cf16bbac181f763b8e4f88b41ee597f633e040672"
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip.part02",
+            "fileName": "arch-minimal-build-41507716042.zip.part02",
+            "sizeBytes": 898887810,
+            "sha256": "sha256:c90c3265e3f306eda2586f37712cfb5587880a47ecce93e19ea47b5885386b9d"
           }
         ]
       },
@@ -728,37 +728,37 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "3c29dbbefc9f3672c2ab5077ea5482165b16a64b",
-      "metadataDigest": "sha256:31912836dffb0c7e4b8eab4fb9a9adb9500ec3ea89daf225e2cbc34872c17c4a",
-      "payloadDigest": "sha256:21be94601df086354fd58a61ad1db04b710de495639fecc9ae7ded596ce46244",
-      "evidenceRevision": "image-build-41374265847",
+      "downstreamRevision": "6c01a9464736e623b074152ff8eb84b8df8d49aa",
+      "metadataDigest": "sha256:25de1f198669e612946ceb7c011469ae6c736d9ccf2dc198d6b3d876705cfbe2",
+      "payloadDigest": "sha256:755d77908381cf51d474f2aa2462fa9503f7550d4ee4755e16cdb130879eddce",
+      "evidenceRevision": "image-build-41507716042",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/installer-data-arch-minimal.json",
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/installer-data-arch-minimal.json",
         "fileName": "installer-data-arch-minimal.json",
-        "sizeBytes": 9922
+        "sizeBytes": 10089
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip",
-        "fileName": "arch-minimal-build-41374265847.zip",
-        "sizeBytes": 3043019827,
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip",
+        "fileName": "arch-minimal-build-41507716042.zip",
+        "sizeBytes": 3046371458,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip.part00",
-            "fileName": "arch-minimal-build-41374265847.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip.part00",
+            "fileName": "arch-minimal-build-41507716042.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:2446d9db7ce2a4ce1f0be70c4dfb0de9e1f315a9c6416a2c5c2f8e4c07ef4eeb"
+            "sha256": "sha256:70acce4eddb809b870d15ce5115c605596314e661dd69aa4f1ff67985339bf15"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip.part01",
-            "fileName": "arch-minimal-build-41374265847.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip.part01",
+            "fileName": "arch-minimal-build-41507716042.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:f52cb0279a3cea8658fec28577cf60ff2159aa8b766485dce3d30ec897df64d6"
+            "sha256": "sha256:fb282d7d77100352f2f6f43a98e7a317b34ecbe8dd2aacaff61b6db4c1bcf3b0"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip.part02",
-            "fileName": "arch-minimal-build-41374265847.zip.part02",
-            "sizeBytes": 895536179,
-            "sha256": "sha256:d3b59df44ae58e299d4afa5cf16bbac181f763b8e4f88b41ee597f633e040672"
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip.part02",
+            "fileName": "arch-minimal-build-41507716042.zip.part02",
+            "sizeBytes": 898887810,
+            "sha256": "sha256:c90c3265e3f306eda2586f37712cfb5587880a47ecce93e19ea47b5885386b9d"
           }
         ]
       },
@@ -770,37 +770,37 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "3c29dbbefc9f3672c2ab5077ea5482165b16a64b",
-      "metadataDigest": "sha256:31912836dffb0c7e4b8eab4fb9a9adb9500ec3ea89daf225e2cbc34872c17c4a",
-      "payloadDigest": "sha256:21be94601df086354fd58a61ad1db04b710de495639fecc9ae7ded596ce46244",
-      "evidenceRevision": "image-build-41374265847",
+      "downstreamRevision": "6c01a9464736e623b074152ff8eb84b8df8d49aa",
+      "metadataDigest": "sha256:25de1f198669e612946ceb7c011469ae6c736d9ccf2dc198d6b3d876705cfbe2",
+      "payloadDigest": "sha256:755d77908381cf51d474f2aa2462fa9503f7550d4ee4755e16cdb130879eddce",
+      "evidenceRevision": "image-build-41507716042",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/installer-data-arch-minimal.json",
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/installer-data-arch-minimal.json",
         "fileName": "installer-data-arch-minimal.json",
-        "sizeBytes": 9922
+        "sizeBytes": 10089
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip",
-        "fileName": "arch-minimal-build-41374265847.zip",
-        "sizeBytes": 3043019827,
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip",
+        "fileName": "arch-minimal-build-41507716042.zip",
+        "sizeBytes": 3046371458,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip.part00",
-            "fileName": "arch-minimal-build-41374265847.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip.part00",
+            "fileName": "arch-minimal-build-41507716042.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:2446d9db7ce2a4ce1f0be70c4dfb0de9e1f315a9c6416a2c5c2f8e4c07ef4eeb"
+            "sha256": "sha256:70acce4eddb809b870d15ce5115c605596314e661dd69aa4f1ff67985339bf15"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip.part01",
-            "fileName": "arch-minimal-build-41374265847.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip.part01",
+            "fileName": "arch-minimal-build-41507716042.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:f52cb0279a3cea8658fec28577cf60ff2159aa8b766485dce3d30ec897df64d6"
+            "sha256": "sha256:fb282d7d77100352f2f6f43a98e7a317b34ecbe8dd2aacaff61b6db4c1bcf3b0"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip.part02",
-            "fileName": "arch-minimal-build-41374265847.zip.part02",
-            "sizeBytes": 895536179,
-            "sha256": "sha256:d3b59df44ae58e299d4afa5cf16bbac181f763b8e4f88b41ee597f633e040672"
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip.part02",
+            "fileName": "arch-minimal-build-41507716042.zip.part02",
+            "sizeBytes": 898887810,
+            "sha256": "sha256:c90c3265e3f306eda2586f37712cfb5587880a47ecce93e19ea47b5885386b9d"
           }
         ]
       },
@@ -812,37 +812,37 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "3c29dbbefc9f3672c2ab5077ea5482165b16a64b",
-      "metadataDigest": "sha256:31912836dffb0c7e4b8eab4fb9a9adb9500ec3ea89daf225e2cbc34872c17c4a",
-      "payloadDigest": "sha256:21be94601df086354fd58a61ad1db04b710de495639fecc9ae7ded596ce46244",
-      "evidenceRevision": "image-build-41374265847",
+      "downstreamRevision": "6c01a9464736e623b074152ff8eb84b8df8d49aa",
+      "metadataDigest": "sha256:25de1f198669e612946ceb7c011469ae6c736d9ccf2dc198d6b3d876705cfbe2",
+      "payloadDigest": "sha256:755d77908381cf51d474f2aa2462fa9503f7550d4ee4755e16cdb130879eddce",
+      "evidenceRevision": "image-build-41507716042",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/installer-data-arch-minimal.json",
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/installer-data-arch-minimal.json",
         "fileName": "installer-data-arch-minimal.json",
-        "sizeBytes": 9922
+        "sizeBytes": 10089
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip",
-        "fileName": "arch-minimal-build-41374265847.zip",
-        "sizeBytes": 3043019827,
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip",
+        "fileName": "arch-minimal-build-41507716042.zip",
+        "sizeBytes": 3046371458,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip.part00",
-            "fileName": "arch-minimal-build-41374265847.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip.part00",
+            "fileName": "arch-minimal-build-41507716042.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:2446d9db7ce2a4ce1f0be70c4dfb0de9e1f315a9c6416a2c5c2f8e4c07ef4eeb"
+            "sha256": "sha256:70acce4eddb809b870d15ce5115c605596314e661dd69aa4f1ff67985339bf15"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip.part01",
-            "fileName": "arch-minimal-build-41374265847.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip.part01",
+            "fileName": "arch-minimal-build-41507716042.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:f52cb0279a3cea8658fec28577cf60ff2159aa8b766485dce3d30ec897df64d6"
+            "sha256": "sha256:fb282d7d77100352f2f6f43a98e7a317b34ecbe8dd2aacaff61b6db4c1bcf3b0"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip.part02",
-            "fileName": "arch-minimal-build-41374265847.zip.part02",
-            "sizeBytes": 895536179,
-            "sha256": "sha256:d3b59df44ae58e299d4afa5cf16bbac181f763b8e4f88b41ee597f633e040672"
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip.part02",
+            "fileName": "arch-minimal-build-41507716042.zip.part02",
+            "sizeBytes": 898887810,
+            "sha256": "sha256:c90c3265e3f306eda2586f37712cfb5587880a47ecce93e19ea47b5885386b9d"
           }
         ]
       },
@@ -854,37 +854,37 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "3c29dbbefc9f3672c2ab5077ea5482165b16a64b",
-      "metadataDigest": "sha256:31912836dffb0c7e4b8eab4fb9a9adb9500ec3ea89daf225e2cbc34872c17c4a",
-      "payloadDigest": "sha256:21be94601df086354fd58a61ad1db04b710de495639fecc9ae7ded596ce46244",
-      "evidenceRevision": "image-build-41374265847",
+      "downstreamRevision": "6c01a9464736e623b074152ff8eb84b8df8d49aa",
+      "metadataDigest": "sha256:25de1f198669e612946ceb7c011469ae6c736d9ccf2dc198d6b3d876705cfbe2",
+      "payloadDigest": "sha256:755d77908381cf51d474f2aa2462fa9503f7550d4ee4755e16cdb130879eddce",
+      "evidenceRevision": "image-build-41507716042",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/installer-data-arch-minimal.json",
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/installer-data-arch-minimal.json",
         "fileName": "installer-data-arch-minimal.json",
-        "sizeBytes": 9922
+        "sizeBytes": 10089
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip",
-        "fileName": "arch-minimal-build-41374265847.zip",
-        "sizeBytes": 3043019827,
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip",
+        "fileName": "arch-minimal-build-41507716042.zip",
+        "sizeBytes": 3046371458,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip.part00",
-            "fileName": "arch-minimal-build-41374265847.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip.part00",
+            "fileName": "arch-minimal-build-41507716042.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:2446d9db7ce2a4ce1f0be70c4dfb0de9e1f315a9c6416a2c5c2f8e4c07ef4eeb"
+            "sha256": "sha256:70acce4eddb809b870d15ce5115c605596314e661dd69aa4f1ff67985339bf15"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip.part01",
-            "fileName": "arch-minimal-build-41374265847.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip.part01",
+            "fileName": "arch-minimal-build-41507716042.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:f52cb0279a3cea8658fec28577cf60ff2159aa8b766485dce3d30ec897df64d6"
+            "sha256": "sha256:fb282d7d77100352f2f6f43a98e7a317b34ecbe8dd2aacaff61b6db4c1bcf3b0"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip.part02",
-            "fileName": "arch-minimal-build-41374265847.zip.part02",
-            "sizeBytes": 895536179,
-            "sha256": "sha256:d3b59df44ae58e299d4afa5cf16bbac181f763b8e4f88b41ee597f633e040672"
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip.part02",
+            "fileName": "arch-minimal-build-41507716042.zip.part02",
+            "sizeBytes": 898887810,
+            "sha256": "sha256:c90c3265e3f306eda2586f37712cfb5587880a47ecce93e19ea47b5885386b9d"
           }
         ]
       },
@@ -896,37 +896,37 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "3c29dbbefc9f3672c2ab5077ea5482165b16a64b",
-      "metadataDigest": "sha256:31912836dffb0c7e4b8eab4fb9a9adb9500ec3ea89daf225e2cbc34872c17c4a",
-      "payloadDigest": "sha256:21be94601df086354fd58a61ad1db04b710de495639fecc9ae7ded596ce46244",
-      "evidenceRevision": "image-build-41374265847",
+      "downstreamRevision": "6c01a9464736e623b074152ff8eb84b8df8d49aa",
+      "metadataDigest": "sha256:25de1f198669e612946ceb7c011469ae6c736d9ccf2dc198d6b3d876705cfbe2",
+      "payloadDigest": "sha256:755d77908381cf51d474f2aa2462fa9503f7550d4ee4755e16cdb130879eddce",
+      "evidenceRevision": "image-build-41507716042",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/installer-data-arch-minimal.json",
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/installer-data-arch-minimal.json",
         "fileName": "installer-data-arch-minimal.json",
-        "sizeBytes": 9922
+        "sizeBytes": 10089
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip",
-        "fileName": "arch-minimal-build-41374265847.zip",
-        "sizeBytes": 3043019827,
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip",
+        "fileName": "arch-minimal-build-41507716042.zip",
+        "sizeBytes": 3046371458,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip.part00",
-            "fileName": "arch-minimal-build-41374265847.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip.part00",
+            "fileName": "arch-minimal-build-41507716042.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:2446d9db7ce2a4ce1f0be70c4dfb0de9e1f315a9c6416a2c5c2f8e4c07ef4eeb"
+            "sha256": "sha256:70acce4eddb809b870d15ce5115c605596314e661dd69aa4f1ff67985339bf15"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip.part01",
-            "fileName": "arch-minimal-build-41374265847.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip.part01",
+            "fileName": "arch-minimal-build-41507716042.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:f52cb0279a3cea8658fec28577cf60ff2159aa8b766485dce3d30ec897df64d6"
+            "sha256": "sha256:fb282d7d77100352f2f6f43a98e7a317b34ecbe8dd2aacaff61b6db4c1bcf3b0"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip.part02",
-            "fileName": "arch-minimal-build-41374265847.zip.part02",
-            "sizeBytes": 895536179,
-            "sha256": "sha256:d3b59df44ae58e299d4afa5cf16bbac181f763b8e4f88b41ee597f633e040672"
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip.part02",
+            "fileName": "arch-minimal-build-41507716042.zip.part02",
+            "sizeBytes": 898887810,
+            "sha256": "sha256:c90c3265e3f306eda2586f37712cfb5587880a47ecce93e19ea47b5885386b9d"
           }
         ]
       },
@@ -938,37 +938,37 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "3c29dbbefc9f3672c2ab5077ea5482165b16a64b",
-      "metadataDigest": "sha256:31912836dffb0c7e4b8eab4fb9a9adb9500ec3ea89daf225e2cbc34872c17c4a",
-      "payloadDigest": "sha256:21be94601df086354fd58a61ad1db04b710de495639fecc9ae7ded596ce46244",
-      "evidenceRevision": "image-build-41374265847",
+      "downstreamRevision": "6c01a9464736e623b074152ff8eb84b8df8d49aa",
+      "metadataDigest": "sha256:25de1f198669e612946ceb7c011469ae6c736d9ccf2dc198d6b3d876705cfbe2",
+      "payloadDigest": "sha256:755d77908381cf51d474f2aa2462fa9503f7550d4ee4755e16cdb130879eddce",
+      "evidenceRevision": "image-build-41507716042",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/installer-data-arch-minimal.json",
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/installer-data-arch-minimal.json",
         "fileName": "installer-data-arch-minimal.json",
-        "sizeBytes": 9922
+        "sizeBytes": 10089
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip",
-        "fileName": "arch-minimal-build-41374265847.zip",
-        "sizeBytes": 3043019827,
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip",
+        "fileName": "arch-minimal-build-41507716042.zip",
+        "sizeBytes": 3046371458,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip.part00",
-            "fileName": "arch-minimal-build-41374265847.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip.part00",
+            "fileName": "arch-minimal-build-41507716042.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:2446d9db7ce2a4ce1f0be70c4dfb0de9e1f315a9c6416a2c5c2f8e4c07ef4eeb"
+            "sha256": "sha256:70acce4eddb809b870d15ce5115c605596314e661dd69aa4f1ff67985339bf15"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip.part01",
-            "fileName": "arch-minimal-build-41374265847.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip.part01",
+            "fileName": "arch-minimal-build-41507716042.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:f52cb0279a3cea8658fec28577cf60ff2159aa8b766485dce3d30ec897df64d6"
+            "sha256": "sha256:fb282d7d77100352f2f6f43a98e7a317b34ecbe8dd2aacaff61b6db4c1bcf3b0"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip.part02",
-            "fileName": "arch-minimal-build-41374265847.zip.part02",
-            "sizeBytes": 895536179,
-            "sha256": "sha256:d3b59df44ae58e299d4afa5cf16bbac181f763b8e4f88b41ee597f633e040672"
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip.part02",
+            "fileName": "arch-minimal-build-41507716042.zip.part02",
+            "sizeBytes": 898887810,
+            "sha256": "sha256:c90c3265e3f306eda2586f37712cfb5587880a47ecce93e19ea47b5885386b9d"
           }
         ]
       },
@@ -980,37 +980,37 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "3c29dbbefc9f3672c2ab5077ea5482165b16a64b",
-      "metadataDigest": "sha256:31912836dffb0c7e4b8eab4fb9a9adb9500ec3ea89daf225e2cbc34872c17c4a",
-      "payloadDigest": "sha256:21be94601df086354fd58a61ad1db04b710de495639fecc9ae7ded596ce46244",
-      "evidenceRevision": "image-build-41374265847",
+      "downstreamRevision": "6c01a9464736e623b074152ff8eb84b8df8d49aa",
+      "metadataDigest": "sha256:25de1f198669e612946ceb7c011469ae6c736d9ccf2dc198d6b3d876705cfbe2",
+      "payloadDigest": "sha256:755d77908381cf51d474f2aa2462fa9503f7550d4ee4755e16cdb130879eddce",
+      "evidenceRevision": "image-build-41507716042",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/installer-data-arch-minimal.json",
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/installer-data-arch-minimal.json",
         "fileName": "installer-data-arch-minimal.json",
-        "sizeBytes": 9922
+        "sizeBytes": 10089
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip",
-        "fileName": "arch-minimal-build-41374265847.zip",
-        "sizeBytes": 3043019827,
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip",
+        "fileName": "arch-minimal-build-41507716042.zip",
+        "sizeBytes": 3046371458,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip.part00",
-            "fileName": "arch-minimal-build-41374265847.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip.part00",
+            "fileName": "arch-minimal-build-41507716042.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:2446d9db7ce2a4ce1f0be70c4dfb0de9e1f315a9c6416a2c5c2f8e4c07ef4eeb"
+            "sha256": "sha256:70acce4eddb809b870d15ce5115c605596314e661dd69aa4f1ff67985339bf15"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip.part01",
-            "fileName": "arch-minimal-build-41374265847.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip.part01",
+            "fileName": "arch-minimal-build-41507716042.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:f52cb0279a3cea8658fec28577cf60ff2159aa8b766485dce3d30ec897df64d6"
+            "sha256": "sha256:fb282d7d77100352f2f6f43a98e7a317b34ecbe8dd2aacaff61b6db4c1bcf3b0"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip.part02",
-            "fileName": "arch-minimal-build-41374265847.zip.part02",
-            "sizeBytes": 895536179,
-            "sha256": "sha256:d3b59df44ae58e299d4afa5cf16bbac181f763b8e4f88b41ee597f633e040672"
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip.part02",
+            "fileName": "arch-minimal-build-41507716042.zip.part02",
+            "sizeBytes": 898887810,
+            "sha256": "sha256:c90c3265e3f306eda2586f37712cfb5587880a47ecce93e19ea47b5885386b9d"
           }
         ]
       },
@@ -1022,37 +1022,37 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "3c29dbbefc9f3672c2ab5077ea5482165b16a64b",
-      "metadataDigest": "sha256:31912836dffb0c7e4b8eab4fb9a9adb9500ec3ea89daf225e2cbc34872c17c4a",
-      "payloadDigest": "sha256:21be94601df086354fd58a61ad1db04b710de495639fecc9ae7ded596ce46244",
-      "evidenceRevision": "image-build-41374265847",
+      "downstreamRevision": "6c01a9464736e623b074152ff8eb84b8df8d49aa",
+      "metadataDigest": "sha256:25de1f198669e612946ceb7c011469ae6c736d9ccf2dc198d6b3d876705cfbe2",
+      "payloadDigest": "sha256:755d77908381cf51d474f2aa2462fa9503f7550d4ee4755e16cdb130879eddce",
+      "evidenceRevision": "image-build-41507716042",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/installer-data-arch-minimal.json",
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/installer-data-arch-minimal.json",
         "fileName": "installer-data-arch-minimal.json",
-        "sizeBytes": 9922
+        "sizeBytes": 10089
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip",
-        "fileName": "arch-minimal-build-41374265847.zip",
-        "sizeBytes": 3043019827,
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip",
+        "fileName": "arch-minimal-build-41507716042.zip",
+        "sizeBytes": 3046371458,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip.part00",
-            "fileName": "arch-minimal-build-41374265847.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip.part00",
+            "fileName": "arch-minimal-build-41507716042.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:2446d9db7ce2a4ce1f0be70c4dfb0de9e1f315a9c6416a2c5c2f8e4c07ef4eeb"
+            "sha256": "sha256:70acce4eddb809b870d15ce5115c605596314e661dd69aa4f1ff67985339bf15"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip.part01",
-            "fileName": "arch-minimal-build-41374265847.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip.part01",
+            "fileName": "arch-minimal-build-41507716042.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:f52cb0279a3cea8658fec28577cf60ff2159aa8b766485dce3d30ec897df64d6"
+            "sha256": "sha256:fb282d7d77100352f2f6f43a98e7a317b34ecbe8dd2aacaff61b6db4c1bcf3b0"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip.part02",
-            "fileName": "arch-minimal-build-41374265847.zip.part02",
-            "sizeBytes": 895536179,
-            "sha256": "sha256:d3b59df44ae58e299d4afa5cf16bbac181f763b8e4f88b41ee597f633e040672"
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip.part02",
+            "fileName": "arch-minimal-build-41507716042.zip.part02",
+            "sizeBytes": 898887810,
+            "sha256": "sha256:c90c3265e3f306eda2586f37712cfb5587880a47ecce93e19ea47b5885386b9d"
           }
         ]
       },
@@ -1064,37 +1064,37 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "3c29dbbefc9f3672c2ab5077ea5482165b16a64b",
-      "metadataDigest": "sha256:31912836dffb0c7e4b8eab4fb9a9adb9500ec3ea89daf225e2cbc34872c17c4a",
-      "payloadDigest": "sha256:21be94601df086354fd58a61ad1db04b710de495639fecc9ae7ded596ce46244",
-      "evidenceRevision": "image-build-41374265847",
+      "downstreamRevision": "6c01a9464736e623b074152ff8eb84b8df8d49aa",
+      "metadataDigest": "sha256:25de1f198669e612946ceb7c011469ae6c736d9ccf2dc198d6b3d876705cfbe2",
+      "payloadDigest": "sha256:755d77908381cf51d474f2aa2462fa9503f7550d4ee4755e16cdb130879eddce",
+      "evidenceRevision": "image-build-41507716042",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/installer-data-arch-minimal.json",
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/installer-data-arch-minimal.json",
         "fileName": "installer-data-arch-minimal.json",
-        "sizeBytes": 9922
+        "sizeBytes": 10089
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip",
-        "fileName": "arch-minimal-build-41374265847.zip",
-        "sizeBytes": 3043019827,
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip",
+        "fileName": "arch-minimal-build-41507716042.zip",
+        "sizeBytes": 3046371458,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip.part00",
-            "fileName": "arch-minimal-build-41374265847.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip.part00",
+            "fileName": "arch-minimal-build-41507716042.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:2446d9db7ce2a4ce1f0be70c4dfb0de9e1f315a9c6416a2c5c2f8e4c07ef4eeb"
+            "sha256": "sha256:70acce4eddb809b870d15ce5115c605596314e661dd69aa4f1ff67985339bf15"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip.part01",
-            "fileName": "arch-minimal-build-41374265847.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip.part01",
+            "fileName": "arch-minimal-build-41507716042.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:f52cb0279a3cea8658fec28577cf60ff2159aa8b766485dce3d30ec897df64d6"
+            "sha256": "sha256:fb282d7d77100352f2f6f43a98e7a317b34ecbe8dd2aacaff61b6db4c1bcf3b0"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip.part02",
-            "fileName": "arch-minimal-build-41374265847.zip.part02",
-            "sizeBytes": 895536179,
-            "sha256": "sha256:d3b59df44ae58e299d4afa5cf16bbac181f763b8e4f88b41ee597f633e040672"
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip.part02",
+            "fileName": "arch-minimal-build-41507716042.zip.part02",
+            "sizeBytes": 898887810,
+            "sha256": "sha256:c90c3265e3f306eda2586f37712cfb5587880a47ecce93e19ea47b5885386b9d"
           }
         ]
       },
@@ -1106,37 +1106,37 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "3c29dbbefc9f3672c2ab5077ea5482165b16a64b",
-      "metadataDigest": "sha256:31912836dffb0c7e4b8eab4fb9a9adb9500ec3ea89daf225e2cbc34872c17c4a",
-      "payloadDigest": "sha256:21be94601df086354fd58a61ad1db04b710de495639fecc9ae7ded596ce46244",
-      "evidenceRevision": "image-build-41374265847",
+      "downstreamRevision": "6c01a9464736e623b074152ff8eb84b8df8d49aa",
+      "metadataDigest": "sha256:25de1f198669e612946ceb7c011469ae6c736d9ccf2dc198d6b3d876705cfbe2",
+      "payloadDigest": "sha256:755d77908381cf51d474f2aa2462fa9503f7550d4ee4755e16cdb130879eddce",
+      "evidenceRevision": "image-build-41507716042",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/installer-data-arch-minimal.json",
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/installer-data-arch-minimal.json",
         "fileName": "installer-data-arch-minimal.json",
-        "sizeBytes": 9922
+        "sizeBytes": 10089
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip",
-        "fileName": "arch-minimal-build-41374265847.zip",
-        "sizeBytes": 3043019827,
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip",
+        "fileName": "arch-minimal-build-41507716042.zip",
+        "sizeBytes": 3046371458,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip.part00",
-            "fileName": "arch-minimal-build-41374265847.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip.part00",
+            "fileName": "arch-minimal-build-41507716042.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:2446d9db7ce2a4ce1f0be70c4dfb0de9e1f315a9c6416a2c5c2f8e4c07ef4eeb"
+            "sha256": "sha256:70acce4eddb809b870d15ce5115c605596314e661dd69aa4f1ff67985339bf15"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip.part01",
-            "fileName": "arch-minimal-build-41374265847.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip.part01",
+            "fileName": "arch-minimal-build-41507716042.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:f52cb0279a3cea8658fec28577cf60ff2159aa8b766485dce3d30ec897df64d6"
+            "sha256": "sha256:fb282d7d77100352f2f6f43a98e7a317b34ecbe8dd2aacaff61b6db4c1bcf3b0"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip.part02",
-            "fileName": "arch-minimal-build-41374265847.zip.part02",
-            "sizeBytes": 895536179,
-            "sha256": "sha256:d3b59df44ae58e299d4afa5cf16bbac181f763b8e4f88b41ee597f633e040672"
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip.part02",
+            "fileName": "arch-minimal-build-41507716042.zip.part02",
+            "sizeBytes": 898887810,
+            "sha256": "sha256:c90c3265e3f306eda2586f37712cfb5587880a47ecce93e19ea47b5885386b9d"
           }
         ]
       },
@@ -1148,37 +1148,37 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "3c29dbbefc9f3672c2ab5077ea5482165b16a64b",
-      "metadataDigest": "sha256:31912836dffb0c7e4b8eab4fb9a9adb9500ec3ea89daf225e2cbc34872c17c4a",
-      "payloadDigest": "sha256:21be94601df086354fd58a61ad1db04b710de495639fecc9ae7ded596ce46244",
-      "evidenceRevision": "image-build-41374265847",
+      "downstreamRevision": "6c01a9464736e623b074152ff8eb84b8df8d49aa",
+      "metadataDigest": "sha256:25de1f198669e612946ceb7c011469ae6c736d9ccf2dc198d6b3d876705cfbe2",
+      "payloadDigest": "sha256:755d77908381cf51d474f2aa2462fa9503f7550d4ee4755e16cdb130879eddce",
+      "evidenceRevision": "image-build-41507716042",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/installer-data-arch-minimal.json",
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/installer-data-arch-minimal.json",
         "fileName": "installer-data-arch-minimal.json",
-        "sizeBytes": 9922
+        "sizeBytes": 10089
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip",
-        "fileName": "arch-minimal-build-41374265847.zip",
-        "sizeBytes": 3043019827,
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip",
+        "fileName": "arch-minimal-build-41507716042.zip",
+        "sizeBytes": 3046371458,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip.part00",
-            "fileName": "arch-minimal-build-41374265847.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip.part00",
+            "fileName": "arch-minimal-build-41507716042.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:2446d9db7ce2a4ce1f0be70c4dfb0de9e1f315a9c6416a2c5c2f8e4c07ef4eeb"
+            "sha256": "sha256:70acce4eddb809b870d15ce5115c605596314e661dd69aa4f1ff67985339bf15"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip.part01",
-            "fileName": "arch-minimal-build-41374265847.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip.part01",
+            "fileName": "arch-minimal-build-41507716042.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:f52cb0279a3cea8658fec28577cf60ff2159aa8b766485dce3d30ec897df64d6"
+            "sha256": "sha256:fb282d7d77100352f2f6f43a98e7a317b34ecbe8dd2aacaff61b6db4c1bcf3b0"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip.part02",
-            "fileName": "arch-minimal-build-41374265847.zip.part02",
-            "sizeBytes": 895536179,
-            "sha256": "sha256:d3b59df44ae58e299d4afa5cf16bbac181f763b8e4f88b41ee597f633e040672"
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip.part02",
+            "fileName": "arch-minimal-build-41507716042.zip.part02",
+            "sizeBytes": 898887810,
+            "sha256": "sha256:c90c3265e3f306eda2586f37712cfb5587880a47ecce93e19ea47b5885386b9d"
           }
         ]
       },
@@ -1190,37 +1190,37 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "3c29dbbefc9f3672c2ab5077ea5482165b16a64b",
-      "metadataDigest": "sha256:31912836dffb0c7e4b8eab4fb9a9adb9500ec3ea89daf225e2cbc34872c17c4a",
-      "payloadDigest": "sha256:21be94601df086354fd58a61ad1db04b710de495639fecc9ae7ded596ce46244",
-      "evidenceRevision": "image-build-41374265847",
+      "downstreamRevision": "6c01a9464736e623b074152ff8eb84b8df8d49aa",
+      "metadataDigest": "sha256:25de1f198669e612946ceb7c011469ae6c736d9ccf2dc198d6b3d876705cfbe2",
+      "payloadDigest": "sha256:755d77908381cf51d474f2aa2462fa9503f7550d4ee4755e16cdb130879eddce",
+      "evidenceRevision": "image-build-41507716042",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/installer-data-arch-minimal.json",
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/installer-data-arch-minimal.json",
         "fileName": "installer-data-arch-minimal.json",
-        "sizeBytes": 9922
+        "sizeBytes": 10089
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip",
-        "fileName": "arch-minimal-build-41374265847.zip",
-        "sizeBytes": 3043019827,
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip",
+        "fileName": "arch-minimal-build-41507716042.zip",
+        "sizeBytes": 3046371458,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip.part00",
-            "fileName": "arch-minimal-build-41374265847.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip.part00",
+            "fileName": "arch-minimal-build-41507716042.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:2446d9db7ce2a4ce1f0be70c4dfb0de9e1f315a9c6416a2c5c2f8e4c07ef4eeb"
+            "sha256": "sha256:70acce4eddb809b870d15ce5115c605596314e661dd69aa4f1ff67985339bf15"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip.part01",
-            "fileName": "arch-minimal-build-41374265847.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip.part01",
+            "fileName": "arch-minimal-build-41507716042.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:f52cb0279a3cea8658fec28577cf60ff2159aa8b766485dce3d30ec897df64d6"
+            "sha256": "sha256:fb282d7d77100352f2f6f43a98e7a317b34ecbe8dd2aacaff61b6db4c1bcf3b0"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip.part02",
-            "fileName": "arch-minimal-build-41374265847.zip.part02",
-            "sizeBytes": 895536179,
-            "sha256": "sha256:d3b59df44ae58e299d4afa5cf16bbac181f763b8e4f88b41ee597f633e040672"
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip.part02",
+            "fileName": "arch-minimal-build-41507716042.zip.part02",
+            "sizeBytes": 898887810,
+            "sha256": "sha256:c90c3265e3f306eda2586f37712cfb5587880a47ecce93e19ea47b5885386b9d"
           }
         ]
       },
@@ -1232,37 +1232,37 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "3c29dbbefc9f3672c2ab5077ea5482165b16a64b",
-      "metadataDigest": "sha256:31912836dffb0c7e4b8eab4fb9a9adb9500ec3ea89daf225e2cbc34872c17c4a",
-      "payloadDigest": "sha256:21be94601df086354fd58a61ad1db04b710de495639fecc9ae7ded596ce46244",
-      "evidenceRevision": "image-build-41374265847",
+      "downstreamRevision": "6c01a9464736e623b074152ff8eb84b8df8d49aa",
+      "metadataDigest": "sha256:25de1f198669e612946ceb7c011469ae6c736d9ccf2dc198d6b3d876705cfbe2",
+      "payloadDigest": "sha256:755d77908381cf51d474f2aa2462fa9503f7550d4ee4755e16cdb130879eddce",
+      "evidenceRevision": "image-build-41507716042",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/installer-data-arch-minimal.json",
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/installer-data-arch-minimal.json",
         "fileName": "installer-data-arch-minimal.json",
-        "sizeBytes": 9922
+        "sizeBytes": 10089
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip",
-        "fileName": "arch-minimal-build-41374265847.zip",
-        "sizeBytes": 3043019827,
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip",
+        "fileName": "arch-minimal-build-41507716042.zip",
+        "sizeBytes": 3046371458,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip.part00",
-            "fileName": "arch-minimal-build-41374265847.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip.part00",
+            "fileName": "arch-minimal-build-41507716042.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:2446d9db7ce2a4ce1f0be70c4dfb0de9e1f315a9c6416a2c5c2f8e4c07ef4eeb"
+            "sha256": "sha256:70acce4eddb809b870d15ce5115c605596314e661dd69aa4f1ff67985339bf15"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip.part01",
-            "fileName": "arch-minimal-build-41374265847.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip.part01",
+            "fileName": "arch-minimal-build-41507716042.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:f52cb0279a3cea8658fec28577cf60ff2159aa8b766485dce3d30ec897df64d6"
+            "sha256": "sha256:fb282d7d77100352f2f6f43a98e7a317b34ecbe8dd2aacaff61b6db4c1bcf3b0"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip.part02",
-            "fileName": "arch-minimal-build-41374265847.zip.part02",
-            "sizeBytes": 895536179,
-            "sha256": "sha256:d3b59df44ae58e299d4afa5cf16bbac181f763b8e4f88b41ee597f633e040672"
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip.part02",
+            "fileName": "arch-minimal-build-41507716042.zip.part02",
+            "sizeBytes": 898887810,
+            "sha256": "sha256:c90c3265e3f306eda2586f37712cfb5587880a47ecce93e19ea47b5885386b9d"
           }
         ]
       },
@@ -1274,37 +1274,37 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "3c29dbbefc9f3672c2ab5077ea5482165b16a64b",
-      "metadataDigest": "sha256:31912836dffb0c7e4b8eab4fb9a9adb9500ec3ea89daf225e2cbc34872c17c4a",
-      "payloadDigest": "sha256:21be94601df086354fd58a61ad1db04b710de495639fecc9ae7ded596ce46244",
-      "evidenceRevision": "image-build-41374265847",
+      "downstreamRevision": "6c01a9464736e623b074152ff8eb84b8df8d49aa",
+      "metadataDigest": "sha256:25de1f198669e612946ceb7c011469ae6c736d9ccf2dc198d6b3d876705cfbe2",
+      "payloadDigest": "sha256:755d77908381cf51d474f2aa2462fa9503f7550d4ee4755e16cdb130879eddce",
+      "evidenceRevision": "image-build-41507716042",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/installer-data-arch-minimal.json",
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/installer-data-arch-minimal.json",
         "fileName": "installer-data-arch-minimal.json",
-        "sizeBytes": 9922
+        "sizeBytes": 10089
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip",
-        "fileName": "arch-minimal-build-41374265847.zip",
-        "sizeBytes": 3043019827,
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip",
+        "fileName": "arch-minimal-build-41507716042.zip",
+        "sizeBytes": 3046371458,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip.part00",
-            "fileName": "arch-minimal-build-41374265847.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip.part00",
+            "fileName": "arch-minimal-build-41507716042.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:2446d9db7ce2a4ce1f0be70c4dfb0de9e1f315a9c6416a2c5c2f8e4c07ef4eeb"
+            "sha256": "sha256:70acce4eddb809b870d15ce5115c605596314e661dd69aa4f1ff67985339bf15"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip.part01",
-            "fileName": "arch-minimal-build-41374265847.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip.part01",
+            "fileName": "arch-minimal-build-41507716042.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:f52cb0279a3cea8658fec28577cf60ff2159aa8b766485dce3d30ec897df64d6"
+            "sha256": "sha256:fb282d7d77100352f2f6f43a98e7a317b34ecbe8dd2aacaff61b6db4c1bcf3b0"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip.part02",
-            "fileName": "arch-minimal-build-41374265847.zip.part02",
-            "sizeBytes": 895536179,
-            "sha256": "sha256:d3b59df44ae58e299d4afa5cf16bbac181f763b8e4f88b41ee597f633e040672"
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip.part02",
+            "fileName": "arch-minimal-build-41507716042.zip.part02",
+            "sizeBytes": 898887810,
+            "sha256": "sha256:c90c3265e3f306eda2586f37712cfb5587880a47ecce93e19ea47b5885386b9d"
           }
         ]
       },
@@ -1316,37 +1316,37 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "3c29dbbefc9f3672c2ab5077ea5482165b16a64b",
-      "metadataDigest": "sha256:31912836dffb0c7e4b8eab4fb9a9adb9500ec3ea89daf225e2cbc34872c17c4a",
-      "payloadDigest": "sha256:21be94601df086354fd58a61ad1db04b710de495639fecc9ae7ded596ce46244",
-      "evidenceRevision": "image-build-41374265847",
+      "downstreamRevision": "6c01a9464736e623b074152ff8eb84b8df8d49aa",
+      "metadataDigest": "sha256:25de1f198669e612946ceb7c011469ae6c736d9ccf2dc198d6b3d876705cfbe2",
+      "payloadDigest": "sha256:755d77908381cf51d474f2aa2462fa9503f7550d4ee4755e16cdb130879eddce",
+      "evidenceRevision": "image-build-41507716042",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/installer-data-arch-minimal.json",
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/installer-data-arch-minimal.json",
         "fileName": "installer-data-arch-minimal.json",
-        "sizeBytes": 9922
+        "sizeBytes": 10089
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip",
-        "fileName": "arch-minimal-build-41374265847.zip",
-        "sizeBytes": 3043019827,
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip",
+        "fileName": "arch-minimal-build-41507716042.zip",
+        "sizeBytes": 3046371458,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip.part00",
-            "fileName": "arch-minimal-build-41374265847.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip.part00",
+            "fileName": "arch-minimal-build-41507716042.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:2446d9db7ce2a4ce1f0be70c4dfb0de9e1f315a9c6416a2c5c2f8e4c07ef4eeb"
+            "sha256": "sha256:70acce4eddb809b870d15ce5115c605596314e661dd69aa4f1ff67985339bf15"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip.part01",
-            "fileName": "arch-minimal-build-41374265847.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip.part01",
+            "fileName": "arch-minimal-build-41507716042.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:f52cb0279a3cea8658fec28577cf60ff2159aa8b766485dce3d30ec897df64d6"
+            "sha256": "sha256:fb282d7d77100352f2f6f43a98e7a317b34ecbe8dd2aacaff61b6db4c1bcf3b0"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip.part02",
-            "fileName": "arch-minimal-build-41374265847.zip.part02",
-            "sizeBytes": 895536179,
-            "sha256": "sha256:d3b59df44ae58e299d4afa5cf16bbac181f763b8e4f88b41ee597f633e040672"
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip.part02",
+            "fileName": "arch-minimal-build-41507716042.zip.part02",
+            "sizeBytes": 898887810,
+            "sha256": "sha256:c90c3265e3f306eda2586f37712cfb5587880a47ecce93e19ea47b5885386b9d"
           }
         ]
       },
@@ -1358,37 +1358,37 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "3c29dbbefc9f3672c2ab5077ea5482165b16a64b",
-      "metadataDigest": "sha256:31912836dffb0c7e4b8eab4fb9a9adb9500ec3ea89daf225e2cbc34872c17c4a",
-      "payloadDigest": "sha256:21be94601df086354fd58a61ad1db04b710de495639fecc9ae7ded596ce46244",
-      "evidenceRevision": "image-build-41374265847",
+      "downstreamRevision": "6c01a9464736e623b074152ff8eb84b8df8d49aa",
+      "metadataDigest": "sha256:25de1f198669e612946ceb7c011469ae6c736d9ccf2dc198d6b3d876705cfbe2",
+      "payloadDigest": "sha256:755d77908381cf51d474f2aa2462fa9503f7550d4ee4755e16cdb130879eddce",
+      "evidenceRevision": "image-build-41507716042",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/installer-data-arch-minimal.json",
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/installer-data-arch-minimal.json",
         "fileName": "installer-data-arch-minimal.json",
-        "sizeBytes": 9922
+        "sizeBytes": 10089
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip",
-        "fileName": "arch-minimal-build-41374265847.zip",
-        "sizeBytes": 3043019827,
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip",
+        "fileName": "arch-minimal-build-41507716042.zip",
+        "sizeBytes": 3046371458,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip.part00",
-            "fileName": "arch-minimal-build-41374265847.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip.part00",
+            "fileName": "arch-minimal-build-41507716042.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:2446d9db7ce2a4ce1f0be70c4dfb0de9e1f315a9c6416a2c5c2f8e4c07ef4eeb"
+            "sha256": "sha256:70acce4eddb809b870d15ce5115c605596314e661dd69aa4f1ff67985339bf15"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip.part01",
-            "fileName": "arch-minimal-build-41374265847.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip.part01",
+            "fileName": "arch-minimal-build-41507716042.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:f52cb0279a3cea8658fec28577cf60ff2159aa8b766485dce3d30ec897df64d6"
+            "sha256": "sha256:fb282d7d77100352f2f6f43a98e7a317b34ecbe8dd2aacaff61b6db4c1bcf3b0"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip.part02",
-            "fileName": "arch-minimal-build-41374265847.zip.part02",
-            "sizeBytes": 895536179,
-            "sha256": "sha256:d3b59df44ae58e299d4afa5cf16bbac181f763b8e4f88b41ee597f633e040672"
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip.part02",
+            "fileName": "arch-minimal-build-41507716042.zip.part02",
+            "sizeBytes": 898887810,
+            "sha256": "sha256:c90c3265e3f306eda2586f37712cfb5587880a47ecce93e19ea47b5885386b9d"
           }
         ]
       },
@@ -1400,37 +1400,37 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "3c29dbbefc9f3672c2ab5077ea5482165b16a64b",
-      "metadataDigest": "sha256:31912836dffb0c7e4b8eab4fb9a9adb9500ec3ea89daf225e2cbc34872c17c4a",
-      "payloadDigest": "sha256:21be94601df086354fd58a61ad1db04b710de495639fecc9ae7ded596ce46244",
-      "evidenceRevision": "image-build-41374265847",
+      "downstreamRevision": "6c01a9464736e623b074152ff8eb84b8df8d49aa",
+      "metadataDigest": "sha256:25de1f198669e612946ceb7c011469ae6c736d9ccf2dc198d6b3d876705cfbe2",
+      "payloadDigest": "sha256:755d77908381cf51d474f2aa2462fa9503f7550d4ee4755e16cdb130879eddce",
+      "evidenceRevision": "image-build-41507716042",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/installer-data-arch-minimal.json",
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/installer-data-arch-minimal.json",
         "fileName": "installer-data-arch-minimal.json",
-        "sizeBytes": 9922
+        "sizeBytes": 10089
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip",
-        "fileName": "arch-minimal-build-41374265847.zip",
-        "sizeBytes": 3043019827,
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip",
+        "fileName": "arch-minimal-build-41507716042.zip",
+        "sizeBytes": 3046371458,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip.part00",
-            "fileName": "arch-minimal-build-41374265847.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip.part00",
+            "fileName": "arch-minimal-build-41507716042.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:2446d9db7ce2a4ce1f0be70c4dfb0de9e1f315a9c6416a2c5c2f8e4c07ef4eeb"
+            "sha256": "sha256:70acce4eddb809b870d15ce5115c605596314e661dd69aa4f1ff67985339bf15"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip.part01",
-            "fileName": "arch-minimal-build-41374265847.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip.part01",
+            "fileName": "arch-minimal-build-41507716042.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:f52cb0279a3cea8658fec28577cf60ff2159aa8b766485dce3d30ec897df64d6"
+            "sha256": "sha256:fb282d7d77100352f2f6f43a98e7a317b34ecbe8dd2aacaff61b6db4c1bcf3b0"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip.part02",
-            "fileName": "arch-minimal-build-41374265847.zip.part02",
-            "sizeBytes": 895536179,
-            "sha256": "sha256:d3b59df44ae58e299d4afa5cf16bbac181f763b8e4f88b41ee597f633e040672"
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip.part02",
+            "fileName": "arch-minimal-build-41507716042.zip.part02",
+            "sizeBytes": 898887810,
+            "sha256": "sha256:c90c3265e3f306eda2586f37712cfb5587880a47ecce93e19ea47b5885386b9d"
           }
         ]
       },
@@ -1442,37 +1442,79 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "3c29dbbefc9f3672c2ab5077ea5482165b16a64b",
-      "metadataDigest": "sha256:31912836dffb0c7e4b8eab4fb9a9adb9500ec3ea89daf225e2cbc34872c17c4a",
-      "payloadDigest": "sha256:21be94601df086354fd58a61ad1db04b710de495639fecc9ae7ded596ce46244",
-      "evidenceRevision": "image-build-41374265847",
+      "downstreamRevision": "6c01a9464736e623b074152ff8eb84b8df8d49aa",
+      "metadataDigest": "sha256:25de1f198669e612946ceb7c011469ae6c736d9ccf2dc198d6b3d876705cfbe2",
+      "payloadDigest": "sha256:755d77908381cf51d474f2aa2462fa9503f7550d4ee4755e16cdb130879eddce",
+      "evidenceRevision": "image-build-41507716042",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/installer-data-arch-minimal.json",
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/installer-data-arch-minimal.json",
         "fileName": "installer-data-arch-minimal.json",
-        "sizeBytes": 9922
+        "sizeBytes": 10089
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip",
-        "fileName": "arch-minimal-build-41374265847.zip",
-        "sizeBytes": 3043019827,
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip",
+        "fileName": "arch-minimal-build-41507716042.zip",
+        "sizeBytes": 3046371458,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip.part00",
-            "fileName": "arch-minimal-build-41374265847.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip.part00",
+            "fileName": "arch-minimal-build-41507716042.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:2446d9db7ce2a4ce1f0be70c4dfb0de9e1f315a9c6416a2c5c2f8e4c07ef4eeb"
+            "sha256": "sha256:70acce4eddb809b870d15ce5115c605596314e661dd69aa4f1ff67985339bf15"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip.part01",
-            "fileName": "arch-minimal-build-41374265847.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip.part01",
+            "fileName": "arch-minimal-build-41507716042.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:f52cb0279a3cea8658fec28577cf60ff2159aa8b766485dce3d30ec897df64d6"
+            "sha256": "sha256:fb282d7d77100352f2f6f43a98e7a317b34ecbe8dd2aacaff61b6db4c1bcf3b0"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip.part02",
-            "fileName": "arch-minimal-build-41374265847.zip.part02",
-            "sizeBytes": 895536179,
-            "sha256": "sha256:d3b59df44ae58e299d4afa5cf16bbac181f763b8e4f88b41ee597f633e040672"
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip.part02",
+            "fileName": "arch-minimal-build-41507716042.zip.part02",
+            "sizeBytes": 898887810,
+            "sha256": "sha256:c90c3265e3f306eda2586f37712cfb5587880a47ecce93e19ea47b5885386b9d"
+          }
+        ]
+      },
+      "installationProfile": "arch-minimal"
+    },
+    {
+      "deviceIdentifier": "apple,j614s",
+      "status": "enabled",
+      "asahiInstallerTag": "v0.9.2",
+      "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
+      "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
+      "downstreamRevision": "6c01a9464736e623b074152ff8eb84b8df8d49aa",
+      "metadataDigest": "sha256:25de1f198669e612946ceb7c011469ae6c736d9ccf2dc198d6b3d876705cfbe2",
+      "payloadDigest": "sha256:755d77908381cf51d474f2aa2462fa9503f7550d4ee4755e16cdb130879eddce",
+      "evidenceRevision": "image-build-41507716042",
+      "metadataArtifact": {
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/installer-data-arch-minimal.json",
+        "fileName": "installer-data-arch-minimal.json",
+        "sizeBytes": 10089
+      },
+      "payloadArtifact": {
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip",
+        "fileName": "arch-minimal-build-41507716042.zip",
+        "sizeBytes": 3046371458,
+        "parts": [
+          {
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip.part00",
+            "fileName": "arch-minimal-build-41507716042.zip.part00",
+            "sizeBytes": 1073741824,
+            "sha256": "sha256:70acce4eddb809b870d15ce5115c605596314e661dd69aa4f1ff67985339bf15"
+          },
+          {
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip.part01",
+            "fileName": "arch-minimal-build-41507716042.zip.part01",
+            "sizeBytes": 1073741824,
+            "sha256": "sha256:fb282d7d77100352f2f6f43a98e7a317b34ecbe8dd2aacaff61b6db4c1bcf3b0"
+          },
+          {
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip.part02",
+            "fileName": "arch-minimal-build-41507716042.zip.part02",
+            "sizeBytes": 898887810,
+            "sha256": "sha256:c90c3265e3f306eda2586f37712cfb5587880a47ecce93e19ea47b5885386b9d"
           }
         ]
       },
@@ -1484,37 +1526,37 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "3c29dbbefc9f3672c2ab5077ea5482165b16a64b",
-      "metadataDigest": "sha256:31912836dffb0c7e4b8eab4fb9a9adb9500ec3ea89daf225e2cbc34872c17c4a",
-      "payloadDigest": "sha256:21be94601df086354fd58a61ad1db04b710de495639fecc9ae7ded596ce46244",
-      "evidenceRevision": "image-build-41374265847",
+      "downstreamRevision": "6c01a9464736e623b074152ff8eb84b8df8d49aa",
+      "metadataDigest": "sha256:25de1f198669e612946ceb7c011469ae6c736d9ccf2dc198d6b3d876705cfbe2",
+      "payloadDigest": "sha256:755d77908381cf51d474f2aa2462fa9503f7550d4ee4755e16cdb130879eddce",
+      "evidenceRevision": "image-build-41507716042",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/installer-data-arch-minimal.json",
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/installer-data-arch-minimal.json",
         "fileName": "installer-data-arch-minimal.json",
-        "sizeBytes": 9922
+        "sizeBytes": 10089
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip",
-        "fileName": "arch-minimal-build-41374265847.zip",
-        "sizeBytes": 3043019827,
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip",
+        "fileName": "arch-minimal-build-41507716042.zip",
+        "sizeBytes": 3046371458,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip.part00",
-            "fileName": "arch-minimal-build-41374265847.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip.part00",
+            "fileName": "arch-minimal-build-41507716042.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:2446d9db7ce2a4ce1f0be70c4dfb0de9e1f315a9c6416a2c5c2f8e4c07ef4eeb"
+            "sha256": "sha256:70acce4eddb809b870d15ce5115c605596314e661dd69aa4f1ff67985339bf15"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip.part01",
-            "fileName": "arch-minimal-build-41374265847.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip.part01",
+            "fileName": "arch-minimal-build-41507716042.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:f52cb0279a3cea8658fec28577cf60ff2159aa8b766485dce3d30ec897df64d6"
+            "sha256": "sha256:fb282d7d77100352f2f6f43a98e7a317b34ecbe8dd2aacaff61b6db4c1bcf3b0"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip.part02",
-            "fileName": "arch-minimal-build-41374265847.zip.part02",
-            "sizeBytes": 895536179,
-            "sha256": "sha256:d3b59df44ae58e299d4afa5cf16bbac181f763b8e4f88b41ee597f633e040672"
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip.part02",
+            "fileName": "arch-minimal-build-41507716042.zip.part02",
+            "sizeBytes": 898887810,
+            "sha256": "sha256:c90c3265e3f306eda2586f37712cfb5587880a47ecce93e19ea47b5885386b9d"
           }
         ]
       },
@@ -1526,37 +1568,37 @@
       "asahiInstallerTag": "v0.9.2",
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
-      "downstreamRevision": "3c29dbbefc9f3672c2ab5077ea5482165b16a64b",
-      "metadataDigest": "sha256:31912836dffb0c7e4b8eab4fb9a9adb9500ec3ea89daf225e2cbc34872c17c4a",
-      "payloadDigest": "sha256:21be94601df086354fd58a61ad1db04b710de495639fecc9ae7ded596ce46244",
-      "evidenceRevision": "image-build-41374265847",
+      "downstreamRevision": "6c01a9464736e623b074152ff8eb84b8df8d49aa",
+      "metadataDigest": "sha256:25de1f198669e612946ceb7c011469ae6c736d9ccf2dc198d6b3d876705cfbe2",
+      "payloadDigest": "sha256:755d77908381cf51d474f2aa2462fa9503f7550d4ee4755e16cdb130879eddce",
+      "evidenceRevision": "image-build-41507716042",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/installer-data-arch-minimal.json",
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/installer-data-arch-minimal.json",
         "fileName": "installer-data-arch-minimal.json",
-        "sizeBytes": 9922
+        "sizeBytes": 10089
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip",
-        "fileName": "arch-minimal-build-41374265847.zip",
-        "sizeBytes": 3043019827,
+        "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip",
+        "fileName": "arch-minimal-build-41507716042.zip",
+        "sizeBytes": 3046371458,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip.part00",
-            "fileName": "arch-minimal-build-41374265847.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip.part00",
+            "fileName": "arch-minimal-build-41507716042.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:2446d9db7ce2a4ce1f0be70c4dfb0de9e1f315a9c6416a2c5c2f8e4c07ef4eeb"
+            "sha256": "sha256:70acce4eddb809b870d15ce5115c605596314e661dd69aa4f1ff67985339bf15"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip.part01",
-            "fileName": "arch-minimal-build-41374265847.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip.part01",
+            "fileName": "arch-minimal-build-41507716042.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:f52cb0279a3cea8658fec28577cf60ff2159aa8b766485dce3d30ec897df64d6"
+            "sha256": "sha256:fb282d7d77100352f2f6f43a98e7a317b34ecbe8dd2aacaff61b6db4c1bcf3b0"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41374265847/arch-minimal-build-41374265847.zip.part02",
-            "fileName": "arch-minimal-build-41374265847.zip.part02",
-            "sizeBytes": 895536179,
-            "sha256": "sha256:d3b59df44ae58e299d4afa5cf16bbac181f763b8e4f88b41ee597f633e040672"
+            "sourceURL": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-41507716042/arch-minimal-build-41507716042.zip.part02",
+            "fileName": "arch-minimal-build-41507716042.zip.part02",
+            "sizeBytes": 898887810,
+            "sha256": "sha256:c90c3265e3f306eda2586f37712cfb5587880a47ecce93e19ea47b5885386b9d"
           }
         ]
       },
