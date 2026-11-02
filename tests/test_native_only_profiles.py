@@ -207,6 +207,17 @@ class NativeOnlyProfileTests(unittest.TestCase):
         self.rewrite(template, ['apple,j274', 'apple,j700', 'apple,j616s'])
         self.prepare()
 
+    def test_the_j614s_needs_its_own_stage_two(self):
+        template = self.neo_template()
+        template['aurora_stage1']['qualified_machines']['j614sap'] = ['26.6.2']
+        self.rewrite(template, ['apple,j274', 'apple,j700', 'apple,j614s'])
+        with self.assertRaisesRegex(ValueError, 'does not admit every supported board'):
+            self.prepare()
+        self.assertFalse((self.root/'output').exists())
+        template['aurora_stage2']['board_members']['j614sap'] = 'esp/m1n1/boot-j614s.bin'
+        self.rewrite(template, ['apple,j274', 'apple,j700', 'apple,j614s'])
+        self.prepare()
+
     def test_a_payload_built_before_a_board_was_unqualified_still_adopts(self):
         template = self.neo_template()
         template['aurora_stage1']['qualified_machines']['j316sap'] = ['26.6.2']
