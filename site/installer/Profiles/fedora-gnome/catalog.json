@@ -1,11 +1,11 @@
 {
   "schemaVersion": 5,
-  "sequence": 1793715960,
-  "issuedAt": "2026-11-03T14:26:00Z",
+  "sequence": 1793879612,
+  "issuedAt": "2026-11-05T11:53:32Z",
   "installer": {
     "minimumVersion": "0.1.0",
     "latestVersion": "0.1.0",
-    "downloadURL": "https://github.com/aurora-silicon/aurora-installer/releases/tag/v0.1.0-alpha.18"
+    "downloadURL": "https://github.com/aurora-silicon/aurora-installer/releases/tag/v0.1.0-alpha.3"
   },
   "models": [
     {
@@ -15,42 +15,42 @@
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
       "downstreamRevision": "bc5fd7937ded64cab34180fc1d600820eebb9037",
-      "metadataDigest": "sha256:2da0fe80d232aefc03bc7e91c055150379c2a9cae1e63e4d3562fb090bf64ff4",
-      "payloadDigest": "sha256:1e9ee07d2716cc0b53ec433ba310950c1e422039730e1ecea936d8a9e81ee86b",
-      "evidenceRevision": "image-build-41644376491",
+      "metadataDigest": "sha256:54079dec6bd14593f486c113c7063dafdbe0f59fc9d07ad47ce344a91f5da4dc",
+      "payloadDigest": "sha256:5968e992d4dec65a1f1a5b0443c2ee528dca7f083053fab6abc03fc82b4b3dab",
+      "evidenceRevision": "image-build-42020310420",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/installer-data-fedora-gnome.json",
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/installer-data-fedora-gnome.json",
         "fileName": "installer-data-fedora-gnome.json",
-        "sizeBytes": 7947
+        "sizeBytes": 7995
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip",
-        "fileName": "fedora-gnome-build-41644376491.zip",
-        "sizeBytes": 3805079036,
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip",
+        "fileName": "fedora-gnome-build-42020310420.zip",
+        "sizeBytes": 3802713972,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part00",
-            "fileName": "fedora-gnome-build-41644376491.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part00",
+            "fileName": "fedora-gnome-build-42020310420.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:f6cf02afcc874a7960a390ebcec5d8e0ceda114d338facbc25f424204e2c7f63"
+            "sha256": "sha256:dec88597886b1655ed5f5531137680d0388c35a43a7b3349f53519a8082bd3ae"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part01",
-            "fileName": "fedora-gnome-build-41644376491.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part01",
+            "fileName": "fedora-gnome-build-42020310420.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:41f7ee1f9099e48190057ef6d76eab271edc68bc8cce63707d350b54debfe5b1"
+            "sha256": "sha256:a3d705daac9d31c128c33283746d7c9094f0a4411086093650faf9b96e0ad453"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part02",
-            "fileName": "fedora-gnome-build-41644376491.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part02",
+            "fileName": "fedora-gnome-build-42020310420.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:226ff192df00fbd47cead0bc753bd035c3de5d38c32a5e9a8d3da1db15af47f5"
+            "sha256": "sha256:c68bc9c8971d52adb6b115baf8245ef5636fd65b28c1a5d9ae028aaacb4dd350"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part03",
-            "fileName": "fedora-gnome-build-41644376491.zip.part03",
-            "sizeBytes": 583853564,
-            "sha256": "sha256:3334bdb24ac78b2ed2312042e5b331fa7844907b8853937960892d36657299a5"
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part03",
+            "fileName": "fedora-gnome-build-42020310420.zip.part03",
+            "sizeBytes": 581488500,
+            "sha256": "sha256:58dd2063092703d6739b9d7153a4bdb78a9ab8de5ad320facde5f1533fd18a3e"
           }
         ]
       },
@@ -63,42 +63,42 @@
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
       "downstreamRevision": "bc5fd7937ded64cab34180fc1d600820eebb9037",
-      "metadataDigest": "sha256:2da0fe80d232aefc03bc7e91c055150379c2a9cae1e63e4d3562fb090bf64ff4",
-      "payloadDigest": "sha256:1e9ee07d2716cc0b53ec433ba310950c1e422039730e1ecea936d8a9e81ee86b",
-      "evidenceRevision": "image-build-41644376491",
+      "metadataDigest": "sha256:54079dec6bd14593f486c113c7063dafdbe0f59fc9d07ad47ce344a91f5da4dc",
+      "payloadDigest": "sha256:5968e992d4dec65a1f1a5b0443c2ee528dca7f083053fab6abc03fc82b4b3dab",
+      "evidenceRevision": "image-build-42020310420",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/installer-data-fedora-gnome.json",
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/installer-data-fedora-gnome.json",
         "fileName": "installer-data-fedora-gnome.json",
-        "sizeBytes": 7947
+        "sizeBytes": 7995
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip",
-        "fileName": "fedora-gnome-build-41644376491.zip",
-        "sizeBytes": 3805079036,
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip",
+        "fileName": "fedora-gnome-build-42020310420.zip",
+        "sizeBytes": 3802713972,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part00",
-            "fileName": "fedora-gnome-build-41644376491.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part00",
+            "fileName": "fedora-gnome-build-42020310420.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:f6cf02afcc874a7960a390ebcec5d8e0ceda114d338facbc25f424204e2c7f63"
+            "sha256": "sha256:dec88597886b1655ed5f5531137680d0388c35a43a7b3349f53519a8082bd3ae"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part01",
-            "fileName": "fedora-gnome-build-41644376491.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part01",
+            "fileName": "fedora-gnome-build-42020310420.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:41f7ee1f9099e48190057ef6d76eab271edc68bc8cce63707d350b54debfe5b1"
+            "sha256": "sha256:a3d705daac9d31c128c33283746d7c9094f0a4411086093650faf9b96e0ad453"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part02",
-            "fileName": "fedora-gnome-build-41644376491.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part02",
+            "fileName": "fedora-gnome-build-42020310420.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:226ff192df00fbd47cead0bc753bd035c3de5d38c32a5e9a8d3da1db15af47f5"
+            "sha256": "sha256:c68bc9c8971d52adb6b115baf8245ef5636fd65b28c1a5d9ae028aaacb4dd350"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part03",
-            "fileName": "fedora-gnome-build-41644376491.zip.part03",
-            "sizeBytes": 583853564,
-            "sha256": "sha256:3334bdb24ac78b2ed2312042e5b331fa7844907b8853937960892d36657299a5"
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part03",
+            "fileName": "fedora-gnome-build-42020310420.zip.part03",
+            "sizeBytes": 581488500,
+            "sha256": "sha256:58dd2063092703d6739b9d7153a4bdb78a9ab8de5ad320facde5f1533fd18a3e"
           }
         ]
       },
@@ -111,42 +111,42 @@
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
       "downstreamRevision": "bc5fd7937ded64cab34180fc1d600820eebb9037",
-      "metadataDigest": "sha256:2da0fe80d232aefc03bc7e91c055150379c2a9cae1e63e4d3562fb090bf64ff4",
-      "payloadDigest": "sha256:1e9ee07d2716cc0b53ec433ba310950c1e422039730e1ecea936d8a9e81ee86b",
-      "evidenceRevision": "image-build-41644376491",
+      "metadataDigest": "sha256:54079dec6bd14593f486c113c7063dafdbe0f59fc9d07ad47ce344a91f5da4dc",
+      "payloadDigest": "sha256:5968e992d4dec65a1f1a5b0443c2ee528dca7f083053fab6abc03fc82b4b3dab",
+      "evidenceRevision": "image-build-42020310420",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/installer-data-fedora-gnome.json",
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/installer-data-fedora-gnome.json",
         "fileName": "installer-data-fedora-gnome.json",
-        "sizeBytes": 7947
+        "sizeBytes": 7995
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip",
-        "fileName": "fedora-gnome-build-41644376491.zip",
-        "sizeBytes": 3805079036,
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip",
+        "fileName": "fedora-gnome-build-42020310420.zip",
+        "sizeBytes": 3802713972,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part00",
-            "fileName": "fedora-gnome-build-41644376491.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part00",
+            "fileName": "fedora-gnome-build-42020310420.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:f6cf02afcc874a7960a390ebcec5d8e0ceda114d338facbc25f424204e2c7f63"
+            "sha256": "sha256:dec88597886b1655ed5f5531137680d0388c35a43a7b3349f53519a8082bd3ae"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part01",
-            "fileName": "fedora-gnome-build-41644376491.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part01",
+            "fileName": "fedora-gnome-build-42020310420.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:41f7ee1f9099e48190057ef6d76eab271edc68bc8cce63707d350b54debfe5b1"
+            "sha256": "sha256:a3d705daac9d31c128c33283746d7c9094f0a4411086093650faf9b96e0ad453"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part02",
-            "fileName": "fedora-gnome-build-41644376491.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part02",
+            "fileName": "fedora-gnome-build-42020310420.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:226ff192df00fbd47cead0bc753bd035c3de5d38c32a5e9a8d3da1db15af47f5"
+            "sha256": "sha256:c68bc9c8971d52adb6b115baf8245ef5636fd65b28c1a5d9ae028aaacb4dd350"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part03",
-            "fileName": "fedora-gnome-build-41644376491.zip.part03",
-            "sizeBytes": 583853564,
-            "sha256": "sha256:3334bdb24ac78b2ed2312042e5b331fa7844907b8853937960892d36657299a5"
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part03",
+            "fileName": "fedora-gnome-build-42020310420.zip.part03",
+            "sizeBytes": 581488500,
+            "sha256": "sha256:58dd2063092703d6739b9d7153a4bdb78a9ab8de5ad320facde5f1533fd18a3e"
           }
         ]
       },
@@ -159,42 +159,42 @@
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
       "downstreamRevision": "bc5fd7937ded64cab34180fc1d600820eebb9037",
-      "metadataDigest": "sha256:2da0fe80d232aefc03bc7e91c055150379c2a9cae1e63e4d3562fb090bf64ff4",
-      "payloadDigest": "sha256:1e9ee07d2716cc0b53ec433ba310950c1e422039730e1ecea936d8a9e81ee86b",
-      "evidenceRevision": "image-build-41644376491",
+      "metadataDigest": "sha256:54079dec6bd14593f486c113c7063dafdbe0f59fc9d07ad47ce344a91f5da4dc",
+      "payloadDigest": "sha256:5968e992d4dec65a1f1a5b0443c2ee528dca7f083053fab6abc03fc82b4b3dab",
+      "evidenceRevision": "image-build-42020310420",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/installer-data-fedora-gnome.json",
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/installer-data-fedora-gnome.json",
         "fileName": "installer-data-fedora-gnome.json",
-        "sizeBytes": 7947
+        "sizeBytes": 7995
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip",
-        "fileName": "fedora-gnome-build-41644376491.zip",
-        "sizeBytes": 3805079036,
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip",
+        "fileName": "fedora-gnome-build-42020310420.zip",
+        "sizeBytes": 3802713972,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part00",
-            "fileName": "fedora-gnome-build-41644376491.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part00",
+            "fileName": "fedora-gnome-build-42020310420.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:f6cf02afcc874a7960a390ebcec5d8e0ceda114d338facbc25f424204e2c7f63"
+            "sha256": "sha256:dec88597886b1655ed5f5531137680d0388c35a43a7b3349f53519a8082bd3ae"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part01",
-            "fileName": "fedora-gnome-build-41644376491.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part01",
+            "fileName": "fedora-gnome-build-42020310420.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:41f7ee1f9099e48190057ef6d76eab271edc68bc8cce63707d350b54debfe5b1"
+            "sha256": "sha256:a3d705daac9d31c128c33283746d7c9094f0a4411086093650faf9b96e0ad453"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part02",
-            "fileName": "fedora-gnome-build-41644376491.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part02",
+            "fileName": "fedora-gnome-build-42020310420.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:226ff192df00fbd47cead0bc753bd035c3de5d38c32a5e9a8d3da1db15af47f5"
+            "sha256": "sha256:c68bc9c8971d52adb6b115baf8245ef5636fd65b28c1a5d9ae028aaacb4dd350"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part03",
-            "fileName": "fedora-gnome-build-41644376491.zip.part03",
-            "sizeBytes": 583853564,
-            "sha256": "sha256:3334bdb24ac78b2ed2312042e5b331fa7844907b8853937960892d36657299a5"
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part03",
+            "fileName": "fedora-gnome-build-42020310420.zip.part03",
+            "sizeBytes": 581488500,
+            "sha256": "sha256:58dd2063092703d6739b9d7153a4bdb78a9ab8de5ad320facde5f1533fd18a3e"
           }
         ]
       },
@@ -207,42 +207,42 @@
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
       "downstreamRevision": "bc5fd7937ded64cab34180fc1d600820eebb9037",
-      "metadataDigest": "sha256:2da0fe80d232aefc03bc7e91c055150379c2a9cae1e63e4d3562fb090bf64ff4",
-      "payloadDigest": "sha256:1e9ee07d2716cc0b53ec433ba310950c1e422039730e1ecea936d8a9e81ee86b",
-      "evidenceRevision": "image-build-41644376491",
+      "metadataDigest": "sha256:54079dec6bd14593f486c113c7063dafdbe0f59fc9d07ad47ce344a91f5da4dc",
+      "payloadDigest": "sha256:5968e992d4dec65a1f1a5b0443c2ee528dca7f083053fab6abc03fc82b4b3dab",
+      "evidenceRevision": "image-build-42020310420",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/installer-data-fedora-gnome.json",
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/installer-data-fedora-gnome.json",
         "fileName": "installer-data-fedora-gnome.json",
-        "sizeBytes": 7947
+        "sizeBytes": 7995
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip",
-        "fileName": "fedora-gnome-build-41644376491.zip",
-        "sizeBytes": 3805079036,
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip",
+        "fileName": "fedora-gnome-build-42020310420.zip",
+        "sizeBytes": 3802713972,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part00",
-            "fileName": "fedora-gnome-build-41644376491.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part00",
+            "fileName": "fedora-gnome-build-42020310420.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:f6cf02afcc874a7960a390ebcec5d8e0ceda114d338facbc25f424204e2c7f63"
+            "sha256": "sha256:dec88597886b1655ed5f5531137680d0388c35a43a7b3349f53519a8082bd3ae"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part01",
-            "fileName": "fedora-gnome-build-41644376491.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part01",
+            "fileName": "fedora-gnome-build-42020310420.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:41f7ee1f9099e48190057ef6d76eab271edc68bc8cce63707d350b54debfe5b1"
+            "sha256": "sha256:a3d705daac9d31c128c33283746d7c9094f0a4411086093650faf9b96e0ad453"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part02",
-            "fileName": "fedora-gnome-build-41644376491.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part02",
+            "fileName": "fedora-gnome-build-42020310420.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:226ff192df00fbd47cead0bc753bd035c3de5d38c32a5e9a8d3da1db15af47f5"
+            "sha256": "sha256:c68bc9c8971d52adb6b115baf8245ef5636fd65b28c1a5d9ae028aaacb4dd350"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part03",
-            "fileName": "fedora-gnome-build-41644376491.zip.part03",
-            "sizeBytes": 583853564,
-            "sha256": "sha256:3334bdb24ac78b2ed2312042e5b331fa7844907b8853937960892d36657299a5"
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part03",
+            "fileName": "fedora-gnome-build-42020310420.zip.part03",
+            "sizeBytes": 581488500,
+            "sha256": "sha256:58dd2063092703d6739b9d7153a4bdb78a9ab8de5ad320facde5f1533fd18a3e"
           }
         ]
       },
@@ -255,42 +255,42 @@
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
       "downstreamRevision": "bc5fd7937ded64cab34180fc1d600820eebb9037",
-      "metadataDigest": "sha256:2da0fe80d232aefc03bc7e91c055150379c2a9cae1e63e4d3562fb090bf64ff4",
-      "payloadDigest": "sha256:1e9ee07d2716cc0b53ec433ba310950c1e422039730e1ecea936d8a9e81ee86b",
-      "evidenceRevision": "image-build-41644376491",
+      "metadataDigest": "sha256:54079dec6bd14593f486c113c7063dafdbe0f59fc9d07ad47ce344a91f5da4dc",
+      "payloadDigest": "sha256:5968e992d4dec65a1f1a5b0443c2ee528dca7f083053fab6abc03fc82b4b3dab",
+      "evidenceRevision": "image-build-42020310420",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/installer-data-fedora-gnome.json",
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/installer-data-fedora-gnome.json",
         "fileName": "installer-data-fedora-gnome.json",
-        "sizeBytes": 7947
+        "sizeBytes": 7995
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip",
-        "fileName": "fedora-gnome-build-41644376491.zip",
-        "sizeBytes": 3805079036,
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip",
+        "fileName": "fedora-gnome-build-42020310420.zip",
+        "sizeBytes": 3802713972,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part00",
-            "fileName": "fedora-gnome-build-41644376491.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part00",
+            "fileName": "fedora-gnome-build-42020310420.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:f6cf02afcc874a7960a390ebcec5d8e0ceda114d338facbc25f424204e2c7f63"
+            "sha256": "sha256:dec88597886b1655ed5f5531137680d0388c35a43a7b3349f53519a8082bd3ae"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part01",
-            "fileName": "fedora-gnome-build-41644376491.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part01",
+            "fileName": "fedora-gnome-build-42020310420.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:41f7ee1f9099e48190057ef6d76eab271edc68bc8cce63707d350b54debfe5b1"
+            "sha256": "sha256:a3d705daac9d31c128c33283746d7c9094f0a4411086093650faf9b96e0ad453"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part02",
-            "fileName": "fedora-gnome-build-41644376491.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part02",
+            "fileName": "fedora-gnome-build-42020310420.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:226ff192df00fbd47cead0bc753bd035c3de5d38c32a5e9a8d3da1db15af47f5"
+            "sha256": "sha256:c68bc9c8971d52adb6b115baf8245ef5636fd65b28c1a5d9ae028aaacb4dd350"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part03",
-            "fileName": "fedora-gnome-build-41644376491.zip.part03",
-            "sizeBytes": 583853564,
-            "sha256": "sha256:3334bdb24ac78b2ed2312042e5b331fa7844907b8853937960892d36657299a5"
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part03",
+            "fileName": "fedora-gnome-build-42020310420.zip.part03",
+            "sizeBytes": 581488500,
+            "sha256": "sha256:58dd2063092703d6739b9d7153a4bdb78a9ab8de5ad320facde5f1533fd18a3e"
           }
         ]
       },
@@ -303,42 +303,42 @@
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
       "downstreamRevision": "bc5fd7937ded64cab34180fc1d600820eebb9037",
-      "metadataDigest": "sha256:2da0fe80d232aefc03bc7e91c055150379c2a9cae1e63e4d3562fb090bf64ff4",
-      "payloadDigest": "sha256:1e9ee07d2716cc0b53ec433ba310950c1e422039730e1ecea936d8a9e81ee86b",
-      "evidenceRevision": "image-build-41644376491",
+      "metadataDigest": "sha256:54079dec6bd14593f486c113c7063dafdbe0f59fc9d07ad47ce344a91f5da4dc",
+      "payloadDigest": "sha256:5968e992d4dec65a1f1a5b0443c2ee528dca7f083053fab6abc03fc82b4b3dab",
+      "evidenceRevision": "image-build-42020310420",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/installer-data-fedora-gnome.json",
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/installer-data-fedora-gnome.json",
         "fileName": "installer-data-fedora-gnome.json",
-        "sizeBytes": 7947
+        "sizeBytes": 7995
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip",
-        "fileName": "fedora-gnome-build-41644376491.zip",
-        "sizeBytes": 3805079036,
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip",
+        "fileName": "fedora-gnome-build-42020310420.zip",
+        "sizeBytes": 3802713972,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part00",
-            "fileName": "fedora-gnome-build-41644376491.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part00",
+            "fileName": "fedora-gnome-build-42020310420.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:f6cf02afcc874a7960a390ebcec5d8e0ceda114d338facbc25f424204e2c7f63"
+            "sha256": "sha256:dec88597886b1655ed5f5531137680d0388c35a43a7b3349f53519a8082bd3ae"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part01",
-            "fileName": "fedora-gnome-build-41644376491.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part01",
+            "fileName": "fedora-gnome-build-42020310420.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:41f7ee1f9099e48190057ef6d76eab271edc68bc8cce63707d350b54debfe5b1"
+            "sha256": "sha256:a3d705daac9d31c128c33283746d7c9094f0a4411086093650faf9b96e0ad453"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part02",
-            "fileName": "fedora-gnome-build-41644376491.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part02",
+            "fileName": "fedora-gnome-build-42020310420.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:226ff192df00fbd47cead0bc753bd035c3de5d38c32a5e9a8d3da1db15af47f5"
+            "sha256": "sha256:c68bc9c8971d52adb6b115baf8245ef5636fd65b28c1a5d9ae028aaacb4dd350"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part03",
-            "fileName": "fedora-gnome-build-41644376491.zip.part03",
-            "sizeBytes": 583853564,
-            "sha256": "sha256:3334bdb24ac78b2ed2312042e5b331fa7844907b8853937960892d36657299a5"
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part03",
+            "fileName": "fedora-gnome-build-42020310420.zip.part03",
+            "sizeBytes": 581488500,
+            "sha256": "sha256:58dd2063092703d6739b9d7153a4bdb78a9ab8de5ad320facde5f1533fd18a3e"
           }
         ]
       },
@@ -351,42 +351,42 @@
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
       "downstreamRevision": "bc5fd7937ded64cab34180fc1d600820eebb9037",
-      "metadataDigest": "sha256:2da0fe80d232aefc03bc7e91c055150379c2a9cae1e63e4d3562fb090bf64ff4",
-      "payloadDigest": "sha256:1e9ee07d2716cc0b53ec433ba310950c1e422039730e1ecea936d8a9e81ee86b",
-      "evidenceRevision": "image-build-41644376491",
+      "metadataDigest": "sha256:54079dec6bd14593f486c113c7063dafdbe0f59fc9d07ad47ce344a91f5da4dc",
+      "payloadDigest": "sha256:5968e992d4dec65a1f1a5b0443c2ee528dca7f083053fab6abc03fc82b4b3dab",
+      "evidenceRevision": "image-build-42020310420",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/installer-data-fedora-gnome.json",
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/installer-data-fedora-gnome.json",
         "fileName": "installer-data-fedora-gnome.json",
-        "sizeBytes": 7947
+        "sizeBytes": 7995
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip",
-        "fileName": "fedora-gnome-build-41644376491.zip",
-        "sizeBytes": 3805079036,
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip",
+        "fileName": "fedora-gnome-build-42020310420.zip",
+        "sizeBytes": 3802713972,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part00",
-            "fileName": "fedora-gnome-build-41644376491.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part00",
+            "fileName": "fedora-gnome-build-42020310420.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:f6cf02afcc874a7960a390ebcec5d8e0ceda114d338facbc25f424204e2c7f63"
+            "sha256": "sha256:dec88597886b1655ed5f5531137680d0388c35a43a7b3349f53519a8082bd3ae"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part01",
-            "fileName": "fedora-gnome-build-41644376491.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part01",
+            "fileName": "fedora-gnome-build-42020310420.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:41f7ee1f9099e48190057ef6d76eab271edc68bc8cce63707d350b54debfe5b1"
+            "sha256": "sha256:a3d705daac9d31c128c33283746d7c9094f0a4411086093650faf9b96e0ad453"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part02",
-            "fileName": "fedora-gnome-build-41644376491.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part02",
+            "fileName": "fedora-gnome-build-42020310420.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:226ff192df00fbd47cead0bc753bd035c3de5d38c32a5e9a8d3da1db15af47f5"
+            "sha256": "sha256:c68bc9c8971d52adb6b115baf8245ef5636fd65b28c1a5d9ae028aaacb4dd350"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part03",
-            "fileName": "fedora-gnome-build-41644376491.zip.part03",
-            "sizeBytes": 583853564,
-            "sha256": "sha256:3334bdb24ac78b2ed2312042e5b331fa7844907b8853937960892d36657299a5"
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part03",
+            "fileName": "fedora-gnome-build-42020310420.zip.part03",
+            "sizeBytes": 581488500,
+            "sha256": "sha256:58dd2063092703d6739b9d7153a4bdb78a9ab8de5ad320facde5f1533fd18a3e"
           }
         ]
       },
@@ -399,42 +399,42 @@
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
       "downstreamRevision": "bc5fd7937ded64cab34180fc1d600820eebb9037",
-      "metadataDigest": "sha256:2da0fe80d232aefc03bc7e91c055150379c2a9cae1e63e4d3562fb090bf64ff4",
-      "payloadDigest": "sha256:1e9ee07d2716cc0b53ec433ba310950c1e422039730e1ecea936d8a9e81ee86b",
-      "evidenceRevision": "image-build-41644376491",
+      "metadataDigest": "sha256:54079dec6bd14593f486c113c7063dafdbe0f59fc9d07ad47ce344a91f5da4dc",
+      "payloadDigest": "sha256:5968e992d4dec65a1f1a5b0443c2ee528dca7f083053fab6abc03fc82b4b3dab",
+      "evidenceRevision": "image-build-42020310420",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/installer-data-fedora-gnome.json",
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/installer-data-fedora-gnome.json",
         "fileName": "installer-data-fedora-gnome.json",
-        "sizeBytes": 7947
+        "sizeBytes": 7995
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip",
-        "fileName": "fedora-gnome-build-41644376491.zip",
-        "sizeBytes": 3805079036,
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip",
+        "fileName": "fedora-gnome-build-42020310420.zip",
+        "sizeBytes": 3802713972,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part00",
-            "fileName": "fedora-gnome-build-41644376491.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part00",
+            "fileName": "fedora-gnome-build-42020310420.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:f6cf02afcc874a7960a390ebcec5d8e0ceda114d338facbc25f424204e2c7f63"
+            "sha256": "sha256:dec88597886b1655ed5f5531137680d0388c35a43a7b3349f53519a8082bd3ae"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part01",
-            "fileName": "fedora-gnome-build-41644376491.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part01",
+            "fileName": "fedora-gnome-build-42020310420.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:41f7ee1f9099e48190057ef6d76eab271edc68bc8cce63707d350b54debfe5b1"
+            "sha256": "sha256:a3d705daac9d31c128c33283746d7c9094f0a4411086093650faf9b96e0ad453"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part02",
-            "fileName": "fedora-gnome-build-41644376491.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part02",
+            "fileName": "fedora-gnome-build-42020310420.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:226ff192df00fbd47cead0bc753bd035c3de5d38c32a5e9a8d3da1db15af47f5"
+            "sha256": "sha256:c68bc9c8971d52adb6b115baf8245ef5636fd65b28c1a5d9ae028aaacb4dd350"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part03",
-            "fileName": "fedora-gnome-build-41644376491.zip.part03",
-            "sizeBytes": 583853564,
-            "sha256": "sha256:3334bdb24ac78b2ed2312042e5b331fa7844907b8853937960892d36657299a5"
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part03",
+            "fileName": "fedora-gnome-build-42020310420.zip.part03",
+            "sizeBytes": 581488500,
+            "sha256": "sha256:58dd2063092703d6739b9d7153a4bdb78a9ab8de5ad320facde5f1533fd18a3e"
           }
         ]
       },
@@ -447,42 +447,42 @@
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
       "downstreamRevision": "bc5fd7937ded64cab34180fc1d600820eebb9037",
-      "metadataDigest": "sha256:2da0fe80d232aefc03bc7e91c055150379c2a9cae1e63e4d3562fb090bf64ff4",
-      "payloadDigest": "sha256:1e9ee07d2716cc0b53ec433ba310950c1e422039730e1ecea936d8a9e81ee86b",
-      "evidenceRevision": "image-build-41644376491",
+      "metadataDigest": "sha256:54079dec6bd14593f486c113c7063dafdbe0f59fc9d07ad47ce344a91f5da4dc",
+      "payloadDigest": "sha256:5968e992d4dec65a1f1a5b0443c2ee528dca7f083053fab6abc03fc82b4b3dab",
+      "evidenceRevision": "image-build-42020310420",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/installer-data-fedora-gnome.json",
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/installer-data-fedora-gnome.json",
         "fileName": "installer-data-fedora-gnome.json",
-        "sizeBytes": 7947
+        "sizeBytes": 7995
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip",
-        "fileName": "fedora-gnome-build-41644376491.zip",
-        "sizeBytes": 3805079036,
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip",
+        "fileName": "fedora-gnome-build-42020310420.zip",
+        "sizeBytes": 3802713972,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part00",
-            "fileName": "fedora-gnome-build-41644376491.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part00",
+            "fileName": "fedora-gnome-build-42020310420.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:f6cf02afcc874a7960a390ebcec5d8e0ceda114d338facbc25f424204e2c7f63"
+            "sha256": "sha256:dec88597886b1655ed5f5531137680d0388c35a43a7b3349f53519a8082bd3ae"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part01",
-            "fileName": "fedora-gnome-build-41644376491.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part01",
+            "fileName": "fedora-gnome-build-42020310420.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:41f7ee1f9099e48190057ef6d76eab271edc68bc8cce63707d350b54debfe5b1"
+            "sha256": "sha256:a3d705daac9d31c128c33283746d7c9094f0a4411086093650faf9b96e0ad453"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part02",
-            "fileName": "fedora-gnome-build-41644376491.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part02",
+            "fileName": "fedora-gnome-build-42020310420.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:226ff192df00fbd47cead0bc753bd035c3de5d38c32a5e9a8d3da1db15af47f5"
+            "sha256": "sha256:c68bc9c8971d52adb6b115baf8245ef5636fd65b28c1a5d9ae028aaacb4dd350"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part03",
-            "fileName": "fedora-gnome-build-41644376491.zip.part03",
-            "sizeBytes": 583853564,
-            "sha256": "sha256:3334bdb24ac78b2ed2312042e5b331fa7844907b8853937960892d36657299a5"
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part03",
+            "fileName": "fedora-gnome-build-42020310420.zip.part03",
+            "sizeBytes": 581488500,
+            "sha256": "sha256:58dd2063092703d6739b9d7153a4bdb78a9ab8de5ad320facde5f1533fd18a3e"
           }
         ]
       },
@@ -495,42 +495,42 @@
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
       "downstreamRevision": "bc5fd7937ded64cab34180fc1d600820eebb9037",
-      "metadataDigest": "sha256:2da0fe80d232aefc03bc7e91c055150379c2a9cae1e63e4d3562fb090bf64ff4",
-      "payloadDigest": "sha256:1e9ee07d2716cc0b53ec433ba310950c1e422039730e1ecea936d8a9e81ee86b",
-      "evidenceRevision": "image-build-41644376491",
+      "metadataDigest": "sha256:54079dec6bd14593f486c113c7063dafdbe0f59fc9d07ad47ce344a91f5da4dc",
+      "payloadDigest": "sha256:5968e992d4dec65a1f1a5b0443c2ee528dca7f083053fab6abc03fc82b4b3dab",
+      "evidenceRevision": "image-build-42020310420",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/installer-data-fedora-gnome.json",
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/installer-data-fedora-gnome.json",
         "fileName": "installer-data-fedora-gnome.json",
-        "sizeBytes": 7947
+        "sizeBytes": 7995
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip",
-        "fileName": "fedora-gnome-build-41644376491.zip",
-        "sizeBytes": 3805079036,
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip",
+        "fileName": "fedora-gnome-build-42020310420.zip",
+        "sizeBytes": 3802713972,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part00",
-            "fileName": "fedora-gnome-build-41644376491.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part00",
+            "fileName": "fedora-gnome-build-42020310420.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:f6cf02afcc874a7960a390ebcec5d8e0ceda114d338facbc25f424204e2c7f63"
+            "sha256": "sha256:dec88597886b1655ed5f5531137680d0388c35a43a7b3349f53519a8082bd3ae"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part01",
-            "fileName": "fedora-gnome-build-41644376491.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part01",
+            "fileName": "fedora-gnome-build-42020310420.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:41f7ee1f9099e48190057ef6d76eab271edc68bc8cce63707d350b54debfe5b1"
+            "sha256": "sha256:a3d705daac9d31c128c33283746d7c9094f0a4411086093650faf9b96e0ad453"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part02",
-            "fileName": "fedora-gnome-build-41644376491.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part02",
+            "fileName": "fedora-gnome-build-42020310420.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:226ff192df00fbd47cead0bc753bd035c3de5d38c32a5e9a8d3da1db15af47f5"
+            "sha256": "sha256:c68bc9c8971d52adb6b115baf8245ef5636fd65b28c1a5d9ae028aaacb4dd350"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part03",
-            "fileName": "fedora-gnome-build-41644376491.zip.part03",
-            "sizeBytes": 583853564,
-            "sha256": "sha256:3334bdb24ac78b2ed2312042e5b331fa7844907b8853937960892d36657299a5"
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part03",
+            "fileName": "fedora-gnome-build-42020310420.zip.part03",
+            "sizeBytes": 581488500,
+            "sha256": "sha256:58dd2063092703d6739b9d7153a4bdb78a9ab8de5ad320facde5f1533fd18a3e"
           }
         ]
       },
@@ -543,42 +543,42 @@
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
       "downstreamRevision": "bc5fd7937ded64cab34180fc1d600820eebb9037",
-      "metadataDigest": "sha256:2da0fe80d232aefc03bc7e91c055150379c2a9cae1e63e4d3562fb090bf64ff4",
-      "payloadDigest": "sha256:1e9ee07d2716cc0b53ec433ba310950c1e422039730e1ecea936d8a9e81ee86b",
-      "evidenceRevision": "image-build-41644376491",
+      "metadataDigest": "sha256:54079dec6bd14593f486c113c7063dafdbe0f59fc9d07ad47ce344a91f5da4dc",
+      "payloadDigest": "sha256:5968e992d4dec65a1f1a5b0443c2ee528dca7f083053fab6abc03fc82b4b3dab",
+      "evidenceRevision": "image-build-42020310420",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/installer-data-fedora-gnome.json",
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/installer-data-fedora-gnome.json",
         "fileName": "installer-data-fedora-gnome.json",
-        "sizeBytes": 7947
+        "sizeBytes": 7995
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip",
-        "fileName": "fedora-gnome-build-41644376491.zip",
-        "sizeBytes": 3805079036,
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip",
+        "fileName": "fedora-gnome-build-42020310420.zip",
+        "sizeBytes": 3802713972,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part00",
-            "fileName": "fedora-gnome-build-41644376491.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part00",
+            "fileName": "fedora-gnome-build-42020310420.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:f6cf02afcc874a7960a390ebcec5d8e0ceda114d338facbc25f424204e2c7f63"
+            "sha256": "sha256:dec88597886b1655ed5f5531137680d0388c35a43a7b3349f53519a8082bd3ae"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part01",
-            "fileName": "fedora-gnome-build-41644376491.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part01",
+            "fileName": "fedora-gnome-build-42020310420.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:41f7ee1f9099e48190057ef6d76eab271edc68bc8cce63707d350b54debfe5b1"
+            "sha256": "sha256:a3d705daac9d31c128c33283746d7c9094f0a4411086093650faf9b96e0ad453"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part02",
-            "fileName": "fedora-gnome-build-41644376491.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part02",
+            "fileName": "fedora-gnome-build-42020310420.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:226ff192df00fbd47cead0bc753bd035c3de5d38c32a5e9a8d3da1db15af47f5"
+            "sha256": "sha256:c68bc9c8971d52adb6b115baf8245ef5636fd65b28c1a5d9ae028aaacb4dd350"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part03",
-            "fileName": "fedora-gnome-build-41644376491.zip.part03",
-            "sizeBytes": 583853564,
-            "sha256": "sha256:3334bdb24ac78b2ed2312042e5b331fa7844907b8853937960892d36657299a5"
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part03",
+            "fileName": "fedora-gnome-build-42020310420.zip.part03",
+            "sizeBytes": 581488500,
+            "sha256": "sha256:58dd2063092703d6739b9d7153a4bdb78a9ab8de5ad320facde5f1533fd18a3e"
           }
         ]
       },
@@ -591,42 +591,42 @@
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
       "downstreamRevision": "bc5fd7937ded64cab34180fc1d600820eebb9037",
-      "metadataDigest": "sha256:2da0fe80d232aefc03bc7e91c055150379c2a9cae1e63e4d3562fb090bf64ff4",
-      "payloadDigest": "sha256:1e9ee07d2716cc0b53ec433ba310950c1e422039730e1ecea936d8a9e81ee86b",
-      "evidenceRevision": "image-build-41644376491",
+      "metadataDigest": "sha256:54079dec6bd14593f486c113c7063dafdbe0f59fc9d07ad47ce344a91f5da4dc",
+      "payloadDigest": "sha256:5968e992d4dec65a1f1a5b0443c2ee528dca7f083053fab6abc03fc82b4b3dab",
+      "evidenceRevision": "image-build-42020310420",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/installer-data-fedora-gnome.json",
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/installer-data-fedora-gnome.json",
         "fileName": "installer-data-fedora-gnome.json",
-        "sizeBytes": 7947
+        "sizeBytes": 7995
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip",
-        "fileName": "fedora-gnome-build-41644376491.zip",
-        "sizeBytes": 3805079036,
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip",
+        "fileName": "fedora-gnome-build-42020310420.zip",
+        "sizeBytes": 3802713972,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part00",
-            "fileName": "fedora-gnome-build-41644376491.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part00",
+            "fileName": "fedora-gnome-build-42020310420.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:f6cf02afcc874a7960a390ebcec5d8e0ceda114d338facbc25f424204e2c7f63"
+            "sha256": "sha256:dec88597886b1655ed5f5531137680d0388c35a43a7b3349f53519a8082bd3ae"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part01",
-            "fileName": "fedora-gnome-build-41644376491.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part01",
+            "fileName": "fedora-gnome-build-42020310420.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:41f7ee1f9099e48190057ef6d76eab271edc68bc8cce63707d350b54debfe5b1"
+            "sha256": "sha256:a3d705daac9d31c128c33283746d7c9094f0a4411086093650faf9b96e0ad453"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part02",
-            "fileName": "fedora-gnome-build-41644376491.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part02",
+            "fileName": "fedora-gnome-build-42020310420.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:226ff192df00fbd47cead0bc753bd035c3de5d38c32a5e9a8d3da1db15af47f5"
+            "sha256": "sha256:c68bc9c8971d52adb6b115baf8245ef5636fd65b28c1a5d9ae028aaacb4dd350"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part03",
-            "fileName": "fedora-gnome-build-41644376491.zip.part03",
-            "sizeBytes": 583853564,
-            "sha256": "sha256:3334bdb24ac78b2ed2312042e5b331fa7844907b8853937960892d36657299a5"
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part03",
+            "fileName": "fedora-gnome-build-42020310420.zip.part03",
+            "sizeBytes": 581488500,
+            "sha256": "sha256:58dd2063092703d6739b9d7153a4bdb78a9ab8de5ad320facde5f1533fd18a3e"
           }
         ]
       },
@@ -639,42 +639,42 @@
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
       "downstreamRevision": "bc5fd7937ded64cab34180fc1d600820eebb9037",
-      "metadataDigest": "sha256:2da0fe80d232aefc03bc7e91c055150379c2a9cae1e63e4d3562fb090bf64ff4",
-      "payloadDigest": "sha256:1e9ee07d2716cc0b53ec433ba310950c1e422039730e1ecea936d8a9e81ee86b",
-      "evidenceRevision": "image-build-41644376491",
+      "metadataDigest": "sha256:54079dec6bd14593f486c113c7063dafdbe0f59fc9d07ad47ce344a91f5da4dc",
+      "payloadDigest": "sha256:5968e992d4dec65a1f1a5b0443c2ee528dca7f083053fab6abc03fc82b4b3dab",
+      "evidenceRevision": "image-build-42020310420",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/installer-data-fedora-gnome.json",
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/installer-data-fedora-gnome.json",
         "fileName": "installer-data-fedora-gnome.json",
-        "sizeBytes": 7947
+        "sizeBytes": 7995
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip",
-        "fileName": "fedora-gnome-build-41644376491.zip",
-        "sizeBytes": 3805079036,
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip",
+        "fileName": "fedora-gnome-build-42020310420.zip",
+        "sizeBytes": 3802713972,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part00",
-            "fileName": "fedora-gnome-build-41644376491.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part00",
+            "fileName": "fedora-gnome-build-42020310420.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:f6cf02afcc874a7960a390ebcec5d8e0ceda114d338facbc25f424204e2c7f63"
+            "sha256": "sha256:dec88597886b1655ed5f5531137680d0388c35a43a7b3349f53519a8082bd3ae"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part01",
-            "fileName": "fedora-gnome-build-41644376491.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part01",
+            "fileName": "fedora-gnome-build-42020310420.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:41f7ee1f9099e48190057ef6d76eab271edc68bc8cce63707d350b54debfe5b1"
+            "sha256": "sha256:a3d705daac9d31c128c33283746d7c9094f0a4411086093650faf9b96e0ad453"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part02",
-            "fileName": "fedora-gnome-build-41644376491.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part02",
+            "fileName": "fedora-gnome-build-42020310420.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:226ff192df00fbd47cead0bc753bd035c3de5d38c32a5e9a8d3da1db15af47f5"
+            "sha256": "sha256:c68bc9c8971d52adb6b115baf8245ef5636fd65b28c1a5d9ae028aaacb4dd350"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part03",
-            "fileName": "fedora-gnome-build-41644376491.zip.part03",
-            "sizeBytes": 583853564,
-            "sha256": "sha256:3334bdb24ac78b2ed2312042e5b331fa7844907b8853937960892d36657299a5"
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part03",
+            "fileName": "fedora-gnome-build-42020310420.zip.part03",
+            "sizeBytes": 581488500,
+            "sha256": "sha256:58dd2063092703d6739b9d7153a4bdb78a9ab8de5ad320facde5f1533fd18a3e"
           }
         ]
       },
@@ -687,42 +687,42 @@
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
       "downstreamRevision": "bc5fd7937ded64cab34180fc1d600820eebb9037",
-      "metadataDigest": "sha256:2da0fe80d232aefc03bc7e91c055150379c2a9cae1e63e4d3562fb090bf64ff4",
-      "payloadDigest": "sha256:1e9ee07d2716cc0b53ec433ba310950c1e422039730e1ecea936d8a9e81ee86b",
-      "evidenceRevision": "image-build-41644376491",
+      "metadataDigest": "sha256:54079dec6bd14593f486c113c7063dafdbe0f59fc9d07ad47ce344a91f5da4dc",
+      "payloadDigest": "sha256:5968e992d4dec65a1f1a5b0443c2ee528dca7f083053fab6abc03fc82b4b3dab",
+      "evidenceRevision": "image-build-42020310420",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/installer-data-fedora-gnome.json",
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/installer-data-fedora-gnome.json",
         "fileName": "installer-data-fedora-gnome.json",
-        "sizeBytes": 7947
+        "sizeBytes": 7995
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip",
-        "fileName": "fedora-gnome-build-41644376491.zip",
-        "sizeBytes": 3805079036,
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip",
+        "fileName": "fedora-gnome-build-42020310420.zip",
+        "sizeBytes": 3802713972,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part00",
-            "fileName": "fedora-gnome-build-41644376491.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part00",
+            "fileName": "fedora-gnome-build-42020310420.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:f6cf02afcc874a7960a390ebcec5d8e0ceda114d338facbc25f424204e2c7f63"
+            "sha256": "sha256:dec88597886b1655ed5f5531137680d0388c35a43a7b3349f53519a8082bd3ae"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part01",
-            "fileName": "fedora-gnome-build-41644376491.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part01",
+            "fileName": "fedora-gnome-build-42020310420.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:41f7ee1f9099e48190057ef6d76eab271edc68bc8cce63707d350b54debfe5b1"
+            "sha256": "sha256:a3d705daac9d31c128c33283746d7c9094f0a4411086093650faf9b96e0ad453"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part02",
-            "fileName": "fedora-gnome-build-41644376491.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part02",
+            "fileName": "fedora-gnome-build-42020310420.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:226ff192df00fbd47cead0bc753bd035c3de5d38c32a5e9a8d3da1db15af47f5"
+            "sha256": "sha256:c68bc9c8971d52adb6b115baf8245ef5636fd65b28c1a5d9ae028aaacb4dd350"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part03",
-            "fileName": "fedora-gnome-build-41644376491.zip.part03",
-            "sizeBytes": 583853564,
-            "sha256": "sha256:3334bdb24ac78b2ed2312042e5b331fa7844907b8853937960892d36657299a5"
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part03",
+            "fileName": "fedora-gnome-build-42020310420.zip.part03",
+            "sizeBytes": 581488500,
+            "sha256": "sha256:58dd2063092703d6739b9d7153a4bdb78a9ab8de5ad320facde5f1533fd18a3e"
           }
         ]
       },
@@ -735,42 +735,42 @@
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
       "downstreamRevision": "bc5fd7937ded64cab34180fc1d600820eebb9037",
-      "metadataDigest": "sha256:2da0fe80d232aefc03bc7e91c055150379c2a9cae1e63e4d3562fb090bf64ff4",
-      "payloadDigest": "sha256:1e9ee07d2716cc0b53ec433ba310950c1e422039730e1ecea936d8a9e81ee86b",
-      "evidenceRevision": "image-build-41644376491",
+      "metadataDigest": "sha256:54079dec6bd14593f486c113c7063dafdbe0f59fc9d07ad47ce344a91f5da4dc",
+      "payloadDigest": "sha256:5968e992d4dec65a1f1a5b0443c2ee528dca7f083053fab6abc03fc82b4b3dab",
+      "evidenceRevision": "image-build-42020310420",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/installer-data-fedora-gnome.json",
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/installer-data-fedora-gnome.json",
         "fileName": "installer-data-fedora-gnome.json",
-        "sizeBytes": 7947
+        "sizeBytes": 7995
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip",
-        "fileName": "fedora-gnome-build-41644376491.zip",
-        "sizeBytes": 3805079036,
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip",
+        "fileName": "fedora-gnome-build-42020310420.zip",
+        "sizeBytes": 3802713972,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part00",
-            "fileName": "fedora-gnome-build-41644376491.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part00",
+            "fileName": "fedora-gnome-build-42020310420.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:f6cf02afcc874a7960a390ebcec5d8e0ceda114d338facbc25f424204e2c7f63"
+            "sha256": "sha256:dec88597886b1655ed5f5531137680d0388c35a43a7b3349f53519a8082bd3ae"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part01",
-            "fileName": "fedora-gnome-build-41644376491.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part01",
+            "fileName": "fedora-gnome-build-42020310420.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:41f7ee1f9099e48190057ef6d76eab271edc68bc8cce63707d350b54debfe5b1"
+            "sha256": "sha256:a3d705daac9d31c128c33283746d7c9094f0a4411086093650faf9b96e0ad453"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part02",
-            "fileName": "fedora-gnome-build-41644376491.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part02",
+            "fileName": "fedora-gnome-build-42020310420.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:226ff192df00fbd47cead0bc753bd035c3de5d38c32a5e9a8d3da1db15af47f5"
+            "sha256": "sha256:c68bc9c8971d52adb6b115baf8245ef5636fd65b28c1a5d9ae028aaacb4dd350"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part03",
-            "fileName": "fedora-gnome-build-41644376491.zip.part03",
-            "sizeBytes": 583853564,
-            "sha256": "sha256:3334bdb24ac78b2ed2312042e5b331fa7844907b8853937960892d36657299a5"
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part03",
+            "fileName": "fedora-gnome-build-42020310420.zip.part03",
+            "sizeBytes": 581488500,
+            "sha256": "sha256:58dd2063092703d6739b9d7153a4bdb78a9ab8de5ad320facde5f1533fd18a3e"
           }
         ]
       },
@@ -783,42 +783,42 @@
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
       "downstreamRevision": "bc5fd7937ded64cab34180fc1d600820eebb9037",
-      "metadataDigest": "sha256:2da0fe80d232aefc03bc7e91c055150379c2a9cae1e63e4d3562fb090bf64ff4",
-      "payloadDigest": "sha256:1e9ee07d2716cc0b53ec433ba310950c1e422039730e1ecea936d8a9e81ee86b",
-      "evidenceRevision": "image-build-41644376491",
+      "metadataDigest": "sha256:54079dec6bd14593f486c113c7063dafdbe0f59fc9d07ad47ce344a91f5da4dc",
+      "payloadDigest": "sha256:5968e992d4dec65a1f1a5b0443c2ee528dca7f083053fab6abc03fc82b4b3dab",
+      "evidenceRevision": "image-build-42020310420",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/installer-data-fedora-gnome.json",
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/installer-data-fedora-gnome.json",
         "fileName": "installer-data-fedora-gnome.json",
-        "sizeBytes": 7947
+        "sizeBytes": 7995
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip",
-        "fileName": "fedora-gnome-build-41644376491.zip",
-        "sizeBytes": 3805079036,
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip",
+        "fileName": "fedora-gnome-build-42020310420.zip",
+        "sizeBytes": 3802713972,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part00",
-            "fileName": "fedora-gnome-build-41644376491.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part00",
+            "fileName": "fedora-gnome-build-42020310420.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:f6cf02afcc874a7960a390ebcec5d8e0ceda114d338facbc25f424204e2c7f63"
+            "sha256": "sha256:dec88597886b1655ed5f5531137680d0388c35a43a7b3349f53519a8082bd3ae"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part01",
-            "fileName": "fedora-gnome-build-41644376491.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part01",
+            "fileName": "fedora-gnome-build-42020310420.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:41f7ee1f9099e48190057ef6d76eab271edc68bc8cce63707d350b54debfe5b1"
+            "sha256": "sha256:a3d705daac9d31c128c33283746d7c9094f0a4411086093650faf9b96e0ad453"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part02",
-            "fileName": "fedora-gnome-build-41644376491.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part02",
+            "fileName": "fedora-gnome-build-42020310420.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:226ff192df00fbd47cead0bc753bd035c3de5d38c32a5e9a8d3da1db15af47f5"
+            "sha256": "sha256:c68bc9c8971d52adb6b115baf8245ef5636fd65b28c1a5d9ae028aaacb4dd350"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part03",
-            "fileName": "fedora-gnome-build-41644376491.zip.part03",
-            "sizeBytes": 583853564,
-            "sha256": "sha256:3334bdb24ac78b2ed2312042e5b331fa7844907b8853937960892d36657299a5"
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part03",
+            "fileName": "fedora-gnome-build-42020310420.zip.part03",
+            "sizeBytes": 581488500,
+            "sha256": "sha256:58dd2063092703d6739b9d7153a4bdb78a9ab8de5ad320facde5f1533fd18a3e"
           }
         ]
       },
@@ -831,42 +831,42 @@
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
       "downstreamRevision": "bc5fd7937ded64cab34180fc1d600820eebb9037",
-      "metadataDigest": "sha256:2da0fe80d232aefc03bc7e91c055150379c2a9cae1e63e4d3562fb090bf64ff4",
-      "payloadDigest": "sha256:1e9ee07d2716cc0b53ec433ba310950c1e422039730e1ecea936d8a9e81ee86b",
-      "evidenceRevision": "image-build-41644376491",
+      "metadataDigest": "sha256:54079dec6bd14593f486c113c7063dafdbe0f59fc9d07ad47ce344a91f5da4dc",
+      "payloadDigest": "sha256:5968e992d4dec65a1f1a5b0443c2ee528dca7f083053fab6abc03fc82b4b3dab",
+      "evidenceRevision": "image-build-42020310420",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/installer-data-fedora-gnome.json",
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/installer-data-fedora-gnome.json",
         "fileName": "installer-data-fedora-gnome.json",
-        "sizeBytes": 7947
+        "sizeBytes": 7995
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip",
-        "fileName": "fedora-gnome-build-41644376491.zip",
-        "sizeBytes": 3805079036,
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip",
+        "fileName": "fedora-gnome-build-42020310420.zip",
+        "sizeBytes": 3802713972,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part00",
-            "fileName": "fedora-gnome-build-41644376491.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part00",
+            "fileName": "fedora-gnome-build-42020310420.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:f6cf02afcc874a7960a390ebcec5d8e0ceda114d338facbc25f424204e2c7f63"
+            "sha256": "sha256:dec88597886b1655ed5f5531137680d0388c35a43a7b3349f53519a8082bd3ae"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part01",
-            "fileName": "fedora-gnome-build-41644376491.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part01",
+            "fileName": "fedora-gnome-build-42020310420.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:41f7ee1f9099e48190057ef6d76eab271edc68bc8cce63707d350b54debfe5b1"
+            "sha256": "sha256:a3d705daac9d31c128c33283746d7c9094f0a4411086093650faf9b96e0ad453"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part02",
-            "fileName": "fedora-gnome-build-41644376491.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part02",
+            "fileName": "fedora-gnome-build-42020310420.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:226ff192df00fbd47cead0bc753bd035c3de5d38c32a5e9a8d3da1db15af47f5"
+            "sha256": "sha256:c68bc9c8971d52adb6b115baf8245ef5636fd65b28c1a5d9ae028aaacb4dd350"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part03",
-            "fileName": "fedora-gnome-build-41644376491.zip.part03",
-            "sizeBytes": 583853564,
-            "sha256": "sha256:3334bdb24ac78b2ed2312042e5b331fa7844907b8853937960892d36657299a5"
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part03",
+            "fileName": "fedora-gnome-build-42020310420.zip.part03",
+            "sizeBytes": 581488500,
+            "sha256": "sha256:58dd2063092703d6739b9d7153a4bdb78a9ab8de5ad320facde5f1533fd18a3e"
           }
         ]
       },
@@ -879,42 +879,42 @@
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
       "downstreamRevision": "bc5fd7937ded64cab34180fc1d600820eebb9037",
-      "metadataDigest": "sha256:2da0fe80d232aefc03bc7e91c055150379c2a9cae1e63e4d3562fb090bf64ff4",
-      "payloadDigest": "sha256:1e9ee07d2716cc0b53ec433ba310950c1e422039730e1ecea936d8a9e81ee86b",
-      "evidenceRevision": "image-build-41644376491",
+      "metadataDigest": "sha256:54079dec6bd14593f486c113c7063dafdbe0f59fc9d07ad47ce344a91f5da4dc",
+      "payloadDigest": "sha256:5968e992d4dec65a1f1a5b0443c2ee528dca7f083053fab6abc03fc82b4b3dab",
+      "evidenceRevision": "image-build-42020310420",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/installer-data-fedora-gnome.json",
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/installer-data-fedora-gnome.json",
         "fileName": "installer-data-fedora-gnome.json",
-        "sizeBytes": 7947
+        "sizeBytes": 7995
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip",
-        "fileName": "fedora-gnome-build-41644376491.zip",
-        "sizeBytes": 3805079036,
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip",
+        "fileName": "fedora-gnome-build-42020310420.zip",
+        "sizeBytes": 3802713972,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part00",
-            "fileName": "fedora-gnome-build-41644376491.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part00",
+            "fileName": "fedora-gnome-build-42020310420.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:f6cf02afcc874a7960a390ebcec5d8e0ceda114d338facbc25f424204e2c7f63"
+            "sha256": "sha256:dec88597886b1655ed5f5531137680d0388c35a43a7b3349f53519a8082bd3ae"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part01",
-            "fileName": "fedora-gnome-build-41644376491.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part01",
+            "fileName": "fedora-gnome-build-42020310420.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:41f7ee1f9099e48190057ef6d76eab271edc68bc8cce63707d350b54debfe5b1"
+            "sha256": "sha256:a3d705daac9d31c128c33283746d7c9094f0a4411086093650faf9b96e0ad453"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part02",
-            "fileName": "fedora-gnome-build-41644376491.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part02",
+            "fileName": "fedora-gnome-build-42020310420.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:226ff192df00fbd47cead0bc753bd035c3de5d38c32a5e9a8d3da1db15af47f5"
+            "sha256": "sha256:c68bc9c8971d52adb6b115baf8245ef5636fd65b28c1a5d9ae028aaacb4dd350"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part03",
-            "fileName": "fedora-gnome-build-41644376491.zip.part03",
-            "sizeBytes": 583853564,
-            "sha256": "sha256:3334bdb24ac78b2ed2312042e5b331fa7844907b8853937960892d36657299a5"
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part03",
+            "fileName": "fedora-gnome-build-42020310420.zip.part03",
+            "sizeBytes": 581488500,
+            "sha256": "sha256:58dd2063092703d6739b9d7153a4bdb78a9ab8de5ad320facde5f1533fd18a3e"
           }
         ]
       },
@@ -927,42 +927,42 @@
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
       "downstreamRevision": "bc5fd7937ded64cab34180fc1d600820eebb9037",
-      "metadataDigest": "sha256:2da0fe80d232aefc03bc7e91c055150379c2a9cae1e63e4d3562fb090bf64ff4",
-      "payloadDigest": "sha256:1e9ee07d2716cc0b53ec433ba310950c1e422039730e1ecea936d8a9e81ee86b",
-      "evidenceRevision": "image-build-41644376491",
+      "metadataDigest": "sha256:54079dec6bd14593f486c113c7063dafdbe0f59fc9d07ad47ce344a91f5da4dc",
+      "payloadDigest": "sha256:5968e992d4dec65a1f1a5b0443c2ee528dca7f083053fab6abc03fc82b4b3dab",
+      "evidenceRevision": "image-build-42020310420",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/installer-data-fedora-gnome.json",
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/installer-data-fedora-gnome.json",
         "fileName": "installer-data-fedora-gnome.json",
-        "sizeBytes": 7947
+        "sizeBytes": 7995
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip",
-        "fileName": "fedora-gnome-build-41644376491.zip",
-        "sizeBytes": 3805079036,
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip",
+        "fileName": "fedora-gnome-build-42020310420.zip",
+        "sizeBytes": 3802713972,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part00",
-            "fileName": "fedora-gnome-build-41644376491.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part00",
+            "fileName": "fedora-gnome-build-42020310420.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:f6cf02afcc874a7960a390ebcec5d8e0ceda114d338facbc25f424204e2c7f63"
+            "sha256": "sha256:dec88597886b1655ed5f5531137680d0388c35a43a7b3349f53519a8082bd3ae"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part01",
-            "fileName": "fedora-gnome-build-41644376491.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part01",
+            "fileName": "fedora-gnome-build-42020310420.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:41f7ee1f9099e48190057ef6d76eab271edc68bc8cce63707d350b54debfe5b1"
+            "sha256": "sha256:a3d705daac9d31c128c33283746d7c9094f0a4411086093650faf9b96e0ad453"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part02",
-            "fileName": "fedora-gnome-build-41644376491.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part02",
+            "fileName": "fedora-gnome-build-42020310420.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:226ff192df00fbd47cead0bc753bd035c3de5d38c32a5e9a8d3da1db15af47f5"
+            "sha256": "sha256:c68bc9c8971d52adb6b115baf8245ef5636fd65b28c1a5d9ae028aaacb4dd350"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part03",
-            "fileName": "fedora-gnome-build-41644376491.zip.part03",
-            "sizeBytes": 583853564,
-            "sha256": "sha256:3334bdb24ac78b2ed2312042e5b331fa7844907b8853937960892d36657299a5"
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part03",
+            "fileName": "fedora-gnome-build-42020310420.zip.part03",
+            "sizeBytes": 581488500,
+            "sha256": "sha256:58dd2063092703d6739b9d7153a4bdb78a9ab8de5ad320facde5f1533fd18a3e"
           }
         ]
       },
@@ -975,42 +975,42 @@
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
       "downstreamRevision": "bc5fd7937ded64cab34180fc1d600820eebb9037",
-      "metadataDigest": "sha256:2da0fe80d232aefc03bc7e91c055150379c2a9cae1e63e4d3562fb090bf64ff4",
-      "payloadDigest": "sha256:1e9ee07d2716cc0b53ec433ba310950c1e422039730e1ecea936d8a9e81ee86b",
-      "evidenceRevision": "image-build-41644376491",
+      "metadataDigest": "sha256:54079dec6bd14593f486c113c7063dafdbe0f59fc9d07ad47ce344a91f5da4dc",
+      "payloadDigest": "sha256:5968e992d4dec65a1f1a5b0443c2ee528dca7f083053fab6abc03fc82b4b3dab",
+      "evidenceRevision": "image-build-42020310420",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/installer-data-fedora-gnome.json",
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/installer-data-fedora-gnome.json",
         "fileName": "installer-data-fedora-gnome.json",
-        "sizeBytes": 7947
+        "sizeBytes": 7995
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip",
-        "fileName": "fedora-gnome-build-41644376491.zip",
-        "sizeBytes": 3805079036,
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip",
+        "fileName": "fedora-gnome-build-42020310420.zip",
+        "sizeBytes": 3802713972,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part00",
-            "fileName": "fedora-gnome-build-41644376491.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part00",
+            "fileName": "fedora-gnome-build-42020310420.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:f6cf02afcc874a7960a390ebcec5d8e0ceda114d338facbc25f424204e2c7f63"
+            "sha256": "sha256:dec88597886b1655ed5f5531137680d0388c35a43a7b3349f53519a8082bd3ae"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part01",
-            "fileName": "fedora-gnome-build-41644376491.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part01",
+            "fileName": "fedora-gnome-build-42020310420.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:41f7ee1f9099e48190057ef6d76eab271edc68bc8cce63707d350b54debfe5b1"
+            "sha256": "sha256:a3d705daac9d31c128c33283746d7c9094f0a4411086093650faf9b96e0ad453"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part02",
-            "fileName": "fedora-gnome-build-41644376491.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part02",
+            "fileName": "fedora-gnome-build-42020310420.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:226ff192df00fbd47cead0bc753bd035c3de5d38c32a5e9a8d3da1db15af47f5"
+            "sha256": "sha256:c68bc9c8971d52adb6b115baf8245ef5636fd65b28c1a5d9ae028aaacb4dd350"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part03",
-            "fileName": "fedora-gnome-build-41644376491.zip.part03",
-            "sizeBytes": 583853564,
-            "sha256": "sha256:3334bdb24ac78b2ed2312042e5b331fa7844907b8853937960892d36657299a5"
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part03",
+            "fileName": "fedora-gnome-build-42020310420.zip.part03",
+            "sizeBytes": 581488500,
+            "sha256": "sha256:58dd2063092703d6739b9d7153a4bdb78a9ab8de5ad320facde5f1533fd18a3e"
           }
         ]
       },
@@ -1023,42 +1023,42 @@
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
       "downstreamRevision": "bc5fd7937ded64cab34180fc1d600820eebb9037",
-      "metadataDigest": "sha256:2da0fe80d232aefc03bc7e91c055150379c2a9cae1e63e4d3562fb090bf64ff4",
-      "payloadDigest": "sha256:1e9ee07d2716cc0b53ec433ba310950c1e422039730e1ecea936d8a9e81ee86b",
-      "evidenceRevision": "image-build-41644376491",
+      "metadataDigest": "sha256:54079dec6bd14593f486c113c7063dafdbe0f59fc9d07ad47ce344a91f5da4dc",
+      "payloadDigest": "sha256:5968e992d4dec65a1f1a5b0443c2ee528dca7f083053fab6abc03fc82b4b3dab",
+      "evidenceRevision": "image-build-42020310420",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/installer-data-fedora-gnome.json",
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/installer-data-fedora-gnome.json",
         "fileName": "installer-data-fedora-gnome.json",
-        "sizeBytes": 7947
+        "sizeBytes": 7995
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip",
-        "fileName": "fedora-gnome-build-41644376491.zip",
-        "sizeBytes": 3805079036,
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip",
+        "fileName": "fedora-gnome-build-42020310420.zip",
+        "sizeBytes": 3802713972,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part00",
-            "fileName": "fedora-gnome-build-41644376491.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part00",
+            "fileName": "fedora-gnome-build-42020310420.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:f6cf02afcc874a7960a390ebcec5d8e0ceda114d338facbc25f424204e2c7f63"
+            "sha256": "sha256:dec88597886b1655ed5f5531137680d0388c35a43a7b3349f53519a8082bd3ae"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part01",
-            "fileName": "fedora-gnome-build-41644376491.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part01",
+            "fileName": "fedora-gnome-build-42020310420.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:41f7ee1f9099e48190057ef6d76eab271edc68bc8cce63707d350b54debfe5b1"
+            "sha256": "sha256:a3d705daac9d31c128c33283746d7c9094f0a4411086093650faf9b96e0ad453"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part02",
-            "fileName": "fedora-gnome-build-41644376491.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part02",
+            "fileName": "fedora-gnome-build-42020310420.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:226ff192df00fbd47cead0bc753bd035c3de5d38c32a5e9a8d3da1db15af47f5"
+            "sha256": "sha256:c68bc9c8971d52adb6b115baf8245ef5636fd65b28c1a5d9ae028aaacb4dd350"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part03",
-            "fileName": "fedora-gnome-build-41644376491.zip.part03",
-            "sizeBytes": 583853564,
-            "sha256": "sha256:3334bdb24ac78b2ed2312042e5b331fa7844907b8853937960892d36657299a5"
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part03",
+            "fileName": "fedora-gnome-build-42020310420.zip.part03",
+            "sizeBytes": 581488500,
+            "sha256": "sha256:58dd2063092703d6739b9d7153a4bdb78a9ab8de5ad320facde5f1533fd18a3e"
           }
         ]
       },
@@ -1071,42 +1071,42 @@
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
       "downstreamRevision": "bc5fd7937ded64cab34180fc1d600820eebb9037",
-      "metadataDigest": "sha256:2da0fe80d232aefc03bc7e91c055150379c2a9cae1e63e4d3562fb090bf64ff4",
-      "payloadDigest": "sha256:1e9ee07d2716cc0b53ec433ba310950c1e422039730e1ecea936d8a9e81ee86b",
-      "evidenceRevision": "image-build-41644376491",
+      "metadataDigest": "sha256:54079dec6bd14593f486c113c7063dafdbe0f59fc9d07ad47ce344a91f5da4dc",
+      "payloadDigest": "sha256:5968e992d4dec65a1f1a5b0443c2ee528dca7f083053fab6abc03fc82b4b3dab",
+      "evidenceRevision": "image-build-42020310420",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/installer-data-fedora-gnome.json",
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/installer-data-fedora-gnome.json",
         "fileName": "installer-data-fedora-gnome.json",
-        "sizeBytes": 7947
+        "sizeBytes": 7995
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip",
-        "fileName": "fedora-gnome-build-41644376491.zip",
-        "sizeBytes": 3805079036,
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip",
+        "fileName": "fedora-gnome-build-42020310420.zip",
+        "sizeBytes": 3802713972,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part00",
-            "fileName": "fedora-gnome-build-41644376491.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part00",
+            "fileName": "fedora-gnome-build-42020310420.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:f6cf02afcc874a7960a390ebcec5d8e0ceda114d338facbc25f424204e2c7f63"
+            "sha256": "sha256:dec88597886b1655ed5f5531137680d0388c35a43a7b3349f53519a8082bd3ae"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part01",
-            "fileName": "fedora-gnome-build-41644376491.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part01",
+            "fileName": "fedora-gnome-build-42020310420.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:41f7ee1f9099e48190057ef6d76eab271edc68bc8cce63707d350b54debfe5b1"
+            "sha256": "sha256:a3d705daac9d31c128c33283746d7c9094f0a4411086093650faf9b96e0ad453"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part02",
-            "fileName": "fedora-gnome-build-41644376491.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part02",
+            "fileName": "fedora-gnome-build-42020310420.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:226ff192df00fbd47cead0bc753bd035c3de5d38c32a5e9a8d3da1db15af47f5"
+            "sha256": "sha256:c68bc9c8971d52adb6b115baf8245ef5636fd65b28c1a5d9ae028aaacb4dd350"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part03",
-            "fileName": "fedora-gnome-build-41644376491.zip.part03",
-            "sizeBytes": 583853564,
-            "sha256": "sha256:3334bdb24ac78b2ed2312042e5b331fa7844907b8853937960892d36657299a5"
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part03",
+            "fileName": "fedora-gnome-build-42020310420.zip.part03",
+            "sizeBytes": 581488500,
+            "sha256": "sha256:58dd2063092703d6739b9d7153a4bdb78a9ab8de5ad320facde5f1533fd18a3e"
           }
         ]
       },
@@ -1119,42 +1119,42 @@
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
       "downstreamRevision": "bc5fd7937ded64cab34180fc1d600820eebb9037",
-      "metadataDigest": "sha256:2da0fe80d232aefc03bc7e91c055150379c2a9cae1e63e4d3562fb090bf64ff4",
-      "payloadDigest": "sha256:1e9ee07d2716cc0b53ec433ba310950c1e422039730e1ecea936d8a9e81ee86b",
-      "evidenceRevision": "image-build-41644376491",
+      "metadataDigest": "sha256:54079dec6bd14593f486c113c7063dafdbe0f59fc9d07ad47ce344a91f5da4dc",
+      "payloadDigest": "sha256:5968e992d4dec65a1f1a5b0443c2ee528dca7f083053fab6abc03fc82b4b3dab",
+      "evidenceRevision": "image-build-42020310420",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/installer-data-fedora-gnome.json",
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/installer-data-fedora-gnome.json",
         "fileName": "installer-data-fedora-gnome.json",
-        "sizeBytes": 7947
+        "sizeBytes": 7995
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip",
-        "fileName": "fedora-gnome-build-41644376491.zip",
-        "sizeBytes": 3805079036,
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip",
+        "fileName": "fedora-gnome-build-42020310420.zip",
+        "sizeBytes": 3802713972,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part00",
-            "fileName": "fedora-gnome-build-41644376491.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part00",
+            "fileName": "fedora-gnome-build-42020310420.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:f6cf02afcc874a7960a390ebcec5d8e0ceda114d338facbc25f424204e2c7f63"
+            "sha256": "sha256:dec88597886b1655ed5f5531137680d0388c35a43a7b3349f53519a8082bd3ae"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part01",
-            "fileName": "fedora-gnome-build-41644376491.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part01",
+            "fileName": "fedora-gnome-build-42020310420.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:41f7ee1f9099e48190057ef6d76eab271edc68bc8cce63707d350b54debfe5b1"
+            "sha256": "sha256:a3d705daac9d31c128c33283746d7c9094f0a4411086093650faf9b96e0ad453"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part02",
-            "fileName": "fedora-gnome-build-41644376491.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part02",
+            "fileName": "fedora-gnome-build-42020310420.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:226ff192df00fbd47cead0bc753bd035c3de5d38c32a5e9a8d3da1db15af47f5"
+            "sha256": "sha256:c68bc9c8971d52adb6b115baf8245ef5636fd65b28c1a5d9ae028aaacb4dd350"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part03",
-            "fileName": "fedora-gnome-build-41644376491.zip.part03",
-            "sizeBytes": 583853564,
-            "sha256": "sha256:3334bdb24ac78b2ed2312042e5b331fa7844907b8853937960892d36657299a5"
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part03",
+            "fileName": "fedora-gnome-build-42020310420.zip.part03",
+            "sizeBytes": 581488500,
+            "sha256": "sha256:58dd2063092703d6739b9d7153a4bdb78a9ab8de5ad320facde5f1533fd18a3e"
           }
         ]
       },
@@ -1167,42 +1167,42 @@
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
       "downstreamRevision": "bc5fd7937ded64cab34180fc1d600820eebb9037",
-      "metadataDigest": "sha256:2da0fe80d232aefc03bc7e91c055150379c2a9cae1e63e4d3562fb090bf64ff4",
-      "payloadDigest": "sha256:1e9ee07d2716cc0b53ec433ba310950c1e422039730e1ecea936d8a9e81ee86b",
-      "evidenceRevision": "image-build-41644376491",
+      "metadataDigest": "sha256:54079dec6bd14593f486c113c7063dafdbe0f59fc9d07ad47ce344a91f5da4dc",
+      "payloadDigest": "sha256:5968e992d4dec65a1f1a5b0443c2ee528dca7f083053fab6abc03fc82b4b3dab",
+      "evidenceRevision": "image-build-42020310420",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/installer-data-fedora-gnome.json",
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/installer-data-fedora-gnome.json",
         "fileName": "installer-data-fedora-gnome.json",
-        "sizeBytes": 7947
+        "sizeBytes": 7995
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip",
-        "fileName": "fedora-gnome-build-41644376491.zip",
-        "sizeBytes": 3805079036,
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip",
+        "fileName": "fedora-gnome-build-42020310420.zip",
+        "sizeBytes": 3802713972,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part00",
-            "fileName": "fedora-gnome-build-41644376491.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part00",
+            "fileName": "fedora-gnome-build-42020310420.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:f6cf02afcc874a7960a390ebcec5d8e0ceda114d338facbc25f424204e2c7f63"
+            "sha256": "sha256:dec88597886b1655ed5f5531137680d0388c35a43a7b3349f53519a8082bd3ae"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part01",
-            "fileName": "fedora-gnome-build-41644376491.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part01",
+            "fileName": "fedora-gnome-build-42020310420.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:41f7ee1f9099e48190057ef6d76eab271edc68bc8cce63707d350b54debfe5b1"
+            "sha256": "sha256:a3d705daac9d31c128c33283746d7c9094f0a4411086093650faf9b96e0ad453"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part02",
-            "fileName": "fedora-gnome-build-41644376491.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part02",
+            "fileName": "fedora-gnome-build-42020310420.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:226ff192df00fbd47cead0bc753bd035c3de5d38c32a5e9a8d3da1db15af47f5"
+            "sha256": "sha256:c68bc9c8971d52adb6b115baf8245ef5636fd65b28c1a5d9ae028aaacb4dd350"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part03",
-            "fileName": "fedora-gnome-build-41644376491.zip.part03",
-            "sizeBytes": 583853564,
-            "sha256": "sha256:3334bdb24ac78b2ed2312042e5b331fa7844907b8853937960892d36657299a5"
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part03",
+            "fileName": "fedora-gnome-build-42020310420.zip.part03",
+            "sizeBytes": 581488500,
+            "sha256": "sha256:58dd2063092703d6739b9d7153a4bdb78a9ab8de5ad320facde5f1533fd18a3e"
           }
         ]
       },
@@ -1215,42 +1215,42 @@
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
       "downstreamRevision": "bc5fd7937ded64cab34180fc1d600820eebb9037",
-      "metadataDigest": "sha256:2da0fe80d232aefc03bc7e91c055150379c2a9cae1e63e4d3562fb090bf64ff4",
-      "payloadDigest": "sha256:1e9ee07d2716cc0b53ec433ba310950c1e422039730e1ecea936d8a9e81ee86b",
-      "evidenceRevision": "image-build-41644376491",
+      "metadataDigest": "sha256:54079dec6bd14593f486c113c7063dafdbe0f59fc9d07ad47ce344a91f5da4dc",
+      "payloadDigest": "sha256:5968e992d4dec65a1f1a5b0443c2ee528dca7f083053fab6abc03fc82b4b3dab",
+      "evidenceRevision": "image-build-42020310420",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/installer-data-fedora-gnome.json",
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/installer-data-fedora-gnome.json",
         "fileName": "installer-data-fedora-gnome.json",
-        "sizeBytes": 7947
+        "sizeBytes": 7995
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip",
-        "fileName": "fedora-gnome-build-41644376491.zip",
-        "sizeBytes": 3805079036,
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip",
+        "fileName": "fedora-gnome-build-42020310420.zip",
+        "sizeBytes": 3802713972,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part00",
-            "fileName": "fedora-gnome-build-41644376491.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part00",
+            "fileName": "fedora-gnome-build-42020310420.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:f6cf02afcc874a7960a390ebcec5d8e0ceda114d338facbc25f424204e2c7f63"
+            "sha256": "sha256:dec88597886b1655ed5f5531137680d0388c35a43a7b3349f53519a8082bd3ae"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part01",
-            "fileName": "fedora-gnome-build-41644376491.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part01",
+            "fileName": "fedora-gnome-build-42020310420.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:41f7ee1f9099e48190057ef6d76eab271edc68bc8cce63707d350b54debfe5b1"
+            "sha256": "sha256:a3d705daac9d31c128c33283746d7c9094f0a4411086093650faf9b96e0ad453"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part02",
-            "fileName": "fedora-gnome-build-41644376491.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part02",
+            "fileName": "fedora-gnome-build-42020310420.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:226ff192df00fbd47cead0bc753bd035c3de5d38c32a5e9a8d3da1db15af47f5"
+            "sha256": "sha256:c68bc9c8971d52adb6b115baf8245ef5636fd65b28c1a5d9ae028aaacb4dd350"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part03",
-            "fileName": "fedora-gnome-build-41644376491.zip.part03",
-            "sizeBytes": 583853564,
-            "sha256": "sha256:3334bdb24ac78b2ed2312042e5b331fa7844907b8853937960892d36657299a5"
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part03",
+            "fileName": "fedora-gnome-build-42020310420.zip.part03",
+            "sizeBytes": 581488500,
+            "sha256": "sha256:58dd2063092703d6739b9d7153a4bdb78a9ab8de5ad320facde5f1533fd18a3e"
           }
         ]
       },
@@ -1263,42 +1263,42 @@
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
       "downstreamRevision": "bc5fd7937ded64cab34180fc1d600820eebb9037",
-      "metadataDigest": "sha256:2da0fe80d232aefc03bc7e91c055150379c2a9cae1e63e4d3562fb090bf64ff4",
-      "payloadDigest": "sha256:1e9ee07d2716cc0b53ec433ba310950c1e422039730e1ecea936d8a9e81ee86b",
-      "evidenceRevision": "image-build-41644376491",
+      "metadataDigest": "sha256:54079dec6bd14593f486c113c7063dafdbe0f59fc9d07ad47ce344a91f5da4dc",
+      "payloadDigest": "sha256:5968e992d4dec65a1f1a5b0443c2ee528dca7f083053fab6abc03fc82b4b3dab",
+      "evidenceRevision": "image-build-42020310420",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/installer-data-fedora-gnome.json",
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/installer-data-fedora-gnome.json",
         "fileName": "installer-data-fedora-gnome.json",
-        "sizeBytes": 7947
+        "sizeBytes": 7995
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip",
-        "fileName": "fedora-gnome-build-41644376491.zip",
-        "sizeBytes": 3805079036,
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip",
+        "fileName": "fedora-gnome-build-42020310420.zip",
+        "sizeBytes": 3802713972,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part00",
-            "fileName": "fedora-gnome-build-41644376491.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part00",
+            "fileName": "fedora-gnome-build-42020310420.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:f6cf02afcc874a7960a390ebcec5d8e0ceda114d338facbc25f424204e2c7f63"
+            "sha256": "sha256:dec88597886b1655ed5f5531137680d0388c35a43a7b3349f53519a8082bd3ae"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part01",
-            "fileName": "fedora-gnome-build-41644376491.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part01",
+            "fileName": "fedora-gnome-build-42020310420.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:41f7ee1f9099e48190057ef6d76eab271edc68bc8cce63707d350b54debfe5b1"
+            "sha256": "sha256:a3d705daac9d31c128c33283746d7c9094f0a4411086093650faf9b96e0ad453"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part02",
-            "fileName": "fedora-gnome-build-41644376491.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part02",
+            "fileName": "fedora-gnome-build-42020310420.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:226ff192df00fbd47cead0bc753bd035c3de5d38c32a5e9a8d3da1db15af47f5"
+            "sha256": "sha256:c68bc9c8971d52adb6b115baf8245ef5636fd65b28c1a5d9ae028aaacb4dd350"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part03",
-            "fileName": "fedora-gnome-build-41644376491.zip.part03",
-            "sizeBytes": 583853564,
-            "sha256": "sha256:3334bdb24ac78b2ed2312042e5b331fa7844907b8853937960892d36657299a5"
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part03",
+            "fileName": "fedora-gnome-build-42020310420.zip.part03",
+            "sizeBytes": 581488500,
+            "sha256": "sha256:58dd2063092703d6739b9d7153a4bdb78a9ab8de5ad320facde5f1533fd18a3e"
           }
         ]
       },
@@ -1311,42 +1311,42 @@
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
       "downstreamRevision": "bc5fd7937ded64cab34180fc1d600820eebb9037",
-      "metadataDigest": "sha256:2da0fe80d232aefc03bc7e91c055150379c2a9cae1e63e4d3562fb090bf64ff4",
-      "payloadDigest": "sha256:1e9ee07d2716cc0b53ec433ba310950c1e422039730e1ecea936d8a9e81ee86b",
-      "evidenceRevision": "image-build-41644376491",
+      "metadataDigest": "sha256:54079dec6bd14593f486c113c7063dafdbe0f59fc9d07ad47ce344a91f5da4dc",
+      "payloadDigest": "sha256:5968e992d4dec65a1f1a5b0443c2ee528dca7f083053fab6abc03fc82b4b3dab",
+      "evidenceRevision": "image-build-42020310420",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/installer-data-fedora-gnome.json",
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/installer-data-fedora-gnome.json",
         "fileName": "installer-data-fedora-gnome.json",
-        "sizeBytes": 7947
+        "sizeBytes": 7995
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip",
-        "fileName": "fedora-gnome-build-41644376491.zip",
-        "sizeBytes": 3805079036,
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip",
+        "fileName": "fedora-gnome-build-42020310420.zip",
+        "sizeBytes": 3802713972,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part00",
-            "fileName": "fedora-gnome-build-41644376491.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part00",
+            "fileName": "fedora-gnome-build-42020310420.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:f6cf02afcc874a7960a390ebcec5d8e0ceda114d338facbc25f424204e2c7f63"
+            "sha256": "sha256:dec88597886b1655ed5f5531137680d0388c35a43a7b3349f53519a8082bd3ae"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part01",
-            "fileName": "fedora-gnome-build-41644376491.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part01",
+            "fileName": "fedora-gnome-build-42020310420.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:41f7ee1f9099e48190057ef6d76eab271edc68bc8cce63707d350b54debfe5b1"
+            "sha256": "sha256:a3d705daac9d31c128c33283746d7c9094f0a4411086093650faf9b96e0ad453"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part02",
-            "fileName": "fedora-gnome-build-41644376491.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part02",
+            "fileName": "fedora-gnome-build-42020310420.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:226ff192df00fbd47cead0bc753bd035c3de5d38c32a5e9a8d3da1db15af47f5"
+            "sha256": "sha256:c68bc9c8971d52adb6b115baf8245ef5636fd65b28c1a5d9ae028aaacb4dd350"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part03",
-            "fileName": "fedora-gnome-build-41644376491.zip.part03",
-            "sizeBytes": 583853564,
-            "sha256": "sha256:3334bdb24ac78b2ed2312042e5b331fa7844907b8853937960892d36657299a5"
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part03",
+            "fileName": "fedora-gnome-build-42020310420.zip.part03",
+            "sizeBytes": 581488500,
+            "sha256": "sha256:58dd2063092703d6739b9d7153a4bdb78a9ab8de5ad320facde5f1533fd18a3e"
           }
         ]
       },
@@ -1359,42 +1359,42 @@
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
       "downstreamRevision": "bc5fd7937ded64cab34180fc1d600820eebb9037",
-      "metadataDigest": "sha256:2da0fe80d232aefc03bc7e91c055150379c2a9cae1e63e4d3562fb090bf64ff4",
-      "payloadDigest": "sha256:1e9ee07d2716cc0b53ec433ba310950c1e422039730e1ecea936d8a9e81ee86b",
-      "evidenceRevision": "image-build-41644376491",
+      "metadataDigest": "sha256:54079dec6bd14593f486c113c7063dafdbe0f59fc9d07ad47ce344a91f5da4dc",
+      "payloadDigest": "sha256:5968e992d4dec65a1f1a5b0443c2ee528dca7f083053fab6abc03fc82b4b3dab",
+      "evidenceRevision": "image-build-42020310420",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/installer-data-fedora-gnome.json",
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/installer-data-fedora-gnome.json",
         "fileName": "installer-data-fedora-gnome.json",
-        "sizeBytes": 7947
+        "sizeBytes": 7995
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip",
-        "fileName": "fedora-gnome-build-41644376491.zip",
-        "sizeBytes": 3805079036,
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip",
+        "fileName": "fedora-gnome-build-42020310420.zip",
+        "sizeBytes": 3802713972,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part00",
-            "fileName": "fedora-gnome-build-41644376491.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part00",
+            "fileName": "fedora-gnome-build-42020310420.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:f6cf02afcc874a7960a390ebcec5d8e0ceda114d338facbc25f424204e2c7f63"
+            "sha256": "sha256:dec88597886b1655ed5f5531137680d0388c35a43a7b3349f53519a8082bd3ae"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part01",
-            "fileName": "fedora-gnome-build-41644376491.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part01",
+            "fileName": "fedora-gnome-build-42020310420.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:41f7ee1f9099e48190057ef6d76eab271edc68bc8cce63707d350b54debfe5b1"
+            "sha256": "sha256:a3d705daac9d31c128c33283746d7c9094f0a4411086093650faf9b96e0ad453"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part02",
-            "fileName": "fedora-gnome-build-41644376491.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part02",
+            "fileName": "fedora-gnome-build-42020310420.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:226ff192df00fbd47cead0bc753bd035c3de5d38c32a5e9a8d3da1db15af47f5"
+            "sha256": "sha256:c68bc9c8971d52adb6b115baf8245ef5636fd65b28c1a5d9ae028aaacb4dd350"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part03",
-            "fileName": "fedora-gnome-build-41644376491.zip.part03",
-            "sizeBytes": 583853564,
-            "sha256": "sha256:3334bdb24ac78b2ed2312042e5b331fa7844907b8853937960892d36657299a5"
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part03",
+            "fileName": "fedora-gnome-build-42020310420.zip.part03",
+            "sizeBytes": 581488500,
+            "sha256": "sha256:58dd2063092703d6739b9d7153a4bdb78a9ab8de5ad320facde5f1533fd18a3e"
           }
         ]
       },
@@ -1407,42 +1407,42 @@
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
       "downstreamRevision": "bc5fd7937ded64cab34180fc1d600820eebb9037",
-      "metadataDigest": "sha256:2da0fe80d232aefc03bc7e91c055150379c2a9cae1e63e4d3562fb090bf64ff4",
-      "payloadDigest": "sha256:1e9ee07d2716cc0b53ec433ba310950c1e422039730e1ecea936d8a9e81ee86b",
-      "evidenceRevision": "image-build-41644376491",
+      "metadataDigest": "sha256:54079dec6bd14593f486c113c7063dafdbe0f59fc9d07ad47ce344a91f5da4dc",
+      "payloadDigest": "sha256:5968e992d4dec65a1f1a5b0443c2ee528dca7f083053fab6abc03fc82b4b3dab",
+      "evidenceRevision": "image-build-42020310420",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/installer-data-fedora-gnome.json",
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/installer-data-fedora-gnome.json",
         "fileName": "installer-data-fedora-gnome.json",
-        "sizeBytes": 7947
+        "sizeBytes": 7995
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip",
-        "fileName": "fedora-gnome-build-41644376491.zip",
-        "sizeBytes": 3805079036,
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip",
+        "fileName": "fedora-gnome-build-42020310420.zip",
+        "sizeBytes": 3802713972,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part00",
-            "fileName": "fedora-gnome-build-41644376491.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part00",
+            "fileName": "fedora-gnome-build-42020310420.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:f6cf02afcc874a7960a390ebcec5d8e0ceda114d338facbc25f424204e2c7f63"
+            "sha256": "sha256:dec88597886b1655ed5f5531137680d0388c35a43a7b3349f53519a8082bd3ae"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part01",
-            "fileName": "fedora-gnome-build-41644376491.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part01",
+            "fileName": "fedora-gnome-build-42020310420.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:41f7ee1f9099e48190057ef6d76eab271edc68bc8cce63707d350b54debfe5b1"
+            "sha256": "sha256:a3d705daac9d31c128c33283746d7c9094f0a4411086093650faf9b96e0ad453"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part02",
-            "fileName": "fedora-gnome-build-41644376491.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part02",
+            "fileName": "fedora-gnome-build-42020310420.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:226ff192df00fbd47cead0bc753bd035c3de5d38c32a5e9a8d3da1db15af47f5"
+            "sha256": "sha256:c68bc9c8971d52adb6b115baf8245ef5636fd65b28c1a5d9ae028aaacb4dd350"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part03",
-            "fileName": "fedora-gnome-build-41644376491.zip.part03",
-            "sizeBytes": 583853564,
-            "sha256": "sha256:3334bdb24ac78b2ed2312042e5b331fa7844907b8853937960892d36657299a5"
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part03",
+            "fileName": "fedora-gnome-build-42020310420.zip.part03",
+            "sizeBytes": 581488500,
+            "sha256": "sha256:58dd2063092703d6739b9d7153a4bdb78a9ab8de5ad320facde5f1533fd18a3e"
           }
         ]
       },
@@ -1455,42 +1455,42 @@
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
       "downstreamRevision": "bc5fd7937ded64cab34180fc1d600820eebb9037",
-      "metadataDigest": "sha256:2da0fe80d232aefc03bc7e91c055150379c2a9cae1e63e4d3562fb090bf64ff4",
-      "payloadDigest": "sha256:1e9ee07d2716cc0b53ec433ba310950c1e422039730e1ecea936d8a9e81ee86b",
-      "evidenceRevision": "image-build-41644376491",
+      "metadataDigest": "sha256:54079dec6bd14593f486c113c7063dafdbe0f59fc9d07ad47ce344a91f5da4dc",
+      "payloadDigest": "sha256:5968e992d4dec65a1f1a5b0443c2ee528dca7f083053fab6abc03fc82b4b3dab",
+      "evidenceRevision": "image-build-42020310420",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/installer-data-fedora-gnome.json",
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/installer-data-fedora-gnome.json",
         "fileName": "installer-data-fedora-gnome.json",
-        "sizeBytes": 7947
+        "sizeBytes": 7995
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip",
-        "fileName": "fedora-gnome-build-41644376491.zip",
-        "sizeBytes": 3805079036,
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip",
+        "fileName": "fedora-gnome-build-42020310420.zip",
+        "sizeBytes": 3802713972,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part00",
-            "fileName": "fedora-gnome-build-41644376491.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part00",
+            "fileName": "fedora-gnome-build-42020310420.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:f6cf02afcc874a7960a390ebcec5d8e0ceda114d338facbc25f424204e2c7f63"
+            "sha256": "sha256:dec88597886b1655ed5f5531137680d0388c35a43a7b3349f53519a8082bd3ae"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part01",
-            "fileName": "fedora-gnome-build-41644376491.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part01",
+            "fileName": "fedora-gnome-build-42020310420.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:41f7ee1f9099e48190057ef6d76eab271edc68bc8cce63707d350b54debfe5b1"
+            "sha256": "sha256:a3d705daac9d31c128c33283746d7c9094f0a4411086093650faf9b96e0ad453"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part02",
-            "fileName": "fedora-gnome-build-41644376491.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part02",
+            "fileName": "fedora-gnome-build-42020310420.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:226ff192df00fbd47cead0bc753bd035c3de5d38c32a5e9a8d3da1db15af47f5"
+            "sha256": "sha256:c68bc9c8971d52adb6b115baf8245ef5636fd65b28c1a5d9ae028aaacb4dd350"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part03",
-            "fileName": "fedora-gnome-build-41644376491.zip.part03",
-            "sizeBytes": 583853564,
-            "sha256": "sha256:3334bdb24ac78b2ed2312042e5b331fa7844907b8853937960892d36657299a5"
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part03",
+            "fileName": "fedora-gnome-build-42020310420.zip.part03",
+            "sizeBytes": 581488500,
+            "sha256": "sha256:58dd2063092703d6739b9d7153a4bdb78a9ab8de5ad320facde5f1533fd18a3e"
           }
         ]
       },
@@ -1503,42 +1503,42 @@
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
       "downstreamRevision": "bc5fd7937ded64cab34180fc1d600820eebb9037",
-      "metadataDigest": "sha256:2da0fe80d232aefc03bc7e91c055150379c2a9cae1e63e4d3562fb090bf64ff4",
-      "payloadDigest": "sha256:1e9ee07d2716cc0b53ec433ba310950c1e422039730e1ecea936d8a9e81ee86b",
-      "evidenceRevision": "image-build-41644376491",
+      "metadataDigest": "sha256:54079dec6bd14593f486c113c7063dafdbe0f59fc9d07ad47ce344a91f5da4dc",
+      "payloadDigest": "sha256:5968e992d4dec65a1f1a5b0443c2ee528dca7f083053fab6abc03fc82b4b3dab",
+      "evidenceRevision": "image-build-42020310420",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/installer-data-fedora-gnome.json",
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/installer-data-fedora-gnome.json",
         "fileName": "installer-data-fedora-gnome.json",
-        "sizeBytes": 7947
+        "sizeBytes": 7995
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip",
-        "fileName": "fedora-gnome-build-41644376491.zip",
-        "sizeBytes": 3805079036,
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip",
+        "fileName": "fedora-gnome-build-42020310420.zip",
+        "sizeBytes": 3802713972,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part00",
-            "fileName": "fedora-gnome-build-41644376491.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part00",
+            "fileName": "fedora-gnome-build-42020310420.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:f6cf02afcc874a7960a390ebcec5d8e0ceda114d338facbc25f424204e2c7f63"
+            "sha256": "sha256:dec88597886b1655ed5f5531137680d0388c35a43a7b3349f53519a8082bd3ae"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part01",
-            "fileName": "fedora-gnome-build-41644376491.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part01",
+            "fileName": "fedora-gnome-build-42020310420.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:41f7ee1f9099e48190057ef6d76eab271edc68bc8cce63707d350b54debfe5b1"
+            "sha256": "sha256:a3d705daac9d31c128c33283746d7c9094f0a4411086093650faf9b96e0ad453"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part02",
-            "fileName": "fedora-gnome-build-41644376491.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part02",
+            "fileName": "fedora-gnome-build-42020310420.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:226ff192df00fbd47cead0bc753bd035c3de5d38c32a5e9a8d3da1db15af47f5"
+            "sha256": "sha256:c68bc9c8971d52adb6b115baf8245ef5636fd65b28c1a5d9ae028aaacb4dd350"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part03",
-            "fileName": "fedora-gnome-build-41644376491.zip.part03",
-            "sizeBytes": 583853564,
-            "sha256": "sha256:3334bdb24ac78b2ed2312042e5b331fa7844907b8853937960892d36657299a5"
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part03",
+            "fileName": "fedora-gnome-build-42020310420.zip.part03",
+            "sizeBytes": 581488500,
+            "sha256": "sha256:58dd2063092703d6739b9d7153a4bdb78a9ab8de5ad320facde5f1533fd18a3e"
           }
         ]
       },
@@ -1551,42 +1551,42 @@
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
       "downstreamRevision": "bc5fd7937ded64cab34180fc1d600820eebb9037",
-      "metadataDigest": "sha256:2da0fe80d232aefc03bc7e91c055150379c2a9cae1e63e4d3562fb090bf64ff4",
-      "payloadDigest": "sha256:1e9ee07d2716cc0b53ec433ba310950c1e422039730e1ecea936d8a9e81ee86b",
-      "evidenceRevision": "image-build-41644376491",
+      "metadataDigest": "sha256:54079dec6bd14593f486c113c7063dafdbe0f59fc9d07ad47ce344a91f5da4dc",
+      "payloadDigest": "sha256:5968e992d4dec65a1f1a5b0443c2ee528dca7f083053fab6abc03fc82b4b3dab",
+      "evidenceRevision": "image-build-42020310420",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/installer-data-fedora-gnome.json",
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/installer-data-fedora-gnome.json",
         "fileName": "installer-data-fedora-gnome.json",
-        "sizeBytes": 7947
+        "sizeBytes": 7995
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip",
-        "fileName": "fedora-gnome-build-41644376491.zip",
-        "sizeBytes": 3805079036,
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip",
+        "fileName": "fedora-gnome-build-42020310420.zip",
+        "sizeBytes": 3802713972,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part00",
-            "fileName": "fedora-gnome-build-41644376491.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part00",
+            "fileName": "fedora-gnome-build-42020310420.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:f6cf02afcc874a7960a390ebcec5d8e0ceda114d338facbc25f424204e2c7f63"
+            "sha256": "sha256:dec88597886b1655ed5f5531137680d0388c35a43a7b3349f53519a8082bd3ae"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part01",
-            "fileName": "fedora-gnome-build-41644376491.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part01",
+            "fileName": "fedora-gnome-build-42020310420.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:41f7ee1f9099e48190057ef6d76eab271edc68bc8cce63707d350b54debfe5b1"
+            "sha256": "sha256:a3d705daac9d31c128c33283746d7c9094f0a4411086093650faf9b96e0ad453"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part02",
-            "fileName": "fedora-gnome-build-41644376491.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part02",
+            "fileName": "fedora-gnome-build-42020310420.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:226ff192df00fbd47cead0bc753bd035c3de5d38c32a5e9a8d3da1db15af47f5"
+            "sha256": "sha256:c68bc9c8971d52adb6b115baf8245ef5636fd65b28c1a5d9ae028aaacb4dd350"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part03",
-            "fileName": "fedora-gnome-build-41644376491.zip.part03",
-            "sizeBytes": 583853564,
-            "sha256": "sha256:3334bdb24ac78b2ed2312042e5b331fa7844907b8853937960892d36657299a5"
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part03",
+            "fileName": "fedora-gnome-build-42020310420.zip.part03",
+            "sizeBytes": 581488500,
+            "sha256": "sha256:58dd2063092703d6739b9d7153a4bdb78a9ab8de5ad320facde5f1533fd18a3e"
           }
         ]
       },
@@ -1599,42 +1599,42 @@
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
       "downstreamRevision": "bc5fd7937ded64cab34180fc1d600820eebb9037",
-      "metadataDigest": "sha256:2da0fe80d232aefc03bc7e91c055150379c2a9cae1e63e4d3562fb090bf64ff4",
-      "payloadDigest": "sha256:1e9ee07d2716cc0b53ec433ba310950c1e422039730e1ecea936d8a9e81ee86b",
-      "evidenceRevision": "image-build-41644376491",
+      "metadataDigest": "sha256:54079dec6bd14593f486c113c7063dafdbe0f59fc9d07ad47ce344a91f5da4dc",
+      "payloadDigest": "sha256:5968e992d4dec65a1f1a5b0443c2ee528dca7f083053fab6abc03fc82b4b3dab",
+      "evidenceRevision": "image-build-42020310420",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/installer-data-fedora-gnome.json",
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/installer-data-fedora-gnome.json",
         "fileName": "installer-data-fedora-gnome.json",
-        "sizeBytes": 7947
+        "sizeBytes": 7995
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip",
-        "fileName": "fedora-gnome-build-41644376491.zip",
-        "sizeBytes": 3805079036,
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip",
+        "fileName": "fedora-gnome-build-42020310420.zip",
+        "sizeBytes": 3802713972,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part00",
-            "fileName": "fedora-gnome-build-41644376491.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part00",
+            "fileName": "fedora-gnome-build-42020310420.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:f6cf02afcc874a7960a390ebcec5d8e0ceda114d338facbc25f424204e2c7f63"
+            "sha256": "sha256:dec88597886b1655ed5f5531137680d0388c35a43a7b3349f53519a8082bd3ae"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part01",
-            "fileName": "fedora-gnome-build-41644376491.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part01",
+            "fileName": "fedora-gnome-build-42020310420.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:41f7ee1f9099e48190057ef6d76eab271edc68bc8cce63707d350b54debfe5b1"
+            "sha256": "sha256:a3d705daac9d31c128c33283746d7c9094f0a4411086093650faf9b96e0ad453"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part02",
-            "fileName": "fedora-gnome-build-41644376491.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part02",
+            "fileName": "fedora-gnome-build-42020310420.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:226ff192df00fbd47cead0bc753bd035c3de5d38c32a5e9a8d3da1db15af47f5"
+            "sha256": "sha256:c68bc9c8971d52adb6b115baf8245ef5636fd65b28c1a5d9ae028aaacb4dd350"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part03",
-            "fileName": "fedora-gnome-build-41644376491.zip.part03",
-            "sizeBytes": 583853564,
-            "sha256": "sha256:3334bdb24ac78b2ed2312042e5b331fa7844907b8853937960892d36657299a5"
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part03",
+            "fileName": "fedora-gnome-build-42020310420.zip.part03",
+            "sizeBytes": 581488500,
+            "sha256": "sha256:58dd2063092703d6739b9d7153a4bdb78a9ab8de5ad320facde5f1533fd18a3e"
           }
         ]
       },
@@ -1647,42 +1647,42 @@
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
       "downstreamRevision": "bc5fd7937ded64cab34180fc1d600820eebb9037",
-      "metadataDigest": "sha256:2da0fe80d232aefc03bc7e91c055150379c2a9cae1e63e4d3562fb090bf64ff4",
-      "payloadDigest": "sha256:1e9ee07d2716cc0b53ec433ba310950c1e422039730e1ecea936d8a9e81ee86b",
-      "evidenceRevision": "image-build-41644376491",
+      "metadataDigest": "sha256:54079dec6bd14593f486c113c7063dafdbe0f59fc9d07ad47ce344a91f5da4dc",
+      "payloadDigest": "sha256:5968e992d4dec65a1f1a5b0443c2ee528dca7f083053fab6abc03fc82b4b3dab",
+      "evidenceRevision": "image-build-42020310420",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/installer-data-fedora-gnome.json",
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/installer-data-fedora-gnome.json",
         "fileName": "installer-data-fedora-gnome.json",
-        "sizeBytes": 7947
+        "sizeBytes": 7995
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip",
-        "fileName": "fedora-gnome-build-41644376491.zip",
-        "sizeBytes": 3805079036,
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip",
+        "fileName": "fedora-gnome-build-42020310420.zip",
+        "sizeBytes": 3802713972,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part00",
-            "fileName": "fedora-gnome-build-41644376491.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part00",
+            "fileName": "fedora-gnome-build-42020310420.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:f6cf02afcc874a7960a390ebcec5d8e0ceda114d338facbc25f424204e2c7f63"
+            "sha256": "sha256:dec88597886b1655ed5f5531137680d0388c35a43a7b3349f53519a8082bd3ae"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part01",
-            "fileName": "fedora-gnome-build-41644376491.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part01",
+            "fileName": "fedora-gnome-build-42020310420.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:41f7ee1f9099e48190057ef6d76eab271edc68bc8cce63707d350b54debfe5b1"
+            "sha256": "sha256:a3d705daac9d31c128c33283746d7c9094f0a4411086093650faf9b96e0ad453"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part02",
-            "fileName": "fedora-gnome-build-41644376491.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part02",
+            "fileName": "fedora-gnome-build-42020310420.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:226ff192df00fbd47cead0bc753bd035c3de5d38c32a5e9a8d3da1db15af47f5"
+            "sha256": "sha256:c68bc9c8971d52adb6b115baf8245ef5636fd65b28c1a5d9ae028aaacb4dd350"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part03",
-            "fileName": "fedora-gnome-build-41644376491.zip.part03",
-            "sizeBytes": 583853564,
-            "sha256": "sha256:3334bdb24ac78b2ed2312042e5b331fa7844907b8853937960892d36657299a5"
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part03",
+            "fileName": "fedora-gnome-build-42020310420.zip.part03",
+            "sizeBytes": 581488500,
+            "sha256": "sha256:58dd2063092703d6739b9d7153a4bdb78a9ab8de5ad320facde5f1533fd18a3e"
           }
         ]
       },
@@ -1695,42 +1695,42 @@
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
       "downstreamRevision": "bc5fd7937ded64cab34180fc1d600820eebb9037",
-      "metadataDigest": "sha256:2da0fe80d232aefc03bc7e91c055150379c2a9cae1e63e4d3562fb090bf64ff4",
-      "payloadDigest": "sha256:1e9ee07d2716cc0b53ec433ba310950c1e422039730e1ecea936d8a9e81ee86b",
-      "evidenceRevision": "image-build-41644376491",
+      "metadataDigest": "sha256:54079dec6bd14593f486c113c7063dafdbe0f59fc9d07ad47ce344a91f5da4dc",
+      "payloadDigest": "sha256:5968e992d4dec65a1f1a5b0443c2ee528dca7f083053fab6abc03fc82b4b3dab",
+      "evidenceRevision": "image-build-42020310420",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/installer-data-fedora-gnome.json",
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/installer-data-fedora-gnome.json",
         "fileName": "installer-data-fedora-gnome.json",
-        "sizeBytes": 7947
+        "sizeBytes": 7995
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip",
-        "fileName": "fedora-gnome-build-41644376491.zip",
-        "sizeBytes": 3805079036,
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip",
+        "fileName": "fedora-gnome-build-42020310420.zip",
+        "sizeBytes": 3802713972,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part00",
-            "fileName": "fedora-gnome-build-41644376491.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part00",
+            "fileName": "fedora-gnome-build-42020310420.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:f6cf02afcc874a7960a390ebcec5d8e0ceda114d338facbc25f424204e2c7f63"
+            "sha256": "sha256:dec88597886b1655ed5f5531137680d0388c35a43a7b3349f53519a8082bd3ae"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part01",
-            "fileName": "fedora-gnome-build-41644376491.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part01",
+            "fileName": "fedora-gnome-build-42020310420.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:41f7ee1f9099e48190057ef6d76eab271edc68bc8cce63707d350b54debfe5b1"
+            "sha256": "sha256:a3d705daac9d31c128c33283746d7c9094f0a4411086093650faf9b96e0ad453"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part02",
-            "fileName": "fedora-gnome-build-41644376491.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part02",
+            "fileName": "fedora-gnome-build-42020310420.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:226ff192df00fbd47cead0bc753bd035c3de5d38c32a5e9a8d3da1db15af47f5"
+            "sha256": "sha256:c68bc9c8971d52adb6b115baf8245ef5636fd65b28c1a5d9ae028aaacb4dd350"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part03",
-            "fileName": "fedora-gnome-build-41644376491.zip.part03",
-            "sizeBytes": 583853564,
-            "sha256": "sha256:3334bdb24ac78b2ed2312042e5b331fa7844907b8853937960892d36657299a5"
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part03",
+            "fileName": "fedora-gnome-build-42020310420.zip.part03",
+            "sizeBytes": 581488500,
+            "sha256": "sha256:58dd2063092703d6739b9d7153a4bdb78a9ab8de5ad320facde5f1533fd18a3e"
           }
         ]
       },
@@ -1743,42 +1743,42 @@
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
       "downstreamRevision": "bc5fd7937ded64cab34180fc1d600820eebb9037",
-      "metadataDigest": "sha256:2da0fe80d232aefc03bc7e91c055150379c2a9cae1e63e4d3562fb090bf64ff4",
-      "payloadDigest": "sha256:1e9ee07d2716cc0b53ec433ba310950c1e422039730e1ecea936d8a9e81ee86b",
-      "evidenceRevision": "image-build-41644376491",
+      "metadataDigest": "sha256:54079dec6bd14593f486c113c7063dafdbe0f59fc9d07ad47ce344a91f5da4dc",
+      "payloadDigest": "sha256:5968e992d4dec65a1f1a5b0443c2ee528dca7f083053fab6abc03fc82b4b3dab",
+      "evidenceRevision": "image-build-42020310420",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/installer-data-fedora-gnome.json",
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/installer-data-fedora-gnome.json",
         "fileName": "installer-data-fedora-gnome.json",
-        "sizeBytes": 7947
+        "sizeBytes": 7995
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip",
-        "fileName": "fedora-gnome-build-41644376491.zip",
-        "sizeBytes": 3805079036,
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip",
+        "fileName": "fedora-gnome-build-42020310420.zip",
+        "sizeBytes": 3802713972,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part00",
-            "fileName": "fedora-gnome-build-41644376491.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part00",
+            "fileName": "fedora-gnome-build-42020310420.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:f6cf02afcc874a7960a390ebcec5d8e0ceda114d338facbc25f424204e2c7f63"
+            "sha256": "sha256:dec88597886b1655ed5f5531137680d0388c35a43a7b3349f53519a8082bd3ae"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part01",
-            "fileName": "fedora-gnome-build-41644376491.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part01",
+            "fileName": "fedora-gnome-build-42020310420.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:41f7ee1f9099e48190057ef6d76eab271edc68bc8cce63707d350b54debfe5b1"
+            "sha256": "sha256:a3d705daac9d31c128c33283746d7c9094f0a4411086093650faf9b96e0ad453"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part02",
-            "fileName": "fedora-gnome-build-41644376491.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part02",
+            "fileName": "fedora-gnome-build-42020310420.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:226ff192df00fbd47cead0bc753bd035c3de5d38c32a5e9a8d3da1db15af47f5"
+            "sha256": "sha256:c68bc9c8971d52adb6b115baf8245ef5636fd65b28c1a5d9ae028aaacb4dd350"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part03",
-            "fileName": "fedora-gnome-build-41644376491.zip.part03",
-            "sizeBytes": 583853564,
-            "sha256": "sha256:3334bdb24ac78b2ed2312042e5b331fa7844907b8853937960892d36657299a5"
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part03",
+            "fileName": "fedora-gnome-build-42020310420.zip.part03",
+            "sizeBytes": 581488500,
+            "sha256": "sha256:58dd2063092703d6739b9d7153a4bdb78a9ab8de5ad320facde5f1533fd18a3e"
           }
         ]
       },
@@ -1791,42 +1791,42 @@
       "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
       "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
       "downstreamRevision": "bc5fd7937ded64cab34180fc1d600820eebb9037",
-      "metadataDigest": "sha256:2da0fe80d232aefc03bc7e91c055150379c2a9cae1e63e4d3562fb090bf64ff4",
-      "payloadDigest": "sha256:1e9ee07d2716cc0b53ec433ba310950c1e422039730e1ecea936d8a9e81ee86b",
-      "evidenceRevision": "image-build-41644376491",
+      "metadataDigest": "sha256:54079dec6bd14593f486c113c7063dafdbe0f59fc9d07ad47ce344a91f5da4dc",
+      "payloadDigest": "sha256:5968e992d4dec65a1f1a5b0443c2ee528dca7f083053fab6abc03fc82b4b3dab",
+      "evidenceRevision": "image-build-42020310420",
       "metadataArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/installer-data-fedora-gnome.json",
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/installer-data-fedora-gnome.json",
         "fileName": "installer-data-fedora-gnome.json",
-        "sizeBytes": 7947
+        "sizeBytes": 7995
       },
       "payloadArtifact": {
-        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip",
-        "fileName": "fedora-gnome-build-41644376491.zip",
-        "sizeBytes": 3805079036,
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip",
+        "fileName": "fedora-gnome-build-42020310420.zip",
+        "sizeBytes": 3802713972,
         "parts": [
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part00",
-            "fileName": "fedora-gnome-build-41644376491.zip.part00",
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part00",
+            "fileName": "fedora-gnome-build-42020310420.zip.part00",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:f6cf02afcc874a7960a390ebcec5d8e0ceda114d338facbc25f424204e2c7f63"
+            "sha256": "sha256:dec88597886b1655ed5f5531137680d0388c35a43a7b3349f53519a8082bd3ae"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part01",
-            "fileName": "fedora-gnome-build-41644376491.zip.part01",
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part01",
+            "fileName": "fedora-gnome-build-42020310420.zip.part01",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:41f7ee1f9099e48190057ef6d76eab271edc68bc8cce63707d350b54debfe5b1"
+            "sha256": "sha256:a3d705daac9d31c128c33283746d7c9094f0a4411086093650faf9b96e0ad453"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part02",
-            "fileName": "fedora-gnome-build-41644376491.zip.part02",
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part02",
+            "fileName": "fedora-gnome-build-42020310420.zip.part02",
             "sizeBytes": 1073741824,
-            "sha256": "sha256:226ff192df00fbd47cead0bc753bd035c3de5d38c32a5e9a8d3da1db15af47f5"
+            "sha256": "sha256:c68bc9c8971d52adb6b115baf8245ef5636fd65b28c1a5d9ae028aaacb4dd350"
           },
           {
-            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-41644376491/fedora-gnome-build-41644376491.zip.part03",
-            "fileName": "fedora-gnome-build-41644376491.zip.part03",
-            "sizeBytes": 583853564,
-            "sha256": "sha256:3334bdb24ac78b2ed2312042e5b331fa7844907b8853937960892d36657299a5"
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-42020310420/fedora-gnome-build-42020310420.zip.part03",
+            "fileName": "fedora-gnome-build-42020310420.zip.part03",
+            "sizeBytes": 581488500,
+            "sha256": "sha256:58dd2063092703d6739b9d7153a4bdb78a9ab8de5ad320facde5f1533fd18a3e"
           }
         ]
       },
