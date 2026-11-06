@@ -164,7 +164,9 @@ def main():
         fedora_base = f'{args.site}/fedora-aurora'
         for channel in channel_list(fedora_base, 'Fedora') if fedora else []:
             def fedora_feed(channel=channel):
-                base = f'{fedora_base}/44/{channel}/aarch64'
+                # channels.json keys are either a bare channel (Fedora 44) or <release>/<channel>.
+                path = channel if '/' in channel else f'44/{channel}'
+                base = f'{fedora_base}/{path}/aarch64'
                 repomd = fetch(f'{base}/repodata/repomd.xml')
                 fedora.verify(repomd, fetch(f'{base}/repodata/repomd.xml.asc'), work)
                 import hashlib
