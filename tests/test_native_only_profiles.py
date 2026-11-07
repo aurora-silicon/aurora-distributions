@@ -229,6 +229,9 @@ class NativeOnlyProfileTests(unittest.TestCase):
     def test_the_m4_max_mac_studio_needs_its_own_stage_two(self):
         self.needs_its_own_stage_two('j575c')
 
+    def test_the_m6_mac_mini_needs_its_own_stage_two(self):
+        self.needs_its_own_stage_two('j873g')
+
     def test_a_payload_built_before_a_board_was_unqualified_still_adopts(self):
         template = self.neo_template()
         template['aurora_stage1']['qualified_machines']['j316sap'] = ['26.6.2']
