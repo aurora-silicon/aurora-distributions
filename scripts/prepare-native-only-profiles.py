@@ -28,8 +28,10 @@ PUBLIC_DER_PREFIX = bytes.fromhex('302a300506032b6570032100')
 EXECUTION_FIELDS = ('engineVersion', 'engineDigest', 'engineArtifact',
                     'repairManifestDigest', 'repairManifestArtifact')
 EMPTY_CHANNELS = ('stable', 'rc')
-# Boards that boot only their own board Stage 2, never the combined one.
-BOARD_STAGE2_REQUIRED = ('j700ap', 'j616sap', 'j614sap')
+# Boards that boot only their own board Stage 2, never the combined one: the
+# Neo and the M4 Macs (the installer's assemble-distribution-payload.py).
+BOARD_STAGE2_REQUIRED = ('j700ap', 'j604ap', 'j623ap', 'j624ap', 'j713ap', 'j715ap', 'j773gap',
+                         'j614sap', 'j614cap', 'j616sap', 'j616cap', 'j773sap', 'j575cap')
 
 
 def verify(catalog, signature, public):
@@ -123,7 +125,7 @@ def prepare(source, output, signing_key, release_tag, source_revision, fetch=fet
                 or any(not versions for versions in policy['qualified_machines'].values())):
             raise ValueError(f'{profile} lacks native Stage 1 policy for a supported board')
         # Every supported board must be admitted by the shared template. The
-        # MacBook Neo, the J616s and the J614s boot only their own board Stage 2.
+        # MacBook Neo and the M4 Macs boot only their own board Stage 2.
         admitted = template.get('allowed_device_classes')
         excluded = set(template.get('excluded_device_classes') or [])
         stage2 = template.get('aurora_stage2') or {}
