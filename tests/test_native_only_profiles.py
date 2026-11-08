@@ -232,6 +232,18 @@ class NativeOnlyProfileTests(unittest.TestCase):
     def test_the_m6_mac_mini_needs_its_own_stage_two(self):
         self.needs_its_own_stage_two('j873g')
 
+    def test_the_m6_macbook_pro_needs_its_own_stage_two(self):
+        self.needs_its_own_stage_two('j804')
+
+    def test_the_m6_imac_needs_its_own_stage_two(self):
+        self.needs_its_own_stage_two('j833ct')
+
+    def test_the_14_inch_m5_macbook_pro_needs_its_own_stage_two(self):
+        self.needs_its_own_stage_two('j704')
+
+    def test_the_15_inch_m5_macbook_air_needs_its_own_stage_two(self):
+        self.needs_its_own_stage_two('j815')
+
     def test_a_payload_built_before_a_board_was_unqualified_still_adopts(self):
         template = self.neo_template()
         template['aurora_stage1']['qualified_machines']['j316sap'] = ['26.6.2']
