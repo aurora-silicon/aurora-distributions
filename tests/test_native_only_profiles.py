@@ -207,16 +207,30 @@ class NativeOnlyProfileTests(unittest.TestCase):
         self.rewrite(template, ['apple,j274', 'apple,j700', 'apple,j616s'])
         self.prepare()
 
-    def test_the_j614s_needs_its_own_stage_two(self):
+    def needs_its_own_stage_two(self, board):
         template = self.neo_template()
-        template['aurora_stage1']['qualified_machines']['j614sap'] = ['26.6.2']
-        self.rewrite(template, ['apple,j274', 'apple,j700', 'apple,j614s'])
+        template['aurora_stage1']['qualified_machines'][board + 'ap'] = ['26.6.2']
+        identifiers = ['apple,j274', 'apple,j700', 'apple,' + board]
+        (self.root/'keys/supported-models.json').write_text(json.dumps({'supported': identifiers}))
+        self.rewrite(template, identifiers)
         with self.assertRaisesRegex(ValueError, 'does not admit every supported board'):
             self.prepare()
         self.assertFalse((self.root/'output').exists())
-        template['aurora_stage2']['board_members']['j614sap'] = 'esp/m1n1/boot-j614s.bin'
-        self.rewrite(template, ['apple,j274', 'apple,j700', 'apple,j614s'])
+        template['aurora_stage2']['board_members'][board + 'ap'] = 'esp/m1n1/boot-%s.bin' % board
+        self.rewrite(template, identifiers)
         self.prepare()
+
+    def test_the_j614s_needs_its_own_stage_two(self):
+        self.needs_its_own_stage_two('j614s')
+
+    def test_the_m4_macbook_air_needs_its_own_stage_two(self):
+        self.needs_its_own_stage_two('j713')
+
+    def test_the_m4_max_mac_studio_needs_its_own_stage_two(self):
+        self.needs_its_own_stage_two('j575c')
+
+    def test_the_m6_mac_mini_needs_its_own_stage_two(self):
+        self.needs_its_own_stage_two('j873g')
 
     def test_a_payload_built_before_a_board_was_unqualified_still_adopts(self):
         template = self.neo_template()
