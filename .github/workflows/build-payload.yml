@@ -8,6 +8,9 @@ on:
       image-run:
         type: string
         required: true
+      delivery-revision:
+        type: string
+        default: ''
     secrets:
       INSTALLER_CATALOG_SIGNING_KEY:
         description: >-
@@ -43,10 +46,27 @@ jobs:
       - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
         with:
           repository: aurora-silicon/aurora-installer
-          ref: 1418f223437d969da237c6095814d03d9f124e5a
+          ref: 9779fa452351c5a66ae583918b8e8120c044051f
           path: producer
           persist-credentials: false
+      - name: Select immutable delivery identity
+        env:
+          PROFILE: ${{ inputs.profile }}
+          IMAGE_RUN: ${{ inputs.image-run }}
+          DELIVERY_REVISION: ${{ inputs.delivery-revision }}
+        run: |
+          python3 - <<'PYIDENTITY'
+          import os,re
+          profile=os.environ['PROFILE'];run=os.environ['IMAGE_RUN'];revision=os.environ['DELIVERY_REVISION']
+          assert re.fullmatch(r'(fedora|arch|nixos)-(kde|gnome|minimal)',profile) and re.fullmatch(r'[0-9]+',run)
+          assert revision in ('','models58')
+          assert {'fedora':'fedora-aurora','arch':'alarm-aurora','nixos':'nixos-aurora'}[profile.split('-')[0]] == os.environ['GITHUB_REPOSITORY'].split('/')[1]
+          suffix='-'+revision if revision else ''
+          with open(os.environ['GITHUB_ENV'],'a') as output:
+              output.write('DELIVERY_REVISION='+revision+'\nDELIVERY_SUFFIX='+suffix+'\nDELIVERY_RELEASE_ID=build-'+run+suffix+'\n')
+          PYIDENTITY
       - name: Authenticate the completed image build
+        if: inputs.delivery-revision != 'models58'
         env:
           GH_TOKEN: ${{ github.token }}
           PROFILE: ${{ inputs.profile }}
@@ -85,6 +105,7 @@ jobs:
           assert json.load(open('filesystems/image.json'))['installation_profile']==os.environ['PROFILE']
           PY
       - name: Verify the signed native Recovery template
+        if: inputs.delivery-revision != 'models58'
         run: |
           base=https://github.com/aurora-silicon/aurora-installer/releases/download/native-runtime-v0.9.2-aurora.14
           mkdir runtime
@@ -117,12 +138,21 @@ jobs:
           PY
       - name: Assemble the common payload and profile catalog
         env:
+          GH_TOKEN: ${{ github.token }}
           PROFILE: ${{ inputs.profile }}
           IMAGE_RUN: ${{ inputs.image-run }}
         run: |
-          python3 producer/macOS/scripts/assemble-distribution-payload.py --filesystems filesystems \
-            --recovery-app 'recovery/Aurora Installer.app' --output assets --release-id "build-$IMAGE_RUN"
-          payload="assets/$PROFILE-build-$IMAGE_RUN.zip"
+          if [[ $DELIVERY_REVISION == models58 ]]; then
+            curl -fLsS --retry 3 https://raw.githubusercontent.com/aurora-silicon/aurora-distributions/main/scripts/refresh-cohort58-v1.py -o refresh.py
+            echo '8494203ce6591d56fef319283814feb6bf5c492d53b67323fa0be1bd7eaad2eb  refresh.py' | sha256sum -c -
+            python3 refresh.py --repository "$GITHUB_REPOSITORY" --profile "$PROFILE" --image-run "$IMAGE_RUN" \
+              --producer producer/macOS --output assets --release-id "$DELIVERY_RELEASE_ID"
+            cp assets/image-build.json image-build.json
+          else
+            python3 producer/macOS/scripts/assemble-distribution-payload.py --filesystems filesystems \
+              --recovery-app 'recovery/Aurora Installer.app' --output assets --release-id "$DELIVERY_RELEASE_ID"
+          fi
+          payload="assets/$PROFILE-$DELIVERY_RELEASE_ID.zip"
           if (( $(stat -c %s "$payload") >= 1900000000 )); then
             split -b 1073741824 --numeric-suffixes=0 --suffix-length=2 "$payload" "$payload.part"
           fi
@@ -136,7 +166,7 @@ jobs:
           # Already released installers (Alpha 7 and 8) still require the
           # upstream provenance fields, which record the Asahi installer the
           # native partitioning and boot logic derives from.
-          inputs={'schema_version':5,'installation_profile':profile,'payload_name':profile+'-build-'+run+'.zip',
+          inputs={'schema_version':5,'installation_profile':profile,'payload_name':profile+'-'+os.environ['DELIVERY_RELEASE_ID']+'.zip',
               'metadata_name':'installer-data-'+profile+'.json','evidence_revision':'image-build-'+run,
               'asahi_installer_tag':'v0.9.2','asahi_installer_revision':'dffbb38ef0c00c0431c609ecd8a00f42deb5b24c',
               'asahi_installer_data_revision':'42648e71423eba308d2e3e6228253eff679b068b',
@@ -145,7 +175,7 @@ jobs:
                 'download_url':'https://github.com/aurora-silicon/aurora-installer/releases/tag/v0.1.0-alpha.3'}}
           Path('catalog-inputs.json').write_text(json.dumps(inputs,indent=2)+'\n')
           PY
-          tag="payload-$PROFILE-$IMAGE_RUN"
+          tag="payload-$PROFILE-$IMAGE_RUN$DELIVERY_SUFFIX"
           python3 producer/macOS/scripts/make-unsigned-catalog.py --base-url "https://github.com/$GITHUB_REPOSITORY/releases/download/$tag" \
             --assets-dir assets --inputs catalog-inputs.json --output assets/catalog.json
           cp producer/macOS/Release/trust-root.ed25519.pub assets/
@@ -161,8 +191,8 @@ jobs:
           IMAGE_RUN: ${{ inputs.image-run }}
         run: |
           set -euo pipefail
-          tag="payload-$PROFILE-$IMAGE_RUN"
-          payload="assets/$PROFILE-build-$IMAGE_RUN.zip"
+          tag="payload-$PROFILE-$IMAGE_RUN$DELIVERY_SUFFIX"
+          payload="assets/$PROFILE-$DELIVERY_RELEASE_ID.zip"
           # A multipart catalog pins the whole ZIP even though only its parts ship.
           if [[ -e $payload.part00 ]]; then rm -- "$payload"; fi
           gh release create "$tag" assets/* --repo "$GITHUB_REPOSITORY" --target "$GITHUB_SHA" --draft \
@@ -188,7 +218,7 @@ jobs:
       - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
         with:
           repository: aurora-silicon/aurora-installer
-          ref: 1418f223437d969da237c6095814d03d9f124e5a
+          ref: 9779fa452351c5a66ae583918b8e8120c044051f
           path: producer
           persist-credentials: false
           sparse-checkout: macOS/Release/trust-root.ed25519.pub

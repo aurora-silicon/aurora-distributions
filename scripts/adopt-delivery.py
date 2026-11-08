@@ -49,11 +49,13 @@ def verify_provenance(repository, base, data):
 def adopt(repository, tag, site):
     prefixes = {'aurora-silicon/fedora-aurora': 'fedora', 'aurora-silicon/alarm-aurora': 'arch',
                 'aurora-silicon/nixos-aurora': 'nixos'}
-    if repository not in prefixes or not re.fullmatch(r'payload-(fedora|arch|nixos)-(kde|gnome|minimal)-[0-9]+', tag):
+    if repository not in prefixes or not re.fullmatch(r'payload-(fedora|arch|nixos)-(kde|gnome|minimal)-[0-9]+(?:-models58)?', tag):
         raise ValueError('expected an immutable Aurora profile delivery')
     base = 'https://github.com/' + repository + '/releases/download/' + tag
     names = ('release.json', 'trust-root.ed25519.pub', 'catalog.json', 'catalog.json.sig',
              'delivery.json', 'image-build.json')
+    if tag.endswith('-models58'):
+        names += ('source-delivery.json', 'zip-refresh.json')
     data = {name: urllib.request.urlopen(base + '/' + name, timeout=60).read() for name in names}
     trusted = (ROOT / 'keys/catalog.ed25519.pub').read_bytes()
     if len(trusted) != 32 or data['trust-root.ed25519.pub'] != trusted or len(data['catalog.json.sig']) != 64:
@@ -65,14 +67,27 @@ def adopt(repository, tag, site):
         subprocess.run(['openssl','pkeyutl','-verify','-pubin','-keyform','DER','-inkey',str(directory/'public.der'),
                         '-rawin','-in',str(directory/'catalog.json'),'-sigfile',str(directory/'catalog.json.sig')],check=True)
     provenance = verify_provenance(repository, base, data)
+    if tag.endswith('-models58') and provenance != 'verified':
+        raise ValueError('58-model deliveries require hosted provenance')
     receipt = json.loads(data['delivery.json']); profile = receipt['installation_profile']
-    if not re.fullmatch(prefixes[repository] + r'-(kde|gnome|minimal)', profile) or receipt['private_neo_inputs']:
+    if (not re.fullmatch(prefixes[repository] + r'-(kde|gnome|minimal)', profile)
+            or receipt['private_neo_inputs'] or receipt.get('native_neo_reset_qa', False)):
         raise ValueError('delivery is not a public profile for this repository')
     run = json.loads(data['image-build.json'])
     if (run['conclusion'] != 'success' or run['head_branch'] != 'main'
             or run['head_repository']['full_name'] != repository or run['path'] != '.github/workflows/images.yml'
-            or tag != 'payload-' + profile + '-' + str(run['id'])):
+            or tag != 'payload-' + profile + '-' + str(run['id'])
+                + ('-models58' if tag.endswith('-models58') else '')):
         raise ValueError('image provenance differs from the delivery tag')
+    if tag.endswith('-models58'):
+        lineage, patch = json.loads(data['source-delivery.json']), json.loads(data['zip-refresh.json'])
+        if (lineage['repository'] != repository or lineage['source_revision'] != run['head_sha']
+                or lineage['tag'] != 'payload-' + profile + '-' + str(run['id'])
+                or not receipt['release_id'].endswith('-models58')
+                or patch['existing_compressed_members_changed'] is not False
+                or receipt['artifacts'][patch['payload_name']] != {
+                    'bytes': patch['bytes'], 'sha256': patch['sha256']}):
+            raise ValueError('58-model refresh lineage differs from the selected image')
     catalog = json.loads(data['catalog.json'])
     models = catalog['models']
     allowed = set(json.loads((ROOT/'keys/supported-models.json').read_text())['supported'])
