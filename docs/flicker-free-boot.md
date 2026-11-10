@@ -132,7 +132,14 @@ Kernel configuration and command line:
 
 Early KMS: the display driver is in the initramfs and the display devices are
 coldplugged before the rest, so Plymouth starts on simpledrm early and follows
-appledrm when it appears. Fedora: dracut module `91aurora-early-kms`. NixOS:
+appledrm when it appears. appledrm registers its DRM device only once every DCP
+has bound, the external ones included, and an external DCP binds only after its
+Type-C PHY, whose retimer or PD controller sits on an I2C bus. The initramfs
+therefore also carries `i2c-pasemi-platform`, `phy-apple-atc`, `phy-ti-cd2e22`
+and `tps6598x`, and the hook queues the Type-C PHYs and Apple I2C controllers
+with the display. Without them a J700's internal DCP started in the initramfs
+(and stopped showing the boot framebuffer) while appledrm registered only on
+the real root, about 5 s later: a black panel in between. Fedora: dracut module `91aurora-early-kms`. NixOS:
 `aurora-early-kms` initrd unit. ALARM: the `aurora-early-kms` mkinitcpio hook.
 
 ## Plymouth
@@ -234,7 +241,9 @@ mode Plymouth used:
 ## Verifying a machine
 
 1. `cat /proc/cmdline`: `rhgb quiet`, and `plymouth.ignore-serial-consoles`.
-2. `journalctl -b -k | grep -E 'simpledrm|fbcon|takeover trial'`:
+2. `journalctl -b -k | grep -E 'simpledrm|fbcon|takeover trial|appledrmfb'`:
+   appledrm's `fb0: appledrmfb` within a fraction of a second of the internal
+   DCP's `RTKit: Initializing`, before `Switching root` on a J700;
    simpledrm initialised, `Deferring console take-over` only, the takeover
    trial `accepted`.
 3. `tr -d '\0' < /proc/device-tree/chosen/u-boot,version`: a U-Boot with the
