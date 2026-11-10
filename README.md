@@ -9,3 +9,5 @@ Development builds and device qualification are separate. `site/installer/profil
 The installer is published as prereleases on [aurora-installer releases](https://github.com/aurora-silicon/aurora-installer/releases); each bundles all nine profiles. [Release procedures](docs/RELEASING.md) cover signed delivery and publication; [validation evidence](docs/VALIDATION.md) records tested behavior and remaining hardware qualification.
 
 [How updates reach installed Macs](docs/updates.md) describes the update channels, the automated pipeline from source branches to signed feeds, its threat model and the key procedures. `feeds-health.yml` checks every live feed and catalog every 30 minutes.
+
+[Flicker-free boot](docs/flicker-free-boot.md) describes how the boot keeps one picture on screen from power-on to the desktop, stage by stage, the branding each distribution configures, and how to verify a machine.
