@@ -124,11 +124,17 @@ Kernel configuration and command line:
   logged at info level and stays in `dmesg`. `rhgb` asks for the graphical
   splash, and `plymouth.ignore-serial-consoles` keeps a serial console (the
   device tree's `stdout-path`) from forcing Plymouth's text view.
-- appledrm takes the internal panel over from simpledrm without a mode set. A
-  desktop 26.x DCP first tries the boot mode while the boot framebuffer still
-  owns the screen (`takeover trial mode "<w>x<h>": ... accepted`), then
-  evicts simpledrm. The first mode set from user space that asks for the same
-  timing and colour mode reuses it (`keeping the takeover mode`, debug level).
+- appledrm takes the internal panel over from simpledrm without a mode set.
+  A desktop 26.x DCP (M4 Pro) checks the panel while the boot framebuffer
+  still owns the screen, then adopts the mode the loader left running
+  (`takeover: adopting the live mode (color:.. timing:..)`) instead of setting
+  it again, which would blank the panel for about 200 ms. The first commit from
+  user space keeps it (`keeping the takeover mode`, debug level). If no swap
+  completes on the adopted mode, the swap watchdog sets the mode after all;
+  `appledrm.takeover_adopt=0` turns adoption off. An H17P DCP (J700) inherits
+  the boot mode in its own mode-set path (`set_digital_out_mode finished`
+  returns at once). In both cases the firmware logs no `Modeset requested`
+  for the internal panel before the desktop.
 
 Early KMS: the display driver is in the initramfs and the display devices are
 coldplugged before the rest, so Plymouth starts on simpledrm early and follows
