@@ -218,16 +218,18 @@ visible change at that point, the compositor's first commit has to keep the
 mode Plymouth used:
 
 - the same mode (resolution and refresh), so the driver needs no mode set;
-- the same colour state. In the current appledrm, a change of `Colorspace` or
-  of the HDR EOTF on a connector is a mode set (`apple_connector_atomic_check`),
-  so a compositor that turns HDR on for a panel at startup blanks the panel
-  for a few frames. On an internal panel with EDR headroom the switch only
-  changes how the DCP treats the presented surfaces, so it does not need one;
-  that path is being changed to switch on the next swap.
-- the same brightness. The DCP keeps the level the loader set; a level restored
-  from a previous Linux session (`systemd-backlight@backlight:apple-panel-bl`)
-  that differs from it fades the panel to the saved level a few seconds into
-  boot.
+- the same colour state, or one the driver switches without a mode set. On an
+  internal panel with EDR headroom (a desktop 26.x DCP) SDR and PQ only change
+  how the DCP treats the presented surfaces: a compositor that turns HDR on at
+  startup gets `EDR on without a mode set` (appledrm debug output) and the
+  panel keeps its frame. SDR content stays at the backlight's white, with the
+  highlights above it. A change of `Colorspace` or EOTF on other outputs is
+  still a mode set.
+- the same brightness. The loader boots the panel at the level in the NVRAM
+  variable `backlight-nits` (16.16 fixed-point nits), which macOS keeps; macOS
+  then adjusts from that level. A level restored from a previous Linux session
+  (`systemd-backlight@backlight:apple-panel-bl`) or by the desktop that differs
+  from it fades the panel to that level a few seconds into boot.
 
 ## Verifying a machine
 
@@ -243,10 +245,12 @@ mode Plymouth used:
    `lsinitcpio` (ALARM) lists `usr/share/plymouth/themes/aurora/aurora.script`,
    `usr/libexec/aurora-plymouth` and `etc/plymouth/plymouthd.conf` with
    `DeviceScale=1`.
-6. One boot with `plymouth.debug`: `/var/log/plymouth-debug.log` shows the
+6. One boot with `appledrm.dyndbg=+p`: the display manager's first commit
+   logs no second `set_digital_out_mode(...)` after `keeping the takeover mode`.
+7. One boot with `plymouth.debug`: `/var/log/plymouth-debug.log` shows the
    simpledrm head (`drm driver: simpledrm`), its removal, the appledrm head
    (`drm driver: apple`) and `pausing display until next frame update`.
-7. What the loaders left on screen: boot once with `plymouth.enable=0
+8. What the loaders left on screen: boot once with `plymouth.enable=0
    rd.plymouth=0`, then read the region in `/chosen/framebuffer@<addr>`'s `reg`
    from `/dev/mem` (whole rows of `stride` bytes; mapping the region and copying
    rows works where unaligned reads do not). It holds the aura logo on black
