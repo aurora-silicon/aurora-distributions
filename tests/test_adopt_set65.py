@@ -1,5 +1,7 @@
 import importlib.util
 import json
+import subprocess
+import sys
 from pathlib import Path
 import tempfile
 import unittest
@@ -41,6 +43,14 @@ class AdoptSet65Tests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, 'complete nine-profile'):
                 module.adopt_set(items, 'models65', self.root, self.fake_run)
         self.assertFalse(self.calls)
+
+    def test_cli_accepts_models65_then_enforces_the_complete_set(self):
+        result = subprocess.run(
+            [sys.executable, str(ROOT / 'scripts/adopt-set.py'), '--model-cohort', 'models65',
+             '--deliveries', json.dumps(self.items[:1])], capture_output=True, text=True)
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn('65-model adoption requires the complete nine-profile variant set', result.stderr)
+        self.assertNotIn('invalid choice', result.stderr)
 
     def test_nine_variants_cannot_duplicate_one_profile_or_repository(self):
         items = [dict(item) for item in self.items]

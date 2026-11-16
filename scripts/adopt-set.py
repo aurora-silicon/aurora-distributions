@@ -54,6 +54,6 @@ def adopt_set(items, cohort, root=ROOT, run=subprocess.run):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--deliveries', required=True)
-    parser.add_argument('--model-cohort', choices=['current', 'models58'], default='current')
+    parser.add_argument('--model-cohort', choices=['current', 'models58', 'models65'], default='current')
     args = parser.parse_args()
     adopt_set(json.loads(args.deliveries), args.model_cohort)
