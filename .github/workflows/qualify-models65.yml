@@ -41,8 +41,10 @@ jobs:
       PROFILE: ${{ matrix.profile }}
       SOURCE_REPOSITORY: ${{ matrix.repository }}
       PRODUCER_REVISION: 68148f7b1b820059f65780e17bc27ccb576def49
-      OUTPUT_DIRECTORY: ${{ runner.temp }}/models65-unsigned
     steps:
+      - name: Select the runtime artifact directory
+        run: |
+          printf 'OUTPUT_DIRECTORY=%s/models65-unsigned\n' "$RUNNER_TEMP" >> "$GITHUB_ENV"
       - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
         with:
           persist-credentials: false
