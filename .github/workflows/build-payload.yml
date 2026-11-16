@@ -195,7 +195,11 @@ jobs:
           bash producer/macOS/scripts/make-release-descriptor --adhoc --public-key assets/trust-root.ed25519.pub \
             --base-url "$feed" --output assets/release.json
           cp image-build.json catalog-inputs.json assets/
-          if [[ $PROFILE == omarchy-hyprland ]]; then cp downloaded/out/vm-result.json assets/; fi
+          if [[ $PROFILE == omarchy-hyprland ]]; then
+            cp downloaded/out/vm-result.json assets/
+            cp filesystems/hardware-versions.json filesystems/omarchy-provenance.json assets/
+            cp downloaded/out/vm/desktop.png assets/
+          fi
       - id: draft
         name: Stage the unsigned delivery as a draft release
         env:
