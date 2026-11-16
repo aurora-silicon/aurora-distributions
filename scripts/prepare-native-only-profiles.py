@@ -25,7 +25,7 @@ PROFILES = tuple(f'{distribution}-{desktop}' for distribution in ('fedora', 'arc
 FILES = ('release.json', 'trust-root.ed25519.pub', 'catalog.json', 'catalog.json.sig',
          'delivery.json', 'image-build.json')
 VM_CHECKS = ('boot', 'encryption', 'temporary_key_rejected', 'owner', 'sudo', 'second_boot',
-             'desktop', 'shell', 'terminal', 'network', 'original_unchanged')
+             'desktop', 'shell', 'terminal', 'network', 'original_unchanged', 'package_trust')
 PUBLIC_DER_PREFIX = bytes.fromhex('302a300506032b6570032100')
 EXECUTION_FIELDS = ('engineVersion', 'engineDigest', 'engineArtifact',
                     'repairManifestDigest', 'repairManifestArtifact')

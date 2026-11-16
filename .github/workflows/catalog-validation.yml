@@ -12,6 +12,18 @@ jobs:
       - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
         with:
           persist-credentials: false
+      - name: Validate payload qualification workflow contexts
+        run: |
+          set -euo pipefail
+          actionlint_dir="$RUNNER_TEMP/models65-actionlint"
+          mkdir -p "$actionlint_dir"
+          curl --fail --location --silent --show-error --retry 3 \
+            https://github.com/rhysd/actionlint/releases/download/v1.7.12/actionlint_1.7.12_linux_amd64.tar.gz \
+            --output "$actionlint_dir/actionlint.tar.gz"
+          printf '%s  %s\n' '8aca8db96f1b94770f1b0d72b6dddcb1ebb8123cb3712530b08cc387b349a3d8' \
+            "$actionlint_dir/actionlint.tar.gz" | sha256sum -c -
+          tar -xzf "$actionlint_dir/actionlint.tar.gz" -C "$actionlint_dir" actionlint
+          "$actionlint_dir/actionlint" -shellcheck= -pyflakes= .github/workflows/qualify-models65.yml
       - name: Test distribution metadata tools
         run: python3 -m unittest discover -s tests
       - name: Verify committed catalog signatures and execution contracts

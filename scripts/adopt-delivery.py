@@ -21,7 +21,7 @@ PROFILE_OWNERS = {
 }
 PROFILE_OWNERS['aurora-silicon/omarchy-aurora'] = {'omarchy-hyprland'}
 VM_CHECKS = ('boot', 'encryption', 'temporary_key_rejected', 'owner', 'sudo', 'second_boot',
-             'desktop', 'shell', 'terminal', 'network', 'original_unchanged')
+             'desktop', 'shell', 'terminal', 'network', 'original_unchanged', 'package_trust')
 
 
 def verify_provenance(repository, base, data):

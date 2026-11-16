@@ -97,8 +97,9 @@ jobs:
           import json
           result=json.load(open('downloaded/out/vm-result.json'))
           required=('boot','encryption','temporary_key_rejected','owner','sudo','second_boot',
-                    'desktop','shell','terminal','network','original_unchanged')
-          assert all(result.get(check) is True for check in required),result
+                    'desktop','shell','terminal','network','original_unchanged','package_trust')
+          if not all(result.get(check) is True for check in required):
+              raise ValueError('Omarchy image requires complete passing VM evidence, including guest package trust')
           PYVM
           fi
           sudo apt-get update

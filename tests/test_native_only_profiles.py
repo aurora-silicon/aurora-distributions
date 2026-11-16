@@ -113,6 +113,21 @@ class NativeOnlyProfileTests(unittest.TestCase):
         self.prepare()
         self.assertEqual((self.root/'output/Profiles/omarchy-hyprland/vm-result.json').read_bytes(), original)
 
+    def test_omarchy_missing_or_failed_package_trust_cannot_be_released(self):
+        path = self.source/'Profiles/omarchy-hyprland/vm-result.json'
+        complete = json.loads(path.read_text())
+        for missing in (True, False):
+            with self.subTest(missing=missing):
+                evidence = dict(complete)
+                if missing:
+                    evidence.pop('package_trust')
+                else:
+                    evidence['package_trust'] = False
+                path.write_text(json.dumps(evidence))
+                with self.assertRaisesRegex(ValueError, 'complete passing VM'):
+                    self.prepare()
+                self.assertFalse((self.root/'output').exists())
+
     def test_engine_free_deliveries_are_resigned_for_the_release(self):
         self.to_schema_five()
         self.prepare()
