@@ -4,7 +4,7 @@ on:
     inputs:
       repository:
         type: choice
-        options: [aurora-silicon/fedora-aurora, aurora-silicon/alarm-aurora, aurora-silicon/nixos-aurora]
+        options: [aurora-silicon/fedora-aurora, aurora-silicon/alarm-aurora, aurora-silicon/nixos-aurora, aurora-silicon/omarchy-aurora]
         required: true
       release-tag:
         description: Immutable payload profile release tag

@@ -21,7 +21,7 @@ import urllib.request
 
 ROOT = Path(__file__).resolve().parents[1]
 PROFILES = tuple(f'{distribution}-{desktop}' for distribution in ('fedora', 'arch', 'nixos')
-                 for desktop in ('kde', 'gnome', 'minimal'))
+                 for desktop in ('kde', 'gnome', 'minimal')) + ('omarchy-hyprland',)
 FILES = ('release.json', 'trust-root.ed25519.pub', 'catalog.json', 'catalog.json.sig',
          'delivery.json', 'image-build.json')
 PUBLIC_DER_PREFIX = bytes.fromhex('302a300506032b6570032100')

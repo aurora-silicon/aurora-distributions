@@ -51,7 +51,8 @@ class VariantTests(unittest.TestCase):
             'zip-refresh.json': {'existing_compressed_members_changed': False,
                 'payload_name': 'payload.zip', 'bytes': 123, 'sha256': 'a' * 64}}
 
-    def invoke(self, provenance='verified', tag='payload-fedora-kde-42508499173-models58'):
+    def invoke(self, provenance='verified', tag='payload-fedora-kde-42508499173-models58',
+               repository='aurora-silicon/fedora-aurora'):
         raw = json.dumps(self.catalog).encode()
         path = self.root / 'source.json'
         path.write_bytes(raw)
@@ -65,7 +66,7 @@ class VariantTests(unittest.TestCase):
         with patch.object(adopter, 'ROOT', self.root), \
              patch.object(adopter, 'verify_provenance', return_value=provenance), \
              patch.object(adopter.urllib.request, 'urlopen', side_effect=opener):
-            adopter.adopt('aurora-silicon/fedora-aurora', tag, self.root / 'site')
+            adopter.adopt(repository, tag, self.root / 'site')
 
     def test_variant_keeps_original_image_binding_and_all58_models(self):
         self.invoke()
@@ -89,13 +90,62 @@ class VariantTests(unittest.TestCase):
             self.invoke()
 
     def test_variant_requires_attested_provenance(self):
-        with self.assertRaisesRegex(ValueError, 'require hosted provenance'):
+        with self.assertRaisesRegex(ValueError, 'requires hosted provenance'):
             self.invoke(provenance='none (delivery predates attestations)')
 
     def test_variant_cannot_drop_a_supported_model(self):
         self.catalog['models'].pop()
         with self.assertRaisesRegex(ValueError, 'model coverage'):
             self.invoke()
+
+
+class OmarchyTests(unittest.TestCase):
+    def setUp(self):
+        VariantTests.setUp(self)
+        self.repository = 'aurora-silicon/omarchy-aurora'
+        self.profile = 'omarchy-hyprland'
+        for model in self.catalog['models']:
+            model['installationProfile'] = self.profile
+        for channel, record in self.json['release.json']['channels'].items():
+            record['catalog_url'] = ('https://aurorasilicon.org/aurora-distributions/installer/Profiles/'
+                                     + self.profile + '/channels/' + channel + '/catalog.signed.json')
+        self.json['delivery.json']['installation_profile'] = self.profile
+        self.json['delivery.json']['release_id'] = 'build-42508499173'
+        self.json['image-build.json']['head_repository']['full_name'] = self.repository
+        self.json['vm-result.json'] = dict.fromkeys(adopter.VM_CHECKS, True)
+        (self.root / 'site/installer/profile-builds.json').write_text(json.dumps(
+            {'profiles': [{'profile': self.profile}]}))
+
+    def invoke(self, provenance='verified', repository=None, tag=None):
+        VariantTests.invoke(self, provenance=provenance, repository=repository or self.repository,
+                            tag=tag or 'payload-omarchy-hyprland-42508499173')
+
+    def test_complete_vm_candidate_is_adopted(self):
+        self.invoke()
+        directory = self.root / 'site/installer/Profiles' / self.profile
+        self.assertEqual(json.loads((directory / 'catalog.json').read_text()), self.catalog)
+        self.assertEqual(json.loads((directory / 'vm-result.json').read_text()), self.json['vm-result.json'])
+
+    def test_each_missing_or_nonboolean_vm_check_is_refused(self):
+        for name in adopter.VM_CHECKS:
+            for value in (None, False, 'true', 1):
+                with self.subTest(check=name, value=value):
+                    self.json['vm-result.json'] = dict.fromkeys(adopter.VM_CHECKS, True)
+                    self.json['vm-result.json'][name] = value
+                    with self.assertRaisesRegex(ValueError, 'complete passing VM'):
+                        self.invoke()
+
+    def test_omarchy_requires_hosted_provenance(self):
+        with self.assertRaisesRegex(ValueError, 'requires hosted provenance'):
+            self.invoke(provenance='none (delivery predates attestations)')
+
+    def test_profile_cannot_be_published_by_another_repository(self):
+        with self.assertRaisesRegex(ValueError, 'immutable Aurora profile'):
+            self.invoke(repository='aurora-silicon/alarm-aurora')
+        with self.assertRaisesRegex(ValueError, 'immutable Aurora profile'):
+            self.invoke(tag='payload-omarchy-kde-42508499173')
+        with self.assertRaisesRegex(ValueError, 'immutable Aurora profile'):
+            self.invoke(tag='payload-omarchy-hyprland-42508499173-models58')
 
 
 if __name__ == '__main__':
