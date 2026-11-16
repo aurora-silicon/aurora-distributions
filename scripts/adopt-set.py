@@ -11,7 +11,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 def adopt_set(items, cohort, root=ROOT, run=subprocess.run):
     if (cohort not in ('current', 'models58') or not isinstance(items, list)
-            or not 1 <= len(items) <= 9
+            or not 1 <= len(items) <= 10
             or any(not isinstance(item, dict) or set(item) != {'repository', 'tag'} for item in items)):
         raise ValueError('invalid delivery set or model cohort')
     if len({(item['repository'], item['tag']) for item in items}) != len(items):

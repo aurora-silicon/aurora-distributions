@@ -46,7 +46,7 @@ jobs:
       - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
         with:
           repository: aurora-silicon/aurora-installer
-          ref: 9779fa452351c5a66ae583918b8e8120c044051f
+          ref: b34998dae173411bbaff90b7bd1ad90e5987477b
           path: producer
           persist-credentials: false
       - name: Select immutable delivery identity
@@ -58,9 +58,9 @@ jobs:
           python3 - <<'PYIDENTITY'
           import os,re
           profile=os.environ['PROFILE'];run=os.environ['IMAGE_RUN'];revision=os.environ['DELIVERY_REVISION']
-          assert re.fullmatch(r'(fedora|arch|nixos)-(kde|gnome|minimal)',profile) and re.fullmatch(r'[0-9]+',run)
+          assert re.fullmatch(r'(?:fedora|arch|nixos)-(?:kde|gnome|minimal)|omarchy-hyprland',profile) and re.fullmatch(r'[0-9]+',run)
           assert revision in ('','models58')
-          assert {'fedora':'fedora-aurora','arch':'alarm-aurora','nixos':'nixos-aurora'}[profile.split('-')[0]] == os.environ['GITHUB_REPOSITORY'].split('/')[1]
+          assert {'fedora':'fedora-aurora','arch':'alarm-aurora','nixos':'nixos-aurora','omarchy':'omarchy-aurora'}[profile.split('-')[0]] == os.environ['GITHUB_REPOSITORY'].split('/')[1]
           suffix='-'+revision if revision else ''
           with open(os.environ['GITHUB_ENV'],'a') as output:
               output.write('DELIVERY_REVISION='+revision+'\nDELIVERY_SUFFIX='+suffix+'\nDELIVERY_RELEASE_ID=build-'+run+suffix+'\n')
@@ -72,9 +72,9 @@ jobs:
           PROFILE: ${{ inputs.profile }}
           IMAGE_RUN: ${{ inputs.image-run }}
         run: |
-          [[ $PROFILE =~ ^(fedora|arch|nixos)-(kde|gnome|minimal)$ && $IMAGE_RUN =~ ^[0-9]+$ ]]
+          [[ $PROFILE =~ ^((fedora|arch|nixos)-(kde|gnome|minimal)|omarchy-hyprland)$ && $IMAGE_RUN =~ ^[0-9]+$ ]]
           case "$GITHUB_REPOSITORY:$PROFILE" in
-            aurora-silicon/fedora-aurora:fedora-*|aurora-silicon/alarm-aurora:arch-*|aurora-silicon/nixos-aurora:nixos-*) ;;
+            aurora-silicon/fedora-aurora:fedora-*|aurora-silicon/alarm-aurora:arch-*|aurora-silicon/nixos-aurora:nixos-*|aurora-silicon/omarchy-aurora:omarchy-hyprland) ;;
             *) exit 2;;
           esac
           gh api "repos/$GITHUB_REPOSITORY/actions/runs/$IMAGE_RUN" > image-build.json
@@ -87,6 +87,18 @@ jobs:
             gh attestation verify "downloaded/out/$PROFILE-filesystems.tar.zst" --repo "$GITHUB_REPOSITORY" \
               --signer-workflow "$GITHUB_REPOSITORY/.github/workflows/images.yml" --source-digest "$head" \
               --deny-self-hosted-runners
+          fi
+          if [[ $PROFILE == omarchy-hyprland ]]; then
+            gh attestation verify downloaded/out/vm-result.json --repo "$GITHUB_REPOSITORY" \
+              --signer-workflow "$GITHUB_REPOSITORY/.github/workflows/images.yml" --source-digest "$head" \
+              --deny-self-hosted-runners
+            python3 - <<'PYVM'
+          import json
+          result=json.load(open('downloaded/out/vm-result.json'))
+          required=('boot','encryption','temporary_key_rejected','owner','sudo','second_boot',
+                    'desktop','shell','terminal','network','original_unchanged')
+          assert all(result.get(check) is True for check in required),result
+          PYVM
           fi
           sudo apt-get update
           sudo apt-get install -y zstd
@@ -183,6 +195,7 @@ jobs:
           bash producer/macOS/scripts/make-release-descriptor --adhoc --public-key assets/trust-root.ed25519.pub \
             --base-url "$feed" --output assets/release.json
           cp image-build.json catalog-inputs.json assets/
+          if [[ $PROFILE == omarchy-hyprland ]]; then cp downloaded/out/vm-result.json assets/; fi
       - id: draft
         name: Stage the unsigned delivery as a draft release
         env:
@@ -218,7 +231,7 @@ jobs:
       - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
         with:
           repository: aurora-silicon/aurora-installer
-          ref: 9779fa452351c5a66ae583918b8e8120c044051f
+          ref: b34998dae173411bbaff90b7bd1ad90e5987477b
           path: producer
           persist-credentials: false
           sparse-checkout: macOS/Release/trust-root.ed25519.pub

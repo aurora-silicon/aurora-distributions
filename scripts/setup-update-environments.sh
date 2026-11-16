@@ -14,7 +14,7 @@
 #   source-tracking   distro repos   optional GitHub App key for the source tracker
 set -euo pipefail
 org=aurora-silicon
-distros=(alarm-aurora fedora-aurora nixos-aurora)
+distros=(alarm-aurora fedora-aurora nixos-aurora omarchy-aurora)
 reviewers=()
 apply=false
 while (($#)); do
@@ -73,7 +73,7 @@ Next, by hand (the private keys never pass through this script):
   # NixOS
   gh secret set NIX_CACHE_SIGNING_KEY --env testing-signing -R aurora-silicon/nixos-aurora < nix-cache.secret
   # Installer catalogs (all four repositories)
-  for r in alarm-aurora fedora-aurora nixos-aurora aurora-distributions; do
+  for r in alarm-aurora fedora-aurora nixos-aurora omarchy-aurora aurora-distributions; do
     gh secret set INSTALLER_CATALOG_SIGNING_KEY --env catalog-signing -R aurora-silicon/$r < catalog-key.pem
   done
 

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Re-sign the nine image deliveries as native-only catalogs for an installer release.
+"""Re-sign the image deliveries as native-only catalogs for an installer release.
 
 Deliveries are schema 5 and name no engine. Schema 4 deliveries built before
 that are still accepted, and their engine pins are dropped. The empty stable
@@ -21,9 +21,11 @@ import urllib.request
 
 ROOT = Path(__file__).resolve().parents[1]
 PROFILES = tuple(f'{distribution}-{desktop}' for distribution in ('fedora', 'arch', 'nixos')
-                 for desktop in ('kde', 'gnome', 'minimal'))
+                 for desktop in ('kde', 'gnome', 'minimal')) + ('omarchy-hyprland',)
 FILES = ('release.json', 'trust-root.ed25519.pub', 'catalog.json', 'catalog.json.sig',
          'delivery.json', 'image-build.json')
+VM_CHECKS = ('boot', 'encryption', 'temporary_key_rejected', 'owner', 'sudo', 'second_boot',
+             'desktop', 'shell', 'terminal', 'network', 'original_unchanged')
 PUBLIC_DER_PREFIX = bytes.fromhex('302a300506032b6570032100')
 EXECUTION_FIELDS = ('engineVersion', 'engineDigest', 'engineArtifact',
                     'repairManifestDigest', 'repairManifestArtifact')
@@ -79,11 +81,16 @@ def prepare(source, output, signing_key, release_tag, source_revision, fetch=fet
     for profile in PROFILES:
         directory = source/'Profiles'/profile
         data = {}
-        for name in FILES:
+        names = FILES + (('vm-result.json',) if profile == 'omarchy-hyprland' else ())
+        for name in names:
             path = directory/name
             if path.is_symlink() or not path.is_file() or path.stat().st_size > 1048576:
                 raise ValueError(f'unsafe or missing profile file: {profile}/{name}')
             data[name] = path.read_bytes()
+        if profile == 'omarchy-hyprland':
+            vm = json.loads(data['vm-result.json'])
+            if not all(vm.get(check) is True for check in VM_CHECKS):
+                raise ValueError('Omarchy release requires complete passing VM qualification')
         if data['trust-root.ed25519.pub'] != public or len(data['catalog.json.sig']) != 64:
             raise ValueError(f'{profile} has a different signing root')
         verify(data['catalog.json'], data['catalog.json.sig'], public)

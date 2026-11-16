@@ -13,6 +13,13 @@ import urllib.request
 
 ROOT = Path(__file__).resolve().parents[1]
 PAYLOAD_WORKFLOW = 'aurora-silicon/aurora-distributions/.github/workflows/build-payload.yml'
+PROFILE_OWNERS = {
+    'aurora-silicon/' + repository: {distribution + '-' + desktop for desktop in ('kde', 'gnome', 'minimal')}
+    for distribution, repository in [('fedora', 'fedora-aurora'), ('arch', 'alarm-aurora'), ('nixos', 'nixos-aurora')]
+}
+PROFILE_OWNERS['aurora-silicon/omarchy-aurora'] = {'omarchy-hyprland'}
+VM_CHECKS = ('boot', 'encryption', 'temporary_key_rejected', 'owner', 'sudo', 'second_boot',
+             'desktop', 'shell', 'terminal', 'network', 'original_unchanged')
 
 
 def verify_provenance(repository, base, data):
@@ -47,13 +54,15 @@ def verify_provenance(repository, base, data):
 
 
 def adopt(repository, tag, site):
-    prefixes = {'aurora-silicon/fedora-aurora': 'fedora', 'aurora-silicon/alarm-aurora': 'arch',
-                'aurora-silicon/nixos-aurora': 'nixos'}
-    if repository not in prefixes or not re.fullmatch(r'payload-(fedora|arch|nixos)-(kde|gnome|minimal)-[0-9]+(?:-models58)?', tag):
+    match = re.fullmatch(r'payload-(.+)-([0-9]+)(-models58)?', tag)
+    if (match is None or match[1] not in PROFILE_OWNERS.get(repository, set())
+            or (repository == 'aurora-silicon/omarchy-aurora' and match[3])):
         raise ValueError('expected an immutable Aurora profile delivery')
     base = 'https://github.com/' + repository + '/releases/download/' + tag
     names = ('release.json', 'trust-root.ed25519.pub', 'catalog.json', 'catalog.json.sig',
              'delivery.json', 'image-build.json')
+    if repository == 'aurora-silicon/omarchy-aurora':
+        names += ('vm-result.json',)
     if tag.endswith('-models58'):
         names += ('source-delivery.json', 'zip-refresh.json')
     data = {name: urllib.request.urlopen(base + '/' + name, timeout=60).read() for name in names}
@@ -67,12 +76,16 @@ def adopt(repository, tag, site):
         subprocess.run(['openssl','pkeyutl','-verify','-pubin','-keyform','DER','-inkey',str(directory/'public.der'),
                         '-rawin','-in',str(directory/'catalog.json'),'-sigfile',str(directory/'catalog.json.sig')],check=True)
     provenance = verify_provenance(repository, base, data)
-    if tag.endswith('-models58') and provenance != 'verified':
-        raise ValueError('58-model deliveries require hosted provenance')
+    if (tag.endswith('-models58') or repository == 'aurora-silicon/omarchy-aurora') and provenance != 'verified':
+        raise ValueError('this delivery requires hosted provenance')
     receipt = json.loads(data['delivery.json']); profile = receipt['installation_profile']
-    if (not re.fullmatch(prefixes[repository] + r'-(kde|gnome|minimal)', profile)
+    if (profile != match[1] or profile not in PROFILE_OWNERS[repository]
             or receipt['private_neo_inputs'] or receipt.get('native_neo_reset_qa', False)):
         raise ValueError('delivery is not a public profile for this repository')
+    if repository == 'aurora-silicon/omarchy-aurora':
+        vm = json.loads(data['vm-result.json'])
+        if not all(vm.get(check) is True for check in VM_CHECKS):
+            raise ValueError('Omarchy delivery has no complete passing VM qualification')
     run = json.loads(data['image-build.json'])
     if (run['conclusion'] != 'success' or run['head_branch'] != 'main'
             or run['head_repository']['full_name'] != repository or run['path'] != '.github/workflows/images.yml'
