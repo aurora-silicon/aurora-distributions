@@ -40,6 +40,8 @@ class NativeOnlyProfileTests(unittest.TestCase):
             (directory/'trust-root.ed25519.pub').write_bytes(public)
             (directory/'delivery.json').write_text('{}')
             (directory/'image-build.json').write_text('{}')
+            if profile == 'omarchy-hyprland':
+                (directory/'vm-result.json').write_text(json.dumps(dict.fromkeys(module.VM_CHECKS, True)))
             catalog = {'schemaVersion': 4, 'sequence': 1, 'issuedAt': '2000-01-01T00:00:00Z',
                        'installer': {'minimumVersion': '0.1.0', 'latestVersion': '0.1.0',
                                      'downloadURL': 'https://example.invalid/old'},
@@ -99,6 +101,17 @@ class NativeOnlyProfileTests(unittest.TestCase):
                 model.update(extra)
             (directory/'catalog.json').write_text(json.dumps(catalog))
             self.sign(directory)
+
+    def test_omarchy_vm_evidence_is_required_and_preserved_for_the_release(self):
+        path = self.source/'Profiles/omarchy-hyprland/vm-result.json'
+        original = path.read_bytes()
+        path.write_text(json.dumps(dict.fromkeys(module.VM_CHECKS, False)))
+        with self.assertRaisesRegex(ValueError, 'complete passing VM'):
+            self.prepare()
+        self.assertFalse((self.root/'output').exists())
+        path.write_bytes(original)
+        self.prepare()
+        self.assertEqual((self.root/'output/Profiles/omarchy-hyprland/vm-result.json').read_bytes(), original)
 
     def test_engine_free_deliveries_are_resigned_for_the_release(self):
         self.to_schema_five()

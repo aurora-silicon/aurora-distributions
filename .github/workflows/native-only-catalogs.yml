@@ -41,7 +41,7 @@ jobs:
           echo "SOURCE_REVISION=$revision" >> "$GITHUB_ENV"
       - name: Check engine-free catalog migration
         run: python3 -m unittest discover -s tests -p test_native_only_profiles.py
-      - name: Verify and sign all nine catalog profiles
+      - name: Verify and sign all ten catalog profiles
         env:
           SIGNING_KEY: ${{ secrets.INSTALLER_CATALOG_SIGNING_KEY }}
           RELEASE_TAG: ${{ inputs.release-tag }}
