@@ -2,6 +2,7 @@
 """Adopt a signed public profile delivery into the installer resource tree."""
 import argparse
 import base64
+import copy
 import hashlib
 import json
 from pathlib import Path
@@ -13,6 +14,7 @@ import urllib.request
 
 ROOT = Path(__file__).resolve().parents[1]
 PAYLOAD_WORKFLOW = 'aurora-silicon/aurora-distributions/.github/workflows/build-payload.yml'
+NEW65_BOARDS = ('j714c', 'j714s', 'j716c', 'j716s', 'j775c', 'j775d', 'j873s')
 PROFILE_OWNERS = {
     'aurora-silicon/' + repository: {distribution + '-' + desktop for desktop in ('kde', 'gnome', 'minimal')}
     for distribution, repository in [('fedora', 'fedora-aurora'), ('arch', 'alarm-aurora'), ('nixos', 'nixos-aurora')]
@@ -53,8 +55,117 @@ def verify_provenance(repository, base, data):
     return 'verified'
 
 
+def read_refresh_record(url):
+    with urllib.request.urlopen(url, timeout=60) as response:
+        data = response.read((1 << 20) + 1)
+    if len(data) > 1 << 20:
+        raise ValueError('65-model delivery record exceeds its size limit')
+    return data
+
+
+def verify_models65(repository, tag, data, catalog, receipt, image, trusted):
+    """Authenticate unchanged payload pointers and the sole metadata policy delta."""
+    lineage = json.loads(data['source-delivery.json'])
+    patch = json.loads(data['metadata-refresh.json'])
+    profile = receipt['installation_profile']
+    source_tag = f"payload-{profile}-{image['id']}"
+    if (lineage.get('repository') != repository or lineage.get('tag') != source_tag
+            or lineage.get('source_revision') != image['head_sha']
+            or lineage.get('provenance') != 'verified'
+            or receipt['release_id'] != f"build-{image['id']}-models65"
+            or patch.get('kind') != 'metadata-only-models65'
+            or patch.get('payload_unchanged') is not True
+            or patch.get('source_catalog_sha256') != lineage.get('catalog_sha256')):
+        raise ValueError('65-model refresh lineage differs from the selected image')
+    base = f'https://github.com/{repository}/releases/download/{source_tag}'
+    names = ('catalog.json', 'catalog.json.sig', 'trust-root.ed25519.pub',
+             'delivery.json', 'image-build.json', 'release.json',
+             f'installer-data-{profile}.json')
+    source = {name: read_refresh_record(base + '/' + name) for name in names}
+    if (source['trust-root.ed25519.pub'] != trusted
+            or hashlib.sha256(source['catalog.json']).hexdigest() != lineage['catalog_sha256']
+            or json.loads(source['image-build.json']) != image
+            or verify_provenance(repository, base, source) != 'verified'):
+        raise ValueError('65-model source delivery identity or provenance differs')
+    with tempfile.TemporaryDirectory(prefix='aurora-cohort65-signature-') as temporary:
+        directory = Path(temporary)
+        (directory / 'public.der').write_bytes(bytes.fromhex('302a300506032b6570032100') + trusted)
+        for name in ('catalog.json', 'catalog.json.sig'):
+            (directory / name).write_bytes(source[name])
+        subprocess.run(['openssl', 'pkeyutl', '-verify', '-pubin', '-keyform', 'DER',
+                        '-inkey', str(directory / 'public.der'), '-rawin', '-in',
+                        str(directory / 'catalog.json'), '-sigfile', str(directory / 'catalog.json.sig')],
+                       check=True, capture_output=True)
+    original = json.loads(source['catalog.json'])
+    original_rows = original['models']
+    expected = {row['deviceIdentifier'] for row in catalog['models']} - {
+        'apple,' + board for board in NEW65_BOARDS}
+    if (original['schemaVersion'] != 5 or len(original_rows) != 58
+            or {row['deviceIdentifier'] for row in original_rows} != expected
+            or any(row['status'] != 'enabled' or row['installationProfile'] != profile
+                   for row in original_rows)):
+        raise ValueError('65-model source is not the complete original cohort')
+    example = original_rows[0]
+    for row in original_rows + catalog['models']:
+        if any(row[field] != example[field] for field in ('payloadArtifact', 'payloadDigest')):
+            raise ValueError('65-model refresh changes an original payload pointer or digest')
+    payload = example['payloadArtifact']
+    if (patch.get('payload_name') != payload['fileName']
+            or patch.get('payload_sha256') != example['payloadDigest']
+            or patch.get('payload_bytes') != payload['sizeBytes']
+            or receipt['artifacts'].get(payload['fileName']) != {
+                'bytes': payload['sizeBytes'], 'sha256': example['payloadDigest'].removeprefix('sha256:')}):
+        raise ValueError('65-model refresh payload lineage differs')
+    evidence = patch.get('board_members', {})
+    members = {f'esp/m1n1/{prefix}{board}.bin' for board in NEW65_BOARDS
+               for prefix in ('boot-', 'boot-ctxr-')}
+    if (set(evidence) != members or any(
+            not isinstance(record, dict) or set(record) != {'bytes', 'sha256'}
+            or type(record['bytes']) is not int or not 0 < record['bytes'] <= 16 << 20
+            or not re.fullmatch('[0-9a-f]{64}', record['sha256']) for record in evidence.values())):
+        raise ValueError('65-model refresh lacks complete bounded board-member evidence')
+    original_by_id = {row['deviceIdentifier']: row for row in original_rows}
+    for row in catalog['models']:
+        expected_row = copy.deepcopy(original_by_id.get(row['deviceIdentifier'], example))
+        expected_row['deviceIdentifier'] = row['deviceIdentifier']
+        for field in ('metadataArtifact', 'metadataDigest'):
+            expected_row[field] = row[field]
+        if row != expected_row:
+            raise ValueError('65-model refresh changes model fields beyond metadata admission')
+    metadata_name = f'installer-data-{profile}.json'
+    source_raw = source[metadata_name]
+    if ('sha256:' + hashlib.sha256(source_raw).hexdigest() != example['metadataDigest']
+            or patch.get('source_metadata_sha256') != example['metadataDigest']):
+        raise ValueError('65-model source metadata digest differs')
+    model = catalog['models'][0]
+    target_base = f'https://github.com/{repository}/releases/download/{tag}'
+    if any(row['metadataArtifact'] != model['metadataArtifact']
+           or row['metadataDigest'] != model['metadataDigest'] for row in catalog['models']):
+        raise ValueError('65-model refresh does not share one metadata artifact')
+    if (model['metadataArtifact']['sourceURL'] != target_base + '/' + metadata_name
+            or model['metadataArtifact']['fileName'] != metadata_name
+            or model['metadataDigest'] != patch.get('metadata_sha256')):
+        raise ValueError('65-model metadata artifact differs')
+    raw = read_refresh_record(target_base + '/' + metadata_name)
+    if ('sha256:' + hashlib.sha256(raw).hexdigest() != model['metadataDigest']
+            or len(raw) != model['metadataArtifact']['sizeBytes']
+            or receipt['artifacts'].get(metadata_name) != {
+                'bytes': len(raw), 'sha256': hashlib.sha256(raw).hexdigest()}):
+        raise ValueError('65-model metadata identity differs')
+    metadata = json.loads(source_raw)
+    expected_metadata = copy.deepcopy(metadata)
+    template = expected_metadata['os_list'][0]
+    for board in NEW65_BOARDS:
+        if (template['aurora_stage2']['board_members'].get(board + 'ap') != f'esp/m1n1/boot-{board}.bin'
+                or f'esp/m1n1/boot-ctxr-{board}.bin' not in template['aurora_macho_boot']['confined_members']):
+            raise ValueError('65-model source metadata lacks own board Stage 2')
+        template['aurora_stage1']['qualified_machines'][board + 'ap'] = ['27.2']
+    if json.loads(raw) != expected_metadata:
+        raise ValueError('65-model refresh changes metadata beyond board admission')
+
+
 def adopt(repository, tag, site):
-    match = re.fullmatch(r'payload-(.+)-([0-9]+)(-models58)?', tag)
+    match = re.fullmatch(r'payload-(.+)-([0-9]+)(-models(?:58|65))?', tag)
     if (match is None or match[1] not in PROFILE_OWNERS.get(repository, set())
             or (repository == 'aurora-silicon/omarchy-aurora' and match[3])):
         raise ValueError('expected an immutable Aurora profile delivery')
@@ -65,6 +176,8 @@ def adopt(repository, tag, site):
         names += ('vm-result.json',)
     if tag.endswith('-models58'):
         names += ('source-delivery.json', 'zip-refresh.json')
+    if tag.endswith('-models65'):
+        names += ('source-delivery.json', 'metadata-refresh.json')
     data = {name: urllib.request.urlopen(base + '/' + name, timeout=60).read() for name in names}
     trusted = (ROOT / 'keys/catalog.ed25519.pub').read_bytes()
     if len(trusted) != 32 or data['trust-root.ed25519.pub'] != trusted or len(data['catalog.json.sig']) != 64:
@@ -76,7 +189,7 @@ def adopt(repository, tag, site):
         subprocess.run(['openssl','pkeyutl','-verify','-pubin','-keyform','DER','-inkey',str(directory/'public.der'),
                         '-rawin','-in',str(directory/'catalog.json'),'-sigfile',str(directory/'catalog.json.sig')],check=True)
     provenance = verify_provenance(repository, base, data)
-    if (tag.endswith('-models58') or repository == 'aurora-silicon/omarchy-aurora') and provenance != 'verified':
+    if (match[3] or repository == 'aurora-silicon/omarchy-aurora') and provenance != 'verified':
         raise ValueError('this delivery requires hosted provenance')
     receipt = json.loads(data['delivery.json']); profile = receipt['installation_profile']
     if (profile != match[1] or profile not in PROFILE_OWNERS[repository]
@@ -90,7 +203,7 @@ def adopt(repository, tag, site):
     if (run['conclusion'] != 'success' or run['head_branch'] != 'main'
             or run['head_repository']['full_name'] != repository or run['path'] != '.github/workflows/images.yml'
             or tag != 'payload-' + profile + '-' + str(run['id'])
-                + ('-models58' if tag.endswith('-models58') else '')):
+                + (match[3] or '')):
         raise ValueError('image provenance differs from the delivery tag')
     if tag.endswith('-models58'):
         lineage, patch = json.loads(data['source-delivery.json']), json.loads(data['zip-refresh.json'])
@@ -103,6 +216,8 @@ def adopt(repository, tag, site):
             raise ValueError('58-model refresh lineage differs from the selected image')
     catalog = json.loads(data['catalog.json'])
     models = catalog['models']
+    if tag.endswith('-models65'):
+        verify_models65(repository, tag, data, catalog, receipt, run, trusted)
     allowed = set(json.loads((ROOT/'keys/supported-models.json').read_text())['supported'])
     # Deliveries are schema 5 and name no engine. Schema 4 deliveries built
     # before that still adopt; the native-only step strips their engine pins.
