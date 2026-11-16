@@ -34,7 +34,8 @@ EMPTY_CHANNELS = ('stable', 'rc')
 # Neo and the M4 and later Macs (the installer's assemble-distribution-payload.py).
 BOARD_STAGE2_REQUIRED = ('j700ap', 'j604ap', 'j623ap', 'j624ap', 'j713ap', 'j715ap', 'j773gap',
                          'j614sap', 'j614cap', 'j616sap', 'j616cap', 'j773sap', 'j575cap',
-                         'j813ap', 'j873gap', 'j704ap', 'j815ap', 'j804ap', 'j833ctap')
+                         'j813ap', 'j873gap', 'j704ap', 'j815ap', 'j804ap', 'j833ctap',
+                         'j714cap', 'j714sap', 'j716cap', 'j716sap', 'j775cap', 'j775dap', 'j873sap')
 
 
 def verify(catalog, signature, public):

@@ -6,9 +6,9 @@ on:
         description: JSON array of repository and tag objects
         required: true
       model-cohort:
-        description: Adopt the complete 58-model set and manifest atomically
+        description: Adopt the selected complete model cohort and manifest atomically
         type: choice
-        options: [current, models58]
+        options: [current, models58, models65]
         default: current
 permissions:
   contents: write

@@ -10,12 +10,29 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 def adopt_set(items, cohort, root=ROOT, run=subprocess.run):
-    if (cohort not in ('current', 'models58') or not isinstance(items, list)
+    if (cohort not in ('current', 'models58', 'models65') or not isinstance(items, list)
             or not 1 <= len(items) <= 10
             or any(not isinstance(item, dict) or set(item) != {'repository', 'tag'} for item in items)):
         raise ValueError('invalid delivery set or model cohort')
     if len({(item['repository'], item['tag']) for item in items}) != len(items):
         raise ValueError('duplicate delivery in set')
+    if cohort == 'models65':
+        required = {('aurora-silicon/' + repository, prefix + '-' + desktop)
+                    for prefix, repository in [('fedora', 'fedora-aurora'), ('arch', 'alarm-aurora'),
+                                               ('nixos', 'nixos-aurora')]
+                    for desktop in ('kde', 'gnome', 'minimal')}
+        actual = {(item['repository'], item['tag'].removeprefix('payload-').rsplit('-', 2)[0])
+                  for item in items if item['tag'].endswith('-models65')}
+        if len(items) != 9 or actual != required:
+            raise ValueError('65-model adoption requires the complete nine-profile variant set')
+        current = root / 'keys/supported-models.json'
+        target = root / 'keys/supported-models-65.json'
+        before, after = json.loads(current.read_text()), json.loads(target.read_text())
+        if (len(after['supported']) != 65 or len(set(after['supported'])) != 65
+                or not set(before['supported']) <= set(after['supported'])
+                or not set(before.get('stage1_caution', {})) <= set(after.get('stage1_caution', {}))):
+            raise ValueError('65-model cohort drops an existing model or caution')
+        shutil.copyfile(target, current)
     if cohort == 'models58':
         if len(items) != 9 or any(not item['tag'].endswith('-models58') for item in items):
             raise ValueError('58-model adoption requires the complete nine-profile variant set')

@@ -17,7 +17,8 @@ class AdoptSetTests(unittest.TestCase):
         self.addCleanup(self.temporary.cleanup)
         self.root = Path(self.temporary.name)
         (self.root / 'keys').mkdir()
-        self.current = json.loads((ROOT / 'keys/supported-models.json').read_text())
+        # This fixture exercises the historical cohort transition, not current production.
+        self.current = json.loads((ROOT / 'keys/supported-models-58.json').read_text())
         self.target = json.loads((ROOT / 'keys/supported-models-58.json').read_text())
         self.write('supported-models.json', self.current)
         self.write('supported-models-58.json', self.target)
