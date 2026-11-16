@@ -6,7 +6,7 @@ on:
         description: JSON array of repository and tag objects
         required: true
       model-cohort:
-        description: Adopt the selected complete model cohort and manifest atomically
+        description: "Atomic cohort: models65 requires nine variants and the normal qualified Omarchy delivery"
         type: choice
         options: [current, models58, models65]
         default: current

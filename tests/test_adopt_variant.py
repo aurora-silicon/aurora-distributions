@@ -4,7 +4,9 @@ import importlib.util
 import io
 import json
 from pathlib import Path
+import re
 import subprocess
+import sys
 import tempfile
 import unittest
 from unittest.mock import patch
@@ -135,6 +137,18 @@ class OmarchyTests(unittest.TestCase):
                     with self.assertRaisesRegex(ValueError, 'complete passing VM'):
                         self.invoke()
 
+    def test_omarchy_requires_new_guest_package_trust_evidence(self):
+        complete = dict.fromkeys(adopter.VM_CHECKS, True)
+        for missing in (True, False):
+            with self.subTest(missing=missing):
+                self.json['vm-result.json'] = dict(complete)
+                if missing:
+                    self.json['vm-result.json'].pop('package_trust')
+                else:
+                    self.json['vm-result.json']['package_trust'] = False
+                with self.assertRaisesRegex(ValueError, 'complete passing VM'):
+                    self.invoke()
+
     def test_omarchy_requires_hosted_provenance(self):
         with self.assertRaisesRegex(ValueError, 'requires hosted provenance'):
             self.invoke(provenance='none (delivery predates attestations)')
@@ -146,6 +160,36 @@ class OmarchyTests(unittest.TestCase):
             self.invoke(tag='payload-omarchy-kde-42508499173')
         with self.assertRaisesRegex(ValueError, 'immutable Aurora profile'):
             self.invoke(tag='payload-omarchy-hyprland-42508499173-models58')
+
+
+class OmarchyPreSignTests(unittest.TestCase):
+    def test_guest_package_trust_is_required_before_the_signing_job(self):
+        workflow = (ROOT / '.github/workflows/build-payload.yml').read_text()
+        block = re.search(r"python3 - <<'PYVM'\n(.*?)\n          PYVM", workflow, re.S)[1]
+        script = '\n'.join(line[10:] for line in block.splitlines())
+        sign_job = workflow.split('  sign:\n', 1)[1].split('  publish:', 1)[0]
+        self.assertIn('needs: payload', sign_job)
+        self.assertNotIn('always()', sign_job)
+        with tempfile.TemporaryDirectory() as temporary:
+            directory = Path(temporary)
+            path = directory / 'downloaded/out/vm-result.json'
+            path.parent.mkdir(parents=True)
+            complete = dict.fromkeys(adopter.VM_CHECKS, True)
+            for state in ('passed', 'missing', 'failed'):
+                with self.subTest(state=state):
+                    evidence = dict(complete)
+                    if state == 'missing':
+                        evidence.pop('package_trust')
+                    elif state == 'failed':
+                        evidence['package_trust'] = False
+                    path.write_text(json.dumps(evidence))
+                    result = subprocess.run([sys.executable, '-c', script], cwd=directory,
+                                            capture_output=True, text=True)
+                    if state == 'passed':
+                        self.assertEqual(result.returncode, 0, result.stderr)
+                    else:
+                        self.assertNotEqual(result.returncode, 0)
+                        self.assertIn('guest package trust', result.stderr)
 
 
 if __name__ == '__main__':
