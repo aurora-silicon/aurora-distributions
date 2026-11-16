@@ -1,0 +1,174 @@
+name: Qualify unsigned 65-model payload metadata
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - '.github/workflows/qualify-models65.yml'
+permissions:
+  contents: read
+  attestations: read
+concurrency:
+  group: models65-qualification-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+jobs:
+  qualify:
+    runs-on: ubuntu-24.04-arm
+    timeout-minutes: 90
+    strategy:
+      fail-fast: false
+      max-parallel: 2
+      matrix:
+        include:
+          - profile: fedora-kde
+            repository: aurora-silicon/fedora-aurora
+          - profile: fedora-gnome
+            repository: aurora-silicon/fedora-aurora
+          - profile: fedora-minimal
+            repository: aurora-silicon/fedora-aurora
+          - profile: arch-kde
+            repository: aurora-silicon/alarm-aurora
+          - profile: arch-gnome
+            repository: aurora-silicon/alarm-aurora
+          - profile: arch-minimal
+            repository: aurora-silicon/alarm-aurora
+          - profile: nixos-kde
+            repository: aurora-silicon/nixos-aurora
+          - profile: nixos-gnome
+            repository: aurora-silicon/nixos-aurora
+          - profile: nixos-minimal
+            repository: aurora-silicon/nixos-aurora
+    env:
+      PROFILE: ${{ matrix.profile }}
+      SOURCE_REPOSITORY: ${{ matrix.repository }}
+      PRODUCER_REVISION: 68148f7b1b820059f65780e17bc27ccb576def49
+      OUTPUT_DIRECTORY: ${{ runner.temp }}/models65-unsigned
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+        with:
+          persist-credentials: false
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+        with:
+          repository: aurora-silicon/aurora-installer
+          ref: 68148f7b1b820059f65780e17bc27ccb576def49
+          path: producer
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            macOS/scripts/supported-models.json
+            macOS/Release/trust-root.ed25519.pub
+      - id: select
+        name: Validate the committed cohort and image selection before downloads
+        run: |
+          python3 - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+
+          profile = os.environ['PROFILE']
+          repository = os.environ['SOURCE_REPOSITORY']
+          owners = {'fedora': 'fedora-aurora', 'arch': 'alarm-aurora', 'nixos': 'nixos-aurora'}
+          if (profile not in {distribution + '-' + desktop for distribution in owners
+                              for desktop in ('kde', 'gnome', 'minimal')}
+                  or repository != 'aurora-silicon/' + owners[profile.split('-')[0]]):
+              raise ValueError('profile repository is outside the fixed public matrix')
+          target = json.loads(Path('keys/supported-models-65.json').read_text())['supported']
+          producer = json.loads(Path('producer/macOS/scripts/supported-models.json').read_text())['supported']
+          if len(target) != 65 or len(set(target)) != 65 or target != producer:
+              raise ValueError('the target and pinned producer must name the same 65 models')
+          public = Path('keys/catalog.ed25519.pub').read_bytes()
+          if (len(public) != 32
+                  or Path('producer/macOS/Release/trust-root.ed25519.pub').read_bytes() != public):
+              raise ValueError('the pinned producer public root differs')
+          image = json.loads((Path('site/installer/Profiles') / profile / 'image-build.json').read_text())
+          run = image.get('id')
+          if (type(run) is not int or run <= 0 or image.get('conclusion') != 'success'
+                  or image.get('head_branch') != 'main'
+                  or image.get('path') != '.github/workflows/images.yml'
+                  or image.get('head_repository', {}).get('full_name') != repository):
+              raise ValueError('the committed original image record differs from the matrix')
+          delivery = json.loads((Path('site/installer/Profiles') / profile / 'delivery.json').read_text())
+          if (delivery.get('installation_profile') != profile
+                  or delivery.get('private_neo_inputs') is not False
+                  or delivery.get('native_neo_reset_qa', False) is not False):
+              raise ValueError('the committed selection is not a public profile delivery')
+          with Path(os.environ['GITHUB_OUTPUT']).open('a') as output:
+              output.write('image-run=' + str(run) + '\n')
+          print('Selected committed original image:', profile, repository, run)
+          PY
+      - name: Report disk budget before the hosted payload download
+        run: df -B1 "$RUNNER_TEMP" "$GITHUB_WORKSPACE"
+      - name: Authenticate and inspect the original payload without rewriting it
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TMPDIR: ${{ runner.temp }}
+          IMAGE_RUN: ${{ steps.select.outputs.image-run }}
+        run: |
+          python3 scripts/refresh-cohort65-v1.py \
+            --repository "$SOURCE_REPOSITORY" --profile "$PROFILE" --image-run "$IMAGE_RUN" \
+            --producer producer/macOS --output "$OUTPUT_DIRECTORY"
+      - name: Bind compact unsigned artifacts to the exact source and proof
+        run: |
+          python3 - <<'PY'
+          import hashlib
+          import json
+          import os
+          from pathlib import Path
+          import subprocess
+
+          profile = os.environ['PROFILE']
+          output = Path(os.environ['OUTPUT_DIRECTORY'])
+          names = {'catalog.json', 'delivery.json', 'metadata-refresh.json', 'source-delivery.json',
+                   'image-build.json', 'release.json', 'trust-root.ed25519.pub',
+                   'installer-data-' + profile + '.json'}
+          if {path.name for path in output.iterdir()} != names:
+              raise ValueError('qualification output contains unexpected files')
+          files = {}
+          for name in sorted(names):
+              path = output / name
+              if path.is_symlink() or not path.is_file() or path.stat().st_size > 1 << 20:
+                  raise ValueError('qualification artifacts must be compact regular files')
+              files[name] = {'bytes': path.stat().st_size, 'sha256': hashlib.sha256(path.read_bytes()).hexdigest()}
+          image = json.loads((output / 'image-build.json').read_text())
+          committed = json.loads((Path('site/installer/Profiles') / profile / 'image-build.json').read_text())
+          if image != committed:
+              raise ValueError('authenticated source image differs from the committed selection')
+          patch = json.loads((output / 'metadata-refresh.json').read_text())
+          expected = {f'esp/m1n1/{prefix}{board}.bin'
+                      for board in ('j714c', 'j714s', 'j716c', 'j716s', 'j775c', 'j775d', 'j873s')
+                      for prefix in ('boot-', 'boot-ctxr-')}
+          if (patch.get('kind') != 'metadata-only-models65'
+                  or patch.get('payload_unchanged') is not True
+                  or set(patch.get('board_members', {})) != expected):
+              raise ValueError('qualification did not verify every own-board and CTXR member')
+          delivery = json.loads((output / 'delivery.json').read_text())
+          if (delivery.get('private_neo_inputs') is not False
+                  or delivery.get('native_neo_reset_qa', False) is not False):
+              raise ValueError('private inputs are not qualification artifacts')
+          producer = subprocess.check_output(['git', '-C', 'producer', 'rev-parse', 'HEAD'], text=True).strip()
+          if producer != os.environ['PRODUCER_REVISION']:
+              raise ValueError('producer checkout differs from its immutable pin')
+          proof = {'schema': 1, 'kind': 'unsigned-models65-payload-qualification',
+                   'distribution_revision': subprocess.check_output(['git', 'rev-parse', 'HEAD'], text=True).strip(),
+                   'producer_revision': producer, 'profile': profile,
+                   'source_repository': os.environ['SOURCE_REPOSITORY'], 'source_image_run': image['id'],
+                   'source_image_revision': image['head_sha'], 'artifacts_unsigned': True,
+                   'payload_unchanged': True, 'payload_sha256': patch['payload_sha256'],
+                   'verified_boot_members': len(expected), 'artifacts': files}
+          (output / 'qualification.json').write_text(json.dumps(proof, indent=2) + '\n')
+          print('Read-only qualification passed:', profile, image['id'], len(expected), 'boot members')
+          PY
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: models65-unsigned-${{ matrix.profile }}
+          retention-days: 14
+          if-no-files-found: error
+          path: |
+            ${{ runner.temp }}/models65-unsigned/catalog.json
+            ${{ runner.temp }}/models65-unsigned/delivery.json
+            ${{ runner.temp }}/models65-unsigned/metadata-refresh.json
+            ${{ runner.temp }}/models65-unsigned/source-delivery.json
+            ${{ runner.temp }}/models65-unsigned/image-build.json
+            ${{ runner.temp }}/models65-unsigned/release.json
+            ${{ runner.temp }}/models65-unsigned/trust-root.ed25519.pub
+            ${{ runner.temp }}/models65-unsigned/installer-data-${{ matrix.profile }}.json
+            ${{ runner.temp }}/models65-unsigned/qualification.json
