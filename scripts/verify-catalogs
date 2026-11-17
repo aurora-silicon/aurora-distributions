@@ -22,3 +22,4 @@ if d['schemaVersion']==5:
  assert not any(k in m for m in d['models'] for k in ('engineArtifact','engineDigest','engineVersion'))
 PY
 done < <(find "$root/site" -name catalog.json -print0)
+python3 "$root/scripts/verify-channel-catalogs.py" --site "$root/site" --public-key "$root/keys/catalog.ed25519.pub"

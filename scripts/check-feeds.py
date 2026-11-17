@@ -18,10 +18,35 @@ import urllib.error
 import urllib.request
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT/'scripts'))
+from channel_policy import validate_catalog, legacy_development_catalog
 SITE = 'https://aurorasilicon.org'
 ORG_SITE = 'aurora-silicon/aurora-silicon.github.io'
 DOMAIN = 'aurorasilicon.org'
 SPKI_ED25519 = bytes.fromhex('302a300506032b6570032100')
+
+
+def installer_channel_status(base, channel, public_key, work):
+    path = 'edge-alpha' if channel == 'edge' else channel
+    try:
+        raw = fetch(f'{base}/channels/{path}/catalog.signed.json')
+    except urllib.error.HTTPError as error:
+        if error.code != 404:
+            raise
+        if channel == 'edge':
+            return 'unavailable: no qualified release published yet'
+        if channel != 'testing':
+            raise
+        raw = fetch(f'{base}/channels/edge/catalog.signed.json')
+    envelope = json.loads(raw)
+    if set(envelope) != {'schema_version', 'catalog', 'signature'} or envelope['schema_version'] != 1:
+        raise ValueError('invalid channel envelope')
+    payload = base64.b64decode(envelope['catalog'], validate=True)
+    signature = base64.b64decode(envelope['signature'], validate=True)
+    ed25519_verify(public_key, payload, signature, work)
+    catalog = json.loads(payload)
+    validate_catalog(catalog, channel, legacy_development=legacy_development_catalog(catalog))
+    return f'Ed25519 signature valid; {len(catalog["models"])} models'
 
 
 class Check:
@@ -200,9 +225,9 @@ def main():
             return run
         check.run('Installer catalog', signed('catalog.json'))
         check.run('Native downloads manifest', signed('native-downloads.json'))
-        for channel in ('edge', 'rc', 'stable'):
+        for channel in ('testing', 'edge', 'rc', 'stable'):
             check.run(f'Installer {channel} channel',
-                      lambda channel=channel: f'{len(json.loads(fetch(f"{installer}/channels/{channel}/catalog.signed.json")))} fields')
+                      lambda channel=channel: installer_channel_status(installer, channel, catalog_key, work))
     report = ('## Aurora feed health: ' + ('healthy' if check.healthy else 'FAILING') + '\n\n' + check.markdown())
     args.report.write_text(report)
     print(report)

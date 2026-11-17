@@ -12,6 +12,11 @@ import tempfile
 import urllib.error
 import urllib.request
 
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from channel_policy import (CHANNELS, descriptor as channel_descriptor, validate_catalog,
+                            verify_edge_delivery, verify_edge_source_refs)
+
 ROOT = Path(__file__).resolve().parents[1]
 PAYLOAD_WORKFLOW = 'aurora-silicon/aurora-distributions/.github/workflows/build-payload.yml'
 NEW65_BOARDS = ('j714c', 'j714s', 'j716c', 'j716s', 'j775c', 'j775d', 'j873s')
@@ -164,10 +169,13 @@ def verify_models65(repository, tag, data, catalog, receipt, image, trusted):
         raise ValueError('65-model refresh changes metadata beyond board admission')
 
 
-def adopt(repository, tag, site):
-    match = re.fullmatch(r'payload-(.+)-([0-9]+)(-models(?:58|65))?', tag)
+def adopt(repository, tag, site, channel='testing'):
+    match = re.fullmatch(r'payload-(.+)-([0-9]+)(-models(?:58|65)|-edge-alpha\.[1-9][0-9]*)?', tag)
+    edge = channel == 'edge'
+    if channel not in ('testing', 'edge') or edge != bool(match and match[3] and match[3].startswith('-edge-alpha.')):
+        raise ValueError('Edge requires a new qualified Edge release, never testing promotion')
     if (match is None or match[1] not in PROFILE_OWNERS.get(repository, set())
-            or (repository == 'aurora-silicon/omarchy-aurora' and match[3])):
+            or (repository == 'aurora-silicon/omarchy-aurora' and match[3] and not edge)):
         raise ValueError('expected an immutable Aurora profile delivery')
     base = 'https://github.com/' + repository + '/releases/download/' + tag
     names = ('release.json', 'trust-root.ed25519.pub', 'catalog.json', 'catalog.json.sig',
@@ -178,6 +186,8 @@ def adopt(repository, tag, site):
         names += ('source-delivery.json', 'zip-refresh.json')
     if tag.endswith('-models65'):
         names += ('source-delivery.json', 'metadata-refresh.json')
+    if edge:
+        names += ('edge-qualification.json',)
     data = {name: urllib.request.urlopen(base + '/' + name, timeout=60).read() for name in names}
     trusted = (ROOT / 'keys/catalog.ed25519.pub').read_bytes()
     if len(trusted) != 32 or data['trust-root.ed25519.pub'] != trusted or len(data['catalog.json.sig']) != 64:
@@ -234,27 +244,53 @@ def adopt(repository, tag, site):
     if descriptor['schema_version'] != 3 or descriptor['trust_root_fingerprint'] != 'sha256:' + hashlib.sha256(trusted).hexdigest():
         raise ValueError('profile descriptor differs from the pinned root')
     public_base = 'https://aurorasilicon.org/aurora-distributions/installer/Profiles/' + profile
-    for channel in ('stable','rc','edge'):
-        if descriptor['channels'][channel]['catalog_url'] != public_base + '/channels/' + channel + '/catalog.signed.json':
+    descriptor = json.loads(channel_descriptor(data['release.json']))
+    for lane in CHANNELS:
+        if descriptor['channels'][lane]['catalog_url'] != public_base + '/channels/' + ('edge-alpha' if lane == 'edge' else lane) + '/catalog.signed.json':
             raise ValueError('profile channel URL differs')
-    target = site/'installer/Profiles'/profile
+    validate_catalog(catalog, channel, legacy_development=(provenance == 'verified'))
+    profile_root = site/'installer/Profiles'/profile
+    if edge:
+        testing_path = profile_root/'catalog.json'
+        testing = json.loads(testing_path.read_text()) if testing_path.exists() else None
+        if provenance != 'verified':
+            raise ValueError('Edge requires hosted payload and qualification provenance')
+        verify_edge_delivery(catalog, data['edge-qualification.json'], receipt, run, base, testing)
+        verify_edge_source_refs(catalog['edgeQualification'])
+        if receipt['release_id'] != 'build-' + str(run['id']) + match[3]:
+            raise ValueError('Edge Alpha receipt identity differs')
+    target = profile_root/'channels/edge-alpha' if edge else profile_root
     target.mkdir(parents=True, exist_ok=True)
     if (target/'catalog.json').exists():
         previous = json.loads((target/'catalog.json').read_text())
         if catalog['sequence'] <= previous['sequence'] and data['catalog.json'] != (target/'catalog.json').read_bytes():
             raise ValueError('catalog sequence does not advance the current profile')
-    for name in names: (target/name).write_bytes(data[name])
-    channel = target/'channels/edge'; channel.mkdir(parents=True, exist_ok=True)
-    (channel/'catalog.signed.json').write_text(json.dumps({'schema_version':1,
+    for name in names:
+        (target/name).write_bytes(channel_descriptor(data[name]) if name == 'release.json' else data[name])
+    channel_directory = target if edge else target/'channels/testing'
+    channel_directory.mkdir(parents=True, exist_ok=True)
+    (channel_directory/'catalog.signed.json').write_text(json.dumps({'schema_version':1,
         'catalog':base64.b64encode(data['catalog.json']).decode(),
         'signature':base64.b64encode(data['catalog.json.sig']).decode()},separators=(',',':'))+'\n')
+    if not edge:
+        legacy = profile_root/'channels/edge'
+        legacy.mkdir(parents=True, exist_ok=True)
+        (legacy/'catalog.signed.json').write_bytes((channel_directory/'catalog.signed.json').read_bytes())
     if profile == 'fedora-kde':
         root = site/'installer'
-        for name in ('catalog.json', 'catalog.json.sig', 'trust-root.ed25519.pub'):
-            (root/name).write_bytes(data[name])
-        root_channel = root/'channels/edge'
+        if not edge:
+            for name in ('catalog.json', 'catalog.json.sig', 'trust-root.ed25519.pub'):
+                (root/name).write_bytes(data[name])
+        root_channel = root/('channels/edge-alpha' if edge else 'channels/testing')
         root_channel.mkdir(parents=True, exist_ok=True)
-        (root_channel/'catalog.signed.json').write_bytes((channel/'catalog.signed.json').read_bytes())
+        (root_channel/'catalog.signed.json').write_bytes((channel_directory/'catalog.signed.json').read_bytes())
+    if edge:
+        print('Adopted qualified Edge profile:', profile)
+        return
+    legacy = site/'installer/channels/edge'
+    if profile == 'fedora-kde':
+        legacy.mkdir(parents=True, exist_ok=True)
+        (legacy/'catalog.signed.json').write_bytes((channel_directory/'catalog.signed.json').read_bytes())
     status_path = site/'installer/profile-builds.json'; status = json.loads(status_path.read_text())
     for record in status['profiles']:
         if record['profile'] == profile:
@@ -270,4 +306,5 @@ if __name__ == '__main__':
     parser.add_argument('--repository',required=True)
     parser.add_argument('--tag',required=True)
     parser.add_argument('--site',type=Path,default=ROOT/'site')
-    args=parser.parse_args();adopt(args.repository,args.tag,args.site)
+    parser.add_argument('--channel', choices=['testing', 'edge'], default='testing')
+    args=parser.parse_args();adopt(args.repository,args.tag,args.site,args.channel)

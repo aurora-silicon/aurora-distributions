@@ -55,8 +55,8 @@ promoted only if testing has served it, and only after `STABLE_MIN_SOAK_HOURS`.
 | Device firmware | read from the ESP at boot by the initramfs hook; never redistributed | same (dracut module) | same (initrd service) |
 
 Every image follows testing; stable is chosen at image build time (below). Nothing upgrades unattended on
-any distribution. The installer's own channels (`stable`, `rc`, `edge` in `aurora-installer/macOS/Release/release.json`, default
-`edge`) choose installer catalogs, not package feeds.
+any distribution. The installer's own channels (`stable`, `rc`, `testing`, `edge` in `aurora-installer/macOS/Release/release.json`, default
+`testing`) choose installer catalogs, not package feeds.
 
 ## Images and the installer
 

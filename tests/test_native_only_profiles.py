@@ -31,18 +31,18 @@ class NativeOnlyProfileTests(unittest.TestCase):
             'kind': 'common-raw-v1', 'qualified_machines': {'j274ap': ['26.6.2']}}}]}).encode()
         self.source = self.root/'source'
         self.source.mkdir()
-        (self.source/'release.json').write_text('{}')
+        (self.source/'release.json').write_text(json.dumps(self.descriptor()))
         (self.source/'trust-root.ed25519.pub').write_bytes(public)
         for profile in module.PROFILES:
             directory = self.source/'Profiles'/profile
             directory.mkdir(parents=True)
-            (directory/'release.json').write_text('{}')
+            (directory/'release.json').write_text(json.dumps(self.descriptor()))
             (directory/'trust-root.ed25519.pub').write_bytes(public)
             (directory/'delivery.json').write_text('{}')
             (directory/'image-build.json').write_text('{}')
             if profile == 'omarchy-hyprland':
                 (directory/'vm-result.json').write_text(json.dumps(dict.fromkeys(module.VM_CHECKS, True)))
-            catalog = {'schemaVersion': 4, 'sequence': 1, 'issuedAt': '2000-01-01T00:00:00Z',
+            catalog = {'channel': 'testing', 'schemaVersion': 4, 'sequence': 1, 'issuedAt': '2000-01-01T00:00:00Z',
                        'installer': {'minimumVersion': '0.1.0', 'latestVersion': '0.1.0',
                                      'downloadURL': 'https://example.invalid/old'},
                        'models': [{'deviceIdentifier': 'apple,j274', 'status': 'enabled',
@@ -55,6 +55,14 @@ class NativeOnlyProfileTests(unittest.TestCase):
                                    'payloadArtifact': {'sourceURL': 'https://example.invalid/image'}}]}
             (directory/'catalog.json').write_text(json.dumps(catalog))
             self.sign(directory)
+
+    @staticmethod
+    def descriptor():
+        return {'schema_version': 3, 'default_channel': 'testing',
+                'channels': {channel: {'catalog_url': 'https://example.invalid/channels/'
+                              + ('edge-alpha' if channel == 'edge' else channel)
+                              + '/catalog.signed.json'}
+                             for channel in ('stable', 'rc', 'testing', 'edge')}}
 
     def sign(self, directory):
         subprocess.run(['openssl', 'pkeyutl', '-sign', '-inkey', str(self.key), '-rawin',
@@ -88,6 +96,77 @@ class NativeOnlyProfileTests(unittest.TestCase):
                           (self.root/'keys/catalog.ed25519.pub').read_bytes())
             for name in module.FILES:
                 self.assertEqual((self.source/'Profiles'/profile/name).read_bytes(), original[(profile, name)])
+
+    def test_testing_is_preserved_and_edge_stays_signed_empty(self):
+        self.prepare()
+        for profile in module.PROFILES:
+            root = self.root/'output/Profiles'/profile
+            testing = json.loads((root/'catalog.json').read_text())
+            self.assertEqual(testing['channel'], 'testing')
+            self.assertEqual(testing['models'][0]['payloadDigest'], 'sha256:'+'b'*64)
+            edge = json.loads((root/'channels/edge-alpha/catalog.json').read_text())
+            self.assertEqual(edge['channel'], 'edge')
+            self.assertEqual(edge['models'], [])
+            self.assertNotIn('edgeQualification', edge)
+            self.assertEqual((root/'channels/edge/catalog.signed.json').read_bytes(),
+                             (root/'channels/testing/catalog.signed.json').read_bytes())
+            descriptor = json.loads((root/'release.json').read_text())
+            self.assertEqual(descriptor['default_channel'], 'testing')
+            self.assertIn('/channels/edge-alpha/', descriptor['channels']['edge']['catalog_url'])
+
+    def stage_edge(self, payload_digit='c', branch='aurora-edge'):
+        self.to_schema_five()
+        root = self.source/'Profiles/fedora-kde'
+        edge = root/'channels/edge-alpha'
+        edge.mkdir(parents=True)
+        value = json.loads((root/'catalog.json').read_text())
+        report = {'schemaVersion': 1, 'releaseKind': 'alpha', 'status': 'passed', 'imageRunID': 41,
+                  'payloadDigest': 'sha256:'+payload_digit*64,
+                  **{name: {'repository': 'aurora-silicon/'+name, 'branch': branch,
+                            'revision': 'a'*40, 'tree': 'c'*40} for name in ('linux', 'mesa')}}
+        raw = json.dumps(report).encode()
+        value.update(channel='edge', sequence=2, edgeQualification=dict(
+            report, evidenceDigest='sha256:'+hashlib.sha256(raw).hexdigest()))
+        value['models'][0]['payloadDigest'] = report['payloadDigest']
+        (edge/'catalog.json').write_text(json.dumps(value))
+        (edge/'edge-qualification.json').write_bytes(raw)
+        self.sign(edge)
+        (edge/'catalog.signed.json').write_text(json.dumps({
+            'schema_version': 1,
+            'catalog': base64.b64encode((edge/'catalog.json').read_bytes()).decode(),
+            'signature': base64.b64encode((edge/'catalog.json.sig').read_bytes()).decode()}))
+        return raw
+
+    def test_a_future_qualified_edge_is_preserved_without_touching_testing_payloads(self):
+        report = self.stage_edge()
+        self.prepare()
+        root = self.root/'output/Profiles/fedora-kde'
+        testing = json.loads((root/'catalog.json').read_text())
+        edge = json.loads((root/'channels/edge-alpha/catalog.json').read_text())
+        self.assertEqual(testing['channel'], 'testing')
+        self.assertEqual(testing['models'][0]['payloadDigest'], 'sha256:'+'b'*64)
+        self.assertEqual(edge['channel'], 'edge')
+        self.assertEqual(edge['models'][0]['payloadDigest'], 'sha256:'+'c'*64)
+        self.assertEqual(edge['sequence'], 2)
+        source = self.source/'Profiles/fedora-kde/channels/edge-alpha'
+        self.assertEqual((root/'channels/edge-alpha/catalog.json').read_bytes(), (source/'catalog.json').read_bytes())
+        self.assertEqual((root/'channels/edge-alpha/catalog.json.sig').read_bytes(), (source/'catalog.json.sig').read_bytes())
+        self.assertEqual((root/'channels/edge-alpha/edge-qualification.json').read_bytes(), report)
+        module.verify((root/'channels/edge-alpha/catalog.json').read_bytes(),
+                      (root/'channels/edge-alpha/catalog.json.sig').read_bytes(),
+                      (self.root/'keys/catalog.ed25519.pub').read_bytes())
+
+    def test_testing_payloads_cannot_be_resigned_into_edge(self):
+        self.stage_edge(payload_digit='b')
+        with self.assertRaisesRegex(ValueError, 'relabelled'):
+            self.prepare()
+        self.assertFalse((self.root/'output').exists())
+
+    def test_wrong_source_branches_cannot_be_carried_into_edge(self):
+        self.stage_edge(branch='main')
+        with self.assertRaisesRegex(ValueError, 'aurora-edge provenance'):
+            self.prepare()
+        self.assertFalse((self.root/'output').exists())
 
     def to_schema_five(self, **extra):
         """Re-sign every profile as the engine-free delivery build-payload emits."""
@@ -154,7 +233,7 @@ class NativeOnlyProfileTests(unittest.TestCase):
                 target = directory/'channels'/channel
                 catalog = (target/'catalog.json').read_bytes()
                 self.assertEqual(json.loads(catalog),
-                                 {'schemaVersion': 5, 'sequence': 100,
+                                 {'schemaVersion': 5, 'sequence': 100, 'channel': channel,
                                   'issuedAt': json.loads(catalog)['issuedAt'], 'models': []})
                 module.verify(catalog, (target/'catalog.json.sig').read_bytes(), public)
                 envelope = json.loads((target/'catalog.signed.json').read_text())

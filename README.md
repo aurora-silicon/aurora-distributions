@@ -11,3 +11,7 @@ The installer is published as prereleases on [aurora-installer releases](https:/
 [How updates reach installed Macs](docs/updates.md) describes the update channels, the automated pipeline from source branches to signed feeds, its threat model and the key procedures. `feeds-health.yml` checks every live feed and catalog every 30 minutes.
 
 [Flicker-free boot](docs/flicker-free-boot.md) describes how the boot keeps one picture on screen from power-on to the desktop, stage by stage, the branding each distribution configures, and how to verify a machine.
+
+## Installer channels
+
+Testing retains development/prerelease deliveries. Edge is opt-in and remains empty until an actual signed, qualified release from both Linux and Mesa `aurora-edge` branches exists. Existing Testing packages are never promoted or relabelled as Edge. [Channel identity and migration](docs/channels.md) describes the separate endpoints, rollback floors and qualification contract. This support change does not publish a first Edge payload.

@@ -9,6 +9,11 @@ on:
       release-tag:
         description: Immutable payload profile release tag
         required: true
+      channel:
+        description: Testing development delivery or independently qualified Edge release
+        type: choice
+        options: [testing, edge]
+        default: testing
 permissions:
   contents: write
   actions: write
@@ -29,8 +34,9 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           REPOSITORY: ${{ inputs.repository }}
           RELEASE_TAG: ${{ inputs.release-tag }}
+          RELEASE_CHANNEL: ${{ inputs.channel || 'testing' }}
         run: |
-          python3 scripts/adopt-delivery.py --repository "$REPOSITORY" --tag "$RELEASE_TAG"
+          python3 scripts/adopt-delivery.py --repository "$REPOSITORY" --tag "$RELEASE_TAG" --channel "$RELEASE_CHANNEL"
           bash scripts/verify-catalogs
       - name: Record the authenticated resource tree
         run: |
