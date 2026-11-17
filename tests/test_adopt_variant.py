@@ -54,7 +54,7 @@ class VariantTests(unittest.TestCase):
                 'payload_name': 'payload.zip', 'bytes': 123, 'sha256': 'a' * 64}}
 
     def invoke(self, provenance='verified', tag='payload-fedora-kde-42508499173-models58',
-               repository='aurora-silicon/fedora-aurora'):
+               repository='aurora-silicon/fedora-aurora', channel='testing'):
         raw = json.dumps(self.catalog).encode()
         path = self.root / 'source.json'
         path.write_bytes(raw)
@@ -68,7 +68,7 @@ class VariantTests(unittest.TestCase):
         with patch.object(adopter, 'ROOT', self.root), \
              patch.object(adopter, 'verify_provenance', return_value=provenance), \
              patch.object(adopter.urllib.request, 'urlopen', side_effect=opener):
-            adopter.adopt(repository, tag, self.root / 'site')
+            adopter.adopt(repository, tag, self.root / 'site', channel=channel)
 
     def test_variant_keeps_original_image_binding_and_all58_models(self):
         self.invoke()
@@ -194,3 +194,53 @@ class OmarchyPreSignTests(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
+
+class EdgeTests(unittest.TestCase):
+    def setUp(self):
+        VariantTests.setUp(self)
+        self.tag = 'payload-fedora-kde-42508499173-edge-alpha.1'
+        self.base = 'https://github.com/aurora-silicon/fedora-aurora/releases/download/' + self.tag
+        report = {'schemaVersion': 1, 'releaseKind': 'alpha', 'status': 'passed',
+                  'imageRunID': 42508499173, 'payloadDigest': 'sha256:'+'b'*64,
+                  **{name: {'repository': 'aurora-silicon/'+name, 'branch': 'aurora-edge',
+                            'revision': 'a'*40, 'tree': 'c'*40} for name in ('linux', 'mesa')}}
+        raw = json.dumps(report).encode()
+        self.catalog.update(channel='edge', edgeQualification=dict(
+            report, evidenceDigest='sha256:'+hashlib.sha256(raw).hexdigest()))
+        for model in self.catalog['models']:
+            model.update(payloadDigest='sha256:'+'b'*64,
+                         payloadArtifact={'sourceURL': self.base+'/os.zip',
+                                          'fileName': 'os.zip', 'sizeBytes': 123},
+                         metadataArtifact={'sourceURL': self.base+'/metadata.json',
+                                           'fileName': 'metadata.json', 'sizeBytes': 10})
+        self.json['edge-qualification.json'] = report
+        self.json['delivery.json'].update(
+            release_id='build-42508499173-edge-alpha.1', release_channel='edge', release_kind='alpha',
+            packaged_sources={name: report[name] for name in ('linux', 'mesa')},
+            artifacts={'os.zip': {'bytes': 123, 'sha256': 'b'*64}})
+
+    def invoke(self, provenance='verified', tag=None, repository='aurora-silicon/fedora-aurora'):
+        with patch.object(adopter, 'verify_edge_source_refs', return_value=None):
+            VariantTests.invoke(self, provenance=provenance, tag=tag or self.tag,
+                                repository=repository, channel='edge')
+
+    def test_a_qualified_edge_delivery_does_not_replace_testing(self):
+        profile = self.root/'site/installer/Profiles/fedora-kde'
+        profile.mkdir(parents=True)
+        original = json.dumps({'channel': 'testing', 'models': [{'payloadDigest': 'sha256:'+'a'*64}]}).encode()
+        (profile/'catalog.json').write_bytes(original)
+        self.invoke()
+        self.assertEqual((profile/'catalog.json').read_bytes(), original)
+        edge = json.loads((profile/'channels/edge-alpha/catalog.json').read_text())
+        self.assertEqual(edge['channel'], 'edge')
+        self.assertFalse((profile/'channels/edge').exists())
+
+    def test_an_existing_testing_tag_cannot_be_adopted_as_edge(self):
+        with self.assertRaisesRegex(ValueError, 'never testing promotion'):
+            self.invoke(tag='payload-fedora-kde-42508499173-models58')
+
+    def test_an_unqualified_source_cannot_enter_edge(self):
+        self.catalog['edgeQualification']['mesa']['branch'] = 'testing'
+        with self.assertRaisesRegex(ValueError, 'aurora-edge provenance'):
+            self.invoke()

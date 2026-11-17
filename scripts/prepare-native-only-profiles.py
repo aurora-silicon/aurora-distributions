@@ -19,6 +19,10 @@ import tempfile
 import time
 import urllib.request
 
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from channel_policy import descriptor as channel_descriptor, validate_catalog, legacy_development_catalog
+
 ROOT = Path(__file__).resolve().parents[1]
 PROFILES = tuple(f'{distribution}-{desktop}' for distribution in ('fedora', 'arch', 'nixos')
                  for desktop in ('kde', 'gnome', 'minimal')) + ('omarchy-hyprland',)
@@ -77,6 +81,7 @@ def prepare(source, output, signing_key, release_tag, source_revision, fetch=fet
     issued = datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')
     url = ('https://github.com/aurora-silicon/aurora-installer/releases/tag/' + release_tag)
     prepared = {}
+    edge_catalogs = {}
     receipt = {'schema': 1, 'source_revision': source_revision, 'source_catalog_schemas': [],
                'output_catalog_schema': 5, 'release_tag': release_tag, 'profiles': {}}
     for profile in PROFILES:
@@ -96,6 +101,12 @@ def prepare(source, output, signing_key, release_tag, source_revision, fetch=fet
             raise ValueError(f'{profile} has a different signing root')
         verify(data['catalog.json'], data['catalog.json.sig'], public)
         catalog = json.loads(data['catalog.json'])
+        source_image = json.loads(data['image-build.json'])
+        legacy_development = (source_image.get('head_branch') == 'main'
+                              and source_image.get('path') == '.github/workflows/images.yml'
+                              and source_image.get('conclusion') == 'success'
+                              and legacy_development_catalog(catalog))
+        validate_catalog(catalog, 'testing', legacy_development=legacy_development)
         models = catalog['models']
         if (catalog['schemaVersion'] not in (4, 5) or catalog['sequence'] >= now
                 or len(models) != len(allowed)
@@ -142,8 +153,48 @@ def prepare(source, output, signing_key, release_tag, source_revision, fetch=fet
         if (boards & excluded or (admitted is not None and not boards <= set(admitted))
                 or any(board in boards and not members.get(board) for board in BOARD_STAGE2_REQUIRED)):
             raise ValueError(f'{profile} metadata does not admit every supported board')
+        edge_path = directory/'channels/edge-alpha/catalog.signed.json'
+        if edge_path.exists() or edge_path.is_symlink():
+            if edge_path.is_symlink() or edge_path.stat().st_size > 1500000:
+                raise ValueError('unsafe Edge catalog envelope')
+            envelope = json.loads(edge_path.read_text())
+            if (set(envelope) != {'schema_version', 'catalog', 'signature'}
+                    or type(envelope['schema_version']) is not int or envelope['schema_version'] != 1):
+                raise ValueError('invalid Edge catalog envelope')
+            edge_raw = base64.b64decode(envelope['catalog'], validate=True)
+            edge_signature = base64.b64decode(envelope['signature'], validate=True)
+            verify(edge_raw, edge_signature, public)
+            edge_catalog = json.loads(edge_raw)
+            if edge_catalog.get('channel') != 'edge' or edge_catalog.get('schemaVersion') != 5:
+                raise ValueError('legacy/testing data cannot occupy the Edge endpoint')
+            validate_catalog(edge_catalog, 'edge')
+            report = None
+            if edge_catalog['models']:
+                report_path = edge_path.parent/'edge-qualification.json'
+                if report_path.is_symlink() or not report_path.is_file() or report_path.stat().st_size > 1048576:
+                    raise ValueError('Edge has no bounded qualification evidence')
+                report = report_path.read_bytes()
+                proof = edge_catalog['edgeQualification']
+                if ('sha256:' + hashlib.sha256(report).hexdigest() != proof['evidenceDigest']
+                        or json.loads(report) != {k: v for k, v in proof.items() if k != 'evidenceDigest'}):
+                    raise ValueError('Edge qualification differs')
+                if any(model['payloadDigest'] == proof['payloadDigest'] for model in models):
+                    raise ValueError('an existing testing payload cannot be relabelled as Edge')
+            records = {}
+            for name in FILES + ('vm-result.json',):
+                path = edge_path.parent/name
+                if path.exists() or path.is_symlink():
+                    if path.is_symlink() or not path.is_file() or path.stat().st_size > 1048576:
+                        raise ValueError('unsafe Edge delivery record: '+name)
+                    records[name] = path.read_bytes()
+            if (records.get('catalog.json', edge_raw) != edge_raw
+                    or records.get('catalog.json.sig', edge_signature) != edge_signature
+                    or records.get('trust-root.ed25519.pub', public) != public):
+                raise ValueError('Edge envelope and delivery records differ')
+            edge_catalogs[profile] = (edge_raw, edge_signature, report, records)
         previous = hashlib.sha256(data['catalog.json']).hexdigest()
         catalog['schemaVersion'] = 5
+        catalog['channel'] = 'testing'
         catalog['sequence'] = now
         catalog['issuedAt'] = issued
         catalog['installer'] = {'minimumVersion': version, 'latestVersion': version,
@@ -152,18 +203,21 @@ def prepare(source, output, signing_key, release_tag, source_revision, fetch=fet
             for field in EXECUTION_FIELDS:
                 model.pop(field, None)
         data['catalog.json'] = (json.dumps(catalog, indent=2) + '\n').encode()
+        data['release.json'] = channel_descriptor(data['release.json'])
         prepared[profile] = data
         receipt['profiles'][profile] = {
             'previous_catalog_sha256': previous,
             'catalog_sha256': hashlib.sha256(data['catalog.json']).hexdigest(),
             'metadata_sha256': hashlib.sha256(raw).hexdigest(), 'models': len(models)}
-    empty = (json.dumps({'schemaVersion': 5, 'sequence': now, 'issuedAt': issued, 'models': []},
-                        indent=2) + '\n').encode()
+    def empty_catalog(channel):
+        return (json.dumps({'schemaVersion': 5, 'sequence': now, 'issuedAt': issued,
+                            'channel': channel, 'models': []}, indent=2) + '\n').encode()
 
     def write_empty_channels(directory):
         for channel in EMPTY_CHANNELS:
             target = directory/'channels'/channel
             target.mkdir(parents=True)
+            empty = empty_catalog(channel)
             (target/'catalog.json').write_bytes(empty)
             subprocess.run(['openssl', 'pkeyutl', '-sign', '-inkey', str(signing_key), '-rawin',
                             '-in', str(target/'catalog.json'),
@@ -188,20 +242,48 @@ def prepare(source, output, signing_key, release_tag, source_revision, fetch=fet
                             '-out', str(directory/'catalog.json.sig')], check=True)
             signature = (directory/'catalog.json.sig').read_bytes()
             verify(data['catalog.json'], signature, public)
-            channel = directory/'channels/edge'
+            channel = directory/'channels/testing'
             channel.mkdir(parents=True)
             (channel/'catalog.signed.json').write_text(json.dumps({
                 'schema_version': 1, 'catalog': base64.b64encode(data['catalog.json']).decode(),
                 'signature': base64.b64encode(signature).decode()}, separators=(',', ':')) + '\n')
+            legacy = directory/'channels/edge'
+            legacy.mkdir(parents=True)
+            (legacy/'catalog.signed.json').write_bytes((channel/'catalog.signed.json').read_bytes())
             write_empty_channels(directory)
+            edge = directory/'channels/edge-alpha'
+            edge.mkdir(parents=True)
+            if profile in edge_catalogs:
+                raw, signature, report, records = edge_catalogs[profile]
+                for name, content in records.items():
+                    (edge/name).write_bytes(content)
+                if report is not None:
+                    (edge/'edge-qualification.json').write_bytes(report)
+                (edge/'catalog.json').write_bytes(raw)
+                (edge/'catalog.json.sig').write_bytes(signature)
+            else:
+                raw = empty_catalog('edge')
+                (edge/'catalog.json').write_bytes(raw)
+                subprocess.run(['openssl', 'pkeyutl', '-sign', '-inkey', str(signing_key), '-rawin',
+                                '-in', str(edge/'catalog.json'), '-out', str(edge/'catalog.json.sig')], check=True)
+                signature = (edge/'catalog.json.sig').read_bytes()
+            verify(raw, signature, public)
+            (edge/'catalog.signed.json').write_text(json.dumps({
+                'schema_version': 1, 'catalog': base64.b64encode(raw).decode(),
+                'signature': base64.b64encode(signature).decode()}, separators=(',', ':')) + '\n')
         write_empty_channels(staged)
         for name in ('release.json', 'trust-root.ed25519.pub'):
-            (staged/name).write_bytes((source/name).read_bytes())
+            content = (source/name).read_bytes()
+            (staged/name).write_bytes(channel_descriptor(content) if name == 'release.json' else content)
         for name in ('catalog.json', 'catalog.json.sig'):
             (staged/name).write_bytes((staged/'Profiles/fedora-kde'/name).read_bytes())
+        for lane in ('testing', 'edge-alpha'):
+            (staged/'channels'/lane).mkdir(parents=True)
+            (staged/'channels'/lane/'catalog.signed.json').write_bytes(
+                (staged/'Profiles/fedora-kde/channels'/lane/'catalog.signed.json').read_bytes())
         (staged/'channels/edge').mkdir(parents=True)
         (staged/'channels/edge/catalog.signed.json').write_bytes(
-            (staged/'Profiles/fedora-kde/channels/edge/catalog.signed.json').read_bytes())
+            (staged/'channels/testing/catalog.signed.json').read_bytes())
         (staged/'native-only-catalogs.json').write_text(json.dumps(receipt, indent=2) + '\n')
         staged.rename(output)
     print(f'Prepared {len(prepared)} signed native-only profiles; live feeds unchanged')
