@@ -8,7 +8,7 @@
       "source": "e6f5aa81e096a4b47064f3694efbf2696b3628ea",
       "physical_installation": "pending",
       "delivery": "signed",
-      "release": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-43698398946"
+      "release": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-minimal-43698398946-models65"
     },
     {
       "profile": "fedora-kde",
@@ -17,7 +17,7 @@
       "source": "e6f5aa81e096a4b47064f3694efbf2696b3628ea",
       "physical_installation": "pending",
       "delivery": "signed",
-      "release": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-kde-43698407877"
+      "release": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-kde-43698407877-models65"
     },
     {
       "profile": "fedora-gnome",
@@ -26,7 +26,7 @@
       "source": "e6f5aa81e096a4b47064f3694efbf2696b3628ea",
       "physical_installation": "pending",
       "delivery": "signed",
-      "release": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-43698417200"
+      "release": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-gnome-43698417200-models65"
     },
     {
       "profile": "arch-kde",
@@ -35,7 +35,7 @@
       "delivery": "signed",
       "run": "https://github.com/aurora-silicon/alarm-aurora/actions/runs/43693338163",
       "source": "27109d226aa5ec80734f30e5d9e754e433e08f40",
-      "release": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-43693338163"
+      "release": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-kde-43693338163-models65"
     },
     {
       "profile": "arch-gnome",
@@ -44,7 +44,7 @@
       "delivery": "signed",
       "run": "https://github.com/aurora-silicon/alarm-aurora/actions/runs/43693420642",
       "source": "27109d226aa5ec80734f30e5d9e754e433e08f40",
-      "release": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-43693420642"
+      "release": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-gnome-43693420642-models65"
     },
     {
       "profile": "arch-minimal",
@@ -53,7 +53,7 @@
       "delivery": "signed",
       "run": "https://github.com/aurora-silicon/alarm-aurora/actions/runs/43693278254",
       "source": "27109d226aa5ec80734f30e5d9e754e433e08f40",
-      "release": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-43693278254"
+      "release": "https://github.com/aurora-silicon/alarm-aurora/releases/download/payload-arch-minimal-43693278254-models65"
     },
     {
       "profile": "nixos-kde",
@@ -62,7 +62,7 @@
       "delivery": "signed",
       "run": "https://github.com/aurora-silicon/nixos-aurora/actions/runs/43697993510",
       "source": "19f7c18a4781c91e354cd614133fdf8b5d1cb465",
-      "release": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-43697993510"
+      "release": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-kde-43697993510-models65"
     },
     {
       "profile": "nixos-gnome",
@@ -71,7 +71,7 @@
       "delivery": "signed",
       "run": "https://github.com/aurora-silicon/nixos-aurora/actions/runs/43698003143",
       "source": "19f7c18a4781c91e354cd614133fdf8b5d1cb465",
-      "release": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-43698003143"
+      "release": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-gnome-43698003143-models65"
     },
     {
       "profile": "nixos-minimal",
@@ -80,14 +80,17 @@
       "delivery": "signed",
       "run": "https://github.com/aurora-silicon/nixos-aurora/actions/runs/43697984269",
       "source": "19f7c18a4781c91e354cd614133fdf8b5d1cb465",
-      "release": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-43697984269"
+      "release": "https://github.com/aurora-silicon/nixos-aurora/releases/download/payload-nixos-minimal-43697984269-models65"
     },
     {
       "profile": "omarchy-hyprland",
-      "assembly": "pending",
-      "delivery": "pending",
+      "assembly": "passed",
+      "delivery": "signed",
       "physical_installation": "pending",
-      "vm_qualification": "pending"
+      "vm_qualification": "pending",
+      "run": "https://github.com/aurora-silicon/omarchy-aurora/actions/runs/44239549153",
+      "source": "c94d6eaa7dfbd73141d18de1a423853574976241",
+      "release": "https://github.com/aurora-silicon/omarchy-aurora/releases/download/payload-omarchy-hyprland-44239549153"
     }
   ]
 }

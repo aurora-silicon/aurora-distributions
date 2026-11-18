@@ -58,7 +58,14 @@
     "apple,k114c",
     "apple,k114s",
     "apple,k116c",
-    "apple,k116s"
+    "apple,k116s",
+    "apple,j714c",
+    "apple,j714s",
+    "apple,j716c",
+    "apple,j716s",
+    "apple,j775c",
+    "apple,j775d",
+    "apple,j873s"
   ],
   "refused": {},
   "developer": {},
@@ -82,6 +89,14 @@
     "apple,k114c": "MacBook Pro 14-inch M5 Max with the OLED touchscreen (K114c, T6050): preliminary and untested on hardware, nobody on the Aurora team has one yet. Its kernel device tree is preliminary and untested (aurora-silicon/linux#1025). The touchscreen does not work yet and the glowing Apple logo is untested, and the internal OLED panel works only as the boot framebuffer until the display driver covers it. Installs go ahead only after the owner acknowledges the warning and the recovery steps.",
     "apple,k114s": "MacBook Pro 14-inch M5 Pro with the OLED touchscreen (K114s, T6050): preliminary and untested on hardware, nobody on the Aurora team has one yet. Its kernel device tree is preliminary and untested (aurora-silicon/linux#1025). The touchscreen does not work yet and the glowing Apple logo is untested, and the internal OLED panel works only as the boot framebuffer until the display driver covers it. Installs go ahead only after the owner acknowledges the warning and the recovery steps.",
     "apple,k116c": "MacBook Pro 16-inch M5 Max with the OLED touchscreen (K116c, T6050): preliminary and untested on hardware, nobody on the Aurora team has one yet. Its kernel device tree is preliminary and untested (aurora-silicon/linux#1025). The touchscreen does not work yet and the glowing Apple logo is untested, and the internal OLED panel works only as the boot framebuffer until the display driver covers it. Installs go ahead only after the owner acknowledges the warning and the recovery steps.",
-    "apple,k116s": "MacBook Pro 16-inch M5 Pro with the OLED touchscreen (K116s, T6050): preliminary and untested on hardware, nobody on the Aurora team has one yet. Its kernel device tree is preliminary and untested (aurora-silicon/linux#1025). The touchscreen does not work yet and the glowing Apple logo is untested, and the internal OLED panel works only as the boot framebuffer until the display driver covers it. Installs go ahead only after the owner acknowledges the warning and the recovery steps."
+    "apple,k116s": "MacBook Pro 16-inch M5 Pro with the OLED touchscreen (K116s, T6050): preliminary and untested on hardware, nobody on the Aurora team has one yet. Its kernel device tree is preliminary and untested (aurora-silicon/linux#1025). The touchscreen does not work yet and the glowing Apple logo is untested, and the internal OLED panel works only as the boot framebuffer until the display driver covers it. Installs go ahead only after the owner acknowledges the warning and the recovery steps.",
+    "apple,j714c": "MacBook Pro 14-inch M5 Max (J714c, T6050): experimental. Aurora has a kernel device tree for this Mac, but this installer has not been qualified on the board. It may fail to boot, and GPU, display, storage, network or other devices may be incomplete. Continue only after acknowledging the warning and recovery steps; retain macOS and access to Recovery.",
+    "apple,j714s": "MacBook Pro 14-inch M5 Pro (J714s, T6050): experimental. Aurora has a kernel device tree for this Mac, but this installer has not been qualified on the board. It may fail to boot, and GPU, display, storage, network or other devices may be incomplete. Continue only after acknowledging the warning and recovery steps; retain macOS and access to Recovery.",
+    "apple,j716c": "MacBook Pro 16-inch M5 Max (J716c, T6050): experimental. Aurora has a kernel device tree for this Mac, but this installer has not been qualified on the board. It may fail to boot, and GPU, display, storage, network or other devices may be incomplete. Continue only after acknowledging the warning and recovery steps; retain macOS and access to Recovery.",
+    "apple,j716s": "MacBook Pro 16-inch M5 Pro (J716s, T6050): experimental. Aurora has a kernel device tree for this Mac, but this installer has not been qualified on the board. It may fail to boot, and GPU, display, storage, network or other devices may be incomplete. Continue only after acknowledging the warning and recovery steps; retain macOS and access to Recovery.",
+    "apple,j775c": "Mac Studio M5 Max (J775c, T6050): experimental. Aurora has a kernel device tree for this Mac, but this installer has not been qualified on the board. It may fail to boot, and GPU, display, storage, network or other devices may be incomplete. Continue only after acknowledging the warning and recovery steps; retain macOS and access to Recovery.",
+    "apple,j775d": "Mac Studio M5 Ultra (J775d, T6050): experimental. Aurora has a kernel device tree for this Mac, but this installer has not been qualified on the board. It may fail to boot, and GPU, display, storage, network or other devices may be incomplete. Continue only after acknowledging the warning and recovery steps; retain macOS and access to Recovery.",
+    "apple,j873s": "Mac mini M5 Pro (J873s, T6050): experimental. Aurora has a kernel device tree for this Mac, but this installer has not been qualified on the board. It may fail to boot, and GPU, display, storage, network or other devices may be incomplete. Continue only after acknowledging the warning and recovery steps; retain macOS and access to Recovery.",
+    "apple,j616c": "MacBook Pro 16-inch M4 Max (T6041): experimental. Aurora has run on one with separately built kernel and aura, but this installer has not installed it, and the board device tree it delivers (aurora-silicon/linux#994) has not been booted on one yet. Installs go ahead only after the owner acknowledges the warning and the recovery steps."
   }
 }

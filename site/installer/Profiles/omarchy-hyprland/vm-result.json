@@ -1,0 +1,21 @@
+{
+  "schema": 1,
+  "generic_vm_kernel": "7.3.5-1-aarch64-ARCH",
+  "kernel_override": true,
+  "vm_session_startup_timeout_seconds": 300,
+  "physical_qualification": "not tested",
+  "source_sha256": "ee1388c9d65a8469c3a35552c89ffe840c88cea31628948a057146ea27ad3f6e",
+  "acceleration": "tcg",
+  "boot": true,
+  "owner": true,
+  "sudo": true,
+  "package_trust": true,
+  "encryption": true,
+  "temporary_key_rejected": true,
+  "second_boot": true,
+  "network": true,
+  "desktop": true,
+  "shell": true,
+  "terminal": true,
+  "original_unchanged": true
+}
