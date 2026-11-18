@@ -1,7 +1,7 @@
 name: Stage the F44 Neo Edge payload artifact
 on:
   push:
-    branches: [edge/stage-neo-payload-20261118]
+    branches: [edge/stage-neo-payload-ef112c2b]
   workflow_dispatch:
     inputs:
       image-run:
@@ -30,16 +30,16 @@ jobs:
       - name: Authenticate the image archive and package proof
         env:
           GH_TOKEN: ${{ github.token }}
-          IMAGE_RUN: ${{ inputs.image-run || '44335305490' }}
+          IMAGE_RUN: ${{ inputs.image-run || '44380859872' }}
         run: |
           set -euo pipefail
           [[ $IMAGE_RUN =~ ^[1-9][0-9]*$ ]]
           repo=aurora-silicon/fedora-aurora
           gh api "repos/$repo/actions/runs/$IMAGE_RUN" > image-build.json
-          jq -e --arg repo "$repo" '.conclusion=="success" and .head_branch=="edge/neo-f44-image-20261118"
+          jq -e --arg repo "$repo" '.conclusion=="success" and .head_branch=="edge/neo-f44-image-ef112c2b"
              and .path==".github/workflows/edge-f44-image.yml" and .head_repository.full_name==$repo' image-build.json
           head=$(jq -r .head_sha image-build.json)
-          [[ $head == 401d101cd80166330e721442028c0fdfe942bbc1 ]]
+          [[ $head == 389751ff9564a7d91250ce32beb6207097a67f5e ]]
           gh run download "$IMAGE_RUN" --repo "$repo" --name fedora-kde-edge-candidate --dir downloaded
           archive=downloaded/out/fedora-kde-filesystems.tar.zst
           proof=downloaded/out/fedora-kde-installer/edge-image-proof.json
@@ -52,6 +52,7 @@ jobs:
           sudo apt-get install -y zstd
           mkdir filesystems
           zstd -dc "$archive" | python3 -c 'import sys,tarfile; tarfile.open(fileobj=sys.stdin.buffer,mode="r|").extractall("filesystems",filter="data")'
+          printf "%s  %s\n" 0d4fcf5b1b87efe9037ebc8822b90cc3c66dc9f72c6b1a7397eb6d6815c82646 "$proof" | sha256sum -c -
           cmp "$proof" filesystems/edge-image-proof.json
       - name: Verify the signed native Recovery template
         run: |

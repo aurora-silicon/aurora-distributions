@@ -7,16 +7,18 @@ import re
 REPO = "aurora-silicon/fedora-aurora"
 PROFILE = "fedora-kde"
 MODEL = "apple,j700"
-IMAGE_BRANCH = "edge/neo-f44-image-20261118"
-IMAGE_HEAD = "401d101cd80166330e721442028c0fdfe942bbc1"
+IMAGE_BRANCH = "edge/neo-f44-image-ef112c2b"
+IMAGE_HEAD = "389751ff9564a7d91250ce32beb6207097a67f5e"
 IMAGE_WORKFLOW = ".github/workflows/edge-f44-image.yml"
 SIGNING_RUN = 44329906984
+MESA_SIGNING_RUN = 44380265630
+IMAGE_RUN = 44380859872
 SOURCES = {
     name: {"repository": "aurora-silicon/" + name, "branch": "aurora-edge",
            "revision": revision, "tree": tree}
     for name, revision, tree in (
         ("linux", "6020f67d5ce13e7aae6820cd51ab70826404932c", "f2dbcb1ebd59343e2496360bc572ef1a071f2159"),
-        ("mesa", "06c4609a8e962a2baa95560039ba21de5dfaa524", "3b9216527b7620aa0e590a6b47c62e27f3faf6e7"),
+        ("mesa", "ef112c2b86e4e19b2317cd88918e673de7fd55cf", "5a383e03de1e86d727def1279d2328c4f9b27bc4"),
     )
 }
 KREL = "7.3.0-42.fc44.aurora.aarch64"
@@ -24,16 +26,21 @@ KERNEL_DIGEST = "d6903588ce991dec6b65beafede9f6b0361d3904af8fd989b6c4bf143bb00fe
 FILES = {
     f"root:usr/lib/modules/{KREL}/vmlinuz": KERNEL_DIGEST,
     f"boot:vmlinuz-{KREL}": KERNEL_DIGEST,
-    "root:usr/lib64/libvulkan_asahi.so": "d28bea383537961a1ddf9c7673c4932ccde8a588203da917b9d9c0a401decb0a",
+    "root:usr/lib64/libvulkan_asahi.so": "ce060163100691dd68a8f07da1a945d66b2c3f75b26175aa2dd461753de5212b",
     "root:usr/share/vulkan/icd.d/asahi_icd.aarch64.json": "5d4804f4a540be6d376d11ca6a9d34fec703b84aea97dd04a392b01d3bb1ead3",
 }
 REQUIRED_PACKAGES = {
     "kernel-aurora-core.aarch64": f"kernel-aurora-core-{KREL}.rpm",
     "kernel-aurora-modules-extra.aarch64": f"kernel-aurora-modules-extra-{KREL}.rpm",
-    "mesa-aurora-vulkan-drivers.aarch64": "mesa-aurora-vulkan-drivers-26.3.0-32.fc44.aurora.aarch64.rpm",
-    "mesa-aurora-dri-drivers.aarch64": "mesa-aurora-dri-drivers-26.3.0-32.fc44.aurora.aarch64.rpm",
+    "mesa-aurora-vulkan-drivers.aarch64": "mesa-aurora-vulkan-drivers-26.3.0-33.fc44.aurora.aarch64.rpm",
+    "mesa-aurora-dri-drivers.aarch64": "mesa-aurora-dri-drivers-26.3.0-33.fc44.aurora.aarch64.rpm",
 }
 GATES = {"vulkanCTS", "glCTS", "deepSleep", "restoration"}
+EVIDENCE_PAIR = {
+    "kernelImageSHA256": "sha256:" + KERNEL_DIGEST,
+    "mesaDsoSHA256": "sha256:" + FILES["root:usr/lib64/libvulkan_asahi.so"],
+    "mesaSigningRunID": MESA_SIGNING_RUN,
+}
 
 
 def digest(data):
@@ -51,12 +58,15 @@ def verify_image(run, raw_proof, profile):
             or run.get("status") != "completed" or run.get("path") != IMAGE_WORKFLOW
             or run.get("head_branch") != IMAGE_BRANCH or repo.get("full_name") != REPO
             or run.get("event") not in ("push", "workflow_dispatch")
-            or type(run.get("id")) is not int or run["id"] <= 0
+            or run.get("id") != IMAGE_RUN
             or run.get("head_sha") != IMAGE_HEAD):
         raise ValueError("Expected a completed Fedora Neo Edge image run")
     if (proof.get("schema") != 1 or proof.get("fedora") != 44
             or proof.get("profile") != PROFILE or proof.get("models") != [MODEL]
-            or proof.get("signing_run") != SIGNING_RUN or proof.get("files") != FILES):
+            or proof.get("signing_run") != SIGNING_RUN
+            or proof.get("replacement_signing_run") != MESA_SIGNING_RUN
+            or proof.get("replacement_mesa") != SOURCES["mesa"]["revision"]
+            or proof.get("files") != FILES):
         raise ValueError("Edge image proof differs from the Neo-smoked file inventory")
     packages = proof.get("installed_edge_packages", {})
     for key, filename in REQUIRED_PACKAGES.items():
@@ -69,9 +79,11 @@ def verify_image(run, raw_proof, profile):
 
 
 def verify_evidence(record):
-    if not isinstance(record, dict) or set(record) != GATES:
+    if (not isinstance(record, dict) or set(record) != {"pair", "checks"}
+            or record["pair"] != EVIDENCE_PAIR
+            or not isinstance(record["checks"], dict) or set(record["checks"]) != GATES):
         raise ValueError("Expected full Vulkan CTS, GL CTS, deep sleep and restoration evidence")
-    for gate, evidence in record.items():
+    for gate, evidence in record["checks"].items():
         if (not isinstance(evidence, dict) or set(evidence) != {"status", "sha256"}
                 or evidence["status"] != "passed" or not sha256(evidence["sha256"])):
             raise ValueError(f"Missing passing Neo evidence: {gate}")

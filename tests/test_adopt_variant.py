@@ -199,14 +199,15 @@ if __name__ == '__main__':
 class EdgeTests(unittest.TestCase):
     def setUp(self):
         VariantTests.setUp(self)
-        self.tag = 'payload-fedora-kde-42508499173-edge-alpha.1'
+        self.tag = 'payload-fedora-kde-44380859872-edge-alpha.1'
         self.base = 'https://github.com/aurora-silicon/fedora-aurora/releases/download/' + self.tag
         edge = adopter.neo_edge
         run = self.json['image-build.json']
-        run.update(status='completed', event='push', head_branch=edge.IMAGE_BRANCH,
+        run.update(id=edge.IMAGE_RUN, status='completed', event='push', head_branch=edge.IMAGE_BRANCH,
                    path=edge.IMAGE_WORKFLOW, head_sha=edge.IMAGE_HEAD)
         proof = {'schema': 1, 'fedora': 44, 'profile': edge.PROFILE, 'models': [edge.MODEL],
-                 'signing_run': edge.SIGNING_RUN, 'files': edge.FILES,
+                  'signing_run': edge.SIGNING_RUN, 'replacement_signing_run': edge.MESA_SIGNING_RUN,
+                 'replacement_mesa': edge.SOURCES['mesa']['revision'], 'files': edge.FILES,
                  'installed_edge_packages': {
                      key: {'filename': filename, 'sha256': 'd'*64, 'main_header_and_payload_sha256': 'e'*64}
                      for key, filename in edge.REQUIRED_PACKAGES.items()}}
@@ -224,9 +225,10 @@ class EdgeTests(unittest.TestCase):
                          metadataArtifact={'sourceURL': self.base+'/installer-data-fedora-kde.json',
                                            'fileName': 'installer-data-fedora-kde.json', 'sizeBytes': len(raw_metadata)})
         receipt = self.json['delivery.json']
-        receipt.update(release_id='build-42508499173-edge-alpha.1',
+        receipt.update(release_id='build-44380859872-edge-alpha.1',
                        artifacts={'os.zip': {'bytes': 123, 'sha256': 'b'*64}})
-        gates = {gate: {'status': 'passed', 'sha256': 'sha256:'+'f'*64} for gate in edge.GATES}
+        gates = {'pair': edge.EVIDENCE_PAIR.copy(),
+                 'checks': {gate: {'status': 'passed', 'sha256': 'sha256:'+'f'*64} for gate in edge.GATES}}
         raw = edge.bind(self.catalog, receipt, run, json.dumps(proof).encode(), gates)
         self.json['edge-qualification.json'] = json.loads(raw)
         self.catalog['edgeQualification']['evidenceDigest'] = edge.digest(
@@ -250,7 +252,7 @@ class EdgeTests(unittest.TestCase):
 
     def test_an_existing_testing_tag_cannot_be_adopted_as_edge(self):
         with self.assertRaisesRegex(ValueError, 'never testing promotion'):
-            self.invoke(tag='payload-fedora-kde-42508499173-models58')
+            self.invoke(tag='payload-fedora-kde-44380859872-models58')
 
     def test_an_unqualified_source_cannot_enter_edge(self):
         self.catalog['edgeQualification']['mesa']['branch'] = 'testing'
@@ -287,3 +289,9 @@ class EdgeTests(unittest.TestCase):
         raw['allowed_device_classes'].append('j813ap')
         with self.assertRaisesRegex(ValueError, 'Neo-only install policy'):
             self.invoke()
+
+    def test_old_pair_evidence_cannot_bind_the_replacement(self):
+        evidence = copy.deepcopy(self.catalog['edgeQualification']['neoEvidence'])
+        evidence['pair']['mesaDsoSHA256'] = 'sha256:' + 'a' * 64
+        with self.assertRaisesRegex(ValueError, 'full Vulkan CTS'):
+            adopter.neo_edge.verify_evidence(evidence)
