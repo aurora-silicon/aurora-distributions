@@ -30,7 +30,7 @@ jobs:
       - name: Authenticate the image archive and package proof
         env:
           GH_TOKEN: ${{ github.token }}
-          IMAGE_RUN: ${{ inputs.image-run || '44334545940' }}
+          IMAGE_RUN: ${{ inputs.image-run || '44335305490' }}
         run: |
           set -euo pipefail
           [[ $IMAGE_RUN =~ ^[1-9][0-9]*$ ]]
@@ -39,7 +39,7 @@ jobs:
           jq -e --arg repo "$repo" '.conclusion=="success" and .head_branch=="edge/neo-f44-image-20261118"
              and .path==".github/workflows/edge-f44-image.yml" and .head_repository.full_name==$repo' image-build.json
           head=$(jq -r .head_sha image-build.json)
-          [[ $head == eea4ac12918695d48ab130f0c11d4ecdfb8f0af1 ]]
+          [[ $head == 401d101cd80166330e721442028c0fdfe942bbc1 ]]
           gh run download "$IMAGE_RUN" --repo "$repo" --name fedora-kde-edge-candidate --dir downloaded
           archive=downloaded/out/fedora-kde-filesystems.tar.zst
           proof=downloaded/out/fedora-kde-installer/edge-image-proof.json
