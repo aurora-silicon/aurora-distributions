@@ -201,24 +201,36 @@ class EdgeTests(unittest.TestCase):
         VariantTests.setUp(self)
         self.tag = 'payload-fedora-kde-42508499173-edge-alpha.1'
         self.base = 'https://github.com/aurora-silicon/fedora-aurora/releases/download/' + self.tag
-        report = {'schemaVersion': 1, 'releaseKind': 'alpha', 'status': 'passed',
-                  'imageRunID': 42508499173, 'payloadDigest': 'sha256:'+'b'*64,
-                  **{name: {'repository': 'aurora-silicon/'+name, 'branch': 'aurora-edge',
-                            'revision': 'a'*40, 'tree': 'c'*40} for name in ('linux', 'mesa')}}
-        raw = json.dumps(report).encode()
-        self.catalog.update(channel='edge', edgeQualification=dict(
-            report, evidenceDigest='sha256:'+hashlib.sha256(raw).hexdigest()))
+        edge = adopter.neo_edge
+        run = self.json['image-build.json']
+        run.update(status='completed', event='push', head_branch=edge.IMAGE_BRANCH,
+                   path=edge.IMAGE_WORKFLOW, head_sha=edge.IMAGE_HEAD)
+        proof = {'schema': 1, 'fedora': 44, 'profile': edge.PROFILE, 'models': [edge.MODEL],
+                 'signing_run': edge.SIGNING_RUN, 'files': edge.FILES,
+                 'installed_edge_packages': {
+                     key: {'filename': filename, 'sha256': 'd'*64, 'main_header_and_payload_sha256': 'e'*64}
+                     for key, filename in edge.REQUIRED_PACKAGES.items()}}
+        self.json['edge-image-proof.json'] = proof
+        metadata = {"os_list": [{"allowed_device_classes": ["j700ap"],
+                                 "aurora_stage1": {"qualified_machines": {"j700ap": ["27.2"]}},
+                                 "aurora_stage2": {"board_members": {"j700ap": "esp/m1n1/boot-j700.bin"}}}]}
+        raw_metadata = json.dumps(metadata).encode()
+        self.json['installer-data-fedora-kde.json'] = metadata
         for model in self.catalog['models']:
             model.update(payloadDigest='sha256:'+'b'*64,
                          payloadArtifact={'sourceURL': self.base+'/os.zip',
                                           'fileName': 'os.zip', 'sizeBytes': 123},
-                         metadataArtifact={'sourceURL': self.base+'/metadata.json',
-                                           'fileName': 'metadata.json', 'sizeBytes': 10})
-        self.json['edge-qualification.json'] = report
-        self.json['delivery.json'].update(
-            release_id='build-42508499173-edge-alpha.1', release_channel='edge', release_kind='alpha',
-            packaged_sources={name: report[name] for name in ('linux', 'mesa')},
-            artifacts={'os.zip': {'bytes': 123, 'sha256': 'b'*64}})
+                         metadataDigest=edge.digest(raw_metadata),
+                         metadataArtifact={'sourceURL': self.base+'/installer-data-fedora-kde.json',
+                                           'fileName': 'installer-data-fedora-kde.json', 'sizeBytes': len(raw_metadata)})
+        receipt = self.json['delivery.json']
+        receipt.update(release_id='build-42508499173-edge-alpha.1',
+                       artifacts={'os.zip': {'bytes': 123, 'sha256': 'b'*64}})
+        gates = {gate: {'status': 'passed', 'sha256': 'sha256:'+'f'*64} for gate in edge.GATES}
+        raw = edge.bind(self.catalog, receipt, run, json.dumps(proof).encode(), gates)
+        self.json['edge-qualification.json'] = json.loads(raw)
+        self.catalog['edgeQualification']['evidenceDigest'] = edge.digest(
+            json.dumps(self.json['edge-qualification.json']).encode())
 
     def invoke(self, provenance='verified', tag=None, repository='aurora-silicon/fedora-aurora'):
         with patch.object(adopter, 'verify_edge_source_refs', return_value=None):
@@ -243,4 +255,35 @@ class EdgeTests(unittest.TestCase):
     def test_an_unqualified_source_cannot_enter_edge(self):
         self.catalog['edgeQualification']['mesa']['branch'] = 'testing'
         with self.assertRaisesRegex(ValueError, 'aurora-edge provenance'):
+            self.invoke()
+
+
+    def test_main_image_run_is_not_neo_edge_provenance(self):
+        self.json['image-build.json']['head_branch'] = 'main'
+        with self.assertRaisesRegex(ValueError, 'completed Fedora Neo Edge image run'):
+            self.invoke()
+
+    def test_changed_image_proof_is_rejected(self):
+        self.json['edge-image-proof.json']['files'] = {'replacement': 'a'*64}
+        with self.assertRaisesRegex(ValueError, 'Neo-smoked file'):
+            self.invoke()
+
+    def test_wider_model_rows_are_rejected(self):
+        self.catalog['models'].append(dict(self.catalog['models'][0], deviceIdentifier='apple,j813'))
+        with self.assertRaisesRegex(ValueError, 'catalog model coverage'):
+            self.invoke()
+
+    def test_missing_cts_receipt_refuses_to_bind(self):
+        unsigned = copy.deepcopy(self.catalog)
+        del unsigned['channel']
+        del unsigned['edgeQualification']
+        with self.assertRaisesRegex(ValueError, 'full Vulkan CTS'):
+            adopter.neo_edge.bind(unsigned, self.json['delivery.json'], self.json['image-build.json'],
+                                  json.dumps(self.json['edge-image-proof.json']).encode(), {})
+
+
+    def test_testing_metadata_cannot_replace_neo_metadata(self):
+        raw = self.json['installer-data-fedora-kde.json']['os_list'][0]
+        raw['allowed_device_classes'].append('j813ap')
+        with self.assertRaisesRegex(ValueError, 'Neo-only install policy'):
             self.invoke()

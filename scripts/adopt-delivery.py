@@ -17,6 +17,8 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from channel_policy import (CHANNELS, descriptor as channel_descriptor, validate_catalog,
                             verify_edge_delivery, verify_edge_source_refs)
 
+import neo_edge
+
 ROOT = Path(__file__).resolve().parents[1]
 PAYLOAD_WORKFLOW = 'aurora-silicon/aurora-distributions/.github/workflows/build-payload.yml'
 NEW65_BOARDS = ('j714c', 'j714s', 'j716c', 'j716s', 'j775c', 'j775d', 'j873s')
@@ -187,7 +189,9 @@ def adopt(repository, tag, site, channel='testing'):
     if tag.endswith('-models65'):
         names += ('source-delivery.json', 'metadata-refresh.json')
     if edge:
-        names += ('edge-qualification.json',)
+        if (repository, match[1]) != (neo_edge.REPO, neo_edge.PROFILE):
+            raise ValueError('Only the F44 KDE Neo Edge producer is supported')
+        names += ('edge-qualification.json', 'edge-image-proof.json', 'installer-data-fedora-kde.json')
     data = {name: urllib.request.urlopen(base + '/' + name, timeout=60).read() for name in names}
     trusted = (ROOT / 'keys/catalog.ed25519.pub').read_bytes()
     if len(trusted) != 32 or data['trust-root.ed25519.pub'] != trusted or len(data['catalog.json.sig']) != 64:
@@ -210,10 +214,10 @@ def adopt(repository, tag, site, channel='testing'):
         if not all(vm.get(check) is True for check in VM_CHECKS):
             raise ValueError('Omarchy delivery has no complete passing VM qualification')
     run = json.loads(data['image-build.json'])
-    if (run['conclusion'] != 'success' or run['head_branch'] != 'main'
-            or run['head_repository']['full_name'] != repository or run['path'] != '.github/workflows/images.yml'
-            or tag != 'payload-' + profile + '-' + str(run['id'])
-                + (match[3] or '')):
+    if (tag != 'payload-' + profile + '-' + str(run['id']) + (match[3] or '')
+            or (not edge and (run['conclusion'] != 'success' or run['head_branch'] != 'main'
+                              or run['head_repository']['full_name'] != repository
+                              or run['path'] != '.github/workflows/images.yml'))):
         raise ValueError('image provenance differs from the delivery tag')
     if tag.endswith('-models58'):
         lineage, patch = json.loads(data['source-delivery.json']), json.loads(data['zip-refresh.json'])
@@ -228,7 +232,7 @@ def adopt(repository, tag, site, channel='testing'):
     models = catalog['models']
     if tag.endswith('-models65'):
         verify_models65(repository, tag, data, catalog, receipt, run, trusted)
-    allowed = set(json.loads((ROOT/'keys/supported-models.json').read_text())['supported'])
+    allowed = {neo_edge.MODEL} if edge else set(json.loads((ROOT/'keys/supported-models.json').read_text())['supported'])
     # Deliveries are schema 5 and name no engine. Schema 4 deliveries built
     # before that still adopt; the native-only step strips their engine pins.
     if (catalog['schemaVersion'] not in (4, 5) or {model['deviceIdentifier'] for model in models} != allowed
@@ -256,6 +260,8 @@ def adopt(repository, tag, site, channel='testing'):
         if provenance != 'verified':
             raise ValueError('Edge requires hosted payload and qualification provenance')
         verify_edge_delivery(catalog, data['edge-qualification.json'], receipt, run, base, testing)
+        neo_edge.verify_binding(catalog, receipt, run, data['edge-image-proof.json'])
+        neo_edge.verify_metadata(catalog, data['installer-data-fedora-kde.json'])
         verify_edge_source_refs(catalog['edgeQualification'])
         if receipt['release_id'] != 'build-' + str(run['id']) + match[3]:
             raise ValueError('Edge Alpha receipt identity differs')
