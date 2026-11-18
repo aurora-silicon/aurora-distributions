@@ -87,7 +87,7 @@ jobs:
       - name: Assemble the unsigned Neo payload template
         run: |
           python3 scripts/prepare-neo-edge-payload.py --producer producer --filesystems filesystems \
-            --recovery-app 'recovery/Aurora Installer.app' --image-run image-build.json --assets assets
+            --recovery 'recovery/Aurora Installer.app' --image-run image-build.json --assets assets
           test ! -e assets/catalog.json
           test ! -e assets/edge-qualification.json
           (cd assets && sha256sum -- * > STAGING.sha256)
