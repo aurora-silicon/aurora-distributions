@@ -1,0 +1,119 @@
+{
+  "schemaVersion": 5,
+  "sequence": 1795031723,
+  "issuedAt": "2026-11-18T19:55:23Z",
+  "installer": {
+    "minimumVersion": "0.1.0",
+    "latestVersion": "0.1.0",
+    "downloadURL": "https://github.com/aurora-silicon/aurora-installer/releases"
+  },
+  "models": [
+    {
+      "deviceIdentifier": "apple,j700",
+      "status": "enabled",
+      "asahiInstallerTag": "v0.9.2",
+      "asahiInstallerRevision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
+      "asahiInstallerDataRevision": "42648e71423eba308d2e3e6228253eff679b068b",
+      "downstreamRevision": "99f180f93e1196a494b2c9a8f6b5989ba8ae1c8b",
+      "metadataDigest": "sha256:9fab78cf8abc60f3e85eed43b8d40bd0583f3ab07d85d3ecbaa382669d3ba5e9",
+      "payloadDigest": "sha256:de889af60308efa66b77e34bb7ec6a15a26f2569dba93afa4398dc425be2b898",
+      "evidenceRevision": "image-build-44380859872",
+      "metadataArtifact": {
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-kde-44380859872-edge-alpha.1/installer-data-fedora-kde.json",
+        "fileName": "installer-data-fedora-kde.json",
+        "sizeBytes": 6023
+      },
+      "payloadArtifact": {
+        "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-kde-44380859872-edge-alpha.1/fedora-kde-build-44380859872-edge-alpha.1.zip",
+        "fileName": "fedora-kde-build-44380859872-edge-alpha.1.zip",
+        "sizeBytes": 5659016777,
+        "parts": [
+          {
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-kde-44380859872-edge-alpha.1/fedora-kde-build-44380859872-edge-alpha.1.zip.part00",
+            "fileName": "fedora-kde-build-44380859872-edge-alpha.1.zip.part00",
+            "sizeBytes": 1073741824,
+            "sha256": "sha256:b60998b2c1c8ba16ddf3e62ef37613ebc71afaa1197fd5280e30b593d613aff3"
+          },
+          {
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-kde-44380859872-edge-alpha.1/fedora-kde-build-44380859872-edge-alpha.1.zip.part01",
+            "fileName": "fedora-kde-build-44380859872-edge-alpha.1.zip.part01",
+            "sizeBytes": 1073741824,
+            "sha256": "sha256:752913dd1055ac6557bdedc6c45b820d6db18eb5ecc66be5556ada3939599695"
+          },
+          {
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-kde-44380859872-edge-alpha.1/fedora-kde-build-44380859872-edge-alpha.1.zip.part02",
+            "fileName": "fedora-kde-build-44380859872-edge-alpha.1.zip.part02",
+            "sizeBytes": 1073741824,
+            "sha256": "sha256:532fe7953884fc479f30be1c6e503bc12e2ad1686ba4b459e0cc09b402c8d9cc"
+          },
+          {
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-kde-44380859872-edge-alpha.1/fedora-kde-build-44380859872-edge-alpha.1.zip.part03",
+            "fileName": "fedora-kde-build-44380859872-edge-alpha.1.zip.part03",
+            "sizeBytes": 1073741824,
+            "sha256": "sha256:69127348c94421891d7e424f6e725278d4b2a7f016ba66dd4d6b7e0fe94ab684"
+          },
+          {
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-kde-44380859872-edge-alpha.1/fedora-kde-build-44380859872-edge-alpha.1.zip.part04",
+            "fileName": "fedora-kde-build-44380859872-edge-alpha.1.zip.part04",
+            "sizeBytes": 1073741824,
+            "sha256": "sha256:154a7731181af1ce569089f41f0560cd69f56a901bccb70fdadfbad43e377103"
+          },
+          {
+            "sourceURL": "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-kde-44380859872-edge-alpha.1/fedora-kde-build-44380859872-edge-alpha.1.zip.part05",
+            "fileName": "fedora-kde-build-44380859872-edge-alpha.1.zip.part05",
+            "sizeBytes": 290307657,
+            "sha256": "sha256:b185f623eac46071814ec91345812e984ea26743bb201b5123e6b228096dbb38"
+          }
+        ]
+      },
+      "installationProfile": "fedora-kde"
+    }
+  ],
+  "channel": "edge",
+  "edgeQualification": {
+    "schemaVersion": 1,
+    "releaseKind": "alpha",
+    "status": "passed",
+    "imageRunID": 44380859872,
+    "payloadDigest": "sha256:de889af60308efa66b77e34bb7ec6a15a26f2569dba93afa4398dc425be2b898",
+    "linux": {
+      "repository": "aurora-silicon/linux",
+      "branch": "aurora-edge",
+      "revision": "6020f67d5ce13e7aae6820cd51ab70826404932c",
+      "tree": "f2dbcb1ebd59343e2496360bc572ef1a071f2159"
+    },
+    "mesa": {
+      "repository": "aurora-silicon/mesa",
+      "branch": "aurora-edge",
+      "revision": "ef112c2b86e4e19b2317cd88918e673de7fd55cf",
+      "tree": "5a383e03de1e86d727def1279d2328c4f9b27bc4"
+    },
+    "imageProofDigest": "sha256:0d4fcf5b1b87efe9037ebc8822b90cc3c66dc9f72c6b1a7397eb6d6815c82646",
+    "neoEvidence": {
+      "checks": {
+        "deepSleep": {
+          "sha256": "sha256:875341e91466b6d4eb327edd285dc01023174552655dd9493d5d5910dced3b78",
+          "status": "passed"
+        },
+        "glCTS": {
+          "sha256": "sha256:32a931ff3270c037472cd2ff11c43f9c21ca3f4924b9753b94e8e0c51fc083c7",
+          "status": "passed"
+        },
+        "restoration": {
+          "sha256": "sha256:522f49fdf5eebc02373f5a4ca5d081d617fd9dce589d5061beee76f4e90da783",
+          "status": "passed"
+        },
+        "vulkanCTS": {
+          "sha256": "sha256:38d83e119c9473d9527bf97e8bc78d7473be47e716055b03e61edf3ff0dfb448",
+          "status": "passed"
+        }
+      },
+      "pair": {
+        "kernelImageSHA256": "sha256:d6903588ce991dec6b65beafede9f6b0361d3904af8fd989b6c4bf143bb00fea",
+        "mesaDsoSHA256": "sha256:ce060163100691dd68a8f07da1a945d66b2c3f75b26175aa2dd461753de5212b",
+        "mesaSigningRunID": 44380265630
+      }
+    },
+    "evidenceDigest": "sha256:b445f0651289234ed087bcefb2d66968cd9147461864e6fd9bee2de8bc0a4537"
+  }
+}

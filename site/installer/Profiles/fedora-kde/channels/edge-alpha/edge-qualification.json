@@ -1,0 +1,45 @@
+{
+  "imageProofDigest": "sha256:0d4fcf5b1b87efe9037ebc8822b90cc3c66dc9f72c6b1a7397eb6d6815c82646",
+  "imageRunID": 44380859872,
+  "linux": {
+    "branch": "aurora-edge",
+    "repository": "aurora-silicon/linux",
+    "revision": "6020f67d5ce13e7aae6820cd51ab70826404932c",
+    "tree": "f2dbcb1ebd59343e2496360bc572ef1a071f2159"
+  },
+  "mesa": {
+    "branch": "aurora-edge",
+    "repository": "aurora-silicon/mesa",
+    "revision": "ef112c2b86e4e19b2317cd88918e673de7fd55cf",
+    "tree": "5a383e03de1e86d727def1279d2328c4f9b27bc4"
+  },
+  "neoEvidence": {
+    "checks": {
+      "deepSleep": {
+        "sha256": "sha256:875341e91466b6d4eb327edd285dc01023174552655dd9493d5d5910dced3b78",
+        "status": "passed"
+      },
+      "glCTS": {
+        "sha256": "sha256:32a931ff3270c037472cd2ff11c43f9c21ca3f4924b9753b94e8e0c51fc083c7",
+        "status": "passed"
+      },
+      "restoration": {
+        "sha256": "sha256:522f49fdf5eebc02373f5a4ca5d081d617fd9dce589d5061beee76f4e90da783",
+        "status": "passed"
+      },
+      "vulkanCTS": {
+        "sha256": "sha256:38d83e119c9473d9527bf97e8bc78d7473be47e716055b03e61edf3ff0dfb448",
+        "status": "passed"
+      }
+    },
+    "pair": {
+      "kernelImageSHA256": "sha256:d6903588ce991dec6b65beafede9f6b0361d3904af8fd989b6c4bf143bb00fea",
+      "mesaDsoSHA256": "sha256:ce060163100691dd68a8f07da1a945d66b2c3f75b26175aa2dd461753de5212b",
+      "mesaSigningRunID": 44380265630
+    }
+  },
+  "payloadDigest": "sha256:de889af60308efa66b77e34bb7ec6a15a26f2569dba93afa4398dc425be2b898",
+  "releaseKind": "alpha",
+  "schemaVersion": 1,
+  "status": "passed"
+}
