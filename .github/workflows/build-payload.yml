@@ -286,14 +286,34 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           PROFILE: ${{ inputs.profile }}
           IMAGE_RUN: ${{ inputs.image-run }}
+          NEO_EDGE_EVIDENCE: ${{ inputs.neo-edge-evidence }}
         run: |
           set -euo pipefail
           tag="payload-$PROFILE-$IMAGE_RUN$DELIVERY_SUFFIX"
           payload="assets/$PROFILE-$DELIVERY_RELEASE_ID.zip"
           # A multipart catalog pins the whole ZIP even though only its parts ship.
           if [[ -e $payload && -e $payload.part00 ]]; then rm -- "$payload"; fi
-          gh release create "$tag" assets/* --repo "$GITHUB_REPOSITORY" --target "$GITHUB_SHA" --draft \
-            --title "Aurora $PROFILE image build $IMAGE_RUN" --notes 'Staged; awaiting the catalog signature.'
+          reuse_draft=false
+          if [[ -n $NEO_EDGE_EVIDENCE ]]; then
+            draft="$RUNNER_TEMP/neo-draft.json"
+            if gh release view "$tag" --repo "$GITHUB_REPOSITORY" --json tagName,isDraft,assets \
+                > "$draft" 2> "$RUNNER_TEMP/neo-draft-error.log"; then
+              jq -e --arg tag "$tag" '.isDraft and .tagName == $tag' "$draft" >/dev/null
+              (cd assets && sha256sum -- *) | LC_ALL=C sort > "$RUNNER_TEMP/neo-expected-assets.sha256"
+              jq -r '.assets[] | "\(.digest | ltrimstr("sha256:"))  \(.name)"' "$draft" \
+                | LC_ALL=C sort > "$RUNNER_TEMP/neo-draft-assets.sha256"
+              diff -u "$RUNNER_TEMP/neo-expected-assets.sha256" "$RUNNER_TEMP/neo-draft-assets.sha256"
+              reuse_draft=true
+              printf 'Verified existing draft %s against every staged asset.\n' "$tag"
+            elif ! grep -Fxq 'release not found' "$RUNNER_TEMP/neo-draft-error.log"; then
+              cat "$RUNNER_TEMP/neo-draft-error.log" >&2
+              exit 1
+            fi
+          fi
+          if [[ $reuse_draft == false ]]; then
+            gh release create "$tag" assets/* --repo "$GITHUB_REPOSITORY" --target "$GITHUB_SHA" --draft \
+              --title "Aurora $PROFILE image build $IMAGE_RUN" --notes 'Staged; awaiting the catalog signature.'
+          fi
           printf 'tag=%s\ncatalog-digest=%s\n' "$tag" "$(sha256sum assets/catalog.json | cut -d' ' -f1)" >> "$GITHUB_OUTPUT"
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
         with:
@@ -327,6 +347,10 @@ jobs:
           CATALOG_KEY: ${{ secrets.INSTALLER_CATALOG_SIGNING_KEY || secrets.catalog-signing-key }}
         run: |
           set -euo pipefail
+          if [[ -z $CATALOG_KEY ]]; then
+            echo 'The catalog-signing job did not receive a catalog signing key.' >&2
+            exit 1
+          fi
           gh release download "$TAG" --repo "$GITHUB_REPOSITORY" --pattern catalog.json --dir signing
           echo "$DIGEST  signing/catalog.json" | sha256sum -c -
           python3 - <<'PY'
