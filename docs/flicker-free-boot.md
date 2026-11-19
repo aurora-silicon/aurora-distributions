@@ -63,7 +63,7 @@ aura hands the framebuffer to the next stage in the device tree:
 - `/reserved-memory/framebuffer@<addr>`: the original reservation. On a notched
   panel where the notch rows are hidden, aura advances the chosen base by
   `notch rows x stride` and keeps the reservation's base; the difference is the
-  hidden row count. With `asahi,show-notch` the chosen framebuffer is the whole
+  hidden row count. With `aurora,show-notch` the chosen framebuffer is the whole
   panel.
 
 The logo position therefore depends only on the full panel size, which every

@@ -287,7 +287,7 @@ class NativeOnlyProfileTests(unittest.TestCase):
         template = {'aurora_stage1': {'kind': 'common-raw-v1', 'qualified_machines': {
                         'j274ap': ['26.6.2'], 'j700ap': ['26.6.2']}},
                     'aurora_stage2': {'kind': 'board-file-v1', 'board_members': {
-                        'j274ap': 'esp/m1n1/boot-j274.bin', 'j700ap': 'esp/m1n1/boot-j700.bin'}}}
+                        'j274ap': 'esp/aurora/boot-j274.bin', 'j700ap': 'esp/aurora/boot-j700.bin'}}}
         template.update(fields)
         return template
 
@@ -304,7 +304,7 @@ class NativeOnlyProfileTests(unittest.TestCase):
             self.neo_template(excluded_device_classes=['j700ap']),
             self.neo_template(allowed_device_classes=['j700ap']),
             self.neo_template(aurora_stage2={'kind': 'board-file-v1', 'board_members': {
-                'j274ap': 'esp/m1n1/boot-j274.bin'}}),
+                'j274ap': 'esp/aurora/boot-j274.bin'}}),
             {key: value for key, value in self.neo_template().items() if key != 'aurora_stage2'},
         ):
             self.rewrite(template, ['apple,j274', 'apple,j700'])
@@ -331,7 +331,7 @@ class NativeOnlyProfileTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'does not admit every supported board'):
             self.prepare()
         self.assertFalse((self.root/'output').exists())
-        template['aurora_stage2']['board_members']['j616sap'] = 'esp/m1n1/boot-j616s.bin'
+        template['aurora_stage2']['board_members']['j616sap'] = 'esp/aurora/boot-j616s.bin'
         self.rewrite(template, ['apple,j274', 'apple,j700', 'apple,j616s'])
         self.prepare()
 
@@ -344,7 +344,7 @@ class NativeOnlyProfileTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'does not admit every supported board'):
             self.prepare()
         self.assertFalse((self.root/'output').exists())
-        template['aurora_stage2']['board_members'][board + 'ap'] = 'esp/m1n1/boot-%s.bin' % board
+        template['aurora_stage2']['board_members'][board + 'ap'] = 'esp/aurora/boot-%s.bin' % board
         self.rewrite(template, identifiers)
         self.prepare()
 

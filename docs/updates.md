@@ -51,7 +51,7 @@ promoted only if testing has served it, and only after `STABLE_MIN_SOAK_HOURS`.
 | Feed | `[aurora]` in `/etc/pacman.conf`, `Server = …/testing/aarch64`, `SigLevel = Required DatabaseRequired` | `/etc/yum.repos.d/aurora.repo`, `baseurl=…/44/testing/aarch64`, `gpgcheck=1`, `repo_gpgcheck=1` | `extra-substituters` = the Aurora cache, `extra-trusted-public-keys` = `aurora-nixos-1:…` |
 | Trust | Aurora key locally signed at build; `aurora-keyring` package | `/etc/pki/rpm-gpg/RPM-GPG-KEY-aurora` (no package owns it) | key compiled into the system from `keys/cache.pub` |
 | Follows | testing | testing | the Git ref `channel-testing`; `flake.lock` pins the installed commit until `sudo aurora-update` (images before Alpha 10 pin one commit until the one-time edit in nixos-aurora `docs/updates.md`) |
-| Kernel or aura update | pacman hook runs `update-m1n1`: aura + every DTB of the newest kernel + U-Boot into the ESP Stage 2; mkinitcpio rebuilds the initramfs | `kernel-install` runs dracut and `update-m1n1` (RPM triggers on the aura and U-Boot paths) | every rebuild runs `aurora-install-stage2`: the same aura + every DTB + U-Boot file, checked at build and install time, written only when it changes, previous kept as `m1n1/boot.bin.old` |
+| Kernel or aura update | pacman hook runs `update-aura`: aura + every DTB of the newest kernel + U-Boot into the ESP Stage 2; mkinitcpio rebuilds the initramfs | `kernel-install` runs dracut and `update-aura` (RPM triggers on the aura and U-Boot paths) | every rebuild runs `aurora-install-stage2`: the same aura + every DTB + U-Boot file, checked at build and install time, written only when it changes, previous kept as `aurora/boot.bin.old` |
 | Device firmware | read from the ESP at boot by the initramfs hook; never redistributed | same (dracut module) | same (initrd service) |
 
 Every image follows testing; stable is chosen at image build time (below). Nothing upgrades unattended on
@@ -277,7 +277,7 @@ In force since 2026-10-23:
   `AUTO_MERGE_SOURCES` stays off for about a week of clean tracker PRs, then is turned on.
 - **NixOS:** new images follow `channel-testing` with a lock pinned to the image commit, `aurora-update`
   takes the newest signed update in one command, and every rebuild refreshes the ESP Stage 2 exactly as
-  `update-m1n1` does on ALARM and Fedora. There are no unattended upgrades on any distribution.
+  `update-aura` does on ALARM and Fedora. There are no unattended upgrades on any distribution.
 
 Still open:
 
