@@ -127,6 +127,7 @@ class NativeOnlyProfileTests(unittest.TestCase):
         output = self.root/'output/Profiles'
         self.assertEqual({profile.name for profile in output.iterdir()}, set(module.CORE_PROFILES))
         self.assertEqual((output/'fedora-kde/channels/edge-alpha/edge-qualification.json').read_bytes(), report)
+        self.assertEqual((output.parent/'channels/edge-alpha/edge-qualification.json').read_bytes(), report)
 
     def test_expanded_cohort_requires_its_omarchy_profile(self):
         (self.source/'Profiles/omarchy-hyprland').rename(self.root/'omarchy-hyprland')

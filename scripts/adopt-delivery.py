@@ -290,6 +290,8 @@ def adopt(repository, tag, site, channel='testing'):
         root_channel = root/('channels/edge-alpha' if edge else 'channels/testing')
         root_channel.mkdir(parents=True, exist_ok=True)
         (root_channel/'catalog.signed.json').write_bytes((channel_directory/'catalog.signed.json').read_bytes())
+        if edge:
+            (root_channel/'edge-qualification.json').write_bytes(data['edge-qualification.json'])
     if edge:
         print('Adopted qualified Edge profile:', profile)
         return

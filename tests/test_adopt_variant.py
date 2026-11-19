@@ -249,6 +249,10 @@ class EdgeTests(unittest.TestCase):
         edge = json.loads((profile/'channels/edge-alpha/catalog.json').read_text())
         self.assertEqual(edge['channel'], 'edge')
         self.assertFalse((profile/'channels/edge').exists())
+        channel = profile/'channels/edge-alpha'
+        fallback = self.root/'site/installer/channels/edge-alpha'
+        for name in ('catalog.signed.json', 'edge-qualification.json'):
+            self.assertEqual((fallback/name).read_bytes(), (channel/name).read_bytes())
 
     def test_an_existing_testing_tag_cannot_be_adopted_as_edge(self):
         with self.assertRaisesRegex(ValueError, 'never testing promotion'):
