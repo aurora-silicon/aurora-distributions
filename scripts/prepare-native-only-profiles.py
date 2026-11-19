@@ -24,8 +24,9 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from channel_policy import descriptor as channel_descriptor, validate_catalog, legacy_development_catalog
 
 ROOT = Path(__file__).resolve().parents[1]
-PROFILES = tuple(f'{distribution}-{desktop}' for distribution in ('fedora', 'arch', 'nixos')
-                 for desktop in ('kde', 'gnome', 'minimal')) + ('omarchy-hyprland',)
+CORE_PROFILES = tuple(f'{distribution}-{desktop}' for distribution in ('fedora', 'arch', 'nixos')
+                      for desktop in ('kde', 'gnome', 'minimal'))
+PROFILES = CORE_PROFILES + ('omarchy-hyprland',)
 FILES = ('release.json', 'trust-root.ed25519.pub', 'catalog.json', 'catalog.json.sig',
          'delivery.json', 'image-build.json')
 VM_CHECKS = ('boot', 'encryption', 'temporary_key_rejected', 'owner', 'sudo', 'second_boot',
@@ -76,6 +77,18 @@ def prepare(source, output, signing_key, release_tag, source_revision, fetch=fet
         raise ValueError('catalog signing key differs from the pinned root')
     manifest = json.loads((ROOT/'keys/supported-models.json').read_text())
     allowed = set(manifest['supported'])
+    legacy_models = set(json.loads((ROOT/'keys/supported-models-58.json').read_text())['supported'])
+    expanded_models = set(json.loads((ROOT/'keys/supported-models-65.json').read_text())['supported'])
+    if allowed == legacy_models:
+        profiles = CORE_PROFILES
+    elif allowed == expanded_models:
+        profiles = PROFILES
+    else:
+        raise ValueError('published model manifest does not match a release cohort')
+    profile_paths = list((source/'Profiles').iterdir())
+    if ({path.name for path in profile_paths} != set(profiles)
+            or any(path.is_symlink() or not path.is_dir() for path in profile_paths)):
+        raise ValueError('profiles do not contain the complete published model cohort')
     stage1_unqualified = set(manifest.get('stage1_unqualified', {})) & allowed
     now = int(time.time())
     issued = datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')
@@ -84,7 +97,7 @@ def prepare(source, output, signing_key, release_tag, source_revision, fetch=fet
     edge_catalogs = {}
     receipt = {'schema': 1, 'source_revision': source_revision, 'source_catalog_schemas': [],
                'output_catalog_schema': 5, 'release_tag': release_tag, 'profiles': {}}
-    for profile in PROFILES:
+    for profile in profiles:
         directory = source/'Profiles'/profile
         data = {}
         names = FILES + (('vm-result.json',) if profile == 'omarchy-hyprland' else ())
