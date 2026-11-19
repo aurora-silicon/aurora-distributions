@@ -72,6 +72,8 @@ def assemble(producer, filesystems, recovery, image_run, assets, evidence=None):
                     "--base-url", base, "--assets-dir", str(assets),
                     "--inputs", str(input_path), "--output", str(catalog_path)], check=True)
     catalog = json.loads(catalog_path.read_text())
+    if catalog.pop("channel", None) not in (None, "testing") or "edgeQualification" in catalog:
+        raise ValueError("Unexpected channel or qualification in the generated catalog")
     rows = [row for row in catalog["models"] if row["deviceIdentifier"] == neo_edge.MODEL]
     if len(rows) != 1:
         raise ValueError("Assembler did not return exactly one Neo model row")
