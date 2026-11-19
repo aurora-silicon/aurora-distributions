@@ -27,6 +27,8 @@ class NativeOnlyProfileTests(unittest.TestCase):
         (self.root/'keys').mkdir()
         (self.root/'keys/catalog.ed25519.pub').write_bytes(public)
         (self.root/'keys/supported-models.json').write_text(json.dumps({'supported': ['apple,j274']}))
+        (self.root/'keys/supported-models-58.json').write_text(json.dumps({'supported': ['apple,j160']}))
+        (self.root/'keys/supported-models-65.json').write_text(json.dumps({'supported': ['apple,j274']}))
         self.metadata = json.dumps({'os_list': [{'aurora_stage1': {
             'kind': 'common-raw-v1', 'qualified_machines': {'j274ap': ['26.6.2']}}}]}).encode()
         self.source = self.root/'source'
@@ -113,6 +115,24 @@ class NativeOnlyProfileTests(unittest.TestCase):
             descriptor = json.loads((root/'release.json').read_text())
             self.assertEqual(descriptor['default_channel'], 'testing')
             self.assertIn('/channels/edge-alpha/', descriptor['channels']['edge']['catalog_url'])
+
+    def test_published_core_cohort_preserves_signed_edge_with_no_omarchy(self):
+        report = self.stage_edge()
+        active = self.root/'keys/supported-models.json'
+        (self.root/'keys/supported-models-65.json').write_text(
+            json.dumps({'supported': ['apple,j274', 'apple,j275']}))
+        (self.root/'keys/supported-models-58.json').write_bytes(active.read_bytes())
+        (self.source/'Profiles/omarchy-hyprland').rename(self.root/'omarchy-hyprland')
+        self.prepare()
+        output = self.root/'output/Profiles'
+        self.assertEqual({profile.name for profile in output.iterdir()}, set(module.CORE_PROFILES))
+        self.assertEqual((output/'fedora-kde/channels/edge-alpha/edge-qualification.json').read_bytes(), report)
+
+    def test_expanded_cohort_requires_its_omarchy_profile(self):
+        (self.source/'Profiles/omarchy-hyprland').rename(self.root/'omarchy-hyprland')
+        with self.assertRaisesRegex(ValueError, 'complete published model cohort'):
+            self.prepare()
+        self.assertFalse((self.root/'output').exists())
 
     def stage_edge(self, payload_digit='c', branch='aurora-edge'):
         self.to_schema_five()
@@ -250,7 +270,8 @@ class NativeOnlyProfileTests(unittest.TestCase):
 
     def rewrite(self, template, identifiers):
         """Re-sign every profile for IDENTIFIERS sharing one metadata TEMPLATE."""
-        (self.root/'keys/supported-models.json').write_text(json.dumps({'supported': identifiers}))
+        for name in ('supported-models.json', 'supported-models-65.json'):
+            (self.root/'keys'/name).write_text(json.dumps({'supported': identifiers}))
         self.metadata = json.dumps({'os_list': [template]}).encode()
         for profile in module.PROFILES:
             directory = self.source/'Profiles'/profile
