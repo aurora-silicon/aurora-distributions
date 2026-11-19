@@ -1,0 +1,103 @@
+name: Stage the F44 Neo Edge payload artifact
+on:
+  push:
+    branches: [edge/stage-neo-payload-ef112c2b]
+  workflow_dispatch:
+    inputs:
+      image-run:
+        description: Completed artifact-only Neo Edge image run
+        type: string
+        required: true
+permissions:
+  contents: read
+  actions: read
+  attestations: write
+  id-token: write
+jobs:
+  prepare:
+    runs-on: ubuntu-24.04-arm
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+        with:
+          persist-credentials: false
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+        with:
+          repository: aurora-silicon/aurora-installer
+          ref: 99f180f93e1196a494b2c9a8f6b5989ba8ae1c8b
+          path: producer
+          persist-credentials: false
+      - name: Authenticate the image archive and package proof
+        env:
+          GH_TOKEN: ${{ github.token }}
+          IMAGE_RUN: ${{ inputs.image-run || '44380859872' }}
+        run: |
+          set -euo pipefail
+          [[ $IMAGE_RUN =~ ^[1-9][0-9]*$ ]]
+          repo=aurora-silicon/fedora-aurora
+          gh api "repos/$repo/actions/runs/$IMAGE_RUN" > image-build.json
+          jq -e --arg repo "$repo" '.conclusion=="success" and .head_branch=="edge/neo-f44-image-ef112c2b"
+             and .path==".github/workflows/edge-f44-image.yml" and .head_repository.full_name==$repo' image-build.json
+          head=$(jq -r .head_sha image-build.json)
+          [[ $head == 389751ff9564a7d91250ce32beb6207097a67f5e ]]
+          gh run download "$IMAGE_RUN" --repo "$repo" --name fedora-kde-edge-candidate --dir downloaded
+          archive=downloaded/out/fedora-kde-filesystems.tar.zst
+          proof=downloaded/out/fedora-kde-installer/edge-image-proof.json
+          for subject in "$archive" "$proof"; do
+            gh attestation verify "$subject" --repo "$repo" \
+              --signer-workflow "$repo/.github/workflows/edge-f44-image.yml" --source-digest "$head" \
+              --deny-self-hosted-runners
+          done
+          sudo apt-get update
+          sudo apt-get install -y zstd
+          mkdir filesystems
+          zstd -dc "$archive" | python3 -c 'import sys,tarfile; tarfile.open(fileobj=sys.stdin.buffer,mode="r|").extractall("filesystems",filter="data")'
+          printf "%s  %s\n" 0d4fcf5b1b87efe9037ebc8822b90cc3c66dc9f72c6b1a7397eb6d6815c82646 "$proof" | sha256sum -c -
+          cmp "$proof" filesystems/edge-image-proof.json
+      - name: Verify the signed native Recovery template
+        run: |
+          base=https://github.com/aurora-silicon/aurora-installer/releases/download/native-runtime-v0.9.2-aurora.14
+          mkdir runtime
+          curl -fLsS --retry 3 "$base/runtime-manifest.json" -o runtime/runtime-manifest.json
+          curl -fLsS --retry 3 "$base/runtime-manifest.json.sig" -o runtime/runtime-manifest.json.sig
+          python3 - <<'PY'
+          from pathlib import Path
+          key=Path('producer/macOS/Release/trust-root.ed25519.pub').read_bytes();assert len(key)==32
+          Path('runtime/public.der').write_bytes(bytes.fromhex('302a300506032b6570032100')+key)
+          PY
+          openssl pkeyutl -verify -pubin -keyform DER -inkey runtime/public.der -rawin -in runtime/runtime-manifest.json -sigfile runtime/runtime-manifest.json.sig
+          # The installer runs only its built-in native engine. Of the signed
+          # runtime manifest, the payload takes nothing but the Recovery template.
+          python3 - <<'PY'
+          from pathlib import Path
+          import hashlib,json,subprocess
+          base='https://github.com/aurora-silicon/aurora-installer/releases/download/native-runtime-v0.9.2-aurora.14'
+          name='aurora-recovery-template-alpha1.tar.gz'
+          record=json.load(open('runtime/runtime-manifest.json'))['assets'][name]
+          assert record['bytes']<200_000_000
+          path=Path('runtime')/name
+          subprocess.run(['curl','-fLsS','--retry','3',base+'/'+name,'-o',str(path)],check=True)
+          assert path.stat().st_size==record['bytes']
+          with path.open('rb') as stream:assert hashlib.file_digest(stream,'sha256').hexdigest()==record['sha256']
+          PY
+          mkdir recovery
+          python3 - <<'PY'
+          import tarfile
+          with tarfile.open('runtime/aurora-recovery-template-alpha1.tar.gz') as archive:archive.extractall('recovery',filter='data')
+          PY
+      - name: Assemble the unsigned Neo payload template
+        run: |
+          python3 scripts/prepare-neo-edge-payload.py --producer producer --filesystems filesystems \
+            --recovery 'recovery/Aurora Installer.app' --image-run image-build.json --assets assets
+          test ! -e assets/catalog.json
+          test ! -e assets/edge-qualification.json
+          (cd assets && sha256sum -- * > STAGING.sha256)
+      - uses: actions/attest-build-provenance@4d101475d8b20a2381f78447822ac1eab6504dd8 # v4.2.2
+        with:
+          subject-checksums: assets/STAGING.sha256
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: fedora-kde-neo-edge-payload-stage
+          path: assets
+          compression-level: 0
+          if-no-files-found: error
