@@ -294,6 +294,9 @@ def prepare(source, output, signing_key, release_tag, source_revision, fetch=fet
             (staged/'channels'/lane).mkdir(parents=True)
             (staged/'channels'/lane/'catalog.signed.json').write_bytes(
                 (staged/'Profiles/fedora-kde/channels'/lane/'catalog.signed.json').read_bytes())
+        fedora_edge_proof = staged/'Profiles/fedora-kde/channels/edge-alpha/edge-qualification.json'
+        if fedora_edge_proof.is_file():
+            (staged/'channels/edge-alpha/edge-qualification.json').write_bytes(fedora_edge_proof.read_bytes())
         (staged/'channels/edge').mkdir(parents=True)
         (staged/'channels/edge/catalog.signed.json').write_bytes(
             (staged/'channels/testing/catalog.signed.json').read_bytes())
