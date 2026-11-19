@@ -98,7 +98,6 @@ Automation switches (repository variables, all off until set to "true"):
   gh variable set AUTO_PUBLISH_TESTING --body true -R aurora-silicon/<repo>  # signed snapshot after each main build
   gh variable set AUTO_DEPLOY_TESTING  --body true -R aurora-silicon/<repo>  # make that snapshot the live testing feed
   gh variable set AUTO_IMAGES          --body true -R aurora-silicon/<repo>  # rebuild images after a testing deploy
-  gh variable set AUTO_PAYLOADS        --body true -R aurora-silicon/<repo>  # payload release after each image build
   gh variable set STABLE_MIN_SOAK_HOURS --body 24 -R aurora-silicon/<repo> # minimum time on testing before stable
 EOF
 [[ $apply == true ]] || echo $'\nDry run: nothing was changed. Re-run with --apply.'
