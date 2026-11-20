@@ -26,6 +26,10 @@ Edge uses a new immutable `payload-<profile>-<image-run>-edge-alpha.<number>` re
 
 The explicit future `adopt-delivery.py --channel edge` path accepts only an already signed, qualified Edge delivery; it cannot construct qualification or promote a Testing set. No workflow is dispatched as part of this support change.
 
+## Edge trains: every profile at once
+
+Edge for every M1, M2 and M3 Mac and the MacBook Neo ships as one **Edge train**: one aurora-edge pair, all ten profiles, one atomic adoption (`adopt-edge-set.py`). `edge/cohort.json` names the Macs, their chip families and hardware gates; `edge/train.json` pins one release. Staging (`stage-edge-train.yml`), signing (`build-payload.yml` with `edge-train-revision`) and adoption refuse a partial set, another train's deliveries, a sequence at or below any served Edge sequence, and a train that would remove a Mac Edge serves. Once a train is adopted, `site/installer/edge-train.json` records it, every served Edge catalog must match it, and the single-profile `adopt-delivery.py --channel edge` path is closed. Each distribution's Edge package feed deploys only what the adopted train names. See [Edge trains](edge-train.md) for the cohort, the per-distribution update models, the qualification row spec and the release plan.
+
 ## Development migration and rollback
 
 Legacy unchannelled catalogs are not general-purpose channel catalogs. Testing accepts authenticated legacy development lineage: signed image-build evidence and the immutable approved distribution/profile delivery. The adopter verifies hosted provenance and the original main-branch image workflow. The installer checks the signed profile, image-build evidence ID and canonical development payload URL. Arbitrary unchannelled signed catalogs do not gain Testing eligibility.

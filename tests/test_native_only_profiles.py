@@ -177,6 +177,22 @@ class NativeOnlyProfileTests(unittest.TestCase):
                       (root/'channels/edge-alpha/catalog.json.sig').read_bytes(),
                       (self.root/'keys/catalog.ed25519.pub').read_bytes())
 
+    def test_an_adopted_edge_train_keeps_its_record_and_image_proofs(self):
+        self.stage_edge()
+        source = self.source/'Profiles/fedora-kde/channels/edge-alpha'
+        proof = b'{"schema": 2}\n'
+        metadata = b'{"os_list": []}\n'
+        (source/'edge-image-proof.json').write_bytes(proof)
+        (source/'installer-data-fedora-kde.json').write_bytes(metadata)
+        record = b'{"schema_version": 1, "release": "alpha.4"}\n'
+        (self.source/'edge-train.json').write_bytes(record)
+        self.prepare()
+        output = self.root/'output'
+        edge = output/'Profiles/fedora-kde/channels/edge-alpha'
+        self.assertEqual((edge/'edge-image-proof.json').read_bytes(), proof)
+        self.assertEqual((edge/'installer-data-fedora-kde.json').read_bytes(), metadata)
+        self.assertEqual((output/'edge-train.json').read_bytes(), record)
+
     def test_testing_payloads_cannot_be_resigned_into_edge(self):
         self.stage_edge(payload_digit='b')
         with self.assertRaisesRegex(ValueError, 'relabelled'):

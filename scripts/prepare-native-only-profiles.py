@@ -194,7 +194,8 @@ def prepare(source, output, signing_key, release_tag, source_revision, fetch=fet
                 if any(model['payloadDigest'] == proof['payloadDigest'] for model in models):
                     raise ValueError('an existing testing payload cannot be relabelled as Edge')
             records = {}
-            for name in FILES + ('vm-result.json',):
+            # A train delivery also carries its image proof and install policy.
+            for name in FILES + ('vm-result.json', 'edge-image-proof.json', f'installer-data-{profile}.json'):
                 path = edge_path.parent/name
                 if path.exists() or path.is_symlink():
                     if path.is_symlink() or not path.is_file() or path.stat().st_size > 1048576:
@@ -300,6 +301,12 @@ def prepare(source, output, signing_key, release_tag, source_revision, fetch=fet
         (staged/'channels/edge').mkdir(parents=True)
         (staged/'channels/edge/catalog.signed.json').write_bytes(
             (staged/'channels/testing/catalog.signed.json').read_bytes())
+        # The adopted Edge train record stays with the Edge catalogs it names.
+        train_record = source/'edge-train.json'
+        if train_record.exists() or train_record.is_symlink():
+            if train_record.is_symlink() or not train_record.is_file() or train_record.stat().st_size > 1048576:
+                raise ValueError('unsafe Edge train record')
+            (staged/'edge-train.json').write_bytes(train_record.read_bytes())
         (staged/'native-only-catalogs.json').write_text(json.dumps(receipt, indent=2) + '\n')
         staged.rename(output)
     print(f'Prepared {len(prepared)} signed native-only profiles; live feeds unchanged')
