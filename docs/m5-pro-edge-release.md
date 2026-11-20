@@ -3,7 +3,7 @@
 Status 2026-11-20: preparation only. Nothing here is published. The owner's decisions (2026-11-20) are:
 - the channel is Edge;
 - the T6050 runs with MTE on (no `arm64.nomte`);
-- SEP writes are off by default on the T6050 (`apple_sep xart_writes=0 provision_keybag=0`), as every M5 Pro gate ran, until an owner-approved write row passes; an owner opts in with `/etc/modprobe.d/aurora-sep.conf`. This replaces "SEP writes on" (changed 2026-11-20; see "SEP write path not exercised on the M5").
+- SEP writes are on (the distribution default `apple_sep xart_writes=1 provision_keybag=1`). Re-confirmed 2026-11-20 with no further write row; the 11-11 J714s lab boot is the evidence (see "SEP write path not exercised on the M5").
 
 Nothing ships for the M5 until its release-gate boot passes.
 
@@ -16,7 +16,7 @@ Nothing ships for the M5 until its release-gate boot passes.
 | Device tree | in-tree `t6050-j714s.dtb` from kernel-aurora-core 7.3.0-43 | in the kernel RPM |
 | aura (Stage 2) | aura main 82ee5d6f (aura#214: T6050 sleep controller wake sources; 9f501f32: GPU leakage words from the fuses) | fedora/alarm/nixos aura pin drafts |
 | MTE on T6050 | `arm64.nomte` only on T8142; a one-shot removal on T6050 | fedora `aurora-platform` 44-45, alarm `aurora-boot` 20261018-20, nixos `modules/aurora.nix` drafts |
-| SEP writes off on T6050 | on `apple,t6050`, `aurora-sep-load` writes `options apple_sep xart_writes=0 provision_keybag=0` to `/run/modprobe.d/aurora-sep.conf` at every boot and loads the driver only if `modprobe -c` gives exactly that; the owner's `/etc/modprobe.d/aurora-sep.conf` opts in | fedora `aurora-sep` 1-32, alarm `aurora-sep` 1-27, nixos `aurora-sep` 1.21 |
+| SEP writes on | distribution default, nothing to change; nothing on the M5 path sets `xart_writes=0` or `provision_keybag=0` | (none) |
 | Rootfs deep sleep | `aurora-m5-platform-config`: deep sleep only, lid suspends on battery/AC/docked, `50-aurora-m5-rtc-safety` hook | fedora/alarm/nixos package drafts |
 | Catalog | the J714s rides the Fedora KDE Edge payload beside the Neo (`neo_edge.M5`) | this repository's draft |
 
@@ -27,7 +27,6 @@ Nothing ships for the M5 until its release-gate boot passes.
 | aura main 82ee5d6f | #448 | #376 | #348 |
 | MTE on T6050 | #449 | #377 | #349 |
 | aurora-m5-platform-config | #450 (contains #449's commit) | #378 (contains #377's commit) | #350 |
-| SEP writes off on T6050 | [#454](https://github.com/aurora-silicon/fedora-aurora/pull/454) | [#385](https://github.com/aurora-silicon/alarm-aurora/pull/385) | [#353](https://github.com/aurora-silicon/nixos-aurora/pull/353) (also moves the defaults to `/run`, which fixes NixOS's read-only override) |
 | Catalog switch + this plan | aurora-distributions #63 | | |
 | Platform profiles without ACPI (linux#2549; see "Gaps found by the release gate") | #451: kernel 7.3.0-44 pin, **not to merge alone** | #380: resolved config line | #351: config copy and provenance, after #380 |
 
@@ -49,9 +48,12 @@ Nothing ships for the M5 until its release-gate boot passes.
 
 - The release gate did not exercise the SEP write path: xART writes and keybag provisioning (`xart_writes=1`, `provision_keybag=1`, Touch ID enrolment). The rig rule forbids xART writes on the owner's machine, and the gate J714s is the owner's.
 - The gate shows that the parameters are set and that the read-only SEP path comes up. It does not show that state saves, or that enrolment and keybag provisioning work, on the T6050.
-- This needs a separate, owner-approved test on another T6050 before the release note may claim that the Secure Enclave saves state on the M5 Pro. No T6050 is available for it: the J775c has no Touch ID keyboard, and the J714c's owner declined the row.
-- **Decided 2026-11-20 (Dj's agent): the T6050 ships read-only.** The distributions load `apple_sep` with `xart_writes=0 provision_keybag=0` on `apple,t6050`, which is the configuration every M5 Pro gate ran (rgate2f: `apple_sep.xart_writes=0 apple_sep.provision_keybag=0`). Touch ID enrollment is a known limitation. The write row now gates only turning the default on later, not alpha.3.
-- **The kernel refuses a parameter given twice.** 7.3.0-41 and 7.3.0-43 declare both as Rust parameters, so a second value fails the load with EEXIST, and the driver is absent. So a distribution boot must not also carry `apple_sep.*` on the kernel command line (the rig's `EXPECT_SEP_CMDLINE`): `aurora-sep-load` then refuses to load the driver. The parameters are not listed in `/sys/module/apple_sep/parameters` (Rust parameters have no sysfs entry); `/sys/bus/platform/devices/*.sep/diag/policy` shows what the driver took.
+- **Evidence for the write path: the 11-11 J714s lab boot ([linux#1587](https://github.com/aurora-silicon/linux/pull/1587), merged 554c6d14).** Kernel 7.3.0-m5-intg2 with `xart_writes=1 provision_keybag=1` and the platform's xART guard (level 1):
+  - `aurora-touchid-setup` rebuilt the calibration and the sensor root key from the factory records;
+  - a finger enrolled, the enrolment survived a reboot, a second finger enrolled after it, the first one matched, and a wrong finger was rejected;
+  - xART: no refusals, no existing session record rewritten or deleted, and none created by Linux; only the shared root records advanced. One identity keybag and the machine ref-key were created.
+- **Decided 2026-11-20 (owner): no separate SEP-write row.** alpha.3 does not wait on one; linux#1587 is the evidence. The release note keeps "SEP writes on".
+- **What a check reads.** The two parameters are Rust module parameters, so `/sys/module/apple_sep/parameters` does not list them; `/sys/bus/platform/devices/*.sep/diag/policy` shows what the driver took, and `diag/xart` whether writes reach the store. The kernel refuses a second value of either parameter and then does not load the driver, so a distribution boot must not also carry `apple_sep.*` on the kernel command line (the rig's `EXPECT_SEP_CMDLINE`): the packaged modprobe.d defaults already set both.
 
 ### Why the J714s rides the Neo's Fedora KDE Edge delivery
 
@@ -69,7 +71,7 @@ The Neo lane's alpha.2 (Neo only) goes first and is not held for the M5. The M5 
    - the signed kernel-aurora-core/modules 7.3.0-43 RPM contents with the in-tree `t6050-j714s.dtb` (not intg28d and not the lab DTB fdc15472);
    - aura 82ee5d6f Stage 2;
    - no `arm64.nomte`;
-   - the SEP read-only, which is now the T6050 default (rgate2f ran it so); no SEP-write row is needed;
+   - the SEP as the rig runs it on the owner's J714s (read-only, as rgate2f did). There is no SEP-write row in this gate: the 11-11 J714s boot (linux#1587) is the write-path evidence;
    - the `aurora-m5-platform-config` files.
 
    Record the `releaseGate`, `deepSleep` and `restoration` receipts (sha256 of manifest files, as for the Neo) and the pair: kernel `sha256:701ed7f2…c5bf`, `libvulkan_asahi.so` `sha256:dea6ef52…af5a`, signer run 44694386531.
@@ -79,7 +81,6 @@ The Neo lane's alpha.2 (Neo only) goes first and is not held for the M5. The M5 
      - nixos aura → nixos MTE → nixos module;
      - fedora aura → fedora MTE → fedora package. The package PR carries the MTE commit, so merge the MTE PR first.
    - Also merge the fleet row for aura 82ee5d6f first: a Neo plus one M1/M2 Stage 2 boot, because the aura sweep touches every chip.
-   - The SEP read-only default (fedora #454, alarm #385, nixos #353) is independent of these; merge it before the step 3 snapshot.
    - No kernel pin moves on main for this.
 3. **Fedora Testing snapshot.**
    - The main RPM builds (aura, aurora-platform, aurora-m5-platform-config) feed `testing-YYYYMMDD.N`.
@@ -89,7 +90,7 @@ The Neo lane's alpha.2 (Neo only) goes first and is not held for the M5. The M5 
    - `.github/scripts/edge-f44-repository.py`: `BASE` and `MANIFEST_SHA` to the step 3 snapshot.
    - `.github/scripts/edge-f44-image-proof.py`:
      - `"models": ["apple,j700", "apple,j714s"]`;
-     - require `aurora-m5-platform-config.noarch`, `aura.aarch64` at `1.0.0~b13.1-2`, `aurora-platform-core` at `44-46` or later and `aurora-sep` at `1-32` or later (the T6050 read-only default) among the installed packages;
+     - require `aurora-m5-platform-config.noarch`, `aura.aarch64` at `1.0.0~b13.1-2` and `aurora-platform-core` at `44-46` or later among the installed packages;
      - check that the image's `boot-j714s.bin` Stage 2 carries the `1.0.0b13-g82ee5d6f` marker.
    - `edge-f44-image.yml`: the branch name. Keep `SIGNING_RUN 44694386531`: no RPM rebuild and no new signing.
    - Push the trigger file, then record the image run, the head SHA and the proof sha256.
@@ -117,6 +118,7 @@ The Neo lane's alpha.2 (Neo only) goes first and is not held for the M5. The M5 
 >
 > - Same kernel (aurora-edge, kernel-aurora 7.3.0-43) and Mesa (26.3.0-34) as Edge Alpha 2.
 > - Memory Tagging (MTE) is on for the M5 Pro and Max. The boot loader reserves the tag storage, and the kernel turns MTE off by itself when it is not reserved.
+> - Touch ID and the Secure Enclave can save state (SEP writes on), as on other Macs.
 > - Suspend is deep sleep only on the J714s. A safety wake is set an hour ahead when nothing else is armed. If the lid is still closed, the Mac goes back to sleep.
 >
 > Known issues on the M5 Pro:
@@ -125,8 +127,6 @@ The Neo lane's alpha.2 (Neo only) goes first and is not held for the M5. The M5 
 > - A stray Wi-Fi or Bluetooth wake right after the Mac goes to sleep is treated as a dark wake: the screen stays off and the Mac goes back to sleep.
 > - Edge installs do not receive package updates from the Testing feed.
 > - The power mode setting (Power Saver, Balanced, Performance) does not yet reach the M5 Pro's own power modes: the kernel offers no platform profile. Power Saver still applies Aurora's CPU power budget. A fix is in review (aurora-silicon/linux#2549).
-> - SEP writes are off by default on the M5 Pro and Max (T6050), so Touch ID enrollment is unavailable until an owner-approved write test passes. Nothing is written to the Secure Enclave storage that macOS shares, so macOS's Touch ID is left as it was.
-> - To opt in at your own risk, put `options apple_sep xart_writes=1 provision_keybag=1` in `/etc/modprobe.d/aurora-sep.conf` and reboot (aurora-sep's XART-SAFETY.md, "M5 Pro and Max (T6050): read-only by default"). On these Macs that file must set both options; with anything else in it the Secure Enclave driver is not loaded.
 
 ## J714s fresh-install qualification (RELEASING.md "Qualification and storage")
 
@@ -151,7 +151,7 @@ The install must come from the alpha.3 payload, byte for byte (the STAGING.sha25
 **Boot checks (installed system)**
 - [ ] `uname -r` = `7.3.0-43.fc44.aurora.aarch64`; `/proc/cmdline` has no `arm64.nomte`.
 - [ ] MTE: `grep -c mte /proc/cpuinfo` > 0, and `/proc/device-tree/reserved-memory/mte-tag-storage@*` exists.
-- [ ] SEP read-only (the T6050 default): no `apple_sep.*` on `/proc/cmdline` and no `/etc/modprobe.d/aurora-sep.conf`; `/run/modprobe.d/aurora-sep.conf` reads `options apple_sep xart_writes=0 provision_keybag=0`; `/sys/bus/platform/devices/*.sep/diag/policy` shows `xart_writes=0 provision_keybag=0` and `diag/xart` reads `disabled`; `journalctl -b -u aurora-sep` has "SEP writes are off by default on this Mac (T6050)". `aurora-sep.service` succeeds with "provisions no identity keybag while SEP writes are off", `aurora-sep-ready` exits 0 ("Touch ID is not set up"), and `systemctl --failed` is empty. Expected and recorded, not a failure: `aurora-sep status` warns that xART writes are off. No Touch ID enrolment or keybag provisioning (rig rule).
+- [ ] SEP writes on (the distribution default): no `apple_sep.*` on `/proc/cmdline`; `/sys/bus/platform/devices/*.sep/diag/policy` shows `xart_writes=1 provision_keybag=1` and `diag/xart` reads `enabled`; `aurora-sep status` shows no xART warning; Touch ID can enrol (`fprintd-enroll`), as on the 11-11 J714s boot (linux#1587).
 - [ ] Leakage: the Stage 2 log has `FDT: GPU: leakage calibration words …`, and `work/aura-leakage-fill-20261120/verify-j714s-unit-values.py` passes.
 - [ ] `aurora-m5-sleep-policy.service` is active (exited), and both drop-ins are under `/run/systemd/{sleep,logind}.conf.d/`.
 - [ ] `busctl get-property org.freedesktop.login1 /org/freedesktop/login1 org.freedesktop.login1.Manager HandleLidSwitchDocked` = `suspend`.
@@ -184,5 +184,5 @@ The install must come from the alpha.3 payload, byte for byte (the STAGING.sha25
     - [fedora-aurora#451](https://github.com/aurora-silicon/fedora-aurora/pull/451): kernel-aurora 7.3.0-44, together with aurora-firstboot 0.1.13-7;
     - that aurora-firstboot pins [aurora-platform#35](https://github.com/aurora-silicon/aurora-platform/pull/35), where aurora-power-budget hands tuned-ppd's profile to apple-clpc's class device;
     - alarm and NixOS take [alarm-aurora#380](https://github.com/aurora-silicon/alarm-aurora/pull/380) and [nixos-aurora#351](https://github.com/aurora-silicon/nixos-aurora/pull/351). Their power-profiles-daemon already drives the class.
-- **Decided 2026-11-20: alpha.3 ships the T6050 with SEP writes off** (see "SEP write path not exercised on the M5"). Still open: which T6050 (not the owner's J714s) runs the owner-approved xART write and keybag provisioning row; only that row can turn the default on.
+- **Decided 2026-11-20: SEP writes on for the T6050, with no extra write row.** The 11-11 J714s lab boot (linux#1587) is the evidence; the release note keeps "SEP writes on".
 - **The aura pin.** Pin aura main 82ee5d6f, which is what the gate boots, or wait for a tagged b14.
