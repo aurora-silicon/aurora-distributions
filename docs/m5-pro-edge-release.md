@@ -173,10 +173,11 @@ The install must come from the alpha.3 payload, byte for byte (the STAGING.sha25
   - Before adoption: sign a test-only Testing catalog row for `apple,j714s` on an unmerged branch for that test installer. This needs the catalog signer.
   - After adoption, from the live channel, as the Neo's alpha.1 was verified. Drop `freshInstall` from `neo_edge.M5_GATES` and keep a Neo-only alpha.4 ready as the rollback.
 - **MTE on every T6050 board.** The owner's T6050 policy turns MTE on for every T6050 board, including the K114/K116 and J775/J873 boards that are in Testing or the 65-model list. Only the J714s has run with MTE on.
-- **7.3.0-43 without platform profiles, or a 7.3.0-44 rebuild.** Recommended: ship alpha.3 on 7.3.0-43 with the known issue.
-  - What a rebuild means: 7.3.0-44 = e0ee46a1 + linux#2549. The new kernel RPM gets a new signer run and image digest, so the Neo evidence bound to `sha256:701ed7f2…c5bf` and run 44694386531 no longer carries over.
-  - The kernel delta adds no GPU or Mesa change: the Neo gets only an empty class directory. Even so, keeping the Neo on Edge would need either a new Neo qualification (CTS plus boot, sleep and fault checks on the new digest) or your explicit sign-off to carry the 7.3.0-43 CTS over to that one-commit delta. The M5 release gate would also have to rerun on 7.3.0-44.
-  - On Fedora, a rebuild also needs the userspace bridge above first, or Power Saver regresses on T6050 and T6041.
-  - Better: carry linux#2549 in the next regular kernel bump, with the bridge.
+- **Decided 2026-11-20: alpha.3 ships on 7.3.0-43, without platform profiles.** The missing profiles are a known issue in the release note. The Edge release is not rebuilt or re-pinned.
+  - **Why not 7.3.0-44.** A rebuild would have needed a new signer run and image digest. The Neo evidence bound to `sha256:701ed7f2…c5bf` and run 44694386531 would then not carry over, and the M5 release gate would rerun. On Fedora it would also have needed the userspace bridge first, or Power Saver regresses on T6050 and T6041.
+  - **Next.** linux#2549 and the Fedora bridge land together in the next regular kernel bump:
+    - [fedora-aurora#451](https://github.com/aurora-silicon/fedora-aurora/pull/451): kernel-aurora 7.3.0-44, together with aurora-firstboot 0.1.13-7;
+    - that aurora-firstboot pins [aurora-platform#35](https://github.com/aurora-silicon/aurora-platform/pull/35), where aurora-power-budget hands tuned-ppd's profile to apple-clpc's class device;
+    - alarm and NixOS take [alarm-aurora#380](https://github.com/aurora-silicon/alarm-aurora/pull/380) and [nixos-aurora#351](https://github.com/aurora-silicon/nixos-aurora/pull/351). Their power-profiles-daemon already drives the class.
 - **The SEP write test.** Which T6050 (not the owner's J714s) runs the owner-approved xART write and keybag provisioning test, and whether alpha.3's release note keeps "SEP writes on" before that test passes.
 - **The aura pin.** Pin aura main 82ee5d6f, which is what the gate boots, or wait for a tagged b14.
