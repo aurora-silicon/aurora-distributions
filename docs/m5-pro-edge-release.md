@@ -28,6 +28,27 @@ Nothing ships for the M5 until its release-gate boot passes.
 | MTE on T6050 | #449 | #377 | #349 |
 | aurora-m5-platform-config | #450 (contains #449's commit) | #378 (contains #377's commit) | #350 |
 | Catalog switch + this plan | aurora-distributions #63 | | |
+| Platform profiles without ACPI (linux#2549; see "Gaps found by the release gate") | #451: kernel 7.3.0-44 pin, **not to merge alone** | #380: resolved config line | #351: config copy and provenance, after #380 |
+
+## Gaps found by the release gate (2026-11-20)
+
+### No platform profiles on 7.3.0-43 (known issue)
+
+- **Symptom.** An Edge J714s has no `/sys/class/platform-profile`, while the M5 lab kernel has one. So apple-clpc's power modes are unreachable: Low Power (2808 MHz ceiling and the SMC's 15 W PHPC hold) and Performance (macOS's High Power record to the SMC). The Mac runs at apple-clpc's default, Balanced.
+- **Cause.** The distro configs build with `# CONFIG_ACPI is not set`. `ACPI_PLATFORM_PROFILE` was defined only under `if ACPI` and built only inside `drivers/acpi/`. So apple-clpc's `select ACPI_PLATFORM_PROFILE if ACPI` did nothing, and its `IS_REACHABLE()` guard silently skipped `devm_platform_profile_register()`. The lab kernel starts from defconfig, which has `CONFIG_ACPI=y`. A distro config line alone cannot fix this, because Kconfig drops the symbol without ACPI.
+- **Fix (drafts).**
+  - [linux#2549](https://github.com/aurora-silicon/linux/pull/2549), head `4dfa5b66` = e0ee46a1 plus one commit. It builds the class without ACPI, makes apple-clpc select it unconditionally, and has asahi.config request `CONFIG_ACPI_PLATFORM_PROFILE=y`.
+  - Distro drafts: [fedora-aurora#451](https://github.com/aurora-silicon/fedora-aurora/pull/451) (7.3.0-44 pin), [alarm-aurora#380](https://github.com/aurora-silicon/alarm-aurora/pull/380) and [nixos-aurora#351](https://github.com/aurora-silicon/nixos-aurora/pull/351).
+  - A Kconfig-only resolve of all three distro configs differs from e0ee46a1 by exactly that one line.
+- **Effect elsewhere.** Only T6050 and T6041 (M4 Max) define a low-power profile in apple-clpc. The Neo (T8140) and the T8132, T8142 and T8152 register none and get only an empty class directory. Every other platform-profile driver in the tree needs X86 or ACPI.
+- **Fedora also needs a userspace bridge.** The J714s rides Fedora KDE, which uses tuned-ppd. tuned's `acpi` plugin uses only `/sys/firmware/acpi/platform_profile`, which a device tree boot never has. aurora-power-budget (aurora-platform#16, in Fedora's pin) stops capping when an `apple-clpc` class device appears. So on Fedora, 7.3.0-44 alone would turn Power Saver into a no-op on T6050 and T6041. Today, aurora-power-budget's own cap applies there. The alarm and NixOS power-profiles-daemon 0.30 patch already drives the class.
+- **For alpha.3.** Ship on 7.3.0-43 and list this as a known issue (release note below). Rebuilding to 7.3.0-44 now would buy nothing on Fedora until that bridge exists. It would also cost the Neo's qualification, which is bound to the 7.3.0-43 kernel image digest and signer run (see "Needs Dj").
+
+### SEP write path not exercised on the M5
+
+- The release gate did not exercise the SEP write path: xART writes and keybag provisioning (`xart_writes=1`, `provision_keybag=1`, Touch ID enrolment). The rig rule forbids xART writes on the owner's machine, and the gate J714s is the owner's.
+- The gate shows that the parameters are set and that the read-only SEP path comes up. It does not show that state saves, or that enrolment and keybag provisioning work, on the T6050.
+- This needs a separate, owner-approved test on another T6050 before the release note may claim that the Secure Enclave saves state on the M5 Pro.
 
 ### Why the J714s rides the Neo's Fedora KDE Edge delivery
 
@@ -100,6 +121,7 @@ The Neo lane's alpha.2 (Neo only) goes first and is not held for the M5. The M5 
 > - A Dell monitor's SuperSpeed USB hub can be missing after about 15 % of boots. It comes back after the first sleep.
 > - A stray Wi-Fi or Bluetooth wake right after the Mac goes to sleep is treated as a dark wake: the screen stays off and the Mac goes back to sleep.
 > - Edge installs do not receive package updates from the Testing feed.
+> - The power mode setting (Power Saver, Balanced, Performance) does not yet reach the M5 Pro's own power modes: the kernel offers no platform profile. Power Saver still applies Aurora's CPU power budget. A fix is in review (aurora-silicon/linux#2549).
 
 ## J714s fresh-install qualification (RELEASING.md "Qualification and storage")
 
@@ -124,7 +146,7 @@ The install must come from the alpha.3 payload, byte for byte (the STAGING.sha25
 **Boot checks (installed system)**
 - [ ] `uname -r` = `7.3.0-43.fc44.aurora.aarch64`; `/proc/cmdline` has no `arm64.nomte`.
 - [ ] MTE: `grep -c mte /proc/cpuinfo` > 0, and `/proc/device-tree/reserved-memory/mte-tag-storage@*` exists.
-- [ ] SEP writes on: `/sys/module/apple_sep/parameters/xart_writes` = 1 and `provision_keybag` = 1. Touch ID enrolment works; `aurora-sep status` shows no xART warning.
+- [ ] SEP writes on: `/sys/module/apple_sep/parameters/xart_writes` = 1 and `provision_keybag` = 1, and `aurora-sep status` shows no xART warning. Read-only on the owner's J714s: no Touch ID enrolment or keybag provisioning there (rig rule; see "SEP write path not exercised on the M5").
 - [ ] Leakage: the Stage 2 log has `FDT: GPU: leakage calibration words …`, and `work/aura-leakage-fill-20261120/verify-j714s-unit-values.py` passes.
 - [ ] `aurora-m5-sleep-policy.service` is active (exited), and both drop-ins are under `/run/systemd/{sleep,logind}.conf.d/`.
 - [ ] `busctl get-property org.freedesktop.login1 /org/freedesktop/login1 org.freedesktop.login1.Manager HandleLidSwitchDocked` = `suspend`.
@@ -151,4 +173,10 @@ The install must come from the alpha.3 payload, byte for byte (the STAGING.sha25
   - Before adoption: sign a test-only Testing catalog row for `apple,j714s` on an unmerged branch for that test installer. This needs the catalog signer.
   - After adoption, from the live channel, as the Neo's alpha.1 was verified. Drop `freshInstall` from `neo_edge.M5_GATES` and keep a Neo-only alpha.4 ready as the rollback.
 - **MTE on every T6050 board.** The owner's T6050 policy turns MTE on for every T6050 board, including the K114/K116 and J775/J873 boards that are in Testing or the 65-model list. Only the J714s has run with MTE on.
+- **7.3.0-43 without platform profiles, or a 7.3.0-44 rebuild.** Recommended: ship alpha.3 on 7.3.0-43 with the known issue.
+  - What a rebuild means: 7.3.0-44 = e0ee46a1 + linux#2549. The new kernel RPM gets a new signer run and image digest, so the Neo evidence bound to `sha256:701ed7f2…c5bf` and run 44694386531 no longer carries over.
+  - The kernel delta adds no GPU or Mesa change: the Neo gets only an empty class directory. Even so, keeping the Neo on Edge would need either a new Neo qualification (CTS plus boot, sleep and fault checks on the new digest) or your explicit sign-off to carry the 7.3.0-43 CTS over to that one-commit delta. The M5 release gate would also have to rerun on 7.3.0-44.
+  - On Fedora, a rebuild also needs the userspace bridge above first, or Power Saver regresses on T6050 and T6041.
+  - Better: carry linux#2549 in the next regular kernel bump, with the bridge.
+- **The SEP write test.** Which T6050 (not the owner's J714s) runs the owner-approved xART write and keybag provisioning test, and whether alpha.3's release note keeps "SEP writes on" before that test passes.
 - **The aura pin.** Pin aura main 82ee5d6f, which is what the gate boots, or wait for a tagged b14.
