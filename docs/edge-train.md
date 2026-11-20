@@ -187,7 +187,7 @@ Use the reference Mesa:
 | # | Step | Who |
 |---|---|---|
 | 1 | Merge the pair into linux and mesa `aurora-edge` (the Neo lane's pair). | PR review |
-| 2 | Fedora: `edge-staging/<pair>` rpms.yml, then the `edge-f44-sign-rpms.yml` pins PR and dispatch with `sign=true` (as for the Neo). | fedora-aurora, testing-signing |
+| 2 | Fedora: `edge-staging/<pair>` rpms.yml, then the `edge-f44-sign-rpms.yml` pins PR and dispatch with `sign=true`, as for the Neo. A Mesa-only respin uses `edge-f44-sign-mesa-replacement.yml` (alpha.2: kernel signer 44694386531, Mesa signer 44832807927); pass it to `publish-edge.yml` as `mesa-signing-run`. | fedora-aurora, testing-signing |
 | 3 | ALARM: push `edge-staging/<pair>` (tracker pins only) and dispatch packages.yml on it. | alarm-aurora |
 | 4 | Edge snapshots: `publish-edge.yml` in fedora-aurora (`signing-run`, `base-release`) and alarm-aurora (`build-run`). NixOS: the `channel-edge` commit and cache release. | testing-signing (package keys) |
 | 5 | Images: `images.yml channel=edge` for the nine core profiles; Omarchy with `alarm-edge-snapshot`. | distribution repos |
