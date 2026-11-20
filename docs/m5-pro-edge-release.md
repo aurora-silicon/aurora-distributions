@@ -126,7 +126,7 @@ The Neo lane's alpha.2 (Neo only) goes first and is not held for the M5. The M5 
 > - Edge installs do not receive package updates from the Testing feed.
 > - The power mode setting (Power Saver, Balanced, Performance) does not yet reach the M5 Pro's own power modes: the kernel offers no platform profile. Power Saver still applies Aurora's CPU power budget. A fix is in review (aurora-silicon/linux#2549).
 > - SEP writes are off by default on the M5 Pro and Max (T6050), so Touch ID enrollment is unavailable until an owner-approved write test passes. Nothing is written to the Secure Enclave storage that macOS shares, so macOS's Touch ID is left as it was.
-> - To opt in at your own risk, put `options apple_sep xart_writes=1 provision_keybag=1` in `/etc/modprobe.d/aurora-sep.conf` and reboot (aurora-sep's XART-SAFETY.md, "M5 Pro and Max (T6050): read-only by default").
+> - To opt in at your own risk, put `options apple_sep xart_writes=1 provision_keybag=1` in `/etc/modprobe.d/aurora-sep.conf` and reboot (aurora-sep's XART-SAFETY.md, "M5 Pro and Max (T6050): read-only by default"). On these Macs that file must set both options; with anything else in it the Secure Enclave driver is not loaded.
 
 ## J714s fresh-install qualification (RELEASING.md "Qualification and storage")
 
@@ -151,7 +151,7 @@ The install must come from the alpha.3 payload, byte for byte (the STAGING.sha25
 **Boot checks (installed system)**
 - [ ] `uname -r` = `7.3.0-43.fc44.aurora.aarch64`; `/proc/cmdline` has no `arm64.nomte`.
 - [ ] MTE: `grep -c mte /proc/cpuinfo` > 0, and `/proc/device-tree/reserved-memory/mte-tag-storage@*` exists.
-- [ ] SEP read-only (the T6050 default): no `apple_sep.*` on `/proc/cmdline` and no `/etc/modprobe.d/aurora-sep.conf`; `/run/modprobe.d/aurora-sep.conf` reads `options apple_sep xart_writes=0 provision_keybag=0`; `/sys/bus/platform/devices/*.sep/diag/policy` shows `xart_writes=0 provision_keybag=0` and `diag/xart` reads `disabled`; `journalctl -b -u aurora-sep` has "SEP writes are off by default on this Mac (T6050)". Expected and recorded, not a failure: `aurora-sep status` warns that xART writes are off, and `aurora-sep.service` reports that no trusted key could be sealed (no keybag is provisioned). No Touch ID enrolment or keybag provisioning (rig rule).
+- [ ] SEP read-only (the T6050 default): no `apple_sep.*` on `/proc/cmdline` and no `/etc/modprobe.d/aurora-sep.conf`; `/run/modprobe.d/aurora-sep.conf` reads `options apple_sep xart_writes=0 provision_keybag=0`; `/sys/bus/platform/devices/*.sep/diag/policy` shows `xart_writes=0 provision_keybag=0` and `diag/xart` reads `disabled`; `journalctl -b -u aurora-sep` has "SEP writes are off by default on this Mac (T6050)". `aurora-sep.service` succeeds with "provisions no identity keybag while SEP writes are off", `aurora-sep-ready` exits 0 ("Touch ID is not set up"), and `systemctl --failed` is empty. Expected and recorded, not a failure: `aurora-sep status` warns that xART writes are off. No Touch ID enrolment or keybag provisioning (rig rule).
 - [ ] Leakage: the Stage 2 log has `FDT: GPU: leakage calibration words …`, and `work/aura-leakage-fill-20261120/verify-j714s-unit-values.py` passes.
 - [ ] `aurora-m5-sleep-policy.service` is active (exited), and both drop-ins are under `/run/systemd/{sleep,logind}.conf.d/`.
 - [ ] `busctl get-property org.freedesktop.login1 /org/freedesktop/login1 org.freedesktop.login1.Manager HandleLidSwitchDocked` = `suspend`.
