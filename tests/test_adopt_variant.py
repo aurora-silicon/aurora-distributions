@@ -299,3 +299,101 @@ class EdgeTests(unittest.TestCase):
         evidence['pair']['mesaDsoSHA256'] = 'sha256:' + 'a' * 64
         with self.assertRaisesRegex(ValueError, 'full Vulkan CTS'):
             adopter.neo_edge.verify_evidence(evidence)
+
+
+class EdgeM5Tests(EdgeTests):
+    """neo_edge.M5: the M5 Pro (J714s) on the same Fedora KDE Edge payload as the Neo."""
+
+    def setUp(self):
+        patcher = patch.object(adopter.neo_edge, 'M5', True)
+        patcher.start()
+        self.addCleanup(patcher.stop)
+        VariantTests.setUp(self)
+        edge = adopter.neo_edge
+        self.catalog['models'].append({'deviceIdentifier': edge.M5_MODEL, 'installationProfile': 'fedora-kde',
+                                       'status': 'enabled'})
+        self.tag = f'payload-fedora-kde-{edge.IMAGE_RUN}-edge-alpha.1'
+        self.base = 'https://github.com/aurora-silicon/fedora-aurora/releases/download/' + self.tag
+        run = self.json['image-build.json']
+        run.update(id=edge.IMAGE_RUN, status='completed', event='push', head_branch=edge.IMAGE_BRANCH,
+                   path=edge.IMAGE_WORKFLOW, head_sha=edge.IMAGE_HEAD)
+        proof = {'schema': 1, 'fedora': 44, 'profile': edge.PROFILE, 'models': [edge.MODEL, edge.M5_MODEL],
+                 'signing_run': edge.SIGNING_RUN, 'replacement_signing_run': edge.MESA_SIGNING_RUN,
+                 'replacement_mesa': edge.SOURCES['mesa']['revision'], 'files': edge.FILES,
+                 'installed_edge_packages': {
+                     key: {'filename': filename, 'sha256': 'd'*64, 'main_header_and_payload_sha256': 'e'*64}
+                     for key, filename in edge.REQUIRED_PACKAGES.items()}}
+        self.json['edge-image-proof.json'] = proof
+        metadata = {"os_list": [{"allowed_device_classes": ["j700ap", "j714sap"],
+                                 "aurora_stage1": {"qualified_machines": {"j700ap": ["27.2"], "j714sap": ["27.2"]}},
+                                 "aurora_stage2": {"board_members": {"j700ap": "esp/m1n1/boot-j700.bin",
+                                                                     "j714sap": "esp/m1n1/boot-j714s.bin"}}}]}
+        raw_metadata = json.dumps(metadata).encode()
+        self.json['installer-data-fedora-kde.json'] = metadata
+        for model in self.catalog['models']:
+            model.update(payloadDigest='sha256:'+'b'*64,
+                         payloadArtifact={'sourceURL': self.base+'/os.zip',
+                                          'fileName': 'os.zip', 'sizeBytes': 123},
+                         metadataDigest=edge.digest(raw_metadata),
+                         metadataArtifact={'sourceURL': self.base+'/installer-data-fedora-kde.json',
+                                           'fileName': 'installer-data-fedora-kde.json', 'sizeBytes': len(raw_metadata)})
+        receipt = self.json['delivery.json']
+        receipt.update(release_id=f'build-{edge.IMAGE_RUN}-edge-alpha.1',
+                       artifacts={'os.zip': {'bytes': 123, 'sha256': 'b'*64}})
+        passed = {'status': 'passed', 'sha256': 'sha256:'+'f'*64}
+        self.gates = {
+            edge.MODEL: {'pair': edge.EVIDENCE_PAIR.copy(), 'checks': {gate: dict(passed) for gate in edge.GATES}},
+            edge.M5_MODEL: {'pair': edge.EVIDENCE_PAIR.copy(), 'checks': {gate: dict(passed) for gate in edge.M5_GATES}},
+        }
+        raw = edge.bind(self.catalog, receipt, run, json.dumps(proof).encode(), copy.deepcopy(self.gates))
+        self.json['edge-qualification.json'] = json.loads(raw)
+        self.catalog['edgeQualification']['evidenceDigest'] = edge.digest(
+            json.dumps(self.json['edge-qualification.json']).encode())
+
+    def test_both_models_share_one_qualified_payload(self):
+        self.invoke()
+        channel = self.root/'site/installer/Profiles/fedora-kde/channels/edge-alpha'
+        edge = json.loads((channel/'catalog.json').read_text())
+        self.assertEqual([m['deviceIdentifier'] for m in edge['models']], ['apple,j700', 'apple,j714s'])
+        report = json.loads((channel/'edge-qualification.json').read_text())
+        self.assertEqual(set(report['m5Evidence']['checks']), adopter.neo_edge.M5_GATES)
+
+    def test_wider_model_rows_are_rejected(self):
+        self.catalog['models'].append(dict(self.catalog['models'][0], deviceIdentifier='apple,j716c'))
+        with self.assertRaisesRegex(ValueError, 'catalog model coverage'):
+            self.invoke()
+
+    def test_testing_metadata_cannot_replace_neo_metadata(self):
+        raw = self.json['installer-data-fedora-kde.json']['os_list'][0]
+        raw['allowed_device_classes'] = ['j700ap']
+        with self.assertRaisesRegex(ValueError, 'Neo-only install policy'):
+            self.invoke()
+
+    def test_old_pair_evidence_cannot_bind_the_replacement(self):
+        evidence = copy.deepcopy(self.gates)
+        evidence['apple,j714s']['pair']['kernelImageSHA256'] = 'sha256:' + 'a' * 64
+        with self.assertRaisesRegex(ValueError, 'M5 Pro release gate'):
+            adopter.neo_edge.verify_evidence(evidence)
+
+    def test_missing_cts_receipt_refuses_to_bind(self):
+        unsigned = copy.deepcopy(self.catalog)
+        del unsigned['channel']
+        del unsigned['edgeQualification']
+        with self.assertRaisesRegex(ValueError, 'Neo and the M5 Pro evidence'):
+            adopter.neo_edge.bind(unsigned, self.json['delivery.json'], self.json['image-build.json'],
+                                  json.dumps(self.json['edge-image-proof.json']).encode(), {})
+
+    def test_the_neo_evidence_alone_is_not_enough(self):
+        with self.assertRaisesRegex(ValueError, 'Neo and the M5 Pro evidence'):
+            adopter.neo_edge.verify_evidence(self.gates['apple,j700'])
+
+    def test_a_failed_m5_gate_refuses(self):
+        evidence = copy.deepcopy(self.gates)
+        evidence['apple,j714s']['checks']['deepSleep']['status'] = 'failed'
+        with self.assertRaisesRegex(ValueError, 'Missing passing M5 Pro evidence: deepSleep'):
+            adopter.neo_edge.verify_evidence(evidence)
+
+    def test_an_image_without_the_m5_is_refused(self):
+        self.json['edge-image-proof.json']['models'] = ['apple,j700']
+        with self.assertRaisesRegex(ValueError, 'completed Fedora Neo Edge image run|Neo-smoked file'):
+            self.invoke()

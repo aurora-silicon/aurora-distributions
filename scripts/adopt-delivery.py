@@ -232,7 +232,7 @@ def adopt(repository, tag, site, channel='testing'):
     models = catalog['models']
     if tag.endswith('-models65'):
         verify_models65(repository, tag, data, catalog, receipt, run, trusted)
-    allowed = {neo_edge.MODEL} if edge else set(json.loads((ROOT/'keys/supported-models.json').read_text())['supported'])
+    allowed = set(neo_edge.models()) if edge else set(json.loads((ROOT/'keys/supported-models.json').read_text())['supported'])
     # Deliveries are schema 5 and name no engine. Schema 4 deliveries built
     # before that still adopt; the native-only step strips their engine pins.
     if (catalog['schemaVersion'] not in (4, 5) or {model['deviceIdentifier'] for model in models} != allowed
