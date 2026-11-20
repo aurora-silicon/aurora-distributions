@@ -20,6 +20,15 @@ Nothing ships for the M5 until its release-gate boot passes.
 | Rootfs deep sleep | `aurora-m5-platform-config`: deep sleep only, lid suspends on battery/AC/docked, `50-aurora-m5-rtc-safety` hook | fedora/alarm/nixos package drafts |
 | Catalog | the J714s rides the Fedora KDE Edge payload beside the Neo (`neo_edge.M5`) | this repository's draft |
 
+### Drafts (2026-11-20)
+
+| Item | fedora-aurora | alarm-aurora | nixos-aurora |
+|---|---|---|---|
+| aura main 82ee5d6f | #448 | #376 | #348 |
+| MTE on T6050 | #449 | #377 | #349 |
+| aurora-m5-platform-config | #450 (contains #449's commit) | #378 (contains #377's commit) | #350 |
+| Catalog switch + this plan | aurora-distributions #63 | | |
+
 ### Why the J714s rides the Neo's Fedora KDE Edge delivery
 
 - **The 65-model Testing cohort is not the route.** It is a metadata-only refresh of the November 13-15 Testing images, whose kernel (9125b314) has none of the M5 deep-sleep work. It is Testing, not Edge. And it must adopt ten profiles at once, including the separately qualified Omarchy delivery and six other T6050 models that have not been qualified.
