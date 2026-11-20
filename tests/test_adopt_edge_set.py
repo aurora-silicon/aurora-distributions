@@ -93,6 +93,7 @@ class TrainAdoptionTests(unittest.TestCase):
         }
         if profile == 'omarchy-hyprland':
             data['vm-result.json'] = json.dumps(dict.fromkeys(delivery.VM_CHECKS, True)).encode()
+        data.update(edge_train.device_evidence(catalog, self.cohort, train, profile))
         return data
 
     def items(self, train=None):
@@ -151,6 +152,23 @@ class TrainAdoptionTests(unittest.TestCase):
         with self.assertRaises(subprocess.CalledProcessError):
             self.adopt()
         self.assertEqual(self.snapshot(), before)
+
+    def test_every_device_record_is_verified_and_served(self):
+        tag = edge_train.release_tag(self.train, 'arch-gnome')
+        name = edge_train.device_record_name('apple,j274')
+        before = self.snapshot()
+        original = self.deliveries[tag][name]
+        self.deliveries[tag][name] = original.replace(b'apple,j274', b'apple,j293')
+        with self.assertRaisesRegex(ValueError, 'device evidence'):
+            self.adopt()
+        self.assertEqual(self.snapshot(), before)
+        self.deliveries[tag][name] = original
+        self.adopt()
+        served = self.site / 'installer/Profiles/arch-gnome/channels/edge-alpha'
+        self.assertEqual((served / name).read_bytes(), original)
+        (served / name).write_bytes(original + b' ')
+        with self.assertRaisesRegex(ValueError, 'device evidence'):
+            verifier.verify_channels(self.site, self.root / 'keys/catalog.ed25519.pub')
 
     def test_deliveries_of_another_train_are_refused(self):
         other = fx.staged(fx.train())

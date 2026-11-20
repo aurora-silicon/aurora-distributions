@@ -12,6 +12,7 @@ import tempfile
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT/'scripts'))
 from channel_policy import validate_catalog, legacy_development_catalog
+import edge_train
 
 
 def verify_channels(site, public_key):
@@ -60,6 +61,13 @@ def verify_channels(site, public_key):
                 if ('sha256:'+hashlib.sha256(evidence).hexdigest() != proof['evidenceDigest']
                         or json.loads(evidence) != {k: v for k, v in proof.items() if k != 'evidenceDigest'}):
                     raise ValueError('Edge detached qualification differs from its signed catalog')
+                if 'devices' in proof:
+                    records = {}
+                    for model in proof['devices']:
+                        record = path.parent/edge_train.device_record_name(model)
+                        if record.is_file() and not record.is_symlink() and record.stat().st_size <= 1048576:
+                            records[record.name] = record.read_bytes()
+                    edge_train.verify_devices(catalog, records)
             count += 1
     verify_train_record(site)
     return count

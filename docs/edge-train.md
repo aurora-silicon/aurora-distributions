@@ -95,6 +95,15 @@ Every rule in `docs/channels.md` still holds: a new immutable `-edge-alpha.<n>` 
                     "checks": {"boot": {...}, "gpuSmoke": {...}, "suspend": {...}, "restoration": {...}}}}}
 ```
 
+**Per-device evidence (installer#176).** The installer defaults a Mac to Edge only with proof for that model:
+- Every bound catalog carries `edgeQualification.devices`: `{"<deviceIdentifier>": {"evidenceDigest": "sha256:…"}}`.
+- Each digest covers the exact bytes of the delivery asset `edge-device-<vendor>-<board>.json`, for example `edge-device-apple-j413.json`. That record holds `deviceIdentifier`, `family`, `machine`, `pair` and `checks` (its family row, the shared pair), plus the `linux` and `mesa` sources.
+- `verify_binding` re-derives every digest from the family rows. `adopt-edge-set.py` downloads every record and refuses a missing or altered one, or one naming another device.
+- `verify-channel-catalogs.py` re-checks the served copies. These sit in each profile's `edge-alpha` directory and, for Fedora KDE, in the root fallback.
+- A family qualified only by a sibling (`qualifiedBy`) is listed without `devices` entries. Its Macs default to Nightly; an explicit Edge pick still works.
+- `neoEvidence` (the `t8140` row as `{pair, checks}`) stays for the Alpha 22 installer.
+- The single-profile Neo and M5 path (`neo_edge.py`, #63) does not emit `devices` yet; that lane should add it before the new installer ships.
+
 **Gates:**
 - M1, M2 and M3 families: `vulkanCTS`, `glCTS`, `suspend` and `restoration`.
 - `t8140` (Neo): `neo_edge.GATES`.

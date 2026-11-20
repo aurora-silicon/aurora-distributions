@@ -110,6 +110,11 @@ def verify_delivery(item, cohort, train, site):
     verify_edge_delivery(catalog, data['edge-qualification.json'], receipt, run, base, testing)
     edge_train.verify_binding(catalog, receipt, run, data['edge-image-proof.json'], cohort, train, profile)
     edge_train.verify_metadata(catalog, data['installer-data-' + profile + '.json'], cohort, train, profile)
+    devices = {edge_train.device_record_name(model): urllib.request.urlopen(
+        base + '/' + edge_train.device_record_name(model), timeout=60).read()
+        for model in catalog['edgeQualification'].get('devices', {})}
+    edge_train.verify_devices(catalog, devices)
+    data.update(devices)
     verify_edge_source_refs(catalog['edgeQualification'])
     return data, catalog
 
@@ -159,8 +164,12 @@ def adopt_train(items, cohort, train, site):
                 'payloadDigest': catalog['models'][0]['payloadDigest']}
         kde = staged / 'installer/Profiles/fedora-kde/channels/edge-alpha'
         root_channel = staged / 'installer/channels/edge-alpha'
-        root_channel.mkdir(parents=True, exist_ok=True)
-        for name in ('catalog.signed.json', 'edge-qualification.json'):
+        if root_channel.exists():
+            shutil.rmtree(root_channel)
+        root_channel.mkdir(parents=True)
+        mirrored = ['catalog.signed.json', 'edge-qualification.json'] + sorted(
+            path.name for path in kde.glob('edge-device-*.json'))
+        for name in mirrored:
             (root_channel / name).write_bytes((kde / name).read_bytes())
         (staged / RECORD).write_text(json.dumps(record, indent=2) + '\n')
         _channels.verify_channels(staged, ROOT / 'keys/catalog.ed25519.pub')
@@ -170,9 +179,9 @@ def adopt_train(items, cohort, train, site):
             if (site / relative).exists():
                 shutil.rmtree(site / relative)
             shutil.copytree(staged / relative, site / relative)
-        (site / 'installer/channels/edge-alpha').mkdir(parents=True, exist_ok=True)
-        for name in ('catalog.signed.json', 'edge-qualification.json'):
-            shutil.copyfile(root_channel / name, site / 'installer/channels/edge-alpha' / name)
+        if (site / 'installer/channels/edge-alpha').exists():
+            shutil.rmtree(site / 'installer/channels/edge-alpha')
+        shutil.copytree(root_channel, site / 'installer/channels/edge-alpha')
         shutil.copyfile(staged / RECORD, site / RECORD)
     print('Adopted the qualified Edge train', train['release'], 'for', len(verified), 'profiles')
     return record

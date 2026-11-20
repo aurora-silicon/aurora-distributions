@@ -132,12 +132,15 @@ def qualified_families(cohort, train, profile=None):
     result = {}
     for name, spec in cohort['families'].items():
         result[name] = {'models': list(spec['models']), 'gates': family_gates(cohort, name),
-                        'machines': list(cohort['families'][spec.get('qualifiedBy', name)]['models'])}
+                        'machines': list(cohort['families'][spec.get('qualifiedBy', name)]['models']),
+                        # A sibling family's row admits a Mac to Edge, but proves nothing about
+                        # its own chip: such Macs are listed without per-device evidence.
+                        'proven': 'qualifiedBy' not in spec}
     for name in train.get('riders', []):
         spec = cohort['riders'][name]
         if profile is None or profile in spec['profiles']:
             result[name] = {'models': list(spec['models']), 'gates': family_gates(cohort, name),
-                            'machines': list(spec['models'])}
+                            'machines': list(spec['models']), 'proven': True}
     return result
 
 
@@ -315,6 +318,55 @@ def profile_evidence(evidence, cohort, train, profile, proof):
             copy.deepcopy(evidence['distributions'][name]))
 
 
+def device_record_name(model):
+    return 'edge-device-' + model.replace(',', '-') + '.json'
+
+
+def _device_records(families, cohort, train, profile):
+    """Detached per-device evidence: the exact bytes `edgeQualification.devices` digests.
+
+    Each record names its Mac, the family row that qualified it ({machine, pair,
+    checks}) and the shared Linux/Mesa pair. The installer defaults a Mac to
+    Edge only when its record is present.
+    """
+    records = {}
+    for name, spec in qualified_families(cohort, train, profile).items():
+        if not spec['proven']:
+            continue
+        row = families[name]
+        for model in spec['models']:
+            record = {'schemaVersion': 1, 'deviceIdentifier': model, 'family': name,
+                      'machine': row['machine'], 'pair': row['pair'], 'checks': row['checks'],
+                      **copy.deepcopy(train['pair'])}
+            records[model] = (json.dumps(record, sort_keys=True, indent=2) + '\n').encode()
+    return records
+
+
+def device_evidence(catalog, cohort, train, profile):
+    """{asset name: bytes} of a bound catalog's detached device records."""
+    families = catalog['edgeQualification']['familyEvidence']
+    return {device_record_name(model): raw
+            for model, raw in _device_records(families, cohort, train, profile).items()}
+
+
+def verify_devices(catalog, records):
+    """Check every `devices` digest against its detached record and its Mac."""
+    proof = catalog['edgeQualification']
+    listed = {row['deviceIdentifier'] for row in catalog['models']}
+    devices = proof.get('devices')
+    if not isinstance(devices, dict):
+        raise ValueError('Edge qualification lacks per-device evidence')
+    for model, entry in devices.items():
+        if model not in listed:
+            raise ValueError('device evidence for a Mac the catalog has not listed: ' + str(model))
+        raw = records.get(device_record_name(model))
+        if (not isinstance(entry, dict) or set(entry) != {'evidenceDigest'} or raw is None
+                or digest(raw) != entry['evidenceDigest']):
+            raise ValueError('missing or altered device evidence: ' + model)
+        if json.loads(raw).get('deviceIdentifier') != model:
+            raise ValueError('device evidence for %s names another device' % model)
+
+
 def bind(catalog, receipt, run, raw_proof, evidence, cohort, train, profile):
     verify_train(train, cohort)
     if receipt.get('installation_profile') != profile or receipt.get('release_id') != release_id(train, profile):
@@ -337,7 +389,12 @@ def bind(catalog, receipt, run, raw_proof, evidence, cohort, train, profile):
         'edgeTrain': {'release': train['release'], 'trainDigest': train_digest(train),
                       'cohortDigest': digest(canonical(cohort))},
         'familyEvidence': families, 'distributionEvidence': smoke,
+        'devices': {model: {'evidenceDigest': digest(raw)}
+                    for model, raw in _device_records(families, cohort, train, profile).items()},
     }
+    if 't8140' in families:
+        # The Alpha 22 installer reads the Neo's proof in its original shape.
+        report['neoEvidence'] = {key: copy.deepcopy(families['t8140'][key]) for key in ('pair', 'checks')}
     raw = (json.dumps(report, sort_keys=True, indent=2) + '\n').encode()
     catalog.update(channel='edge', edgeQualification={**report, 'evidenceDigest': digest(raw)}, models=rows)
     receipt.update(release_channel='edge', release_kind='alpha', packaged_sources=copy.deepcopy(train['pair']))
@@ -364,6 +421,13 @@ def verify_binding(catalog, receipt, run, raw_proof, cohort, train, profile):
         verify_family_record(recorded[name], spec, name, train)
     verify_distribution_record(report.get('distributionEvidence'), cohort, train, distribution(profile),
                                proof['files'])
+    expected = {model: {'evidenceDigest': digest(raw)}
+                for model, raw in _device_records(recorded, cohort, train, profile).items()}
+    if report.get('devices') != expected:
+        raise ValueError('Edge per-device evidence differs from the family rows')
+    neo = {key: recorded['t8140'][key] for key in ('pair', 'checks')} if 't8140' in recorded else None
+    if report.get('neoEvidence') != neo:
+        raise ValueError('Edge Neo evidence differs from the t8140 row')
     if receipt.get('release_id') != release_id(train, profile):
         raise ValueError('Edge receipt identity differs from the train')
 

@@ -114,6 +114,10 @@ class BinderTests(unittest.TestCase):
             report = (assets / 'edge-qualification.json').read_bytes()
             self.assertEqual(signed['edgeQualification']['evidenceDigest'], edge_train.digest(report))
             self.assertEqual(json.loads((assets / 'delivery.json').read_text())['release_channel'], 'edge')
+            records = {path.name: path.read_bytes() for path in assets.glob('edge-device-*.json')}
+            self.assertEqual(set(records), {edge_train.device_record_name(model)
+                                            for model in edge_train.profile_models(self.cohort, self.train, profile)})
+            edge_train.verify_devices(signed, records)
 
     def test_bind_refuses_incomplete_evidence_before_writing(self):
         profile = 'fedora-kde'

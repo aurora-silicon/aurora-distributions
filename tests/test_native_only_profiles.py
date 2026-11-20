@@ -186,12 +186,16 @@ class NativeOnlyProfileTests(unittest.TestCase):
         (source/'installer-data-fedora-kde.json').write_bytes(metadata)
         record = b'{"schema_version": 1, "release": "alpha.4"}\n'
         (self.source/'edge-train.json').write_bytes(record)
+        device = b'{"deviceIdentifier": "apple,j274"}\n'
+        (source/'edge-device-apple-j274.json').write_bytes(device)
         self.prepare()
         output = self.root/'output'
         edge = output/'Profiles/fedora-kde/channels/edge-alpha'
         self.assertEqual((edge/'edge-image-proof.json').read_bytes(), proof)
         self.assertEqual((edge/'installer-data-fedora-kde.json').read_bytes(), metadata)
         self.assertEqual((output/'edge-train.json').read_bytes(), record)
+        self.assertEqual((edge/'edge-device-apple-j274.json').read_bytes(), device)
+        self.assertEqual((output/'channels/edge-alpha/edge-device-apple-j274.json').read_bytes(), device)
 
     def test_testing_payloads_cannot_be_resigned_into_edge(self):
         self.stage_edge(payload_digit='b')

@@ -37,7 +37,11 @@ def bind_assets(assets, evidence, cohort, train, profile):
     verify_edge_delivery(catalog, report, receipt, run, base)
     edge_train.verify_binding(catalog, receipt, run, proof, cohort, train, profile)
     edge_train.verify_metadata(catalog, metadata, cohort, train, profile)
+    devices = edge_train.device_evidence(catalog, cohort, train, profile)
+    edge_train.verify_devices(catalog, devices)
     verify_edge_source_refs(catalog['edgeQualification'])
+    for name, record in devices.items():
+        (assets / name).write_bytes(record)
     (assets / 'edge-qualification.json').write_bytes(report)
     for name, document in (('catalog.json', catalog), ('delivery.json', receipt)):
         (assets / name).write_text(json.dumps(document, indent=2) + '\n')

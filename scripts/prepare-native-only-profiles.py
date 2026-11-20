@@ -195,7 +195,9 @@ def prepare(source, output, signing_key, release_tag, source_revision, fetch=fet
                     raise ValueError('an existing testing payload cannot be relabelled as Edge')
             records = {}
             # A train delivery also carries its image proof and install policy.
-            for name in FILES + ('vm-result.json', 'edge-image-proof.json', f'installer-data-{profile}.json'):
+            devices = sorted(path.name for path in edge_path.parent.glob('edge-device-*.json'))
+            for name in FILES + ('vm-result.json', 'edge-image-proof.json', f'installer-data-{profile}.json',
+                                 *devices):
                 path = edge_path.parent/name
                 if path.exists() or path.is_symlink():
                     if path.is_symlink() or not path.is_file() or path.stat().st_size > 1048576:
@@ -298,6 +300,8 @@ def prepare(source, output, signing_key, release_tag, source_revision, fetch=fet
         fedora_edge_proof = staged/'Profiles/fedora-kde/channels/edge-alpha/edge-qualification.json'
         if fedora_edge_proof.is_file():
             (staged/'channels/edge-alpha/edge-qualification.json').write_bytes(fedora_edge_proof.read_bytes())
+        for record in sorted(fedora_edge_proof.parent.glob('edge-device-*.json')):
+            (staged/'channels/edge-alpha'/record.name).write_bytes(record.read_bytes())
         (staged/'channels/edge').mkdir(parents=True)
         (staged/'channels/edge/catalog.signed.json').write_bytes(
             (staged/'channels/testing/catalog.signed.json').read_bytes())

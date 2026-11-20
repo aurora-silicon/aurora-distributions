@@ -223,6 +223,62 @@ class BindTests(unittest.TestCase):
                                  self.evidence['distributions'][edge_train.distribution(profile)])
                 self.assertEqual('t6050' in report['familyEvidence'], profile == 'fedora-kde')
 
+    def test_every_proven_mac_carries_its_own_detached_device_evidence(self):
+        catalog, receipt, raw, raw_metadata, run, proof = self.bind('fedora-kde')
+        report = json.loads(raw)
+        models = edge_train.profile_models(self.cohort, self.train, 'fedora-kde')
+        records = edge_train.device_evidence(catalog, self.cohort, self.train, 'fedora-kde')
+        self.assertEqual(set(report['devices']), set(models))
+        self.assertEqual(set(records), {edge_train.device_record_name(model) for model in models})
+        for model in models:
+            record = records[edge_train.device_record_name(model)]
+            self.assertEqual(report['devices'][model], {'evidenceDigest': edge_train.digest(record)})
+            parsed = json.loads(record)
+            self.assertEqual(parsed['deviceIdentifier'], model)
+            family = parsed['family']
+            self.assertEqual({k: parsed[k] for k in ('machine', 'pair', 'checks')},
+                             report['familyEvidence'][family])
+            self.assertEqual({k: parsed[k] for k in ('linux', 'mesa')}, self.train['pair'])
+        edge_train.verify_devices(catalog, records)
+        # The Alpha 22 installer reads the Neo's record in the old shape.
+        self.assertEqual(report['neoEvidence'], {k: report['familyEvidence']['t8140'][k] for k in ('pair', 'checks')})
+
+    def test_a_stand_in_family_is_listed_without_device_proof(self):
+        cohort = copy.deepcopy(self.cohort)
+        cohort['families']['t603x']['qualifiedBy'] = 't8122'
+        evidence = copy.deepcopy(self.evidence)
+        evidence['families']['t603x']['machine'] = 'apple,j613'
+        catalog, receipt, _ = fx.template(self.train, 'arch-kde', cohort)
+        raw = edge_train.bind(catalog, receipt, fx.image_run(self.train, 'arch-kde'),
+                              json.dumps(fx.image_proof(self.train, 'arch-kde')).encode(),
+                              evidence, cohort, self.train, 'arch-kde')
+        devices = json.loads(raw)['devices']
+        self.assertIn('apple,j514s', [row['deviceIdentifier'] for row in catalog['models']])
+        self.assertNotIn('apple,j514s', devices)
+        self.assertIn('apple,j613', devices)
+
+    def test_device_records_are_refused_when_altered_or_misnamed(self):
+        catalog, *_ = self.bind('nixos-gnome')
+        records = edge_train.device_evidence(catalog, self.cohort, self.train, 'nixos-gnome')
+        name = edge_train.device_record_name('apple,j413')
+        for change, message in (
+                (lambda r: r.update({name: r[name] + b' '}), 'device evidence'),
+                (lambda r: r.pop(name), 'device evidence'),
+                (lambda r: r.update({name: json.dumps(dict(json.loads(r[name]), deviceIdentifier='apple,j415'),
+                                                      sort_keys=True, indent=2).encode() + b'\n'}), 'names another device')):
+            with self.subTest(message=message):
+                altered = dict(records)
+                change(altered)
+                if message == 'names another device':
+                    catalog['edgeQualification']['devices']['apple,j413'] = {
+                        'evidenceDigest': edge_train.digest(altered[name])}
+                with self.assertRaisesRegex(ValueError, message):
+                    edge_train.verify_devices(catalog, altered)
+                catalog['edgeQualification']['devices']['apple,j413'] = {'evidenceDigest': edge_train.digest(records[name])}
+        catalog['edgeQualification']['devices']['apple,j813'] = {'evidenceDigest': 'sha256:' + 'a' * 64}
+        with self.assertRaisesRegex(ValueError, 'not listed'):
+            edge_train.verify_devices(catalog, records)
+
     def test_an_image_from_another_snapshot_or_pair_is_refused(self):
         for key, value, message in (('snapshot', 'edge-20261101.1', 'snapshot'),
                                     ('feed', 'https://aurorasilicon.org/alarm-aurora/testing/aarch64', 'feed'),
