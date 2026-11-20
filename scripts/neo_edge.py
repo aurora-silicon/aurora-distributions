@@ -7,33 +7,34 @@ import re
 REPO = "aurora-silicon/fedora-aurora"
 PROFILE = "fedora-kde"
 MODEL = "apple,j700"
-IMAGE_BRANCH = "edge/neo-f44-image-ef112c2b"
-IMAGE_HEAD = "389751ff9564a7d91250ce32beb6207097a67f5e"
+IMAGE_BRANCH = "edge/neo-f44-image-e0ee46a1"
+IMAGE_HEAD = "287ca4ab3d471d9a6863a1e144dc0bd4824c8ef3"
 IMAGE_WORKFLOW = ".github/workflows/edge-f44-image.yml"
-SIGNING_RUN = 44329906984
-MESA_SIGNING_RUN = 44380265630
-IMAGE_RUN = 44380859872
+# One signer run signed both the kernel and the Mesa packages.
+SIGNING_RUN = 44694386531
+MESA_SIGNING_RUN = SIGNING_RUN
+IMAGE_RUN = 44694944437
 SOURCES = {
     name: {"repository": "aurora-silicon/" + name, "branch": "aurora-edge",
            "revision": revision, "tree": tree}
     for name, revision, tree in (
-        ("linux", "6020f67d5ce13e7aae6820cd51ab70826404932c", "f2dbcb1ebd59343e2496360bc572ef1a071f2159"),
-        ("mesa", "ef112c2b86e4e19b2317cd88918e673de7fd55cf", "5a383e03de1e86d727def1279d2328c4f9b27bc4"),
+        ("linux", "e0ee46a18e33f859f6ad6863757a4650ff687ab6", "e6b970c138e90c2ede5800e13fbfc74e144baf0f"),
+        ("mesa", "418bf795a98c0cfe044f87d724a5db7b6b980b56", "dfb7c66bf7b1e706d749be8c2661892fe9037f39"),
     )
 }
-KREL = "7.3.0-42.fc44.aurora.aarch64"
-KERNEL_DIGEST = "d6903588ce991dec6b65beafede9f6b0361d3904af8fd989b6c4bf143bb00fea"
+KREL = "7.3.0-43.fc44.aurora.aarch64"
+KERNEL_DIGEST = "701ed7f29d693e439083508546d96c4917431e35f725465a154c855008c2c5bf"
 FILES = {
     f"root:usr/lib/modules/{KREL}/vmlinuz": KERNEL_DIGEST,
     f"boot:vmlinuz-{KREL}": KERNEL_DIGEST,
-    "root:usr/lib64/libvulkan_asahi.so": "ce060163100691dd68a8f07da1a945d66b2c3f75b26175aa2dd461753de5212b",
+    "root:usr/lib64/libvulkan_asahi.so": "dea6ef52ca25db2df7027ba7d23c97f69d53e4c73ae27cd040b5539a6d10af5a",
     "root:usr/share/vulkan/icd.d/asahi_icd.aarch64.json": "5d4804f4a540be6d376d11ca6a9d34fec703b84aea97dd04a392b01d3bb1ead3",
 }
 REQUIRED_PACKAGES = {
     "kernel-aurora-core.aarch64": f"kernel-aurora-core-{KREL}.rpm",
     "kernel-aurora-modules-extra.aarch64": f"kernel-aurora-modules-extra-{KREL}.rpm",
-    "mesa-aurora-vulkan-drivers.aarch64": "mesa-aurora-vulkan-drivers-26.3.0-33.fc44.aurora.aarch64.rpm",
-    "mesa-aurora-dri-drivers.aarch64": "mesa-aurora-dri-drivers-26.3.0-33.fc44.aurora.aarch64.rpm",
+    "mesa-aurora-vulkan-drivers.aarch64": "mesa-aurora-vulkan-drivers-26.3.0-34.fc44.aurora.aarch64.rpm",
+    "mesa-aurora-dri-drivers.aarch64": "mesa-aurora-dri-drivers-26.3.0-34.fc44.aurora.aarch64.rpm",
 }
 GATES = {"vulkanCTS", "glCTS", "deepSleep", "restoration"}
 EVIDENCE_PAIR = {

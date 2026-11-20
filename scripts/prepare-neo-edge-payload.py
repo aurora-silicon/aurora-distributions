@@ -20,8 +20,8 @@ def assemble(producer, filesystems, recovery, image_run, assets, evidence=None):
     neo_edge.verify_image(run, proof, neo_edge.PROFILE)
     if evidence is not None:
         neo_edge.verify_evidence(json.loads(evidence.read_text()))
-    release_id = f"build-{run['id']}-edge-alpha.1"
-    base = f"https://github.com/{neo_edge.REPO}/releases/download/payload-{neo_edge.PROFILE}-{run['id']}-edge-alpha.1"
+    release_id = f"build-{run['id']}-edge-alpha.2"
+    base = f"https://github.com/{neo_edge.REPO}/releases/download/payload-{neo_edge.PROFILE}-{run['id']}-edge-alpha.2"
     subprocess.run(["python3", str(native / "scripts/assemble-distribution-payload.py"),
                     "--filesystems", str(filesystems), "--recovery-app", str(recovery),
                     "--output", str(assets), "--release-id", release_id], check=True)
