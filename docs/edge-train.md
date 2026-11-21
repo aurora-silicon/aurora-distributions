@@ -69,7 +69,7 @@ sudo sed -i -e 's|^baseurl=.*|baseurl=https://aurorasilicon.org/fedora-aurora/$r
 4. **Adopt once:** `adopt-edge-set.yml` runs `adopt-edge-set.py`.
    - It downloads and verifies all ten deliveries exactly as the single-profile Edge path does: signature, hosted provenance, report digest, packaged sources, aurora-edge ancestry and tree, no relabelled Testing payload.
    - It refuses anything but the train's ten tags.
-   - It refuses a sequence that does not exceed every served Edge sequence. Installers keep one Edge floor for all profiles.
+   - It refuses a catalog whose sequence does not exceed that profile's served Edge sequence. The ten train catalogs may share one sequence.
    - It refuses removing a Mac that Edge serves today (the Neo; the J714s once alpha.3 shipped it).
    - It assembles and verifies the new tree beside the site, then replaces all ten Edge directories, the Fedora KDE root fallback and `site/installer/edge-train.json`.
 5. **Served-state checks.** `verify-channel-catalogs.py` (Pages and every PR) fails if any profile's Edge catalog differs from the adopted train record. `adopt-delivery.py --channel edge` refuses once a train is adopted, and Testing release preparation keeps the record and every Edge file.
@@ -231,4 +231,3 @@ Use the reference Mesa:
 - j575d (M3 Ultra) on Edge or not.
 - The weekly Fedora Edge refresh cadence for Firefox security fixes.
 
-**Installer finding (for the installer lane).** The accepted-catalog floor is per channel, not per profile (`AcceptedCatalogIdentityStore.fileName(for:)`). After preparing one profile on Edge (or Testing, whose ten catalogs share sequence 1795085678), preparing another profile fails. With an equal sequence it fails as `sequenceReuse`, with a lower one as `rollback`. Keying the floor by channel and profile fixes it for every channel.

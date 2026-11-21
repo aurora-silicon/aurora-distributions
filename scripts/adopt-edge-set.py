@@ -124,15 +124,17 @@ def adopt_train(items, cohort, train, site):
     served = {profile: _envelope(site / 'installer/Profiles' / profile / 'channels/edge-alpha/catalog.signed.json')
               for profile in cohort['profiles']}
     fallback = _envelope(site / 'installer/channels/edge-alpha/catalog.signed.json')
-    # Installers keep one Edge rollback floor for every profile.
-    floor = max([catalog['sequence'] for catalog in list(served.values()) + [fallback] if catalog] or [0])
     verified = {}
     for item in ordered:
         profile = item['profile']
         data, catalog = verify_delivery(item, cohort, train, site)
+        # Each profile keeps its own rollback floor; the train's ten catalogs may share
+        # one sequence. The root fallback mirrors Fedora KDE.
+        served_profile = [served[profile]] + ([fallback] if profile == 'fedora-kde' else [])
+        floor = max([previous['sequence'] for previous in served_profile if previous] or [0])
         if catalog['sequence'] <= floor:
-            raise ValueError('Edge catalog sequence %d must exceed every served Edge sequence (%d): %s'
-                             % (catalog['sequence'], floor, profile))
+            raise ValueError('Edge catalog sequence %d must exceed the served %s Edge sequence (%d)'
+                             % (catalog['sequence'], profile, floor))
         previous = served[profile] or {'models': []}
         dropped = ({model['deviceIdentifier'] for model in previous['models']}
                    - {model['deviceIdentifier'] for model in catalog['models']})

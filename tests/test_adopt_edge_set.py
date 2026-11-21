@@ -198,6 +198,18 @@ class TrainAdoptionTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'sequence'):
             self.adopt()
 
+    def test_the_sequence_floor_is_per_profile(self):
+        # Another profile's newer served catalog does not block this profile; the ten
+        # train catalogs share one sequence with different payloads.
+        self.serve('nixos-gnome', {'schemaVersion': 5, 'sequence': 1795300000, 'channel': 'edge', 'models': []})
+        with self.assertRaisesRegex(ValueError, 'served nixos-gnome Edge sequence'):
+            self.adopt()
+        self.serve('nixos-gnome', {'schemaVersion': 5, 'sequence': 1795085678, 'channel': 'edge', 'models': []})
+        self.adopt()
+        sequences = {json.loads((self.site / 'installer/Profiles' / profile / 'channels/edge-alpha/catalog.json')
+                                .read_text())['sequence'] for profile in self.cohort['profiles']}
+        self.assertEqual(sequences, {1795200000})
+
     def test_a_relabelled_testing_payload_is_refused(self):
         testing = self.site / 'installer/Profiles/arch-gnome/catalog.json'
         catalog = json.loads(self.deliveries[edge_train.release_tag(self.train, 'arch-gnome')]['catalog.json'])
