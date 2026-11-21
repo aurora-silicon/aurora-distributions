@@ -12,9 +12,9 @@ Nothing ships for the M5 until its release-gate boot passes.
 | Piece | Source | Where it is prepared |
 |---|---|---|
 | Kernel | linux `aurora-edge` after linux#2527 (integration e0ee46a1, M5 deep-sleep merges included), kernel-aurora 7.3.0-43, signer run 44694386531 | Neo Edge refresh lane (alpha.2). Reused unchanged; no second kernel pin. |
-| Mesa | mesa `aurora-edge` after mesa#566 (418bf795), mesa-aurora 26.3.0-34, same signer run | Neo Edge refresh lane. Reused unchanged. |
+| Mesa | mesa `aurora-edge` after mesa#566 plus 15fe5010 (418bf795 + 15fe5010), mesa-aurora 26.3.0-35, signer run 44832807927 | Neo Edge refresh lane (the -35 respin). Reused unchanged. |
 | Device tree | in-tree `t6050-j714s.dtb` from kernel-aurora-core 7.3.0-43 | in the kernel RPM |
-| aura (Stage 2) | aura main 82ee5d6f (aura#214: T6050 sleep controller wake sources; 9f501f32: GPU leakage words from the fuses) | fedora/alarm/nixos aura pin drafts |
+| aura (Stage 2) | aura 2f487f26 = main 82ee5d6f (aura#214: T6050 sleep controller wake sources; 9f501f32: GPU leakage words from the fuses) + aura#384 + the aura#392 MCC fix; label `1.0.0b13-g2f487f26` | on main: fedora `aura-1.0.0~b13.1-3`, alarm `1.0.0b13.1-4`, nixos `1.0.0b13.1` |
 | MTE on T6050 | `arm64.nomte` only on T8142; a one-shot removal on T6050 | fedora `aurora-platform` 44-45, alarm `aurora-boot` 20261018-20, nixos `modules/aurora.nix` drafts |
 | SEP writes on | always on, nothing to configure: 7.3.0-43's parameters default to on, and linux#2591 removes them | (none) |
 | Rootfs deep sleep | `aurora-m5-platform-config`: deep sleep only, lid suspends on battery/AC/docked, `50-aurora-m5-rtc-safety` hook | fedora/alarm/nixos package drafts |
@@ -59,18 +59,18 @@ The Neo lane's alpha.2 (Neo only) goes first and is not held for the M5. The M5 
 
 1. **Release-gate boot passes** (Aurora Agents seq 1848). It must boot exactly what users get:
    - the signed kernel-aurora-core/modules 7.3.0-43 RPM contents with the in-tree `t6050-j714s.dtb` (not intg28d and not the lab DTB fdc15472);
-   - aura 82ee5d6f Stage 2;
+   - aura 2f487f26 Stage 2 (rgate4a and rgate35c; the first gate, rgate2f, ran main 82ee5d6f);
    - no `arm64.nomte`;
-   - the SEP as the rig runs it on the owner's J714s (read-only, as rgate2f did). There is no SEP-write row in this gate: the 11-11 J714s boot (linux#1587) is the write-path evidence;
+   - the SEP as the default runs it: writes on, no `apple_sep.*` on the command line (rgate35c). The 11-11 J714s boot (linux#1587) is the write-path evidence;
    - the `aurora-m5-platform-config` files.
 
-   Record the `releaseGate`, `deepSleep` and `restoration` receipts (sha256 of manifest files, as for the Neo) and the pair: kernel `sha256:701ed7f2…c5bf`, `libvulkan_asahi.so` `sha256:dea6ef52…af5a`, signer run 44694386531.
+   Record the `releaseGate`, `deepSleep` and `restoration` receipts (sha256 of manifest files, as for the Neo) and the pair: kernel `sha256:701ed7f2…c5bf`, `libvulkan_asahi.so` `sha256:767f3e17…8424`, Mesa signer run 44832807927 (the -35 respin; the kernel stays on signer run 44694386531). The record is `receipts-rgate35c` (sha256 b6402244…40e3).
 2. **Merge the distribution drafts after review and green CI.**
    - Order:
      - alarm aura → alarm MTE → alarm package, each with a merge commit;
      - nixos aura → nixos MTE → nixos module;
      - fedora aura → fedora MTE → fedora package. The package PR carries the MTE commit, so merge the MTE PR first.
-   - Also merge the fleet row for aura 82ee5d6f first: a Neo plus one M1/M2 Stage 2 boot, because the aura sweep touches every chip.
+   - The aura pin is 2f487f26, already on the three distros' main after its fleet rows (J773g, J713, J413, J714s; Aurora Agents seq 1921).
    - No kernel pin moves on main for this.
 3. **Fedora Testing snapshot.**
    - The main RPM builds (aura, aurora-platform, aurora-m5-platform-config) feed `testing-YYYYMMDD.N`.
@@ -80,8 +80,8 @@ The Neo lane's alpha.2 (Neo only) goes first and is not held for the M5. The M5 
    - `.github/scripts/edge-f44-repository.py`: `BASE` and `MANIFEST_SHA` to the step 3 snapshot.
    - `.github/scripts/edge-f44-image-proof.py`:
      - `"models": ["apple,j700", "apple,j714s"]`;
-     - require `aurora-m5-platform-config.noarch`, `aura.aarch64` at `1.0.0~b13.1-2` and `aurora-platform-core` at `44-46` or later among the installed packages;
-     - check that the image's `boot-j714s.bin` Stage 2 carries the `1.0.0b13-g82ee5d6f` marker.
+     - require `aurora-m5-platform-config.noarch`, `aura.aarch64` at `1.0.0~b13.1-3` and `aurora-platform-core` at `44-46` or later among the installed packages;
+     - check that the image's `boot-j714s.bin` Stage 2 carries the `1.0.0b13-g2f487f26` marker. Check which aura pin the image actually got. If b14 is tagged and the distro b14 pins (fedora-aurora#461, alarm-aurora#399, nixos-aurora#360, all at 7c3e778e) merge before the image builds, the image carries `1.0.0b14` instead: then require that marker and run one J714s aura row on the b14 release bytes before binding.
    - `edge-f44-image.yml`: the branch name. Keep `SIGNING_RUN 44694386531`: no RPM rebuild and no new signing.
    - Push the trigger file, then record the image run, the head SHA and the proof sha256.
 5. **Neo smoke on the new Stage 2.** One boot and one deep sleep of the Neo on the alpha.3 image's aura (neohw lease, Neo lane). The Neo CTS evidence is reused unchanged.
@@ -172,4 +172,4 @@ PR readiness asks J714s owners on the agents channel for one opt-in row after ad
     - that aurora-firstboot pins [aurora-platform#35](https://github.com/aurora-silicon/aurora-platform/pull/35), where aurora-power-budget hands tuned-ppd's profile to apple-clpc's class device;
     - alarm and NixOS take [alarm-aurora#380](https://github.com/aurora-silicon/alarm-aurora/pull/380) and [nixos-aurora#351](https://github.com/aurora-silicon/nixos-aurora/pull/351). Their power-profiles-daemon already drives the class.
 - **Decided 2026-11-20: SEP writes on for the T6050, with no extra write row.** The 11-11 J714s lab boot (linux#1587) is the evidence; the release note keeps "SEP writes on".
-- **The aura pin.** Pin aura main 82ee5d6f, which is what the gate boots, or wait for a tagged b14.
+- **The aura pin (decided 2026-11-20).** alpha.3 ships fedora main's pin, aura 2f487f26 (branch `djdev/mcc-count-width-on-82ee5d6f`: main 82ee5d6f + aura#384 + the aura#392 MCC fix). Its label is `1.0.0b13-g2f487f26`; packages are fedora `aura-1.0.0~b13.1-3`, alarm `1.0.0b13.1-4` and nixos `1.0.0b13.1`. b14 reaches the M5 in the next Edge refresh. Check which aura pin the image actually got. If b14 is tagged and the distro b14 pins (fedora-aurora#461, alarm-aurora#399, nixos-aurora#360, all at 7c3e778e) merge before the image builds, the image carries `1.0.0b14` instead: then require that marker and run one J714s aura row on the b14 release bytes before binding.
