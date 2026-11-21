@@ -171,6 +171,16 @@ def verify_models65(repository, tag, data, catalog, receipt, image, trusted):
         raise ValueError('65-model refresh changes metadata beyond board admission')
 
 
+def serve_device_records(directory, data):
+    """Serve exactly this Edge delivery's detached device records: a Mac it no longer carries keeps none."""
+    current = {name for name in data if name.startswith('edge-device-')}
+    for stale in directory.glob('edge-device-*.json'):
+        if stale.name not in current:
+            stale.unlink()
+    for name in sorted(current):
+        (directory/name).write_bytes(data[name])
+
+
 def adopt(repository, tag, site, channel='testing'):
     match = re.fullmatch(r'payload-(.+)-([0-9]+)(-models(?:58|65)|-edge-alpha\.[1-9][0-9]*)?', tag)
     edge = channel == 'edge'
@@ -194,6 +204,8 @@ def adopt(repository, tag, site, channel='testing'):
         if (repository, match[1]) != (neo_edge.REPO, neo_edge.PROFILE):
             raise ValueError('Only the F44 KDE Neo Edge producer is supported')
         names += ('edge-qualification.json', 'edge-image-proof.json', 'installer-data-fedora-kde.json')
+        # Each Edge Mac's detached evidence record, which edgeQualification.devices digests.
+        names += tuple(neo_edge.device_record_name(model) for model in neo_edge.models())
     data = {name: urllib.request.urlopen(base + '/' + name, timeout=60).read() for name in names}
     trusted = (ROOT / 'keys/catalog.ed25519.pub').read_bytes()
     if len(trusted) != 32 or data['trust-root.ed25519.pub'] != trusted or len(data['catalog.json.sig']) != 64:
@@ -234,7 +246,7 @@ def adopt(repository, tag, site, channel='testing'):
     models = catalog['models']
     if tag.endswith('-models65'):
         verify_models65(repository, tag, data, catalog, receipt, run, trusted)
-    allowed = {neo_edge.MODEL} if edge else set(json.loads((ROOT/'keys/supported-models.json').read_text())['supported'])
+    allowed = set(neo_edge.models()) if edge else set(json.loads((ROOT/'keys/supported-models.json').read_text())['supported'])
     # Deliveries are schema 5 and name no engine. Schema 4 deliveries built
     # before that still adopt; the native-only step strips their engine pins.
     if (catalog['schemaVersion'] not in (4, 5) or {model['deviceIdentifier'] for model in models} != allowed
@@ -264,6 +276,7 @@ def adopt(repository, tag, site, channel='testing'):
         verify_edge_delivery(catalog, data['edge-qualification.json'], receipt, run, base, testing)
         neo_edge.verify_binding(catalog, receipt, run, data['edge-image-proof.json'])
         neo_edge.verify_metadata(catalog, data['installer-data-fedora-kde.json'])
+        neo_edge.verify_devices(catalog, data)
         verify_edge_source_refs(catalog['edgeQualification'])
         if receipt['release_id'] != 'build-' + str(run['id']) + match[3]:
             raise ValueError('Edge Alpha receipt identity differs')
@@ -275,6 +288,8 @@ def adopt(repository, tag, site, channel='testing'):
             raise ValueError('catalog sequence does not advance the current profile')
     for name in names:
         (target/name).write_bytes(channel_descriptor(data[name]) if name == 'release.json' else data[name])
+    if edge:
+        serve_device_records(target, data)
     channel_directory = target if edge else target/'channels/testing'
     channel_directory.mkdir(parents=True, exist_ok=True)
     (channel_directory/'catalog.signed.json').write_text(json.dumps({'schema_version':1,
@@ -294,6 +309,7 @@ def adopt(repository, tag, site, channel='testing'):
         (root_channel/'catalog.signed.json').write_bytes((channel_directory/'catalog.signed.json').read_bytes())
         if edge:
             (root_channel/'edge-qualification.json').write_bytes(data['edge-qualification.json'])
+            serve_device_records(root_channel, data)
     if edge:
         print('Adopted qualified Edge profile:', profile)
         return

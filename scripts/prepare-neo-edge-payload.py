@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Assemble a Neo-only catalog template and payload without creating a release."""
+"""Assemble the Neo (and, with neo_edge.M5, the M5 Pro) catalog template and payload without creating a release."""
 import argparse
 import hashlib
 import json
@@ -29,14 +29,15 @@ def assemble(producer, filesystems, recovery, image_run, assets, evidence=None):
     meta = assets / f"installer-data-{profile}.json"
     meta_json = json.loads(meta.read_text())
     template, = meta_json["os_list"]
-    board = "j700ap"
-    if (not template["aurora_stage1"]["qualified_machines"].get(board)
-            or not template["aurora_stage2"]["board_members"].get(board)):
-        raise ValueError("Neo Stage 2 or Stage 1 metadata is missing")
+    boards = neo_edge.boards()
+    for board in boards:
+        if (not template["aurora_stage1"]["qualified_machines"].get(board)
+                or not template["aurora_stage2"]["board_members"].get(board)):
+            raise ValueError(f"{board} Stage 2 or Stage 1 metadata is missing")
     # Restrict the install policy as well as the signed model inventory.
-    template["allowed_device_classes"] = [board]
+    template["allowed_device_classes"] = boards
     stage1 = template["aurora_stage1"]["qualified_machines"]
-    template["aurora_stage1"]["qualified_machines"] = {board: stage1[board]}
+    template["aurora_stage1"]["qualified_machines"] = {board: stage1[board] for board in boards}
     write(meta, meta_json)
 
     receipt_path = assets / "delivery.json"
@@ -74,9 +75,9 @@ def assemble(producer, filesystems, recovery, image_run, assets, evidence=None):
     catalog = json.loads(catalog_path.read_text())
     if catalog.pop("channel", None) not in (None, "testing") or "edgeQualification" in catalog:
         raise ValueError("Unexpected channel or qualification in the generated catalog")
-    rows = [row for row in catalog["models"] if row["deviceIdentifier"] == neo_edge.MODEL]
-    if len(rows) != 1:
-        raise ValueError("Assembler did not return exactly one Neo model row")
+    rows = [row for row in catalog["models"] if row["deviceIdentifier"] in neo_edge.models()]
+    if [row["deviceIdentifier"] for row in rows] != neo_edge.models():
+        raise ValueError("Assembler did not return exactly the Edge model rows")
     catalog["models"] = rows
     neo_edge.verify_metadata(catalog, meta.read_bytes())
     write(catalog_path, catalog)
