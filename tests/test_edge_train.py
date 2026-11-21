@@ -68,6 +68,11 @@ class CohortTests(unittest.TestCase):
         if m5_gates is not None:
             self.assertEqual(set(cohort['riders']['t6050']['gates']), m5_gates)
 
+    def test_the_m5_rider_has_no_fresh_install_gate(self):
+        # A fresh install cannot be done or restored inside an M5 rig slot; it is
+        # verified from the live channel after adoption, as for the Neo's alpha.1.
+        self.assertEqual(fx.cohort()['riders']['t6050']['gates'], ['releaseGate', 'deepSleep', 'restoration'])
+
     def test_excluded_and_cohort_models_are_disjoint(self):
         cohort = copy.deepcopy(fx.cohort())
         cohort['families']['t603x']['models'].append('apple,j575d')

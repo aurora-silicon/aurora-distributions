@@ -30,7 +30,7 @@
   "riders": {
     "t6050": {"chip": "M5 Pro (MacBook Pro 14-inch)", "socs": ["t6050"], "models": ["apple,j714s"],
               "profiles": ["fedora-kde"],
-              "gates": ["releaseGate", "deepSleep", "freshInstall", "restoration"]}
+              "gates": ["releaseGate", "deepSleep", "restoration"]}
   },
   "excluded": {
     "apple,j575d": "Mac Studio M3 Ultra (T6032): its Stage 1 and iBoot have never been tried (the Testing stage1_caution), and no Aurora machine can produce its rows. It stays on Testing with that caution until a T6032 row exists."
