@@ -51,18 +51,32 @@ def staged(record):
     return result
 
 
-def check(digit='f'):
-    return {'status': 'passed', 'sha256': 'sha256:' + digit * 64}
+MANIFESTS = {}
+
+
+def manifest(label):
+    """A sha256sum manifest, as a row's owner publishes it in edge/manifests/<sha256>.sha256."""
+    raw = ('%s  results/%s.log\n' % (hashlib.sha256(label.encode()).hexdigest(), label)).encode()
+    MANIFESTS[hashlib.sha256(raw).hexdigest()] = raw
+    return raw
+
+
+def check(label='row'):
+    return {'status': 'passed', 'sha256': 'sha256:' + hashlib.sha256(manifest(label)).hexdigest()}
+
+
+def manifests():
+    return dict(MANIFESTS)
 
 
 def evidence(record, cohort_record=None):
     cohort_record = cohort_record or cohort()
     families = {}
     for name, spec in edge_train.qualified_families(cohort_record, record).items():
-        families[name] = {'machine': spec['models'][0], 'pair': dict(REFERENCE),
-                          'checks': {gate: check() for gate in spec['gates']}}
+        families[name] = {'machine': spec['machines'][0], 'pair': dict(REFERENCE),
+                          'checks': {gate: check(name + '-' + gate) for gate in spec['gates']}}
     distributions = {name: {'machine': 'apple,j314s', 'pair': dict(DISTRIBUTION_FILES[name]),
-                            'checks': {gate: check('e') for gate in cohort_record['gates']['distribution']}}
+                            'checks': {gate: check(name + '-' + gate) for gate in cohort_record['gates']['distribution']}}
                      for name in edge_train.DISTRIBUTIONS}
     return {'families': families, 'distributions': distributions}
 

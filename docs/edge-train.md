@@ -10,20 +10,29 @@ An **Edge train** is one release: one Linux and Mesa `aurora-edge` pair, built b
 
 ## The cohort
 
-`edge/cohort.json` holds the policy. It covers 35 Macs from `keys/supported-models-65.json`: 34 M1, M2 and M3 boards plus the Neo. Each family is one chip generation and die class (base, or Pro/Max/Ultra): the same SoC firmware and GPU configuration, so it is qualified once on any of its Macs.
+`edge/cohort.json` holds the policy. It covers 35 Macs from `keys/supported-models-65.json`: 34 M1, M2 and M3 boards plus the Neo. A family is one chip generation and die class (base, Pro/Max or Ultra) in one form factor (laptop or desktop): the same SoC firmware and GPU configuration, qualified once on one of its Macs. Ultra and desktop families are `qualifiedBy` a laptop family until they have rows of their own.
 
 | Family | Chip | Macs |
 |---|---|---|
-| `t8103` | M1 | j274 (Mac mini), j293 (MacBook Pro 13"), j313 (MacBook Air), j456, j457 (iMac 24") |
-| `t600x` | M1 Pro, Max, Ultra | j314s, j314c (MacBook Pro 14"), j316s, j316c (16"), j375c, j375d (Mac Studio) |
-| `t8112` | M2 | j413 (MacBook Air 13"), j415 (Air 15"), j473 (Mac mini), j493 (MacBook Pro 13") |
-| `t602x` | M2 Pro, Max, Ultra | j414s, j414c (MacBook Pro 14"), j416s, j416c (16"), j474s (Mac mini), j475c, j475d (Mac Studio), j180d (Mac Pro) |
-| `t8122` | M3 | j433, j434 (iMac 24"), j504 (MacBook Pro 14"), j613 (MacBook Air 13"), j615 (Air 15") |
+| `t8103` | M1 laptops | j293 (MacBook Pro 13"), j313 (MacBook Air) |
+| `t8103-desktop` | M1 desktops | j274 (Mac mini), j456, j457 (iMac 24"); `qualifiedBy` `t8103` |
+| `t600x` | M1 Pro, Max laptops | j314s, j314c (MacBook Pro 14"), j316s, j316c (16") |
+| `t600x-desktop` | M1 Max desktop | j375c (Mac Studio); `qualifiedBy` `t600x` |
+| `t6002` | M1 Ultra | j375d (Mac Studio); `qualifiedBy` `t600x` |
+| `t8112` | M2 laptops | j413 (MacBook Air 13"), j415 (Air 15"), j493 (MacBook Pro 13") |
+| `t8112-desktop` | M2 desktop | j473 (Mac mini); `qualifiedBy` `t8112` |
+| `t602x` | M2 Pro, Max laptops | j414s, j414c (MacBook Pro 14"), j416s, j416c (16") |
+| `t602x-desktop` | M2 Pro, Max desktops | j474s (Mac mini), j475c (Mac Studio); `qualifiedBy` `t602x` |
+| `t6022` | M2 Ultra | j475d (Mac Studio), j180d (Mac Pro); `qualifiedBy` `t602x` |
+| `t8122` | M3 laptops | j504 (MacBook Pro 14"), j613 (MacBook Air 13"), j615 (Air 15") |
+| `t8122-desktop` | M3 desktop | j433, j434 (iMac 24"); `qualifiedBy` `t8122` |
 | `t603x` | M3 Pro, Max | j514s, j514c, j514m (MacBook Pro 14"), j516s, j516c, j516m (16") |
 | `t8140` | A18 Pro | j700 (MacBook Neo) |
 
 - **Excluded:** `apple,j575d`, the Mac Studio with M3 Ultra (T6032). Its Stage 1 and iBoot have never been tried (Testing's `stage1_caution`), and no Aurora machine can produce its rows. It stays on Testing with that caution. Adding it is a one-line cohort change once a T6032 row exists.
-- **Held:** a train can leave whole families on Testing with `"held": [...]` in `edge/train.json`. Their Macs get no Edge catalog rows and need no rows run. The first train holds `t8122`, because the J615's GPU does not run on 27.2 firmware yet, and `t603x`, which has no machine yet.
+- **Ultra parts and desktops** are families of their own, `qualifiedBy` their laptop sibling. A laptop's suspend and restore row says little about a two-die Ultra or a desktop, so these Macs are listed on Edge without `devices` proof and default to Nightly. Once such a Mac has its own row, drop its `qualifiedBy` in a reviewed cohort change; its own row then proves it.
+- **Held:** a train can leave whole families on Testing with `"held": [...]` in `edge/train.json`. Their Macs get no Edge catalog rows and need no rows run. A family `qualifiedBy` a held family is held with it. The first train holds `t8122` and `t8122-desktop`, because the J615's GPU does not run on 27.2 firmware yet, and `t603x`, which has no machine yet.
+- **Withdrawn:** a reviewed `"withdrawn": [...]` list in `edge/train.json` takes named Macs off Edge (rows and `devices`). Adoption refuses to drop any served Mac it does not name. Rolling back is always a new train with a higher sequence; reverting the site commit does not work, because each installer's per-profile rollback floor refuses the older catalog.
 - **Rider:** `riders.t6050` is the MacBook Pro 14" M5 Pro (`apple,j714s`) on `fedora-kde` only, with the M5 gates of aurora-distributions#63. A train carries it only when `edge/train.json` lists `"riders": ["t6050"]`.
 - **Every profile carries every cohort Mac**, ordered as the producer orders them. There are nine core profiles plus `omarchy-hyprland`.
 
@@ -66,13 +75,21 @@ sudo sed -i -e 's|^baseurl=.*|baseurl=https://aurorasilicon.org/fedora-aurora/$r
    - `profiles`: each profile's `images.yml` run on its distribution's main.
 
    Push A to `edge/stage-train-<name>`. `stage-edge-train.yml` stages all ten profiles, artifact only: it uses no secrets and creates no release. For each profile it authenticates the image run and its `edge-image-proof.json` (schema 2: the snapshot, the Edge feed, the packaged pair, the kernel and Mesa digests). It then restricts the install policy and the catalog rows to the cohort and records `STAGING.sha256`.
-2. **Commit B** adds `profiles.<p>.stage = {run, sha256}` and merges to main (PR). `train_digest` excludes the staging records, so A and B are the same train.
-3. **Publish**, one call per profile: each distribution's `publish-edge-payload.yml` calls `build-payload.yml` with `edge-train-revision` (B on main) and `edge-train-evidence`. `bind-edge-train.py` checks that B is on main and checks the staging run, the digest and the exact file list. It then binds the evidence and runs `verify_edge_delivery`, `verify_binding`, `verify_metadata` and `verify_edge_source_refs`. The result is the immutable `payload-<profile>-<image run>-edge-alpha.<n>` release, signed by the catalog signer.
+2. **Commit B**, on top of A in the same branch, adds `profiles.<p>.stage = {run, sha256}`, the train's evidence record `edge/evidence.json` and the sha256sum manifests its digests name (`edge/manifests/<sha256>.sha256`). It merges to main by PR, so A and B are both reviewed and in main's history. `train_digest` excludes the staging records, so A and B are the same train.
+3. **Publish**, one call per profile: each distribution's `publish-edge-payload.yml` calls `build-payload.yml` with `edge-train-revision` (B on main). `bind-edge-train.py`:
+   - checks that B is on main;
+   - checks that the staging run is in B's history and ran B's staging code (`verify-stage`: `stage-edge-train.yml`, `prepare-edge-payload.py`, `edge_train.py`, `edge/cohort.json`), and that its provenance attestation covers every staged asset;
+   - checks the staging digest and the exact file list;
+   - reads the evidence and manifests from B's checkout and checks every digest against its manifest;
+   - binds them, with the evidence record's digest in `edgeTrain.evidenceDigest`, and runs `verify_edge_delivery`, `verify_binding`, `verify_metadata` and `verify_edge_source_refs`.
+
+   The result is the immutable `payload-<profile>-<image run>-edge-alpha.<n>` release, signed by the catalog signer. For that signature to be a person's decision, give the `catalog-signing` environment required reviewers.
 4. **Adopt once:** `adopt-edge-set.yml` runs `adopt-edge-set.py`.
    - It downloads and verifies all ten deliveries exactly as the single-profile Edge path does: signature, hosted provenance, report digest, packaged sources, aurora-edge ancestry and tree, no relabelled Testing payload.
    - It refuses anything but the train's ten tags.
    - It refuses a catalog whose sequence does not exceed that profile's served Edge sequence. The ten train catalogs may share one sequence.
-   - It refuses removing a Mac that Edge serves today (the Neo; the J714s once alpha.3 shipped it).
+   - It refuses removing a Mac that Edge serves today (the Neo; the J714s once alpha.3 shipped it), unless the train's `withdrawn` list names it.
+   - It re-derives every catalog's family and distribution records and `edgeTrain.evidenceDigest` from main's `edge/evidence.json`, and checks every digest against its published manifest.
    - It assembles and verifies the new tree beside the site, then replaces all ten Edge directories, the Fedora KDE root fallback and `site/installer/edge-train.json`.
 5. **Served-state checks.** `verify-channel-catalogs.py` (Pages and every PR) fails if any profile's Edge catalog differs from the adopted train record. `adopt-delivery.py --channel edge` refuses once a train is adopted, and Testing release preparation keeps the record and every Edge file.
 
@@ -88,7 +105,7 @@ Every rule in `docs/channels.md` still holds: a new immutable `-edge-alpha.<n>` 
 
 ## Qualification plan
 
-**Evidence input** (`edge-train-evidence`):
+**Evidence record** (`edge/evidence.json`, in commit B; every `sha256` names a manifest in `edge/manifests/`):
 
 ```json
 {"families": {"<family>": {"machine": "apple,<board>", "pair": <train.reference>,
@@ -136,7 +153,7 @@ Every rule in `docs/channels.md` still holds: a new immutable `-edge-alpha.<n>` 
 | `t600x` | Ryan's lab M1 Pro (G13S) | **booked** (Ryan) |
 | `t8112` | Ryan's lab MacBook Air M2 (J413) | **booked** (Ryan) |
 | `t8103` | Joshua's MacBook 13" M1 | **booked** from Sat 02:00 CST; two-part row |
-| `t602x` | Joshua's M2 Max | **booked** from Sat 17:00 CST; two-part row |
+| `t602x` | Joshua's M2 Max | **booked** from Sat 17:00 CST; two-part row (a Mac Studio row proves `t602x-desktop` instead, once its `qualifiedBy` is dropped) |
 | `t8140` | the Neo lane's Neo | the Neo lane's own gate |
 | `t8122` | Ryan's lab J615; satchlj's `rubra-j613` (one-shot trial boots only, offline since 11-13) | **held**: stays Nightly; the J615's GPU does not run on 27.2 firmware yet |
 | `t603x` | none | **open**: held until a machine exists |
@@ -217,9 +234,9 @@ Use the reference Mesa:
 | 4 | Edge snapshots: `publish-edge.yml` in fedora-aurora (`signing-run`, `base-release`) and alarm-aurora (`build-run`). NixOS: the `channel-edge` commit and cache release. | testing-signing (package keys) |
 | 5 | Images: `images.yml channel=edge` for the nine core profiles; Omarchy with `alarm-edge-snapshot`. | distribution repos |
 | 6 | Commit A, `edge/train.json`, pushed to `edge/stage-train-<name>`. Stage late: the catalog sequence is the staging time. | aurora-distributions |
-| 7 | Hardware rows (the spec above) and the evidence JSON. | Ryan's lab, rubra, the Neo lane, the M5 lane; owners |
-| 8 | Commit B (staging records) PR to main, plus each distribution's `publish-edge-payload.yml` pin to that main commit. | review |
-| 9 | Publish ten payloads: `publish-edge-payload.yml` per profile, with `edge-train-revision` and the evidence. | **catalog-signing (Dj's catalog key)** |
+| 7 | Hardware rows (the spec above): each row returns its `{machine, pair, checks}` record and the sha256sum manifests its digests name. | row owners |
+| 8 | Commit B: staging records, `edge/evidence.json` and `edge/manifests/`, as a PR to main. | review |
+| 9 | Publish ten payloads: `publish-edge-payload.yml` per profile, with `edge-train-revision` (B on main). | **catalog-signing (Dj's catalog key)** |
 | 10 | Adopt: `adopt-edge-set.yml`, then Pages. Then, together: `deploy-snapshot.yml channel=edge` in fedora-aurora and alarm-aurora, and the NixOS edge advance. | **catalog owner (Dj)** |
 | 11 | Verify all ten `edge-alpha` URLs (models, `edgeTrain.trainDigest`, payload digests) and one install per distribution from the live channel. Post-build row (Ryan, #460): the first `images.yml channel=edge` Fedora KDE image boots on the Neo, `/etc/yum.repos.d/aurora.repo` follows `44/edge/aarch64` with `enabled=1`, and `dnf check-update` reads the signed Edge feed. | |
 

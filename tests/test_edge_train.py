@@ -131,7 +131,7 @@ class TrainTests(unittest.TestCase):
 class HeldFamilyTests(unittest.TestCase):
     def test_a_held_family_stays_off_edge_and_needs_no_rows(self):
         cohort, train = fx.cohort(), fx.train()
-        train['held'] = ['t8122', 't603x']
+        train['held'] = ['t8122', 't8122-desktop', 't603x']
         edge_train.verify_train(train, cohort)
         models = edge_train.profile_models(cohort, train, 'arch-kde')
         self.assertNotIn('apple,j613', models)
@@ -141,6 +141,12 @@ class HeldFamilyTests(unittest.TestCase):
         evidence = fx.evidence(train)
         self.assertNotIn('t8122', evidence['families'])
         edge_train.verify_evidence(evidence, cohort, train)
+
+    def test_a_stand_in_family_is_held_with_the_family_it_rides_on(self):
+        train = fx.train()
+        train['held'] = ['t8122']
+        with self.assertRaisesRegex(ValueError, 'held'):
+            edge_train.verify_train(train, fx.cohort())
 
     def test_held_names_known_families_and_never_a_rider(self):
         for held in (['t9999'], ['t6050'], ['t8122', 't8122']):
@@ -172,7 +178,7 @@ class ChainTests(unittest.TestCase):
                         json.dumps(fx.image_proof(self.train, 'fedora-minimal')).encode(),
                         self.evidence, self.cohort, self.train, 'fedora-minimal')
         records = edge_train.device_evidence(catalog, self.cohort, self.train, 'fedora-minimal')
-        record = json.loads(records[edge_train.device_record_name('apple,j274')])
+        record = json.loads(records[edge_train.device_record_name('apple,j293')])
         self.assertEqual(record['chains'], self.evidence['families']['t8103']['chains'])
         self.assertEqual(record['checks']['vulkanCTS']['chain'], 'own')
         edge_train.verify_devices(catalog, records)
@@ -191,6 +197,46 @@ class ChainTests(unittest.TestCase):
         self.evidence['families']['t8103']['chains']['own']['bootChain'] = 'grub'
         with self.assertRaisesRegex(ValueError, 'chain'):
             edge_train.verify_evidence(self.evidence, self.cohort, self.train)
+
+
+class WithdrawnTests(unittest.TestCase):
+    def test_a_withdrawn_mac_leaves_every_catalog_and_its_device_proof(self):
+        cohort, train = fx.cohort(), fx.train()
+        train['withdrawn'] = ['apple,j413']
+        edge_train.verify_train(train, cohort)
+        self.assertNotIn('apple,j413', edge_train.profile_models(cohort, train, 'nixos-kde'))
+        self.assertNotIn('apple,j413', edge_train.proven_models(cohort, train, 'nixos-kde'))
+        self.assertIn('apple,j415', edge_train.profile_models(cohort, train, 'nixos-kde'))
+
+    def test_withdrawn_names_distinct_cohort_macs(self):
+        for withdrawn in (['apple,j999'], ['apple,j413', 'apple,j413'], 'apple,j413'):
+            with self.subTest(withdrawn=withdrawn):
+                train = fx.train()
+                train['withdrawn'] = withdrawn
+                with self.assertRaisesRegex(ValueError, 'withdrawn'):
+                    edge_train.verify_train(train, fx.cohort())
+
+
+class ManifestTests(unittest.TestCase):
+    """Every check digest names a published sha256sum manifest of the train record."""
+
+    def setUp(self):
+        self.cohort, self.train = fx.cohort(), fx.train()
+        self.evidence = fx.evidence(self.train)
+        self.manifests = fx.manifests()
+
+    def test_published_manifests_back_every_digest(self):
+        edge_train.verify_manifests(self.evidence, self.manifests)
+
+    def test_a_missing_altered_or_malformed_manifest_is_refused(self):
+        name = self.evidence['families']['t600x']['checks']['vulkanCTS']['sha256'].removeprefix('sha256:')
+        for change in (lambda m: m.pop(name), lambda m: m.update({name: m[name] + b'x'}),
+                       lambda m: m.update({name: b'not a manifest\n'})):
+            with self.subTest(change=change):
+                manifests = dict(self.manifests)
+                change(manifests)
+                with self.assertRaisesRegex(ValueError, 'manifest'):
+                    edge_train.verify_manifests(self.evidence, manifests)
 
 
 class EvidenceTests(unittest.TestCase):
@@ -282,7 +328,7 @@ class BindTests(unittest.TestCase):
                 verify_edge_delivery(catalog, raw, receipt, run, base)
                 edge_train.verify_metadata(catalog, raw_metadata, self.cohort, self.train, profile)
                 edge_train.verify_binding(catalog, receipt, run, json.dumps(proof).encode(),
-                                          self.cohort, self.train, profile)
+                                          self.cohort, self.train, profile, self.evidence)
                 ids = [row['deviceIdentifier'] for row in catalog['models']]
                 self.assertNotIn('apple,j813', ids)
                 self.assertEqual(ids, edge_train.profile_models(self.cohort, self.train, profile))
@@ -296,7 +342,7 @@ class BindTests(unittest.TestCase):
     def test_every_proven_mac_carries_its_own_detached_device_evidence(self):
         catalog, receipt, raw, raw_metadata, run, proof = self.bind('fedora-kde')
         report = json.loads(raw)
-        models = edge_train.profile_models(self.cohort, self.train, 'fedora-kde')
+        models = edge_train.proven_models(self.cohort, self.train, 'fedora-kde')
         records = edge_train.device_evidence(catalog, self.cohort, self.train, 'fedora-kde')
         self.assertEqual(set(report['devices']), set(models))
         self.assertEqual(set(records), {edge_train.device_record_name(model) for model in models})
@@ -313,6 +359,17 @@ class BindTests(unittest.TestCase):
         # The Alpha 22 installer reads the Neo's record in the old shape.
         self.assertEqual(report['neoEvidence'], {k: report['familyEvidence']['t8140'][k] for k in ('pair', 'checks')})
 
+    def test_ultra_parts_and_desktops_are_listed_without_device_proof(self):
+        catalog, receipt, raw, raw_metadata, run, proof = self.bind('fedora-gnome')
+        listed = [row['deviceIdentifier'] for row in catalog['models']]
+        devices = json.loads(raw)['devices']
+        for model in ('apple,j375d', 'apple,j475d', 'apple,j180d', 'apple,j375c', 'apple,j475c',
+                      'apple,j274', 'apple,j473', 'apple,j474s', 'apple,j456'):
+            self.assertIn(model, listed)
+            self.assertNotIn(model, devices)
+        for model in ('apple,j293', 'apple,j314s', 'apple,j413', 'apple,j414c', 'apple,j700'):
+            self.assertIn(model, devices)
+
     def test_a_stand_in_family_is_listed_without_device_proof(self):
         cohort = copy.deepcopy(self.cohort)
         cohort['families']['t603x']['qualifiedBy'] = 't8122'
@@ -326,6 +383,14 @@ class BindTests(unittest.TestCase):
         self.assertIn('apple,j514s', [row['deviceIdentifier'] for row in catalog['models']])
         self.assertNotIn('apple,j514s', devices)
         self.assertIn('apple,j613', devices)
+
+    def test_binding_rejects_evidence_other_than_the_train_record(self):
+        catalog, receipt, raw, raw_metadata, run, proof = self.bind('arch-gnome')
+        other = copy.deepcopy(self.evidence)
+        other['families']['t8112']['checks']['glCTS'] = fx.check('another-run')
+        with self.assertRaisesRegex(ValueError, 'train'):
+            edge_train.verify_binding(catalog, receipt, run, json.dumps(proof).encode(),
+                                      self.cohort, self.train, 'arch-gnome', other)
 
     def test_device_records_are_refused_when_altered_or_misnamed(self):
         catalog, *_ = self.bind('nixos-gnome')
@@ -400,7 +465,7 @@ class BindTests(unittest.TestCase):
         other['reference']['mesaSigningRunID'] += 1
         with self.assertRaisesRegex(ValueError, 'train'):
             edge_train.verify_binding(catalog, receipt, run, json.dumps(proof).encode(),
-                                      self.cohort, other, 'omarchy-hyprland')
+                                      self.cohort, other, 'omarchy-hyprland', self.evidence)
 
 
 if __name__ == '__main__':

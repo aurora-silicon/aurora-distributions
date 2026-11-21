@@ -68,7 +68,7 @@ def names(profile):
     return result
 
 
-def verify_delivery(item, cohort, train, site):
+def verify_delivery(item, cohort, train, site, evidence):
     """Authenticate one train delivery exactly as the single-profile Edge path does."""
     profile, repository, tag = item['profile'], item['repository'], item['tag']
     base = 'https://github.com/' + repository + '/releases/download/' + tag
@@ -108,7 +108,7 @@ def verify_delivery(item, cohort, train, site):
     testing_path = site / 'installer/Profiles' / profile / 'catalog.json'
     testing = json.loads(testing_path.read_text()) if testing_path.exists() else None
     verify_edge_delivery(catalog, data['edge-qualification.json'], receipt, run, base, testing)
-    edge_train.verify_binding(catalog, receipt, run, data['edge-image-proof.json'], cohort, train, profile)
+    edge_train.verify_binding(catalog, receipt, run, data['edge-image-proof.json'], cohort, train, profile, evidence)
     edge_train.verify_metadata(catalog, data['installer-data-' + profile + '.json'], cohort, train, profile)
     devices = {edge_train.device_record_name(model): urllib.request.urlopen(
         base + '/' + edge_train.device_record_name(model), timeout=60).read()
@@ -119,15 +119,17 @@ def verify_delivery(item, cohort, train, site):
     return data, catalog
 
 
-def adopt_train(items, cohort, train, site):
+def adopt_train(items, cohort, train, site, evidence, manifests):
     ordered = edge_train.verify_set(items, cohort, train)
+    edge_train.verify_evidence(evidence, cohort, train)
+    edge_train.verify_manifests(evidence, manifests)
     served = {profile: _envelope(site / 'installer/Profiles' / profile / 'channels/edge-alpha/catalog.signed.json')
               for profile in cohort['profiles']}
     fallback = _envelope(site / 'installer/channels/edge-alpha/catalog.signed.json')
     verified = {}
     for item in ordered:
         profile = item['profile']
-        data, catalog = verify_delivery(item, cohort, train, site)
+        data, catalog = verify_delivery(item, cohort, train, site, evidence)
         # Each profile keeps its own rollback floor; the train's ten catalogs may share
         # one sequence. The root fallback mirrors Fedora KDE.
         served_profile = [served[profile]] + ([fallback] if profile == 'fedora-kde' else [])
@@ -136,8 +138,9 @@ def adopt_train(items, cohort, train, site):
             raise ValueError('Edge catalog sequence %d must exceed the served %s Edge sequence (%d)'
                              % (catalog['sequence'], profile, floor))
         previous = served[profile] or {'models': []}
+        # Only a reviewed `withdrawn` entry takes a served Mac off Edge.
         dropped = ({model['deviceIdentifier'] for model in previous['models']}
-                   - {model['deviceIdentifier'] for model in catalog['models']})
+                   - {model['deviceIdentifier'] for model in catalog['models']} - set(train.get('withdrawn', [])))
         if dropped:
             raise ValueError('the train would remove %s from Edge %s' % (', '.join(sorted(dropped)), profile))
         verified[profile] = (item, data, catalog)
@@ -200,4 +203,5 @@ if __name__ == '__main__':
     selection = (json.loads(args.deliveries) if args.deliveries else
                  [{'repository': edge_train.owner(profile), 'tag': edge_train.release_tag(train_record, profile)}
                   for profile in cohort_record['profiles']])
-    adopt_train(selection, cohort_record, train_record, args.site)
+    evidence_record, manifest_files = edge_train.load_evidence(ROOT)
+    adopt_train(selection, cohort_record, train_record, args.site, evidence_record, manifest_files)

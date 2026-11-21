@@ -107,7 +107,7 @@ class BinderTests(unittest.TestCase):
             (assets / 'edge-image-proof.json').write_text(json.dumps(fx.image_proof(self.train, profile)))
             (assets / ('installer-data-' + profile + '.json')).write_bytes(raw_metadata)
             with patch.object(binder, 'verify_edge_source_refs', return_value=None):
-                binder.bind_assets(assets, self.evidence, self.cohort, self.train, profile)
+                binder.bind_assets(assets, self.evidence, fx.manifests(), self.cohort, self.train, profile)
             signed = json.loads((assets / 'catalog.json').read_text())
             self.assertEqual(signed['channel'], 'edge')
             self.assertEqual(len(signed['models']), 35)
@@ -116,7 +116,7 @@ class BinderTests(unittest.TestCase):
             self.assertEqual(json.loads((assets / 'delivery.json').read_text())['release_channel'], 'edge')
             records = {path.name: path.read_bytes() for path in assets.glob('edge-device-*.json')}
             self.assertEqual(set(records), {edge_train.device_record_name(model)
-                                            for model in edge_train.profile_models(self.cohort, self.train, profile)})
+                                            for model in edge_train.proven_models(self.cohort, self.train, profile)})
             edge_train.verify_devices(signed, records)
 
     def test_bind_refuses_incomplete_evidence_before_writing(self):
@@ -132,8 +132,50 @@ class BinderTests(unittest.TestCase):
             (assets / 'edge-image-proof.json').write_text(json.dumps(fx.image_proof(self.train, profile)))
             (assets / ('installer-data-' + profile + '.json')).write_bytes(raw_metadata)
             with self.assertRaisesRegex(ValueError, 'passing'):
-                binder.bind_assets(assets, evidence, self.cohort, self.train, profile)
+                binder.bind_assets(assets, evidence, fx.manifests(), self.cohort, self.train, profile)
             self.assertFalse((assets / 'catalog.json').exists())
+
+
+class StageRunTests(unittest.TestCase):
+    """The staging run is bound to the reviewed train revision."""
+    REVISION, HEAD = 'b' * 40, 'a' * 40
+
+    def run_record(self, **changes):
+        record = {'id': 46000000000, 'conclusion': 'success', 'path': '.github/workflows/stage-edge-train.yml',
+                  'head_sha': self.HEAD, 'head_repository': {'full_name': 'aurora-silicon/aurora-distributions'}}
+        record.update(changes)
+        return record
+
+    def fetch(self, status='ahead', base=None, files=None):
+        files = files or {}
+
+        def api(path):
+            if '/compare/' in path:
+                return {'status': status, 'base_commit': {'sha': base or self.HEAD}}
+            name, ref = path.split('/contents/', 1)[1].split('?ref=')
+            return {'sha': files.get((name, ref), 'blob-' + name)}
+        return api
+
+    def test_a_stage_run_of_the_reviewed_code_is_accepted(self):
+        self.assertEqual(binder.verify_stage_run(self.run_record(), self.REVISION, self.fetch()), self.HEAD)
+        self.assertEqual(binder.verify_stage_run(self.run_record(), self.REVISION, self.fetch('identical')), self.HEAD)
+
+    def test_a_stage_run_outside_the_train_history_is_refused(self):
+        for status in ('behind', 'diverged'):
+            with self.subTest(status=status), self.assertRaisesRegex(ValueError, 'train revision'):
+                binder.verify_stage_run(self.run_record(), self.REVISION, self.fetch(status))
+
+    def test_staging_code_must_match_the_train_revision(self):
+        for path in binder.STAGE_FILES:
+            with self.subTest(path=path), self.assertRaisesRegex(ValueError, path):
+                binder.verify_stage_run(self.run_record(), self.REVISION,
+                                        self.fetch(files={(path, self.HEAD): 'other-blob'}))
+
+    def test_only_a_successful_staging_workflow_run_counts(self):
+        for changes in ({'conclusion': 'failure'}, {'path': '.github/workflows/build-payload.yml'},
+                        {'head_repository': {'full_name': 'someone/aurora-distributions'}}):
+            with self.subTest(changes=changes), self.assertRaisesRegex(ValueError, 'staging run'):
+                binder.verify_stage_run(self.run_record(**changes), self.REVISION, self.fetch())
 
 
 class WorkflowContractTests(unittest.TestCase):
@@ -161,6 +203,12 @@ class WorkflowContractTests(unittest.TestCase):
         self.assertIn('edge-train-revision:', text)
         self.assertIn('scripts/bind-edge-train.py', payload)
         self.assertIn('compare/$EDGE_TRAIN_REVISION...main', payload)
+        # The binder reads the evidence from the reviewed train revision, never from an input.
+        self.assertNotIn('edge-train-evidence', text)
+        self.assertIn('--evidence train/edge/evidence.json --manifests train/edge/manifests', payload)
+        self.assertIn('bind-edge-train.py verify-stage', payload)
+        self.assertIn('--signer-workflow aurora-silicon/aurora-distributions/.github/workflows/stage-edge-train.yml', payload)
+        self.assertIn('--source-digest "$STAGE_HEAD"', payload)
         sign = text.split('\n  sign:\n', 1)[1].split('\n  publish:', 1)[0]
         self.assertIn('needs: payload', sign)
         # Every Testing assembly step stays off on the train path.

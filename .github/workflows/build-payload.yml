@@ -19,10 +19,6 @@ on:
         description: aurora-distributions main commit whose edge/train.json records this profile's staged train payload
         type: string
         default: ''
-      edge-train-evidence:
-        description: Owner evidence for every chip family and distribution of that train (edge_train.verify_evidence)
-        type: string
-        default: ''
     secrets:
       INSTALLER_CATALOG_SIGNING_KEY:
         description: >-
@@ -241,7 +237,6 @@ jobs:
           DELIVERY_REVISION: ${{ inputs.delivery-revision }}
           NEO_EDGE_EVIDENCE: ${{ inputs.neo-edge-evidence }}
           EDGE_TRAIN_REVISION: ${{ inputs.edge-train-revision }}
-          EDGE_TRAIN_EVIDENCE: ${{ inputs.edge-train-evidence }}
         run: |
           set -euo pipefail
           [[ $GITHUB_REF == refs/heads/main && -z $DELIVERY_REVISION && -z $NEO_EDGE_EVIDENCE ]]
@@ -249,14 +244,14 @@ jobs:
           # Only a reviewed train record on aurora-distributions main can bind a payload.
           gh api "repos/aurora-silicon/aurora-distributions/compare/$EDGE_TRAIN_REVISION...main" --jq .status \
             | grep -Eqx 'ahead|identical'
-          printf '%s\n' "$EDGE_TRAIN_EVIDENCE" > edge-train-evidence.json
           train=(--train train/edge/train.json --cohort train/edge/cohort.json --profile "$PROFILE")
           stage=$(python3 train/scripts/bind-edge-train.py stage "${train[@]}" \
             --repository "$GITHUB_REPOSITORY" --image-run "$IMAGE_RUN")
           eval "$stage"
-          gh api "repos/aurora-silicon/aurora-distributions/actions/runs/$STAGE_RUN" |
-            jq -e '.conclusion=="success" and .path==".github/workflows/stage-edge-train.yml"
-                   and .head_repository.full_name=="aurora-silicon/aurora-distributions"'
+          # The staging run ran the train revision's own staging code.
+          stage_head=$(python3 train/scripts/bind-edge-train.py verify-stage "${train[@]}" \
+            --revision "$EDGE_TRAIN_REVISION" --run-id "$STAGE_RUN")
+          eval "$stage_head"
           gh run download "$STAGE_RUN" --repo aurora-silicon/aurora-distributions \
             --name "$PROFILE-edge-train-stage" --dir assets
           printf '%s  %s\n' "$STAGE_SHA256" assets/STAGING.sha256 | sha256sum -c -
@@ -266,7 +261,23 @@ jobs:
             diff -u <(cut -c67- STAGING.sha256 | LC_ALL=C sort) \
               <(find . -mindepth 1 ! -name STAGING.sha256 -printf '%P\n' | LC_ALL=C sort)
           )
-          python3 train/scripts/bind-edge-train.py bind "${train[@]}" --evidence edge-train-evidence.json --assets assets
+          # Every staged asset is a subject of that run's provenance attestation.
+          gh attestation verify assets/catalog-template.json --repo aurora-silicon/aurora-distributions \
+            --signer-workflow aurora-silicon/aurora-distributions/.github/workflows/stage-edge-train.yml \
+            --source-digest "$STAGE_HEAD" --deny-self-hosted-runners --format json > stage-attestation.json
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          listed = {}
+          for line in Path('assets/STAGING.sha256').read_text().splitlines():
+              value, name = line.split(maxsplit=1)
+              listed[name.lstrip('*')] = value
+          subjects = {(s['name'], s['digest']['sha256']) for v in json.load(open('stage-attestation.json'))
+                      for s in v['verificationResult']['statement']['subject']}
+          if not set(listed.items()) <= subjects:
+              raise ValueError('the staging attestation does not cover every staged asset')
+          PY
+          python3 train/scripts/bind-edge-train.py bind "${train[@]}" --evidence train/edge/evidence.json --manifests train/edge/manifests --assets assets
           rm -- assets/catalog-template.json assets/STAGING.sha256
           printf 'DELIVERY_SUFFIX=-edge-%s\nDELIVERY_RELEASE_ID=build-%s-edge-%s\n' "$EDGE_RELEASE" "$IMAGE_RUN" "$EDGE_RELEASE" \
             >> "$GITHUB_ENV"

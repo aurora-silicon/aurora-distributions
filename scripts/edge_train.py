@@ -104,7 +104,7 @@ def verify_cohort(cohort):
         raise ValueError('a rider cannot share a family name')
     for name, spec in groups.items():
         models = spec.get('models')
-        if (not re.fullmatch(r't[0-9]{3,4}x?', name) or not isinstance(models, list) or not models
+        if (not re.fullmatch(r't[0-9]{3,4}x?(?:-desktop)?', name) or not isinstance(models, list) or not models
                 or not all(_match(MODEL, model) and model in supported for model in models)
                 or seen & set(models) or len(set(models)) != len(models)):
             raise ValueError('invalid or overlapping Edge family: ' + name)
@@ -136,20 +136,30 @@ def qualified_families(cohort, train, profile=None):
     """Families (and riders this train carries) with their gates, for one profile or all."""
     result = {}
     held = set(train.get('held', []))
+    withdrawn = set(train.get('withdrawn', []))
     for name, spec in cohort['families'].items():
-        if name in held:
+        models = [model for model in spec['models'] if model not in withdrawn]
+        if name in held or not models:
             continue
-        result[name] = {'models': list(spec['models']), 'gates': family_gates(cohort, name),
+        result[name] = {'models': models, 'gates': family_gates(cohort, name),
                         'machines': list(cohort['families'][spec.get('qualifiedBy', name)]['models']),
                         # A sibling family's row admits a Mac to Edge, but proves nothing about
                         # its own chip: such Macs are listed without per-device evidence.
                         'proven': 'qualifiedBy' not in spec}
     for name in train.get('riders', []):
         spec = cohort['riders'][name]
-        if profile is None or profile in spec['profiles']:
-            result[name] = {'models': list(spec['models']), 'gates': family_gates(cohort, name),
+        models = [model for model in spec['models'] if model not in withdrawn]
+        if models and (profile is None or profile in spec['profiles']):
+            result[name] = {'models': models, 'gates': family_gates(cohort, name),
                             'machines': list(spec['models']), 'proven': True}
     return result
+
+
+def proven_models(cohort, train, profile):
+    """The Macs whose own family ran the rows: those get per-device evidence."""
+    wanted = {model for spec in qualified_families(cohort, train, profile).values() if spec['proven']
+              for model in spec['models']}
+    return [model for model in profile_models(cohort, train, profile) if model in wanted]
 
 
 def profile_models(cohort, train, profile):
@@ -167,13 +177,23 @@ def verify_train(train, cohort, staged=False):
     verify_cohort(cohort)
     required = {'schema_version', 'release', 'riders', 'pair', 'reference', 'distributions', 'profiles'}
     if (not isinstance(train, dict) or train.get('schema_version') != 1
-            or not required <= set(train) <= required | {'held'}):
+            or not required <= set(train) <= required | {'held', 'withdrawn'}):
         raise ValueError('invalid Edge train record')
     # Families this train leaves on Testing (Nightly): no catalog rows, no rows to run.
     held = train.get('held', [])
     if (not isinstance(held, list) or len(set(held)) != len(held)
             or any(name not in cohort['families'] for name in held)):
         raise ValueError('held must name distinct cohort families')
+    for name, spec in cohort['families'].items():
+        if name not in held and spec.get('qualifiedBy') in held:
+            raise ValueError('%s rides on %s, so it is held with it' % (name, spec['qualifiedBy']))
+    # Macs this train takes off Edge (a reviewed rollback): adoption may drop them.
+    withdrawn = train.get('withdrawn', [])
+    listed = {model for group in (cohort['families'], cohort['riders']) for spec in group.values()
+              for model in spec['models']}
+    if (not isinstance(withdrawn, list) or len(set(withdrawn)) != len(withdrawn)
+            or any(model not in listed for model in withdrawn)):
+        raise ValueError('withdrawn must name distinct cohort Macs')
     if not _match(RELEASE, train['release']):
         raise ValueError('the Edge release must be alpha.<n>')
     riders = train['riders']
@@ -337,6 +357,41 @@ def verify_evidence(evidence, cohort, train):
         verify_distribution_record(evidence['distributions'][name], cohort, train, name)
 
 
+MANIFEST_LINE = re.compile(r'[0-9a-f]{64}  \S.*')
+
+
+def check_digests(evidence):
+    """Every manifest digest the evidence names, family and distribution rows alike."""
+    return sorted({check['sha256'].removeprefix('sha256:') for section in ('families', 'distributions')
+                   for record in evidence[section].values() for check in record['checks'].values()})
+
+
+def verify_manifests(evidence, manifests):
+    """Each check digest is the sha256 of a published sha256sum manifest (edge/manifests/<sha256>.sha256)."""
+    for name in check_digests(evidence):
+        raw = manifests.get(name)
+        if raw is None:
+            raise ValueError('no published manifest for evidence digest ' + name)
+        if hashlib.sha256(raw).hexdigest() != name:
+            raise ValueError('manifest %s differs from its digest' % name)
+        lines = raw.decode('utf-8', 'replace').splitlines()
+        if not lines or not all(MANIFEST_LINE.fullmatch(line) for line in lines):
+            raise ValueError('manifest %s is not a sha256sum manifest' % name)
+
+
+def load_evidence(root):
+    """The train record's evidence and the manifests it names, from a checkout of the train revision."""
+    root = Path(root)
+    evidence = load(root / 'edge/evidence.json')
+    manifests = {path.name.removesuffix('.sha256'): path.read_bytes()
+                 for path in sorted((root / 'edge/manifests').glob('*.sha256')) if path.is_file()}
+    return evidence, manifests
+
+
+def evidence_digest(evidence):
+    return digest(canonical(evidence))
+
+
 def profile_evidence(evidence, cohort, train, profile, proof):
     verify_evidence(evidence, cohort, train)
     name = distribution(profile)
@@ -416,7 +471,7 @@ def bind(catalog, receipt, run, raw_proof, evidence, cohort, train, profile):
         **copy.deepcopy(train['pair']),
         'imageProofDigest': digest(raw_proof),
         'edgeTrain': {'release': train['release'], 'trainDigest': train_digest(train),
-                      'cohortDigest': digest(canonical(cohort))},
+                      'cohortDigest': digest(canonical(cohort)), 'evidenceDigest': evidence_digest(evidence)},
         'familyEvidence': families, 'distributionEvidence': smoke,
         'devices': {model: {'evidenceDigest': digest(raw)}
                     for model, raw in _device_records(families, cohort, train, profile).items()},
@@ -430,16 +485,21 @@ def bind(catalog, receipt, run, raw_proof, evidence, cohort, train, profile):
     return raw
 
 
-def verify_binding(catalog, receipt, run, raw_proof, cohort, train, profile):
-    """Re-derive at adoption what bind() recorded; call after the channel policy checks."""
+def verify_binding(catalog, receipt, run, raw_proof, cohort, train, profile, evidence):
+    """Re-derive at adoption what bind() recorded from the train record; call after the channel policy checks."""
     verify_train(train, cohort)
     proof = verify_image(run, raw_proof, cohort, train, profile)
     report = catalog['edgeQualification']
     if ({name: report.get(name) for name in ('linux', 'mesa')} != train['pair']
             or report.get('imageProofDigest') != digest(raw_proof)
             or report.get('edgeTrain') != {'release': train['release'], 'trainDigest': train_digest(train),
-                                           'cohortDigest': digest(canonical(cohort))}):
-        raise ValueError('the Edge qualification belongs to another train, image or pair')
+                                           'cohortDigest': digest(canonical(cohort)),
+                                           'evidenceDigest': evidence_digest(evidence)}):
+        raise ValueError('the Edge qualification belongs to another train, image, pair or evidence record')
+    families_expected, smoke_expected = profile_evidence(evidence, cohort, train, profile, proof)
+    if (report.get('familyEvidence') != families_expected
+            or report.get('distributionEvidence') != smoke_expected):
+        raise ValueError('the Edge qualification differs from the train evidence record')
     if [row.get('deviceIdentifier') for row in catalog['models']] != profile_models(cohort, train, profile):
         raise ValueError('the Edge catalog does not carry exactly the train cohort')
     families = qualified_families(cohort, train, profile)

@@ -114,7 +114,8 @@ class TrainAdoptionTests(unittest.TestCase):
              patch.object(adopter, 'verify_provenance', return_value='verified'), \
              patch.object(adopter, 'verify_edge_source_refs', return_value=None), \
              patch.object(adopter.urllib.request, 'urlopen', side_effect=opener):
-            adopter.adopt_train(self.items() if items is None else items, self.cohort, train, self.site)
+            adopter.adopt_train(self.items() if items is None else items, self.cohort, train, self.site,
+                                self.evidence, fx.manifests())
 
     def test_the_complete_train_is_adopted_with_its_record(self):
         self.adopt()
@@ -155,10 +156,10 @@ class TrainAdoptionTests(unittest.TestCase):
 
     def test_every_device_record_is_verified_and_served(self):
         tag = edge_train.release_tag(self.train, 'arch-gnome')
-        name = edge_train.device_record_name('apple,j274')
+        name = edge_train.device_record_name('apple,j293')
         before = self.snapshot()
         original = self.deliveries[tag][name]
-        self.deliveries[tag][name] = original.replace(b'apple,j274', b'apple,j293')
+        self.deliveries[tag][name] = original.replace(b'apple,j293', b'apple,j313')
         with self.assertRaisesRegex(ValueError, 'device evidence'):
             self.adopt()
         self.assertEqual(self.snapshot(), before)
@@ -197,6 +198,18 @@ class TrainAdoptionTests(unittest.TestCase):
             self.deliveries[tag].update({'catalog.json': raw, 'catalog.json.sig': self.sign(raw)})
         with self.assertRaisesRegex(ValueError, 'sequence'):
             self.adopt()
+
+    def test_a_withdrawn_mac_may_leave_edge(self):
+        current = json.loads((self.site / 'installer/Profiles/fedora-kde/channels/edge-alpha/catalog.json').read_text())
+        current['models'].append(dict(current['models'][0], deviceIdentifier='apple,j714s'))
+        self.serve('fedora-kde', current)
+        withdrawn = fx.staged(fx.train())
+        withdrawn['withdrawn'] = ['apple,j714s']
+        self.deliveries = {edge_train.release_tag(withdrawn, profile): self.delivery(profile, withdrawn)
+                           for profile in self.cohort['profiles']}
+        self.adopt(self.items(withdrawn), withdrawn)
+        served = json.loads((self.site / 'installer/Profiles/fedora-kde/channels/edge-alpha/catalog.json').read_text())
+        self.assertNotIn('apple,j714s', [row['deviceIdentifier'] for row in served['models']])
 
     def test_the_sequence_floor_is_per_profile(self):
         # Another profile's newer served catalog does not block this profile; the ten
