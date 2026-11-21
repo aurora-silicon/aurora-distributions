@@ -199,7 +199,7 @@ if __name__ == '__main__':
 class EdgeTests(unittest.TestCase):
     def setUp(self):
         VariantTests.setUp(self)
-        self.tag = 'payload-fedora-kde-44380859872-edge-alpha.1'
+        self.tag = f'payload-fedora-kde-{adopter.neo_edge.IMAGE_RUN}-edge-alpha.2'
         self.base = 'https://github.com/aurora-silicon/fedora-aurora/releases/download/' + self.tag
         edge = adopter.neo_edge
         run = self.json['image-build.json']
@@ -225,7 +225,7 @@ class EdgeTests(unittest.TestCase):
                          metadataArtifact={'sourceURL': self.base+'/installer-data-fedora-kde.json',
                                            'fileName': 'installer-data-fedora-kde.json', 'sizeBytes': len(raw_metadata)})
         receipt = self.json['delivery.json']
-        receipt.update(release_id='build-44380859872-edge-alpha.1',
+        receipt.update(release_id=f'build-{edge.IMAGE_RUN}-edge-alpha.2',
                        artifacts={'os.zip': {'bytes': 123, 'sha256': 'b'*64}})
         gates = {'pair': edge.EVIDENCE_PAIR.copy(),
                  'checks': {gate: {'status': 'passed', 'sha256': 'sha256:'+'f'*64} for gate in edge.GATES}}

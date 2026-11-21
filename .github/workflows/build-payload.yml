@@ -221,7 +221,7 @@ jobs:
         uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
         with:
           repository: aurora-silicon/aurora-distributions
-          ref: ec218c12605992598ab414b38d4e8ea85eaeb132
+          ref: f6d8f77f2c03e40e81295f8c7ece56892e602c14
           path: distribution
           persist-credentials: false
           sparse-checkout: scripts
@@ -236,7 +236,7 @@ jobs:
         run: |
           set -euo pipefail
           [[ $GITHUB_REPOSITORY == aurora-silicon/fedora-aurora && $GITHUB_REF == refs/heads/main ]]
-          [[ $PROFILE == fedora-kde && $IMAGE_RUN == 44380859872 && -z $DELIVERY_REVISION ]]
+          [[ $PROFILE == fedora-kde && $IMAGE_RUN == 44843863741 && -z $DELIVERY_REVISION ]]
           printf '%s\n' "$NEO_EDGE_EVIDENCE" > neo-evidence.json
           PYTHONPATH=distribution/scripts python3 - <<'PY'
           import json
@@ -244,9 +244,9 @@ jobs:
           with open("neo-evidence.json") as stream:
               neo_edge.verify_evidence(json.load(stream))
           PY
-          gh run download 44384139279 --repo aurora-silicon/aurora-distributions \
+          gh run download 44855968704 --repo aurora-silicon/aurora-distributions \
             --name fedora-kde-neo-edge-payload-stage --dir assets
-          printf '%s  %s\n' e792896a063f64f0c71dbe5f300b414203b03c6f03e039b2d1268aeb7eacee1a assets/STAGING.sha256 | sha256sum -c -
+          printf '%s  %s\n' 66d6a041f6425ebe4a062dde42e999525d8162505b1d0531b4a5da846728a1b9 assets/STAGING.sha256 | sha256sum -c -
           (
             cd assets
             sha256sum --strict -c STAGING.sha256
@@ -265,12 +265,12 @@ jobs:
           run = json.loads((assets / "image-build.json").read_text())
           proof = (assets / "edge-image-proof.json").read_bytes()
           gates = json.loads(Path("neo-evidence.json").read_text())
-          # Only this pinned unsigned artifact came from the generic Testing
-          # template generator. The final validator checks every Edge URL.
-          if catalog.pop("channel") != "testing" or "edgeQualification" in catalog:
+          # The staging assembler strips the generic template's channel; an
+          # older stage kept it as "testing". The final validator checks every Edge URL.
+          if catalog.pop("channel", None) not in (None, "testing") or "edgeQualification" in catalog:
               raise ValueError("Unexpected channel in the pinned unsigned Neo template")
           report = bind(catalog, receipt, run, proof, gates)
-          base = "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-kde-44380859872-edge-alpha.1"
+          base = "https://github.com/aurora-silicon/fedora-aurora/releases/download/payload-fedora-kde-44843863741-edge-alpha.2"
           verify_edge_delivery(catalog, report, receipt, run, base)
           verify_metadata(catalog, (assets / "installer-data-fedora-kde.json").read_bytes())
           verify_edge_source_refs(catalog["edgeQualification"])
@@ -279,7 +279,7 @@ jobs:
               (assets / name).write_text(json.dumps(value, indent=2) + "\n")
           PY
           rm -- assets/catalog-template.json assets/STAGING.sha256
-          printf 'DELIVERY_SUFFIX=-edge-alpha.1\nDELIVERY_RELEASE_ID=build-%s-edge-alpha.1\n' "$IMAGE_RUN" >> "$GITHUB_ENV"
+          printf 'DELIVERY_SUFFIX=-edge-alpha.2\nDELIVERY_RELEASE_ID=build-%s-edge-alpha.2\n' "$IMAGE_RUN" >> "$GITHUB_ENV"
       - id: draft
         name: Stage the unsigned delivery as a draft release
         env:
@@ -399,7 +399,7 @@ jobs:
         run: |
           gh release upload "$TAG" SHA256SUMS --repo "$GITHUB_REPOSITORY"
           notes='Signed development installer delivery for every supported Mac, the MacBook Neo included. The schema-5 catalog binds the complete payload, parts and metadata for the installer’s built-in native engine, and every asset carries a GitHub build provenance attestation (SHA256SUMS). No per-Mac firmware, calibration or radio policy is included; the installer derives them on the Mac. Image assembly and physical installation qualification are recorded separately.'
-          if [[ $TAG == *-edge-alpha.1 ]]; then
+          if [[ $TAG == *-edge-alpha.* ]]; then
             notes='Signed Fedora 44 KDE Edge delivery for MacBook Neo (apple,j700). The catalog binds the exact packaged Linux and Mesa sources and the owner receipts for Vulkan CTS, GL CTS, deep sleep and restoration.'
           elif [[ $TAG == *-models65 ]]; then
             notes='Signed metadata-only admission expansion for 65 DT-backed Macs. The original authenticated OS payload and all boot members are unchanged. New board admission is experimental and does not claim physical installation qualification.'

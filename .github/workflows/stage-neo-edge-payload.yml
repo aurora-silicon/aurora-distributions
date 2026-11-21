@@ -1,7 +1,7 @@
 name: Stage the F44 Neo Edge payload artifact
 on:
   push:
-    branches: [edge/stage-neo-payload-ef112c2b]
+    branches: [edge/stage-neo-payload-e0ee46a1-15fe5010]
   workflow_dispatch:
     inputs:
       image-run:
@@ -30,16 +30,16 @@ jobs:
       - name: Authenticate the image archive and package proof
         env:
           GH_TOKEN: ${{ github.token }}
-          IMAGE_RUN: ${{ inputs.image-run || '44380859872' }}
+          IMAGE_RUN: ${{ inputs.image-run || '44843863741' }}
         run: |
           set -euo pipefail
           [[ $IMAGE_RUN =~ ^[1-9][0-9]*$ ]]
           repo=aurora-silicon/fedora-aurora
           gh api "repos/$repo/actions/runs/$IMAGE_RUN" > image-build.json
-          jq -e --arg repo "$repo" '.conclusion=="success" and .head_branch=="edge/neo-f44-image-ef112c2b"
+          jq -e --arg repo "$repo" '.conclusion=="success" and .head_branch=="edge/neo-f44-image-e0ee46a1-15fe5010"
              and .path==".github/workflows/edge-f44-image.yml" and .head_repository.full_name==$repo' image-build.json
           head=$(jq -r .head_sha image-build.json)
-          [[ $head == 389751ff9564a7d91250ce32beb6207097a67f5e ]]
+          [[ $head == c4c1a272e2a27dd8e23b981e9dd4ade9a0ecfc47 ]]
           gh run download "$IMAGE_RUN" --repo "$repo" --name fedora-kde-edge-candidate --dir downloaded
           archive=downloaded/out/fedora-kde-filesystems.tar.zst
           proof=downloaded/out/fedora-kde-installer/edge-image-proof.json
@@ -52,7 +52,7 @@ jobs:
           sudo apt-get install -y zstd
           mkdir filesystems
           zstd -dc "$archive" | python3 -c 'import sys,tarfile; tarfile.open(fileobj=sys.stdin.buffer,mode="r|").extractall("filesystems",filter="data")'
-          printf "%s  %s\n" 0d4fcf5b1b87efe9037ebc8822b90cc3c66dc9f72c6b1a7397eb6d6815c82646 "$proof" | sha256sum -c -
+          printf "%s  %s\n" b8d8e73b213d6d5bbd1c812a49b597e3b74622275acac67c28fa6518653d318a "$proof" | sha256sum -c -
           cmp "$proof" filesystems/edge-image-proof.json
       - name: Verify the signed native Recovery template
         run: |
@@ -92,6 +92,9 @@ jobs:
           test ! -e assets/catalog.json
           test ! -e assets/edge-qualification.json
           (cd assets && sha256sum -- * > STAGING.sha256)
+          mkdir staging-receipt
+          cp assets/STAGING.sha256 staging-receipt/
+          sha256sum assets/STAGING.sha256 | tee staging-receipt/STAGING.sha256.sha256
       - uses: actions/attest-build-provenance@4d101475d8b20a2381f78447822ac1eab6504dd8 # v4.2.2
         with:
           subject-checksums: assets/STAGING.sha256
@@ -100,4 +103,10 @@ jobs:
           name: fedora-kde-neo-edge-payload-stage
           path: assets
           compression-level: 0
+          if-no-files-found: error
+      # The small manifest alone, so its digest can be pinned without the payload download.
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: fedora-kde-neo-edge-payload-stage-receipt
+          path: staging-receipt
           if-no-files-found: error

@@ -7,33 +7,39 @@ import re
 REPO = "aurora-silicon/fedora-aurora"
 PROFILE = "fedora-kde"
 MODEL = "apple,j700"
-IMAGE_BRANCH = "edge/neo-f44-image-ef112c2b"
-IMAGE_HEAD = "389751ff9564a7d91250ce32beb6207097a67f5e"
+IMAGE_BRANCH = "edge/neo-f44-image-e0ee46a1-15fe5010"
+IMAGE_HEAD = "c4c1a272e2a27dd8e23b981e9dd4ade9a0ecfc47"
 IMAGE_WORKFLOW = ".github/workflows/edge-f44-image.yml"
-SIGNING_RUN = 44329906984
-MESA_SIGNING_RUN = 44380265630
-IMAGE_RUN = 44380859872
+# The kernel keeps its signer run; the Mesa 26.3.0-35 respin has its own replacement signer run.
+SIGNING_RUN = 44694386531
+MESA_SIGNING_RUN = 44832807927
+IMAGE_RUN = 44843863741
 SOURCES = {
     name: {"repository": "aurora-silicon/" + name, "branch": "aurora-edge",
            "revision": revision, "tree": tree}
     for name, revision, tree in (
-        ("linux", "6020f67d5ce13e7aae6820cd51ab70826404932c", "f2dbcb1ebd59343e2496360bc572ef1a071f2159"),
-        ("mesa", "ef112c2b86e4e19b2317cd88918e673de7fd55cf", "5a383e03de1e86d727def1279d2328c4f9b27bc4"),
+        ("linux", "e0ee46a18e33f859f6ad6863757a4650ff687ab6", "e6b970c138e90c2ede5800e13fbfc74e144baf0f"),
+        ("mesa", "15fe5010c149c79de98b869e91ac11aa38acff4a", "abe4c7228922e1f9aeb9a4fd9ecc2c8429e7cf91"),
     )
 }
-KREL = "7.3.0-42.fc44.aurora.aarch64"
-KERNEL_DIGEST = "d6903588ce991dec6b65beafede9f6b0361d3904af8fd989b6c4bf143bb00fea"
+KREL = "7.3.0-43.fc44.aurora.aarch64"
+KERNEL_DIGEST = "701ed7f29d693e439083508546d96c4917431e35f725465a154c855008c2c5bf"
+STAGE2_DIGEST = "6e462659a7d3a07a1b26ac9206f5504cf7027138be30488483675fe50b0c4c63"
 FILES = {
     f"root:usr/lib/modules/{KREL}/vmlinuz": KERNEL_DIGEST,
     f"boot:vmlinuz-{KREL}": KERNEL_DIGEST,
-    "root:usr/lib64/libvulkan_asahi.so": "ce060163100691dd68a8f07da1a945d66b2c3f75b26175aa2dd461753de5212b",
+    "root:usr/lib64/libvulkan_asahi.so": "767f3e176e4c03df5dc67b7dc2d270321bf4a165ca5d79ed56cd62ac8bdf8424",
     "root:usr/share/vulkan/icd.d/asahi_icd.aarch64.json": "5d4804f4a540be6d376d11ca6a9d34fec703b84aea97dd04a392b01d3bb1ead3",
+    # Stage 2: aura 2f487f26 (1.0.0~b13.1-3); the payload's ESP Stage 2 files are built from this m1n1.bin.
+    "root:usr/lib64/m1n1/m1n1.bin": STAGE2_DIGEST,
+    "root:usr/lib/asahi-boot/m1n1.bin": STAGE2_DIGEST,
 }
 REQUIRED_PACKAGES = {
     "kernel-aurora-core.aarch64": f"kernel-aurora-core-{KREL}.rpm",
     "kernel-aurora-modules-extra.aarch64": f"kernel-aurora-modules-extra-{KREL}.rpm",
-    "mesa-aurora-vulkan-drivers.aarch64": "mesa-aurora-vulkan-drivers-26.3.0-33.fc44.aurora.aarch64.rpm",
-    "mesa-aurora-dri-drivers.aarch64": "mesa-aurora-dri-drivers-26.3.0-33.fc44.aurora.aarch64.rpm",
+    "mesa-aurora-vulkan-drivers.aarch64": "mesa-aurora-vulkan-drivers-26.3.0-35.fc44.aurora.aarch64.rpm",
+    "mesa-aurora-dri-drivers.aarch64": "mesa-aurora-dri-drivers-26.3.0-35.fc44.aurora.aarch64.rpm",
+    "aura.aarch64": "aura-1.0.0.b13.1-3.fc44.aarch64.rpm",
 }
 GATES = {"vulkanCTS", "glCTS", "deepSleep", "restoration"}
 EVIDENCE_PAIR = {
