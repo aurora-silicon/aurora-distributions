@@ -12,6 +12,7 @@ Your Mac starts only a macOS that Apple's installer set up. The installer create
 
 - **A network.** The installer comes from Apple (12-18 GB, depending on the version).
 - **An owner.** Someone has to approve the new macOS: an administrator of a macOS still on the Mac, or, if macOS was removed, Aurora's recovery account. If neither exists, `aurora-restore` says so and only a full restore from a second computer is left (last section).
+- **Partitions.** With `--replace`, only this installation's partitions are deleted: its EFI partition, its root file system and the partitions its `/etc/fstab` mounts. If another Linux partition on the disk is mounted somewhere else, `plan` stops and names it.
 - **Room.** About twice the installer's size plus 35 GB (66 GiB for macOS 27.2.1). `aurora-restore plan` prints the exact figure. Back up anything important in Aurora first.
 
 ## Steps
@@ -35,7 +36,9 @@ Your Mac starts only a macOS that Apple's installer set up. The installer create
 5. Shut down. Press and hold the power button until "Loading startup options" appears, choose **Options**, and log in if asked. Join a network from the Wi-Fi menu. Open **Utilities > Terminal** and type the line from step 4.
 6. Recovery checks that the disk is exactly as planned. It asks for the sentence again, creates the macOS disk, downloads the installer from Apple and starts it. Choose the new disk ("macOS 27.2.1") and approve with the owner when asked. When it's done, the Mac starts macOS.
 
-If the download is interrupted, type the same line again; it carries on. To undo step 4 before step 6, run `sudo aurora-restore cancel --regrow` in Aurora.
+If it stops part-way (a lost network, a closed Terminal, a power cut), run it again; it carries on from where it stopped, also in the middle of `--replace`'s deletes. The message it stops with names the line to use: the same line as before or, once the macOS disk exists, `sh "/Volumes/macOS 27.2.1/.aurora-restore/restore.sh"`. To undo step 4 before step 6, run `sudo aurora-restore cancel --regrow` in Aurora.
+
+After `--replace`, Aurora's small startup disk (its boot stub and Aurora's Recovery) is left behind, because the installer runs from its Recovery. It can't start anything without Linux. Once the new macOS works, delete it in Disk Utility (View > Show All Devices).
 
 To switch between macOS and Aurora afterwards, use the startup options (hold the power button) or Startup Disk in macOS. To remove Aurora later, use Aurora Installer in macOS.
 
@@ -52,7 +55,7 @@ It still needs room: delete Aurora's partitions in Disk Utility or make space wi
 
 - Only versions Apple still offers and signs: the newest release of each macOS version that supports your Mac. `--older` tries an older release; Apple usually refuses it.
 - A macOS older than Aurora's Recovery may be refused by Apple's installer. `plan` marks this case; it hasn't been tried on a real Mac yet.
-- The default mode needs a plain (not encrypted) btrfs root right before Apple's System Recovery partition, and 10 GiB left for Linux. Otherwise use `--replace` or make room yourself.
+- The default mode needs a plain (not encrypted) btrfs root right before Apple's System Recovery partition, and room left for what Aurora already uses plus 10 GiB. Otherwise use `--replace` or make room yourself.
 
 ## The last resort: a second computer
 
