@@ -125,7 +125,8 @@ The per-device records are the train's format, byte for byte. A test (`EdgeTrain
 > - Suspend is deep sleep only on the J714s. A safety wake is set an hour ahead when nothing else is armed. If the lid is still closed, the Mac goes back to sleep.
 >
 > Known issues on the M5 Pro:
-> - A Dell monitor's SuperSpeed USB hub can be missing after about 15 % of boots. It comes back after the first sleep.
+> - A Dell monitor's SuperSpeed USB hub can be missing after about 15 % of boots. It comes back after the first sleep. (Fixed in a later kernel: aurora-silicon/linux#2609.)
+> - After some wakes, Wi-Fi can take from a few seconds up to a few minutes to reconnect, because the scan can miss the access point's beacon. A fix is in testing.
 > - A stray Wi-Fi or Bluetooth wake right after the Mac goes to sleep is treated as a dark wake: the screen stays off and the Mac goes back to sleep.
 > - Edge installs do not receive package updates from the Testing feed.
 > - The power mode setting (Power Saver, Balanced, Performance) does not yet reach the M5 Pro's own power modes: the kernel offers no platform profile. Power Saver still applies Aurora's CPU power budget. A fix is in review (aurora-silicon/linux#2549).
