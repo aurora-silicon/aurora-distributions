@@ -51,11 +51,23 @@ jobs:
       tag: ${{ steps.draft.outputs.tag }}
       catalog-digest: ${{ steps.draft.outputs.catalog-digest }}
     steps:
+      - name: Select the installer producer for the adopted model cohort
+        id: producer
+        if: inputs.neo-edge-evidence == '' && inputs.edge-train-revision == '' && inputs.delivery-revision == ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          # A plain delivery is adopted under keys/supported-models.json on main, so it is
+          # built by the pinned producer whose model list is exactly that cohort.
+          curl -fLsS --retry 3 https://raw.githubusercontent.com/aurora-silicon/aurora-distributions/main/scripts/select-plain-producer.py -o select-plain-producer.py
+          echo '8f8d57a096163578e81a978d450813ee0a20dde88abaf65ad83b8e78466f6b07  select-plain-producer.py' | sha256sum -c -
+          python3 -I select-plain-producer.py --output "$GITHUB_OUTPUT" | tee -a "$GITHUB_STEP_SUMMARY"
       - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
         if: inputs.neo-edge-evidence == '' && inputs.edge-train-revision == ''
         with:
           repository: aurora-silicon/aurora-installer
-          ref: ${{ inputs.delivery-revision == 'models58' && 'b34998dae173411bbaff90b7bd1ad90e5987477b' || '68148f7b1b820059f65780e17bc27ccb576def49' }}
+          ref: ${{ inputs.delivery-revision == 'models58' && 'b34998dae173411bbaff90b7bd1ad90e5987477b' || inputs.delivery-revision == 'models65' && '68148f7b1b820059f65780e17bc27ccb576def49' || steps.producer.outputs.revision }}
           path: producer
           persist-credentials: false
       - name: Select immutable delivery identity
@@ -64,10 +76,15 @@ jobs:
           PROFILE: ${{ inputs.profile }}
           IMAGE_RUN: ${{ inputs.image-run }}
           DELIVERY_REVISION: ${{ inputs.delivery-revision }}
+          PRODUCER_REVISION: ${{ steps.producer.outputs.revision }}
         run: |
           python3 - <<'PYIDENTITY'
-          import os,re
+          import os,re,subprocess
           profile=os.environ['PROFILE'];run=os.environ['IMAGE_RUN'];revision=os.environ['DELIVERY_REVISION']
+          # A plain delivery assembles only with the producer selected for its cohort.
+          producer=os.environ['PRODUCER_REVISION']
+          head=subprocess.check_output(['git','-C','producer','rev-parse','HEAD'],text=True).strip()
+          assert revision or (re.fullmatch(r'[0-9a-f]{40}',producer) and head == producer)
           assert re.fullmatch(r'(?:fedora|arch|nixos)-(?:kde|gnome|minimal)|omarchy-hyprland',profile) and re.fullmatch(r'[0-9]+',run)
           assert revision in ('','models58','models65')
           assert profile != 'omarchy-hyprland' or revision == ''

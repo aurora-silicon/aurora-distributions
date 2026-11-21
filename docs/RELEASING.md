@@ -8,6 +8,8 @@ Each distribution repository owns its native AArch64 package builds and `images.
 
 Dispatch the distribution's `publish-payload.yml` with its profile and successful image run ID. The reusable workflow verifies that the image came from a successful main-branch build, authenticates the native Recovery template, assembles the payload, signs its schema-5 profile catalog and uploads an immutable GitHub prerelease. No engine archive is built, pinned or uploaded. Large payloads retain a whole-file digest and use separately pinned download parts. Private device calibration and Neo policy inputs are excluded from public deliveries.
 
+The payload's catalog enables the Macs its installer producer lists, and adoption admits it only when they are exactly `keys/supported-models.json` on main. `scripts/select-plain-producer.py` therefore builds each delivery without a `delivery-revision` with the pinned producer whose list is that file. It refuses a cohort that no pinned producer, or more than one, lists. When main adopts another cohort, the same lookup selects that cohort's producer.
+
 Dispatch `adopt-set.yml` here with the selected repository/tag pairs. It verifies signatures, public model coverage, profile bindings, image provenance and increasing catalog sequences before committing the complete set. It then explicitly dispatches the Pages workflow. Testing carries development images. Edge stays signed-empty until an independently qualified Edge release is published; Stable and RC remain authenticated empty catalogs until qualified releases are deliberately promoted. `native-only-catalogs.yml` re-signs those empty catalogs as schema 5 with each release.
 
 ## Installer app
