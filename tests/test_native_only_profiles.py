@@ -135,7 +135,7 @@ class NativeOnlyProfileTests(unittest.TestCase):
             self.prepare()
         self.assertFalse((self.root/'output').exists())
 
-    def stage_edge(self, payload_digit='c', branch='aurora-edge'):
+    def stage_edge(self, payload_digit='c', branch='aurora-edge', devices=None):
         self.to_schema_five()
         root = self.source/'Profiles/fedora-kde'
         edge = root/'channels/edge-alpha'
@@ -145,6 +145,11 @@ class NativeOnlyProfileTests(unittest.TestCase):
                   'payloadDigest': 'sha256:'+payload_digit*64,
                   **{name: {'repository': 'aurora-silicon/'+name, 'branch': branch,
                             'revision': 'a'*40, 'tree': 'c'*40} for name in ('linux', 'mesa')}}
+        for model, record in (devices or {}).items():
+            (edge/('edge-device-' + model.replace(',', '-') + '.json')).write_bytes(record)
+        if devices:
+            report['devices'] = {model: {'evidenceDigest': 'sha256:'+hashlib.sha256(record).hexdigest()}
+                                 for model, record in devices.items()}
         raw = json.dumps(report).encode()
         value.update(channel='edge', sequence=2, edgeQualification=dict(
             report, evidenceDigest='sha256:'+hashlib.sha256(raw).hexdigest()))
@@ -196,6 +201,25 @@ class NativeOnlyProfileTests(unittest.TestCase):
         self.assertEqual((output/'edge-train.json').read_bytes(), record)
         self.assertEqual((edge/'edge-device-apple-j274.json').read_bytes(), device)
         self.assertEqual((output/'channels/edge-alpha/edge-device-apple-j274.json').read_bytes(), device)
+
+    def test_served_device_records_are_verified_and_kept_exactly(self):
+        record = b'{"deviceIdentifier": "apple,j274", "family": "t8103"}\n'
+        self.stage_edge(devices={'apple,j274': record})
+        self.prepare()
+        output = self.root/'output'
+        for directory in (output/'Profiles/fedora-kde/channels/edge-alpha', output/'channels/edge-alpha'):
+            self.assertEqual((directory/'edge-device-apple-j274.json').read_bytes(), record)
+
+    def test_a_missing_or_altered_served_device_record_is_refused(self):
+        record = b'{"deviceIdentifier": "apple,j274", "family": "t8103"}\n'
+        self.stage_edge(devices={'apple,j274': record})
+        served = self.source/'Profiles/fedora-kde/channels/edge-alpha/edge-device-apple-j274.json'
+        for change in (lambda: served.write_bytes(record + b' '), served.unlink):
+            with self.subTest(change=change):
+                change()
+                with self.assertRaisesRegex(ValueError, 'device evidence'):
+                    self.prepare()
+                served.write_bytes(record)
 
     def test_testing_payloads_cannot_be_resigned_into_edge(self):
         self.stage_edge(payload_digit='b')

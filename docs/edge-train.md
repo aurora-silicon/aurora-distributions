@@ -6,6 +6,8 @@ Dj's direction: every M1, M2 and M3 Mac and the MacBook Neo installs from Edge, 
 
 An **Edge train** is one release: one Linux and Mesa `aurora-edge` pair, built by every distribution, staged, qualified, signed and adopted for all ten profiles at once. A partial set is refused, as for the 65-model Testing cohort.
 
+**Family qualification is the policy.** Edge is offered to the Macs whose chip family the adopted train's rows qualify, one named machine per family; every other Mac stays on Nightly. The list per train is the cohort below minus its `held` families, and each proven Mac's per-device record names the machine that qualified its family.
+
 ## The cohort
 
 `edge/cohort.json` holds the policy. It covers 35 Macs from `keys/supported-models-65.json`: 34 M1, M2 and M3 boards plus the Neo. Each family is one chip generation and die class (base, or Pro/Max/Ultra): the same SoC firmware and GPU configuration, so it is qualified once on any of its Macs.
@@ -119,7 +121,7 @@ Every rule in `docs/channels.md` still holds: a new immutable `-edge-alpha.<n>` 
 - `verify-channel-catalogs.py` re-checks the served copies. These sit in each profile's `edge-alpha` directory and, for Fedora KDE, in the root fallback.
 - A family qualified only by a sibling (`qualifiedBy`) is listed without `devices` entries. Its Macs default to Nightly; an explicit Edge pick still works.
 - `neoEvidence` (the `t8140` row as `{pair, checks}`) stays for the Alpha 22 installer.
-- The single-profile Neo and M5 path (`neo_edge.py`, #63) does not emit `devices` yet; that lane should add it before the new installer ships.
+- The single-profile Neo and M5 path (`neo_edge.py`, #63 at 37a91466) emits `devices` with the same record format. A single-profile catalog without `devices` (the alpha.2 adoption on today's pipeline) still adopts, serves and survives Testing preparation; the installer then treats its `neoEvidence` as proof for `apple,j700` only.
 
 **Gates:**
 - M1, M2 and M3 families: `vulkanCTS`, `glCTS`, `suspend` and `restoration`.
@@ -219,7 +221,7 @@ Use the reference Mesa:
 | 8 | Commit B (staging records) PR to main, plus each distribution's `publish-edge-payload.yml` pin to that main commit. | review |
 | 9 | Publish ten payloads: `publish-edge-payload.yml` per profile, with `edge-train-revision` and the evidence. | **catalog-signing (Dj's catalog key)** |
 | 10 | Adopt: `adopt-edge-set.yml`, then Pages. Then, together: `deploy-snapshot.yml channel=edge` in fedora-aurora and alarm-aurora, and the NixOS edge advance. | **catalog owner (Dj)** |
-| 11 | Verify all ten `edge-alpha` URLs (models, `edgeTrain.trainDigest`, payload digests) and one install per distribution from the live channel. | |
+| 11 | Verify all ten `edge-alpha` URLs (models, `edgeTrain.trainDigest`, payload digests) and one install per distribution from the live channel. Post-build row (Ryan, #460): the first `images.yml channel=edge` Fedora KDE image boots on the Neo, `/etc/yum.repos.d/aurora.repo` follows `44/edge/aarch64` with `enabled=1`, and `dnf check-update` reads the signed Edge feed. | |
 
 **Steps that need Dj:**
 - Step 9 signs with the installer catalog key in `catalog-signing`.

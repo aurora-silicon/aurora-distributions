@@ -22,6 +22,7 @@ import urllib.request
 import sys
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from channel_policy import descriptor as channel_descriptor, validate_catalog, legacy_development_catalog
+import edge_train
 
 ROOT = Path(__file__).resolve().parents[1]
 CORE_PROFILES = tuple(f'{distribution}-{desktop}' for distribution in ('fedora', 'arch', 'nixos')
@@ -207,6 +208,9 @@ def prepare(source, output, signing_key, release_tag, source_revision, fetch=fet
                     or records.get('catalog.json.sig', edge_signature) != edge_signature
                     or records.get('trust-root.ed25519.pub', public) != public):
                 raise ValueError('Edge envelope and delivery records differ')
+            # Every Mac the catalog proves keeps its exact detached record (installer#176).
+            if edge_catalog['models'] and 'devices' in edge_catalog['edgeQualification']:
+                edge_train.verify_devices(edge_catalog, records)
             edge_catalogs[profile] = (edge_raw, edge_signature, report, records)
         previous = hashlib.sha256(data['catalog.json']).hexdigest()
         catalog['schemaVersion'] = 5

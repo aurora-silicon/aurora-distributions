@@ -232,5 +232,43 @@ class TrainAdoptionTests(unittest.TestCase):
             verifier.verify_channels(self.site, self.root / 'keys/catalog.ed25519.pub')
 
 
+class SingleProfileCompatibilityTests(unittest.TestCase):
+    """A served single-profile Neo Edge catalog without `devices` (alpha.2, adopted before
+    #63 and #64 merge) stays valid: served-state checks and Testing preparation accept it."""
+
+    def setUp(self):
+        import test_adopt_variant
+        self.variant = test_adopt_variant
+        test_adopt_variant.EdgeTests.setUp(self)
+        test_adopt_variant.EdgeTests.invoke(self)
+        self.site = self.root / 'site'
+        # Rewrite the served state as the alpha.2 binder produced it: no devices, no records.
+        channel = self.site / 'installer/Profiles/fedora-kde/channels/edge-alpha'
+        catalog = json.loads((channel / 'catalog.json').read_text())
+        proof = catalog['edgeQualification']
+        proof.pop('devices', None)
+        report = {key: value for key, value in proof.items() if key != 'evidenceDigest'}
+        raw_report = (json.dumps(report, sort_keys=True, indent=2) + '\n').encode()
+        proof['evidenceDigest'] = 'sha256:' + hashlib.sha256(raw_report).hexdigest()
+        raw = json.dumps(catalog).encode()
+        (self.root / 'unsigned').write_bytes(raw)
+        subprocess.run(['openssl', 'pkeyutl', '-sign', '-inkey', str(self.key), '-rawin', '-in',
+                        str(self.root / 'unsigned'), '-out', str(self.root / 'signature')], check=True)
+        envelope = json.dumps({'schema_version': 1, 'catalog': base64.b64encode(raw).decode(),
+                               'signature': base64.b64encode((self.root / 'signature').read_bytes()).decode()})
+        for directory in (channel, self.site / 'installer/channels/edge-alpha'):
+            for record in directory.glob('edge-device-*.json'):
+                record.unlink()
+            (directory / 'catalog.signed.json').write_text(envelope)
+            (directory / 'edge-qualification.json').write_bytes(raw_report)
+        (channel / 'catalog.json').write_bytes(raw)
+        (channel / 'catalog.json.sig').write_bytes((self.root / 'signature').read_bytes())
+
+    def test_a_served_devices_less_neo_catalog_still_verifies(self):
+        self.assertFalse((self.site / 'installer/edge-train.json').exists())
+        self.assertFalse(list(self.site.rglob('edge-device-*.json')))
+        self.assertEqual(verifier.verify_channels(self.site, self.root / 'keys/catalog.ed25519.pub'), 2)
+
+
 if __name__ == '__main__':
     unittest.main()
