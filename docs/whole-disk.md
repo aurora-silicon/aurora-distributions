@@ -4,7 +4,7 @@ Aurora normally lives beside macOS. If you don't want macOS at all, for example 
 
 **Read this whole page first. This can't be undone.** It deletes macOS, every macOS app and every file you kept in macOS. To get macOS back you reinstall it (see "Getting macOS back"); your files in macOS are gone for good.
 
-**Status: preview.** The tools are tested on disk images and read-only on a real Mac. The deletion has not been run on a real Mac yet. Wait for this line to change unless you're comfortable restoring your Mac yourself.
+**Status: preview.** The tools are tested on disk images and read-only on a real Mac. The deletion has not been run on a real Mac yet, and the commands below come with Aurora Installer and the Aurora packages only once [aurora-installer#185](https://github.com/aurora-silicon/aurora-installer/pull/185) is merged and packaged. Wait for this line to change unless you're comfortable restoring your Mac yourself.
 
 ## What changes
 
@@ -13,7 +13,7 @@ Aurora normally lives beside macOS. If you don't want macOS at all, for example 
 - **Your recovery account becomes the Mac's owner.** Every change to Aurora's startup security later (a new boot loader, new startup firmware, security settings) asks for that account's password in Aurora's Recovery. Nobody else can approve those changes. Write the password down somewhere safe.
 - **Recovery still works.** Holding the power button still opens Aurora's own Recovery. Apple's System Recovery (double-press and hold) is kept too.
 
-What is kept: Apple's system partitions (the first and the last on the disk), Aurora's startup partition and its Recovery, Aurora's EFI and Linux partitions. Only the macOS partition is deleted.
+What is kept: Apple's system partitions (the first and the last on the disk), Aurora's startup partition and its Recovery, Aurora's EFI and Linux partitions. What is deleted is the whole macOS partition (its APFS container) with **every volume in it**, not just "Macintosh HD": the plan lists each one. If that container holds anything besides one macOS (a second macOS, or a volume you added in Disk Utility), the removal refuses and names it, so move or delete it in macOS first.
 
 ## Before you start
 
@@ -29,25 +29,20 @@ Check from Aurora what would happen (this changes nothing):
 sudo aurora-whole-disk plan
 ```
 
-It lists exactly what would be deleted and what stays, and says what is missing if you can't go ahead yet.
+It lists exactly what would be deleted and what stays, and says what is missing if you can't go ahead yet. It also prints the exact path of the `aura` command for your Mac, for example `'/Volumes/Aurora/aura'`, which starts Aurora Installer in Recovery.
 
 ## Remove macOS
 
-1. Shut down. Press and hold the power button until "Loading startup options" appears. Choose **Options**, then **Continue**.
-2. Open **Utilities → Terminal**.
-3. See the plan again (still nothing changes); `aurora-whole-disk plan` printed the exact path for your Mac, for example:
+1. Shut down. Press and hold the power button until "Loading startup options" appears. Choose **Options**, then **Continue**. This opens Aurora's Recovery only because Aurora is the startup disk (step 5 of "Before you start"); if macOS is still the startup disk you get macOS's Recovery instead, and the removal refuses there.
+2. Open **Utilities → Terminal** and start Aurora Installer with the `aura` command; `aurora-whole-disk plan` printed the exact path for your Mac, for example `'/Volumes/Aurora/aura'`. In Aurora Installer choose **Utilities → Remove macOS…**. It checks that your recovery account is ready and changes nothing if it isn't: with no account yet it offers **Create Recovery Account…**; with one created but not authorized it tells you to authorize it in Startup Disk; with one whose creation was interrupted it tells you to open Aurora Installer again to finish it. Then it shows exactly what is deleted and what stays.
+3. Read the plan. To go ahead, type `remove macos and all its data` and your recovery account's password, then click **Remove macOS**. **Cancel** is the default button, so pressing Return doesn't delete anything. It checks the disk once more right before deleting, deletes only the macOS container and checks everything else is unchanged.
+4. Or stay in Terminal: the same steps are a command:
 
    ```sh
-   '/Volumes/Aurora/aura' remove-macos --dry-run
+   '/Volumes/Aurora/aura' remove-macos --dry-run   # the plan, changes nothing
+   '/Volumes/Aurora/aura' remove-macos             # asks for the phrase and the password
    ```
 
-4. Remove macOS:
-
-   ```sh
-   '/Volumes/Aurora/aura' remove-macos
-   ```
-
-   It shows the plan and what changes, then asks you to type `remove macos and all its data` and your recovery account's password. It checks the disk once more right before deleting, deletes only the macOS partition and checks everything else is unchanged.
 5. Restart into Aurora. On its first start Aurora adds the freed space to your system (you can also run `sudo aurora-whole-disk claim`). Check with `df -h /`.
 
 ## Fresh install with the whole disk
@@ -64,7 +59,7 @@ Install Aurora as usual and choose the largest size the installer offers. Finish
 ## Limits
 
 - Aurora adds the space as a second device of its btrfs root file system. If your root is encrypted, or isn't btrfs, Aurora leaves the space free instead.
-- Only one macOS can be removed this way. Erase extra macOS installations with Aurora Installer first.
+- Only one macOS can be removed this way, and only when its container holds nothing else. Erase extra macOS installations with Aurora Installer first.
 - Installations made by older installers have no Aurora Recovery yet; `aurora-whole-disk plan` says so. Update with Aurora Installer first.
 
 Technical design: [aurora-installer macOS/docs/whole-disk.md](https://github.com/aurora-silicon/aurora-installer/blob/main/macOS/docs/whole-disk.md).
