@@ -33,21 +33,16 @@ It lists exactly what would be deleted and what stays, and says what is missing 
 
 ## Remove macOS
 
-1. Shut down. Press and hold the power button until "Loading startup options" appears. Choose **Options**, then **Continue**.
-2. Open **Utilities → Terminal**.
-3. See the plan again (still nothing changes); `aurora-whole-disk plan` printed the exact path for your Mac, for example:
+1. Shut down. Press and hold the power button until "Loading startup options" appears. Choose **Options**, then **Continue**: this is Aurora's Recovery.
+2. Open **Utilities → Terminal** and start Aurora Installer with the `aura` command; `aurora-whole-disk plan` printed the exact path for your Mac, for example `'/Volumes/Aurora/aura'`. In Aurora Installer choose **Utilities → Remove macOS…**. It checks that your recovery account is ready (if it isn't, it offers **Create Recovery Account…** instead and changes nothing), then shows exactly what is deleted and what stays.
+3. Read the plan. To go ahead, type `remove macos and all its data` and your recovery account's password, then click **Remove macOS**. **Cancel** is the default button, so pressing Return doesn't delete anything. It checks the disk once more right before deleting, deletes only the macOS partition and checks everything else is unchanged.
+4. Or stay in Terminal: the same steps are a command:
 
    ```sh
-   '/Volumes/Aurora/aura' remove-macos --dry-run
+   '/Volumes/Aurora/aura' remove-macos --dry-run   # the plan, changes nothing
+   '/Volumes/Aurora/aura' remove-macos             # asks for the phrase and the password
    ```
 
-4. Remove macOS:
-
-   ```sh
-   '/Volumes/Aurora/aura' remove-macos
-   ```
-
-   It shows the plan and what changes, then asks you to type `remove macos and all its data` and your recovery account's password. It checks the disk once more right before deleting, deletes only the macOS partition and checks everything else is unchanged.
 5. Restart into Aurora. On its first start Aurora adds the freed space to your system (you can also run `sudo aurora-whole-disk claim`). Check with `df -h /`.
 
 ## Fresh install with the whole disk
