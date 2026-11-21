@@ -1,18 +1,18 @@
 {
   "schema": 1,
   "installation_profile": "fedora-kde",
-  "release_id": "build-44380859872-edge-alpha.1",
+  "release_id": "build-44843863741-edge-alpha.2",
   "private_neo_inputs": false,
   "native_neo_reset_qa": false,
   "physical_qualification": "pending",
   "artifacts": {
-    "fedora-kde-build-44380859872-edge-alpha.1.zip": {
-      "bytes": 5659016777,
-      "sha256": "de889af60308efa66b77e34bb7ec6a15a26f2569dba93afa4398dc425be2b898"
+    "fedora-kde-build-44843863741-edge-alpha.2.zip": {
+      "bytes": 5475445216,
+      "sha256": "c9432cd152dedbff21b7336668a315a05b825e69416fc5884a38b192719f25bc"
     },
     "installer-data-fedora-kde.json": {
       "bytes": 6023,
-      "sha256": "9fab78cf8abc60f3e85eed43b8d40bd0583f3ab07d85d3ecbaa382669d3ba5e9"
+      "sha256": "af3f4eb43abc57989b1589f81d076755714205540f39fd2480393375ea48aa08"
     }
   },
   "release_channel": "edge",
@@ -21,14 +21,14 @@
     "linux": {
       "repository": "aurora-silicon/linux",
       "branch": "aurora-edge",
-      "revision": "6020f67d5ce13e7aae6820cd51ab70826404932c",
-      "tree": "f2dbcb1ebd59343e2496360bc572ef1a071f2159"
+      "revision": "e0ee46a18e33f859f6ad6863757a4650ff687ab6",
+      "tree": "e6b970c138e90c2ede5800e13fbfc74e144baf0f"
     },
     "mesa": {
       "repository": "aurora-silicon/mesa",
       "branch": "aurora-edge",
-      "revision": "ef112c2b86e4e19b2317cd88918e673de7fd55cf",
-      "tree": "5a383e03de1e86d727def1279d2328c4f9b27bc4"
+      "revision": "15fe5010c149c79de98b869e91ac11aa38acff4a",
+      "tree": "abe4c7228922e1f9aeb9a4fd9ecc2c8429e7cf91"
     }
   }
 }

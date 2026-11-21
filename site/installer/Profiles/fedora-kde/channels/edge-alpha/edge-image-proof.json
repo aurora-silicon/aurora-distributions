@@ -5,71 +5,80 @@
   "models": [
     "apple,j700"
   ],
-  "signing_run": 44329906984,
-  "replacement_signing_run": 44380265630,
-  "replacement_mesa": "ef112c2b86e4e19b2317cd88918e673de7fd55cf",
+  "signing_run": 44694386531,
+  "replacement_signing_run": 44832807927,
+  "replacement_mesa": "15fe5010c149c79de98b869e91ac11aa38acff4a",
   "files": {
-    "root:usr/lib/modules/7.3.0-42.fc44.aurora.aarch64/vmlinuz": "d6903588ce991dec6b65beafede9f6b0361d3904af8fd989b6c4bf143bb00fea",
-    "boot:vmlinuz-7.3.0-42.fc44.aurora.aarch64": "d6903588ce991dec6b65beafede9f6b0361d3904af8fd989b6c4bf143bb00fea",
-    "root:usr/lib64/libvulkan_asahi.so": "ce060163100691dd68a8f07da1a945d66b2c3f75b26175aa2dd461753de5212b",
-    "root:usr/share/vulkan/icd.d/asahi_icd.aarch64.json": "5d4804f4a540be6d376d11ca6a9d34fec703b84aea97dd04a392b01d3bb1ead3"
+    "root:usr/lib/modules/7.3.0-43.fc44.aurora.aarch64/vmlinuz": "701ed7f29d693e439083508546d96c4917431e35f725465a154c855008c2c5bf",
+    "boot:vmlinuz-7.3.0-43.fc44.aurora.aarch64": "701ed7f29d693e439083508546d96c4917431e35f725465a154c855008c2c5bf",
+    "root:usr/lib64/libvulkan_asahi.so": "767f3e176e4c03df5dc67b7dc2d270321bf4a165ca5d79ed56cd62ac8bdf8424",
+    "root:usr/share/vulkan/icd.d/asahi_icd.aarch64.json": "5d4804f4a540be6d376d11ca6a9d34fec703b84aea97dd04a392b01d3bb1ead3",
+    "root:usr/lib64/m1n1/m1n1.bin": "6e462659a7d3a07a1b26ac9206f5504cf7027138be30488483675fe50b0c4c63",
+    "root:usr/lib/asahi-boot/m1n1.bin": "6e462659a7d3a07a1b26ac9206f5504cf7027138be30488483675fe50b0c4c63"
   },
   "installed_edge_packages": {
+    "aura.aarch64": {
+      "filename": "aura-1.0.0.b13.1-3.fc44.aarch64.rpm",
+      "main_header_and_payload_sha256": "05dda7e2a3f80a4c1d40c6b924f4b37999fb46ff837028047671923f7d67d32f",
+      "sha256": "c103c84193a65203fc6e243ff257e7d77b6e690c4f17e2a5fa6dff8da319a124",
+      "bytes": 789444,
+      "nevra": "aura-1.0.0~b13.1-3.fc44.aarch64"
+    },
     "aurora-flatpak-gl.aarch64": {
-      "filename": "aurora-flatpak-gl-26.3.0-33.fc44.aurora.aarch64.rpm",
-      "main_header_and_payload_sha256": "26e6e4017f4b467f54ee00e3b0cedc886f57e2009dd1b8c09096210038d64f40",
-      "sha256": "f5403c82230f2a302e5ac48f8ce9a4b3018948d721f8e1ee9240a8d1f89179d3",
-      "bytes": 173171266,
-      "nevra": "aurora-flatpak-gl-26.3.0-33.fc44.aurora.aarch64"
+      "filename": "aurora-flatpak-gl-26.3.0-35.fc44.aurora.aarch64.rpm",
+      "main_header_and_payload_sha256": "81b28746db670718a0ca0f99b3418675c2f2fa612ee095f0b66ad941ee2e5f26",
+      "sha256": "649ed88b883e60a4821ee38eeaa1e4fe96d1fd93045e8c72d58d54ae30c64c73",
+      "bytes": 172617999,
+      "nevra": "aurora-flatpak-gl-26.3.0-35.fc44.aurora.aarch64"
     },
     "aurora-userpages.aarch64": {
-      "filename": "aurora-userpages-7.3.0-42.fc44.aurora.aarch64.rpm",
-      "main_header_and_payload_sha256": "799ee9e774e6f75e50de76f4ce8d1f0b0091297841b37ba48abf2453f27ec67b",
-      "sha256": "4ee7d3681ff6c0ab656cafd3659e6bbca4bb70878766ae416bc994bcf19856f8",
-      "bytes": 41388,
-      "nevra": "aurora-userpages-7.3.0-42.fc44.aurora.aarch64"
+      "filename": "aurora-userpages-7.3.0-43.fc44.aurora.aarch64.rpm",
+      "main_header_and_payload_sha256": "dc34f5309486868a72bce0e2de7f1f2ad7717626cdb1b603d4a704ff0833e913",
+      "sha256": "63acd055052ad2df3f6d7a86acba160602ea7f18b4a81fbe42b05350f2e03653",
+      "bytes": 41437,
+      "nevra": "aurora-userpages-7.3.0-43.fc44.aurora.aarch64"
     },
     "kernel-aurora-core.aarch64": {
-      "filename": "kernel-aurora-core-7.3.0-42.fc44.aurora.aarch64.rpm",
-      "main_header_and_payload_sha256": "3bb4130342dfec2d3e0b46c177d94ea4a0a0914b30e9a53470b4e0999ccdcc6b",
-      "sha256": "16311fb6f72ac015c7693d695a5ea0f0c8793217b983f9781a15c1b91d5eaa19",
-      "bytes": 12489755,
-      "nevra": "kernel-aurora-core-7.3.0-42.fc44.aurora.aarch64"
+      "filename": "kernel-aurora-core-7.3.0-43.fc44.aurora.aarch64.rpm",
+      "main_header_and_payload_sha256": "ac46169e4dacf06e6b38879c3390c5ba967059c4016a60547cfbd02d95488803",
+      "sha256": "c2a8f38b9d47fd31602a43907342a2195729ee1dea6ee20d5b6933ef94fd9944",
+      "bytes": 12529197,
+      "nevra": "kernel-aurora-core-7.3.0-43.fc44.aurora.aarch64"
     },
     "kernel-aurora-modules-extra.aarch64": {
-      "filename": "kernel-aurora-modules-extra-7.3.0-42.fc44.aurora.aarch64.rpm",
-      "main_header_and_payload_sha256": "51aef277036f81730af5d1f1f772f9261fedd9535cf75060163fb4ee745006b3",
-      "sha256": "59b03ee789a7edd4f90ba124ce06de7ceeff312c0027a910e3c175fbbfdeee5f",
-      "bytes": 34379474,
-      "nevra": "kernel-aurora-modules-extra-7.3.0-42.fc44.aurora.aarch64"
+      "filename": "kernel-aurora-modules-extra-7.3.0-43.fc44.aurora.aarch64.rpm",
+      "main_header_and_payload_sha256": "05a62867e745c0873870864ddffd4ffb793c733e1f3e800b9f79ac6c07040211",
+      "sha256": "098f0361bc2a46dfdac90f2240a5776d7bd444947f2e8359d7939a41eb734f42",
+      "bytes": 34434105,
+      "nevra": "kernel-aurora-modules-extra-7.3.0-43.fc44.aurora.aarch64"
     },
     "kernel-aurora.aarch64": {
-      "filename": "kernel-aurora-7.3.0-42.fc44.aurora.aarch64.rpm",
-      "main_header_and_payload_sha256": "315051f4d7dc4ea17cc3af06e5f3eb948f94b419246b05e69c8c9e8c558d2db2",
-      "sha256": "edd14444e2af6b87bf9d1bd0ea7886cbbdfa608c86fab3fc3016d3275224d6f8",
-      "bytes": 36113,
-      "nevra": "kernel-aurora-7.3.0-42.fc44.aurora.aarch64"
+      "filename": "kernel-aurora-7.3.0-43.fc44.aurora.aarch64.rpm",
+      "main_header_and_payload_sha256": "635e625c5b73295f7886298b912ffe205c41f8c7e58bfd98385ad57bf306b499",
+      "sha256": "bb8653f99e67cdca860b74986e07eee9a12e0ef3a15b6bbd975a833b9f53664d",
+      "bytes": 36167,
+      "nevra": "kernel-aurora-7.3.0-43.fc44.aurora.aarch64"
     },
     "mesa-aurora-dri-drivers.aarch64": {
-      "filename": "mesa-aurora-dri-drivers-26.3.0-33.fc44.aurora.aarch64.rpm",
-      "main_header_and_payload_sha256": "2c08ba0af14318f8b390c997e3991504d28b65513e45eb02df3e22d99ebab535",
-      "sha256": "5b9d4d19946761428fa03c79b968c762c504b3959c60c3525edfd8f83526118f",
-      "bytes": 6557732,
-      "nevra": "mesa-aurora-dri-drivers-26.3.0-33.fc44.aurora.aarch64"
+      "filename": "mesa-aurora-dri-drivers-26.3.0-35.fc44.aurora.aarch64.rpm",
+      "main_header_and_payload_sha256": "599c55a1116903ff235fa91b90b931b5e5b0c6d56d89479ff12e5103caf39731",
+      "sha256": "5885f78fbbe717cf0346d8f595073dcbfbc94f1fc6b2918a9f2b16a821d2bca9",
+      "bytes": 6555058,
+      "nevra": "mesa-aurora-dri-drivers-26.3.0-35.fc44.aurora.aarch64"
     },
     "mesa-aurora-filesystem.aarch64": {
-      "filename": "mesa-aurora-filesystem-26.3.0-33.fc44.aurora.aarch64.rpm",
-      "main_header_and_payload_sha256": "2a235c550e66c3521521304430ddcbb05522d8174d27b2b21f1b9d42037725a6",
-      "sha256": "0eb719208df4ed69231969de68ef957af134f7a1b0c1eb3951547a5e76a23ded",
-      "bytes": 17354,
-      "nevra": "mesa-aurora-filesystem-26.3.0-33.fc44.aurora.aarch64"
+      "filename": "mesa-aurora-filesystem-26.3.0-35.fc44.aurora.aarch64.rpm",
+      "main_header_and_payload_sha256": "51fcd343bcfc0d9ddf381db7a4d3484c4849fb30ac0da598111dba967896e834",
+      "sha256": "16682cf19e2625f0248694c80d445a1b3ab08aa58df13dae6cd9f58a31230806",
+      "bytes": 17710,
+      "nevra": "mesa-aurora-filesystem-26.3.0-35.fc44.aurora.aarch64"
     },
     "mesa-aurora-vulkan-drivers.aarch64": {
-      "filename": "mesa-aurora-vulkan-drivers-26.3.0-33.fc44.aurora.aarch64.rpm",
-      "main_header_and_payload_sha256": "7a88e137768dea56a19ff977dd715947da114ed309b422d01d6db4df99a938f9",
-      "sha256": "30018dfb139195f2ad6ea6adc28dd2cf8860cf5376591d6878420596e11616fb",
-      "bytes": 4308450,
-      "nevra": "mesa-aurora-vulkan-drivers-26.3.0-33.fc44.aurora.aarch64"
+      "filename": "mesa-aurora-vulkan-drivers-26.3.0-35.fc44.aurora.aarch64.rpm",
+      "main_header_and_payload_sha256": "05834d150d0d3e029e764ff6d4b07e5348a96c520659a942f0d1026f8e38b752",
+      "sha256": "c3d81db702dafd3b3210b8525200240a16c849aaec8847b8282e1205c6091154",
+      "bytes": 4198270,
+      "nevra": "mesa-aurora-vulkan-drivers-26.3.0-35.fc44.aurora.aarch64"
     }
   }
 }
