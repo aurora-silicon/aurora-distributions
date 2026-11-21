@@ -1,7 +1,7 @@
 name: Stage the F44 Neo Edge payload artifact
 on:
   push:
-    branches: [edge/stage-neo-payload-e0ee46a1]
+    branches: [edge/stage-neo-payload-e0ee46a1-15fe5010]
   workflow_dispatch:
     inputs:
       image-run:
@@ -30,16 +30,16 @@ jobs:
       - name: Authenticate the image archive and package proof
         env:
           GH_TOKEN: ${{ github.token }}
-          IMAGE_RUN: ${{ inputs.image-run || '44694944437' }}
+          IMAGE_RUN: ${{ inputs.image-run || '44843863741' }}
         run: |
           set -euo pipefail
           [[ $IMAGE_RUN =~ ^[1-9][0-9]*$ ]]
           repo=aurora-silicon/fedora-aurora
           gh api "repos/$repo/actions/runs/$IMAGE_RUN" > image-build.json
-          jq -e --arg repo "$repo" '.conclusion=="success" and .head_branch=="edge/neo-f44-image-e0ee46a1"
+          jq -e --arg repo "$repo" '.conclusion=="success" and .head_branch=="edge/neo-f44-image-e0ee46a1-15fe5010"
              and .path==".github/workflows/edge-f44-image.yml" and .head_repository.full_name==$repo' image-build.json
           head=$(jq -r .head_sha image-build.json)
-          [[ $head == 287ca4ab3d471d9a6863a1e144dc0bd4824c8ef3 ]]
+          [[ $head == c4c1a272e2a27dd8e23b981e9dd4ade9a0ecfc47 ]]
           gh run download "$IMAGE_RUN" --repo "$repo" --name fedora-kde-edge-candidate --dir downloaded
           archive=downloaded/out/fedora-kde-filesystems.tar.zst
           proof=downloaded/out/fedora-kde-installer/edge-image-proof.json
@@ -52,7 +52,7 @@ jobs:
           sudo apt-get install -y zstd
           mkdir filesystems
           zstd -dc "$archive" | python3 -c 'import sys,tarfile; tarfile.open(fileobj=sys.stdin.buffer,mode="r|").extractall("filesystems",filter="data")'
-          printf "%s  %s\n" 534168869489b458574639d205a18beb0daf7f74d979fcf0873829a9c2e575e3 "$proof" | sha256sum -c -
+          printf "%s  %s\n" b8d8e73b213d6d5bbd1c812a49b597e3b74622275acac67c28fa6518653d318a "$proof" | sha256sum -c -
           cmp "$proof" filesystems/edge-image-proof.json
       - name: Verify the signed native Recovery template
         run: |
