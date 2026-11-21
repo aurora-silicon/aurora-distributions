@@ -48,7 +48,7 @@ M5 = False
 BOARD = "j700ap"
 M5_MODEL = "apple,j714s"
 M5_BOARD = "j714sap"
-M5_GATES = {"releaseGate", "deepSleep", "freshInstall", "restoration"}
+M5_GATES = {"releaseGate", "deepSleep", "restoration"}  # fresh install: from the live channel after release (as the Neo alpha.1)
 # Each Mac's chip family, as edge/cohort.json of the Edge train names it (aurora-distributions#64).
 FAMILIES = {MODEL: "t8140", M5_MODEL: "t6050"}
 

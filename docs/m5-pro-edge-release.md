@@ -85,7 +85,7 @@ The Neo lane's alpha.2 (Neo only) goes first and is not held for the M5. The M5 
    - `edge-f44-image.yml`: the branch name. Keep `SIGNING_RUN 44694386531`: no RPM rebuild and no new signing.
    - Push the trigger file, then record the image run, the head SHA and the proof sha256.
 5. **Neo smoke on the new Stage 2.** One boot and one deep sleep of the Neo on the alpha.3 image's aura (neohw lease, Neo lane). The Neo CTS evidence is reused unchanged.
-6. **J714s fresh install** (checklist below). This needs a decision from Dj; see "Needs Dj".
+6. **J714s fresh install: after release, from the live Edge channel** (decided 2026-11-20, as the Neo's alpha.1). It is not a gate: the M5 gates are `releaseGate`, `deepSleep` and `restoration`. The opt-in owner row is under "J714s fresh install from the live channel" below.
 7. **aurora-distributions commit A for alpha.3.**
    - In `neo_edge.py`, set `M5 = True` and the new `IMAGE_BRANCH`, `IMAGE_HEAD` and `IMAGE_RUN` (signer runs and file digests stay).
    - `prepare-neo-edge-payload.py` → `-edge-alpha.3`.
@@ -110,7 +110,7 @@ The per-device records are the train's format, byte for byte. A test (`EdgeTrain
 - **After a train is adopted.** `adopt-delivery.py --channel edge` refuses. The J714s then rides the train as the `t6050` rider, on `fedora-kde` only:
   - the train's `edge-train-evidence` carries `families.t6050 = {"machine": "apple,j714s", "pair": <train.reference>, "checks": <the M5 checks>}`, which is the M5 record of this plan plus `machine`;
   - the train binder emits the J714s's `devices` entry and `edge-device-apple-j714s.json` itself.
-- **Keep the gates in step.** `neo_edge.M5_GATES` and the `t6050` rider's `gates` in `edge/cohort.json` must stay the same set. If commit A drops `freshInstall` (see "Needs Dj"), drop it from the cohort too.
+- **Keep the gates in step.** `neo_edge.M5_GATES` and the `t6050` rider's `gates` in `edge/cohort.json` must stay the same set. `freshInstall` is dropped from both (decided 2026-11-20): the `t6050` rider's gates are `releaseGate`, `deepSleep` and `restoration`.
 
 ## Release note (alpha.3)
 
@@ -118,7 +118,8 @@ The per-device records are the train's format, byte for byte. A test (`EdgeTrain
 >
 > This release adds the MacBook Pro (M5 Pro, J714s) to Edge, with deep sleep. Closing the lid suspends on battery, on AC and docked, and the Mac wakes with its displays, USB and Thunderbolt devices, Wi-Fi and Bluetooth, audio and camera working. Choose **Edge** in the installer's channel menu.
 >
-> - Same kernel (aurora-edge, kernel-aurora 7.3.0-43) and Mesa (26.3.0-34) as Edge Alpha 2.
+> - Same kernel (aurora-edge, kernel-aurora 7.3.0-43) and Mesa (26.3.0-35) as Edge Alpha 2.
+> - Fresh install on the MacBook Pro M5 Pro is verified from the live Edge channel after release, as for the Neo's alpha.1.
 > - Memory Tagging (MTE) is on for the M5 Pro and Max. The boot loader reserves the tag storage, and the kernel turns MTE off by itself when it is not reserved.
 > - Touch ID and the Secure Enclave can save state (SEP writes on), as on other Macs.
 > - Suspend is deep sleep only on the J714s. A safety wake is set an hour ahead when nothing else is armed. If the lid is still closed, the Mac goes back to sleep.
@@ -130,59 +131,39 @@ The per-device records are the train's format, byte for byte. A test (`EdgeTrain
 > - Edge installs do not receive package updates from the Testing feed.
 > - The power mode setting (Power Saver, Balanced, Performance) does not yet reach the M5 Pro's own power modes: the kernel offers no platform profile. Power Saver still applies Aurora's CPU power budget. A fix is in review (aurora-silicon/linux#2549).
 
-## J714s fresh-install qualification (RELEASING.md "Qualification and storage")
+## J714s fresh install from the live channel (after adoption; opt-in owner row)
 
-These steps run on the M5 lane's J714s. Rules for the run:
-- the M5 hardware lock only;
-- WSI headless; no test windows on the M5 displays;
-- speaker checks at 5 % volume through speakerguardd v2 only;
-- before any VDM, check the partner identity with `rig/m5-vdm-partner-check.sh`.
+Decided 2026-11-20: the J714s fresh install is not a release gate. It is verified from the live Edge channel after adoption, as the Neo's alpha.1 was. The M5 lane's rig can't host it: a new install needs NVMe space carved from the macOS APFS container, a recoveryOS (1TR) boot-policy step with the owner's password and a power-button hold, and the interactive Plasma Setup on the Mac's displays. The release gate rows already cover what is specific to the J714s from the signed bytes (Stage 2, kernel, DTB, Mesa, MTE, SEP, deep sleep). The installer flow (partitioning, LUKS, Plasma Setup) is shared with the Neo and Testing.
 
-The install must come from the alpha.3 payload, byte for byte (the STAGING.sha256 digest of step 7).
+PR readiness asks J714s owners on the agents channel for one opt-in row after adoption, Isaac's J714s first. The row:
 
-**Before the install**
-- [ ] Back up what the M5 lane needs to restore the current default (verified copy and restore commands).
-- [ ] Check free space for the download, extraction and copy peaks; keep at least 8 GiB free on the development host.
-- [ ] Record macOS 27.2 (26B123) on the J714s, the installer version (Alpha 22) and the payload digest.
-
-**Install**
-- [ ] Install Fedora KDE with encryption on. Use the Edge channel when the catalog is live, or the local-payload test installer if Dj chooses the pre-adoption route.
-- [ ] The installer admits the J714s; Stage 1 is admitted for 27.2. The board Stage 2 is `boot-j714s.bin` with marker `1.0.0b13-g82ee5d6f`.
-- [ ] First boot reaches the Plasma Setup owner flow. The owner account is created. The disk password replaces the temporary key: `/var/lib/aurora/firstboot/disk-rekeyed` exists and the temporary keyslot is gone (`cryptsetup luksDump`).
+**Setup**
+- [ ] The owner's own J714s (MacBook Pro 14", M5 Pro) on macOS 27.2 (26B123), with enough free space for an install; the owner chooses to install. Record the macOS build, the installer version (Alpha 22 or later) and the catalog's payload digest.
+- [ ] Install Fedora KDE from the installer's **Edge** channel, encryption on. The installer admits the J714s; Stage 1 is admitted for 27.2, and the board Stage 2 is `boot-j714s.bin` from the payload.
+- [ ] First boot reaches the Plasma Setup owner flow; the owner account is created. The disk password replaces the temporary key: `/var/lib/aurora/firstboot/disk-rekeyed` exists and the temporary keyslot is gone (`cryptsetup luksDump`).
 
 **Boot checks (installed system)**
 - [ ] `uname -r` = `7.3.0-43.fc44.aurora.aarch64`; `/proc/cmdline` has no `arm64.nomte`.
 - [ ] MTE: `grep -c mte /proc/cpuinfo` > 0, and `/proc/device-tree/reserved-memory/mte-tag-storage@*` exists.
-- [ ] SEP writes on (always):
-  - no `apple_sep.*` on `/proc/cmdline`. On 7.3.0-43, and on any kernel before linux#2591, the parameters still exist: a command-line value still applies (`=0` would turn writes off), and a second value of either one stops the driver from loading. The second value comes from the modprobe.d file or `load-driver` of an aurora-sep built before the SEP-writes PRs (fedora-aurora#456, alarm-aurora#387, nixos-aurora#356). From linux#2591 on, the loader logs `apple_sep: unknown parameter ... ignored` and loads the driver;
-  - `/sys/bus/platform/devices/*.sep/diag/policy` shows `xart_writes=1 provision_keybag=1`. Both keys stay after linux#2591 for ABI 3 readers: `xart_writes` is the store's effective writability, and `provision_keybag` always reads 1. Read them here: on kernels that still have the parameters, they are Rust module parameters, which `/sys/module/apple_sep/parameters` does not list;
-  - `diag/xart` reads `enabled`, and `aurora-sep status` shows no xART warning;
-  - Touch ID can enrol (`fprintd-enroll`), as on the 11-11 J714s boot (linux#1587).
-- [ ] Leakage: the Stage 2 log has `FDT: GPU: leakage calibration words …`, and `work/aura-leakage-fill-20261120/verify-j714s-unit-values.py` passes.
-- [ ] `aurora-m5-sleep-policy.service` is active (exited), and both drop-ins are under `/run/systemd/{sleep,logind}.conf.d/`.
-- [ ] `busctl get-property org.freedesktop.login1 /org/freedesktop/login1 org.freedesktop.login1.Manager HandleLidSwitchDocked` = `suspend`.
-- [ ] `cat /sys/power/mem_sleep` lists `[deep]`; `suspend.target` and `sleep.target` are not masked.
-- [ ] `ausearch -m avc -ts boot` is empty, for the hook's sysfs writes and logind reading `/run/systemd/logind.conf.d`.
-- [ ] Displays at native modes (panel, and Dell DP alt mode and the TB5 dock if attached); USB, Thunderbolt and Type-C; Wi-Fi associated; BT powered; the ALSA cards and PipeWire; 6 tas2764 amps bound with Amp Fault Status 0; ALS; camera frames; `vulkaninfo` plus the dEQP-VK smoke, with no GPU fault lines.
+- [ ] SEP writes on: no `apple_sep.*` on `/proc/cmdline`; `/sys/bus/platform/devices/*.sep/diag/policy` shows `xart_writes=1 provision_keybag=1`; `diag/xart` reads `enabled`; `aurora-sep status` shows no xART warning; Touch ID can enrol (`fprintd-enroll`).
+- [ ] Leakage: the Stage 2 log has `FDT: GPU: leakage calibration words …`.
+- [ ] `aurora-m5-sleep-policy.service` is active (exited), with both drop-ins under `/run/systemd/{sleep,logind}.conf.d/`; `HandleLidSwitchDocked` = `suspend`; `/sys/power/mem_sleep` lists `[deep]`; `suspend.target` and `sleep.target` are not masked.
+- [ ] `ausearch -m avc -ts boot` is empty.
+- [ ] Displays at native modes; USB, Thunderbolt and Type-C; Wi-Fi associated; Bluetooth powered; ALSA cards and PipeWire; the 6 tas2764 amps bound with Amp Fault Status 0 (speaker checks at 5 % volume through speakerguardd v2 only); ALS; camera frames; `vulkaninfo` lists the M5 Pro GPU, with the Edge Mesa (26.3.0-35, `git-15fe5010c1`).
 
 **Deep sleep (installed system)**
-- [ ] Three sleeps through logind (lid close, or `systemctl suspend`) with no alarm armed beforehand. `journalctl -t aurora-m5-sleep` shows the hook arming the alarm and clearing it after the wake.
-- [ ] After each wake, the post-wake checks of the gates (RELEASE-HANDOFF.md "Checked after every wake"), and one `commit stop: PMP request withdrawn: 0` per entry.
+- [ ] Three sleeps through logind (lid close, or `systemctl suspend`) with no alarm armed beforehand. `journalctl -t aurora-m5-sleep` shows the hook arming the alarm and clearing it after the wake. Each wake: displays, USB, Wi-Fi, Bluetooth, audio and camera back, and one `commit stop: PMP request withdrawn: 0` per entry.
 - [ ] One sleep under Plasma with the lid closed on battery; record PowerDevil's docked behaviour.
 
 **Updates and reboot**
 - [ ] `dnf check-update` shows the Aurora repo disabled (Edge) and no error; a Fedora update transaction completes.
 - [ ] A reboot, a cold boot after power-off, and the disk unlock prompt at each start, with the same password.
-- [ ] Restoration: put the M5 lane's default back (rollback set), then verify it.
 
-**Records**
-- [ ] Write `freshInstall` and `restoration` receipts (sha256 of the sha256sum manifests). The Edge publisher reads only their digests.
+**Report** (a reply on the agents channel, no raw logs): the Mac, macOS build, installer version, payload digest, each item pass/fail with the one-line evidence, and anything that failed with its first error line. The owner keeps or removes the install; nothing on another lane's machine changes.
 
 ## Needs Dj
 
-- **When the J714s fresh install runs.** The Edge catalog is fetched live and bundled catalogs are Testing-only, so the documented local-payload test installer (aurora-installer `macOS/docs/private-local-payload-install.md`) cannot see an unpublished Edge row. There are two choices:
-  - Before adoption: sign a test-only Testing catalog row for `apple,j714s` on an unmerged branch for that test installer. This needs the catalog signer.
-  - After adoption, from the live channel, as the Neo's alpha.1 was verified. Drop `freshInstall` from `neo_edge.M5_GATES` (and from the `t6050` rider of aurora-distributions#64's `edge/cohort.json`) and keep a Neo-only alpha.4 ready as the rollback. Adopting that rollback removes the served `edge-device-apple-j714s.json`.
+- **Decided 2026-11-20: the J714s fresh install runs after adoption, from the live channel** (as the Neo's alpha.1). `freshInstall` is dropped from `neo_edge.M5_GATES` and from the `t6050` rider of aurora-distributions#64's `edge/cohort.json`. The rig can't host an install (the macOS containers, 1TR, Plasma Setup on its displays, its enrolled dev Stage 1), and a test-only catalog row would need the catalog signer. Keep a Neo-only alpha.4 ready as the rollback; adopting it removes the served `edge-device-apple-j714s.json`.
 - **MTE on every T6050 board.** The owner's T6050 policy turns MTE on for every T6050 board, including the K114/K116 and J775/J873 boards that are in Testing or the 65-model list. Only the J714s has run with MTE on.
 - **Decided 2026-11-20: alpha.3 ships on 7.3.0-43, without platform profiles.** The missing profiles are a known issue in the release note. The Edge release is not rebuilt or re-pinned.
   - **Why not 7.3.0-44.** A rebuild would have needed a new signer run and image digest. The Neo evidence bound to `sha256:701ed7f2…c5bf` and run 44694386531 would then not carry over, and the M5 release gate would rerun. On Fedora it would also have needed the userspace bridge first, or Power Saver regresses on T6050 and T6041.
