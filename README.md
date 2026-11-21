@@ -14,4 +14,4 @@ The installer is published as prereleases on [aurora-installer releases](https:/
 
 ## Installer channels
 
-Testing retains development/prerelease deliveries. Edge is opt-in and remains empty until an actual signed, qualified release from both Linux and Mesa `aurora-edge` branches exists. Existing Testing packages are never promoted or relabelled as Edge. [Channel identity and migration](docs/channels.md) describes the separate endpoints, rollback floors and qualification contract. This support change does not publish a first Edge payload.
+Testing (Nightly) retains development/prerelease deliveries. Edge carries only signed, qualified releases from both Linux and Mesa `aurora-edge` branches; a new install defaults to Edge when the profile's Edge catalog admits and proves the Mac (`edgeQualification.devices`), and to Nightly otherwise, while an explicit pick always wins. Existing Testing packages are never promoted or relabelled as Edge. [Channel identity and migration](docs/channels.md) describes the separate endpoints, rollback floors and qualification contract. This support change does not publish a first Edge payload.

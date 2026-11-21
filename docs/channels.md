@@ -1,6 +1,12 @@
 # Installer channel identity
 
-The installer offers Stable, Release candidate, Testing and Edge. Testing is the default development/prerelease channel. Edge is an explicit choice for the first qualified release built from Linux and Mesa `aurora-edge` sources. Source-branch promotion alone does not make a payload eligible. This implementation publishes no Edge payload and changes no Linux or Mesa source branch.
+The installer offers Stable, Release candidate, Testing (shown as Nightly) and Edge. Edge carries qualified releases built from Linux and Mesa `aurora-edge` sources; Testing carries development/prerelease deliveries. Which channel an install uses (installer#176):
+
+- **A new install defaults to Edge** when the selected profile's Edge catalog admits the Mac and `edgeQualification.devices` proves that model (a per-device evidence digest, see [Edge trains](edge-train.md)). Otherwise it defaults to Nightly (Testing).
+- **An existing install keeps its recorded channel**, or Testing when none is recorded.
+- **An explicit pick always wins**, in either direction.
+
+The release descriptors' `default_channel` stays Testing (`channel_policy.descriptor` refuses Edge there): the installer chooses Edge per Mac and profile from the signed Edge catalog, never from the descriptor. Source-branch promotion alone does not make a payload eligible.
 
 | ID | Catalog endpoint | Initial state |
 | --- | --- | --- |

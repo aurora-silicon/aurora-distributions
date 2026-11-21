@@ -21,6 +21,7 @@ An **Edge train** is one release: one Linux and Mesa `aurora-edge` pair, built b
 | `t8140` | A18 Pro | j700 (MacBook Neo) |
 
 - **Excluded:** `apple,j575d`, the Mac Studio with M3 Ultra (T6032). Its Stage 1 and iBoot have never been tried (Testing's `stage1_caution`), and no Aurora machine can produce its rows. It stays on Testing with that caution. Adding it is a one-line cohort change once a T6032 row exists.
+- **Held:** a train can leave whole families on Testing with `"held": [...]` in `edge/train.json`. Their Macs get no Edge catalog rows and need no rows run. The first train holds `t8122`, because the J615's GPU does not run on 27.2 firmware yet, and `t603x`, which has no machine yet.
 - **Rider:** `riders.t6050` is the MacBook Pro 14" M5 Pro (`apple,j714s`) on `fedora-kde` only, with the M5 gates of aurora-distributions#63. A train carries it only when `edge/train.json` lists `"riders": ["t6050"]`.
 - **Every profile carries every cohort Mac**, ordered as the producer orders them. There are nine core profiles plus `omarchy-hyprland`.
 
@@ -95,6 +96,22 @@ Every rule in `docs/channels.md` still holds: a new immutable `-edge-alpha.<n>` 
                     "checks": {"boot": {...}, "gpuSmoke": {...}, "suspend": {...}, "restoration": {...}}}}}
 ```
 
+**Rows in parts.** A Mac that normally boots another chain gives its family record a `chains` object. Joshua's Macs, for example, boot Omarchy's m1n1 and U-Boot. Each check names the chain it ran on:
+
+```json
+"t8103": {"machine": "apple,j293", "pair": <train.reference>,
+          "chains": {"own":  {"bootChain": "m1n1-uboot"},
+                     "aura": {"bootChain": "aura", "stage2SHA256": "sha256:d8e9ee04…"}},
+          "checks": {"vulkanCTS":   {"status": "passed", "sha256": "sha256:…", "chain": "own"},
+                     "glCTS":       {"status": "passed", "sha256": "sha256:…", "chain": "own"},
+                     "suspend":     {"status": "passed", "sha256": "sha256:…", "chain": "aura"},
+                     "restoration": {"status": "passed", "sha256": "sha256:…", "chain": "aura"}}}
+```
+
+- Without `chains`, every check ran on the shipped aura chain.
+- `suspend` and `deepSleep` must run on an `aura` chain, the chain an Edge install ships.
+- The per-device records carry the `chains` with the checks.
+
 **Per-device evidence (installer#176).** The installer defaults a Mac to Edge only with proof for that model:
 - Every bound catalog carries `edgeQualification.devices`: `{"<deviceIdentifier>": {"evidenceDigest": "sha256:…"}}`.
 - Each digest covers the exact bytes of the delivery asset `edge-device-<vendor>-<board>.json`, for example `edge-device-apple-j413.json`. That record holds `deviceIdentifier`, `family`, `machine`, `pair` and `checks` (its family row, the shared pair), plus the `linux` and `mesa` sources.
@@ -114,13 +131,19 @@ Every rule in `docs/channels.md` still holds: a new immutable `-edge-alpha.<n>` 
 
 | Family | Machine | Status |
 |---|---|---|
-| `t600x` | Ryan's lab M1 Pro (G13S) | available through Ryan |
-| `t8112` | Ryan's lab MacBook Air M2 (J413) | available through Ryan |
-| `t8122` | Ryan's lab MacBook Air 15" M3 (J615); satchlj's `rubra-j613` (MacBook Air 13" M3) | rubra: one-shot trial boots only, no installs, no speakers, no CTS capability listed; offline since 11-13 |
-| `t8140` | the Neo lane's Neo | Neo lane |
-| `t8103`, `t602x`, `t603x` | **none** | Dj's M2 Pro (J414s) is light use only, no tests |
+| `t600x` | Ryan's lab M1 Pro (G13S) | **booked** (Ryan) |
+| `t8112` | Ryan's lab MacBook Air M2 (J413) | **booked** (Ryan) |
+| `t8103` | Joshua's MacBook 13" M1 | **booked** from Sat 02:00 CST; two-part row |
+| `t602x` | Joshua's M2 Max | **booked** from Sat 17:00 CST; two-part row |
+| `t8140` | the Neo lane's Neo | the Neo lane's own gate |
+| `t8122` | Ryan's lab J615; satchlj's `rubra-j613` (one-shot trial boots only, offline since 11-13) | **held**: stays Nightly; the J615's GPU does not run on 27.2 firmware yet |
+| `t603x` | none | **open**: held until a machine exists |
 
-The three uncovered families need a machine, or Dj's decision to qualify them by a sibling family on the same GPU generation. That decision is recorded in the signed report: `"qualifiedBy": "t600x"` for `t8103`, `"t8112"` for `t602x`, `"t8122"` for `t603x`.
+All booked rows start after the Neo's -35 gate passes, on the pair that gate passes on. Joshua's Macs boot Omarchy's m1n1 and U-Boot, so their rows come in two parts (see "Rows in parts" above):
+1. The full Vulkan and GL CTS on their own chain, with its hashes recorded.
+2. A short aura-chain row: a proxy one-shot of the b14 Stage 2 (`d8e9ee04…`), then the Edge kernel, the smoke tests, 3/3 freeze and restore.
+
+Dj's M2 Pro (J414s) is light use only and runs no rows. A held family can still be admitted later by a sibling's row (`"qualifiedBy"` in the cohort); its Macs are then listed without `devices` proof, so they default to Nightly.
 
 ### Row spec (one row per family, plus one smoke row per distribution)
 
@@ -166,20 +189,20 @@ Use the reference Mesa:
 **Requests to post on the team channel.** One per family and one per distribution:
 - the train's `pair`, `reference` and the staged payload digests;
 - the gates and bars above;
-- the request to return a `{machine, pair, checks}` record.
+- the request to return a `{machine, pair, checks}` record (plus `chains` for a row in parts).
 
 ## Release notes (draft, alpha.N)
 
-> **Aurora Edge Alpha N: every M1, M2 and M3 Mac and the MacBook Neo, on every distribution**
+> **Aurora Edge Alpha N: every M1 and M2 Mac and the MacBook Neo, on every distribution**
 >
-> Edge is now the default channel for every MacBook, iMac, Mac mini, Mac Studio and Mac Pro with an M1, M2 or M3 chip, and for the MacBook Neo. Fedora (KDE, GNOME, minimal), Arch Linux ARM (KDE, GNOME, minimal), NixOS (KDE, GNOME, minimal) and Omarchy all ship the same kernel and Mesa, built from the `aurora-edge` branches and tested on each chip family. Every chip family passed the full Vulkan and OpenGL conformance tests, suspend and restoration.
+> Edge is now the default channel for every MacBook, iMac, Mac mini, Mac Studio and Mac Pro with an M1 or M2 chip, and for the MacBook Neo. (M3 Macs follow once their rows pass.) Fedora (KDE, GNOME, minimal), Arch Linux ARM (KDE, GNOME, minimal), NixOS (KDE, GNOME, minimal) and Omarchy all ship the same kernel and Mesa, built from the `aurora-edge` branches and tested on each chip family. Every chip family passed the full Vulkan and OpenGL conformance tests, suspend and restoration.
 >
 > - Kernel: aurora-edge <linux revision>. Mesa: aurora-edge <mesa revision> (Borealis Vulkan driver).
 > - Edge installs now receive updates. Fedora follows the Edge repository. Arch Linux ARM takes the Edge kernel and Mesa from `[aurora-edge]` and everything else from Testing. NixOS follows `channel-edge`. All distributions move to a new Edge kernel and Mesa together.
 > - Existing Fedora Neo Edge installs: run the one-line command in the release page to start receiving Edge updates.
 >
 > Known issues:
-> - The Mac Studio with M3 Ultra stays on Testing; its first boot has not been tested.
+> - M3 Macs stay on Nightly for now: the M3 GPU does not run on macOS 27.2 firmware yet (M3), or no test machine exists yet (M3 Pro and M3 Max). The Mac Studio with M3 Ultra stays on Testing; its first boot has not been tested.
 > - <per-family known issues from the rows>
 
 ## Step by step
@@ -204,7 +227,7 @@ Use the reference Mesa:
 - Steps 2 and 4 use the package keys in each repository's `testing-signing` environment.
 
 **Decisions for Dj:**
-- Sibling qualification for `t8103`, `t602x` and `t603x` (`qualifiedBy`), or hold those families until hardware exists.
+- `t603x`: hold it (the default), or admit it by a sibling row (`qualifiedBy`, no device proof).
 - j575d (M3 Ultra) on Edge or not.
 - The weekly Fedora Edge refresh cadence for Firefox security fixes.
 

@@ -41,6 +41,11 @@ SHA256 = re.compile(r'sha256:[0-9a-f]{64}')
 HEX64 = re.compile(r'[0-9a-f]{64}')
 MODEL = re.compile(r'apple,[a-z0-9]+')
 PAIR_KEYS = ('kernelImageSHA256', 'mesaDsoSHA256')
+# Boot chains a row may run on. `aura` is the chain an Edge install ships; a Mac
+# that normally boots another chain (Omarchy's m1n1 and U-Boot) runs its CTS
+# there and its freeze and restore on a one-shot aura Stage 2.
+BOOT_CHAINS = ('aura', 'm1n1-uboot')
+SHIPPED_CHAIN_GATES = ('suspend', 'deepSleep')
 
 
 def _match(pattern, value):
@@ -130,7 +135,10 @@ def family_gates(cohort, name):
 def qualified_families(cohort, train, profile=None):
     """Families (and riders this train carries) with their gates, for one profile or all."""
     result = {}
+    held = set(train.get('held', []))
     for name, spec in cohort['families'].items():
+        if name in held:
+            continue
         result[name] = {'models': list(spec['models']), 'gates': family_gates(cohort, name),
                         'machines': list(cohort['families'][spec.get('qualifiedBy', name)]['models']),
                         # A sibling family's row admits a Mac to Edge, but proves nothing about
@@ -157,9 +165,15 @@ def _source(record, name):
 
 def verify_train(train, cohort, staged=False):
     verify_cohort(cohort)
+    required = {'schema_version', 'release', 'riders', 'pair', 'reference', 'distributions', 'profiles'}
     if (not isinstance(train, dict) or train.get('schema_version') != 1
-            or set(train) != {'schema_version', 'release', 'riders', 'pair', 'reference', 'distributions', 'profiles'}):
+            or not required <= set(train) <= required | {'held'}):
         raise ValueError('invalid Edge train record')
+    # Families this train leaves on Testing (Nightly): no catalog rows, no rows to run.
+    held = train.get('held', [])
+    if (not isinstance(held, list) or len(set(held)) != len(held)
+            or any(name not in cohort['families'] for name in held)):
+        raise ValueError('held must name distinct cohort families')
     if not _match(RELEASE, train['release']):
         raise ValueError('the Edge release must be alpha.<n>')
     riders = train['riders']
@@ -264,14 +278,28 @@ def verify_image(run, raw_proof, cohort, train, profile):
 def _checks(record, gates, label):
     if not isinstance(record.get('checks'), dict) or set(record['checks']) != set(gates):
         raise ValueError('%s evidence must carry exactly the gates %s' % (label, ', '.join(gates)))
+    chains = record.get('chains')
+    if chains is not None and (
+            not isinstance(chains, dict) or not chains or not all(
+                isinstance(name, str) and re.fullmatch(r'[a-z0-9][a-z0-9-]{0,31}', name) and isinstance(chain, dict)
+                and chain.get('bootChain') in BOOT_CHAINS and set(chain) <= {'bootChain', 'stage2SHA256'}
+                and _match(SHA256, chain.get('stage2SHA256', 'sha256:' + '0' * 64))
+                for name, chain in chains.items())):
+        raise ValueError('%s evidence names an invalid boot chain' % label)
     for gate, check in record['checks'].items():
-        if (not isinstance(check, dict) or set(check) != {'status', 'sha256'}
+        if (not isinstance(check, dict) or not {'status', 'sha256'} <= set(check) <= {'status', 'sha256', 'chain'}
                 or check['status'] != 'passed' or not _match(SHA256, check['sha256'])):
             raise ValueError('missing passing %s evidence: %s' % (label, gate))
+        if 'chain' in check and (chains is None or check['chain'] not in chains):
+            raise ValueError('%s %s evidence names an unknown boot chain' % (label, gate))
+        if (gate in SHIPPED_CHAIN_GATES and 'chain' in check
+                and chains[check['chain']]['bootChain'] != 'aura'):
+            raise ValueError('%s %s must run on the shipped aura chain' % (label, gate))
 
 
 def verify_family_record(record, spec, name, train):
-    if not isinstance(record, dict) or set(record) != {'machine', 'pair', 'checks'}:
+    if not isinstance(record, dict) or not {'machine', 'pair', 'checks'} <= set(record) <= {
+            'machine', 'pair', 'checks', 'chains'}:
         raise ValueError('incomplete evidence for family ' + name)
     if record['machine'] not in spec['machines']:
         raise ValueError('the %s row ran on a machine outside its family' % name)
@@ -337,6 +365,7 @@ def _device_records(families, cohort, train, profile):
         for model in spec['models']:
             record = {'schemaVersion': 1, 'deviceIdentifier': model, 'family': name,
                       'machine': row['machine'], 'pair': row['pair'], 'checks': row['checks'],
+                      **({'chains': row['chains']} if 'chains' in row else {}),
                       **copy.deepcopy(train['pair'])}
             records[model] = (json.dumps(record, sort_keys=True, indent=2) + '\n').encode()
     return records

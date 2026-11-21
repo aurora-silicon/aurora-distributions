@@ -123,6 +123,71 @@ class TrainTests(unittest.TestCase):
         self.assertTrue(re.fullmatch(r'build-[0-9]+-edge-alpha\.4', edge_train.release_id(train, 'arch-kde')))
 
 
+class HeldFamilyTests(unittest.TestCase):
+    def test_a_held_family_stays_off_edge_and_needs_no_rows(self):
+        cohort, train = fx.cohort(), fx.train()
+        train['held'] = ['t8122', 't603x']
+        edge_train.verify_train(train, cohort)
+        models = edge_train.profile_models(cohort, train, 'arch-kde')
+        self.assertNotIn('apple,j613', models)
+        self.assertNotIn('apple,j514s', models)
+        self.assertIn('apple,j413', models)
+        self.assertEqual(len(models), 35 - 5 - 6)
+        evidence = fx.evidence(train)
+        self.assertNotIn('t8122', evidence['families'])
+        edge_train.verify_evidence(evidence, cohort, train)
+
+    def test_held_names_known_families_and_never_a_rider(self):
+        for held in (['t9999'], ['t6050'], ['t8122', 't8122']):
+            with self.subTest(held=held):
+                train = fx.train(riders=['t6050'])
+                train['held'] = held
+                with self.assertRaisesRegex(ValueError, 'held'):
+                    edge_train.verify_train(train, fx.cohort())
+
+
+class ChainTests(unittest.TestCase):
+    """A family row may come in parts on different boot chains (Joshua's Omarchy m1n1/U-Boot Macs)."""
+
+    def setUp(self):
+        self.cohort, self.train = fx.cohort(), fx.train()
+        self.evidence = fx.evidence(self.train)
+        record = self.evidence['families']['t8103']
+        record['chains'] = {'own': {'bootChain': 'm1n1-uboot'},
+                            'aura': {'bootChain': 'aura', 'stage2SHA256': 'sha256:' + 'd8e9ee04' * 8}}
+        for gate in ('vulkanCTS', 'glCTS'):
+            record['checks'][gate]['chain'] = 'own'
+        for gate in ('suspend', 'restoration'):
+            record['checks'][gate]['chain'] = 'aura'
+
+    def test_a_two_part_row_is_accepted_and_carried_into_device_records(self):
+        edge_train.verify_evidence(self.evidence, self.cohort, self.train)
+        catalog, receipt, _ = fx.template(self.train, 'fedora-minimal')
+        edge_train.bind(catalog, receipt, fx.image_run(self.train, 'fedora-minimal'),
+                        json.dumps(fx.image_proof(self.train, 'fedora-minimal')).encode(),
+                        self.evidence, self.cohort, self.train, 'fedora-minimal')
+        records = edge_train.device_evidence(catalog, self.cohort, self.train, 'fedora-minimal')
+        record = json.loads(records[edge_train.device_record_name('apple,j274')])
+        self.assertEqual(record['chains'], self.evidence['families']['t8103']['chains'])
+        self.assertEqual(record['checks']['vulkanCTS']['chain'], 'own')
+        edge_train.verify_devices(catalog, records)
+
+    def test_chain_references_must_resolve(self):
+        self.evidence['families']['t8103']['checks']['glCTS']['chain'] = 'other'
+        with self.assertRaisesRegex(ValueError, 'chain'):
+            edge_train.verify_evidence(self.evidence, self.cohort, self.train)
+
+    def test_freeze_must_run_on_the_shipped_aura_chain(self):
+        self.evidence['families']['t8103']['checks']['suspend']['chain'] = 'own'
+        with self.assertRaisesRegex(ValueError, 'aura'):
+            edge_train.verify_evidence(self.evidence, self.cohort, self.train)
+
+    def test_unknown_boot_chains_are_refused(self):
+        self.evidence['families']['t8103']['chains']['own']['bootChain'] = 'grub'
+        with self.assertRaisesRegex(ValueError, 'chain'):
+            edge_train.verify_evidence(self.evidence, self.cohort, self.train)
+
+
 class EvidenceTests(unittest.TestCase):
     def setUp(self):
         self.cohort, self.train = fx.cohort(), fx.train()
@@ -236,7 +301,7 @@ class BindTests(unittest.TestCase):
             parsed = json.loads(record)
             self.assertEqual(parsed['deviceIdentifier'], model)
             family = parsed['family']
-            self.assertEqual({k: parsed[k] for k in ('machine', 'pair', 'checks')},
+            self.assertEqual({k: parsed[k] for k in ('machine', 'pair', 'checks') + (('chains',) if 'chains' in parsed else ())},
                              report['familyEvidence'][family])
             self.assertEqual({k: parsed[k] for k in ('linux', 'mesa')}, self.train['pair'])
         edge_train.verify_devices(catalog, records)
