@@ -45,5 +45,10 @@ The Edge catalog is per profile and binds one payload, so a second Mac joins the
 - the image proof must list both models, and the install policy admits exactly `j700ap` and `j714sap`, each with its Stage 1 admission and its own board Stage 2;
 - the owner qualification input becomes `{"apple,j700": <Neo record>, "apple,j714s": <M5 record>}`. Each record has the Neo's `{pair, checks}` shape for the same kernel and Mesa pair; the M5's gates are `releaseGate`, `deepSleep`, `freshInstall` and `restoration`;
 - the detached report carries `m5Evidence` beside `neoEvidence`. Alpha 22 and later installers ignore the extra field and require only that every model shares the qualified payload.
+- `edgeQualification.devices` carries per-device proof for every Mac of the delivery: `{"apple,j700": {"evidenceDigest": "sha256:…"}}`, plus `apple,j714s` with `M5`. Installers from aurora-installer#176 on open on Edge only for a Mac with an entry; Alpha 22 ignores the field.
+  - Each digest covers the exact bytes of the delivery asset `edge-device-<vendor>-<board>.json`. That record is the Edge train's (aurora-distributions#64): `schemaVersion`, `deviceIdentifier`, `family` (`t8140` or `t6050`), `machine` (the Mac itself), that Mac's `pair` and `checks`, and the `linux` and `mesa` sources.
+  - The binder writes the records beside the catalog.
+  - `adopt-delivery.py --channel edge` downloads them, under the release's attested `SHA256SUMS`. It re-derives every digest from `neoEvidence` and `m5Evidence`, and refuses a missing, extra or altered record.
+  - Adoption serves the records in the profile's `edge-alpha` directory and in the root fallback. It removes the record of a Mac that the new delivery no longer carries.
 
 Turn it on in the same commit that pins the Edge release which carries the M5 Pro's packages in its image (aura with aurora-silicon/aura#214 and `aurora-m5-platform-config`). A Neo-only Edge release leaves it off.

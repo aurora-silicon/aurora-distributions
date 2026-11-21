@@ -50,7 +50,8 @@ Nothing ships for the M5 until its release-gate boot passes.
 - **A second Fedora KDE Edge delivery is not the route either.** Each profile's Edge endpoint is one signed catalog bound to one payload, and adoption replaces it whole, so a J714s-only delivery would remove the Neo from Edge.
 - **What one shared payload needs:** `channel_policy` and Alpha 22 already accept several models that share one qualified payload. The changes are the `neo_edge.M5` switch, an image proof listing both models, and the M5's own evidence next to the Neo's.
 - **The Neo evidence carries over.** It is bound to the kernel image digest, the Mesa DSO digest and the signer run, and none of those change. The new image does change the Neo's Stage 2 (aura 82ee5d6f), so the Neo needs one boot-and-sleep smoke on that Stage 2, not a new CTS.
-- **No installer release is needed.** Alpha 22 fetches Edge live and shows Edge for any Mac its catalog lists. On a J714s, Testing shows as unavailable and Edge is chosen from the channel menu. Making Edge the default for `apple,j714s` + `fedora-kde`, as for the Neo (`ReleaseChannelPreference.swift`), would be a one-line installer change and needs a new installer release. It is optional.
+- **No installer release is needed.** Alpha 22 fetches Edge live and shows Edge for any Mac its catalog lists. On a J714s, Testing shows as unavailable and Edge is chosen from the channel menu.
+- **The Edge default comes from the catalog.** Installers with aurora-installer#176 open on Edge only for a Mac that the profile's Edge catalog proves: it must carry an `edgeQualification.devices` entry for that Mac. The alpha.3 catalog carries entries for `apple,j700` and `apple,j714s`, so with that installer the J714s opens on Edge; the app has no model rule. Without an entry it would open on Nightly, and an explicit Edge pick would still work.
 
 ## Steps from "M5 gate passes" to "J714s users get it on Edge"
 
@@ -91,13 +92,25 @@ The Neo lane's alpha.2 (Neo only) goes first and is not held for the M5. The M5 
    - `stage-neo-edge-payload.yml` pins.
    - Tests.
    - Then push `edge/stage-neo-payload-<name>`. Stage late: the catalog sequence is the staging time and must exceed every edge-alpha sequence served.
-8. **Commit B** (`build-payload.yml` pins and the release-note text below) and the fedora `publish-neo-edge.yml` pins, as for alpha.2 (runbook S8/S9).
+8. **Commit B** (`build-payload.yml` pins and the release-note text below) and the fedora `publish-neo-edge.yml` pins, as for alpha.2 (runbook S8/S9). The Neo binder step already writes the `edge-device-*.json` records, so its binder `ref:` must be commit A or later; an older `neo_edge.py` has no `device_evidence`, and the step fails.
 9. **Publish:** dispatch `publish-neo-edge.yml` with `qualification = {"apple,j700": <alpha.2 Neo record>, "apple,j714s": <M5 record>}`.
 10. **Adopt:** `adopt-delivery.yml` with `channel=edge`, then Pages. Verify both edge-alpha URLs:
     - the models are `apple,j700` and `apple,j714s`;
     - `m5Evidence` is present;
+    - `edgeQualification.devices` has exactly `apple,j700` and `apple,j714s`, and `edge-device-apple-j700.json` and `edge-device-apple-j714s.json` are served beside each catalog, with the digests the catalog names;
     - the payload digest is the one both rows carry.
 11. **Verify from the channel** on the J714s and the Neo with Alpha 22 (Edge from the channel menu on the J714s).
+
+## With the Edge train (aurora-distributions#64)
+
+The per-device records are the train's format, byte for byte. A test (`EdgeTrainDeviceRecordTests`) compares them with `edge_train._device_records` as soon as `scripts/edge_train.py` is on the branch.
+
+- **#63 first.** alpha.3 ships through `adopt-delivery.py` as above. #64 merges cleanly on top. Its `verify-channel-catalogs.py` then re-checks the served J700 and J714s records, and its Testing preparation keeps them. The first train lists `riders: ["t6050"]` with the M5 row, or its adoption refuses to remove the J714s from Edge.
+- **#64 first, before any train is adopted.** This branch still merges cleanly, and the single-profile path works unchanged.
+- **After a train is adopted.** `adopt-delivery.py --channel edge` refuses. The J714s then rides the train as the `t6050` rider, on `fedora-kde` only:
+  - the train's `edge-train-evidence` carries `families.t6050 = {"machine": "apple,j714s", "pair": <train.reference>, "checks": <the M5 checks>}`, which is the M5 record of this plan plus `machine`;
+  - the train binder emits the J714s's `devices` entry and `edge-device-apple-j714s.json` itself.
+- **Keep the gates in step.** `neo_edge.M5_GATES` and the `t6050` rider's `gates` in `edge/cohort.json` must stay the same set. If commit A drops `freshInstall` (see "Needs Dj"), drop it from the cohort too.
 
 ## Release note (alpha.3)
 
@@ -169,7 +182,7 @@ The install must come from the alpha.3 payload, byte for byte (the STAGING.sha25
 
 - **When the J714s fresh install runs.** The Edge catalog is fetched live and bundled catalogs are Testing-only, so the documented local-payload test installer (aurora-installer `macOS/docs/private-local-payload-install.md`) cannot see an unpublished Edge row. There are two choices:
   - Before adoption: sign a test-only Testing catalog row for `apple,j714s` on an unmerged branch for that test installer. This needs the catalog signer.
-  - After adoption, from the live channel, as the Neo's alpha.1 was verified. Drop `freshInstall` from `neo_edge.M5_GATES` and keep a Neo-only alpha.4 ready as the rollback.
+  - After adoption, from the live channel, as the Neo's alpha.1 was verified. Drop `freshInstall` from `neo_edge.M5_GATES` (and from the `t6050` rider of aurora-distributions#64's `edge/cohort.json`) and keep a Neo-only alpha.4 ready as the rollback. Adopting that rollback removes the served `edge-device-apple-j714s.json`.
 - **MTE on every T6050 board.** The owner's T6050 policy turns MTE on for every T6050 board, including the K114/K116 and J775/J873 boards that are in Testing or the 65-model list. Only the J714s has run with MTE on.
 - **Decided 2026-11-20: alpha.3 ships on 7.3.0-43, without platform profiles.** The missing profiles are a known issue in the release note. The Edge release is not rebuilt or re-pinned.
   - **Why not 7.3.0-44.** A rebuild would have needed a new signer run and image digest. The Neo evidence bound to `sha256:701ed7f2…c5bf` and run 44694386531 would then not carry over, and the M5 release gate would rerun. On Fedora it would also have needed the userspace bridge first, or Power Saver regresses on T6050 and T6041.
