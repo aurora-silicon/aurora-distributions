@@ -1,0 +1,40 @@
+name: Adopt the complete qualified Edge train
+# One atomic adoption: the ten profile deliveries the merged edge/train.json
+# names, or nothing. Run it only after every profile's payload is published.
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+  actions: write
+  attestations: read
+concurrency:
+  group: distribution-profile-adoption
+  cancel-in-progress: false
+defaults:
+  run:
+    shell: bash
+jobs:
+  adopt:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+      - name: Verify and adopt every profile of the train
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python3 scripts/adopt-edge-set.py
+          bash scripts/verify-catalogs
+      - name: Record the authenticated resource tree
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add site
+          if ! git diff --cached --quiet; then
+            git commit -m "Adopt the qualified Edge train $(jq -r .release site/installer/edge-train.json)"
+            git push
+          fi
+      - name: Publish the verified profile tree
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run pages.yml --repo "$GITHUB_REPOSITORY"

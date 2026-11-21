@@ -1,6 +1,12 @@
 # Installer channel identity
 
-The installer offers Stable, Release candidate, Testing and Edge. Testing is the default development/prerelease channel. Edge is an explicit choice for the first qualified release built from Linux and Mesa `aurora-edge` sources. Source-branch promotion alone does not make a payload eligible. This implementation publishes no Edge payload and changes no Linux or Mesa source branch.
+The installer offers Stable, Release candidate, Testing (shown as Nightly) and Edge. Edge carries qualified releases built from Linux and Mesa `aurora-edge` sources; Testing carries development/prerelease deliveries. Which channel an install uses (installer#176):
+
+- **A new install defaults to Edge** when the selected profile's Edge catalog admits the Mac and `edgeQualification.devices` proves that model (a per-device evidence digest, see [Edge trains](edge-train.md)). Otherwise it defaults to Nightly (Testing).
+- **An existing install keeps its recorded channel**, or Testing when none is recorded.
+- **An explicit pick always wins**, in either direction.
+
+The release descriptors' `default_channel` stays Testing (`channel_policy.descriptor` refuses Edge there): the installer chooses Edge per Mac and profile from the signed Edge catalog, never from the descriptor. Source-branch promotion alone does not make a payload eligible.
 
 | ID | Catalog endpoint | Initial state |
 | --- | --- | --- |
@@ -25,6 +31,10 @@ The detached report contains those qualification fields **without** `evidenceDig
 Edge uses a new immutable `payload-<profile>-<image-run>-edge-alpha.<number>` release. Its payload, metadata and parts must belong to that new release. Existing Testing tags, existing Testing payload digests, metadata-only model refreshes, missing/pending qualification, mismatched packaged sources and wrong branches/trees are rejected. Ordinary `publish-channels os-promote --to edge` and `app-publish --to edge` are forbidden. A typed catalog for another channel cannot be copied into a different channel by the ordinary publisher.
 
 The explicit future `adopt-delivery.py --channel edge` path accepts only an already signed, qualified Edge delivery; it cannot construct qualification or promote a Testing set. No workflow is dispatched as part of this support change.
+
+## Edge trains: every profile at once
+
+Edge is offered to the Macs whose chip family the adopted train's rows qualify, one named machine per family (the target is every M1, M2 and M3 Mac and the MacBook Neo). It ships as one **Edge train**: one aurora-edge pair, all ten profiles, one atomic adoption (`adopt-edge-set.py`). `edge/cohort.json` names the Macs, their chip families and hardware gates; `edge/train.json` pins one release. Staging (`stage-edge-train.yml`), signing (`build-payload.yml` with `edge-train-revision`) and adoption refuse a partial set, another train's deliveries, a sequence at or below the profile's served Edge sequence, and a train that would remove a Mac Edge serves. Once a train is adopted, `site/installer/edge-train.json` records it, every served Edge catalog must match it, and the single-profile `adopt-delivery.py --channel edge` path is closed. Each distribution's Edge package feed deploys only what the adopted train names. See [Edge trains](edge-train.md) for the cohort, the per-distribution update models, the qualification row spec and the release plan.
 
 ## Development migration and rollback
 

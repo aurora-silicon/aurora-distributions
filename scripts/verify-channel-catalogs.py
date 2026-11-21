@@ -12,6 +12,7 @@ import tempfile
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT/'scripts'))
 from channel_policy import validate_catalog, legacy_development_catalog
+import edge_train
 
 
 def verify_channels(site, public_key):
@@ -60,8 +61,48 @@ def verify_channels(site, public_key):
                 if ('sha256:'+hashlib.sha256(evidence).hexdigest() != proof['evidenceDigest']
                         or json.loads(evidence) != {k: v for k, v in proof.items() if k != 'evidenceDigest'}):
                     raise ValueError('Edge detached qualification differs from its signed catalog')
+                if 'devices' in proof:
+                    records = {}
+                    for model in proof['devices']:
+                        record = path.parent/edge_train.device_record_name(model)
+                        if record.is_file() and not record.is_symlink() and record.stat().st_size <= 1048576:
+                            records[record.name] = record.read_bytes()
+                    edge_train.verify_devices(catalog, records)
             count += 1
+    verify_train_record(site)
     return count
+
+
+def _served(path):
+    envelope = json.loads(path.read_text())
+    return base64.b64decode(envelope['catalog'], validate=True)
+
+
+def verify_train_record(site):
+    """Once a train is adopted, every profile serves exactly that train's catalog."""
+    record_path = site/'installer/edge-train.json'
+    if not record_path.exists():
+        return
+    if record_path.is_symlink() or record_path.stat().st_size > 1048576:
+        raise ValueError('unsafe Edge train record')
+    record = json.loads(record_path.read_text())
+    profiles = json.loads((ROOT/'edge/cohort.json').read_text())['profiles']
+    if record.get('schema_version') != 1 or set(record.get('profiles', {})) != set(profiles):
+        raise ValueError('the Edge train record must name every Edge profile')
+    for profile in profiles:
+        envelope = site/'installer/Profiles'/profile/'channels/edge-alpha/catalog.signed.json'
+        if not envelope.is_file():
+            raise ValueError('Edge profile missing from the adopted train record: '+profile)
+        raw = _served(envelope)
+        catalog = json.loads(raw)
+        if (hashlib.sha256(raw).hexdigest() != record['profiles'][profile]['catalogSHA256']
+                or not catalog['models']
+                or catalog['edgeQualification'].get('edgeTrain', {}).get('trainDigest') != record['trainDigest']):
+            raise ValueError('served Edge catalog differs from the adopted train record: '+profile)
+    fallback = site/'installer/channels/edge-alpha/catalog.signed.json'
+    kde = site/'installer/Profiles/fedora-kde/channels/edge-alpha/catalog.signed.json'
+    if not fallback.is_file() or fallback.read_bytes() != kde.read_bytes():
+        raise ValueError('the Edge root fallback differs from the adopted train record')
 
 
 if __name__ == '__main__':

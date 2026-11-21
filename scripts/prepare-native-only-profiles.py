@@ -22,6 +22,7 @@ import urllib.request
 import sys
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from channel_policy import descriptor as channel_descriptor, validate_catalog, legacy_development_catalog
+import edge_train
 
 ROOT = Path(__file__).resolve().parents[1]
 CORE_PROFILES = tuple(f'{distribution}-{desktop}' for distribution in ('fedora', 'arch', 'nixos')
@@ -194,7 +195,10 @@ def prepare(source, output, signing_key, release_tag, source_revision, fetch=fet
                 if any(model['payloadDigest'] == proof['payloadDigest'] for model in models):
                     raise ValueError('an existing testing payload cannot be relabelled as Edge')
             records = {}
-            for name in FILES + ('vm-result.json',):
+            # A train delivery also carries its image proof and install policy.
+            devices = sorted(path.name for path in edge_path.parent.glob('edge-device-*.json'))
+            for name in FILES + ('vm-result.json', 'edge-image-proof.json', f'installer-data-{profile}.json',
+                                 *devices):
                 path = edge_path.parent/name
                 if path.exists() or path.is_symlink():
                     if path.is_symlink() or not path.is_file() or path.stat().st_size > 1048576:
@@ -204,6 +208,9 @@ def prepare(source, output, signing_key, release_tag, source_revision, fetch=fet
                     or records.get('catalog.json.sig', edge_signature) != edge_signature
                     or records.get('trust-root.ed25519.pub', public) != public):
                 raise ValueError('Edge envelope and delivery records differ')
+            # Every Mac the catalog proves keeps its exact detached record (installer#176).
+            if edge_catalog['models'] and 'devices' in edge_catalog['edgeQualification']:
+                edge_train.verify_devices(edge_catalog, records)
             edge_catalogs[profile] = (edge_raw, edge_signature, report, records)
         previous = hashlib.sha256(data['catalog.json']).hexdigest()
         catalog['schemaVersion'] = 5
@@ -297,9 +304,17 @@ def prepare(source, output, signing_key, release_tag, source_revision, fetch=fet
         fedora_edge_proof = staged/'Profiles/fedora-kde/channels/edge-alpha/edge-qualification.json'
         if fedora_edge_proof.is_file():
             (staged/'channels/edge-alpha/edge-qualification.json').write_bytes(fedora_edge_proof.read_bytes())
+        for record in sorted(fedora_edge_proof.parent.glob('edge-device-*.json')):
+            (staged/'channels/edge-alpha'/record.name).write_bytes(record.read_bytes())
         (staged/'channels/edge').mkdir(parents=True)
         (staged/'channels/edge/catalog.signed.json').write_bytes(
             (staged/'channels/testing/catalog.signed.json').read_bytes())
+        # The adopted Edge train record stays with the Edge catalogs it names.
+        train_record = source/'edge-train.json'
+        if train_record.exists() or train_record.is_symlink():
+            if train_record.is_symlink() or not train_record.is_file() or train_record.stat().st_size > 1048576:
+                raise ValueError('unsafe Edge train record')
+            (staged/'edge-train.json').write_bytes(train_record.read_bytes())
         (staged/'native-only-catalogs.json').write_text(json.dumps(receipt, indent=2) + '\n')
         staged.rename(output)
     print(f'Prepared {len(prepared)} signed native-only profiles; live feeds unchanged')

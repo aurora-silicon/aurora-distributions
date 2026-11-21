@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "profiles": ["fedora-kde", "fedora-gnome", "fedora-minimal", "arch-kde", "arch-gnome", "arch-minimal", "nixos-kde", "nixos-gnome", "nixos-minimal", "omarchy-hyprland"],
+  "gates": {"family": ["vulkanCTS", "glCTS", "suspend", "restoration"], "distribution": ["boot", "gpuSmoke", "suspend", "restoration"]},
+  "families": {
+    "t8103": {"chip": "M1 (MacBook Air, MacBook Pro 13\")", "socs": ["t8103"], "models": ["apple,j293", "apple,j313"]},
+    "t8103-desktop": {"chip": "M1 desktops (Mac mini, iMac 24\")", "socs": ["t8103"], "models": ["apple,j274", "apple,j456", "apple,j457"], "qualifiedBy": "t8103"},
+    "t600x": {"chip": "M1 Pro and M1 Max (MacBook Pro 14\" and 16\")", "socs": ["t6000", "t6001"], "models": ["apple,j314s", "apple,j314c", "apple,j316s", "apple,j316c"]},
+    "t600x-desktop": {"chip": "M1 Max desktop (Mac Studio)", "socs": ["t6001"], "models": ["apple,j375c"], "qualifiedBy": "t600x"},
+    "t6002": {"chip": "M1 Ultra (Mac Studio)", "socs": ["t6002"], "models": ["apple,j375d"], "qualifiedBy": "t600x"},
+    "t8112": {"chip": "M2 (MacBook Air 13\" and 15\", MacBook Pro 13\")", "socs": ["t8112"], "models": ["apple,j413", "apple,j415", "apple,j493"]},
+    "t8112-desktop": {"chip": "M2 desktop (Mac mini)", "socs": ["t8112"], "models": ["apple,j473"], "qualifiedBy": "t8112"},
+    "t602x": {"chip": "M2 Pro and M2 Max (MacBook Pro 14\" and 16\")", "socs": ["t6020", "t6021"], "models": ["apple,j414s", "apple,j414c", "apple,j416s", "apple,j416c"]},
+    "t602x-desktop": {"chip": "M2 Pro and M2 Max desktops (Mac mini, Mac Studio)", "socs": ["t6020", "t6021"], "models": ["apple,j474s", "apple,j475c"], "qualifiedBy": "t602x"},
+    "t6022": {"chip": "M2 Ultra (Mac Studio, Mac Pro)", "socs": ["t6022"], "models": ["apple,j475d", "apple,j180d"], "qualifiedBy": "t602x"},
+    "t8122": {"chip": "M3 (MacBook Air 13\" and 15\", MacBook Pro 14\")", "socs": ["t8122"], "models": ["apple,j504", "apple,j613", "apple,j615"]},
+    "t8122-desktop": {"chip": "M3 desktop (iMac 24\")", "socs": ["t8122"], "models": ["apple,j433", "apple,j434"], "qualifiedBy": "t8122"},
+    "t603x": {"chip": "M3 Pro and M3 Max", "socs": ["t6030", "t6031", "t6034"], "models": ["apple,j514s", "apple,j514c", "apple,j514m", "apple,j516s", "apple,j516c", "apple,j516m"]},
+    "t8140": {"chip": "A18 Pro (MacBook Neo)", "socs": ["t8140"], "models": ["apple,j700"], "gates": ["vulkanCTS", "glCTS", "deepSleep", "restoration"]}
+  },
+  "riders": {"t6050": {"chip": "M5 Pro (MacBook Pro 14-inch)", "socs": ["t6050"], "models": ["apple,j714s"], "profiles": ["fedora-kde"], "gates": ["releaseGate", "deepSleep", "restoration"]}},
+  "excluded": {"apple,j575d": "Mac Studio M3 Ultra (T6032): its Stage 1 and iBoot have never been tried (the Testing stage1_caution), and no Aurora machine can produce its rows. It stays on Testing with that caution until a T6032 row exists."}
+}

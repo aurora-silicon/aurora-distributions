@@ -189,6 +189,8 @@ def adopt(repository, tag, site, channel='testing'):
     if tag.endswith('-models65'):
         names += ('source-delivery.json', 'metadata-refresh.json')
     if edge:
+        if (site/'installer/edge-train.json').exists():
+            raise ValueError('Edge moves as one train once a train is adopted: use adopt-edge-set.py')
         if (repository, match[1]) != (neo_edge.REPO, neo_edge.PROFILE):
             raise ValueError('Only the F44 KDE Neo Edge producer is supported')
         names += ('edge-qualification.json', 'edge-image-proof.json', 'installer-data-fedora-kde.json')
