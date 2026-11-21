@@ -257,7 +257,7 @@ jobs:
           import json
           from pathlib import Path
           from channel_policy import verify_edge_delivery, verify_edge_source_refs
-          from neo_edge import bind, verify_metadata
+          from neo_edge import bind, device_evidence, verify_devices, verify_metadata
 
           assets = Path("assets")
           catalog = json.loads((assets / "catalog-template.json").read_text())
@@ -274,6 +274,11 @@ jobs:
           verify_edge_delivery(catalog, report, receipt, run, base)
           verify_metadata(catalog, (assets / "installer-data-fedora-kde.json").read_bytes())
           verify_edge_source_refs(catalog["edgeQualification"])
+          # Each Mac's detached evidence record, which edgeQualification.devices digests.
+          devices = device_evidence(catalog)
+          verify_devices(catalog, devices)
+          for name, record in devices.items():
+              (assets / name).write_bytes(record)
           (assets / "edge-qualification.json").write_bytes(report)
           for name, value in (("catalog.json", catalog), ("delivery.json", receipt)):
               (assets / name).write_text(json.dumps(value, indent=2) + "\n")

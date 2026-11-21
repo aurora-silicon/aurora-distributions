@@ -49,6 +49,8 @@ BOARD = "j700ap"
 M5_MODEL = "apple,j714s"
 M5_BOARD = "j714sap"
 M5_GATES = {"releaseGate", "deepSleep", "freshInstall", "restoration"}
+# Each Mac's chip family, as edge/cohort.json of the Edge train names it (aurora-distributions#64).
+FAMILIES = {MODEL: "t8140", M5_MODEL: "t6050"}
 
 
 def models():
@@ -118,6 +120,63 @@ def verify_evidence(record):
     verify_gates(neo, GATES, "Expected full Vulkan CTS, GL CTS, deep sleep and restoration evidence", "Neo")
 
 
+def evidence_rows(gates):
+    """Each model's {pair, checks} record, from verify_evidence's input shape."""
+    return {MODEL: gates[MODEL], M5_MODEL: gates[M5_MODEL]} if M5 else {MODEL: gates}
+
+
+def report_rows(report):
+    """The owner evidence a bound report carries, in verify_evidence's input shape."""
+    if M5:
+        return {MODEL: report.get("neoEvidence"), M5_MODEL: report.get("m5Evidence")}
+    return report.get("neoEvidence")
+
+
+def device_record_name(model):
+    return "edge-device-" + model.replace(",", "-") + ".json"
+
+
+def device_records(gates):
+    """Detached per-device evidence: {model: the exact bytes `edgeQualification.devices` digests}.
+
+    The record is the Edge train's (edge_train._device_records, aurora-distributions#64): the
+    Mac, its chip family, the machine its row ran on (the Mac itself), the row's pair and
+    checks, and the Linux and Mesa sources. The installer defaults a Mac to Edge only when
+    the catalog carries its digest.
+    """
+    records = {}
+    for model, row in evidence_rows(gates).items():
+        record = {"schemaVersion": 1, "deviceIdentifier": model, "family": FAMILIES[model],
+                  "machine": model, "pair": row["pair"], "checks": row["checks"],
+                  **{name: source.copy() for name, source in SOURCES.items()}}
+        records[model] = (json.dumps(record, sort_keys=True, indent=2) + "\n").encode()
+    return records
+
+
+def device_evidence(catalog):
+    """{asset name: bytes} of a bound catalog's detached device records."""
+    rows = report_rows(catalog["edgeQualification"])
+    return {device_record_name(model): raw for model, raw in device_records(rows).items()}
+
+
+def verify_devices(catalog, records):
+    """Check every `devices` digest against its detached record and its Mac (as edge_train.verify_devices)."""
+    proof = catalog["edgeQualification"]
+    listed = {row["deviceIdentifier"] for row in catalog["models"]}
+    devices = proof.get("devices")
+    if not isinstance(devices, dict):
+        raise ValueError("Edge qualification lacks per-device evidence")
+    for model, entry in devices.items():
+        if model not in listed:
+            raise ValueError("device evidence for a Mac the catalog has not listed: " + str(model))
+        raw = records.get(device_record_name(model))
+        if (not isinstance(entry, dict) or set(entry) != {"evidenceDigest"} or raw is None
+                or digest(raw) != entry["evidenceDigest"]):
+            raise ValueError("missing or altered device evidence: " + model)
+        if json.loads(raw).get("deviceIdentifier") != model:
+            raise ValueError("device evidence for %s names another device" % model)
+
+
 def bind(catalog, receipt, run, image_proof, gates):
     verify_image(run, image_proof, receipt.get("installation_profile"))
     verify_evidence(gates)
@@ -135,6 +194,7 @@ def bind(catalog, receipt, run, image_proof, gates):
         "imageRunID": run["id"], "payloadDigest": rows[0]["payloadDigest"],
         **{name: source.copy() for name, source in SOURCES.items()},
         "imageProofDigest": digest(image_proof), **evidence,
+        "devices": {model: {"evidenceDigest": digest(raw)} for model, raw in device_records(gates).items()},
     }
     raw = (json.dumps(report, sort_keys=True, indent=2) + "\n").encode()
     catalog.update(channel="edge", edgeQualification={**report, "evidenceDigest": digest(raw)}, models=rows)
@@ -162,8 +222,11 @@ def verify_binding(catalog, receipt, run, image_proof):
             or report.get("imageProofDigest") != digest(image_proof)
             or [row.get("deviceIdentifier") for row in catalog["models"]] != models()):
         raise ValueError("Edge qualification differs from the frozen Neo image or source pins")
-    verify_evidence({MODEL: report.get("neoEvidence"), M5_MODEL: report.get("m5Evidence")} if M5
-                    else report.get("neoEvidence"))
+    rows = report_rows(report)
+    verify_evidence(rows)
+    expected = {model: {"evidenceDigest": digest(raw)} for model, raw in device_records(rows).items()}
+    if report.get("devices") != expected:
+        raise ValueError("Edge per-device evidence differs from the owner evidence rows")
 
 
 def main():
@@ -180,6 +243,10 @@ def main():
     gates = json.loads(args.evidence.read_text())
     report = bind(catalog, receipt, run, proof, gates)
     verify_metadata(catalog, (assets / "installer-data-fedora-kde.json").read_bytes())
+    devices = device_evidence(catalog)
+    verify_devices(catalog, devices)
+    for name, record in devices.items():
+        (assets / name).write_bytes(record)
     (assets / "edge-qualification.json").write_bytes(report)
     for name, document in (("catalog.json", catalog), ("delivery.json", receipt)):
         (assets / name).write_text(json.dumps(document, indent=2) + "\n")

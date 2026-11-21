@@ -10,6 +10,7 @@ import sys
 import tempfile
 import unittest
 from unittest.mock import patch
+import urllib.error
 
 ROOT = Path(__file__).resolve().parents[1]
 SPEC = importlib.util.spec_from_file_location('adopt_variant', ROOT / 'scripts/adopt-delivery.py')
@@ -63,8 +64,13 @@ class VariantTests(unittest.TestCase):
         data = {name: json.dumps(value).encode() for name, value in self.json.items()}
         data.update({'catalog.json': raw, 'catalog.json.sig': (self.root / 'source.sig').read_bytes(),
                      'trust-root.ed25519.pub': self.public})
+        # Assets whose exact bytes a digest covers, such as the detached Edge device records.
+        data.update(getattr(self, 'raw', {}))
         def opener(url, timeout):
-            return io.BytesIO(data[url.rsplit('/', 1)[1]])
+            name = url.rsplit('/', 1)[1]
+            if name not in data:
+                raise urllib.error.HTTPError(url, 404, 'Not Found', None, None)
+            return io.BytesIO(data[name])
         with patch.object(adopter, 'ROOT', self.root), \
              patch.object(adopter, 'verify_provenance', return_value=provenance), \
              patch.object(adopter.urllib.request, 'urlopen', side_effect=opener):
@@ -229,10 +235,12 @@ class EdgeTests(unittest.TestCase):
                        artifacts={'os.zip': {'bytes': 123, 'sha256': 'b'*64}})
         gates = {'pair': edge.EVIDENCE_PAIR.copy(),
                  'checks': {gate: {'status': 'passed', 'sha256': 'sha256:'+'f'*64} for gate in edge.GATES}}
+        self.template, self.gates = copy.deepcopy(self.catalog), copy.deepcopy(gates)
         raw = edge.bind(self.catalog, receipt, run, json.dumps(proof).encode(), gates)
         self.json['edge-qualification.json'] = json.loads(raw)
         self.catalog['edgeQualification']['evidenceDigest'] = edge.digest(
             json.dumps(self.json['edge-qualification.json']).encode())
+        self.raw = edge.device_evidence(self.catalog)
 
     def invoke(self, provenance='verified', tag=None, repository='aurora-silicon/fedora-aurora'):
         with patch.object(adopter, 'verify_edge_source_refs', return_value=None):
@@ -300,6 +308,132 @@ class EdgeTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'full Vulkan CTS'):
             adopter.neo_edge.verify_evidence(evidence)
 
+    # Per-device evidence (aurora-installer#176). EdgeM5Tests runs each of these with the J714s on.
+
+    def rebind_report(self):
+        """Re-serve the detached report after a test edits the signed qualification."""
+        proof = self.catalog['edgeQualification']
+        self.json['edge-qualification.json'] = {k: v for k, v in proof.items() if k != 'evidenceDigest'}
+        proof['evidenceDigest'] = adopter.neo_edge.digest(json.dumps(self.json['edge-qualification.json']).encode())
+
+    def test_devices_digest_each_edge_macs_detached_record(self):
+        edge = adopter.neo_edge
+        devices = self.catalog['edgeQualification']['devices']
+        self.assertEqual(list(devices), edge.models())
+        self.assertEqual(sorted(self.raw), sorted('edge-device-' + model.replace(',', '-') + '.json'
+                                                  for model in edge.models()))
+        rows = {edge.MODEL: self.gates} if not edge.M5 else self.gates
+        for model in edge.models():
+            raw = self.raw[edge.device_record_name(model)]
+            self.assertEqual(devices[model], {'evidenceDigest': 'sha256:' + hashlib.sha256(raw).hexdigest()})
+            self.assertTrue(raw.endswith(b'}\n'))
+            self.assertEqual(json.loads(raw), {
+                'schemaVersion': 1, 'deviceIdentifier': model, 'family': edge.FAMILIES[model],
+                'machine': model, 'pair': rows[model]['pair'], 'checks': rows[model]['checks'],
+                'linux': edge.SOURCES['linux'], 'mesa': edge.SOURCES['mesa']})
+        # The report the Alpha 22 installer reads is unchanged.
+        self.assertEqual(self.catalog['edgeQualification']['neoEvidence'], rows[edge.MODEL])
+        self.assertEqual('m5Evidence' in self.catalog['edgeQualification'], edge.M5)
+
+    def test_adoption_serves_every_device_record_and_drops_stale_ones(self):
+        channel = self.root/'site/installer/Profiles/fedora-kde/channels/edge-alpha'
+        fallback = self.root/'site/installer/channels/edge-alpha'
+        for directory in (channel, fallback):
+            directory.mkdir(parents=True)
+            (directory/'edge-device-apple-j716c.json').write_bytes(b'{}\n')
+        self.invoke()
+        for directory in (channel, fallback):
+            self.assertEqual({path.name: path.read_bytes() for path in directory.glob('edge-device-*.json')},
+                             self.raw)
+
+    def test_the_adopted_site_passes_the_served_channel_check(self):
+        spec = importlib.util.spec_from_file_location('verify_channels_for_neo_edge',
+                                                      ROOT / 'scripts/verify-channel-catalogs.py')
+        channels = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(channels)
+        self.invoke()
+        self.assertEqual(channels.verify_channels(self.root/'site', self.root/'keys/catalog.ed25519.pub'), 2)
+
+    def test_a_tampered_device_record_is_refused(self):
+        for model in adopter.neo_edge.models():
+            with self.subTest(model=model):
+                name = adopter.neo_edge.device_record_name(model)
+                original = self.raw[name]
+                self.raw[name] = original.replace(b'"passed"', b'"failed"', 1)
+                with self.assertRaisesRegex(ValueError, 'missing or altered device evidence: ' + model):
+                    self.invoke()
+                self.raw[name] = original
+
+    def test_an_unpublished_device_record_is_refused(self):
+        del self.raw[adopter.neo_edge.device_record_name(adopter.neo_edge.models()[-1])]
+        with self.assertRaises(urllib.error.HTTPError) as caught:
+            self.invoke()
+        caught.exception.close()
+
+    def test_a_missing_device_is_refused(self):
+        for model in adopter.neo_edge.models():
+            with self.subTest(model=model):
+                devices = self.catalog['edgeQualification']['devices']
+                entry = devices.pop(model)
+                self.rebind_report()
+                with self.assertRaisesRegex(ValueError, 'per-device evidence differs'):
+                    self.invoke()
+                devices[model] = entry
+                self.rebind_report()
+
+    def test_an_extra_device_is_refused(self):
+        extra = 'apple,j716c' if adopter.neo_edge.M5 else 'apple,j714s'
+        record = b'{"deviceIdentifier": "' + extra.encode() + b'"}\n'
+        self.raw[adopter.neo_edge.device_record_name(extra)] = record
+        self.catalog['edgeQualification']['devices'][extra] = {'evidenceDigest': adopter.neo_edge.digest(record)}
+        self.rebind_report()
+        with self.assertRaisesRegex(ValueError, 'per-device evidence differs'):
+            self.invoke()
+
+    def test_a_record_for_an_unlisted_mac_is_refused(self):
+        catalog = copy.deepcopy(self.catalog)
+        catalog['models'] = catalog['models'][:-1]
+        with self.assertRaisesRegex(ValueError, 'has not listed: ' + adopter.neo_edge.models()[-1]):
+            adopter.neo_edge.verify_devices(catalog, self.raw)
+
+    def test_a_record_naming_another_device_is_refused(self):
+        edge = adopter.neo_edge
+        model = edge.models()[-1]
+        record = json.loads(self.raw[edge.device_record_name(model)])
+        record['deviceIdentifier'] = 'apple,j716c'
+        raw = (json.dumps(record, sort_keys=True, indent=2) + '\n').encode()
+        catalog = copy.deepcopy(self.catalog)
+        catalog['edgeQualification']['devices'][model] = {'evidenceDigest': edge.digest(raw)}
+        with self.assertRaisesRegex(ValueError, 'names another device'):
+            edge.verify_devices(catalog, dict(self.raw, **{edge.device_record_name(model): raw}))
+
+    def test_the_binder_writes_the_device_records(self):
+        edge = adopter.neo_edge
+        assets = self.root/'assets'
+        assets.mkdir()
+        files = {'catalog-template.json': self.template, 'delivery.json': self.json['delivery.json'],
+                 'image-build.json': self.json['image-build.json'],
+                 'edge-image-proof.json': self.json['edge-image-proof.json'],
+                 'installer-data-fedora-kde.json': self.json['installer-data-fedora-kde.json']}
+        for name, value in files.items():
+            (assets/name).write_bytes(json.dumps(value).encode())
+        (self.root/'evidence.json').write_text(json.dumps(self.gates))
+        with patch.object(sys, 'argv', ['neo_edge.py', '--assets', str(assets),
+                                         '--evidence', str(self.root/'evidence.json')]):
+            edge.main()
+        catalog = json.loads((assets/'catalog.json').read_text())
+        records = {path.name: path.read_bytes() for path in assets.glob('edge-device-*.json')}
+        self.assertEqual(records, edge.device_evidence(catalog))
+        self.assertEqual(list(catalog['edgeQualification']['devices']), edge.models())
+        edge.verify_devices(catalog, records)
+
+    def test_the_payload_workflow_publishes_the_device_records(self):
+        workflow = (ROOT / '.github/workflows/build-payload.yml').read_text()
+        binder = workflow.split('- name: Bind the staged Neo payload to the owner receipts', 1)[1].split('- id: draft', 1)[0]
+        self.assertIn('devices = device_evidence(catalog)', binder)
+        self.assertIn('verify_devices(catalog, devices)', binder)
+        self.assertIn('(assets / name).write_bytes(record)', binder)
+
 
 class EdgeM5Tests(EdgeTests):
     """neo_edge.M5: the M5 Pro (J714s) on the same Fedora KDE Edge payload as the Neo."""
@@ -345,10 +479,12 @@ class EdgeM5Tests(EdgeTests):
             edge.MODEL: {'pair': edge.EVIDENCE_PAIR.copy(), 'checks': {gate: dict(passed) for gate in edge.GATES}},
             edge.M5_MODEL: {'pair': edge.EVIDENCE_PAIR.copy(), 'checks': {gate: dict(passed) for gate in edge.M5_GATES}},
         }
+        self.template = copy.deepcopy(self.catalog)
         raw = edge.bind(self.catalog, receipt, run, json.dumps(proof).encode(), copy.deepcopy(self.gates))
         self.json['edge-qualification.json'] = json.loads(raw)
         self.catalog['edgeQualification']['evidenceDigest'] = edge.digest(
             json.dumps(self.json['edge-qualification.json']).encode())
+        self.raw = edge.device_evidence(self.catalog)
 
     def test_both_models_share_one_qualified_payload(self):
         self.invoke()
@@ -397,3 +533,34 @@ class EdgeM5Tests(EdgeTests):
         self.json['edge-image-proof.json']['models'] = ['apple,j700']
         with self.assertRaisesRegex(ValueError, 'completed Fedora Neo Edge image run|Neo-smoked file'):
             self.invoke()
+
+
+@unittest.skipUnless((ROOT / 'scripts/edge_train.py').is_file(), 'the Edge train (aurora-distributions#64) is not merged')
+class EdgeTrainDeviceRecordTests(unittest.TestCase):
+    """The single-profile Neo and M5 records are byte for byte the Edge train's records."""
+
+    def test_neo_and_m5_records_equal_the_train_records(self):
+        import edge_train  # scripts/ is on sys.path through adopt-delivery.py
+        edge = adopter.neo_edge
+        cohort = edge_train.load(edge_train.COHORT)
+        train = {'riders': ['t6050'], 'pair': copy.deepcopy(edge.SOURCES), 'reference': dict(edge.EVIDENCE_PAIR)}
+        self.assertEqual({edge.FAMILIES[edge.MODEL]: [edge.MODEL], edge.FAMILIES[edge.M5_MODEL]: [edge.M5_MODEL]},
+                         {name: spec['models'] for name, spec in edge_train.qualified_families(cohort, train).items()
+                          if name in edge.FAMILIES.values()})
+        families = edge_train.qualified_families(cohort, train, edge.PROFILE)
+        self.assertEqual(set(families['t8140']['gates']), edge.GATES)
+        self.assertEqual(set(families['t6050']['gates']), edge.M5_GATES)
+        passed = {'status': 'passed', 'sha256': 'sha256:' + 'f' * 64}
+        rows = {name: {'machine': spec['machines'][0], 'pair': dict(edge.EVIDENCE_PAIR),
+                       'checks': {gate: dict(passed) for gate in spec['gates']}}
+                for name, spec in families.items()}
+        expected = edge_train._device_records(rows, cohort, train, edge.PROFILE)
+        gates = {model: {key: rows[edge.FAMILIES[model]][key] for key in ('pair', 'checks')}
+                 for model in (edge.MODEL, edge.M5_MODEL)}
+        for m5 in (False, True):
+            with self.subTest(m5=m5), patch.object(edge, 'M5', m5):
+                records = edge.device_records(gates if m5 else gates[edge.MODEL])
+                self.assertEqual(list(records), edge.models())
+                for model, raw in records.items():
+                    self.assertEqual(raw, expected[model])
+                    self.assertEqual(edge.device_record_name(model), edge_train.device_record_name(model))
