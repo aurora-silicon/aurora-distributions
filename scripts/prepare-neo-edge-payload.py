@@ -56,9 +56,9 @@ def assemble(producer, filesystems, recovery, image_run, assets, evidence=None):
         "schema_version": 5, "installation_profile": profile,
         "payload_name": payload.name, "metadata_name": meta.name,
         "evidence_revision": f"image-build-{run['id']}",
-        "asahi_installer_tag": "v0.9.2",
-        "asahi_installer_revision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
-        "asahi_installer_data_revision": "42648e71423eba308d2e3e6228253eff679b068b",
+        "engine_installer_tag": "v0.9.2",
+        "engine_installer_revision": "dffbb38ef0c00c0431c609ecd8a00f42deb5b24c",
+        "engine_installer_data_revision": "42648e71423eba308d2e3e6228253eff679b068b",
         "downstream_revision": subprocess.check_output(
             ["git", "-C", str(producer), "rev-parse", "HEAD"], text=True).strip(),
         "device_identifiers": supported,
