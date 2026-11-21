@@ -125,7 +125,6 @@ The per-device records are the train's format, byte for byte. A test (`EdgeTrain
 > - Suspend is deep sleep only on the J714s. A safety wake is set an hour ahead when nothing else is armed. If the lid is still closed, the Mac goes back to sleep.
 >
 > Known issues on the M5 Pro:
-> - A sleep entered right after plugging or unplugging a USB-C device on a Dell monitor's port can hang in about 1 in 10 such sleeps; the Mac restarts by itself about 2 minutes later. A fix is in testing (aurora-silicon/linux#2524 among the candidates).
 > - A Dell monitor's SuperSpeed USB hub can be missing after about 15 % of boots. It comes back after the first sleep.
 > - A stray Wi-Fi or Bluetooth wake right after the Mac goes to sleep is treated as a dark wake: the screen stays off and the Mac goes back to sleep.
 > - Edge installs do not receive package updates from the Testing feed.
