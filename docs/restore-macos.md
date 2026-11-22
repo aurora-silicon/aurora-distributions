@@ -55,7 +55,7 @@ It still needs room: delete Aurora's partitions in Disk Utility or make space wi
 
 - Only versions Apple still offers and signs: the newest release of each macOS version that supports your Mac. `--older` tries an older release; Apple usually refuses it.
 - A macOS older than Aurora's Recovery may be refused by Apple's installer. `plan` marks this case; it hasn't been tried on a real Mac yet.
-- The default mode needs a plain (not encrypted) btrfs root right before Apple's System Recovery partition, and room left for what Aurora already uses plus 10 GiB. Otherwise use `--replace` or make room yourself.
+- The default mode needs a plain (not encrypted) btrfs root on one partition, right before Apple's System Recovery partition, and room left for what Aurora already uses plus 10 GiB. A root that got macOS's space as a second device (see [Using the whole disk](whole-disk.md)) doesn't qualify. Otherwise use `--replace` or make room yourself.
 
 ## The last resort: a second computer
 
