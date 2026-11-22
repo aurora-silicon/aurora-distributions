@@ -43,7 +43,7 @@ It lists exactly what would be deleted and what stays, and says what is missing 
    '/Volumes/Aurora/aura' remove-macos             # asks for the phrase and the password
    ```
 
-5. Restart into Aurora. On its first start Aurora adds the freed space to your system (you can also run `sudo aurora-whole-disk claim`). Check with `df -h /`.
+5. Restart into Aurora. On its first start, before anything is mounted, Aurora copies its startup partition, its EFI partition and /boot into the space macOS had, checks each copy and switches to it. Then, while Aurora runs, it moves the root file system onto one partition that takes the rest of the space and grows it (you can also run `sudo aurora-whole-disk claim`). The first start takes longer than usual and may restart once by itself; if it is interrupted, the next start carries on. Check with `df -h /`.
 
 ## Fresh install with the whole disk
 
@@ -58,7 +58,7 @@ You need to erase the Mac in DFU mode and restore it. This deletes Aurora too; y
 
 ## Limits
 
-- Aurora adds the space as a second device of its btrfs root file system. If your root is encrypted, or isn't btrfs, Aurora leaves the space free instead.
+- Normally the disk ends up with the usual layout and one larger root partition. When Aurora's partitions can't be moved (for example another partition sits between them, the space macOS had isn't directly before Aurora's startup partition, or your system names its root partition by PARTUUID, PARTLABEL or device name instead of the file-system UUID), Aurora adds the space as a second device of its btrfs root file system instead; it works the same way day to day. If your root is encrypted, or isn't btrfs, Aurora leaves the space free and changes nothing.
 - Only one macOS can be removed this way, and only when its container holds nothing else. Erase extra macOS installations with Aurora Installer first.
 - Installations made by older installers have no Aurora Recovery yet; `aurora-whole-disk plan` says so. Update with Aurora Installer first.
 
