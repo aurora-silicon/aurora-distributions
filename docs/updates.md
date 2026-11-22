@@ -26,7 +26,7 @@ mesa       ┘  (every 30 min)       └─ merge commit on main
                                           │
               promote.yml (stable-promotion environment: required reviewer) ──► stable channel
                                           │
-              optional: images.yml ─► payload-after-images.yml ─► signed payload release
+              optional: images.yml ─► publish-payload.yml (by hand) ─► signed payload release
                                           │
               adoption into the installer catalogs: adopt-set.yml here, by hand, as today
 ```
@@ -67,9 +67,9 @@ stable; it is a deliberate decision. For NixOS the image writes
 image commit, so the first rebuild reproduces the installed system and `sudo aurora-update` takes the
 newest signed update.
 
-The installer keeps choosing payloads through its signed catalogs. Payload releases can be produced
-automatically after an image build (`AUTO_PAYLOADS`), but adopting them into the catalogs stays
-`adopt-set.yml` here, run by a person.
+The installer keeps choosing payloads through its signed catalogs. Payload releases are published
+with `publish-payload.yml`, and adopting them into the catalogs stays `adopt-set.yml` here, run by a
+person.
 
 ## Switches
 
@@ -83,7 +83,6 @@ that is not `true` is off. The settings in force since 2026-10-23:
 | `AUTO_PUBLISH_TESTING` | Publish a signed snapshot after each successful main build (and every 6 h) | `true` |
 | `AUTO_DEPLOY_TESTING` | Make that snapshot the live testing feed | off: every installed system follows testing, so deploying stays a deliberate step |
 | `AUTO_IMAGES` | Rebuild the three images after a testing deploy | off |
-| `AUTO_PAYLOADS` | Publish a signed payload release after each image build | off |
 | `STABLE_MIN_SOAK_HOURS` | Minimum time on testing before promotion (default 0) | unset |
 | `TRACKER_APP_CLIENT_ID` | Use this GitHub App (key in the `source-tracking` environment) instead of the workflow token | unset |
 
@@ -238,7 +237,7 @@ adoption and DMG are dispatched by hand.
    the first channel-following NixOS release (Alpha 10) carry the one-time `flake.nix` edit for existing
    installs (nixos-aurora `docs/updates.md`).
 5. **Payloads.** `publish-payload.yml -f profile=<profile> -f image-run=<image run>` for each of the nine
-   images (or `AUTO_PAYLOADS=true`). The catalog is signed in `catalog-signing`; the release carries
+   images. The catalog is signed in `catalog-signing`; the release carries
    `SHA256SUMS` and an attestation.
 6. **Adoption, catalogs, installer** (here and in aurora-installer, unchanged): `adopt-set.yml` with the
    nine deliveries (it verifies signatures and attestations), `native-only-catalogs.yml` for the release
