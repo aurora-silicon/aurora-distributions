@@ -2,7 +2,7 @@
 
 Aurora normally lives beside macOS. If you don't want macOS at all, for example on a 256 GB Mac where macOS takes most of the disk, you can delete it and give its space to Aurora.
 
-**Read this whole page first. This can't be undone.** It deletes macOS, every macOS app and every file you kept in macOS. The only way back is to erase the Mac completely and restore it (see "Getting macOS back").
+**Read this whole page first. This can't be undone.** It deletes macOS, every macOS app and every file you kept in macOS. To get macOS back you reinstall it (see "Getting macOS back"); your files in macOS are gone for good.
 
 **Status: preview.** The tools are tested on disk images and read-only on a real Mac. The deletion has not been run on a real Mac yet, and the commands below come with Aurora Installer and the Aurora packages only once [aurora-installer#185](https://github.com/aurora-silicon/aurora-installer/pull/185) is merged and packaged. Wait for this line to change unless you're comfortable restoring your Mac yourself.
 
@@ -51,7 +51,7 @@ Install Aurora as usual and choose the largest size the installer offers. Finish
 
 ## Getting macOS back
 
-You need to erase the Mac in DFU mode and restore it. This deletes Aurora too; you reinstall it afterwards.
+`aurora-restore` installs macOS again from Aurora, with Apple's installer running in Aurora's Recovery and your recovery account approving it: see [Getting macOS back](restore-macos.md). If that isn't possible, erase the Mac in DFU mode and restore it. This deletes Aurora too; you reinstall it afterwards.
 
 - **With another Mac:** follow Apple's [How to revive or restore Mac firmware](https://support.apple.com/en-us/108900) (Finder or Apple Configurator, "Restore").
 - **With a Linux computer:** put the Mac in DFU mode and restore it with a current build of [idevicerestore](https://github.com/libimobiledevice/idevicerestore) (`idevicerestore -e -R <restore image>`). Ask in the Aurora community for the exact steps for your Mac.

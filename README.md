@@ -14,6 +14,8 @@ The installer is published as prereleases on [aurora-installer releases](https:/
 
 [Using the whole disk](docs/whole-disk.md) explains how to remove macOS so Aurora gets its space: what is kept, what changes, the owner it needs and how to get macOS back.
 
+[Getting macOS back](docs/restore-macos.md) explains `aurora-restore`: choose a macOS version and Apple's installer installs it from Recovery, next to Aurora or in its place.
+
 ## Installer channels
 
 Testing (Nightly) retains development/prerelease deliveries. Edge carries only signed, qualified releases from both Linux and Mesa `aurora-edge` branches; a new install defaults to Edge when the profile's Edge catalog admits and proves the Mac (`edgeQualification.devices`), and to Nightly otherwise, while an explicit pick always wins. Existing Testing packages are never promoted or relabelled as Edge. [Channel identity and migration](docs/channels.md) describes the separate endpoints, rollback floors and qualification contract. This support change does not publish a first Edge payload.
