@@ -26,7 +26,7 @@ mesa       ┘  (every 30 min)       └─ merge commit on main
                                           │
               promote.yml (stable-promotion environment: required reviewer) ──► stable channel
                                           │
-              optional: images.yml ─► payload-after-images.yml ─► signed payload release
+              optional: images.yml ─► publish-payload.yml (by hand) ─► signed payload release
                                           │
               adoption into the installer catalogs: adopt-set.yml here, by hand, as today
 ```
