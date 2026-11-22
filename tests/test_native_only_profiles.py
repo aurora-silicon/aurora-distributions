@@ -137,6 +137,64 @@ class NativeOnlyProfileTests(unittest.TestCase):
             self.prepare()
         self.assertFalse((self.root/'output').exists())
 
+    def add_debian_profiles(self, profiles=module.DEBIAN_PROFILES, *, channel='testing'):
+        public = (self.root/'keys/catalog.ed25519.pub').read_bytes()
+        for profile in profiles:
+            directory = self.source/'Profiles'/profile
+            directory.mkdir(parents=True)
+            (directory/'release.json').write_text(json.dumps(self.descriptor()))
+            (directory/'trust-root.ed25519.pub').write_bytes(public)
+            (directory/'delivery.json').write_text('{}')
+            (directory/'image-build.json').write_text(json.dumps({
+                'head_branch': 'main', 'path': '.github/workflows/images.yml', 'conclusion': 'success'}))
+            catalog = {'schemaVersion': 5, 'sequence': 1, 'issuedAt': '2000-01-01T00:00:00Z',
+                       'installer': {'minimumVersion': '0.1.0', 'latestVersion': '0.1.0',
+                                     'downloadURL': 'https://example.invalid/old'},
+                       'models': [{'deviceIdentifier': 'apple,j274', 'status': 'enabled',
+                                   'installationProfile': profile,
+                                   'metadataDigest': 'sha256:'+hashlib.sha256(self.metadata).hexdigest(),
+                                   'metadataArtifact': {'sourceURL': 'https://example.invalid/metadata'},
+                                   'payloadDigest': 'sha256:'+'b'*64,
+                                   'payloadArtifact': {'sourceURL': 'https://example.invalid/image'}}]}
+            if channel is not None:
+                catalog['channel'] = channel
+            (directory/'catalog.json').write_text(json.dumps(catalog))
+            self.sign(directory)
+
+    def test_expanded_cohort_prepares_all_three_debian_profiles_when_present(self):
+        self.add_debian_profiles()
+        self.prepare()
+        output = self.root/'output/Profiles'
+        self.assertEqual({profile.name for profile in output.iterdir()},
+                         set(module.PROFILES) | set(module.DEBIAN_PROFILES))
+        for profile in module.DEBIAN_PROFILES:
+            catalog = json.loads((output/profile/'catalog.json').read_text())
+            self.assertEqual(catalog['channel'], 'testing')
+            self.assertEqual(catalog['schemaVersion'], 5)
+
+    def test_partial_debian_profile_set_is_rejected(self):
+        self.add_debian_profiles(('debian-minimal',))
+        with self.assertRaisesRegex(ValueError, 'complete published model cohort'):
+            self.prepare()
+        self.assertFalse((self.root/'output').exists())
+
+    def test_unchannelled_debian_profile_is_rejected(self):
+        self.add_debian_profiles(channel=None)
+        with self.assertRaisesRegex(ValueError, 'unchannelled testing'):
+            self.prepare()
+        self.assertFalse((self.root/'output').exists())
+
+    def test_debian_profiles_are_rejected_in_the_58_model_cohort(self):
+        self.add_debian_profiles()
+        active = self.root/'keys/supported-models.json'
+        (self.root/'keys/supported-models-65.json').write_text(
+            json.dumps({'supported': ['apple,j274', 'apple,j275']}))
+        (self.root/'keys/supported-models-58.json').write_bytes(active.read_bytes())
+        (self.source/'Profiles/omarchy-hyprland').rename(self.root/'omarchy-hyprland')
+        with self.assertRaisesRegex(ValueError, '65-model release cohort'):
+            self.prepare()
+        self.assertFalse((self.root/'output').exists())
+
     def stage_edge(self, payload_digit='c', branch='aurora-edge', devices=None):
         self.to_schema_five()
         root = self.source/'Profiles/fedora-gnome'

@@ -14,7 +14,7 @@ SPEC = importlib.util.spec_from_file_location('select_plain_producer', ROOT / 's
 selector = importlib.util.module_from_spec(SPEC)
 SPEC.loader.exec_module(selector)
 
-OLD, NEW = '9779fa452351c5a66ae583918b8e8120c044051f', '68148f7b1b820059f65780e17bc27ccb576def49'
+OLD, NEW = '9779fa452351c5a66ae583918b8e8120c044051f', 'e3e085f23821efa71fb55bd1e3e6bbae83255c2e'
 # Each pinned producer's macOS/scripts/supported-models.json, byte for byte. The workflow
 # reads the producer's own file at selection time; these are the same bytes.
 MANIFESTS = {OLD: (ROOT / 'keys/supported-models-58.json').read_bytes(),

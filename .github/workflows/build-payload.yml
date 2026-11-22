@@ -61,7 +61,7 @@ jobs:
           # A plain delivery is adopted under keys/supported-models.json on main, so it is
           # built by the pinned producer whose model list is exactly that cohort.
           curl -fLsS --retry 3 https://raw.githubusercontent.com/aurora-silicon/aurora-distributions/main/scripts/select-plain-producer.py -o select-plain-producer.py
-          echo '8f8d57a096163578e81a978d450813ee0a20dde88abaf65ad83b8e78466f6b07  select-plain-producer.py' | sha256sum -c -
+          echo '965e0a46905afff48260f01277ce4f1b4e0f5a279714fac74e6bb904db4a0b3b  select-plain-producer.py' | sha256sum -c -
           python3 -I select-plain-producer.py --output "$GITHUB_OUTPUT" | tee -a "$GITHUB_STEP_SUMMARY"
       - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
         if: inputs.neo-edge-evidence == '' && inputs.edge-train-revision == ''
@@ -85,10 +85,10 @@ jobs:
           producer=os.environ['PRODUCER_REVISION']
           head=subprocess.check_output(['git','-C','producer','rev-parse','HEAD'],text=True).strip()
           assert revision or (re.fullmatch(r'[0-9a-f]{40}',producer) and head == producer)
-          assert re.fullmatch(r'(?:fedora|arch|nixos)-(?:kde|gnome|minimal)|omarchy-hyprland',profile) and re.fullmatch(r'[0-9]+',run)
+          assert re.fullmatch(r'(?:fedora|arch|nixos|debian)-(?:kde|gnome|minimal)|omarchy-hyprland',profile) and re.fullmatch(r'[0-9]+',run)
           assert revision in ('','models58','models65')
-          assert profile != 'omarchy-hyprland' or revision == ''
-          assert {'fedora':'fedora-aurora','arch':'alarm-aurora','nixos':'nixos-aurora','omarchy':'omarchy-aurora'}[profile.split('-')[0]] == os.environ['GITHUB_REPOSITORY'].split('/')[1]
+          assert (profile != 'omarchy-hyprland' and not profile.startswith('debian-')) or revision == ''
+          assert {'fedora':'fedora-aurora','arch':'alarm-aurora','nixos':'nixos-aurora','debian':'debian-aurora','omarchy':'omarchy-aurora'}[profile.split('-')[0]] == os.environ['GITHUB_REPOSITORY'].split('/')[1]
           suffix='-'+revision if revision else ''
           with open(os.environ['GITHUB_ENV'],'a') as output:
               output.write('DELIVERY_REVISION='+revision+'\nDELIVERY_SUFFIX='+suffix+'\nDELIVERY_RELEASE_ID=build-'+run+suffix+'\n')
@@ -100,9 +100,9 @@ jobs:
           PROFILE: ${{ inputs.profile }}
           IMAGE_RUN: ${{ inputs.image-run }}
         run: |
-          [[ $PROFILE =~ ^((fedora|arch|nixos)-(kde|gnome|minimal)|omarchy-hyprland)$ && $IMAGE_RUN =~ ^[0-9]+$ ]]
+          [[ $PROFILE =~ ^((fedora|arch|nixos|debian)-(kde|gnome|minimal)|omarchy-hyprland)$ && $IMAGE_RUN =~ ^[0-9]+$ ]]
           case "$GITHUB_REPOSITORY:$PROFILE" in
-            aurora-silicon/fedora-aurora:fedora-*|aurora-silicon/alarm-aurora:arch-*|aurora-silicon/nixos-aurora:nixos-*|aurora-silicon/omarchy-aurora:omarchy-hyprland) ;;
+            aurora-silicon/fedora-aurora:fedora-*|aurora-silicon/alarm-aurora:arch-*|aurora-silicon/nixos-aurora:nixos-*|aurora-silicon/debian-aurora:debian-*|aurora-silicon/omarchy-aurora:omarchy-hyprland) ;;
             *) exit 2;;
           esac
           gh api "repos/$GITHUB_REPOSITORY/actions/runs/$IMAGE_RUN" > image-build.json

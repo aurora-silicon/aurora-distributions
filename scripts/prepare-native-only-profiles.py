@@ -28,6 +28,7 @@ ROOT = Path(__file__).resolve().parents[1]
 CORE_PROFILES = tuple(f'{distribution}-{desktop}' for distribution in ('fedora', 'arch', 'nixos')
                       for desktop in ('kde', 'gnome', 'minimal'))
 PROFILES = CORE_PROFILES + ('omarchy-hyprland',)
+DEBIAN_PROFILES = tuple(f'debian-{desktop}' for desktop in ('kde', 'gnome', 'minimal'))
 FILES = ('release.json', 'trust-root.ed25519.pub', 'catalog.json', 'catalog.json.sig',
          'delivery.json', 'image-build.json')
 VM_CHECKS = ('boot', 'encryption', 'temporary_key_rejected', 'owner', 'sudo', 'second_boot',
@@ -145,6 +146,12 @@ def prepare(source, output, signing_key, release_tag, source_revision, fetch=fet
         profiles = PROFILES
     else:
         raise ValueError('published model manifest does not match a release cohort')
+    has_debian = any((source/'Profiles'/profile).exists() or (source/'Profiles'/profile).is_symlink()
+                     for profile in DEBIAN_PROFILES)
+    if has_debian:
+        if allowed != expanded_models:
+            raise ValueError('Debian profiles require the 65-model release cohort')
+        profiles = profiles + DEBIAN_PROFILES
     profile_paths = list((source/'Profiles').iterdir())
     if ({path.name for path in profile_paths} != set(profiles)
             or any(path.is_symlink() or not path.is_dir() for path in profile_paths)):
