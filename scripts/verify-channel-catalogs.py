@@ -86,8 +86,11 @@ def verify_train_record(site):
     if record_path.is_symlink() or record_path.stat().st_size > 1048576:
         raise ValueError('unsafe Edge train record')
     record = json.loads(record_path.read_text())
-    profiles = json.loads((ROOT/'edge/cohort.json').read_text())['profiles']
-    if record.get('schema_version') != 1 or set(record.get('profiles', {})) != set(profiles):
+    version = record.get('schema_version')
+    edge_train.verify_distributions(record.get('distributions'), version)
+    edge_train.verify_source_pair(record.get('pair'), version)
+    profiles = edge_train.train_profiles(edge_train.load(ROOT/'edge/cohort.json'), record)
+    if set(record.get('profiles', {})) != set(profiles):
         raise ValueError('the Edge train record must name every Edge profile')
     for profile in profiles:
         envelope = site/'installer/Profiles'/profile/'channels/edge-alpha/catalog.signed.json'
@@ -95,9 +98,11 @@ def verify_train_record(site):
             raise ValueError('Edge profile missing from the adopted train record: '+profile)
         raw = _served(envelope)
         catalog = json.loads(raw)
+        qualification = catalog.get('edgeQualification', {})
         if (hashlib.sha256(raw).hexdigest() != record['profiles'][profile]['catalogSHA256']
                 or not catalog['models']
-                or catalog['edgeQualification'].get('edgeTrain', {}).get('trainDigest') != record['trainDigest']):
+                or qualification.get('edgeTrain', {}).get('trainDigest') != record['trainDigest']
+                or {name: qualification.get(name) for name in record['pair']} != record['pair']):
             raise ValueError('served Edge catalog differs from the adopted train record: '+profile)
     fallback = site/'installer/channels/edge-alpha/catalog.signed.json'
     kde = site/'installer/Profiles/fedora-kde/channels/edge-alpha/catalog.signed.json'

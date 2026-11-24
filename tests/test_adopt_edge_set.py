@@ -99,7 +99,7 @@ class TrainAdoptionTests(unittest.TestCase):
     def items(self, train=None):
         train = train or self.train
         return [{'repository': edge_train.owner(profile), 'tag': edge_train.release_tag(train, profile)}
-                for profile in self.cohort['profiles']]
+                for profile in edge_train.train_profiles(self.cohort, train)]
 
     def snapshot(self):
         return {path.relative_to(self.site): path.read_bytes()
@@ -137,12 +137,29 @@ class TrainAdoptionTests(unittest.TestCase):
             self.assertEqual((fallback / name).read_bytes(), (kde / name).read_bytes())
         self.assertEqual(verifier.verify_channels(self.site, self.root / 'keys/catalog.ed25519.pub'), 11)
 
+    def test_v2_adopts_nine_profiles_and_keeps_legacy_catalog_readable(self):
+        old = self.snapshot()
+        self.train = fx.staged(fx.train_v2(45))
+        self.evidence = fx.evidence(self.train)
+        self.deliveries = {edge_train.release_tag(self.train, profile): self.delivery(profile)
+                           for profile in self.train['profiles']}
+        self.adopt()
+        record = json.loads((self.site / 'installer/edge-train.json').read_text())
+        self.assertEqual(record['schema_version'], 2)
+        self.assertEqual(record['distributions']['fedora']['release'], 45)
+        self.assertEqual(set(record['profiles']), set(self.train['profiles']))
+        self.assertEqual(len(record['profiles']), 9)
+        for path, data in old.items():
+            if 'omarchy-hyprland' in path.parts:
+                self.assertEqual((self.site / path).read_bytes(), data)
+        self.assertEqual(verifier.verify_channels(self.site, self.root / 'keys/catalog.ed25519.pub'), 11)
+
     def test_a_partial_set_is_refused_and_nothing_changes(self):
         before = self.snapshot()
         for drop in ('fedora-kde', 'omarchy-hyprland', 'nixos-minimal'):
             with self.subTest(drop=drop):
                 items = [item for item in self.items() if not item['tag'].startswith('payload-' + drop + '-')]
-                with self.assertRaisesRegex(ValueError, 'complete ten-profile train'):
+                with self.assertRaisesRegex(ValueError, 'all 10 train profiles'):
                     self.adopt(items)
                 self.assertEqual(self.snapshot(), before)
 
@@ -178,7 +195,7 @@ class TrainAdoptionTests(unittest.TestCase):
         self.deliveries[tag] = self.delivery('arch-kde', other)
         items = [item if not item['tag'].startswith('payload-arch-kde-') else {'repository': item['repository'], 'tag': tag}
                  for item in self.items()]
-        with self.assertRaisesRegex(ValueError, 'complete ten-profile train'):
+        with self.assertRaisesRegex(ValueError, 'all 10 train profiles'):
             self.adopt(items)
 
     def test_a_served_mac_cannot_silently_leave_edge(self):

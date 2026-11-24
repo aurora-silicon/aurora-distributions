@@ -260,7 +260,7 @@ class EdgeTests(unittest.TestCase):
 
     def test_an_unqualified_source_cannot_enter_edge(self):
         self.catalog['edgeQualification']['mesa']['branch'] = 'testing'
-        with self.assertRaisesRegex(ValueError, 'aurora-edge provenance'):
+        with self.assertRaisesRegex(ValueError, 'Edge source branches'):
             self.invoke()
 
 

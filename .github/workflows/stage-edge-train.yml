@@ -57,6 +57,8 @@ jobs:
           cohort, train = edge_train.load(edge_train.COHORT), edge_train.load(edge_train.TRAIN)
           edge_train.verify_train(train, cohort)
           profile = os.environ['PROFILE']
+          if profile not in train['profiles']:
+              raise ValueError('the active train does not carry this profile')
           producer = json.load(open('producer/macOS/scripts/supported-models.json'))['supported']
           if not set(edge_train.profile_models(cohort, train, profile)) <= set(producer):
               raise ValueError('the pinned producer does not admit every cohort model')

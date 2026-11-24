@@ -43,6 +43,19 @@ def train(riders=()):
     return record
 
 
+def train_v2(fedora):
+    record = train()
+    record['schema_version'] = 2
+    record['pair']['linux']['branch'] = 'main'
+    record['pair']['mesa']['branch'] = 'aurora-wip'
+    record['distributions']['fedora']['release'] = fedora
+    if fedora == 45:
+        record['distributions']['fedora']['snapshot'] = 'edge-f45-20261121.1'
+    del record['distributions']['omarchy']
+    del record['profiles']['omarchy-hyprland']
+    return record
+
+
 def staged(record):
     """The train after commit B: every profile carries its staging run and digest."""
     result = copy.deepcopy(record)
@@ -77,7 +90,7 @@ def evidence(record, cohort_record=None):
                           'checks': {gate: check(name + '-' + gate) for gate in spec['gates']}}
     distributions = {name: {'machine': 'apple,j314s', 'pair': dict(DISTRIBUTION_FILES[name]),
                             'checks': {gate: check(name + '-' + gate) for gate in cohort_record['gates']['distribution']}}
-                     for name in edge_train.DISTRIBUTIONS}
+                     for name in record['distributions']}
     return {'families': families, 'distributions': distributions}
 
 
@@ -93,7 +106,7 @@ def image_proof(record, profile):
     distribution = edge_train.distribution(profile)
     proof = {'schema': 2, 'distribution': distribution, 'profile': profile, 'channel': 'edge',
              'snapshot': record['distributions'][distribution]['snapshot'],
-             'feed': edge_train.DISTRIBUTIONS[distribution]['feed'],
+             'feed': edge_train.image_feed(record, distribution),
              'packaged_sources': copy.deepcopy(record['pair']),
              'files': dict(DISTRIBUTION_FILES[distribution])}
     if distribution == 'omarchy':

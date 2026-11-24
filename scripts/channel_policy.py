@@ -9,10 +9,27 @@ CHANNELS = ('stable', 'rc', 'testing', 'edge')
 LEGACY_CHANNELS = {'stable', 'rc', 'edge'}
 REVISION = re.compile(r'^[0-9a-f]{40}$')
 DIGEST = re.compile(r'^sha256:[0-9a-f]{64}$')
+EDGE_SOURCE_BRANCHES = {
+    1: {'linux': 'aurora-edge', 'mesa': 'aurora-edge'},
+    2: {'linux': 'main', 'mesa': 'aurora-wip'},
+}
 
 
 def _matches(pattern, value):
     return isinstance(value, str) and pattern.fullmatch(value) is not None
+
+
+def edge_source_branches(proof):
+    branches = {}
+    for name in ('linux', 'mesa'):
+        source = proof.get(name)
+        if (not isinstance(source, dict) or source.get('repository') != 'aurora-silicon/' + name
+                or not _matches(REVISION, source.get('revision')) or not _matches(REVISION, source.get('tree'))):
+            raise ValueError('invalid packaged Edge source reference')
+        branches[name] = source.get('branch')
+    if branches not in EDGE_SOURCE_BRANCHES.values():
+        raise ValueError('invalid Linux and Mesa Edge source branches')
+    return branches
 
 
 def legacy_development_catalog(catalog):
@@ -96,13 +113,7 @@ def validate_catalog(catalog, channel, legacy_development=False):
             or not _matches(DIGEST, proof.get('payloadDigest'))
             or not _matches(DIGEST, proof.get('evidenceDigest'))):
         raise ValueError('Edge requires complete passed release qualification')
-    for name in ('linux', 'mesa'):
-        source = proof.get(name, {})
-        if (not isinstance(source, dict) or source.get('repository') != 'aurora-silicon/' + name
-                or source.get('branch') != 'aurora-edge'
-                or not _matches(REVISION, source.get('revision'))
-                or not _matches(REVISION, source.get('tree'))):
-            raise ValueError('Edge requires Linux and Mesa aurora-edge provenance')
+    edge_source_branches(proof)
     if any(model.get('payloadDigest') != proof['payloadDigest'] for model in models):
         raise ValueError('Edge qualification does not bind the catalog payload')
 
@@ -142,16 +153,16 @@ def github_json(path):
 
 def verify_edge_source_refs(proof, fetch=github_json):
     """Resolve packaged revision/tree pairs and current Edge ancestry independently."""
-    for name in ('linux', 'mesa'):
+    for name, branch in edge_source_branches(proof).items():
         source = proof[name]
         repository = 'aurora-silicon/' + name
         revision, tree = source['revision'], source['tree']
-        if (source['repository'] != repository or source['branch'] != 'aurora-edge'
-                or not REVISION.fullmatch(revision) or not REVISION.fullmatch(tree)):
-            raise ValueError('invalid packaged Edge source reference')
         commit = fetch(f'repos/{repository}/git/commits/{revision}')
-        comparison = fetch(f'repos/{repository}/compare/{revision}...aurora-edge')
+        head = fetch(f'repos/{repository}/git/ref/heads/{branch}').get('object', {}).get('sha')
+        if not _matches(REVISION, head):
+            raise ValueError('could not resolve Edge source branch ' + branch)
+        comparison = fetch(f'repos/{repository}/compare/{revision}...{head}')
         if (commit.get('sha') != revision or commit.get('tree', {}).get('sha') != tree
                 or comparison.get('status') not in ('ahead', 'identical')
                 or comparison.get('base_commit', {}).get('sha') != revision):
-            raise ValueError('packaged source is not the recorded aurora-edge tree/ancestry')
+            raise ValueError('packaged source is not the recorded Edge tree or branch ancestor')

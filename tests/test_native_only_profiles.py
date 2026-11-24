@@ -229,7 +229,7 @@ class NativeOnlyProfileTests(unittest.TestCase):
 
     def test_wrong_source_branches_cannot_be_carried_into_edge(self):
         self.stage_edge(branch='main')
-        with self.assertRaisesRegex(ValueError, 'aurora-edge provenance'):
+        with self.assertRaisesRegex(ValueError, 'Edge source branches'):
             self.prepare()
         self.assertFalse((self.root/'output').exists())
 

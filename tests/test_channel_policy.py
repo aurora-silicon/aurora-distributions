@@ -118,20 +118,41 @@ class ChannelPolicyTests(unittest.TestCase):
         def fetch(path):
             if '/git/commits/' in path:
                 return {'sha': 'a'*40, 'tree': {'sha': 'c'*40}}
+            if '/git/ref/heads/' in path:
+                return {'object': {'sha': 'b'*40}}
             return {'status': 'ahead', 'base_commit': {'sha': 'a'*40}}
         policy.verify_edge_source_refs(self.catalog['edgeQualification'], fetch=fetch)
         def wrong_tree(path):
             if '/git/commits/' in path:
                 return {'sha': 'a'*40, 'tree': {'sha': 'd'*40}}
             return fetch(path)
-        with self.assertRaisesRegex(ValueError, 'tree/ancestry'):
+        with self.assertRaisesRegex(ValueError, 'tree or branch ancestor'):
             policy.verify_edge_source_refs(self.catalog['edgeQualification'], fetch=wrong_tree)
         def wrong_branch(path):
             if '/compare/' in path:
                 return {'status': 'diverged', 'base_commit': {'sha': 'a'*40}}
             return fetch(path)
-        with self.assertRaisesRegex(ValueError, 'tree/ancestry'):
+        with self.assertRaisesRegex(ValueError, 'tree or branch ancestor'):
             policy.verify_edge_source_refs(self.catalog['edgeQualification'], fetch=wrong_branch)
+
+    def test_default_sources_resolve_qualified_branch_heads(self):
+        catalog = copy.deepcopy(self.catalog)
+        proof = catalog['edgeQualification']
+        proof['linux']['branch'] = 'main'
+        proof['mesa']['branch'] = 'aurora-wip'
+        paths = []
+        def fetch(path):
+            paths.append(path)
+            if '/git/ref/heads/' in path:
+                return {'object': {'sha': 'b'*40}}
+            if '/git/commits/' in path:
+                return {'sha': 'a'*40, 'tree': {'sha': 'c'*40}}
+            return {'status': 'ahead', 'base_commit': {'sha': 'a'*40}}
+        policy.validate_catalog(catalog, 'edge')
+        policy.verify_edge_source_refs(proof, fetch=fetch)
+        self.assertIn('repos/aurora-silicon/linux/git/ref/heads/main', paths)
+        self.assertIn('repos/aurora-silicon/mesa/git/ref/heads/aurora-wip', paths)
+        self.assertTrue(all(path.endswith('b'*40) for path in paths if '/compare/' in path))
 
     def test_testing_release_artifact_urls_cannot_be_reused(self):
         candidate = copy.deepcopy(self.catalog)
