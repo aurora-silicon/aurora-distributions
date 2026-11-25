@@ -105,8 +105,8 @@ def verify_train_record(site):
                 or {name: qualification.get(name) for name in record['pair']} != record['pair']):
             raise ValueError('served Edge catalog differs from the adopted train record: '+profile)
     fallback = site/'installer/channels/edge-alpha/catalog.signed.json'
-    kde = site/'installer/Profiles/fedora-kde/channels/edge-alpha/catalog.signed.json'
-    if not fallback.is_file() or fallback.read_bytes() != kde.read_bytes():
+    default_edge = site/'installer/Profiles/fedora-gnome/channels/edge-alpha/catalog.signed.json'
+    if not fallback.is_file() or fallback.read_bytes() != default_edge.read_bytes():
         raise ValueError('the Edge root fallback differs from the adopted train record')
 
 

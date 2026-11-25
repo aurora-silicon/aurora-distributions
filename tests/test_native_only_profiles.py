@@ -126,8 +126,10 @@ class NativeOnlyProfileTests(unittest.TestCase):
         self.prepare()
         output = self.root/'output/Profiles'
         self.assertEqual({profile.name for profile in output.iterdir()}, set(module.CORE_PROFILES))
-        self.assertEqual((output/'fedora-kde/channels/edge-alpha/edge-qualification.json').read_bytes(), report)
+        self.assertEqual((output/'fedora-gnome/channels/edge-alpha/edge-qualification.json').read_bytes(), report)
         self.assertEqual((output.parent/'channels/edge-alpha/edge-qualification.json').read_bytes(), report)
+        self.assertEqual((output.parent/'catalog.json').read_bytes(),
+                         (output/'fedora-gnome/catalog.json').read_bytes())
 
     def test_expanded_cohort_requires_its_omarchy_profile(self):
         (self.source/'Profiles/omarchy-hyprland').rename(self.root/'omarchy-hyprland')
@@ -137,7 +139,7 @@ class NativeOnlyProfileTests(unittest.TestCase):
 
     def stage_edge(self, payload_digit='c', branch='aurora-edge', devices=None):
         self.to_schema_five()
-        root = self.source/'Profiles/fedora-kde'
+        root = self.source/'Profiles/fedora-gnome'
         edge = root/'channels/edge-alpha'
         edge.mkdir(parents=True)
         value = json.loads((root/'catalog.json').read_text())
@@ -166,7 +168,7 @@ class NativeOnlyProfileTests(unittest.TestCase):
     def test_a_future_qualified_edge_is_preserved_without_touching_testing_payloads(self):
         report = self.stage_edge()
         self.prepare()
-        root = self.root/'output/Profiles/fedora-kde'
+        root = self.root/'output/Profiles/fedora-gnome'
         testing = json.loads((root/'catalog.json').read_text())
         edge = json.loads((root/'channels/edge-alpha/catalog.json').read_text())
         self.assertEqual(testing['channel'], 'testing')
@@ -174,7 +176,7 @@ class NativeOnlyProfileTests(unittest.TestCase):
         self.assertEqual(edge['channel'], 'edge')
         self.assertEqual(edge['models'][0]['payloadDigest'], 'sha256:'+'c'*64)
         self.assertEqual(edge['sequence'], 2)
-        source = self.source/'Profiles/fedora-kde/channels/edge-alpha'
+        source = self.source/'Profiles/fedora-gnome/channels/edge-alpha'
         self.assertEqual((root/'channels/edge-alpha/catalog.json').read_bytes(), (source/'catalog.json').read_bytes())
         self.assertEqual((root/'channels/edge-alpha/catalog.json.sig').read_bytes(), (source/'catalog.json.sig').read_bytes())
         self.assertEqual((root/'channels/edge-alpha/edge-qualification.json').read_bytes(), report)
@@ -184,20 +186,20 @@ class NativeOnlyProfileTests(unittest.TestCase):
 
     def test_an_adopted_edge_train_keeps_its_record_and_image_proofs(self):
         self.stage_edge()
-        source = self.source/'Profiles/fedora-kde/channels/edge-alpha'
+        source = self.source/'Profiles/fedora-gnome/channels/edge-alpha'
         proof = b'{"schema": 2}\n'
         metadata = b'{"os_list": []}\n'
         (source/'edge-image-proof.json').write_bytes(proof)
-        (source/'installer-data-fedora-kde.json').write_bytes(metadata)
+        (source/'installer-data-fedora-gnome.json').write_bytes(metadata)
         record = b'{"schema_version": 1, "release": "alpha.4"}\n'
         (self.source/'edge-train.json').write_bytes(record)
         device = b'{"deviceIdentifier": "apple,j274"}\n'
         (source/'edge-device-apple-j274.json').write_bytes(device)
         self.prepare()
         output = self.root/'output'
-        edge = output/'Profiles/fedora-kde/channels/edge-alpha'
+        edge = output/'Profiles/fedora-gnome/channels/edge-alpha'
         self.assertEqual((edge/'edge-image-proof.json').read_bytes(), proof)
-        self.assertEqual((edge/'installer-data-fedora-kde.json').read_bytes(), metadata)
+        self.assertEqual((edge/'installer-data-fedora-gnome.json').read_bytes(), metadata)
         self.assertEqual((output/'edge-train.json').read_bytes(), record)
         self.assertEqual((edge/'edge-device-apple-j274.json').read_bytes(), device)
         self.assertEqual((output/'channels/edge-alpha/edge-device-apple-j274.json').read_bytes(), device)
@@ -207,13 +209,13 @@ class NativeOnlyProfileTests(unittest.TestCase):
         self.stage_edge(devices={'apple,j274': record})
         self.prepare()
         output = self.root/'output'
-        for directory in (output/'Profiles/fedora-kde/channels/edge-alpha', output/'channels/edge-alpha'):
+        for directory in (output/'Profiles/fedora-gnome/channels/edge-alpha', output/'channels/edge-alpha'):
             self.assertEqual((directory/'edge-device-apple-j274.json').read_bytes(), record)
 
     def test_a_missing_or_altered_served_device_record_is_refused(self):
         record = b'{"deviceIdentifier": "apple,j274", "family": "t8103"}\n'
         self.stage_edge(devices={'apple,j274': record})
-        served = self.source/'Profiles/fedora-kde/channels/edge-alpha/edge-device-apple-j274.json'
+        served = self.source/'Profiles/fedora-gnome/channels/edge-alpha/edge-device-apple-j274.json'
         for change in (lambda: served.write_bytes(record + b' '), served.unlink):
             with self.subTest(change=change):
                 change()

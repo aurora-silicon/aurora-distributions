@@ -231,6 +231,22 @@ class WithdrawnTests(unittest.TestCase):
         self.assertNotIn('apple,j413', edge_train.proven_models(cohort, train, 'nixos-kde'))
         self.assertIn('apple,j415', edge_train.profile_models(cohort, train, 'nixos-kde'))
 
+    def test_a_stand_in_family_leaves_with_the_family_it_rides_on(self):
+        cohort = fx.cohort()
+        laptops = list(cohort['families']['t8112']['models'])
+        train = fx.train()
+        train['withdrawn'] = laptops
+        with self.assertRaisesRegex(ValueError, 't8112-desktop'):
+            edge_train.verify_train(train, cohort)
+        train['withdrawn'] = laptops + cohort['families']['t8112-desktop']['models']
+        edge_train.verify_train(train, cohort)
+        train['withdrawn'], train['held'] = laptops, ['t8112-desktop']
+        edge_train.verify_train(train, cohort)
+        # Withdrawing only some laptops keeps the row and its stand-in.
+        train = fx.train()
+        train['withdrawn'] = laptops[:1]
+        edge_train.verify_train(train, cohort)
+
     def test_withdrawn_names_distinct_cohort_macs(self):
         for withdrawn in (['apple,j999'], ['apple,j413', 'apple,j413'], 'apple,j413'):
             with self.subTest(withdrawn=withdrawn):

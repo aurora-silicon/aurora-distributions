@@ -5,7 +5,7 @@ Each delivery must be the signed, attested, qualified release the
 merged train names (`payload-<profile>-<image run>-edge-alpha.<n>`). All are
 downloaded and verified first; the new served state is assembled and verified
 beside the site, and only then replaces the profiles' Edge directories, the
-Fedora KDE root fallback and the train record `site/installer/edge-train.json`.
+Fedora GNOME root fallback and the train record `site/installer/edge-train.json`.
 """
 import argparse
 import base64
@@ -132,8 +132,8 @@ def adopt_train(items, cohort, train, site, evidence, manifests):
         profile = item['profile']
         data, catalog = verify_delivery(item, cohort, train, site, evidence)
         # Each profile keeps its own rollback floor; the train's catalogs may share
-        # one sequence. The root fallback mirrors Fedora KDE.
-        served_profile = [served[profile]] + ([fallback] if profile == 'fedora-kde' else [])
+        # one sequence. The root fallback mirrors Fedora GNOME.
+        served_profile = [served[profile]] + ([fallback] if profile == 'fedora-gnome' else [])
         floor = max([previous['sequence'] for previous in served_profile if previous] or [0])
         if catalog['sequence'] <= floor:
             raise ValueError('Edge catalog sequence %d must exceed the served %s Edge sequence (%d)'
@@ -169,15 +169,15 @@ def adopt_train(items, cohort, train, site, evidence, manifests):
                 'repository': item['repository'], 'tag': item['tag'], 'sequence': catalog['sequence'],
                 'catalogSHA256': hashlib.sha256(data['catalog.json']).hexdigest(),
                 'payloadDigest': catalog['models'][0]['payloadDigest']}
-        kde = staged / 'installer/Profiles/fedora-kde/channels/edge-alpha'
+        default_edge = staged / 'installer/Profiles/fedora-gnome/channels/edge-alpha'
         root_channel = staged / 'installer/channels/edge-alpha'
         if root_channel.exists():
             shutil.rmtree(root_channel)
         root_channel.mkdir(parents=True)
         mirrored = ['catalog.signed.json', 'edge-qualification.json'] + sorted(
-            path.name for path in kde.glob('edge-device-*.json'))
+            path.name for path in default_edge.glob('edge-device-*.json'))
         for name in mirrored:
-            (root_channel / name).write_bytes((kde / name).read_bytes())
+            (root_channel / name).write_bytes((default_edge / name).read_bytes())
         (staged / RECORD).write_text(json.dumps(record, indent=2) + '\n')
         _channels.verify_channels(staged, ROOT / 'keys/catalog.ed25519.pub')
         # Everything verified: replace the served Edge state.

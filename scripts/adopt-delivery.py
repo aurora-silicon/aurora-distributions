@@ -284,7 +284,7 @@ def adopt(repository, tag, site, channel='testing'):
         legacy = profile_root/'channels/edge'
         legacy.mkdir(parents=True, exist_ok=True)
         (legacy/'catalog.signed.json').write_bytes((channel_directory/'catalog.signed.json').read_bytes())
-    if profile == 'fedora-kde':
+    if profile == ('fedora-kde' if edge else 'fedora-gnome'):
         root = site/'installer'
         if not edge:
             for name in ('catalog.json', 'catalog.json.sig', 'trust-root.ed25519.pub'):
@@ -298,7 +298,7 @@ def adopt(repository, tag, site, channel='testing'):
         print('Adopted qualified Edge profile:', profile)
         return
     legacy = site/'installer/channels/edge'
-    if profile == 'fedora-kde':
+    if profile == 'fedora-gnome':
         legacy.mkdir(parents=True, exist_ok=True)
         (legacy/'catalog.signed.json').write_bytes((channel_directory/'catalog.signed.json').read_bytes())
     status_path = site/'installer/profile-builds.json'; status = json.loads(status_path.read_text())

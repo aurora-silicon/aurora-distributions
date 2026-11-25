@@ -242,6 +242,14 @@ def verify_train(train, cohort, staged=False):
     if (not isinstance(withdrawn, list) or len(set(withdrawn)) != len(withdrawn)
             or any(model not in listed for model in withdrawn)):
         raise ValueError('withdrawn must name distinct cohort Macs')
+    for name, spec in cohort['families'].items():
+        stand_in = spec.get('qualifiedBy')
+        if (stand_in is None or name in held
+                or all(model in withdrawn for model in spec['models'])):
+            continue
+        if all(model in withdrawn for model in cohort['families'][stand_in]['models']):
+            raise ValueError('%s rides on %s, whose Macs are all withdrawn: withdraw or hold it too'
+                             % (name, stand_in))
     if not _match(RELEASE, train['release']):
         raise ValueError('the Edge release must be alpha.<n>')
     riders = train['riders']
