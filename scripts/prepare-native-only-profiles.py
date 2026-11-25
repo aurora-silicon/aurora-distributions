@@ -296,12 +296,12 @@ def prepare(source, output, signing_key, release_tag, source_revision, fetch=fet
             content = (source/name).read_bytes()
             (staged/name).write_bytes(channel_descriptor(content) if name == 'release.json' else content)
         for name in ('catalog.json', 'catalog.json.sig'):
-            (staged/name).write_bytes((staged/'Profiles/fedora-kde'/name).read_bytes())
+            (staged/name).write_bytes((staged/'Profiles/fedora-gnome'/name).read_bytes())
         for lane in ('testing', 'edge-alpha'):
             (staged/'channels'/lane).mkdir(parents=True)
             (staged/'channels'/lane/'catalog.signed.json').write_bytes(
-                (staged/'Profiles/fedora-kde/channels'/lane/'catalog.signed.json').read_bytes())
-        fedora_edge_proof = staged/'Profiles/fedora-kde/channels/edge-alpha/edge-qualification.json'
+                (staged/'Profiles/fedora-gnome/channels'/lane/'catalog.signed.json').read_bytes())
+        fedora_edge_proof = staged/'Profiles/fedora-gnome/channels/edge-alpha/edge-qualification.json'
         if fedora_edge_proof.is_file():
             (staged/'channels/edge-alpha/edge-qualification.json').write_bytes(fedora_edge_proof.read_bytes())
         for record in sorted(fedora_edge_proof.parent.glob('edge-device-*.json')):

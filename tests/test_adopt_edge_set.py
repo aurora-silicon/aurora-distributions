@@ -132,9 +132,9 @@ class TrainAdoptionTests(unittest.TestCase):
                              hashlib.sha256((channel / 'catalog.json').read_bytes()).hexdigest())
             self.assertTrue((channel / 'edge-qualification.json').is_file())
         fallback = self.site / 'installer/channels/edge-alpha'
-        kde = self.site / 'installer/Profiles/fedora-kde/channels/edge-alpha'
+        default_edge = self.site / 'installer/Profiles/fedora-gnome/channels/edge-alpha'
         for name in ('catalog.signed.json', 'edge-qualification.json'):
-            self.assertEqual((fallback / name).read_bytes(), (kde / name).read_bytes())
+            self.assertEqual((fallback / name).read_bytes(), (default_edge / name).read_bytes())
         self.assertEqual(verifier.verify_channels(self.site, self.root / 'keys/catalog.ed25519.pub'), 11)
 
     def test_a_partial_set_is_refused_and_nothing_changes(self):
