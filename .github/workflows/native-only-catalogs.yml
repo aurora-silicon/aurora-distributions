@@ -9,6 +9,14 @@ on:
         description: Earlier main commit whose schema-4 site/installer to convert (default this commit)
         required: false
         default: ''
+      stable-source-revision:
+        description: Main commit containing the qualified published Stable baseline catalogs
+        required: false
+        default: ''
+      stable-release-tag:
+        description: Published native installer alpha tag for the selected Stable baseline
+        required: false
+        default: ''
 permissions:
   contents: read
 jobs:
@@ -26,6 +34,9 @@ jobs:
       - name: Select the schema-4 source
         env:
           REQUESTED_REVISION: ${{ inputs.source-revision }}
+          STABLE_REVISION: ${{ inputs.stable-source-revision }}
+          STABLE_TAG: ${{ inputs.stable-release-tag }}
+          GH_TOKEN: ${{ github.token }}
         run: |
           set -euo pipefail
           # A later release over the same deliveries converts the adoption commit
@@ -39,6 +50,19 @@ jobs:
           git archive "$revision" site/installer | tar -x -C "$RUNNER_TEMP/source"
           echo "SOURCE_DIRECTORY=$RUNNER_TEMP/source/site/installer" >> "$GITHUB_ENV"
           echo "SOURCE_REVISION=$revision" >> "$GITHUB_ENV"
+          if [[ -n "$STABLE_REVISION" || -n "$STABLE_TAG" ]]; then
+            [[ $STABLE_REVISION =~ ^[0-9a-f]{40}$ && $STABLE_TAG =~ ^v[0-9]+\.[0-9]+\.[0-9]+-alpha\.[1-9][0-9]*$ ]] \
+              || { echo 'Stable requires a full main revision and immutable installer tag' >&2; exit 1; }
+            git merge-base --is-ancestor "$STABLE_REVISION" "$GITHUB_SHA" \
+              || { echo 'Stable source revision must be on main' >&2; exit 1; }
+            gh release view "$STABLE_TAG" -R aurora-silicon/aurora-installer --json assets,isDraft,tagName \
+              | jq -e --arg tag "$STABLE_TAG" '.tagName == $tag and (.isDraft | not) and any(.assets[]; .name | endswith(".dmg"))' >/dev/null
+            mkdir -p "$RUNNER_TEMP/stable-source"
+            git archive "$STABLE_REVISION" site/installer | tar -x -C "$RUNNER_TEMP/stable-source"
+            echo "STABLE_DIRECTORY=$RUNNER_TEMP/stable-source/site/installer" >> "$GITHUB_ENV"
+            echo "STABLE_SOURCE_REVISION=$STABLE_REVISION" >> "$GITHUB_ENV"
+            echo "STABLE_RELEASE_TAG=$STABLE_TAG" >> "$GITHUB_ENV"
+          fi
       - name: Check engine-free catalog migration
         run: python3 -m unittest discover -s tests -p test_native_only_profiles.py
       - name: Verify and sign the complete published catalog cohort
@@ -58,10 +82,14 @@ jobs:
               raise ValueError('catalog signing key is unavailable')
           Path(sys.argv[1]).write_text(value)
           PY
+          stable=()
+          if [[ -n "${STABLE_DIRECTORY:-}" ]]; then
+            stable=(--stable-source "$STABLE_DIRECTORY" --stable-source-revision "$STABLE_SOURCE_REVISION" --stable-release-tag "$STABLE_RELEASE_TAG")
+          fi
           python3 scripts/prepare-native-only-profiles.py \
             --source "$SOURCE_DIRECTORY" --output "$RUNNER_TEMP/native-only-profiles" \
             --signing-key "$key" --release-tag "$RELEASE_TAG" \
-            --source-revision "$SOURCE_REVISION"
+            --source-revision "$SOURCE_REVISION" "${stable[@]}"
           tar -czf "$RUNNER_TEMP/native-only-profiles.tar.gz" \
             -C "$RUNNER_TEMP/native-only-profiles" .
       - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
