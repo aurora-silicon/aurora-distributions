@@ -64,6 +64,32 @@ def fetch_metadata(url):
     return data
 
 
+def read_stable_catalog(directory, profile, public):
+    path = directory/'channels/stable/catalog.signed.json'
+    if path.is_symlink():
+        raise ValueError(f'unsafe Stable catalog envelope: {profile}')
+    if not path.exists():
+        return None
+    if not path.is_file() or path.stat().st_size > 1500000:
+        raise ValueError(f'unsafe Stable catalog envelope: {profile}')
+    envelope_bytes = path.read_bytes()
+    envelope = json.loads(envelope_bytes)
+    if (not isinstance(envelope, dict) or set(envelope) != {'schema_version', 'catalog', 'signature'}
+            or type(envelope['schema_version']) is not int or envelope['schema_version'] != 1):
+        raise ValueError(f'invalid Stable catalog envelope: {profile}')
+    raw = base64.b64decode(envelope['catalog'], validate=True)
+    signature = base64.b64decode(envelope['signature'], validate=True)
+    verify(raw, signature, public)
+    catalog = json.loads(raw)
+    validate_catalog(catalog, 'stable')
+    if not catalog['models']:
+        return None
+    if catalog.get('channel') != 'stable' or any(
+            model.get('installationProfile') != profile for model in catalog['models']):
+        raise ValueError(f'Stable catalog does not identify its channel and profile: {profile}')
+    return raw, signature, envelope_bytes
+
+
 def prepare(source, output, signing_key, release_tag, source_revision, fetch=fetch_metadata):
     match = re.fullmatch(r'v([0-9]+\.[0-9]+\.[0-9]+)-alpha\.([1-9][0-9]*)', release_tag)
     if match is None or output.exists() or not re.fullmatch(r'[0-9a-f]{40}', source_revision):
@@ -96,10 +122,12 @@ def prepare(source, output, signing_key, release_tag, source_revision, fetch=fet
     url = ('https://github.com/aurora-silicon/aurora-installer/releases/tag/' + release_tag)
     prepared = {}
     edge_catalogs = {}
+    stable_catalogs = {}
     receipt = {'schema': 1, 'source_revision': source_revision, 'source_catalog_schemas': [],
                'output_catalog_schema': 5, 'release_tag': release_tag, 'profiles': {}}
     for profile in profiles:
         directory = source/'Profiles'/profile
+        stable_catalogs[profile] = read_stable_catalog(directory, profile, public)
         data = {}
         names = FILES + (('vm-result.json',) if profile == 'omarchy-hyprland' else ())
         for name in names:
@@ -233,10 +261,16 @@ def prepare(source, output, signing_key, release_tag, source_revision, fetch=fet
         return (json.dumps({'schemaVersion': 5, 'sequence': now, 'issuedAt': issued,
                             'channel': channel, 'models': []}, indent=2) + '\n').encode()
 
-    def write_empty_channels(directory):
+    def write_stable_and_rc(directory, stable):
         for channel in EMPTY_CHANNELS:
             target = directory/'channels'/channel
             target.mkdir(parents=True)
+            if channel == 'stable' and stable is not None:
+                raw, signature, envelope_bytes = stable
+                (target/'catalog.json').write_bytes(raw)
+                (target/'catalog.json.sig').write_bytes(signature)
+                (target/'catalog.signed.json').write_bytes(envelope_bytes)
+                continue
             empty = empty_catalog(channel)
             (target/'catalog.json').write_bytes(empty)
             subprocess.run(['openssl', 'pkeyutl', '-sign', '-inkey', str(signing_key), '-rawin',
@@ -270,7 +304,7 @@ def prepare(source, output, signing_key, release_tag, source_revision, fetch=fet
             legacy = directory/'channels/edge'
             legacy.mkdir(parents=True)
             (legacy/'catalog.signed.json').write_bytes((channel/'catalog.signed.json').read_bytes())
-            write_empty_channels(directory)
+            write_stable_and_rc(directory, stable_catalogs[profile])
             edge = directory/'channels/edge-alpha'
             edge.mkdir(parents=True)
             if profile in edge_catalogs:
@@ -291,7 +325,7 @@ def prepare(source, output, signing_key, release_tag, source_revision, fetch=fet
             (edge/'catalog.signed.json').write_text(json.dumps({
                 'schema_version': 1, 'catalog': base64.b64encode(raw).decode(),
                 'signature': base64.b64encode(signature).decode()}, separators=(',', ':')) + '\n')
-        write_empty_channels(staged)
+        write_stable_and_rc(staged, stable_catalogs['fedora-gnome'])
         for name in ('release.json', 'trust-root.ed25519.pub'):
             content = (source/name).read_bytes()
             (staged/name).write_bytes(channel_descriptor(content) if name == 'release.json' else content)
