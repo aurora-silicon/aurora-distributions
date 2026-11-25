@@ -36,6 +36,7 @@ PUBLIC_DER_PREFIX = bytes.fromhex('302a300506032b6570032100')
 EXECUTION_FIELDS = ('engineVersion', 'engineDigest', 'engineArtifact',
                     'repairManifestDigest', 'repairManifestArtifact')
 EMPTY_CHANNELS = ('stable', 'rc')
+INSTALLER_RELEASE = 'https://github.com/aurora-silicon/aurora-installer/releases/tag/'
 # Boards that boot only their own board Stage 2, never the combined one: the
 # Neo and the M4 and later Macs (the installer's assemble-distribution-payload.py).
 BOARD_STAGE2_REQUIRED = ('j700ap', 'j604ap', 'j623ap', 'j624ap', 'j713ap', 'j715ap', 'j773gap',
@@ -90,10 +91,42 @@ def read_stable_catalog(directory, profile, public):
     return raw, signature, envelope_bytes
 
 
-def prepare(source, output, signing_key, release_tag, source_revision, fetch=fetch_metadata):
+def prepare_stable_baseline(source, profile, release_tag, public, sequence, issued):
+    directory = source/'Profiles'/profile
+    if directory.is_symlink():
+        raise ValueError(f'unsafe Stable baseline catalog: {profile}')
+    if not directory.exists():
+        return None
+    payload = directory/'catalog.json'
+    detached = directory/'catalog.json.sig'
+    if (payload.is_symlink() or detached.is_symlink()
+            or not payload.is_file() or not detached.is_file()
+            or payload.stat().st_size > 1048576 or detached.stat().st_size != 64):
+        raise ValueError(f'unsafe Stable baseline catalog: {profile}')
+    raw = payload.read_bytes()
+    verify(raw, detached.read_bytes(), public)
+    catalog = json.loads(raw)
+    validate_catalog(catalog, 'testing')
+    models = catalog['models']
+    if (catalog.get('schemaVersion') != 5 or catalog.get('channel') != 'testing' or not models
+            or catalog.get('installer', {}).get('downloadURL') != INSTALLER_RELEASE + release_tag
+            or any(model.get('installationProfile') != profile or set(model) & set(EXECUTION_FIELDS)
+                   for model in models)):
+        raise ValueError(f'Stable baseline differs from the selected native installer release: {profile}')
+    catalog.update(channel='stable', sequence=sequence, issuedAt=issued)
+    return (json.dumps(catalog, indent=2) + '\n').encode(), hashlib.sha256(raw).hexdigest()
+
+
+def prepare(source, output, signing_key, release_tag, source_revision, fetch=fetch_metadata, *,
+            stable_source=None, stable_release_tag=None, stable_source_revision=None):
     match = re.fullmatch(r'v([0-9]+\.[0-9]+\.[0-9]+)-alpha\.([1-9][0-9]*)', release_tag)
     if match is None or output.exists() or not re.fullmatch(r'[0-9a-f]{40}', source_revision):
         raise ValueError('expected a source revision, new output and immutable installer tag')
+    if any(value is not None for value in (stable_source, stable_release_tag, stable_source_revision)):
+        if (stable_source is None
+                or not re.fullmatch(r'v[0-9]+\.[0-9]+\.[0-9]+-alpha\.[1-9][0-9]*', stable_release_tag or '')
+                or not re.fullmatch(r'[0-9a-f]{40}', stable_source_revision or '')):
+            raise ValueError('Stable baseline requires a source directory, revision and immutable installer tag')
     version = match.group(1)
     public = (ROOT/'keys/catalog.ed25519.pub').read_bytes()
     if len(public) != 32:
@@ -119,15 +152,29 @@ def prepare(source, output, signing_key, release_tag, source_revision, fetch=fet
     stage1_unqualified = set(manifest.get('stage1_unqualified', {})) & allowed
     now = int(time.time())
     issued = datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')
-    url = ('https://github.com/aurora-silicon/aurora-installer/releases/tag/' + release_tag)
+    url = INSTALLER_RELEASE + release_tag
     prepared = {}
     edge_catalogs = {}
     stable_catalogs = {}
     receipt = {'schema': 1, 'source_revision': source_revision, 'source_catalog_schemas': [],
                'output_catalog_schema': 5, 'release_tag': release_tag, 'profiles': {}}
+    stable_inputs = {}
+    if stable_source is not None:
+        receipt['stable_baseline'] = {'release_tag': stable_release_tag,
+                                      'source_revision': stable_source_revision, 'profiles': stable_inputs}
     for profile in profiles:
         directory = source/'Profiles'/profile
         stable_catalogs[profile] = read_stable_catalog(directory, profile, public)
+        if stable_source is not None:
+            baseline = prepare_stable_baseline(stable_source, profile, stable_release_tag, public, now, issued)
+            if baseline is not None:
+                existing = stable_catalogs[profile]
+                if existing is not None and json.loads(existing[0])['sequence'] >= now:
+                    raise ValueError(f'Stable baseline sequence does not advance: {profile}')
+                raw, source_digest = baseline
+                stable_catalogs[profile] = (raw, None, None)
+                stable_inputs[profile] = {'source_catalog_sha256': source_digest,
+                                          'catalog_sha256': hashlib.sha256(raw).hexdigest()}
         data = {}
         names = FILES + (('vm-result.json',) if profile == 'omarchy-hyprland' else ())
         for name in names:
@@ -257,6 +304,9 @@ def prepare(source, output, signing_key, release_tag, source_revision, fetch=fet
             'previous_catalog_sha256': previous,
             'catalog_sha256': hashlib.sha256(data['catalog.json']).hexdigest(),
             'metadata_sha256': hashlib.sha256(raw).hexdigest(), 'models': len(models)}
+    if stable_source is not None and 'fedora-gnome' not in stable_inputs:
+        raise ValueError('the Stable baseline has no Fedora GNOME root fallback')
+
     def empty_catalog(channel):
         return (json.dumps({'schemaVersion': 5, 'sequence': now, 'issuedAt': issued,
                             'channel': channel, 'models': []}, indent=2) + '\n').encode()
@@ -267,20 +317,22 @@ def prepare(source, output, signing_key, release_tag, source_revision, fetch=fet
             target.mkdir(parents=True)
             if channel == 'stable' and stable is not None:
                 raw, signature, envelope_bytes = stable
-                (target/'catalog.json').write_bytes(raw)
-                (target/'catalog.json.sig').write_bytes(signature)
-                (target/'catalog.signed.json').write_bytes(envelope_bytes)
-                continue
-            empty = empty_catalog(channel)
-            (target/'catalog.json').write_bytes(empty)
-            subprocess.run(['openssl', 'pkeyutl', '-sign', '-inkey', str(signing_key), '-rawin',
-                            '-in', str(target/'catalog.json'),
-                            '-out', str(target/'catalog.json.sig')], check=True)
-            signature = (target/'catalog.json.sig').read_bytes()
-            verify(empty, signature, public)
-            (target/'catalog.signed.json').write_text(json.dumps({
-                'schema_version': 1, 'catalog': base64.b64encode(empty).decode(),
-                'signature': base64.b64encode(signature).decode()}, separators=(',', ':')) + '\n')
+            else:
+                raw, signature, envelope_bytes = empty_catalog(channel), None, None
+            (target/'catalog.json').write_bytes(raw)
+            signature_path = target/'catalog.json.sig'
+            if signature is None:
+                subprocess.run(['openssl', 'pkeyutl', '-sign', '-inkey', str(signing_key), '-rawin',
+                                '-in', str(target/'catalog.json'), '-out', str(signature_path)], check=True)
+                signature = signature_path.read_bytes()
+                verify(raw, signature, public)
+            else:
+                signature_path.write_bytes(signature)
+            if envelope_bytes is None:
+                envelope_bytes = (json.dumps({
+                    'schema_version': 1, 'catalog': base64.b64encode(raw).decode(),
+                    'signature': base64.b64encode(signature).decode()}, separators=(',', ':')) + '\n').encode()
+            (target/'catalog.signed.json').write_bytes(envelope_bytes)
 
     with tempfile.TemporaryDirectory(prefix='aurora-native-profiles-', dir=output.parent) as temporary:
         staged = Path(temporary)/'signed'
@@ -361,6 +413,11 @@ if __name__ == '__main__':
     parser.add_argument('--signing-key', type=Path, required=True)
     parser.add_argument('--release-tag', required=True)
     parser.add_argument('--source-revision', required=True)
+    parser.add_argument('--stable-source', type=Path)
+    parser.add_argument('--stable-release-tag')
+    parser.add_argument('--stable-source-revision')
     arguments = parser.parse_args()
     prepare(arguments.source, arguments.output, arguments.signing_key,
-            arguments.release_tag, arguments.source_revision)
+            arguments.release_tag, arguments.source_revision, stable_source=arguments.stable_source,
+            stable_release_tag=arguments.stable_release_tag,
+            stable_source_revision=arguments.stable_source_revision)
