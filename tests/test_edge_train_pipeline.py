@@ -1,10 +1,12 @@
 import copy
 import importlib.util
 import json
+import os
 from pathlib import Path
 import re
 import sys
 import tempfile
+from textwrap import dedent
 import unittest
 from unittest.mock import patch
 
@@ -181,9 +183,24 @@ class StageRunTests(unittest.TestCase):
 class WorkflowContractTests(unittest.TestCase):
     def test_staging_covers_every_profile_and_publishes_nothing(self):
         text = (ROOT / '.github/workflows/stage-edge-train.yml').read_text()
-        cohort = fx.cohort()
-        for profile in cohort['profiles']:
-            self.assertIn('- ' + profile + '\n', text)
+        plan, stage = text.split('\n  stage:\n', 1)
+        source = plan.split("          python3 - <<'PY'\n", 1)[1].split('\n          PY', 1)[0]
+        self.assertIn("needs: plan", stage)
+        self.assertIn("profile: ${{ fromJSON(needs.plan.outputs.profiles) }}", stage)
+        for fedora in (44, 45):
+            train = fx.train_v2(fedora)
+            with self.subTest(fedora=fedora), tempfile.TemporaryDirectory() as directory:
+                train_path = Path(directory) / 'train.json'
+                output = Path(directory) / 'output'
+                train_path.write_text(json.dumps(train))
+                with (patch.object(edge_train, 'TRAIN', train_path),
+                      patch.object(sys, 'path', list(sys.path)),
+                      patch.dict(os.environ, {'GITHUB_OUTPUT': str(output)})):
+                    exec(dedent(source), {})
+                name, _, profiles = output.read_text().partition('=')
+                self.assertEqual(name, 'profiles')
+                self.assertEqual(len(train['profiles']), 9)
+                self.assertEqual(json.loads(profiles), sorted(train['profiles']))
         self.assertNotIn('secrets.', text)
         self.assertNotIn('release create', text)
         self.assertNotIn('contents: write', text)
