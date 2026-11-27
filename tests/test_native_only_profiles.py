@@ -71,10 +71,10 @@ class NativeOnlyProfileTests(unittest.TestCase):
                         '-in', str(directory/'catalog.json'),
                         '-out', str(directory/'catalog.json.sig')], check=True)
 
-    def prepare(self):
+    def prepare(self, **options):
         with patch.object(module, 'ROOT', self.root), patch.object(module.time, 'time', return_value=100):
             module.prepare(self.source, self.root/'output', self.key, 'v0.1.0-alpha.6', 'a'*40,
-                           fetch=lambda _: self.metadata)
+                           fetch=lambda _: self.metadata, **options)
 
     def test_reuses_authenticated_images_and_signs_engine_free_catalogs(self):
         original = {(profile, name): (self.source/'Profiles'/profile/name).read_bytes()
@@ -307,6 +307,103 @@ class NativeOnlyProfileTests(unittest.TestCase):
                 self.assertEqual(base64.b64decode(envelope['catalog']), catalog)
                 self.assertEqual(base64.b64decode(envelope['signature']),
                                  (target/'catalog.json.sig').read_bytes())
+
+    def signed_channel_fixture(self, profile, channel='stable'):
+        source = self.source/'Profiles'/profile
+        catalog = json.loads((source/'catalog.json').read_text())
+        catalog.update(schemaVersion=5, channel=channel, sequence=42)
+        for field in module.EXECUTION_FIELDS:
+            catalog['models'][0].pop(field, None)
+        directory = source/'channels/stable'
+        directory.mkdir(parents=True)
+        raw = json.dumps(catalog).encode()
+        (directory/'catalog.json').write_bytes(raw)
+        self.sign(directory)
+        signature = (directory/'catalog.json.sig').read_bytes()
+        (directory/'catalog.signed.json').write_text(json.dumps({
+            'schema_version': 1, 'catalog': base64.b64encode(raw).decode(),
+            'signature': base64.b64encode(signature).decode()}))
+        return directory
+
+    def test_reissuing_nightly_preserves_stable_and_uses_gnome_as_root_fallback(self):
+        gnome = self.signed_channel_fixture('fedora-gnome')
+        kde = self.signed_channel_fixture('fedora-kde')
+        self.prepare()
+        output = self.root/'output'
+        for expected, destination in (
+                (gnome, output/'Profiles/fedora-gnome/channels/stable'),
+                (kde, output/'Profiles/fedora-kde/channels/stable'),
+                (gnome, output/'channels/stable')):
+            for name in ('catalog.json', 'catalog.json.sig', 'catalog.signed.json'):
+                self.assertEqual((destination/name).read_bytes(), (expected/name).read_bytes())
+        self.assertEqual(json.loads((output/'catalog.json').read_text())['channel'], 'testing')
+
+    def test_testing_envelope_in_stable_path_is_rejected(self):
+        self.signed_channel_fixture('fedora-gnome', 'testing')
+        with self.assertRaisesRegex(ValueError, 'belongs to a different channel'):
+            self.prepare()
+        self.assertFalse((self.root/'output').exists())
+
+    def test_tampered_stable_signature_is_rejected(self):
+        path = self.signed_channel_fixture('fedora-gnome')/'catalog.signed.json'
+        envelope = json.loads(path.read_text())
+        envelope['signature'] = base64.b64encode(b'\x00'*64).decode()
+        path.write_text(json.dumps(envelope))
+        with self.assertRaises(subprocess.CalledProcessError):
+            self.prepare()
+        self.assertFalse((self.root/'output').exists())
+
+    def published_stable_baseline(self):
+        profile = 'fedora-gnome'
+        tag = 'v0.1.0-alpha.5'
+        source = self.root/'published'
+        directory = source/'Profiles'/profile
+        directory.mkdir(parents=True)
+        catalog = json.loads((self.source/'Profiles'/profile/'catalog.json').read_bytes())
+        catalog.update(schemaVersion=5, sequence=50)
+        catalog['installer']['downloadURL'] = module.INSTALLER_RELEASE + tag
+        model = catalog['models'][0]
+        for field in module.EXECUTION_FIELDS:
+            model.pop(field, None)
+        model['payloadDigest'] = 'sha256:'+'c'*64
+        (directory/'catalog.json').write_text(json.dumps(catalog))
+        self.sign(directory)
+        return source, directory, tag, catalog
+
+    def test_prepares_stable_from_an_explicit_published_baseline(self):
+        source, directory, tag, original = self.published_stable_baseline()
+        self.prepare(stable_source=source, stable_release_tag=tag, stable_source_revision='b'*40)
+        output = self.root/'output'
+        stable = output/'Profiles/fedora-gnome/channels/stable'
+        raw = (stable/'catalog.json').read_bytes()
+        catalog = json.loads(raw)
+        self.assertEqual(catalog['channel'], 'stable')
+        self.assertEqual(catalog['sequence'], 100)
+        self.assertEqual(catalog['models'], original['models'])
+        self.assertEqual(catalog['installer'], original['installer'])
+        self.assertEqual((output/'channels/stable/catalog.signed.json').read_bytes(),
+                         (stable/'catalog.signed.json').read_bytes())
+        self.assertEqual(json.loads((output/'Profiles/fedora-kde/channels/stable/catalog.json').read_bytes())['models'], [])
+        self.assertEqual(json.loads((output/'catalog.json').read_bytes())['models'][0]['payloadDigest'], 'sha256:'+'b'*64)
+        module.verify(raw, (stable/'catalog.json.sig').read_bytes(),
+                      (self.root/'keys/catalog.ed25519.pub').read_bytes())
+        receipt = json.loads((output/'native-only-catalogs.json').read_bytes())['stable_baseline']
+        self.assertEqual(receipt['release_tag'], tag)
+        self.assertEqual(receipt['source_revision'], 'b'*40)
+        self.assertEqual(receipt['profiles']['fedora-gnome']['source_catalog_sha256'],
+                         hashlib.sha256((directory/'catalog.json').read_bytes()).hexdigest())
+
+    def test_a_stable_baseline_with_a_different_signed_release_is_rejected(self):
+        source, _, _, _ = self.published_stable_baseline()
+        with self.assertRaisesRegex(ValueError, 'differs from the selected native installer release'):
+            self.prepare(stable_source=source, stable_release_tag='v0.1.0-alpha.4', stable_source_revision='b'*40)
+        self.assertFalse((self.root/'output').exists())
+
+    def test_a_stable_baseline_requires_a_main_revision_and_release_tag(self):
+        source, _, tag, _ = self.published_stable_baseline()
+        with self.assertRaisesRegex(ValueError, 'requires a source directory, revision and immutable installer tag'):
+            self.prepare(stable_source=source, stable_release_tag=tag)
+        self.assertFalse((self.root/'output').exists())
 
     def test_tampered_source_is_rejected_before_output(self):
         path = self.source/'Profiles/nixos-minimal/catalog.json'
