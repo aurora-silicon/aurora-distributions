@@ -24,7 +24,8 @@ PAYLOAD_WORKFLOW = 'aurora-silicon/aurora-distributions/.github/workflows/build-
 NEW65_BOARDS = ('j714c', 'j714s', 'j716c', 'j716s', 'j775c', 'j775d', 'j873s')
 PROFILE_OWNERS = {
     'aurora-silicon/' + repository: {distribution + '-' + desktop for desktop in ('kde', 'gnome', 'minimal')}
-    for distribution, repository in [('fedora', 'fedora-aurora'), ('arch', 'alarm-aurora'), ('nixos', 'nixos-aurora')]
+    for distribution, repository in [('fedora', 'fedora-aurora'), ('arch', 'alarm-aurora'),
+                                     ('nixos', 'nixos-aurora'), ('debian', 'debian-aurora')]
 }
 PROFILE_OWNERS['aurora-silicon/omarchy-aurora'] = {'omarchy-hyprland'}
 VM_CHECKS = ('boot', 'encryption', 'temporary_key_rejected', 'owner', 'sudo', 'second_boot',
@@ -177,7 +178,8 @@ def adopt(repository, tag, site, channel='testing'):
     if channel not in ('testing', 'edge') or edge != bool(match and match[3] and match[3].startswith('-edge-alpha.')):
         raise ValueError('Edge requires a new qualified Edge release, never testing promotion')
     if (match is None or match[1] not in PROFILE_OWNERS.get(repository, set())
-            or (repository == 'aurora-silicon/omarchy-aurora' and match[3] and not edge)):
+            or (repository in ('aurora-silicon/omarchy-aurora', 'aurora-silicon/debian-aurora')
+                and match[3] and not edge)):
         raise ValueError('expected an immutable Aurora profile delivery')
     base = 'https://github.com/' + repository + '/releases/download/' + tag
     names = ('release.json', 'trust-root.ed25519.pub', 'catalog.json', 'catalog.json.sig',
@@ -205,7 +207,7 @@ def adopt(repository, tag, site, channel='testing'):
         subprocess.run(['openssl','pkeyutl','-verify','-pubin','-keyform','DER','-inkey',str(directory/'public.der'),
                         '-rawin','-in',str(directory/'catalog.json'),'-sigfile',str(directory/'catalog.json.sig')],check=True)
     provenance = verify_provenance(repository, base, data)
-    if (match[3] or repository == 'aurora-silicon/omarchy-aurora') and provenance != 'verified':
+    if (match[3] or repository in ('aurora-silicon/omarchy-aurora', 'aurora-silicon/debian-aurora')) and provenance != 'verified':
         raise ValueError('this delivery requires hosted provenance')
     receipt = json.loads(data['delivery.json']); profile = receipt['installation_profile']
     if (profile != match[1] or profile not in PROFILE_OWNERS[repository]
@@ -254,7 +256,8 @@ def adopt(repository, tag, site, channel='testing'):
     for lane in CHANNELS:
         if descriptor['channels'][lane]['catalog_url'] != public_base + '/channels/' + ('edge-alpha' if lane == 'edge' else lane) + '/catalog.signed.json':
             raise ValueError('profile channel URL differs')
-    validate_catalog(catalog, channel, legacy_development=(provenance == 'verified'))
+    validate_catalog(catalog, channel,
+                     legacy_development=(provenance == 'verified' and not profile.startswith('debian-')))
     profile_root = site/'installer/Profiles'/profile
     if edge:
         testing_path = profile_root/'catalog.json'

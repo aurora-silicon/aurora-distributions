@@ -162,6 +162,51 @@ class OmarchyTests(unittest.TestCase):
             self.invoke(tag='payload-omarchy-hyprland-42508499173-models58')
 
 
+class DebianTests(unittest.TestCase):
+    def setUp(self):
+        VariantTests.setUp(self)
+        self.repository = 'aurora-silicon/debian-aurora'
+        self.profile = 'debian-minimal'
+        self.catalog['channel'] = 'testing'
+        for model in self.catalog['models']:
+            model['installationProfile'] = self.profile
+        for channel, record in self.json['release.json']['channels'].items():
+            record['catalog_url'] = ('https://aurorasilicon.org/aurora-distributions/installer/Profiles/'
+                                     + self.profile + '/channels/' + channel + '/catalog.signed.json')
+        self.json['delivery.json']['installation_profile'] = self.profile
+        self.json['delivery.json']['release_id'] = 'build-46052707206'
+        self.json['image-build.json']['id'] = 46052707206
+        self.json['image-build.json']['head_repository']['full_name'] = self.repository
+        (self.root / 'site/installer/profile-builds.json').write_text(json.dumps(
+            {'profiles': [{'profile': self.profile}]}))
+
+    def invoke(self, provenance='verified', repository=None, tag=None):
+        VariantTests.invoke(self, provenance=provenance, repository=repository or self.repository,
+                            tag=tag or f'payload-{self.profile}-46052707206')
+
+    def test_signed_testing_debian_profile_is_adopted(self):
+        self.invoke()
+        directory = self.root / 'site/installer/Profiles' / self.profile
+        self.assertEqual(json.loads((directory / 'catalog.json').read_text()), self.catalog)
+
+    def test_debian_requires_explicit_testing_channel(self):
+        self.catalog.pop('channel')
+        with self.assertRaisesRegex(ValueError, 'unchannelled testing'):
+            self.invoke()
+
+    def test_debian_requires_hosted_provenance(self):
+        with self.assertRaisesRegex(ValueError, 'requires hosted provenance'):
+            self.invoke(provenance='none (delivery predates attestations)')
+
+    def test_debian_rejects_wrong_repository_and_refresh_variants(self):
+        with self.assertRaisesRegex(ValueError, 'immutable Aurora profile'):
+            self.invoke(repository='aurora-silicon/fedora-aurora')
+        with self.assertRaisesRegex(ValueError, 'immutable Aurora profile'):
+            self.invoke(tag='payload-debian-minimal-46052707206-models58')
+        with self.assertRaisesRegex(ValueError, 'immutable Aurora profile'):
+            self.invoke(tag='payload-debian-minimal-46052707206-models65')
+
+
 class OmarchyPreSignTests(unittest.TestCase):
     def test_guest_package_trust_is_required_before_the_signing_job(self):
         workflow = (ROOT / '.github/workflows/build-payload.yml').read_text()

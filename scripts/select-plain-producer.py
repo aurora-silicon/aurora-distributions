@@ -17,10 +17,11 @@ import json
 import subprocess
 
 # The pinned producers a plain delivery can be built with: aurora-installer
-# 9779fa45 lists the 58 Macs of keys/supported-models-58.json, and 68148f7b the
-# 65 of keys/supported-models-65.json.
+# 9779fa45 lists the 58 Macs of keys/supported-models-58.json, and e3e085f2
+# (v0.1.0-alpha.26, with Debian profile support) the 65 of
+# keys/supported-models-65.json.
 PRODUCERS = ('9779fa452351c5a66ae583918b8e8120c044051f',
-             '68148f7b1b820059f65780e17bc27ccb576def49')
+             'e3e085f23821efa71fb55bd1e3e6bbae83255c2e')
 COHORT_REPOSITORY = 'aurora-silicon/aurora-distributions'
 COHORT_PATH = 'keys/supported-models.json'
 PRODUCER_REPOSITORY = 'aurora-silicon/aurora-installer'
