@@ -12,6 +12,8 @@ The installer is published as prereleases on [aurora-installer releases](https:/
 
 [Flicker-free boot](docs/flicker-free-boot.md) describes how the boot keeps one picture on screen from power-on to the desktop, stage by stage, the branding each distribution configures, and how to verify a machine.
 
+[Using the whole disk](docs/whole-disk.md) explains how to remove macOS so Aurora gets its space: what is kept, what changes, the owner it needs and how to get macOS back.
+
 ## Installer channels
 
 Testing (Nightly) retains development/prerelease deliveries. Edge carries only signed, qualified releases from both Linux and Mesa `aurora-edge` branches; a new install defaults to Edge when the profile's Edge catalog admits and proves the Mac (`edgeQualification.devices`), and to Nightly otherwise, while an explicit pick always wins. Existing Testing packages are never promoted or relabelled as Edge. [Channel identity and migration](docs/channels.md) describes the separate endpoints, rollback floors and qualification contract. This support change does not publish a first Edge payload.
