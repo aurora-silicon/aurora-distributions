@@ -87,8 +87,8 @@ class TrainTests(unittest.TestCase):
 
     def test_the_pair_is_a_variable_but_must_be_aurora_edge(self):
         for path, value, message in (
-                (('pair', 'mesa', 'branch'), 'aurora-wip', 'aurora-edge'),
-                (('pair', 'linux', 'tree'), 'tested', 'aurora-edge'),
+                (('pair', 'mesa', 'branch'), 'aurora-wip', 'Edge source branches'),
+                (('pair', 'linux', 'tree'), 'tested', 'Edge source reference'),
                 (('reference', 'mesaSigningRunID'), 0, 'reference'),
                 (('release',), 'beta.1', 'release'),
                 (('distributions', 'arch', 'snapshot'), 'testing-20261121.1', 'snapshot'),
@@ -106,6 +106,29 @@ class TrainTests(unittest.TestCase):
         train = fx.train()
         del train['profiles']['nixos-minimal']
         with self.assertRaisesRegex(ValueError, 'every Edge profile'):
+            edge_train.verify_train(train, fx.cohort())
+
+    def test_v2_binds_the_fedora_snapshot_feed_and_default_pair(self):
+        cohort = fx.cohort()
+        for release, other_release in ((44, 45), (45, 44)):
+            with self.subTest(release=release):
+                train = fx.train_v2(release)
+                edge_train.verify_train(train, cohort)
+                edge_train.verify_evidence(fx.evidence(train), cohort, train)
+                proof = fx.image_proof(train, 'fedora-kde')
+                run = fx.image_run(train, 'fedora-kde')
+                edge_train.verify_image(run, json.dumps(proof).encode(), cohort, train, 'fedora-kde')
+                proof['feed'] = f'https://aurorasilicon.org/fedora-aurora/{other_release}/edge/aarch64'
+                with self.assertRaisesRegex(ValueError, 'Edge feed'):
+                    edge_train.verify_image(run, json.dumps(proof).encode(), cohort, train, 'fedora-kde')
+                train['distributions']['fedora']['snapshot'] = fx.train_v2(other_release)['distributions']['fedora']['snapshot']
+                with self.assertRaisesRegex(ValueError, 'snapshot for fedora'):
+                    edge_train.verify_train(train, cohort)
+
+    def test_v2_requires_the_default_source_pair(self):
+        train = fx.train_v2(45)
+        train['pair'] = fx.train()['pair']
+        with self.assertRaisesRegex(ValueError, 'source pair'):
             edge_train.verify_train(train, fx.cohort())
 
     def test_staged_train_needs_every_staging_record(self):

@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 """Adopt one complete Edge train into the installer resource tree: every profile, or nothing.
 
-Each of the ten deliveries must be the signed, attested, qualified release the
+Each delivery must be the signed, attested, qualified release the
 merged train names (`payload-<profile>-<image run>-edge-alpha.<n>`). All are
 downloaded and verified first; the new served state is assembled and verified
 beside the site, and only then replaces the profiles' Edge directories, the
-Fedora KDE root fallback and the train record `site/installer/edge-train.json`.
+Fedora GNOME root fallback and the train record `site/installer/edge-train.json`.
 """
 import argparse
 import base64
@@ -123,14 +123,15 @@ def adopt_train(items, cohort, train, site, evidence, manifests):
     ordered = edge_train.verify_set(items, cohort, train)
     edge_train.verify_evidence(evidence, cohort, train)
     edge_train.verify_manifests(evidence, manifests)
-    served = {profile: _envelope(site / 'installer/Profiles' / profile / 'channels/edge-alpha/catalog.signed.json')
-              for profile in cohort['profiles']}
+    served = {item['profile']: _envelope(
+        site / 'installer/Profiles' / item['profile'] / 'channels/edge-alpha/catalog.signed.json')
+        for item in ordered}
     fallback = _envelope(site / 'installer/channels/edge-alpha/catalog.signed.json')
     verified = {}
     for item in ordered:
         profile = item['profile']
         data, catalog = verify_delivery(item, cohort, train, site, evidence)
-        # Each profile keeps its own rollback floor; the train's ten catalogs may share
+        # Each profile keeps its own rollback floor; the train's catalogs may share
         # one sequence. The root fallback mirrors Fedora GNOME.
         served_profile = [served[profile]] + ([fallback] if profile == 'fedora-gnome' else [])
         floor = max([previous['sequence'] for previous in served_profile if previous] or [0])
@@ -146,7 +147,8 @@ def adopt_train(items, cohort, train, site, evidence, manifests):
         verified[profile] = (item, data, catalog)
 
     record = {
-        'schema_version': 1, 'release': train['release'], 'trainDigest': edge_train.train_digest(train),
+        'schema_version': train['schema_version'], 'release': train['release'],
+        'trainDigest': edge_train.train_digest(train),
         'cohortDigest': edge_train.digest(edge_train.canonical(cohort)), 'pair': train['pair'],
         'distributions': train['distributions'], 'profiles': {},
     }
@@ -196,12 +198,12 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--train', type=Path, default=ROOT / 'edge/train.json')
     parser.add_argument('--cohort', type=Path, default=ROOT / 'edge/cohort.json')
-    parser.add_argument('--deliveries', help='JSON array of repository/tag objects; default: the train\'s ten')
+    parser.add_argument('--deliveries', help='JSON array of repository/tag objects; default: the complete train')
     parser.add_argument('--site', type=Path, default=ROOT / 'site')
     args = parser.parse_args()
     cohort_record, train_record = edge_train.load(args.cohort), edge_train.load(args.train)
     selection = (json.loads(args.deliveries) if args.deliveries else
                  [{'repository': edge_train.owner(profile), 'tag': edge_train.release_tag(train_record, profile)}
-                  for profile in cohort_record['profiles']])
+                  for profile in edge_train.train_profiles(cohort_record, train_record)])
     evidence_record, manifest_files = edge_train.load_evidence(ROOT)
     adopt_train(selection, cohort_record, train_record, args.site, evidence_record, manifest_files)

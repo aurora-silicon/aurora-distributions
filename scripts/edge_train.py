@@ -1,8 +1,8 @@
-"""One Edge release train: every profile, every cohort Mac, one aurora-edge pair.
+"""One Edge release train: every active profile, each admitted Mac, one source pair.
 
 `edge/cohort.json` is the reviewed policy: the ten profiles, the chip families
 with their Macs and hardware gates, optional riders and exclusions.
-`edge/train.json` pins one release: the Linux and Mesa aurora-edge pair, the
+`edge/train.json` pins one release: the Linux and Mesa source pair, the
 reference signed build the hardware rows ran, each distribution's Edge package
 snapshot and each profile's image run (commit A), then each profile's staging
 run and STAGING.sha256 digest (commit B). Nothing here publishes anything.
@@ -12,6 +12,8 @@ import hashlib
 import json
 from pathlib import Path
 import re
+
+from channel_policy import EDGE_SOURCE_BRANCHES, edge_source_branches
 
 ROOT = Path(__file__).resolve().parents[1]
 COHORT = ROOT / 'edge/cohort.json'
@@ -46,6 +48,8 @@ PAIR_KEYS = ('kernelImageSHA256', 'mesaDsoSHA256')
 # there and its freeze and restore on a one-shot aura Stage 2.
 BOOT_CHAINS = ('aura', 'm1n1-uboot')
 SHIPPED_CHAIN_GATES = ('suspend', 'deepSleep')
+ACTIVE_DISTRIBUTIONS = ('fedora', 'arch', 'nixos')
+FEDORA_45_SNAPSHOT = r'edge-f45-[0-9]{8}\.[1-9][0-9]*'
 
 
 def _match(pattern, value):
@@ -76,6 +80,24 @@ def distribution(profile):
 
 def owner(profile):
     return DISTRIBUTIONS[distribution(profile)]['repository']
+
+
+def train_distributions(version):
+    if type(version) is not int or version not in EDGE_SOURCE_BRANCHES:
+        raise ValueError('unsupported Edge train schema')
+    return DISTRIBUTIONS if version == 1 else ACTIVE_DISTRIBUTIONS
+
+
+def train_profiles(cohort, train):
+    names = train_distributions(train['schema_version'])
+    return [profile for profile in cohort['profiles'] if distribution(profile) in names]
+
+
+def image_feed(train, name):
+    if name == 'fedora' and train['schema_version'] == 2:
+        release = train['distributions']['fedora']['release']
+        return f'https://aurorasilicon.org/fedora-aurora/{release}/edge/aarch64'
+    return DISTRIBUTIONS[name]['feed']
 
 
 def board(model):
@@ -167,18 +189,44 @@ def profile_models(cohort, train, profile):
     return [model for model in load(SUPPORTED)['supported'] if model in wanted]
 
 
-def _source(record, name):
-    return (isinstance(record, dict) and set(record) == {'repository', 'branch', 'revision', 'tree'}
-            and record['repository'] == 'aurora-silicon/' + name and record['branch'] == 'aurora-edge'
-            and _match(REVISION, record['revision']) and _match(REVISION, record['tree']))
+def verify_source_pair(pair, version):
+    if (not isinstance(pair, dict) or set(pair) != {'linux', 'mesa'}
+            or any(not isinstance(source, dict) or set(source) != {'repository', 'branch', 'revision', 'tree'}
+                   for source in pair.values())
+            or edge_source_branches(pair) != EDGE_SOURCE_BRANCHES[version]):
+        raise ValueError('the Linux and Mesa source pair does not match the Edge train schema')
+
+
+def verify_distributions(distributions, version):
+    if not isinstance(distributions, dict) or set(distributions) != set(train_distributions(version)):
+        raise ValueError('the train must name every distribution for its schema')
+    for name, entry in distributions.items():
+        policy = DISTRIBUTIONS[name]
+        expected = {'repository', 'snapshot'}
+        snapshot = policy['snapshot']
+        if name == 'omarchy':
+            expected.add('alarm_snapshot')
+        if name == 'fedora' and version == 2:
+            expected.add('release')
+            if not isinstance(entry, dict) or type(entry.get('release')) is not int or entry['release'] not in (44, 45):
+                raise ValueError('an Edge train must select Fedora 44 or Fedora 45')
+            if entry['release'] == 45:
+                snapshot = FEDORA_45_SNAPSHOT
+        if (not isinstance(entry, dict) or set(entry) != expected or entry['repository'] != policy['repository']
+                or not _match(re.compile(snapshot), entry['snapshot'])):
+            raise ValueError('invalid Edge snapshot for ' + name)
+    if version == 1 and distributions['omarchy']['alarm_snapshot'] != distributions['arch']['snapshot']:
+        raise ValueError('Omarchy must build on the same ALARM Edge snapshot')
 
 
 def verify_train(train, cohort, staged=False):
     verify_cohort(cohort)
     required = {'schema_version', 'release', 'riders', 'pair', 'reference', 'distributions', 'profiles'}
-    if (not isinstance(train, dict) or train.get('schema_version') != 1
+    if (not isinstance(train, dict)
             or not required <= set(train) <= required | {'held', 'withdrawn'}):
         raise ValueError('invalid Edge train record')
+    version = train['schema_version']
+    verify_distributions(train['distributions'], version)
     # Families this train leaves on Testing (Nightly): no catalog rows, no rows to run.
     held = train.get('held', [])
     if (not isinstance(held, list) or len(set(held)) != len(held)
@@ -210,28 +258,14 @@ def verify_train(train, cohort, staged=False):
     for name in riders:
         if name not in cohort['riders']:
             raise ValueError('unknown rider: ' + str(name))
-    pair = train['pair']
-    if not isinstance(pair, dict) or set(pair) != {'linux', 'mesa'} or not all(
-            _source(pair[name], name) for name in pair):
-        raise ValueError('the train pair must be Linux and Mesa aurora-edge revisions with their trees')
+    verify_source_pair(train['pair'], version)
     reference = train['reference']
     if (not isinstance(reference, dict) or set(reference) != set(PAIR_KEYS) | {'mesaSigningRunID'}
             or not all(_match(SHA256, reference[key]) for key in PAIR_KEYS)
             or not _positive(reference['mesaSigningRunID'])):
         raise ValueError('invalid reference build for the hardware rows')
-    distributions = train['distributions']
-    if not isinstance(distributions, dict) or set(distributions) != set(DISTRIBUTIONS):
-        raise ValueError('the train must name every distribution')
-    for name, entry in distributions.items():
-        expected = {'repository', 'snapshot'} | ({'alarm_snapshot'} if name == 'omarchy' else set())
-        if (not isinstance(entry, dict) or set(entry) != expected
-                or entry['repository'] != DISTRIBUTIONS[name]['repository']
-                or not _match(re.compile(DISTRIBUTIONS[name]['snapshot']), entry['snapshot'])):
-            raise ValueError('invalid Edge snapshot for ' + name)
-    if distributions['omarchy']['alarm_snapshot'] != distributions['arch']['snapshot']:
-        raise ValueError('Omarchy must build on the same ALARM Edge snapshot')
     profiles = train['profiles']
-    if not isinstance(profiles, dict) or set(profiles) != set(cohort['profiles']):
+    if not isinstance(profiles, dict) or set(profiles) != set(train_profiles(cohort, train)):
         raise ValueError('the train must carry every Edge profile')
     runs = []
     for profile, entry in profiles.items():
@@ -290,7 +324,7 @@ def verify_image(run, raw_proof, cohort, train, profile):
     if proof['snapshot'] != entry['snapshot'] or proof.get('alarm_snapshot', entry.get('alarm_snapshot')) != entry.get(
             'alarm_snapshot'):
         raise ValueError('the image was built from another Edge snapshot')
-    if proof['feed'] != DISTRIBUTIONS[name]['feed']:
+    if proof['feed'] != image_feed(train, name):
         raise ValueError('the image does not follow the Edge feed')
     if proof['packaged_sources'] != train['pair']:
         raise ValueError('the image packaged a different Linux/Mesa pair')
@@ -357,11 +391,11 @@ def verify_evidence(evidence, cohort, train):
     if (not isinstance(evidence, dict) or set(evidence) != {'families', 'distributions'}
             or not isinstance(evidence['families'], dict) or set(evidence['families']) != set(families)
             or not isinstance(evidence['distributions'], dict)
-            or set(evidence['distributions']) != set(DISTRIBUTIONS)):
+            or set(evidence['distributions']) != set(train['distributions'])):
         raise ValueError('Edge evidence must cover every family and every distribution')
     for name, spec in families.items():
         verify_family_record(evidence['families'][name], spec, name, train)
-    for name in DISTRIBUTIONS:
+    for name in train['distributions']:
         verify_distribution_record(evidence['distributions'][name], cohort, train, name)
 
 
@@ -550,10 +584,11 @@ def verify_set(items, cohort, train):
     if (not isinstance(items, list) or any(
             not isinstance(item, dict) or set(item) != {'repository', 'tag'} for item in items)):
         raise ValueError('invalid Edge delivery set')
-    expected = {(owner(profile), release_tag(train, profile)) for profile in cohort['profiles']}
+    profiles = train_profiles(cohort, train)
+    expected = {(owner(profile), release_tag(train, profile)) for profile in profiles}
     actual = {(item['repository'], item['tag']) for item in items}
     if len(items) != len(expected) or actual != expected:
         missing = ', '.join(sorted(tag for _, tag in expected - actual)) or 'unexpected deliveries'
-        raise ValueError('Edge adoption requires the complete ten-profile train: ' + missing)
+        raise ValueError(f'Edge adoption requires all {len(profiles)} train profiles: {missing}')
     return [{'repository': owner(profile), 'tag': release_tag(train, profile), 'profile': profile}
-            for profile in cohort['profiles']]
+            for profile in profiles]

@@ -21,7 +21,8 @@ from channel_policy import verify_edge_delivery, verify_edge_source_refs  # noqa
 REPOSITORY = 'aurora-silicon/aurora-distributions'
 STAGE_WORKFLOW = '.github/workflows/stage-edge-train.yml'
 # The code that assembled the staged payload must be the code of the train revision.
-STAGE_FILES = (STAGE_WORKFLOW, 'scripts/prepare-edge-payload.py', 'scripts/edge_train.py', 'edge/cohort.json')
+STAGE_FILES = (STAGE_WORKFLOW, 'scripts/prepare-edge-payload.py', 'scripts/edge_train.py',
+               'scripts/channel_policy.py', 'edge/cohort.json')
 
 
 def github_json(path):
@@ -48,7 +49,7 @@ def verify_stage_run(run, revision, fetch=github_json):
 
 def stage_record(cohort, train, profile, repository, image_run):
     edge_train.verify_train(train, cohort, staged=True)
-    if profile not in cohort['profiles'] or edge_train.owner(profile) != repository:
+    if profile not in train['profiles'] or edge_train.owner(profile) != repository:
         raise ValueError('the calling repository is not the owner of ' + str(profile))
     if image_run != str(train['profiles'][profile]['image_run']):
         raise ValueError('the image run differs from the merged train')

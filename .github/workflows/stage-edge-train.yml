@@ -17,24 +17,40 @@ concurrency:
   group: edge-train-staging-${{ github.ref }}
   cancel-in-progress: false
 jobs:
+  plan:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    permissions:
+      contents: read
+    outputs:
+      profiles: ${{ steps.matrix.outputs.profiles }}
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+        with:
+          persist-credentials: false
+      - id: matrix
+        name: Select the validated train profiles
+        run: |
+          python3 - <<'PY'
+          import json, os, sys
+          sys.path.insert(0, 'scripts')
+          import edge_train
+
+          cohort = edge_train.load(edge_train.COHORT)
+          train = edge_train.load(edge_train.TRAIN)
+          edge_train.verify_train(train, cohort)
+          with open(os.environ['GITHUB_OUTPUT'], 'a') as output:
+              output.write('profiles=%s\n' % json.dumps(sorted(train['profiles'])))
+          PY
   stage:
+    needs: plan
     runs-on: ubuntu-24.04-arm
     timeout-minutes: 120
     strategy:
       fail-fast: false
       max-parallel: 3
       matrix:
-        profile:
-          - fedora-kde
-          - fedora-gnome
-          - fedora-minimal
-          - arch-kde
-          - arch-gnome
-          - arch-minimal
-          - nixos-kde
-          - nixos-gnome
-          - nixos-minimal
-          - omarchy-hyprland
+        profile: ${{ fromJSON(needs.plan.outputs.profiles) }}
     env:
       PROFILE: ${{ matrix.profile }}
     steps:
@@ -57,6 +73,8 @@ jobs:
           cohort, train = edge_train.load(edge_train.COHORT), edge_train.load(edge_train.TRAIN)
           edge_train.verify_train(train, cohort)
           profile = os.environ['PROFILE']
+          if profile not in train['profiles']:
+              raise ValueError('the active train does not carry this profile')
           producer = json.load(open('producer/macOS/scripts/supported-models.json'))['supported']
           if not set(edge_train.profile_models(cohort, train, profile)) <= set(producer):
               raise ValueError('the pinned producer does not admit every cohort model')
