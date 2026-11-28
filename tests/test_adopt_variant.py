@@ -259,7 +259,7 @@ class EdgeTests(unittest.TestCase):
         self.json['edge-image-proof.json'] = proof
         metadata = {"os_list": [{"allowed_device_classes": ["j700ap"],
                                  "aurora_stage1": {"qualified_machines": {"j700ap": ["27.2"]}},
-                                 "aurora_stage2": {"board_members": {"j700ap": "esp/m1n1/boot-j700.bin"}}}]}
+                                 "aurora_stage2": {"board_members": {"j700ap": "esp/aurora/boot-j700.bin"}}}]}
         raw_metadata = json.dumps(metadata).encode()
         self.json['installer-data-fedora-kde.json'] = metadata
         for model in self.catalog['models']:
